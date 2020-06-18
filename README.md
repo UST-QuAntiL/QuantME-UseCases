@@ -7,18 +7,33 @@ The model presented here is a conversion of the following process model that use
 
 ## BPMN 2.0-Compliant Model
 The transformed BPMN 2.0 process model (in xml format) can be found [here](TODO).
-The model can be visualized and edited using [bpmn.io](https://demo.bpmn.io/), or [Camunda Modeler](https://camunda.com/download/).
+The model can be visualized and edited using [bpmn.io](https://demo.bpmn.io/), or the [Camunda Modeler](https://camunda.com/download/).
 
 A visualization of the transformed BPMN 2.0-compliant model is presented below:
 
 TODO: png with transformed model
 
+## Deploying the Required Services
+
+For the execution of the BPMN 2.0 process model, a set of services providing the required functionality for the different tasks needs to be deployed. These services are dockerized and located in [this folder](TODO). Furthermore, the folder contains a docker-compose file, that can be used to easily set up all required service with the following command:
+
+```
+docker-compose up -d
+```
+
+In case you have not installed Docker or Docker-Compose, please refer to the following websites:
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker-Compose](https://docs.docker.com/compose/)
+
+Otherwise, the services can also be set up manually. Please refer to the README files in the corresponding folders.
+
 ## Configuring the Process Model
 
 A configuration file is used to specify the following values:
 
-- TODO
-- TODO
+- The endpoint URL of the Oracle Replacement Service
+- The endpoint URL of the Circuit Execution Service
+- The endpoint URL of the Provenance Service
 - TODO
 
 This configuration file can be found [here](TODO).
