@@ -1,0 +1,23 @@
+version: '3'
+services:
+  oracle-service:
+    build: oracle-service/.
+    ports:
+      - '8081:8080'
+    networks:
+      - quantme
+  execution-service:
+    build: ./execution-service
+    ports:
+      - '8082:8080'
+    networks:
+      - quantme
+  provenance-service:
+    build: ./provenance-service
+    ports:
+      - '8083:8080'
+    networks:
+      - quantme
+networks:
+  quantme:
+    driver: bridge

@@ -15,7 +15,7 @@ TODO: png with transformed model
 
 ## Deploying the Required Services
 
-For the execution of the BPMN 2.0 process model, a set of services providing the required functionality for the different tasks needs to be deployed. These services are dockerized and located in [this folder](TODO). Furthermore, the folder contains a docker-compose file, that can be used to easily set up all required service with the following command:
+For the execution of the BPMN 2.0 process model, a set of services providing the required functionality for the different tasks needs to be deployed. These services are dockerized and located in [this folder](/services). Furthermore, the folder contains a docker-compose file, that can be used to easily set up all required service with the following command:
 
 ```
 docker-compose up -d
