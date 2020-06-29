@@ -1,0 +1,56 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# node.js / webpack
+/node_modules
+/src/**/*.js
+/src/**/*.js.map
+npm-debug.log
+/node
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# custom
+build/src/main/resources/static/**/*
+!build/src/main/resources/static/.gitkeep
+
+# IDEs and editors
+.idea
+*.iws
+*.iml
+*.ipr
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db

@@ -49,7 +49,7 @@ mvn clean package
 The project is packaged into a WAR file which can be found in the folloing path:
 
 ```
-TODO
+target/simons-algorithm-1.0-SNAPSHOT.war
 ```
 
 This WAR file contains the process model as well as the used java classes and their dependencies.
