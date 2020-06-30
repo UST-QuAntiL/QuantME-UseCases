@@ -12,6 +12,18 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/********************************************************************************
+ * Copyright (c) 2020 Institute for the Architecture of Application System -
+ * University of Stuttgart
+ * Author: Benjamin Weder
+ *
+ * This program and the accompanying materials are made available under the
+ * terms the Apache Software License 2.0
+ * which is available at https://www.apache.org/licenses/LICENSE-2.0.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ ********************************************************************************/
+
 public class LoadQuantumCircuitDelegate implements JavaDelegate {
 	
 	private final static Logger LOGGER = LoggerFactory.getLogger(LoadQuantumCircuitDelegate.class);
@@ -35,7 +47,7 @@ public class LoadQuantumCircuitDelegate implements JavaDelegate {
 			// Set variables of the outgoing quantum data object
 			execution.setVariableLocal("CircuitId", 1);
 			execution.setVariableLocal("QuantumCircuit", circuitBytes);
-			execution.setVariableLocal("ProgrammingLanguage", "Qiskit");
+			execution.setVariableLocal("QuantumProgrammingLanguage", "Qiskit");
 			execution.setVariableLocal("ExecutionResult", null);
 		} catch (IOException e) {
 			LOGGER.error("Failed to load circuit from URL: {}", urlVariable);

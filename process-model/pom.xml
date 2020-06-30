@@ -34,6 +34,11 @@
       <artifactId>commons-io</artifactId>
       <version>2.6</version>
     </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet-core</artifactId>
+      <version>${jersey.version}</version>
+    </dependency>
   </dependencies>
  
   <build>
@@ -52,5 +57,6 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <jersey.version>2.31</jersey.version>
   </properties>
 </project>
