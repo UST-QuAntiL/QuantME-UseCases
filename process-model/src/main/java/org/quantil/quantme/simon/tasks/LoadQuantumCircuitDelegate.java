@@ -47,7 +47,7 @@ public class LoadQuantumCircuitDelegate implements JavaDelegate {
 			// Set variables of the outgoing quantum data object
 			execution.setVariableLocal("CircuitId", 1);
 			execution.setVariableLocal("QuantumCircuit", circuitBytes);
-			execution.setVariableLocal("QuantumProgrammingLanguage", "Qiskit");
+			execution.setVariableLocal("ProgrammingLanguage", "Qiskit");
 			execution.setVariableLocal("ExecutionResult", null);
 		} catch (IOException e) {
 			LOGGER.error("Failed to load circuit from URL: {}", urlVariable);

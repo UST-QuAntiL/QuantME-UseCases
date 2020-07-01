@@ -7,7 +7,7 @@
           <camunda:inputParameter name="URL">http://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCase/master/README.md</camunda:inputParameter>
           <camunda:outputParameter name="ServiceTask_1_CircuitId">${CircuitId}</camunda:outputParameter>
           <camunda:outputParameter name="ServiceTask_1_QuantumCircuit">${QuantumCircuit}</camunda:outputParameter>
-          <camunda:outputParameter name="ServiceTask_1_QuantumProgrammingLanguage">${QuantumProgrammingLanguage}</camunda:outputParameter>
+          <camunda:outputParameter name="ServiceTask_1_ProgrammingLanguage">${ProgrammingLanguage}</camunda:outputParameter>
           <camunda:outputParameter name="ServiceTask_1_ExecutionResult">${ExecutionResult}</camunda:outputParameter>
         </camunda:inputOutput>
       </bpmn2:extensionElements>
@@ -30,11 +30,11 @@
     <bpmn2:subProcess id="SubProcess_1">
       <bpmn2:extensionElements>
         <camunda:inputOutput>
-          <camunda:inputParameter name="ProgrammingLanguage">Qiskit</camunda:inputParameter>
+          <camunda:inputParameter name="QuantumProgrammingLanguage">Qiskit</camunda:inputParameter>
           <camunda:inputParameter name="OracleId">1</camunda:inputParameter>
           <camunda:inputParameter name="CircuitId">${ServiceTask_1_CircuitId}</camunda:inputParameter>
           <camunda:inputParameter name="QuantumCircuit">${ServiceTask_1_QuantumCircuit}</camunda:inputParameter>
-          <camunda:inputParameter name="QuantumProgrammingLanguage">${ServiceTask_1_QuantumProgrammingLanguage}</camunda:inputParameter>
+          <camunda:inputParameter name="ProgrammingLanguage">${ServiceTask_1_ProgrammingLanguage}</camunda:inputParameter>
           <camunda:inputParameter name="ExecutionResult">${ServiceTask_1_ExecutionResult}</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn2:extensionElements>
