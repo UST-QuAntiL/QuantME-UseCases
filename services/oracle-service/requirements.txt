@@ -1,0 +1,9 @@
+alembic==1.4.2
+Flask==1.1.2
+Flask-Migrate==2.5.3
+Flask-RESTful==0.3.8
+qiskit==0.19.1
+requests==2.23.0
+rq==1.4.1
+urllib3==1.25.9
+Werkzeug==1.0.1
