@@ -4,7 +4,7 @@
     <bpmn2:serviceTask id="ServiceTask_1" camunda:class="org.quantil.quantme.simon.tasks.LoadQuantumCircuitDelegate" name="Load Quantum&#xD;&#xA;Circuit">
       <bpmn2:extensionElements>
         <camunda:inputOutput>
-          <camunda:inputParameter name="URL">https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCase/master/README.md</camunda:inputParameter>
+          <camunda:inputParameter name="URL">https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCase/master/circuits/simon-base.py</camunda:inputParameter>
           <camunda:outputParameter name="ServiceTask_1_CircuitId">${CircuitId}</camunda:outputParameter>
           <camunda:outputParameter name="ServiceTask_1_QuantumCircuit">${QuantumCircuit}</camunda:outputParameter>
           <camunda:outputParameter name="ServiceTask_1_ProgrammingLanguage">${ProgrammingLanguage}</camunda:outputParameter>

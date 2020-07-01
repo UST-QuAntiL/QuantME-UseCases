@@ -26,11 +26,13 @@ public class ExpandOracleRequest {
 	
 	private String programmingLanguage;
 	
+	private int circuitId;
+	
 	private int oracleId;
 	
 	private URL oracleCircuitUrl;
 	
-	private byte[] quantumCircuit;
+	private String quantumCircuit;
 
     @XmlElement(name="ProgrammingLanguage")
     public String getProgrammingLanguage() {
@@ -39,6 +41,15 @@ public class ExpandOracleRequest {
 
     public void setProgrammingLanguage(String programmingLanguage) {
         this.programmingLanguage = programmingLanguage;
+    }
+    
+    @XmlElement(name="CircuitId")
+    public int getCircuitId() {
+        return circuitId;
+    }
+
+    public void setCircuitId(int circuitId) {
+        this.circuitId = circuitId;
     }
     
     @XmlElement(name="OracleId")
@@ -60,11 +71,11 @@ public class ExpandOracleRequest {
     }
     
     @XmlElement(name="QuantumCircuit")
-    public byte[] getQuantumCircuit() {
+    public String getQuantumCircuit() {
         return quantumCircuit;
     }
 
-    public void setQuantumCircuit(byte[] quantumCircuit) {
+    public void setQuantumCircuit(String quantumCircuit) {
         this.quantumCircuit = quantumCircuit;
     }
 }

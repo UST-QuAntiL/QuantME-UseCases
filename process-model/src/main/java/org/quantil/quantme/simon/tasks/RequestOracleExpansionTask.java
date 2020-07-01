@@ -2,6 +2,7 @@ package org.quantil.quantme.simon.tasks;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Base64;
 
 import org.camunda.bpm.engine.delegate.BpmnError;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
@@ -32,8 +33,9 @@ public class RequestOracleExpansionTask extends SendMessageTask {
 	protected Object generateRequest(DelegateExecution execution, String correlationId) {
 		final ExpandOracleRequest request = new ExpandOracleRequest();
 		request.setProgrammingLanguage(execution.getVariable("QuantumProgrammingLanguage").toString());
+		request.setCircuitId(Integer.parseInt(execution.getVariable("CircuitId").toString()));
 		request.setOracleId(Integer.parseInt(execution.getVariable("OracleId").toString()));
-		request.setQuantumCircuit((byte[]) execution.getVariable("QuantumCircuit"));
+		request.setQuantumCircuit(Base64.getEncoder().encodeToString(((byte[]) execution.getVariable("QuantumCircuit"))));
 		try {
 			request.setOracleCircuitUrl(new URL(execution.getVariable("oracleURL").toString()));
 		} catch (MalformedURLException e) {
