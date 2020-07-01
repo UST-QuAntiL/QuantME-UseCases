@@ -4,7 +4,7 @@
     <bpmn2:serviceTask id="ServiceTask_1" camunda:class="org.quantil.quantme.simon.tasks.LoadQuantumCircuitDelegate" name="Load Quantum&#xD;&#xA;Circuit">
       <bpmn2:extensionElements>
         <camunda:inputOutput>
-          <camunda:inputParameter name="URL">http://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCase/master/README.md</camunda:inputParameter>
+          <camunda:inputParameter name="URL">https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCase/master/README.md</camunda:inputParameter>
           <camunda:outputParameter name="ServiceTask_1_CircuitId">${CircuitId}</camunda:outputParameter>
           <camunda:outputParameter name="ServiceTask_1_QuantumCircuit">${QuantumCircuit}</camunda:outputParameter>
           <camunda:outputParameter name="ServiceTask_1_ProgrammingLanguage">${ProgrammingLanguage}</camunda:outputParameter>
@@ -19,14 +19,6 @@
       <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
     </bpmn2:startEvent>
     <bpmn2:sequenceFlow id="SequenceFlow_1" name="" sourceRef="StartEvent_1" targetRef="ServiceTask_1"/>
-    <bpmn2:endEvent id="EndEvent_1" name="Send Result">
-      <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
-    </bpmn2:endEvent>
-    <bpmn2:userTask id="UserTask_1" camunda:assignee="TestUser" name="Test">
-      <bpmn2:incoming>SequenceFlow_4</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
-    </bpmn2:userTask>
-    <bpmn2:sequenceFlow id="SequenceFlow_2" name="" sourceRef="UserTask_1" targetRef="EndEvent_1"/>
     <bpmn2:subProcess id="SubProcess_1">
       <bpmn2:extensionElements>
         <camunda:inputOutput>
@@ -48,12 +40,25 @@
         <bpmn2:outgoing>SequenceFlow_6</bpmn2:outgoing>
       </bpmn2:sendTask>
       <bpmn2:sequenceFlow id="SequenceFlow_5" name="" sourceRef="StartEvent_2" targetRef="SendTask_1"/>
+      <bpmn2:sequenceFlow id="SequenceFlow_6" name="" sourceRef="SendTask_1" targetRef="ReceiveTask_1"/>
       <bpmn2:endEvent id="EndEvent_2">
-        <bpmn2:incoming>SequenceFlow_6</bpmn2:incoming>
+        <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
       </bpmn2:endEvent>
-      <bpmn2:sequenceFlow id="SequenceFlow_6" name="" sourceRef="SendTask_1" targetRef="EndEvent_2"/>
+      <bpmn2:receiveTask id="ReceiveTask_1" name="Receive Expanded&#xD;&#xA;Circuit">
+        <bpmn2:incoming>SequenceFlow_6</bpmn2:incoming>
+        <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
+      </bpmn2:receiveTask>
+      <bpmn2:sequenceFlow id="SequenceFlow_7" name="" sourceRef="ReceiveTask_1" targetRef="EndEvent_2"/>
     </bpmn2:subProcess>
     <bpmn2:sequenceFlow id="SequenceFlow_4" name="" sourceRef="SubProcess_1" targetRef="UserTask_1"/>
+    <bpmn2:endEvent id="EndEvent_1" name="Send Result">
+      <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:userTask id="UserTask_1" camunda:assignee="TestUser" name="Test">
+      <bpmn2:incoming>SequenceFlow_4</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
+    </bpmn2:userTask>
+    <bpmn2:sequenceFlow id="SequenceFlow_2" name="" sourceRef="UserTask_1" targetRef="EndEvent_1"/>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="simons-algorithm">
@@ -64,12 +69,12 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_UserTask_2" bpmnElement="UserTask_1">
-        <dc:Bounds height="80.0" width="100.0" x="720.0" y="152.0"/>
+        <dc:Bounds height="80.0" width="100.0" x="864.0" y="152.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_EndEvent_2" bpmnElement="EndEvent_1">
-        <dc:Bounds height="36.0" width="36.0" x="888.0" y="174.0"/>
+        <dc:Bounds height="36.0" width="36.0" x="1020.0" y="174.0"/>
         <bpmndi:BPMNLabel>
-          <dc:Bounds height="22.0" width="77.0" x="868.0" y="215.0"/>
+          <dc:Bounds height="22.0" width="77.0" x="1000.0" y="215.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="_BPMNShape_StartEvent_2" targetElement="_BPMNShape_ServiceTask_2">
@@ -80,10 +85,10 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="_BPMNShape_UserTask_2" targetElement="_BPMNShape_EndEvent_2">
-        <di:waypoint xsi:type="dc:Point" x="820.0" y="192.0"/>
-        <di:waypoint xsi:type="dc:Point" x="888.0" y="192.0"/>
+        <di:waypoint xsi:type="dc:Point" x="964.0" y="192.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1020.0" y="192.0"/>
         <bpmndi:BPMNLabel>
-          <dc:Bounds height="6.0" width="6.0" x="846.0" y="192.0"/>
+          <dc:Bounds height="6.0" width="6.0" x="990.0" y="192.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_ServiceTask_2" bpmnElement="ServiceTask_1">
@@ -97,13 +102,13 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_SubProcess_2" bpmnElement="SubProcess_1" isExpanded="true">
-        <dc:Bounds height="150.0" width="289.0" x="384.0" y="117.0"/>
+        <dc:Bounds height="150.0" width="398.0" x="384.0" y="117.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_4" bpmnElement="SequenceFlow_4" sourceElement="_BPMNShape_SubProcess_2" targetElement="_BPMNShape_UserTask_2">
-        <di:waypoint xsi:type="dc:Point" x="672.0" y="192.0"/>
-        <di:waypoint xsi:type="dc:Point" x="720.0" y="192.0"/>
+        <di:waypoint xsi:type="dc:Point" x="782.0" y="192.0"/>
+        <di:waypoint xsi:type="dc:Point" x="864.0" y="192.0"/>
         <bpmndi:BPMNLabel>
-          <dc:Bounds height="6.0" width="6.0" x="693.0" y="192.0"/>
+          <dc:Bounds height="6.0" width="6.0" x="803.0" y="192.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_3" bpmnElement="StartEvent_2">
@@ -123,14 +128,27 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_EndEvent_3" bpmnElement="EndEvent_2">
-        <dc:Bounds height="36.0" width="36.0" x="612.0" y="175.0"/>
+        <dc:Bounds height="36.0" width="36.0" x="720.0" y="175.0"/>
         <bpmndi:BPMNLabel>
-          <dc:Bounds height="0.0" width="0.0" x="630.0" y="216.0"/>
+          <dc:Bounds height="0.0" width="0.0" x="738.0" y="216.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_6" bpmnElement="SequenceFlow_6" sourceElement="_BPMNShape_SendTask_2" targetElement="_BPMNShape_EndEvent_3">
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_6" bpmnElement="SequenceFlow_6" sourceElement="_BPMNShape_SendTask_2" targetElement="_BPMNShape_ReceiveTask_2">
         <di:waypoint xsi:type="dc:Point" x="556.0" y="193.0"/>
-        <di:waypoint xsi:type="dc:Point" x="612.0" y="193.0"/>
+        <di:waypoint xsi:type="dc:Point" x="588.0" y="193.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="566.0" y="193.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_ReceiveTask_2" bpmnElement="ReceiveTask_1">
+        <dc:Bounds height="80.0" width="100.0" x="588.0" y="153.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_7" bpmnElement="SequenceFlow_7" sourceElement="_BPMNShape_ReceiveTask_2" targetElement="_BPMNShape_EndEvent_3">
+        <di:waypoint xsi:type="dc:Point" x="688.0" y="193.0"/>
+        <di:waypoint xsi:type="dc:Point" x="720.0" y="193.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="704.0" y="193.0"/>
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

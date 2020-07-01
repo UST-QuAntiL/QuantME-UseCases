@@ -24,8 +24,33 @@ from qiskit.transpiler.exceptions import TranspilerError
 import logging
 import json
 
-
-@app.route('/oracle-service/', methods=['POST'])
+@app.route('/oracle-service', methods=['POST'])
 def expand_oracle():
-    logging.info('Received Post request...')
+    """Expand an oracle in the given quantum circuit with the given oracle code."""
+
+    app.logger.info('Received Post request to expand oracle: ' + request.json)
+
+    if not request.json:
+        app.logger.error("Service currently only supports JSON")
+        abort(400)
+
+    if not 'ProgrammingLanguage' in request.json:
+        app.logger.error("ProgrammingLanguage not defined in request")
+        abort(400)
+
+    if not 'OracleId' in request.json:
+        app.logger.error("OracleId not defined in request")
+        abort(400)
+
+    if not 'OracleCircuitUrl' in request.json:
+        app.logger.error("OracleCircuitUrl not defined in request")
+        abort(400)
+
+    if not 'QuantumCircuit' in request.json:
+        app.logger.error("QuantumCircuit not defined in request")
+        abort(400)
+
+    app.logger.info("Passed input is valid")
+    app.logger.info(request.json)
+
     return jsonify({'Test': "Test123"}), 200

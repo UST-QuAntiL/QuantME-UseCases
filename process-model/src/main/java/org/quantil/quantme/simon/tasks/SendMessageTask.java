@@ -62,8 +62,8 @@ public abstract class SendMessageTask implements JavaDelegate {
         final Client client = ClientBuilder.newClient();
         try {
             final Response response = client.target(requestUrl)
-                    .request(MediaType.APPLICATION_XML)
-                    .post(Entity.entity(requestMessage, MediaType.APPLICATION_XML));
+                    .request(MediaType.APPLICATION_JSON)
+                    .post(Entity.entity(requestMessage, MediaType.APPLICATION_JSON));
 
             LOGGER.info("Server responded with status code: {}", response.getStatus());
         } catch(Exception e) {
