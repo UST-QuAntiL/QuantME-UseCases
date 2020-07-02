@@ -34,9 +34,8 @@ A configuration file is used to specify the following values:
 - The endpoint URL of the Oracle Replacement Service
 - The endpoint URL of the Circuit Execution Service
 - The endpoint URL of the Provenance Service
-- TODO
 
-This configuration file can be found [here](TODO).
+This configuration file can be found [here](process-model/src/main/resources/config.properties). However, if using the Docker-Compose setup on the same host where the Camunda Platform runs, the default configuration can be kept.
 
 ## Building the Camunda Project
 
@@ -67,7 +66,7 @@ We call the path where you unzipped the Camunda distribution _$CAMUNDA_HOME$_.
 to the following folder:
 
 ```
-$CAMUNDA_HOME$\server\apache-tomcat-XXX\webapps
+$CAMUNDA_HOME$/server/apache-tomcat-XXX/webapps
 ```
 
 You can now see the deployed process model in the various Camunda applications (Admin, Tasklist, and Cockpit): 
