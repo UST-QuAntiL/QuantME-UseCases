@@ -75,6 +75,14 @@ Go to [the Welcome application](http://localhost:8080/camunda/) and use "demo/de
 
 ## Initiating the Process Model
 
+Using the [Tasklist](http://localhost:8080/camunda/app/tasklist/default/#/login) Camunda application, initiate the process 
+by logging in (demo/demo) and then clicking on the button "Start process" and finally choosing "Simon's Algorithm".
+
+Thereby, two input parameters have to be passed:
+
+- *IBM Access Token*: TODO
+- *Oracle URL*: TODO
+
 TODO
 
 ## Disclaimer of Warranty
