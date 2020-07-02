@@ -11,7 +11,7 @@ The model can be visualized and edited using [bpmn.io](https://demo.bpmn.io/), o
 
 A visualization of the transformed BPMN 2.0-compliant model is presented below:
 
-TODO: png with transformed model
+![Transformed business process model](process-model/src/main/resources/simons-algorithm.png)
 
 ## Deploying the Required Services
 
