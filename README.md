@@ -79,10 +79,10 @@ by logging in (demo/demo) and then clicking on the button "Start process" and fi
 
 Thereby, two input parameters have to be passed:
 
-- *IBM Access Token*: TODO
-- *Oracle URL*: TODO
+- *IBM Access Token*: The access token for IBMs cloud offering [IBM Quantum Experience](https://quantum-computing.ibm.com/) to execute the quantum computation on a real quantum computer. 
+- *Oracle URL*: The URL where the oracle that should be used for Simon's algorithm is located. Three example oracles can be found [here](/circuits). However, any other oracle implementing a function *f : {0,1}<sup>2</sup> --> {0,1}<sup>2</sup>* can be used as they can be utilized with the 5 qubits provided by ibmq_rome.
 
-TODO
+After the termination of the calculation, a bit string *s'* is returned. Either *s'* is the solution s for Simon's problem or *s=0*. To determine which case is true, the user can evaluate the function *f(0)* and *f(s')* and if *f(0)=f(s')* then *s=s'* applies, otherwise *s=0*.
 
 ## Disclaimer of Warranty
 
