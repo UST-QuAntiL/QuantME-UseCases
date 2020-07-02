@@ -1,4 +1,7 @@
 # QuantME-UseCase
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 This project represents a Camunda BPMN 2.0-based business process that executes Simon's algorithm to analyse the function passed to it by an implementing oracle.
 
 The model presented here is a conversion of the following process model that uses the QuantME extension:
