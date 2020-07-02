@@ -62,11 +62,12 @@ Follow these steps to deploy the process model to the Camunda engine:
 
 2. Install the standalone [Camunda Community Platform](https://camunda.com/download/) (please follow the instructions on this website).
 We call the path where you unzipped the Camunda distribution _$CAMUNDA_HOME$_.
+
 3. Camunda has an embedded Apache Tomcat server. Deploy the project you built in step 1 to this server by copying the WAR file
 to the following folder:
 
 ```
-TODO
+$CAMUNDA_HOME$\server\apache-tomcat-XXX\webapps
 ```
 
 You can now see the deployed process model in the various Camunda applications (Admin, Tasklist, and Cockpit): 
