@@ -34,6 +34,7 @@ Otherwise, the services can also be set up manually. Please refer to the README 
 
 A configuration file is used to specify the following values:
 
+- The endpoint URL of the Camunda Engine (see sections bellow) 
 - The endpoint URL of the Oracle Replacement Service
 - The endpoint URL of the Circuit Execution Service
 - The endpoint URL of the Provenance Service
