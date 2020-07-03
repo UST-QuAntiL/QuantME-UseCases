@@ -18,11 +18,66 @@
 # ******************************************************************************
 import codecs
 import pickle
+import time
+
+import requests
+from qiskit import IBMQ, transpile, assemble, QiskitError
+from qiskit.providers import QiskitBackendNotFoundError, JobError, JobTimeoutError
+from qiskit.providers.ibmq.api.exceptions import RequestsApiError
+from qiskit.providers.jobstatus import JOB_FINAL_STATES
+
+from app import app
 
 
 def execute_circuit(correlation_Id, return_address, quantum_circuit_encoded, qpu, access_token):
     """Execute the given circuit on the given quantum computer"""
 
     quantum_circuit = pickle.loads(codecs.decode(quantum_circuit_encoded.encode(), "base64"))
-    print(quantum_circuit.depth())
-    # TODO: execute
+
+    ibm_qpu = get_qpu(access_token, qpu)
+    if ibm_qpu is None:
+        app.logger.error("Unable to retrieve qpu object with given name and given access token")
+        return
+    transpiled_circuit = transpile(quantum_circuit, backend=ibm_qpu)
+
+    app.logger.info(
+        "Start executing transpiled circuit with width " + str(transpiled_circuit.num_qubits) + " and depth " + str(
+            transpiled_circuit.depth()))
+    result_counts = execute(transpiled_circuit, 1024, ibm_qpu)
+    if result_counts is None:
+        app.logger.error("Execution failed!")
+        return
+    app.logger.info("Execution returned the following result counts: " + str(result_counts))
+
+    camunda_callback = requests.post(return_address, json={"messageName": correlation_Id, "processVariables": {
+        "executionResult": {"value": str(result_counts), "type": "String"}}})
+    app.logger.info("Callback returned status code: " + str(camunda_callback.status_code))
+
+
+def get_qpu(access_token, qpu):
+    """Load account from token. Get backend."""
+    try:
+        IBMQ.save_account(access_token, overwrite=True)
+        IBMQ.load_account()
+        provider = IBMQ.get_provider(group='open')
+        backend = provider.get_backend(qpu)
+        app.logger.info("QPU object successfully retrived from IBMQ")
+        return backend
+    except (QiskitBackendNotFoundError, RequestsApiError):
+        return None
+
+
+def execute(transpiled_circuit, shots, backend):
+    """Execute the quantum circuit."""
+    try:
+        job = backend.run(assemble(transpiled_circuit, shots=shots))
+
+        job_status = job.status()
+        while job_status not in JOB_FINAL_STATES:
+            app.logger.info("The execution is still running")
+            time.sleep(20)
+            job_status = job.status()
+
+        return job.result().get_counts()
+    except (JobError, JobTimeoutError):
+        return None
