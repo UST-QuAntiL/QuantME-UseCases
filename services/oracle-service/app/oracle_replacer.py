@@ -93,5 +93,5 @@ def replace_oracle(circuit_Id, oracle_Id, oracle_url, correlation_Id, return_add
     final_circuit = dag_to_circuit(dag_circuit)
     final_circuit_base64 = codecs.encode(pickle.dumps(final_circuit), "base64").decode()
     camunda_callback = requests.post(return_address, json={"messageName": correlation_Id, "processVariables": {
-        "quantumCircuit": {"value": final_circuit_base64, "type": "Bytes"}}})
+        "quantumCircuit": {"value": final_circuit_base64, "type": "String"}}})
     app.logger.info("Callback returned status code: " + str(camunda_callback.status_code))
