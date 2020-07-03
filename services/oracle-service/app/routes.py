@@ -16,20 +16,14 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 # ******************************************************************************
+import copy
 
-from app import app
+from qiskit.circuit import Qubit
+from qiskit.converters import circuit_to_dag, dag_to_circuit
+
+from app import app, qiskit_importer
 from flask import jsonify, abort, request
-from qiskit import transpile
-from qiskit.transpiler.exceptions import TranspilerError
-from urllib import request as urllib_request
-import logging
-import json
-import base64
-import tempfile
-import os
-import shutil
-import sys
-import importlib
+
 
 @app.route('/oracle-service', methods=['POST'])
 def expand_oracle():
@@ -62,7 +56,6 @@ def expand_oracle():
         app.logger.error("ProgrammingLanguage is not supported. Currently only Qiskit can be used")
         abort(400, "ProgrammingLanguage is not supported. Currently only Qiskit can be used")
 
-
     if not 'OracleCircuitUrl' in request.json:
         app.logger.error("OracleCircuitUrl not defined in request")
         abort(400, "OracleCircuitUrl not defined in request")
@@ -74,60 +67,70 @@ def expand_oracle():
 
     app.logger.info("Passed input is valid")
 
-    # write quantum circuit qiskit file to temp directory
-    quantum_circuit_bytes = base64.decodebytes(request.json['QuantumCircuit'].encode('utf-8'))
-    temp_dir = tempfile.mkdtemp()
-    file_name = "circuit_code_" + str(circuit_Id)
-    with open(os.path.join(temp_dir, file_name + ".py"), "wb") as f:
-        f.write(quantum_circuit_bytes)
-    sys.path.append(temp_dir)
-    app.logger.info("Created file at " + os.path.join(temp_dir, file_name + ".py"))
-
-    # get quantum circuit as code
-    circuit_mod = importlib.import_module(file_name)
-    circuit_code = circuit_mod.get_circuit()
-
-    # extract classical and quantum register for manipulations
+    # get circuit as qiskit object and check for validity
+    circuit_code = qiskit_importer.get_circuit_from_binary(circuit_Id, request.json['QuantumCircuit'].encode('utf-8'))
     if len(circuit_code.qubits) == 0:
         app.logger.error("QuantumCircuit uses no qubits. Aborting...")
         abort(400, "QuantumCircuit uses no qubits.")
     if len(circuit_code.clbits) == 0:
         app.logger.error("QuantumCircuit uses no classical bits. Aborting...")
         abort(400, "QuantumCircuit uses no classical bits.")
-    circuit_quantum_register = circuit_code.qubits[0].register
-    circuit_classical_register = circuit_code.clbits[0].register
-    app.logger.info("QuantumCircuit contains classical register with " + str(circuit_classical_register.size) + " bits and quantum register with " + str(circuit_quantum_register.size) + " qubits.")
-
-    # get oracle circuit from URL
-    app.logger.info("Downloading oracle circuit from URL: " + oracle_url)
-    oracle_file_name = file_name + "_" + str(oracle_Id)
-    with open(os.path.join(temp_dir, oracle_file_name + ".py"), "w") as f:
-        f.write(urllib_request.urlopen(oracle_url).read().decode("utf-8"))
-    sys.path.append(temp_dir)
-    app.logger.info("Created file at " + os.path.join(temp_dir, oracle_file_name + ".py"))
+    app.logger.info("QuantumCircuit contains " + str(len(circuit_code.clbits)) + " classical bits and " + str(
+        len(circuit_code.qubits)) + " qubits.")
 
     # get oracle circuit as code
-    try:
-        oracle_mod = importlib.import_module(oracle_file_name)
-        oracle_code = oracle_mod.get_circuit()
-    except:
-        app.logger.error("Error while importing oracle code from given url!")
+    oracle_code = qiskit_importer.get_oracle_from_url(oracle_url, oracle_Id)
+    if oracle_code is None:
         abort(400, "Error while importing oracle code from given url!")
+    app.logger.info("OracleCircuit contains " + str(len(oracle_code.qubits)) + " qubits.")
 
-    # extract classical and quantum register for manipulations
-    if len(oracle_code.qubits) == 0:
-        app.logger.error("QuantumCircuit uses no qubits. Aborting...")
-        abort(400, "QuantumCircuit uses no qubits.")
-    oracle_quantum_register = oracle_code.qubits[0].register
-    app.logger.info("OracleCircuit quantum register with " + str(oracle_quantum_register.size) + " qubits.")
-
-    if oracle_quantum_register.size != circuit_quantum_register.size:
+    # circuit and oracle should operate on the same set of qubits
+    if len(oracle_code.qubits) != len(circuit_code.qubits):
         app.logger.error("Oracle has to operate on the same size of quantum register than the quantum circuit!")
         abort(400, "Oracle has to operate on the same size of quantum register than the quantum circuit!")
 
-    # TODO: manipulate quantum circuit
+    # transform circuit and oracle to dag format to enable easier modifications
+    dag_circuit = circuit_to_dag(circuit_code)
+    dag_oracle = circuit_to_dag(oracle_code)
+    dag_circuit_back = copy.deepcopy(dag_circuit)
 
-    sys.path.remove(temp_dir)
-    shutil.rmtree(temp_dir, ignore_errors=True)
+    # insert the oracle into the circuit at the specified position
+    removed_operations = []
+    for node in dag_circuit.topological_nodes():
+        if node.type == 'in' and isinstance(node.wire, Qubit):
+            # find operation node for depth defined by 'oracle_Id'
+            i = 0
+            node_to_append_oracle = None
+            for node_on_wire in dag_circuit.nodes_on_wire(node.wire, only_ops=True):
+                i += 1
+                if i == oracle_Id:
+                    # this is the last operation that should be performed before the oracle is inserted
+                    node_to_append_oracle = node_on_wire
+                    break
+            if node_to_append_oracle is None:
+                app.logger.error("Unable to insert oracle at defined position!")
+                abort(400, "Unable to insert oracle at defined position!")
+
+            # remove descendant operations of the node temporarily from the dag
+            app.logger.info("Inserting oracle on wire " + str(node.wire) + " after operation with name "
+                            + node_to_append_oracle.name)
+            removed_operations.append(dag_circuit.descendants(node_to_append_oracle))
+            for descendant in dag_circuit.descendants(node_to_append_oracle):
+                if descendant.type == 'op':
+                    dag_circuit.remove_op_node(descendant)
+
+            # remove ancestor operations in the backup dag to store the circuit part behind the oracle
+            for ancestors in dag_circuit_back.ancestors(node_to_append_oracle):
+                if ancestors.type == 'op':
+                    dag_circuit_back.remove_op_node(ancestors)
+            dag_circuit_back.remove_op_node(node_to_append_oracle)
+
+    # compose front part of circuit, oracle, and back part of circuit to overall circuit
+    dag_circuit.compose(dag_oracle)
+    dag_circuit.compose(dag_circuit_back)
+
+    # TODO: return circuit
+    final_circuit = dag_to_circuit(dag_circuit)
+    final_circuit.draw(output='mpl', filename='circuit.png')
 
     return jsonify({'Test': "Test123"}), 200
