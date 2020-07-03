@@ -12,7 +12,7 @@ The model presented here is a conversion of the following process model that use
 The transformed BPMN 2.0 process model (in xml format) can be found [here](process-model/src/main/resources/simons-algorithm.bpmn).
 The model can be visualized and edited using [bpmn.io](https://demo.bpmn.io/), or the [Camunda Modeler](https://camunda.com/download/).
 
-A visualization of the transformed BPMN 2.0-compliant model is presented below:
+A visualization of the transformed BPMN 2.0-compliant model is presented below (please click on the figure to zoom in):
 
 ![Transformed business process model](process-model/src/main/resources/simons-algorithm.png)
 
