@@ -17,11 +17,9 @@
 #  limitations under the License.
 # ******************************************************************************
 import copy
+import threading
 
-from qiskit.circuit import Qubit
-from qiskit.converters import circuit_to_dag, dag_to_circuit
-
-from app import app, qiskit_importer
+from app import app, oracle_replacer
 from flask import jsonify, abort, request
 
 
@@ -34,11 +32,17 @@ def expand_oracle():
         app.logger.error("Service currently only supports JSON")
         abort(400, "Only Json supported")
 
-    if not 'CircuitId' in request.json:
+    if 'CorrelationId' not in request.json:
+        app.logger.error("CorrelationId not defined in request")
+        abort(400, "CorrelationId not defined in request")
+    correlation_Id = request.json['CorrelationId']
+    app.logger.info("CorrelationId: " + correlation_Id)
+
+    if 'CircuitId' not in request.json:
         app.logger.error("CircuitId not defined in request")
         abort(400, "CircuitId not defined in request")
 
-    if not 'OracleId' in request.json:
+    if 'OracleId' not in request.json:
         app.logger.error("OracleId not defined in request")
         abort(400, "OracleId not defined in request")
 
@@ -46,7 +50,7 @@ def expand_oracle():
     oracle_Id = request.json['OracleId']
     app.logger.info("Extending oracle with Id " + str(oracle_Id) + " on circuit with Id " + str(circuit_Id))
 
-    if not 'ProgrammingLanguage' in request.json:
+    if 'ProgrammingLanguage' not in request.json:
         app.logger.error("ProgrammingLanguage not defined in request")
         abort(400, "ProgrammingLanguage not defined in request")
 
@@ -56,81 +60,19 @@ def expand_oracle():
         app.logger.error("ProgrammingLanguage is not supported. Currently only Qiskit can be used")
         abort(400, "ProgrammingLanguage is not supported. Currently only Qiskit can be used")
 
-    if not 'OracleCircuitUrl' in request.json:
+    if 'OracleCircuitUrl' not in request.json:
         app.logger.error("OracleCircuitUrl not defined in request")
         abort(400, "OracleCircuitUrl not defined in request")
     oracle_url = request.json['OracleCircuitUrl']
 
-    if not 'QuantumCircuit' in request.json:
+    if 'QuantumCircuit' not in request.json:
         app.logger.error("QuantumCircuit not defined in request")
         abort(400, "QuantumCircuit not defined in request")
 
     app.logger.info("Passed input is valid")
 
-    # get circuit as qiskit object and check for validity
-    circuit_code = qiskit_importer.get_circuit_from_binary(circuit_Id, request.json['QuantumCircuit'].encode('utf-8'))
-    if len(circuit_code.qubits) == 0:
-        app.logger.error("QuantumCircuit uses no qubits. Aborting...")
-        abort(400, "QuantumCircuit uses no qubits.")
-    if len(circuit_code.clbits) == 0:
-        app.logger.error("QuantumCircuit uses no classical bits. Aborting...")
-        abort(400, "QuantumCircuit uses no classical bits.")
-    app.logger.info("QuantumCircuit contains " + str(len(circuit_code.clbits)) + " classical bits and " + str(
-        len(circuit_code.qubits)) + " qubits.")
+    t = threading.Thread(target=oracle_replacer.replace_oracle, args=(circuit_Id, oracle_Id, oracle_url, correlation_Id, request.json['QuantumCircuit'].encode('utf-8')))
+    t.daemon = True
+    t.start()
 
-    # get oracle circuit as code
-    oracle_code = qiskit_importer.get_oracle_from_url(oracle_url, oracle_Id)
-    if oracle_code is None:
-        abort(400, "Error while importing oracle code from given url!")
-    app.logger.info("OracleCircuit contains " + str(len(oracle_code.qubits)) + " qubits.")
-
-    # circuit and oracle should operate on the same set of qubits
-    if len(oracle_code.qubits) != len(circuit_code.qubits):
-        app.logger.error("Oracle has to operate on the same size of quantum register than the quantum circuit!")
-        abort(400, "Oracle has to operate on the same size of quantum register than the quantum circuit!")
-
-    # transform circuit and oracle to dag format to enable easier modifications
-    dag_circuit = circuit_to_dag(circuit_code)
-    dag_oracle = circuit_to_dag(oracle_code)
-    dag_circuit_back = copy.deepcopy(dag_circuit)
-
-    # insert the oracle into the circuit at the specified position
-    removed_operations = []
-    for node in dag_circuit.topological_nodes():
-        if node.type == 'in' and isinstance(node.wire, Qubit):
-            # find operation node for depth defined by 'oracle_Id'
-            i = 0
-            node_to_append_oracle = None
-            for node_on_wire in dag_circuit.nodes_on_wire(node.wire, only_ops=True):
-                i += 1
-                if i == oracle_Id:
-                    # this is the last operation that should be performed before the oracle is inserted
-                    node_to_append_oracle = node_on_wire
-                    break
-            if node_to_append_oracle is None:
-                app.logger.error("Unable to insert oracle at defined position!")
-                abort(400, "Unable to insert oracle at defined position!")
-
-            # remove descendant operations of the node temporarily from the dag
-            app.logger.info("Inserting oracle on wire " + str(node.wire) + " after operation with name "
-                            + node_to_append_oracle.name)
-            removed_operations.append(dag_circuit.descendants(node_to_append_oracle))
-            for descendant in dag_circuit.descendants(node_to_append_oracle):
-                if descendant.type == 'op':
-                    dag_circuit.remove_op_node(descendant)
-
-            # remove ancestor operations in the backup dag to store the circuit part behind the oracle
-            for ancestors in dag_circuit_back.ancestors(node_to_append_oracle):
-                if ancestors.type == 'op':
-                    dag_circuit_back.remove_op_node(ancestors)
-            dag_circuit_back.remove_op_node(node_to_append_oracle)
-
-    # compose front part of circuit, oracle, and back part of circuit to overall circuit
-    dag_circuit.compose(dag_oracle)
-    dag_circuit.compose(dag_circuit_back)
-
-    # TODO: return circuit
-    final_circuit = dag_to_circuit(dag_circuit)
-    final_circuit.draw(output='mpl', filename='circuit.png')
-
-    return jsonify({'Test': "Test123"}), 200
+    return jsonify({'Status': "Oracle expansion process initiated"}), 200

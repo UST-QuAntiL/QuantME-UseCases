@@ -32,6 +32,7 @@ public class RequestOracleExpansionTask extends SendMessageTask {
 	@Override
 	protected Object generateRequest(DelegateExecution execution, String correlationId) {
 		final ExpandOracleRequest request = new ExpandOracleRequest();
+		request.setCorrelationId(correlationId);
 		request.setProgrammingLanguage(execution.getVariable("QuantumProgrammingLanguage").toString());
 		request.setCircuitId(Integer.parseInt(execution.getVariable("CircuitId").toString()));
 		request.setOracleId(Integer.parseInt(execution.getVariable("OracleId").toString()));

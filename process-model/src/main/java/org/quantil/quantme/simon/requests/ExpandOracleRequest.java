@@ -24,6 +24,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 @XmlAccessorType(XmlAccessType.PROPERTY)
 public class ExpandOracleRequest {
 	
+	private String correlationId;
+	
 	private String programmingLanguage;
 	
 	private int circuitId;
@@ -33,6 +35,15 @@ public class ExpandOracleRequest {
 	private URL oracleCircuitUrl;
 	
 	private String quantumCircuit;
+	
+    @XmlElement(name="CorrelationId")
+    public String getCorrelationId() {
+        return correlationId;
+    }
+
+    public void setCorrelationId(String correlationId) {
+        this.correlationId = correlationId;
+    }
 
     @XmlElement(name="ProgrammingLanguage")
     public String getProgrammingLanguage() {
