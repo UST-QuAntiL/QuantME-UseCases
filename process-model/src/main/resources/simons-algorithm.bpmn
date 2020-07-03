@@ -28,6 +28,10 @@
           <camunda:inputParameter name="QuantumCircuit">${ServiceTask_1_QuantumCircuit}</camunda:inputParameter>
           <camunda:inputParameter name="ProgrammingLanguage">${ServiceTask_1_ProgrammingLanguage}</camunda:inputParameter>
           <camunda:inputParameter name="ExecutionResult">${ServiceTask_1_ExecutionResult}</camunda:inputParameter>
+          <camunda:outputParameter name="SubProcess_1_CircuitId">${CircuitId}</camunda:outputParameter>
+          <camunda:outputParameter name="SubProcess_1_QuantumCircuit">${quantumCircuit}</camunda:outputParameter>
+          <camunda:outputParameter name="SubProcess_1_ProgrammingLanguage">${ProgrammingLanguage}</camunda:outputParameter>
+          <camunda:outputParameter name="SubProcess_1_ExecutionResult">${ExecutionResult}</camunda:outputParameter>
         </camunda:inputOutput>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_3</bpmn2:incoming>
@@ -44,7 +48,7 @@
       <bpmn2:endEvent id="EndEvent_2">
         <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
       </bpmn2:endEvent>
-      <bpmn2:receiveTask id="ReceiveTask_1" name="Receive Expanded&#xD;&#xA;Circuit">
+      <bpmn2:receiveTask id="ReceiveTask_1" name="Receive Expanded&#xD;&#xA;Circuit" messageRef="Message_1tf0ndk">
         <bpmn2:incoming>SequenceFlow_6</bpmn2:incoming>
         <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
       </bpmn2:receiveTask>
@@ -60,6 +64,7 @@
     </bpmn2:userTask>
     <bpmn2:sequenceFlow id="SequenceFlow_2" name="" sourceRef="UserTask_1" targetRef="EndEvent_1"/>
   </bpmn2:process>
+  <bpmn2:message id="Message_1tf0ndk" name="requestOracleExpansionTask_${execution.processInstanceId}" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="simons-algorithm">
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">

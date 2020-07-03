@@ -16,14 +16,18 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 # ******************************************************************************
+import codecs
 import copy
+import pickle
+
+import requests
 
 from app import app, qiskit_importer
 from qiskit.circuit import Qubit
 from qiskit.converters import circuit_to_dag, dag_to_circuit
 
 
-def replace_oracle(circuit_Id, oracle_Id, oracle_url, correlation_Id, quantum_circuit):
+def replace_oracle(circuit_Id, oracle_Id, oracle_url, correlation_Id, return_address, quantum_circuit):
     """Replace the oracle in the given circuit"""
     # get circuit as qiskit object and check for validity
     circuit_code = qiskit_importer.get_circuit_from_binary(circuit_Id, quantum_circuit)
@@ -39,13 +43,13 @@ def replace_oracle(circuit_Id, oracle_Id, oracle_url, correlation_Id, quantum_ci
     # get oracle circuit as code
     oracle_code = qiskit_importer.get_oracle_from_url(oracle_url, oracle_Id)
     if oracle_code is None:
-        abort(400, "Error while importing oracle code from given url!")
+        return
     app.logger.info("OracleCircuit contains " + str(len(oracle_code.qubits)) + " qubits.")
 
     # circuit and oracle should operate on the same set of qubits
     if len(oracle_code.qubits) != len(circuit_code.qubits):
         app.logger.error("Oracle has to operate on the same size of quantum register than the quantum circuit!")
-        abort(400, "Oracle has to operate on the same size of quantum register than the quantum circuit!")
+        return
 
     # transform circuit and oracle to dag format to enable easier modifications
     dag_circuit = circuit_to_dag(circuit_code)
@@ -66,7 +70,7 @@ def replace_oracle(circuit_Id, oracle_Id, oracle_url, correlation_Id, quantum_ci
                     break
             if node_to_append_oracle is None:
                 app.logger.error("Unable to insert oracle at defined position!")
-                abort(400, "Unable to insert oracle at defined position!")
+                return
 
             # remove descendant operations of the node temporarily from the dag
             app.logger.info("Inserting oracle on wire " + str(node.wire) + " after operation with name "
@@ -85,6 +89,9 @@ def replace_oracle(circuit_Id, oracle_Id, oracle_url, correlation_Id, quantum_ci
     dag_circuit.compose(dag_oracle)
     dag_circuit.compose(dag_circuit_back)
 
-    # TODO: operate on seperate thread, return circuit via post to Camunda and use correlation id
+    # build response to post to Camunda Rest API
     final_circuit = dag_to_circuit(dag_circuit)
-    final_circuit.draw(output='mpl', filename='circuit.png')
+    final_circuit_base64 = codecs.encode(pickle.dumps(final_circuit), "base64").decode()
+    camunda_callback = requests.post(return_address, json={"messageName": correlation_Id, "processVariables": {
+        "quantumCircuit": {"value": final_circuit_base64, "type": "Bytes"}}})
+    app.logger.info("Callback returned status code: " + str(camunda_callback.status_code))

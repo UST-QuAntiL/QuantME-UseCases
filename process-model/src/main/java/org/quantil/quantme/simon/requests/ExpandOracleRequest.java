@@ -26,6 +26,8 @@ public class ExpandOracleRequest {
 	
 	private String correlationId;
 	
+	private String returnAddress;
+	
 	private String programmingLanguage;
 	
 	private int circuitId;
@@ -43,6 +45,15 @@ public class ExpandOracleRequest {
 
     public void setCorrelationId(String correlationId) {
         this.correlationId = correlationId;
+    }
+    
+    @XmlElement(name="ReturnAddress")
+    public String getReturnAddress() {
+        return returnAddress;
+    }
+
+    public void setReturnAddress(String returnAddress) {
+        this.returnAddress = returnAddress;
     }
 
     @XmlElement(name="ProgrammingLanguage")

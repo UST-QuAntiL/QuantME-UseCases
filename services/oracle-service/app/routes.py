@@ -16,7 +16,6 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 # ******************************************************************************
-import copy
 import threading
 
 from app import app, oracle_replacer
@@ -37,6 +36,12 @@ def expand_oracle():
         abort(400, "CorrelationId not defined in request")
     correlation_Id = request.json['CorrelationId']
     app.logger.info("CorrelationId: " + correlation_Id)
+
+    if 'ReturnAddress' not in request.json:
+        app.logger.error("ReturnAddress not defined in request")
+        abort(400, "ReturnAddress not defined in request")
+    return_address = request.json['ReturnAddress']
+    app.logger.info("ReturnAddress: " + return_address)
 
     if 'CircuitId' not in request.json:
         app.logger.error("CircuitId not defined in request")
@@ -71,7 +76,7 @@ def expand_oracle():
 
     app.logger.info("Passed input is valid")
 
-    t = threading.Thread(target=oracle_replacer.replace_oracle, args=(circuit_Id, oracle_Id, oracle_url, correlation_Id, request.json['QuantumCircuit'].encode('utf-8')))
+    t = threading.Thread(target=oracle_replacer.replace_oracle, args=(circuit_Id, oracle_Id, oracle_url, correlation_Id, return_address, request.json['QuantumCircuit'].encode('utf-8')))
     t.daemon = True
     t.start()
 

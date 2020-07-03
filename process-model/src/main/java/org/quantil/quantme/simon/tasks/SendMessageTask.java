@@ -3,6 +3,7 @@ package org.quantil.quantme.simon.tasks;
 import org.camunda.bpm.engine.delegate.BpmnError;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import org.quantil.quantme.simon.config.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import javax.ws.rs.client.Client;
@@ -32,6 +33,13 @@ public abstract class SendMessageTask implements JavaDelegate {
 	 */
     private String generateCorrelationId(DelegateExecution execution){
         return getOperationName() + "_" + execution.getProcessInstanceId();
+    }
+    
+    /**
+     * Camunda endpoint to receive callbacks
+     */
+    protected String getMessageEndPointUrl(){
+        return String.format("%s/%s", Configuration.getInstance().properties.getProperty("engine-rest-api-url"), "message");
     }
 
     /**
