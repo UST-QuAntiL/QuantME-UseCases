@@ -68,7 +68,7 @@ def expand_oracle():
 
     if 'AccessToken' not in request.json:
         app.logger.error("AccessToken not defined in request")
-        abort(400, "QPU AccessToken defined in request")
+        abort(400, "AccessToken not defined in request")
     access_token = request.json['AccessToken']
 
     if 'QuantumCircuit' not in request.json:

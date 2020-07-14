@@ -1,11 +1,12 @@
 from qiskit import QuantumRegister, QuantumCircuit
 
 # Truth table:
-# 00 | 10
-# 01 | 11
-# 10 | 10
-# 11 | 11
-# --> s=10
+# q[1] | q[0] ||| q[3] | q[2]
+#   0  |   0  |||   0  |   1
+#   0  |   1  |||   0  |   1
+#   1  |   0  |||   1  |   1
+#   1  |   1  |||   1  |   1
+# --> searched bit string: s = 01
 
 qc = QuantumCircuit()
 

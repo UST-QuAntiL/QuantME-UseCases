@@ -2,8 +2,7 @@ package org.quantil.quantme.simon.tasks;
 
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.quantil.quantme.simon.config.Configuration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.quantil.quantme.simon.requests.MitigateErrorRequest;
 
 /********************************************************************************
  * Copyright (c) 2020 Institute for the Architecture of Application System -
@@ -19,15 +18,18 @@ import org.slf4j.LoggerFactory;
 
 public class RequestErrorMitigationTask extends SendMessageTask {
 	
-	private final static Logger LOGGER = LoggerFactory.getLogger(RequestErrorMitigationTask.class);
-	
 	private static final String OPERATION_NAME = "requestErrorMitigationTask";
 
 	@Override
 	protected Object generateRequest(DelegateExecution execution, String correlationId) {
-		RequestErrorMitigationTask errorMitigationTask = new RequestErrorMitigationTask();
-		// TODO
-		return errorMitigationTask;
+		MitigateErrorRequest mitigateErrorRequest = new MitigateErrorRequest();
+		mitigateErrorRequest.setCorrelationId(correlationId);
+		mitigateErrorRequest.setReturnAddress(getMessageEndPointUrl());
+		mitigateErrorRequest.setUnfoldingTechnique(execution.getVariable("UnfoldingTechnique").toString());
+		mitigateErrorRequest.setQPU(execution.getVariable("QPU").toString());
+		mitigateErrorRequest.setMaxAge(Integer.parseInt(execution.getVariable("MaxAge").toString()));
+		mitigateErrorRequest.setResult(execution.getVariable("ExecutionResult").toString());
+		return mitigateErrorRequest;
 	}
 
 	@Override
