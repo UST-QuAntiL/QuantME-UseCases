@@ -34,7 +34,7 @@ public class RequestOracleExpansionTask extends SendMessageTask {
 		final ExpandOracleRequest request = new ExpandOracleRequest();
 		request.setCorrelationId(correlationId);
 		request.setReturnAddress(getMessageEndPointUrl());
-		request.setProgrammingLanguage(execution.getVariable("QuantumProgrammingLanguage").toString());
+		request.setProgrammingLanguage(execution.getVariable("ProgrammingLanguage").toString());
 		request.setCircuitId(Integer.parseInt(execution.getVariable("CircuitId").toString()));
 		request.setOracleId(Integer.parseInt(execution.getVariable("OracleId").toString()));
 		request.setQuantumCircuit(Base64.getEncoder().encodeToString(((byte[]) execution.getVariable("QuantumCircuit"))));

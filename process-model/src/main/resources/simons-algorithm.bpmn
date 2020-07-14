@@ -4,9 +4,9 @@
     <bpmn2:subProcess id="SubProcess_2" name="Execute Circuit">
       <bpmn2:extensionElements>
         <camunda:inputOutput>
-          <camunda:inputParameter name="QuantumProgrammingLanguage">Qiskit</camunda:inputParameter>
           <camunda:inputParameter name="Provider">IBM</camunda:inputParameter>
           <camunda:inputParameter name="QPU">ibmq_london</camunda:inputParameter>
+          <camunda:inputParameter name="Shots">1024</camunda:inputParameter>
           <camunda:inputParameter name="CircuitId">${SubProcess_1_CircuitId}</camunda:inputParameter>
           <camunda:inputParameter name="QuantumCircuit">${SubProcess_1_QuantumCircuit}</camunda:inputParameter>
           <camunda:inputParameter name="ProgrammingLanguage">${SubProcess_1_ProgrammingLanguage}</camunda:inputParameter>
@@ -41,7 +41,6 @@
     <bpmn2:subProcess id="SubProcess_1" name="Replace Oracle">
       <bpmn2:extensionElements>
         <camunda:inputOutput>
-          <camunda:inputParameter name="QuantumProgrammingLanguage">Qiskit</camunda:inputParameter>
           <camunda:inputParameter name="OracleId">1</camunda:inputParameter>
           <camunda:inputParameter name="CircuitId">${ServiceTask_1_CircuitId}</camunda:inputParameter>
           <camunda:inputParameter name="QuantumCircuit">${ServiceTask_1_QuantumCircuit}</camunda:inputParameter>
@@ -75,6 +74,21 @@
     </bpmn2:subProcess>
     <bpmn2:sequenceFlow id="SequenceFlow_4" name="" sourceRef="SubProcess_1" targetRef="SubProcess_2"/>
     <bpmn2:subProcess id="SubProcess_3" name="Mitigate Readout-Error">
+      <bpmn2:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="UnfoldingTechnique">Correction Matrix</camunda:inputParameter>
+          <camunda:inputParameter name="QPU">ibmq_london</camunda:inputParameter>
+          <camunda:inputParameter name="MaxAge">60</camunda:inputParameter>
+          <camunda:inputParameter name="CircuitId">${SubProcess_2_CircuitId}</camunda:inputParameter>
+          <camunda:inputParameter name="QuantumCircuit">${SubProcess_2_QuantumCircuit}</camunda:inputParameter>
+          <camunda:inputParameter name="ProgrammingLanguage">${SubProcess_2_ProgrammingLanguage}</camunda:inputParameter>
+          <camunda:inputParameter name="ExecutionResult">${SubProcess_2_ExecutionResult}</camunda:inputParameter>
+          <camunda:outputParameter name="SubProcess_3_CircuitId">${CircuitId}</camunda:outputParameter>
+          <camunda:outputParameter name="SubProcess_3_QuantumCircuit">${QuantumCircuit}</camunda:outputParameter>
+          <camunda:outputParameter name="SubProcess_3_ProgrammingLanguage">${ProgrammingLanguage}</camunda:outputParameter>
+          <camunda:outputParameter name="SubProcess_3_ExecutionResult">${executionResult}</camunda:outputParameter>
+        </camunda:inputOutput>
+      </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_8</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_15</bpmn2:outgoing>
       <bpmn2:startEvent id="StartEvent_4">

@@ -25,7 +25,7 @@ public class RequestQuantumCircuitExecutionTask extends SendMessageTask {
 		final ExecuteCircuitRequst request = new ExecuteCircuitRequst();
 		request.setCorrelationId(correlationId);
 		request.setReturnAddress(getMessageEndPointUrl());
-		request.setProgrammingLanguage(execution.getVariable("QuantumProgrammingLanguage").toString());
+		request.setProgrammingLanguage(execution.getVariable("ProgrammingLanguage").toString());
 		request.setProvider(execution.getVariable("Provider").toString());
 		request.setQPU(execution.getVariable("QPU").toString());
 		request.setAccessToken(execution.getVariable("ibmAccessToken").toString());
