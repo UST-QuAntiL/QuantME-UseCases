@@ -76,9 +76,14 @@ def expand_oracle():
         abort(400, "QuantumCircuit not defined in request")
     quantum_circuit_encoded = request.json['QuantumCircuit']
 
+    shots = request.json['Shots']
+    if 'Shots' not in request.json:
+        app.logger.info("Using default number of shots (1024)")
+        shots = 1024
+
     app.logger.info("Passed input is valid")
 
-    t = threading.Thread(target=circuit_executor.execute_circuit, args=(correlation_Id, return_address, quantum_circuit_encoded, qpu, access_token))
+    t = threading.Thread(target=circuit_executor.execute_circuit, args=(correlation_Id, return_address, quantum_circuit_encoded, qpu, access_token, shots))
     t.daemon = True
     t.start()
 

@@ -30,6 +30,7 @@ public class RequestQuantumCircuitExecutionTask extends SendMessageTask {
 		request.setQPU(execution.getVariable("QPU").toString());
 		request.setAccessToken(execution.getVariable("ibmAccessToken").toString());
 		request.setQuantumCircuit(execution.getVariable("QuantumCircuit").toString());
+		request.setShots(Integer.parseInt(execution.getVariable("Shots").toString()));
 		return request;
 	}
 

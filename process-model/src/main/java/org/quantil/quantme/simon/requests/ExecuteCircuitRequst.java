@@ -35,6 +35,8 @@ public class ExecuteCircuitRequst {
 	
 	private String quantumCircuit;
 	
+	private int shots;
+	
     @XmlElement(name="CorrelationId")
     public String getCorrelationId() {
         return correlationId;
@@ -96,5 +98,14 @@ public class ExecuteCircuitRequst {
 
     public void setQuantumCircuit(String quantumCircuit) {
         this.quantumCircuit = quantumCircuit;
+    }
+    
+    @XmlElement(name="Shots")
+    public int getShots() {
+        return shots;
+    }
+
+    public void setShots(int shots) {
+        this.shots = shots;
     }
 }

@@ -29,7 +29,7 @@ from qiskit.providers.jobstatus import JOB_FINAL_STATES
 from app import app
 
 
-def execute_circuit(correlation_Id, return_address, quantum_circuit_encoded, qpu, access_token):
+def execute_circuit(correlation_Id, return_address, quantum_circuit_encoded, qpu, access_token, shots):
     """Execute the given circuit on the given quantum computer"""
 
     quantum_circuit = pickle.loads(codecs.decode(quantum_circuit_encoded.encode(), "base64"))
@@ -43,7 +43,7 @@ def execute_circuit(correlation_Id, return_address, quantum_circuit_encoded, qpu
     app.logger.info(
         "Start executing transpiled circuit with width " + str(transpiled_circuit.num_qubits) + " and depth " + str(
             transpiled_circuit.depth()))
-    result_counts = execute(transpiled_circuit, 1024, ibm_qpu)
+    result_counts = execute(transpiled_circuit, shots, ibm_qpu)
     if result_counts is None:
         app.logger.error("Execution failed!")
         return
