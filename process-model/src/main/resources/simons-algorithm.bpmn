@@ -136,10 +136,20 @@
       <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
     </bpmn2:startEvent>
     <bpmn2:sequenceFlow id="SequenceFlow_1" name="" sourceRef="StartEvent_1" targetRef="ServiceTask_1"/>
+    <bpmn2:boundaryEvent id="BoundaryEvent_1" name="" attachedToRef="SubProcess_2">
+      <bpmn2:outgoing>SequenceFlow_17</bpmn2:outgoing>
+      <bpmn2:messageEventDefinition id="_MessageEventDefinition_2" messageRef="Message_1tf0ziz"/>
+    </bpmn2:boundaryEvent>
+    <bpmn2:sequenceFlow id="SequenceFlow_17" name="" sourceRef="BoundaryEvent_1" targetRef="EndEvent_5"/>
+    <bpmn2:endEvent id="EndEvent_5" name="Inform about &#xD;&#xA;failed execution">
+      <bpmn2:incoming>SequenceFlow_17</bpmn2:incoming>
+      <bpmn2:messageEventDefinition id="_MessageEventDefinition_3" camunda:class="org.quantil.quantme.simon.tasks.ReportFailedExecution"/>
+    </bpmn2:endEvent>
   </bpmn2:process>
   <bpmn2:message id="Message_1tf0ndk" name="requestOracleExpansionTask_${execution.processInstanceId}"/>
   <bpmn2:message id="Message_1tf0nab" name="requestCircuitExecutionTask_${execution.processInstanceId}"/>
   <bpmn2:message id="Message_1tf0nxy" name="requestErrorMitigationTask_${execution.processInstanceId}"/>
+  <bpmn2:message id="Message_1tf0ziz" name="error_requestCircuitExecutionTask_${execution.processInstanceId}"/>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="simons-algorithm">
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
@@ -327,6 +337,26 @@
         <di:waypoint xsi:type="dc:Point" x="1560.0" y="190.0"/>
         <bpmndi:BPMNLabel>
           <dc:Bounds height="6.0" width="6.0" x="1541.0" y="190.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_BoundaryEvent_2" bpmnElement="BoundaryEvent_1">
+        <dc:Bounds height="36.0" width="36.0" x="1044.0" y="247.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="1059.0" y="288.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_EndEvent_6" bpmnElement="EndEvent_5">
+        <dc:Bounds height="36.0" width="36.0" x="1143.0" y="336.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="38.0" width="96.0" x="1113.0" y="377.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_17" bpmnElement="SequenceFlow_17" sourceElement="_BPMNShape_BoundaryEvent_2" targetElement="_BPMNShape_EndEvent_6">
+        <di:waypoint xsi:type="dc:Point" x="1062.0" y="283.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1062.0" y="354.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1143.0" y="354.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="1063.0" y="354.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>

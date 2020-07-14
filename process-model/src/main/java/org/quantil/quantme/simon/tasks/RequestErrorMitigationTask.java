@@ -25,8 +25,9 @@ public class RequestErrorMitigationTask extends SendMessageTask {
 
 	@Override
 	protected Object generateRequest(DelegateExecution execution, String correlationId) {
+		RequestErrorMitigationTask errorMitigationTask = new RequestErrorMitigationTask();
 		// TODO
-		return null;
+		return errorMitigationTask;
 	}
 
 	@Override

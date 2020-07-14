@@ -88,6 +88,9 @@ Thereby, two input parameters have to be passed:
 
 After the termination of the calculation, a bit string *s'* is returned. Either *s'* is the solution s for Simon's problem or *s=0*. To determine which case is true, the user can evaluate the function *f(0)* and *f(s')* and if *f(0)=f(s')* then *s=s'* applies, otherwise *s=0*.
 
+*Note:* The result as well as errors from other message end events are printed to the console of the Camunda engine. 
+Therefore, have a look at this console if the Camunda Cockpit does not display a running instance any more, as the free version does not display terminated instances.
+
 ## Disclaimer of Warranty
 
 Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE.

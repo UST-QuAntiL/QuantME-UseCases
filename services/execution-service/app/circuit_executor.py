@@ -37,6 +37,9 @@ def execute_circuit(correlation_Id, return_address, quantum_circuit_encoded, qpu
     ibm_qpu = get_qpu(access_token, qpu)
     if ibm_qpu is None:
         app.logger.error("Unable to retrieve qpu object with given name and given access token")
+        camunda_callback = requests.post(return_address, json={"messageName": "error_" + correlation_Id, "processVariables": {
+            "executionResult": {"value": "Unable to load account with given access token.", "type": "String"}}})
+        app.logger.info("Callback returned status code: " + str(camunda_callback.status_code))
         return
     transpiled_circuit = transpile(quantum_circuit, backend=ibm_qpu)
 
@@ -46,6 +49,9 @@ def execute_circuit(correlation_Id, return_address, quantum_circuit_encoded, qpu
     result_counts = execute(transpiled_circuit, shots, ibm_qpu)
     if result_counts is None:
         app.logger.error("Execution failed!")
+        camunda_callback = requests.post(return_address, json={"messageName": "error_" + correlation_Id, "processVariables": {
+            "executionResult": {"value": "Unable to retrieve results from execution.", "type": "String"}}})
+        app.logger.info("Callback returned status code: " + str(camunda_callback.status_code))
         return
     app.logger.info("Execution returned the following result counts: " + str(result_counts))
 
