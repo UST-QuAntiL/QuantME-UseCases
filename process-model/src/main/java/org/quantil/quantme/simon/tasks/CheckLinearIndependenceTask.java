@@ -54,17 +54,29 @@ public class CheckLinearIndependenceTask implements JavaDelegate {
 			LOGGER.debug("Found solution: {}", resultBitString);
 			
 			Object previousResultsVar = execution.getVariable("PreviousResults");
+			String newResultSet;
 			if (Objects.isNull(previousResultsVar)) {
 				// no previous results --> current result is linearly independent
-				execution.setVariable("PreviousResults", resultBitString);
+				newResultSet = resultBitString;
 			} else {
 				String previousResults = previousResultsVar.toString();
 				LOGGER.debug("There already exist other solutions: {}. Checking linear independence to other results...", previousResults);
-				// TODO: Check linear independence too current results and evaluate expression for gateway
-				String newResultSet = previousResults + "," + resultBitString;
-				
-				execution.setVariable("PreviousResults", resultBitString);
+				// TODO: Check linear independence too current results and only add if independent
+				newResultSet = previousResults + "," + resultBitString;
 			}
+			
+			// write new result set to Camunda variable
+			execution.setVariable("PreviousResults", newResultSet);
+			
+			// check if N-1 results for Simon's algorithm are found and set condition for gateway
+			int numberOfNewResults = newResultSet.split(",").length;
+			LOGGER.debug("New result set contains {} results and N equals {}.", numberOfNewResults, resultBitString.length());
+			if (numberOfNewResults >= resultBitString.length() - 1) {
+				execution.setVariable("status", "complete");
+			} else {
+				execution.setVariable("status", "incomplete");
+			}
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 			LOGGER.error("Failed to check linear independence for results: {}", executionResult.toString());
