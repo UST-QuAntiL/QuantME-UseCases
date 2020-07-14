@@ -21,7 +21,7 @@ import pickle
 import time
 
 import requests
-from qiskit import IBMQ, transpile, assemble, QiskitError
+from qiskit import IBMQ, transpile, assemble
 from qiskit.providers import QiskitBackendNotFoundError, JobError, JobTimeoutError
 from qiskit.providers.ibmq.api.exceptions import RequestsApiError
 from qiskit.providers.jobstatus import JOB_FINAL_STATES
