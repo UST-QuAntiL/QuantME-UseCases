@@ -24,6 +24,8 @@ For the execution of the BPMN 2.0 process model, a set of services providing the
 docker-compose up -d
 ```
 
+Please wait until all three services are up and running.
+
 In case you have not installed Docker or Docker-Compose, please refer to the following websites:
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker-Compose](https://docs.docker.com/compose/)
@@ -34,12 +36,12 @@ Otherwise, the services can also be set up manually. Please refer to the README 
 
 A configuration file is used to specify the following values:
 
-- The endpoint URL of the Camunda Engine (see sections bellow) 
+- The endpoint URL of the Camunda Engine (please use your IP address if you run the services using Docker) 
 - The endpoint URL of the Oracle Replacement Service
 - The endpoint URL of the Circuit Execution Service
 - The endpoint URL of the Provenance Service
 
-This configuration file can be found [here](process-model/src/main/resources/config.properties). However, if using the Docker-Compose setup on the same host where the Camunda Platform runs, the default configuration can be kept.
+This configuration file can be found [here](process-model/src/main/resources/config.properties). However, if using the Docker-Compose setup on the same host where the Camunda Platform runs, the default configuration can be kept, except using your IP in the Camunda Engine URL, as the Docker Containers can not access it via *localhost*.
 
 ## Building the Camunda Project
 
@@ -88,8 +90,10 @@ Thereby, two input parameters have to be passed:
 
 After the termination of the calculation, a bit string *s'* is returned. Either *s'* is the solution s for Simon's problem or *s=0*. To determine which case is true, the user can evaluate the function *f(0)* and *f(s')* and if *f(0)=f(s')* then *s=s'* applies, otherwise *s=0*.
 
-*Note:* The result as well as errors from other message end events are printed to the console of the Camunda engine. 
+*Notes:* 
+- The result as well as errors from other message end events are printed to the console of the Camunda engine. 
 Therefore, have a look at this console if the Camunda Cockpit does not display a running instance any more, as the free version does not display terminated instances.
+- When executing the first quantum circuit, the provenance service has to build a new calibration matrix. This requires to run lots of calibration circuits, and thus, takes some time. Please have a look in the logs of the services to track the progress.
 
 ## Disclaimer of Warranty
 
