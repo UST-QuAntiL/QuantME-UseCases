@@ -33,6 +33,8 @@ public class MitigateErrorRequest {
 	
 	private String result;
 	
+	private String accessToken;
+	
     @XmlElement(name="CorrelationId")
     public String getCorrelationId() {
         return correlationId;
@@ -85,5 +87,14 @@ public class MitigateErrorRequest {
 
     public void setResult(String result) {
         this.result = result;
+    }
+    
+    @XmlElement(name="AccessToken")
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 }

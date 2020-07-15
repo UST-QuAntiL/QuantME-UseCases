@@ -58,6 +58,8 @@ def mitigate_error():
 
     max_age = request.json['MaxAge']
 
+    access_token = request.json['AccessToken']
+
     if 'Result' not in request.json:
         app.logger.error("Result not defined in request")
         abort(400, "Result not defined in request")
@@ -66,7 +68,7 @@ def mitigate_error():
 
     app.logger.info("Passed input is valid")
 
-    t = threading.Thread(target=unfolding_utils.mitigate_error, args=(correlation_Id, return_address, qpu, max_age, result))
+    t = threading.Thread(target=unfolding_utils.mitigate_error, args=(correlation_Id, return_address, qpu, max_age, result, access_token))
     t.daemon = True
     t.start()
 

@@ -29,6 +29,7 @@ public class RequestErrorMitigationTask extends SendMessageTask {
 		mitigateErrorRequest.setQPU(execution.getVariable("QPU").toString());
 		mitigateErrorRequest.setMaxAge(Integer.parseInt(execution.getVariable("MaxAge").toString()));
 		mitigateErrorRequest.setResult(execution.getVariable("ExecutionResult").toString());
+		mitigateErrorRequest.setAccessToken(execution.getVariable("ibmAccessToken").toString());
 		return mitigateErrorRequest;
 	}
 
