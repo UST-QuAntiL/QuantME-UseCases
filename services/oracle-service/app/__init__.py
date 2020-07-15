@@ -19,7 +19,6 @@
 
 from flask import Flask
 import logging
-import rq
 
 app = Flask(__name__)
 app.logger.setLevel(logging.DEBUG)

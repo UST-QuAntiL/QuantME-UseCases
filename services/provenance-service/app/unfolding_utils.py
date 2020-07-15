@@ -41,6 +41,7 @@ def mitigate_error(correlation_Id, return_address, qpu, max_age, result, access_
         mitigated_results = meas_filter.apply(ast.literal_eval(result))
         app.logger.info('Result after mitigation: ' + str(mitigated_results))
 
+    app.logger.info('Sending callback to ' + str(return_address))
     camunda_callback = requests.post(return_address, json={"messageName": correlation_Id, "processVariables": {
         "executionResult": {"value": str(mitigated_results), "type": "String"}}})
     app.logger.info("Callback returned status code: " + str(camunda_callback.status_code))
