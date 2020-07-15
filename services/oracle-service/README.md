@@ -17,11 +17,13 @@ The oracle service is accessible on [localhost:8081/oracle-service](http://local
 
 ## Oracle Replacement Request
 
-Send CircuitId, OracleId, ProgrammingLanguage, OracleCircuitUrl, and the QuantumCircuit to the API to get the resulting circuit with the expanded oracle.
+Send CorrelationId, ReturnAddress, CircuitId, OracleId, ProgrammingLanguage, OracleCircuitUrl, and the QuantumCircuit to the API to get the resulting circuit with the expanded oracle at the specified address via POST.
 
 `POST /oracle-service/`  
 ```
 {  
+    "CorrelationId": "Unique Id that is returned in the response to correlate it with the request",
+    "ReturnAddress": "The address to send the resulting circuit to",
     "CircuitId": "Id of the quantum circuit to identify it uniquely",
     "OracleId": "Depth in the circuit where the oracle circuit should be inserted",
     "ProgrammingLanguage": "Programming language of the circuit and oracle (only qiskit supported at the moment)",
