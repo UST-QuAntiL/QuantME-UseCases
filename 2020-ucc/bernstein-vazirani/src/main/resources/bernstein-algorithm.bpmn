@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd" id="_-u90QLojEeq3kdaVX7setA" exporter="camunda modeler" exporterVersion="3.0.0" targetNamespace="http://camunda.org/schema/1.0/bpmn">
+  <bpmn2:process id="bernstein-algorithm" name="Bernstein-Vazirani's Algorithm" isExecutable="true">
+    <bpmn2:startEvent id="StartEvent_1" camunda:formKey="embedded:app:forms/request-bernstein-algorithm.html" name="Receive Request">
+      <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:subProcess id="SubProcess_1" name="Replace Oracle">
+      <bpmn2:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="OracleId">3</camunda:inputParameter>
+          <camunda:inputParameter name="CircuitId">${ServiceTask_1_CircuitId}</camunda:inputParameter>
+          <camunda:inputParameter name="QuantumCircuit">${ServiceTask_1_QuantumCircuit}</camunda:inputParameter>
+          <camunda:inputParameter name="ProgrammingLanguage">${ServiceTask_1_ProgrammingLanguage}</camunda:inputParameter>
+          <camunda:inputParameter name="ExecutionResult">${ServiceTask_1_ExecutionResult}</camunda:inputParameter>
+          <camunda:outputParameter name="SubProcess_1_CircuitId">${CircuitId}</camunda:outputParameter>
+          <camunda:outputParameter name="SubProcess_1_QuantumCircuit">${quantumCircuit}</camunda:outputParameter>
+          <camunda:outputParameter name="SubProcess_1_ProgrammingLanguage">${ProgrammingLanguage}</camunda:outputParameter>
+          <camunda:outputParameter name="SubProcess_1_ExecutionResult">${ExecutionResult}</camunda:outputParameter>
+        </camunda:inputOutput>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_3</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
+      <bpmn2:startEvent id="StartEvent_2">
+        <bpmn2:outgoing>SequenceFlow_5</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:sendTask id="SendTask_1" camunda:class="org.quantil.quantme.bernstein_vazirani.tasks.RequestOracleExpansionTask" name="Request &#xD;&#xA;Oracle&#xD;&#xA;Expansion">
+        <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
+        <bpmn2:outgoing>SequenceFlow_6</bpmn2:outgoing>
+      </bpmn2:sendTask>
+      <bpmn2:sequenceFlow id="SequenceFlow_5" name="" sourceRef="StartEvent_2" targetRef="SendTask_1"/>
+      <bpmn2:sequenceFlow id="SequenceFlow_6" name="" sourceRef="SendTask_1" targetRef="ReceiveTask_1"/>
+      <bpmn2:endEvent id="EndEvent_2">
+        <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
+      </bpmn2:endEvent>
+      <bpmn2:receiveTask id="ReceiveTask_1" name="Receive Expanded&#xD;&#xA;Circuit" messageRef="Message_5ef0ne5">
+        <bpmn2:incoming>SequenceFlow_6</bpmn2:incoming>
+        <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
+      </bpmn2:receiveTask>
+      <bpmn2:sequenceFlow id="SequenceFlow_7" name="" sourceRef="ReceiveTask_1" targetRef="EndEvent_2"/>
+    </bpmn2:subProcess>
+    <bpmn2:subProcess id="SubProcess_2" name="Execute Circuit">
+      <bpmn2:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="Provider">IBM</camunda:inputParameter>
+          <camunda:inputParameter name="QPU">${qpuName}</camunda:inputParameter>
+          <camunda:inputParameter name="Shots">512</camunda:inputParameter>
+          <camunda:inputParameter name="CircuitId">${SubProcess_1_CircuitId}</camunda:inputParameter>
+          <camunda:inputParameter name="QuantumCircuit">${SubProcess_1_QuantumCircuit}</camunda:inputParameter>
+          <camunda:inputParameter name="ProgrammingLanguage">${SubProcess_1_ProgrammingLanguage}</camunda:inputParameter>
+          <camunda:inputParameter name="ExecutionResult">${SubProcess_1_ExecutionResult}</camunda:inputParameter>
+          <camunda:outputParameter name="SubProcess_2_CircuitId">${CircuitId}</camunda:outputParameter>
+          <camunda:outputParameter name="SubProcess_2_QuantumCircuit">${QuantumCircuit}</camunda:outputParameter>
+          <camunda:outputParameter name="SubProcess_2_ProgrammingLanguage">${ProgrammingLanguage}</camunda:outputParameter>
+          <camunda:outputParameter name="SubProcess_2_ExecutionResult">${executionResult}</camunda:outputParameter>
+        </camunda:inputOutput>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_8</bpmn2:outgoing>
+      <bpmn2:startEvent id="StartEvent_3">
+        <bpmn2:outgoing>SequenceFlow_9</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:sendTask id="SendTask_2" camunda:class="org.quantil.quantme.bernstein_vazirani.tasks.RequestQuantumCircuitExecutionTask" name="Request&#xD;&#xA;Circuit&#xD;&#xA;Execution">
+        <bpmn2:incoming>SequenceFlow_9</bpmn2:incoming>
+        <bpmn2:outgoing>SequenceFlow_10</bpmn2:outgoing>
+      </bpmn2:sendTask>
+      <bpmn2:sequenceFlow id="SequenceFlow_9" name="" sourceRef="StartEvent_3" targetRef="SendTask_2"/>
+      <bpmn2:sequenceFlow id="SequenceFlow_10" name="" sourceRef="SendTask_2" targetRef="ReceiveTask_2"/>
+      <bpmn2:receiveTask id="ReceiveTask_2" name="Receive&#xD;&#xA;Circuit&#xD;&#xA;Results" messageRef="Message_h3ftne4">
+        <bpmn2:incoming>SequenceFlow_10</bpmn2:incoming>
+        <bpmn2:outgoing>SequenceFlow_11</bpmn2:outgoing>
+      </bpmn2:receiveTask>
+      <bpmn2:endEvent id="EndEvent_3">
+        <bpmn2:incoming>SequenceFlow_11</bpmn2:incoming>
+      </bpmn2:endEvent>
+      <bpmn2:sequenceFlow id="SequenceFlow_11" name="" sourceRef="ReceiveTask_2" targetRef="EndEvent_3"/>
+    </bpmn2:subProcess>
+    <bpmn2:sequenceFlow id="SequenceFlow_8" name="" sourceRef="SubProcess_2" targetRef="SubProcess_3"/>
+    <bpmn2:subProcess id="SubProcess_3" name="Mitigate Readout-Error">
+      <bpmn2:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="UnfoldingTechnique">Correction Matrix</camunda:inputParameter>
+          <camunda:inputParameter name="QPU">${qpuName}</camunda:inputParameter>
+          <camunda:inputParameter name="MaxAge">60</camunda:inputParameter>
+          <camunda:inputParameter name="CircuitId">${SubProcess_2_CircuitId}</camunda:inputParameter>
+          <camunda:inputParameter name="QuantumCircuit">${SubProcess_2_QuantumCircuit}</camunda:inputParameter>
+          <camunda:inputParameter name="ProgrammingLanguage">${SubProcess_2_ProgrammingLanguage}</camunda:inputParameter>
+          <camunda:inputParameter name="ExecutionResult">${SubProcess_2_ExecutionResult}</camunda:inputParameter>
+          <camunda:outputParameter name="SubProcess_3_CircuitId">${CircuitId}</camunda:outputParameter>
+          <camunda:outputParameter name="SubProcess_3_QuantumCircuit">${QuantumCircuit}</camunda:outputParameter>
+          <camunda:outputParameter name="SubProcess_3_ProgrammingLanguage">${ProgrammingLanguage}</camunda:outputParameter>
+          <camunda:outputParameter name="SubProcess_3_ExecutionResult">${executionResult}</camunda:outputParameter>
+        </camunda:inputOutput>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_8</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_4</bpmn2:outgoing>
+      <bpmn2:startEvent id="StartEvent_4">
+        <bpmn2:outgoing>SequenceFlow_12</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:sendTask id="SendTask_3" camunda:class="org.quantil.quantme.bernstein_vazirani.tasks.RequestErrorMitigationTask" name="Request&#xD;&#xA;Error&#xD;&#xA;Mitigation">
+        <bpmn2:incoming>SequenceFlow_12</bpmn2:incoming>
+        <bpmn2:outgoing>SequenceFlow_13</bpmn2:outgoing>
+      </bpmn2:sendTask>
+      <bpmn2:sequenceFlow id="SequenceFlow_12" name="" sourceRef="StartEvent_4" targetRef="SendTask_3"/>
+      <bpmn2:sequenceFlow id="SequenceFlow_13" name="" sourceRef="SendTask_3" targetRef="ReceiveTask_3"/>
+      <bpmn2:receiveTask id="ReceiveTask_3" name="Receive&#xD;&#xA;Mitigated&#xD;&#xA;Results" messageRef="Message_b753nta">
+        <bpmn2:incoming>SequenceFlow_13</bpmn2:incoming>
+        <bpmn2:outgoing>SequenceFlow_14</bpmn2:outgoing>
+      </bpmn2:receiveTask>
+      <bpmn2:endEvent id="EndEvent_4">
+        <bpmn2:incoming>SequenceFlow_14</bpmn2:incoming>
+      </bpmn2:endEvent>
+      <bpmn2:sequenceFlow id="SequenceFlow_14" name="" sourceRef="ReceiveTask_3" targetRef="EndEvent_4"/>
+    </bpmn2:subProcess>
+    <bpmn2:boundaryEvent id="BoundaryEvent_1" name="" attachedToRef="SubProcess_2">
+      <bpmn2:outgoing>SequenceFlow_17</bpmn2:outgoing>
+      <bpmn2:messageEventDefinition id="_MessageEventDefinition_2" messageRef="Message_k95ga81"/>
+    </bpmn2:boundaryEvent>
+    <bpmn2:sequenceFlow id="SequenceFlow_17" name="" sourceRef="BoundaryEvent_1" targetRef="EndEvent_5"/>
+    <bpmn2:endEvent id="EndEvent_5" name="Inform about &#xD;&#xA;failed execution">
+      <bpmn2:incoming>SequenceFlow_17</bpmn2:incoming>
+      <bpmn2:messageEventDefinition id="_MessageEventDefinition_3" camunda:class="org.quantil.quantme.bernstein_vazirani.tasks.ReportFailedExecution"/>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SequenceFlow_4" name="" sourceRef="SubProcess_3" targetRef="EndEvent_1"/>
+    <bpmn2:endEvent id="EndEvent_1" name="Send Result">
+      <bpmn2:incoming>SequenceFlow_4</bpmn2:incoming>
+      <bpmn2:messageEventDefinition id="_MessageEventDefinition_4" camunda:class="org.quantil.quantme.bernstein_vazirani.tasks.ReportSuccessfulExecution"/>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SequenceFlow_2" name="" sourceRef="SubProcess_1" targetRef="SubProcess_2"/>
+    <bpmn2:serviceTask id="ServiceTask_1" camunda:class="org.quantil.quantme.bernstein_vazirani.tasks.LoadQuantumCircuitDelegate" name="Load Quantum&#xD;&#xA;Circuit">
+      <bpmn2:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="URL">https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/master/2020-ucc/bernstein-vazirani/circuits/bernstein-vazirani-base.py</camunda:inputParameter>
+          <camunda:outputParameter name="ServiceTask_1_CircuitId">${CircuitId}</camunda:outputParameter>
+          <camunda:outputParameter name="ServiceTask_1_QuantumCircuit">${QuantumCircuit}</camunda:outputParameter>
+          <camunda:outputParameter name="ServiceTask_1_ProgrammingLanguage">${ProgrammingLanguage}</camunda:outputParameter>
+          <camunda:outputParameter name="ServiceTask_1_ExecutionResult">${ExecutionResult}</camunda:outputParameter>
+        </camunda:inputOutput>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_3</bpmn2:outgoing>
+    </bpmn2:serviceTask>
+    <bpmn2:sequenceFlow id="SequenceFlow_3" name="" sourceRef="ServiceTask_1" targetRef="SubProcess_1"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_1" name="" sourceRef="StartEvent_1" targetRef="ServiceTask_1"/>
+  </bpmn2:process>
+  <bpmn2:message id="Message_5ef0ne5" name="requestOracleExpansionTask_${execution.processInstanceId}"/>
+  <bpmn2:message id="Message_h3ftne4" name="requestCircuitExecutionTask_${execution.processInstanceId}"/>
+  <bpmn2:message id="Message_b753nta" name="requestErrorMitigationTask_${execution.processInstanceId}"/>
+  <bpmn2:message id="Message_k95ga81" name="error_requestCircuitExecutionTask_${execution.processInstanceId}"/>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="bernstein-algorithm">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds height="36.0" width="36.0" x="96.0" y="171.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="22.0" width="103.0" x="63.0" y="212.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_EndEvent_2" bpmnElement="EndEvent_1">
+        <dc:Bounds height="36.0" width="36.0" x="1620.0" y="171.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="22.0" width="77.0" x="1600.0" y="212.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="_BPMNShape_StartEvent_2" targetElement="_BPMNShape_ServiceTask_2">
+        <di:waypoint xsi:type="dc:Point" x="132.0" y="189.0"/>
+        <di:waypoint xsi:type="dc:Point" x="162.0" y="188.0"/>
+        <di:waypoint xsi:type="dc:Point" x="162.0" y="189.0"/>
+        <di:waypoint xsi:type="dc:Point" x="216.0" y="189.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="68.0" y="187.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_ServiceTask_2" bpmnElement="ServiceTask_1">
+        <dc:Bounds height="80.0" width="100.0" x="216.0" y="149.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_3" bpmnElement="SequenceFlow_3" sourceElement="_BPMNShape_ServiceTask_2" targetElement="_BPMNShape_SubProcess_2">
+        <di:waypoint xsi:type="dc:Point" x="316.0" y="189.0"/>
+        <di:waypoint xsi:type="dc:Point" x="336.0" y="189.0"/>
+        <di:waypoint xsi:type="dc:Point" x="336.0" y="192.0"/>
+        <di:waypoint xsi:type="dc:Point" x="356.0" y="192.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="239.0" y="186.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_SubProcess_2" bpmnElement="SubProcess_1" isExpanded="true">
+        <dc:Bounds height="150.0" width="385.0" x="356.0" y="117.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_3" bpmnElement="StartEvent_2">
+        <dc:Bounds height="36.0" width="36.0" x="368.0" y="175.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="386.0" y="216.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_SendTask_2" bpmnElement="SendTask_1">
+        <dc:Bounds height="80.0" width="100.0" x="428.0" y="153.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_5" bpmnElement="SequenceFlow_5" sourceElement="_BPMNShape_StartEvent_3" targetElement="_BPMNShape_SendTask_2">
+        <di:waypoint xsi:type="dc:Point" x="404.0" y="193.0"/>
+        <di:waypoint xsi:type="dc:Point" x="428.0" y="193.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="329.0" y="191.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_EndEvent_3" bpmnElement="EndEvent_2">
+        <dc:Bounds height="36.0" width="36.0" x="692.0" y="175.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="710.0" y="216.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_6" bpmnElement="SequenceFlow_6" sourceElement="_BPMNShape_SendTask_2" targetElement="_BPMNShape_ReceiveTask_2">
+        <di:waypoint xsi:type="dc:Point" x="528.0" y="193.0"/>
+        <di:waypoint xsi:type="dc:Point" x="560.0" y="193.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="430.0" y="190.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_ReceiveTask_2" bpmnElement="ReceiveTask_1">
+        <dc:Bounds height="80.0" width="100.0" x="560.0" y="153.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_7" bpmnElement="SequenceFlow_7" sourceElement="_BPMNShape_ReceiveTask_2" targetElement="_BPMNShape_EndEvent_3">
+        <di:waypoint xsi:type="dc:Point" x="660.0" y="193.0"/>
+        <di:waypoint xsi:type="dc:Point" x="692.0" y="193.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="676.0" y="193.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_SubProcess_3" bpmnElement="SubProcess_2" isExpanded="true">
+        <dc:Bounds height="150.0" width="373.0" x="768.0" y="115.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_8" bpmnElement="SequenceFlow_8" sourceElement="_BPMNShape_SubProcess_3" targetElement="_BPMNShape_SubProcess_4">
+        <di:waypoint xsi:type="dc:Point" x="1140.0" y="190.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1164.0" y="191.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="1142.0" y="188.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_4" bpmnElement="StartEvent_3">
+        <dc:Bounds height="36.0" width="36.0" x="780.0" y="173.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="798.0" y="214.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_SendTask_3" bpmnElement="SendTask_2">
+        <dc:Bounds height="80.0" width="100.0" x="840.0" y="151.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_9" bpmnElement="SequenceFlow_9" sourceElement="_BPMNShape_StartEvent_4" targetElement="_BPMNShape_SendTask_3">
+        <di:waypoint xsi:type="dc:Point" x="816.0" y="191.0"/>
+        <di:waypoint xsi:type="dc:Point" x="840.0" y="191.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="825.0" y="191.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_ReceiveTask_3" bpmnElement="ReceiveTask_2">
+        <dc:Bounds height="80.0" width="100.0" x="972.0" y="151.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_10" bpmnElement="SequenceFlow_10" sourceElement="_BPMNShape_SendTask_3" targetElement="_BPMNShape_ReceiveTask_3">
+        <di:waypoint xsi:type="dc:Point" x="940.0" y="191.0"/>
+        <di:waypoint xsi:type="dc:Point" x="958.0" y="191.0"/>
+        <di:waypoint xsi:type="dc:Point" x="958.0" y="190.0"/>
+        <di:waypoint xsi:type="dc:Point" x="972.0" y="190.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="955.0" y="191.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_EndEvent_4" bpmnElement="EndEvent_3">
+        <dc:Bounds height="36.0" width="36.0" x="1092.0" y="173.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="1110.0" y="214.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_11" bpmnElement="SequenceFlow_11" sourceElement="_BPMNShape_ReceiveTask_3" targetElement="_BPMNShape_EndEvent_4">
+        <di:waypoint xsi:type="dc:Point" x="1072.0" y="191.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1092.0" y="191.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="1007.0" y="189.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_SubProcess_4" bpmnElement="SubProcess_3" isExpanded="true">
+        <dc:Bounds height="150.0" width="361.0" x="1164.0" y="116.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_5" bpmnElement="StartEvent_4">
+        <dc:Bounds height="36.0" width="36.0" x="1176.0" y="174.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="1194.0" y="215.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_SendTask_4" bpmnElement="SendTask_3">
+        <dc:Bounds height="80.0" width="100.0" x="1233.0" y="152.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_12" bpmnElement="SequenceFlow_12" sourceElement="_BPMNShape_StartEvent_5" targetElement="_BPMNShape_SendTask_4">
+        <di:waypoint xsi:type="dc:Point" x="1212.0" y="192.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1233.0" y="192.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="1220.0" y="192.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_ReceiveTask_4" bpmnElement="ReceiveTask_3">
+        <dc:Bounds height="80.0" width="100.0" x="1356.0" y="152.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_13" bpmnElement="SequenceFlow_13" sourceElement="_BPMNShape_SendTask_4" targetElement="_BPMNShape_ReceiveTask_4">
+        <di:waypoint xsi:type="dc:Point" x="1333.0" y="192.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1356.0" y="192.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="1348.0" y="192.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_EndEvent_5" bpmnElement="EndEvent_4">
+        <dc:Bounds height="36.0" width="36.0" x="1476.0" y="174.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="0.0" width="0.0" x="1494.0" y="215.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_14" bpmnElement="SequenceFlow_14" sourceElement="_BPMNShape_ReceiveTask_4" targetElement="_BPMNShape_EndEvent_5">
+        <di:waypoint xsi:type="dc:Point" x="1456.0" y="192.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1476.0" y="192.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_BoundaryEvent_2" bpmnElement="BoundaryEvent_1">
+        <dc:Bounds height="36.0" width="36.0" x="1044.0" y="247.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="1059.0" y="288.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_EndEvent_6" bpmnElement="EndEvent_5">
+        <dc:Bounds height="36.0" width="36.0" x="1143.0" y="336.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="38.0" width="96.0" x="1113.0" y="377.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_17" bpmnElement="SequenceFlow_17" sourceElement="_BPMNShape_BoundaryEvent_2" targetElement="_BPMNShape_EndEvent_6">
+        <di:waypoint xsi:type="dc:Point" x="1062.0" y="283.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1062.0" y="354.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1143.0" y="354.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="1063.0" y="354.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="_BPMNShape_SubProcess_2" targetElement="_BPMNShape_SubProcess_3">
+        <di:waypoint xsi:type="dc:Point" x="740.0" y="192.0"/>
+        <di:waypoint xsi:type="dc:Point" x="754.0" y="192.0"/>
+        <di:waypoint xsi:type="dc:Point" x="754.0" y="190.0"/>
+        <di:waypoint xsi:type="dc:Point" x="768.0" y="190.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="761.0" y="190.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_4" bpmnElement="SequenceFlow_4" sourceElement="_BPMNShape_SubProcess_4" targetElement="_BPMNShape_EndEvent_2">
+        <di:waypoint xsi:type="dc:Point" x="1524.0" y="191.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1572.0" y="191.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1572.0" y="189.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1620.0" y="189.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="1569.0" y="190.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>
