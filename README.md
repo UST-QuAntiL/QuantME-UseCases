@@ -13,7 +13,7 @@ The corresponding workflow models can be found [here](2020-ucc).
 ## Learn More
 
 * Weder, Benjamin; Breitenbücher, Uwe; Leymann, Frank; Wild, Karoline:
-  [**Integrating Quantum Computing into Workflow Modeling and Execution**](TODO).
+  [**Integrating Quantum Computing into Workflow Modeling and Execution**](https://www.iaas.uni-stuttgart.de/publications/Weder2020_QuantumWorkflows.pdf).
   In: Proceedings of the 13th IEEE/ACM International Conference on Utility and Cloud Computing (UCC 2020)
 
 ## Disclaimer of Warranty
