@@ -1,0 +1,12 @@
+<form role="form" name="form">
+   <script cam-script type="text/form-script">
+        camForm.on('form-loaded', function() {
+            camForm.variableManager.fetchVariable('qpuName');
+            camForm.variableManager.fetchVariable('classificationPlot');
+        });
+    </script>
+  <label for="decision-boundary">Separator Line from Variational SVM</label>
+  <img id="decision-boundary" width="400" src="{{ camForm.variableManager.variable('classificationPlot').contentUrl }}" class="img-responsive">
+  
+  <a href="{{ camForm.variableManager.variable('classificationPlot').contentUrl }}"  target="_blank" >Download Separator Line Plot</a>
+</form>
