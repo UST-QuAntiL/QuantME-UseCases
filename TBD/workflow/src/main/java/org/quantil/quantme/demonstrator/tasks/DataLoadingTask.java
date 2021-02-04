@@ -36,7 +36,7 @@ public class DataLoadingTask implements JavaDelegate {
 
         // download configuration file for the classification service
         final URL configUrl = new URL(
-                "https://raw.githubusercontent.com/UST-QuAntiL/qhana/main/microservices/classification/static/0_base/optimizer-parameters.txt?token=AE3BV54S7T7RXFKRMEELQ6TADO3TU");
+                "https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/master/TBD/data/optimizer-parameters.txt");
         LOGGER.info("Downloading classification configuration file from URL: {}", configUrl);
         Utils.addFileFromUrlAsVariable(configUrl, "classification-config-",
                 Constants.VARIABLE_NAME_CLASSIFICATION_CONFIG_FILE, null, execution);
