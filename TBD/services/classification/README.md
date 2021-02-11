@@ -1,4 +1,4 @@
-# QHAna classification service
+# QHAna Classification Service
 
 Service providing the classification functionality of the [QHAna Tool](https://github.com/UST-QuAntiL/qhana).
 

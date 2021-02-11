@@ -1,0 +1,6 @@
+*/__pycache__/*
+*.ini
+*.idea
+.vscode/*
+venv/*
+static/*
