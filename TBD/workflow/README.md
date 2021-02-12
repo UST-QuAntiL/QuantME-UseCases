@@ -1,4 +1,4 @@
-# Machine Learning Quantum Workflow 
+# Quantum Machine Learning Workflow 
 
 This folder contains a demonstration workflow executing different quantum machine learning algorithms.
 
@@ -11,5 +11,12 @@ This folder contains a demonstration workflow executing different quantum machin
 
 After building the workflow, it can be deployed to a [Camunda engine](https://camunda.com/download/) by dropping the WAR file in the `webapps` folder of the corresponding Tomcat server.
 
-The Camunda engine can also be spinned up using the provided [Dockerfile](Dockerfile).
+The Camunda engine can also be spinned up using the provided [Dockerfile](Dockerfile):
+
+```
+docker build -t quantme/qml-workflow
+docker run -it -p 8080:8080 quantme/qml-workflow
+```
+
 Thereby, the current version of the workflow is automatically deployed to the Camunda engine on startup.
+Please use the corresponding environment variables defined in the [Dockerfile](Dockerfile) to configure the endpoints of the related [clustering](../services/clustering) and [classification](../services/classification) services.
