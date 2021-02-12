@@ -77,6 +77,8 @@
   </dependencies>
  
   <build>
+    <finalName>quantum-workflow</finalName>
+
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
