@@ -70,7 +70,7 @@ public class ExecuteClassificationQuantumCircuitsTask implements JavaDelegate {
             final URL resultsUrl = new URL(jo.get(Constants.CLASSIFICATION_RESPONSE_RESULTS_URL).toString());
 
             // download results and add to variables
-            final boolean success = Utils.addFileFromUrlAsVariable(resultsUrl, "results-",
+            final boolean success = Utils.addFileFromUrlAsVariable(resultsUrl, "results-", null,
                     Constants.VARIABLE_NAME_CLASSIFICATION_RESULTS_FILE, MediaType.TEXT_PLAIN, execution);
             LOGGER.info("Downloading and adding of file returned: {}", success);
         } catch (final Exception e) {

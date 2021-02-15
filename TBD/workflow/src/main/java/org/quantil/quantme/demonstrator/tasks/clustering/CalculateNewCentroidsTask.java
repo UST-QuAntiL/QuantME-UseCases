@@ -71,7 +71,7 @@ public class CalculateNewCentroidsTask implements JavaDelegate {
             final JSONObject jo = new JSONObject(response.readEntity(String.class));
             final URL centroidUrl = new URL(jo.get(Constants.CLUSTERING_RESPONSE_CENTROIDS_URL).toString());
 
-            final boolean success = Utils.addFileFromUrlAsVariable(centroidUrl, "centroids-",
+            final boolean success = Utils.addFileFromUrlAsVariable(centroidUrl, "centroids-", null,
                     Constants.VARIABLE_NAME_CENTROID_FILE, MediaType.TEXT_PLAIN, execution);
             LOGGER.info("Downloading and adding of new centroid file returned: {}", success);
         } catch (final Exception e) {

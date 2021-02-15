@@ -70,7 +70,7 @@ public class InitializeCentroidsTask implements JavaDelegate {
             final URL centroidUrl = new URL(jo.get(Constants.CLUSTERING_RESPONSE_CENTROIDS_URL).toString());
             LOGGER.info("Received centroid URL: {}", centroidUrl);
 
-            final boolean success = Utils.addFileFromUrlAsVariable(centroidUrl, "centroids-",
+            final boolean success = Utils.addFileFromUrlAsVariable(centroidUrl, "centroids-", null,
                     Constants.VARIABLE_NAME_CENTROID_FILE, MediaType.TEXT_PLAIN, execution);
             LOGGER.info("Downloading and adding of file returned: {}", success);
         } catch (final Exception e) {

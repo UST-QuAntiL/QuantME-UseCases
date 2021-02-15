@@ -77,16 +77,16 @@ public class InitializeSVMTask implements JavaDelegate {
             final URL deltaUrl = new URL(jo.get(Constants.CLASSIFICATION_RESPONSE_DELTA_URL).toString());
 
             // download results and add to variables
-            boolean success = Utils.addFileFromUrlAsVariable(templateUrl, "template-",
+            boolean success = Utils.addFileFromUrlAsVariable(templateUrl, "template-", null,
                     Constants.VARIABLE_NAME_CLASSIFICATION_TEMPLATE_FILE, Constants.PYTHON_PICKLE_CONTENT_TYPE,
                     execution);
-            success &= Utils.addFileFromUrlAsVariable(thetasUrl, "thetas-",
+            success &= Utils.addFileFromUrlAsVariable(thetasUrl, "thetas-", null,
                     Constants.VARIABLE_NAME_CLASSIFICATION_THETA_FILE, MediaType.TEXT_PLAIN, execution);
-            success &= Utils.addFileFromUrlAsVariable(thetasPlusUrl, "thetas-plus-",
+            success &= Utils.addFileFromUrlAsVariable(thetasPlusUrl, "thetas-plus-", null,
                     Constants.VARIABLE_NAME_CLASSIFICATION_THETA_PLUS_FILE, MediaType.TEXT_PLAIN, execution);
-            success &= Utils.addFileFromUrlAsVariable(thetasMinusUrl, "thetas-minus-",
+            success &= Utils.addFileFromUrlAsVariable(thetasMinusUrl, "thetas-minus-", null,
                     Constants.VARIABLE_NAME_CLASSIFICATION_THETA_MINUS_FILE, MediaType.TEXT_PLAIN, execution);
-            success &= Utils.addFileFromUrlAsVariable(deltaUrl, "deltas-",
+            success &= Utils.addFileFromUrlAsVariable(deltaUrl, "deltas-", null,
                     Constants.VARIABLE_NAME_CLASSIFICATION_DELTA_FILE, MediaType.TEXT_PLAIN, execution);
             LOGGER.info("Downloading and adding of files returned: {}", success);
         } catch (final Exception e) {

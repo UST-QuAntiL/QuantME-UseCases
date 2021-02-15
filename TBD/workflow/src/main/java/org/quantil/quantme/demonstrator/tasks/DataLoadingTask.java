@@ -31,14 +31,14 @@ public class DataLoadingTask implements JavaDelegate {
         final URL embeddingUrl = new URL(execution.getVariable(Constants.VARIABLE_NAME_EMBEDDINGS_URL).toString());
         LOGGER.info("Embedding URL: {}", embeddingUrl);
 
-        Utils.addFileFromUrlAsVariable(embeddingUrl, "embeddings-", Constants.VARIABLE_NAME_EMBEDDINGS_FILE, null,
+        Utils.addFileFromUrlAsVariable(embeddingUrl, "embeddings-", null, Constants.VARIABLE_NAME_EMBEDDINGS_FILE, null,
                 execution);
 
         // download configuration file for the classification service
         final URL configUrl = new URL(
                 "https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/master/TBD/data/optimizer-parameters.txt");
         LOGGER.info("Downloading classification configuration file from URL: {}", configUrl);
-        Utils.addFileFromUrlAsVariable(configUrl, "classification-config-",
+        Utils.addFileFromUrlAsVariable(configUrl, "classification-config-", null,
                 Constants.VARIABLE_NAME_CLASSIFICATION_CONFIG_FILE, null, execution);
     }
 }

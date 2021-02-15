@@ -66,7 +66,7 @@ public class ComputePredictionTask implements JavaDelegate {
             final URL predictionsUrl = new URL(jo.get(Constants.CLASSIFICATION_RESPONSE_PREDICTIONS_URL).toString());
 
             // download results and add to variables
-            final boolean success = Utils.addFileFromUrlAsVariable(predictionsUrl, "predictions-",
+            final boolean success = Utils.addFileFromUrlAsVariable(predictionsUrl, "predictions-", null,
                     Constants.VARIABLE_NAME_CLASSIFICATION_PREDICTIONS_FILE, MediaType.TEXT_PLAIN, execution);
             LOGGER.info("Downloading and adding of file returned: {}", success);
         } catch (final Exception e) {

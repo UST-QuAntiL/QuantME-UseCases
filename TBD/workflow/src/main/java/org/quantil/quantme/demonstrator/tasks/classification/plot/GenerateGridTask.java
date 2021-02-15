@@ -66,7 +66,7 @@ public class GenerateGridTask implements JavaDelegate {
             final URL gridUrl = new URL(jo.get(Constants.CLASSIFICATION_RESPONSE_GRID_URL).toString());
 
             // download results and add to variables
-            final boolean success = Utils.addFileFromUrlAsVariable(gridUrl, "grid-",
+            final boolean success = Utils.addFileFromUrlAsVariable(gridUrl, "grid-", null,
                     Constants.VARIABLE_NAME_CLASSIFICATION_GRID_FILE, MediaType.TEXT_PLAIN, execution);
             LOGGER.info("Downloading and adding of file returned: {}", success);
         } catch (final Exception e) {

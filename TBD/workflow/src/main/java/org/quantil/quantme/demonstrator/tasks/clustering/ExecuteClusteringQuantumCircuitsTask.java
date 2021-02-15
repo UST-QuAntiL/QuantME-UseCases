@@ -69,7 +69,7 @@ public class ExecuteClusteringQuantumCircuitsTask implements JavaDelegate {
             final JSONObject jo = new JSONObject(response.readEntity(String.class));
             final URL circuitsUrl = new URL(jo.get(Constants.CLUSTERING_RESPONSE_CLUSTER_MAPPING_URL).toString());
 
-            final boolean success = Utils.addFileFromUrlAsVariable(circuitsUrl, "cluster-mappings-",
+            final boolean success = Utils.addFileFromUrlAsVariable(circuitsUrl, "cluster-mappings-", null,
                     Constants.VARIABLE_NAME_CLUSTER_MAPPINGS_FILE, MediaType.TEXT_PLAIN, execution);
             LOGGER.info("Downloading and adding of cluster mapping file returned: {}", success);
 

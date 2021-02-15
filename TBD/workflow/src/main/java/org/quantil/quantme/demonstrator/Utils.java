@@ -30,8 +30,8 @@ public class Utils {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(Utils.class);
 
-    public static boolean addFileFromUrlAsVariable(URL downloadUrl, String prefix, String variableName, String mimeType,
-            DelegateExecution execution) {
+    public static boolean addFileFromUrlAsVariable(URL downloadUrl, String prefix, String suffix, String variableName,
+            String mimeType, DelegateExecution execution) {
         if (Objects.isNull(mimeType)) {
             // use text/plain as default
             mimeType = MediaType.TEXT_PLAIN;
@@ -40,7 +40,7 @@ public class Utils {
         try {
             // download file to temp
             LOGGER.info("Dowloading file from URL: {}", downloadUrl);
-            final File tempFile = File.createTempFile(prefix, null);
+            final File tempFile = File.createTempFile(prefix, suffix);
             tempFile.deleteOnExit();
             FileUtils.copyURLToFile(downloadUrl, tempFile);
             LOGGER.info("File size after download: {}", tempFile.length());

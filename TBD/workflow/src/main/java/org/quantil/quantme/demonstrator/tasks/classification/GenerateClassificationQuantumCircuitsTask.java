@@ -80,7 +80,7 @@ public class GenerateClassificationQuantumCircuitsTask implements JavaDelegate {
                     jo.get(Constants.CLASSIFICATION_RESPONSE_PARAMETERIZATION_URL).toString());
 
             // download results and add to variables
-            final boolean success = Utils.addFileFromUrlAsVariable(parameterizationUrl, "parameterization-",
+            final boolean success = Utils.addFileFromUrlAsVariable(parameterizationUrl, "parameterization-", null,
                     Constants.VARIABLE_NAME_CLASSIFICATION_PARAMETERIZATION_FILE, MediaType.TEXT_PLAIN, execution);
             LOGGER.info("Downloading and adding of file returned: {}", success);
         } catch (final Exception e) {

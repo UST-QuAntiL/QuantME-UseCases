@@ -76,9 +76,9 @@ public class CalculateAnglesTask implements JavaDelegate {
             final URL dataAnglesUrl = new URL(jo.get(Constants.CLUSTERING_RESPONSE_DATA_ANGLES_URL).toString());
             final URL centroidAnglesUrl = new URL(jo.get(Constants.CLUSTERING_RESPONSE_CENTROID_ANGLES_URL).toString());
 
-            boolean success = Utils.addFileFromUrlAsVariable(dataAnglesUrl, "data-angles-",
+            boolean success = Utils.addFileFromUrlAsVariable(dataAnglesUrl, "data-angles-", null,
                     Constants.VARIABLE_NAME_DATA_ANGLES_FILE, MediaType.TEXT_PLAIN, execution);
-            success &= Utils.addFileFromUrlAsVariable(centroidAnglesUrl, "centroid-angles-",
+            success &= Utils.addFileFromUrlAsVariable(centroidAnglesUrl, "centroid-angles-", null,
                     Constants.VARIABLE_NAME_CENTROID_ANGLES_FILE, MediaType.TEXT_PLAIN, execution);
             LOGGER.info("Downloading and adding of angle files returned: {}", success);
         } catch (final Exception e) {

@@ -68,7 +68,7 @@ public class GenerateClusteringQuantumCircuitsTask implements JavaDelegate {
             final JSONObject jo = new JSONObject(response.readEntity(String.class));
             final URL circuitsUrl = new URL(jo.get(Constants.CLUSTERING_RESPONSE_CIRCUITS_URL).toString());
 
-            final boolean success = Utils.addFileFromUrlAsVariable(circuitsUrl, "clustering-circuits-",
+            final boolean success = Utils.addFileFromUrlAsVariable(circuitsUrl, "clustering-circuits-", null,
                     Constants.VARIABLE_NAME_CIRCUITS_FILE, MediaType.TEXT_PLAIN, execution);
             LOGGER.info("Downloading and adding of circuit file returned: {}", success);
         } catch (final Exception e) {

@@ -9,7 +9,6 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.apache.commons.io.FileUtils;
 import org.camunda.bpm.engine.delegate.BpmnError;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
@@ -73,18 +72,18 @@ public class PlotDecisionBoundaryTask implements JavaDelegate {
 
             // get URL for result objects
             final JSONObject jo = new JSONObject(response.readEntity(String.class));
-            final String plotUrl = jo.get(Constants.CLASSIFICATION_RESPONSE_PLOT_URL).toString();
+            final URL plotUrl = new URL(jo.get(Constants.CLASSIFICATION_RESPONSE_PLOT_URL).toString());
 
             // add URL to final result as variable
             execution.setVariable(Constants.VARIABLE_NAME_CLASSIFICATION_PLOT_URL, plotUrl);
 
             // set result image as variable in the Camunda engine
             final File tempFile = File.createTempFile("plot-", ".png");
-            tempFile.deleteOnExit();
-            FileUtils.copyURLToFile(new URL(plotUrl), tempFile);
             final FileValue typedFileValue = Variables.fileValue(tempFile.getName()).file(tempFile)
                     .mimeType("image/png").encoding("UTF-8").create();
             execution.setVariable("classificationPlot", typedFileValue);
+            Utils.addFileFromUrlAsVariable(plotUrl, "classification-plot-", ".png", "classificationPlot", "image/png",
+                    execution);
         } catch (final Exception e) {
             LOGGER.error("Exception while sending post request to URL: {}", requestUrl);
             throw new BpmnError("Exception while sending post request to URL: " + requestUrl);
