@@ -1,3 +1,3 @@
-engine=http://{{ .Env.ENGINE_IP }}:{{ .Env.ENGINE_PORT }}
-clustering=http://{{ .Env.CLUSTERING_IP }}:{{ .Env.CLUSTERING_PORT }}
-classification=http://{{ .Env.CLASSIFICATION_IP }}:{{ .Env.CLASSIFICATION_PORT }}
+engine={{ .Env.ENGINE_HOSTNAME }}:{{ .Env.ENGINE_PORT }}
+clustering={{ .Env.CLUSTERING_HOSTNAME }}:{{ .Env.CLUSTERING_PORT }}
+classification={{ .Env.CLASSIFICATION_HOSTNAME }}:{{ .Env.CLASSIFICATION_PORT }}

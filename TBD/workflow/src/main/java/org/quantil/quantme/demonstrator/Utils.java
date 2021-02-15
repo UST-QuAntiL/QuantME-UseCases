@@ -39,9 +39,20 @@ public class Utils {
 
         try {
             // download file to temp
+            LOGGER.info("Dowloading file from URL: {}", downloadUrl);
             final File tempFile = File.createTempFile(prefix, null);
             tempFile.deleteOnExit();
             FileUtils.copyURLToFile(downloadUrl, tempFile);
+            LOGGER.info("File size after download: {}", tempFile.length());
+
+            // download using https if in secure environment
+            if (tempFile.length() == 0 && downloadUrl.getProtocol().equals("http")) {
+                LOGGER.info("Unable to download file using http. Procedding with https...");
+                final URL httpsUrl = new URL("https://" + downloadUrl.getHost() + "/" + downloadUrl.getPath());
+                LOGGER.info("Downloading file from URL: {}", httpsUrl);
+                FileUtils.copyURLToFile(httpsUrl, tempFile);
+                LOGGER.info("File size after download using https: {}", tempFile.length());
+            }
 
             // set file as variable in the Camunda engine
             final FileValue typedFileValue = Variables.fileValue(tempFile.getName()).file(tempFile).mimeType(mimeType)
