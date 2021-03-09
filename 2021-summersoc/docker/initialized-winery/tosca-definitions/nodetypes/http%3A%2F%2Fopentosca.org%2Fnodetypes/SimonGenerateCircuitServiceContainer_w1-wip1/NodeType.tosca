@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://opentosca.org/nodetypes" id="winery-defs-for_otntyIgeneral-SimonGenerateCircuitServiceContainer_w1-wip1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:ns0="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:ns3="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <NodeType name="SimonGenerateCircuitServiceContainer_w1-wip1" abstract="no" final="no" targetNamespace="http://opentosca.org/nodetypes">
+        <DerivedFrom typeRef="otntyIgeneral:DockerContainer" xmlns:otntyIgeneral="http://opentosca.org/nodetypes"/>
+        <ns0:PropertiesDefinition elementname="Properties" namespace="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+            <ns0:properties>
+                <ns0:key>ContainerPort</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:key>Port</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:key>ENV_CAMUNDA_ENDPOINT</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:key>ENV_CAMUNDA_TOPIC</ns0:key>
+            </ns0:properties>
+        </ns0:PropertiesDefinition>
+    </NodeType>
+</Definitions>
