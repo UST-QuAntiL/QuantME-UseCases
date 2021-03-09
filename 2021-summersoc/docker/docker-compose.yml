@@ -1,0 +1,52 @@
+version: '3'
+services:
+  ### OpenTOSCA ###
+  container:
+    image: opentosca/container:latest
+    ports:
+      - '1337:1337'
+      - '8081-8087:8081-8087'
+    environment:
+      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      ENGINE_IA_HOSTNAME: engine-ia
+      ENGINE_IA_PORT: 8080
+      ENGINE_PLAN_BPEL_HOSTNAME: engine-plan
+      CONTAINER_DEPLOYMENT_TESTS: 'false'
+    networks:
+      - hardware-selection-demo
+  engine-plan:
+    image: opentosca/ode:v2.4.0
+    ports:
+      - '9763:9763'
+    networks:
+      - hardware-selection-demo
+  engine-ia:
+    image: opentosca/engine-ia:v2.1.0
+    ports:
+      - '8090:8080'
+    networks:
+      - hardware-selection-demo
+  winery:
+    build: initialized-winery
+    environment:
+      WINERY_HOSTNAME: ${PUBLIC_HOSTNAME}
+      WORKFLOWMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      TOPOLOGYMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
+    ports:
+      - '8093:8080'
+    networks:
+      - hardware-selection-demo
+  dind:
+    image: jpetazzo/dind:latest
+    privileged: true
+    environment:
+      - PORT=2375
+      - DOCKER_DAEMON_ARGS=--dns 8.8.8.8 --dns 8.8.4.4 -D
+    networks:
+      - hardware-selection-demo
+    ports: 
+      - '2222:2375'
+networks:
+  hardware-selection-demo:
+    driver: bridge
