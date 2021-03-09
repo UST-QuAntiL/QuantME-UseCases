@@ -7,6 +7,16 @@ services:
       - 8080:8080
     networks:
       - hardware-selection-demo
+  ### QProv ###
+  db:
+    image: lmmdock/postgres-multi
+    environment:
+      POSTGRES_USERS: 'qprov:qprov|nisq:nisq'
+      POSTGRES_DATABASES: 'qprov:qprov|nisq:nisq'
+    ports:
+      - '5432:5432'
+    networks:
+      - hardware-selection-demo
   ### OpenTOSCA Ecosystem ###
   container:
     image: opentosca/container:latest
