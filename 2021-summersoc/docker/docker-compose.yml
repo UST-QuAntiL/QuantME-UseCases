@@ -2,7 +2,7 @@ version: '3'
 services:
   ### Camunda Engine ###
   camunda-engine:
-    image: camunda/camunda-bpm-platform:tomcat-7.14.0
+    build: camunda
     ports:
       - 8080:8080
     networks:
