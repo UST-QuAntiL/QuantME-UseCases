@@ -39,8 +39,6 @@ services:
       - hardware-selection-demo
   engine-ia:
     image: opentosca/engine-ia:v2.1.0
-    ports:
-      - '8090:8080'
     networks:
       - hardware-selection-demo
   winery:
@@ -62,8 +60,6 @@ services:
       - DOCKER_DAEMON_ARGS=--dns 8.8.8.8 --dns 8.8.4.4 -D
     networks:
       - hardware-selection-demo
-    ports: 
-      - '2222:2375'
 networks:
   hardware-selection-demo:
     driver: bridge
