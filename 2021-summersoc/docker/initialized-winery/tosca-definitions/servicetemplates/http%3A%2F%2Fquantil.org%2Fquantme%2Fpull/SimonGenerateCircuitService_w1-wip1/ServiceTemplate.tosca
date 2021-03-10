@@ -5,7 +5,7 @@
             <NodeTemplate name="DockerEngine" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerEngine" id="DockerEngine_0" ns0:x="779" ns0:y="294" xmlns:otntyIgeneral="http://opentosca.org/nodetypes">
                 <Properties>
                     <otntyIproperties:DockerEngine_Properties xmlns:otntyIproperties="http://opentosca.org/nodetypes/properties">
-                        <otntyIproperties:DockerEngineURL>get_input: DockerEngineURL</otntyIproperties:DockerEngineURL>
+                        <otntyIproperties:DockerEngineURL>tcp://dind:2375</otntyIproperties:DockerEngineURL>
                         <otntyIproperties:DockerEngineCertificate/>
                         <otntyIproperties:State>Running</otntyIproperties:State>
                     </otntyIproperties:DockerEngine_Properties>
