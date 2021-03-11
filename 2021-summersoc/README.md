@@ -19,7 +19,7 @@ First, build and run the [QuantME Transformation Framework](https://github.com/U
 ```
 git clone https://github.com/UST-QuAntiL/QuantME-TransformationFramework.git --branch v1.2.0
 ```
-2. Change to the cloned folder and build the modeler:
+2. Change to the cloned folder and build the framework:
 ```
 npm install
 npm run build
@@ -32,5 +32,20 @@ However, we will update the configuration using the graphical user interface:
 TODO
 
 ### Running the OpenTOSCA and QuAntiL Components
+
+All other required service can be started using the Docker-Compose file located in [this folder](./docker):
+
+1. Update the [.env](./docker/.env) file with your settings: 
+  * ``PUBLIC_HOSTNAME``: Enter the hostname/IP address of your Docker engine. Do *not* use ``localhost``.
+  * ``IBM_ACCESS_TOKEN``: Enter your IBM access token which is needed to retrieve the required provenance data by [QProv](https://github.com/UST-QuAntiL/qprov). It can be retrieved using the [IBM Quantum Experience](https://quantum-computing.ibm.com/) UI.
+
+2. Run the Docker-Compose file:
+```
+docker-compose pull
+docker-compose up --build
+```
+
+3. Wait until all containers are up and running. This may take some minutes.
+
 
 TODO
