@@ -61,5 +61,10 @@ docker-compose up --build
 
 3. Wait until all containers are up and running. This may take some minutes.
 
+## Model the Workflow and Transform it to Native BPMN
+
+TODO
+
+## Execute the Workflow using the Camunda Engine
 
 TODO
