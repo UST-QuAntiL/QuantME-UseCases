@@ -24,7 +24,7 @@ services:
       POSTGRES_PASSWORD: qprov
       POSTGRES_DB: qprov
     ports:
-      - "8084:8080"
+      - "8094:8080"
     networks:
       - hardware-selection-demo
   qprov-collector-ibm:
