@@ -17,7 +17,7 @@ First, build and run the [QuantME Transformation Framework](https://github.com/U
 
 1. Clone the repository using release v1.2.0: 
 ```
-git clone  git@github.com:mygitname/theproject.git --branch v1.2.0
+git clone https://github.com/UST-QuAntiL/QuantME-TransformationFramework.git --branch v1.2.0
 ```
 2. Change to the cloned folder and build the modeler:
 ```
