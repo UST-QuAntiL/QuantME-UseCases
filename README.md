@@ -9,7 +9,7 @@ This project contains different use cases for the Quantum Modeling Extension (Qu
 In this paper, we demonstrate how to model quantum workflows with Quantum4BPMN independent of a quantum computer to use.
 Therefore, the quantum computer is automatically selected during workflow runtime utilizing the [NISQ Analyzer](https://github.com/UST-QuAntiL/nisq-analyzer), and the workflow is dynamically adapted based on reusable workflow fragments depending on the selection.
 For this, a workflow model implementing Simon's algorithm and dynamically selecting quantum computers from IBM or a simulator from Rigetti is presented.
-The corresponding workflow model, as well as instructions how to set up the required environment can be found [here](2021-summersoc).
+The corresponding workflow model, as well as instructions on how to set up the required environment, can be found [here](2021-summersoc).
 
 ### UCC 2020 Prototype
 
