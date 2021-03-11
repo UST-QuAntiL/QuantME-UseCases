@@ -29,7 +29,21 @@ npm run build
 The QuantME Transformation Framework can be configured on start-up by passing in corresponding environment variables. 
 However, we will update the configuration using the graphical user interface:
 
-TODO
+Open the configuration window:
+
+![Configuration](./docs/open-settings.png)
+
+Update the different configuration properties using the following values.
+Thereby, $IP has to be replaced with the IP-address of the Docker engine if you use the Docker setup (see bellow):
+
+* ``Camunda Engine Endpoint``: http://$IP:8080/engine-rest
+* ``OpenTOSCA Endpoint``: http://$IP:1337/csars
+* ``Winery Endpoint``: http://$IP:8093/winery
+* ``QRM Repository User``: UST-QuAntiL
+* ``QRM Repository Name``: QuantME-UseCases
+* ``QRM Repository Path``: /2021-summersoc/QRMs
+
+![Update Configuration](./docs/update-settings.png)
 
 ### Running the OpenTOSCA and QuAntiL Components
 
