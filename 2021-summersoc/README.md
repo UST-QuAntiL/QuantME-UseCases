@@ -5,7 +5,10 @@ The quantum computer is then automatically selected during workflow runtime, and
 
 The following figure shows a workflow model implementing Simon's algorithm:
 
-TODO
+![Workflow Model](./workflow/simons-algorithm-hardware-selection.png)
+
+Furthermore, it is available in XML format [here](./workflow/simons-algorithm-hardware-selection.bpmn).
+In the following, the different steps to execute the workflow model including the dynamic hardware selection is presented.
 
 ## Setting up the Environment
 
@@ -62,6 +65,16 @@ docker-compose up --build
 3. Wait until all containers are up and running. This may take some minutes.
 
 ## Model the Workflow and Transform it to Native BPMN
+
+Next, the workflow model implementing Simon's algorithm is imported into QuantME Transformation Framework:
+
+* Click on ``File`` in the top-left corner of the QuantME Transformation Framework
+* Select ``Open File...``
+* Navigate to the workflow model available in this repository (see [here](./workflow/simons-algorithm-hardware-selection.bpmn)) and open it
+
+The workflow model should now be visible in the QuantME Transformation Framework:
+
+![Imported Workflow](./docs/import-workflow.png)
 
 TODO
 
