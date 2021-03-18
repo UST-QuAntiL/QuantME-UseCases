@@ -10,6 +10,8 @@ The following figure shows a workflow model implementing Simon's algorithm:
 Furthermore, it is available in XML format [here](./workflow/simons-algorithm-hardware-selection.bpmn).
 In the following, the different steps to execute the workflow model including the dynamic hardware selection is presented.
 
+Please refer to the *Troubleshooting* section at the end of this README if you have some issues during execution!
+
 ## Setting up the Environment
 
 Next, we will discuss the steps required to set-up the environment to model and execute the workflow model.
@@ -81,3 +83,12 @@ TODO
 ## Execute the Workflow using the Camunda Engine
 
 TODO
+
+## Troubleshooting
+
+The [docker-compose file](./docker/docker-compose.yml) for the setup of the environment uses the release *v1.1.1* of [QProv](https://github.com/UST-QuAntiL/qprov).
+However, the IBMQ API may change over time and the retrieval of the required provenance data does not work as expected anymore.
+Therefore, please have a look if a newer relase is available in case you have any issues regarding QProv.
+
+The setup for this use case requires a lot of services from the OpenTOSCA ecosystem, as well as the QuAntil ecosystem.
+Thus, make sure the used Docker engine has access to enough resources and increase them, e.g., if the provisioning of a service instance for the different task fails.
