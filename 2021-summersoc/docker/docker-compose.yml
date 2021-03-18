@@ -1,4 +1,6 @@
 version: '3'
+volumes:
+  exec_data:
 services:
   ### Camunda Engine ###
   camunda-engine:
@@ -10,6 +12,8 @@ services:
   ### QProv ###
   db:
     image: lmmdock/postgres-multi:latest
+    logging:
+      driver: none
     environment:
       POSTGRES_USERS: 'qprov:qprov|nisq:nisq'
       POSTGRES_DATABASES: 'qprov:qprov|nisq:nisq'
@@ -17,6 +21,8 @@ services:
       - hardware-selection-demo
   qprov:
     image: planqk/qprov:v1.1.1
+    logging:
+      driver: none
     environment:
       POSTGRES_HOSTNAME: db
       POSTGRES_PORT: 5432
@@ -42,12 +48,111 @@ services:
       QPROV_IBMQ_AUTO_COLLECT_INTERVAL_CIRCUITS: 180
     networks:
       - hardware-selection-demo
+  ### NISQ Analyzer ###
+  nisq-analyzer:
+    image: planqk/nisq-analyzer:latest
+    environment:
+      POSTGRES_HOSTNAME: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: nisq
+      POSTGRES_PASSWORD: nisq
+      POSTGRES_DB: nisq
+      SPRING_PROFILES_ACTIVE: docker
+      QPROV_HOSTNAME: qprov
+      QPROV_PORT: 8080
+      TRANSLATOR_HOSTNAME: quantum-transpiler
+      TRANSLATOR_PORT: 5000
+      QISKIT_HOSTNAME: qiskit-service
+      QISKIT_PORT: 5000
+      FOREST_HOSTNAME: forest-service
+      FOREST_PORT: 5000
+      PYTKET_HOSTNAME: pytket-service
+      PYTKET_PORT: 5000
+    ports:
+     - '8099:8080'
+    networks:
+     - hardware-selection-demo
+  quantum-transpiler:
+    image: planqk/quantum-transpiler-backend:compiler-selection
+    networks:
+     - hardware-selection-demo
+  qiskit-service:
+    image: planqk/qiskit-service:compiler-selection
+    command: sh /app/startup.sh
+    environment:
+      - REDIS_URL=redis://redis
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    logging:
+      driver: none
+    networks:
+      - hardware-selection-demo
+  qiskit-rq-worker:
+    image: planqk/qiskit-service:compiler-selection
+    logging:
+      driver: none 
+    command: rq worker --url redis://redis qiskit-service_execute
+    environment:
+      - REDIS_URL=redis://redis
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    depends_on:
+      - redis
+  forest-service:
+    image: planqk/forest-service:compiler-selection
+    logging:
+      driver: none
+    command: sh /app/startup.sh
+    environment:
+      - REDIS_URL=redis://redis
+      - DATABASE_URL=sqlite:////data/app.db
+      - QVM_HOSTNAME=rigetti-qvm
+      - QVM_PORT=5666
+      - QUILC_HOSTNAME=rigetti-quilc
+      - QUILC_PORT=5667
+    volumes:
+      - exec_data:/data
+    networks:
+      - hardware-selection-demo
+  forest-rq-worker:
+    image: planqk/forest-service:compiler-selection
+    logging:
+      driver: none
+    command: rq worker --url redis://redis forest-service_execute
+    environment:
+      - REDIS_URL=redis://redis
+      - DATABASE_URL=sqlite:////data/app.db
+      - QVM_HOSTNAME=rigetti-qvm
+      - QVM_PORT=5666
+      - QUILC_HOSTNAME=rigetti-quilc
+      - QUILC_PORT=5667
+    volumes:
+      - exec_data:/data
+    depends_on:
+      - redis
+    networks:
+      - hardware-selection-demo
+  rigetti-qvm:
+    image: rigetti/qvm
+    command: -S -p 5666
+    networks:
+      - hardware-selection-demo
+  rigetti-quilc:
+    image: rigetti/quilc
+    command: -S -p 5667
+    networks:
+      - hardware-selection-demo
+  redis:
+    image: planqk/redis:v1.0.0
+    networks:
+      - hardware-selection-demo
   ### OpenTOSCA Ecosystem ###
   container:
     image: opentosca/container:latest
     ports:
       - '1337:1337'
-      - '8081-8087:8081-8087'
     environment:
       CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
       ENGINE_IA_HOSTNAME: engine-ia
@@ -73,12 +178,10 @@ services:
       WORKFLOWMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
       TOPOLOGYMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
       CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
-    ports:
-      - '8093:8080'
     networks:
       - hardware-selection-demo
   dind:
-    image: jpetazzo/dind:latest
+    image: opentosca/dind:v1.0.0
     privileged: true
     environment:
       - PORT=2375
