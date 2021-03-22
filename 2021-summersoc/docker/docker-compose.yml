@@ -50,7 +50,7 @@ services:
       - hardware-selection-demo
   ### NISQ Analyzer ###
   nisq-analyzer:
-    image: planqk/nisq-analyzer:latest
+    image: planqk/nisq-analyzer:v1.2.0
     environment:
       POSTGRES_HOSTNAME: db
       POSTGRES_PORT: 5432
@@ -173,6 +173,8 @@ services:
       - hardware-selection-demo
   winery:
     build: initialized-winery
+    ports:
+      - '8093:8080'
     environment:
       WINERY_HOSTNAME: ${PUBLIC_HOSTNAME}
       WORKFLOWMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
