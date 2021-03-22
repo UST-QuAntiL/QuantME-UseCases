@@ -11,7 +11,7 @@ services:
       - hardware-selection-demo
   ### QProv ###
   db:
-    image: lmmdock/postgres-multi:latest
+    image: planqk/db:v1.0.0
     logging:
       driver: none
     environment:
