@@ -121,6 +121,19 @@ If the workflow deployment fails, please have a look at the logs of the Docker-C
 After deploying the configured workflow model to the Camunda engine, it can be executed.
 For this, open a brwoser and access the Camunda engine UI using the following URL: ``http://$IP:8080/camunda``
 Thereby, $IP has to be replaced with the IP of your Docker engine (see above).
+First, create an account and login to the Camunda engine UI.
+You should see the following screen:
+
+![Camunda Overview](./docs/camunda-overview.png)
+
+Switch to the Cockpit application by clicking on the top-right and selecting ``Cockpit``:
+
+![Camunda Cockpit](./docs/camunda-cockpit.png)
+
+If the workflow model was successfully deployed in the last step, a ``1`` should be displayed under the ``Process Definitions`` label.
+Click on ``Processes`` on the top to get a list of all deployed workflow models:
+
+![Workflow Model Overview](./docs/camunda-cockpit-workflow-models.png)
 
 TODO
 
