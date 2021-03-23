@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" id="Definitions_11qou6k" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20210312">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" id="Definitions_11qou6k" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20210323">
   <bpmn:process id="Process_1xczgo7" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>SequenceFlow_1enz9g7</bpmn:outgoing>
@@ -44,7 +44,7 @@
       <bpmn:incoming>SequenceFlow_0o2g3lb</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0lvy2wy</bpmn:outgoing>
     </bpmn:serviceTask>
-    <quantme:quantumHardwareSelectionSubprocess id="Task_0yori6i" name="Quantum Hardware Selection Subprocess" providers="IBM,Rigetti" simulatorsAllowed="true" selectionStrategy="Shortest-Queue">
+    <quantme:quantumHardwareSelectionSubprocess id="Task_0yori6i" name="Quantum Hardware Selection Subprocess" providers="IBMQ,Rigetti" simulatorsAllowed="true" selectionStrategy="Shortest-Queue">
       <bpmn:incoming>SequenceFlow_1mwggqn</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_183v6c7</bpmn:outgoing>
       <bpmn:sequenceFlow id="SequenceFlow_172zohc" sourceRef="Task_1o4uv2j" targetRef="Task_0dmelnz" />
@@ -60,7 +60,7 @@
         <bpmn:incoming>SequenceFlow_0meeitj</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_172zohc</bpmn:outgoing>
       </quantme:quantumCircuitExecutionTask>
-      <quantme:readoutErrorMitigationTask id="Task_0dmelnz" name="Mitigate Error" unfoldingTechnique="Calibration-Matrix">
+      <quantme:readoutErrorMitigationTask id="Task_0dmelnz" name="Mitigate Error" unfoldingTechnique="Matrix-Inversion">
         <bpmn:incoming>SequenceFlow_172zohc</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_0phn7eg</bpmn:outgoing>
       </quantme:readoutErrorMitigationTask>
@@ -70,6 +70,14 @@
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1xczgo7">
+      <bpmndi:BPMNEdge id="SequenceFlow_1mwggqn_di" bpmnElement="SequenceFlow_1mwggqn">
+        <di:waypoint x="405" y="237" />
+        <di:waypoint x="430" y="237" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_183v6c7_di" bpmnElement="SequenceFlow_183v6c7">
+        <di:waypoint x="840" y="237" />
+        <di:waypoint x="880" y="237" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0lvy2wy_di" bpmnElement="SequenceFlow_0lvy2wy">
         <di:waypoint x="1210" y="237" />
         <di:waypoint x="1250" y="237" />
@@ -106,14 +114,12 @@
         <di:waypoint x="188" y="237" />
         <di:waypoint x="220" y="237" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_183v6c7_di" bpmnElement="SequenceFlow_183v6c7">
-        <di:waypoint x="840" y="237" />
-        <di:waypoint x="880" y="237" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_1mwggqn_di" bpmnElement="SequenceFlow_1mwggqn">
-        <di:waypoint x="405" y="237" />
-        <di:waypoint x="430" y="237" />
-      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="152" y="219" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_04vdqyu_di" bpmnElement="Task_00svwtt">
+        <dc:Bounds x="220" y="197" width="100" height="80" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="UserTask_0rxt9bh_di" bpmnElement="Task_0l8pq6r">
         <dc:Bounds x="1250" y="197" width="100" height="80" />
       </bpmndi:BPMNShape>
@@ -122,6 +128,9 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_1gl3rby_di" bpmnElement="Task_18aq0aj">
         <dc:Bounds x="880" y="197" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_1g1qyfj_di" bpmnElement="ExclusiveGateway_1g1qyfj" isMarkerVisible="true">
+        <dc:Bounds x="355" y="212" width="50" height="50" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ExclusiveGateway_1mxs7ci_di" bpmnElement="ExclusiveGateway_1mxs7ci" isMarkerVisible="true">
         <dc:Bounds x="1015" y="212" width="50" height="50" />
@@ -132,29 +141,20 @@
       <bpmndi:BPMNShape id="ServiceTask_05kfer8_di" bpmnElement="Task_1bzovnm">
         <dc:Bounds x="1110" y="197" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ExclusiveGateway_1g1qyfj_di" bpmnElement="ExclusiveGateway_1g1qyfj" isMarkerVisible="true">
-        <dc:Bounds x="355" y="212" width="50" height="50" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_04vdqyu_di" bpmnElement="Task_00svwtt">
-        <dc:Bounds x="220" y="197" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
-        <dc:Bounds x="152" y="219" width="36" height="36" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="QuantumHardwareSelectionSubprocess_0nlr3yz_di" bpmnElement="Task_0yori6i" isExpanded="true">
         <dc:Bounds x="430" y="130" width="410" height="200" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="SequenceFlow_172zohc_di" bpmnElement="SequenceFlow_172zohc">
-        <di:waypoint x="620" y="240" />
-        <di:waypoint x="650" y="240" />
+      <bpmndi:BPMNEdge id="SequenceFlow_0meeitj_di" bpmnElement="SequenceFlow_0meeitj">
+        <di:waypoint x="488" y="240" />
+        <di:waypoint x="520" y="240" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0phn7eg_di" bpmnElement="SequenceFlow_0phn7eg">
         <di:waypoint x="750" y="240" />
         <di:waypoint x="782" y="240" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_0meeitj_di" bpmnElement="SequenceFlow_0meeitj">
-        <di:waypoint x="488" y="240" />
-        <di:waypoint x="520" y="240" />
+      <bpmndi:BPMNEdge id="SequenceFlow_172zohc_di" bpmnElement="SequenceFlow_172zohc">
+        <di:waypoint x="620" y="240" />
+        <di:waypoint x="650" y="240" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="EndEvent_16wr9zp_di" bpmnElement="EndEvent_16wr9zp">
         <dc:Bounds x="782" y="222" width="36" height="36" />
