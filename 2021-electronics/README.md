@@ -39,7 +39,7 @@ Open the configuration window:
 ![Configuration](./docs/open-settings.png)
 
 Update the different configuration properties using the following values.
-Thereby, $IP has to be replaced with the IP-address of the Docker engine if you use the Docker setup (see bellow):
+Thereby, $IP has to be replaced with the IP-address of the Docker engine if you use the Docker setup (see below):
 
 * ``Camunda Engine Endpoint``: http://$IP:8080/engine-rest
 * ``OpenTOSCA Endpoint``: http://$IP:1337/csars
@@ -54,7 +54,7 @@ Thereby, $IP has to be replaced with the IP-address of the Docker engine if you 
 
 ### Running the OpenTOSCA and QuAntiL Components
 
-All other required service can be started using the Docker-Compose file located in [this folder](./docker):
+All other required services can be started using the Docker-Compose file located in [this folder](./docker):
 
 1. Update the [.env](./docker/.env) file with your settings: 
   * ``PUBLIC_HOSTNAME``: Enter the hostname/IP address of your Docker engine. Do *not* use ``localhost``.
@@ -107,7 +107,7 @@ When the deployment finishes, the last part of the service deployment modal is s
 ![Bind Service Instances](./docs/bind-service-instances.png)
 
 Finally, click on ``Perform Binding`` to automatically configure the workflow with the required information to invoke the deployed service instances.
-If the binding was successful, a corresponding pop-up is displayed (see figure bellow).
+If the binding was successful, a corresponding pop-up is displayed (see figure below).
 Afterwards, the workflow model is executable.
 Thus, it is deployed to the Camunda engine that was started using the Docker -Compose file by clicking on the ``Workflow Deployment`` button on the top:
 
@@ -207,7 +207,7 @@ Finally, click on ``Load Variables``, which displays the value of all variables:
 
 ![Load Variables](./docs/camunda-tasklist-human-s.png)
 
-Search for the variable with name ``s``, which has the value ``011`` in our example, providing the solution for Simon's problem and the given oracle.
+Search for the variable with the name ``s``, which has the value ``011`` in our example, providing the solution for Simon's problem and the given oracle.
 By pressing the ``Complete`` button, the workflow terminates.
 
 To terminate the environment, close the QuantME Transformation Framework and execute the following command in the [folder](./docker) with the Docker-Compose file: ``docker-compose down -v``
@@ -216,7 +216,7 @@ To terminate the environment, close the QuantME Transformation Framework and exe
 
 The [docker-compose file](./docker/docker-compose.yml) for the setup of the environment uses the release *v1.1.1* of [QProv](https://github.com/UST-QuAntiL/qprov).
 However, the IBMQ API may change over time and the retrieval of the required provenance data does not work as expected anymore.
-Therefore, please have a look if a newer relase is available in case you have any issues regarding QProv.
+Therefore, please have a look if a newer release is available in case you have any issues regarding QProv.
 
 The setup for this use case requires a lot of services from the OpenTOSCA ecosystem, as well as the QuAntil ecosystem.
 Thus, make sure the used Docker engine has access to enough resources and increase them, e.g., if the provisioning of a service instance for the different task fails.
