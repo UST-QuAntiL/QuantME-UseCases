@@ -4,14 +4,14 @@
 
 This project contains different use cases for the Quantum Modeling Extension (QuantME), the BPMN extension [Quantum4BPMN](https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN), and the [QuantME Modeling and Transformation Framework](https://github.com/UST-QuAntiL/QuantME-TransformationFramework).
 
-### SummerSOC 2021 Prototype
+### Electronics 2021 - Special Issue "Quantum Computing System Design and Architecture" - Prototype
 
 In this paper, we demonstrate how to model quantum workflows with Quantum4BPMN independent of a quantum computer to use.
 Therefore, the quantum computer is automatically selected during workflow runtime utilizing the [NISQ Analyzer](https://github.com/UST-QuAntiL/nisq-analyzer), and the workflow is dynamically adapted based on reusable workflow fragments depending on the selection.
 For this, a workflow model implementing Simon's algorithm and dynamically selecting quantum computers from IBM or a simulator from Rigetti is presented.
-The corresponding workflow model, as well as instructions on how to set up the required environment, can be found [here](2021-summersoc).
+The corresponding workflow model, as well as instructions on how to set up the required environment, can be found [here](2021-electronics).
 
-### UCC 2020 Prototype
+### UCC 2020 - Prototype
 
 In this [paper](https://www.iaas.uni-stuttgart.de/publications/Weder2020_QuantumWorkflows.pdf), we show how to model a workflow using Quantum4BPMN, how to transform it into a native BPMN 2.0-based workflow model, and finally, how to execute the resulting workflow model on the Camunda BPMN engine.
 For this, we present three workflow models implementing Simon's algorithm, the Bernstein-Vazirani algorithm, and Grover's algorithm.
