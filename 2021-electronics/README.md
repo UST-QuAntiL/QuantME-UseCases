@@ -165,7 +165,7 @@ Switch back to the Camunda cockpit application in the first tab to observe the t
 ![Running Workflow Instance](./docs/camunda-running-instance.png)
 
 In the figure above, the ``Selecting based on Queue Size`` script task is currently executed.
-Click on the ID of the workflow instance to display the current values of all variables:
+Click on the ID of the workflow instance to display the current values of all variables (refresh the page for updated values):
 
 ![Current Variables](./docs/camunda-running-instance-variables.png)
 
@@ -186,19 +186,31 @@ Thus, click on the ``Processes`` button and verify that two workflow models are 
 ![Deployed Workflow Models](./docs/camunda-running-instance-process-models.png)
 
 Thereby, you can also enter the second workflow model and analyze the token flow there.
-When the workflow terminates, the controll is given back to the calling workflow, and it is checked how many results are linearly independent.
+When the workflow terminates, the control is given back to the calling workflow, and it is checked how many results are linearly independent.
 Thus, the workflow iterates until *n-1* linearly independent results are retrieved, whereby *n* is the problem size of the given oracle.
-However, the hardware selection, transformation, and deployment is only needed in the first iteration.
-For all further iterations the same QPU is used and only the transformed and deployed workflow model is invoked by the call activity.
+However, the hardware selection, transformation, and deployment are only needed in the first iteration.
+For all further iterations, the same QPU is used and only the transformed and deployed workflow model is invoked by the call activity.
 
-Wait until the token flow reaches the human task at the end of the workflow as depicted bellow.
+Wait until the token flow reaches the human task at the end of the workflow as depicted below.
 Thereby, for the oracle defined above, two linearly independent results are needed.
 However, additional iterations may be required if the same result is retrieved multiple times.
 
 ![Human Task](./docs/camunda-running-instance-human.png)
 
+To analyze the resulting bitstring *s* in the human task, switch to the tasklist tab.
+Click on ``Add a simple filter`` on the left, and then, the human tasks should be visible in the task list as shown below:
 
-TODO
+![Human Task in Tasklist](./docs/camunda-tasklist-human.png)
+
+Then, click on the task and the ``Claim`` button on the right.
+Finally, click on ``Load Variables``, which displays the value of all variables:
+
+![Load Variables](./docs/camunda-tasklist-human-s.png)
+
+Search for the variable with name ``s``, which has the value ``011`` in our example, providing the solution for Simon's problem and the given oracle.
+By pressing the ``Complete`` button, the workflow terminates.
+
+To terminate the environment, close the QuantME Transformation Framework and execute the following command in the [folder](./docker) with the Docker-Compose file: ``docker-compose down -v``
 
 ## Troubleshooting
 
