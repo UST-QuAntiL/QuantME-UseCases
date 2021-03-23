@@ -146,6 +146,37 @@ To execute the workflow, open another tab with the Camunda tasklist application,
 To instantiate the workflow model, select ``Start process`` on the top-right and click on the name of the workflow in the pop-up menu.
 Next, the required input parameters for the instantiation are shown:
 
+![Instantiate Workflow](./docs/camunda-tasklist-instantiation.png)
+
+For the instantiation two input parameters are required:
+
+* ``IBMQ Access Token``: The access token from the [IBM Quantum Experience](https://quantum-computing.ibm.com/) to enable the execution on the quantum computers from IBM.
+For Rigetti, we currently only use a local simulator, which is deployed using the OpenTOSCA Container if it is chosen during hardware selection.
+Thus, no access token for Rigetti is needed. 
+
+* ``Oracle Truth Table``: The truth table defining the oracle that should be used for the workflow execution.
+We use the Qiskit functionality for the generation of the corresponding quantum circuits, thus, it can be defined as discussed in the [Qiskit documentation](https://qiskit.org/documentation/stubs/qiskit.aqua.components.oracles.TruthTableOracle.html).
+For this example, we use the following truth table ``['01101001', '10011001', '01100110']``, which results in the hidden bit string ``s=011``. 
+
+Enter the input parameters and click on ``Start``.
+The UI displays a notification at the bottom-right, that the workflow instance was successfully started.
+Switch back to the Camunda cockpit application in the first tab to obersve the token flow in the workflow:
+
+![Running Workflow Instance](./docs/camunda-running-instance.png)
+
+In the figure above, the ``Selecting based on Queue Size`` script task is currently executed.
+Click on the ID of the workflow instance to display the current values of all variables:
+
+![Current Variables](./docs/camunda-running-instance-variables.png)
+
+As shown in the figure above, the hardware selection is finished and the resulting provider and QPU can be seen in the ``selected_provider`` and ``selected_qpu`` variables.
+In the example, ``IBMQ`` was chosen and the ``simulator_statevector``.
+Depending on the problem size, only simulators can successfully execute the quantum circuit as the available quantum computers are too restricted.
+Furthermore, based on the set of suitable QPUs and simulators, the one with the shortest queue size is selected, which can be validated by checking the current queue size in the [IBM Quantum Experience](https://quantum-computing.ibm.com/).
+As discussed above, for Rigetti we utilize a locally deployed simulator.
+Thus, there is no queue for this simulator and to avoid always selecting this simulator, it operates behind a mocked queue of size 5.
+Hence, it is only selected if all suitable QPUs and simulators from IBM have a bigger queue size.
+
 TODO
 
 ## Troubleshooting
