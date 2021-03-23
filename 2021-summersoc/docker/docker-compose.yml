@@ -70,8 +70,6 @@ services:
       FOREST_PORT: 5000
       PYTKET_HOSTNAME: pytket-service
       PYTKET_PORT: 5000
-    ports:
-     - '8099:8080'
     networks:
      - hardware-selection-demo
   quantum-transpiler:
@@ -166,8 +164,6 @@ services:
       - hardware-selection-demo
   engine-plan:
     image: opentosca/ode:v2.4.0
-    ports:
-      - '9763:9763'
     networks:
       - hardware-selection-demo
   engine-ia:
