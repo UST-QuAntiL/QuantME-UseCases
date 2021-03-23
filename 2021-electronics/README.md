@@ -8,7 +8,7 @@ The following figure shows a workflow model implementing Simon's algorithm:
 ![Workflow Model](./workflow/simons-algorithm-hardware-selection.png)
 
 Furthermore, it is available in XML format [here](./workflow/simons-algorithm-hardware-selection.bpmn).
-In the following, the different steps to execute the workflow model including the dynamic hardware selection is presented.
+In the following, the different steps to execute the workflow model including the dynamic hardware selection are presented.
 
 Please refer to the *Troubleshooting* section at the end of this README if you have some issues during execution!
 
@@ -46,7 +46,7 @@ Thereby, $IP has to be replaced with the IP-address of the Docker engine if you 
 * ``Winery Endpoint``: http://$IP:8093/winery
 * ``QRM Repository User``: UST-QuAntiL
 * ``QRM Repository Name``: QuantME-UseCases
-* ``QRM Repository Path``: /2021-summersoc/QRMs
+* ``QRM Repository Path``: /2021-electronics/QRMs
 
 ![Update Configuration](./docs/update-settings.png)
 
@@ -56,7 +56,7 @@ All other required service can be started using the Docker-Compose file located 
 
 1. Update the [.env](./docker/.env) file with your settings: 
   * ``PUBLIC_HOSTNAME``: Enter the hostname/IP address of your Docker engine. Do *not* use ``localhost``.
-  * ``IBM_ACCESS_TOKEN``: Enter your IBM access token which is needed to retrieve the required provenance data by [QProv](https://github.com/UST-QuAntiL/qprov). It can be retrieved using the [IBM Quantum Experience](https://quantum-computing.ibm.com/) UI.
+  * ``IBM_ACCESS_TOKEN``: Enter your IBM access token which is needed to retrieve the required provenance data by [QProv](https://github.com/UST-QuAntiL/qprov). It can be obtained using the [IBM Quantum Experience](https://quantum-computing.ibm.com/) UI.
 
 2. Run the Docker-Compose file:
 ```
@@ -77,6 +77,15 @@ Next, the workflow model implementing Simon's algorithm is imported into QuantME
 The workflow model should now be visible in the QuantME Transformation Framework:
 
 ![Imported Workflow](./docs/import-workflow.png)
+
+Click on the ``Transformation`` button on the top to transform the workflow model into a native BPMN workflow model, which is afterwards visible in the modeler:
+
+![Transformed Workflow](./docs/transform-workflow.png)
+
+In the next step, the required services for the service tasks in the workflow are deployed.
+Thereby, only the service instances for the tasks outside the QuantumHardwareSelectionSubprocess are created, as the other services are deployed on-demand after the hardware selection on workflow runtime.
+Thus, three services are deployed in this step.
+To initiate the deployment, click on the ``Service Deployment`` button on the top of the modeler:
 
 TODO
 
