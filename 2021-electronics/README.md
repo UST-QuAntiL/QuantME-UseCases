@@ -44,6 +44,8 @@ Thereby, $IP has to be replaced with the IP-address of the Docker engine if you 
 * ``Camunda Engine Endpoint``: http://$IP:8080/engine-rest
 * ``OpenTOSCA Endpoint``: http://$IP:1337/csars
 * ``Winery Endpoint``: http://$IP:8093/winery
+* ``QuantME Framework Endpoint``: http://$IP:8888
+* ``NISQ Analyzer Endpoint``: http://$IP:8099/nisq-analyzer
 * ``QRM Repository User``: UST-QuAntiL
 * ``QRM Repository Name``: QuantME-UseCases
 * ``QRM Repository Path``: /2021-electronics/QRMs
