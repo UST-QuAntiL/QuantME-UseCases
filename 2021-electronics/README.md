@@ -89,6 +89,14 @@ Thereby, only the service instances for the tasks outside the QuantumHardwareSel
 Thus, three services are deployed in this step.
 To initiate the deployment, click on the ``Service Deployment`` button on the top of the modeler:
 
+![Start Service Deployment](./docs/start-service-deployment.png)
+
+In the modal, an overview of the services to deploy is given.
+Click on ``Upload CSARs`` to upload the CSARs containing the deployment models to the [OpenTOSCA Container](https://github.com/OpenTOSCA/container), a TOSCA-compliant deployment system.
+Wait until the upload process terminates and the next step is displayed in the modal:
+
+![Create Service Instances](./docs/create-service-instances.png)
+
 TODO
 
 ## Execute the Workflow using the Camunda Engine
