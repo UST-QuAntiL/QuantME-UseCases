@@ -35,6 +35,8 @@ services:
       - hardware-selection-demo
   qprov-collector-ibm:
     image: planqk/qprov-collector:v1.1.1
+    logging:
+      driver: none
     environment:
       POSTGRES_HOSTNAME: db
       POSTGRES_PORT: 5432
@@ -153,6 +155,7 @@ services:
     image: opentosca/container:latest
     ports:
       - '1337:1337'
+      - '8081-8087:8081-8087'
     environment:
       CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
       ENGINE_IA_HOSTNAME: engine-ia
@@ -173,6 +176,8 @@ services:
       - hardware-selection-demo
   winery:
     build: initialized-winery
+    logging:
+      driver: none
     ports:
       - '8093:8080'
     environment:
