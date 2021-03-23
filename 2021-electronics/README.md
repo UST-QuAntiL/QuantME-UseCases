@@ -119,14 +119,14 @@ If the workflow deployment fails, please have a look at the logs of the Docker-C
 ## Execute the Workflow using the Camunda Engine
 
 After deploying the configured workflow model to the Camunda engine, it can be executed.
-For this, open a brwoser and access the Camunda engine UI using the following URL: ``http://$IP:8080/camunda``
+For this, open a browser and access the Camunda engine UI using the following URL: ``http://$IP:8080/camunda``
 Thereby, $IP has to be replaced with the IP of your Docker engine (see above).
 First, create an account and login to the Camunda engine UI.
 You should see the following screen:
 
 ![Camunda Overview](./docs/camunda-overview.png)
 
-Switch to the Cockpit application by clicking on the top-right and selecting ``Cockpit``:
+Switch to the Camunda cockpit application by clicking on the top-right and selecting ``Cockpit``:
 
 ![Camunda Cockpit](./docs/camunda-cockpit.png)
 
@@ -134,6 +134,17 @@ If the workflow model was successfully deployed in the last step, a ``1`` should
 Click on ``Processes`` on the top to get a list of all deployed workflow models:
 
 ![Workflow Model Overview](./docs/camunda-cockpit-workflow-models.png)
+
+Select the example workflow model by clicking on its name, which opens a view where the workflow model is shown.
+In this view, the token flow can be observed during workflow execution.
+This means, it is visualized which activity of the workflow model is currently executed.
+Furthermore, the current values of the different variables in the workflow are displayed.
+To execute the workflow, open another tab with the Camunda tasklist application, by clicking on the top-right and selecting ``Tasklist``:
+
+![Tasklist Overview](./docs/camunda-tasklist.png)
+
+To instantiate the workflow model, select ``Start process`` on the top-right and click on the name of the workflow in the pop-up menu.
+Next, the required input parameters for the instantiation are shown:
 
 TODO
 
