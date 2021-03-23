@@ -97,9 +97,30 @@ Wait until the upload process terminates and the next step is displayed in the m
 
 ![Create Service Instances](./docs/create-service-instances.png)
 
-TODO
+The modal shows all required input parameters to create the service instances.
+However, for the specified deployment models, all information is already specified.
+Thus, no additional parameters have to be provided.
+Next, click on the ``Deploy Services`` button.
+This may take a few minutes, as the service to generate the circuits for Simon's algorithm is based on Qiskit, and the download takes some time depending on the internet connection.
+When the deployment finishes, the last part of the service deployment modal is shown:
+
+![Bind Service Instances](./docs/bind-service-instances.png)
+
+Finally, click on ``Perform Binding`` to automatically configure the workflow with the required information to invoke the deployed service instances.
+If the binding was successful, a corresponding pop-up is displayed (see figure bellow).
+Afterwards, the workflow model is executable.
+Thus, it is deployed to the Camunda engine that was started using the Docker -Compose file by clicking on the ``Workflow Deployment`` button on the top:
+
+![Deploy Workflow](./docs/workflow-deployment.png)
+
+Thereby, another pop-up is displayed after the successful deployment of the workflow model.
+If the workflow deployment fails, please have a look at the logs of the Docker-Compose file and the Troubleshooting section at the end of this file.
 
 ## Execute the Workflow using the Camunda Engine
+
+After deploying the configured workflow model to the Camunda engine, it can be executed.
+For this, open a brwoser and access the Camunda engine UI using the following URL: ``http://$IP:8080/camunda``
+Thereby, $IP has to be replaced with the IP of your Docker engine (see above).
 
 TODO
 
