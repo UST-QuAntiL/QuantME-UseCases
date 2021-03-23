@@ -160,7 +160,7 @@ For this example, we use the following truth table ``['01101001', '10011001', '0
 
 Enter the input parameters and click on ``Start``.
 The UI displays a notification at the bottom-right, that the workflow instance was successfully started.
-Switch back to the Camunda cockpit application in the first tab to obersve the token flow in the workflow:
+Switch back to the Camunda cockpit application in the first tab to observe the token flow in the workflow:
 
 ![Running Workflow Instance](./docs/camunda-running-instance.png)
 
@@ -170,12 +170,33 @@ Click on the ID of the workflow instance to display the current values of all va
 ![Current Variables](./docs/camunda-running-instance-variables.png)
 
 As shown in the figure above, the hardware selection is finished and the resulting provider and QPU can be seen in the ``selected_provider`` and ``selected_qpu`` variables.
-In the example, ``IBMQ`` was chosen and the ``simulator_statevector``.
+In the example, ``ibmq`` was chosen and the ``simulator_statevector``.
 Depending on the problem size, only simulators can successfully execute the quantum circuit as the available quantum computers are too restricted.
 Furthermore, based on the set of suitable QPUs and simulators, the one with the shortest queue size is selected, which can be validated by checking the current queue size in the [IBM Quantum Experience](https://quantum-computing.ibm.com/).
 As discussed above, for Rigetti we utilize a locally deployed simulator.
 Thus, there is no queue for this simulator and to avoid always selecting this simulator, it operates behind a mocked queue of size 5.
 Hence, it is only selected if all suitable QPUs and simulators from IBM have a bigger queue size.
+
+When the workflow execution reaches the BPMN call activity, the workflow fragment in the QuantumHardwareSelectionSubprocess was transformed, all required services are deployed, and the resulting workflow model was uploaded to the Camunda engine:
+
+![Call Activity](./docs/camunda-running-instance-call.png)
+
+Thus, click on the ``Processes`` button and verify that two workflow models are deployed:
+
+![Deployed Workflow Models](./docs/camunda-running-instance-process-models.png)
+
+Thereby, you can also enter the second workflow model and analyze the token flow there.
+When the workflow terminates, the controll is given back to the calling workflow, and it is checked how many results are linearly independent.
+Thus, the workflow iterates until *n-1* linearly independent results are retrieved, whereby *n* is the problem size of the given oracle.
+However, the hardware selection, transformation, and deployment is only needed in the first iteration.
+For all further iterations the same QPU is used and only the transformed and deployed workflow model is invoked by the call activity.
+
+Wait until the token flow reaches the human task at the end of the workflow as depicted bellow.
+Thereby, for the oracle defined above, two linearly independent results are needed.
+However, additional iterations may be required if the same result is retrieved multiple times.
+
+![Human Task](./docs/camunda-running-instance-human.png)
+
 
 TODO
 
