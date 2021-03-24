@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Definitions targetNamespace="http://quantil.org/quantme/pull" id="winery-defs-for_pull-QuilExecutorService_w1-wip1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
-    <Import namespace="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" location="http://localhost:8093/winery/relationshiptypes/http%253A%252F%252Fdocs.oasis-open.org%252Ftosca%252Fns%252F2011%252F12%252FToscaBaseTypes/HostedOn/?definitions" importType="http://docs.oasis-open.org/tosca/ns/2011/12"/>
-    <Import namespace="http://opentosca.org/nodetypes" location="http://localhost:8093/winery/nodetypes/http%253A%252F%252Fopentosca.org%252Fnodetypes/DockerEngine/?definitions" importType="http://docs.oasis-open.org/tosca/ns/2011/12"/>
-    <Import namespace="http://opentosca.org/nodetypes" location="http://localhost:8093/winery/nodetypes/http%253A%252F%252Fopentosca.org%252Fnodetypes/DockerContainer/?definitions" importType="http://docs.oasis-open.org/tosca/ns/2011/12"/>
     <ServiceTemplate name="QuilExecutorService_w1-wip1" targetNamespace="http://quantil.org/quantme/pull" id="QuilExecutorService_w1-wip1">
         <TopologyTemplate>
             <NodeTemplate name="DockerEngine" minInstances="1" maxInstances="1" type="nodetypes:DockerEngine" id="DockerEngine_0" winery:x="653" winery:y="349" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Properties>
                     <otntyIproperties:properties xmlns:otntyIproperties="http://opentosca.org/nodetypes/properties">
-                        <otntyIproperties:DockerEngineURL>get_input: DockerEngineURL</otntyIproperties:DockerEngineURL>
+                        <otntyIproperties:DockerEngineURL>tcp://dind:2375</otntyIproperties:DockerEngineURL>
                         <otntyIproperties:DockerEngineCertificate/>
                         <otntyIproperties:State>Running</otntyIproperties:State>
                     </otntyIproperties:properties>
@@ -44,10 +41,10 @@
                         <otntypdInodetypes:ContainerID/>
                         <otntypdInodetypes:ContainerIP/>
                         <otntypdInodetypes:ImageID/>
-                        <otntypdInodetypes:ENV_CAMUNDA_ENDPOINT/>
+                        <otntypdInodetypes:ENV_CAMUNDA_ENDPOINT>get_input: camundaEndpoint</otntypdInodetypes:ENV_CAMUNDA_ENDPOINT>
+                        <otntypdInodetypes:ENV_CAMUNDA_TOPIC>get_input: camundaTopic</otntypdInodetypes:ENV_CAMUNDA_TOPIC>
                         <otntypdInodetypes:ENV_QVM_ENDPOINT>http://dind:5666</otntypdInodetypes:ENV_QVM_ENDPOINT>
                         <otntypdInodetypes:ENV_QUILC_ENDPOINT>tcp://dind:5667</otntypdInodetypes:ENV_QUILC_ENDPOINT>
-                        <otntypdInodetypes:ENV_CAMUNDA_TOPIC/>
                     </otntypdInodetypes:Properties>
                 </Properties>
                 <DeploymentArtifacts>

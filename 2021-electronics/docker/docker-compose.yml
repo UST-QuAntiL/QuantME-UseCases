@@ -93,7 +93,7 @@ services:
   qiskit-rq-worker:
     image: planqk/qiskit-service:compiler-selection
     logging:
-      driver: none 
+      driver: none
     command: rq worker --url redis://redis qiskit-service_execute
     environment:
       - REDIS_URL=redis://redis
@@ -102,6 +102,8 @@ services:
       - exec_data:/data
     depends_on:
       - redis
+    networks:
+      - hardware-selection-demo
   forest-service:
     image: planqk/forest-service:compiler-selection
     logging:

@@ -20,9 +20,9 @@ Next, we will discuss the steps required to set-up the environment to model and 
 
 First, build and run the [QuantME Transformation Framework](https://github.com/UST-QuAntiL/QuantME-TransformationFramework):
 
-1. Clone the repository using release v1.2.0: 
+1. Clone the repository using release v1.2.1: 
 ```
-git clone https://github.com/UST-QuAntiL/QuantME-TransformationFramework.git --branch v1.2.0
+git clone https://github.com/UST-QuAntiL/QuantME-TransformationFramework.git --branch v1.2.1
 ```
 2. Change to the cloned folder and build the framework:
 ```
