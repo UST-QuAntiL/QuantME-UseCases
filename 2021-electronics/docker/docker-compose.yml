@@ -11,7 +11,7 @@ services:
       - hardware-selection-demo
   ### QProv ###
   db:
-    image: planqk/db:v1.0.0
+    build: initialized-db
     logging:
       driver: none
     environment:
