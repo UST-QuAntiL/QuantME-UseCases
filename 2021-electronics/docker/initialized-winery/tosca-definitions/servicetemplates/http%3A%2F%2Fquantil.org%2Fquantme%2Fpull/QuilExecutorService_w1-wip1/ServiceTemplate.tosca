@@ -43,8 +43,8 @@
                         <otntypdInodetypes:ImageID/>
                         <otntypdInodetypes:ENV_CAMUNDA_ENDPOINT>get_input: camundaEndpoint</otntypdInodetypes:ENV_CAMUNDA_ENDPOINT>
                         <otntypdInodetypes:ENV_CAMUNDA_TOPIC>get_input: camundaTopic</otntypdInodetypes:ENV_CAMUNDA_TOPIC>
-                        <otntypdInodetypes:ENV_QVM_ENDPOINT>http://dind:5666</otntypdInodetypes:ENV_QVM_ENDPOINT>
-                        <otntypdInodetypes:ENV_QUILC_ENDPOINT>tcp://dind:5667</otntypdInodetypes:ENV_QUILC_ENDPOINT>
+                        <otntypdInodetypes:ENV_QVM_ENDPOINT>http://172.17.0.1:5666</otntypdInodetypes:ENV_QVM_ENDPOINT>
+                        <otntypdInodetypes:ENV_QUILC_ENDPOINT>tcp://172.17.0.1:5667</otntypdInodetypes:ENV_QUILC_ENDPOINT>
                     </otntypdInodetypes:Properties>
                 </Properties>
                 <DeploymentArtifacts>
