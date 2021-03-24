@@ -138,12 +138,10 @@ services:
       - hardware-selection-demo
   rigetti-qvm:
     image: planqk/rigetti-qvm:v1.0.0
-    command: -S -p 5666
     networks:
       - hardware-selection-demo
   rigetti-quilc:
     image: planqk/rigetti-quilc:v1.0.0
-    command: -S -p 5667
     networks:
       - hardware-selection-demo
   redis:
