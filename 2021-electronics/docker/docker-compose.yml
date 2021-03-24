@@ -137,12 +137,12 @@ services:
     networks:
       - hardware-selection-demo
   rigetti-qvm:
-    image: rigetti/qvm
+    image: planqk/rigetti-qvm:v1.0.0
     command: -S -p 5666
     networks:
       - hardware-selection-demo
   rigetti-quilc:
-    image: rigetti/quilc
+    image: planqk/rigetti-quilc:v1.0.0
     command: -S -p 5667
     networks:
       - hardware-selection-demo
@@ -152,7 +152,7 @@ services:
       - hardware-selection-demo
   ### OpenTOSCA Ecosystem ###
   container:
-    image: opentosca/container:latest
+    image: opentosca/container:v3.0.0
     ports:
       - '1337:1337'
       - '8081-8087:8081-8087'
