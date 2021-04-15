@@ -4,13 +4,7 @@ Service providing the classification functionality of the [QHAna Tool](https://g
 
 ### Setup the Environment
 
-The classification.yml file can be used to create a conda environment:
-
-```
-conda env create -f classification.yml
-```
-
-Furthermore, the requirements.txt file can be used to install the dependencies when using pip:
+The requirements.txt file can be used to install the dependencies when using pip:
 
 ```
 pip install -r requirements.txt

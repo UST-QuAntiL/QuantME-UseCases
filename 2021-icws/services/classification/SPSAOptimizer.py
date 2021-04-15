@@ -11,7 +11,6 @@ class SPSAOptimizer():
 
     @classmethod
     def initializeOptimization(cls, n_thetas, optimizer_params):
-        # TODO: Calibrate optimizer parameters
 
         initial_thetas = np.random.default_rng().standard_normal(n_thetas)
 

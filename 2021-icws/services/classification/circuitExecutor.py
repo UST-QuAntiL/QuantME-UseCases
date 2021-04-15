@@ -1,12 +1,13 @@
 from qiskit import QuantumCircuit
-from qiskit.providers.aer import Aer
 from qiskit.aqua.quantum_instance import QuantumInstance
 from quantumBackendFactory import QuantumBackendFactory
+
 
 class CircuitExecutor():
 
     @classmethod
-    def runCircuit(cls, circuit: QuantumCircuit, parameterizations: list, backend, token, shots, add_measurements=False):
+    def runCircuit(cls, circuit: QuantumCircuit, parameterizations: list, backend, token, shots,
+                   add_measurements=False):
         """
             Runs the circuit with each parameterization in the provided list and
             on the provided quantum instance and
@@ -37,8 +38,8 @@ class CircuitExecutor():
 
         results = QInstance.execute(circuits)
 
-
         return results, QInstance.is_statevector
+
 
 def parameterization_from_parameter_names(circuit, parameterization):
     """

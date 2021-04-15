@@ -3,7 +3,6 @@ Author: Daniel Fink
 Email: daniel-fink@outlook.com
 """
 
-from qiskit import *
 from qiskit.providers.aer import Aer
 from qiskit.providers.ibmq import IBMQ
 

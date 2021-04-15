@@ -1,6 +1,7 @@
 import codecs
 import ast
 
+
 class ListSerializer:
     """
     A class for serializing Python lists and dictionaries (or lists of dictionaries or vice versa)
@@ -16,7 +17,7 @@ class ListSerializer:
         """
 
         with codecs.open(file_path, 'a', 'utf-8') as file:
-                file.write(str(list_or_dictionary))
+            file.write(str(list_or_dictionary))
 
     @staticmethod
     def deserialize(file_path):

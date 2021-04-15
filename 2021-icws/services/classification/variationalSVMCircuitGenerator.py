@@ -43,8 +43,6 @@ class VariationalSVMCircuitGenerator():
                     with    n = number of parameterizations (with different set of thetas),
                             d = number of trainable parameters
         """
-        n_parameterizations = len(data)
-        n_dimensions = data.shape[1]
         fm_parameters, var_parameters = circuit[0][0].params, circuit[1][0].params
         fm_parameters, var_parameters = [param.name for param in fm_parameters], [param.name for param in var_parameters]
 
