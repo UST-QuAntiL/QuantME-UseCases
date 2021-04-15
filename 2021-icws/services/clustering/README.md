@@ -4,13 +4,7 @@ Service providing the clustering functionality of the [QHAna Tool](https://githu
 
 ### Setup the Environment
 
-The clustering.yml file can be used to create a conda environment:
-
-```
-conda env create -f clustering.yml
-```
-
-Furthermore, the requirements.txt file can be used to install the dependencies when using pip:
+The requirements.txt file can be used to install the dependencies when using pip:
 
 ```
 pip install -r requirements.txt

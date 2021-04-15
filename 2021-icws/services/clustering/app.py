@@ -7,7 +7,6 @@ from quart import Quart, request, jsonify
 import os
 import asyncio
 import numpy as np
-from numpySerializer import NumpySerializer
 from qiskitSerializer import QiskitSerializer
 from quantumBackendFactory import QuantumBackendFactory
 from clusteringCircuitGenerator import ClusteringCircuitGenerator
@@ -59,7 +58,7 @@ async def initialize_centroids(job_id):
         centroids = DataProcessingService.generate_random_data(k)
 
         # serialize the data
-        NumpySerializer.serialize(centroids, centroids_file_path)
+        np.savetxt(centroids_file_path, centroids)
 
         # generate urls
         url_root = request.host_url
@@ -139,8 +138,8 @@ async def calculate_angles(job_id):
         centroid_angles = DataProcessingService.calculate_angles(centroids, base_vector)
 
         # serialize the data
-        NumpySerializer.serialize(data_angles, data_angles_file_path)
-        NumpySerializer.serialize(centroid_angles, centroid_angles_file_path)
+        np.savetxt(data_angles_file_path, data_angles)
+        np.savetxt(centroid_angles_file_path, centroid_angles)
 
         # generate urls
         url_root = request.host_url
@@ -282,7 +281,7 @@ async def execute_negative_rotation_circuits(job_id):
                                                                                          shots_per_circuit)
 
         # serialize the data
-        NumpySerializer.serialize(cluster_mapping, cluster_mapping_file_path)
+        np.savetxt(cluster_mapping_file_path, cluster_mapping)
 
         # generate urls
         url_root = request.host_url
@@ -358,7 +357,7 @@ async def calculate_centroids(job_id):
         centroids = DataProcessingService.calculate_centroids(cluster_mapping, old_centroids, data)
 
         # serialize the data
-        NumpySerializer.serialize(centroids, centroids_file_path)
+        np.savetxt(centroids_file_path, centroids)
 
         # generate urls
         url_root = request.host_url
