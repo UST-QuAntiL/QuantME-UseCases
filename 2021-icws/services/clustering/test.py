@@ -12,12 +12,6 @@ import requests
 import json
 
 
-clustering_algorithm = 'negative-rotation'
-# clustering_algorithm = 'destructive-interference'
-# clustering_algorithm = 'state-preparation'
-# clustering_algorithm = 'sklearn'
-
-
 def get_colors(k):
     """
     Return k colors in a list. We choose from 7 different colors.
@@ -144,30 +138,20 @@ async def calculate_angles(root_url, job_id, data_url, centroids_url):
 
 
 async def generate_quantum_circuits(root_url, job_id, data_angles_url, centroid_angles_url):
-    request_url = str(root_url) + '/api/circuit-generation/' \
-                  + str(clustering_algorithm) + '-clustering/' + str(job_id) + '?' \
-                  'data_angles_url=' + str(data_angles_url) + '&' + \
+    request_url = str(root_url) + '/api/circuit-generation/negative-rotation-clustering/' + str(job_id) + '?' \
+                                                                                                          'data_angles_url=' + str(
+        data_angles_url) + '&' + \
                   'centroid_angles_url=' + str(centroid_angles_url)
     response = json.loads(requests.request("POST", request_url, headers={}, data={}).text)
     return response['circuits_url']
 
 
 async def execute_quantum_circuits(root_url, job_id, circuits_url, k, backend_name):
-    request_url = str(root_url) + '/api/circuit-execution/' \
-                  + str(clustering_algorithm) + '-clustering/' + str(job_id) + '?' + \
+    request_url = str(root_url) + '/api/circuit-execution/negative-rotation-clustering/' + str(job_id) + '?' + \
                   'circuits_url=' + str(circuits_url) + '&' + \
                   'k=' + str(k) + '&' + \
                   'backend_name=' + str(backend_name) + '&' + \
                   'token='
-    response = json.loads(requests.request("POST", request_url, headers={}, data={}).text)
-    return response['cluster_mapping_url']
-
-
-async def perform_sklearn_clustering(root_url, job_id, data_url, centroids_url):
-    request_url = str(root_url) + '/api/classical-clustering/' \
-                  + str(clustering_algorithm) + '-clustering/' + str(job_id) + '?' + \
-                  'data_url=' + str(data_url) + '&' + \
-                  'centroids_url=' + str(centroids_url)
     response = json.loads(requests.request("POST", request_url, headers={}, data={}).text)
     return response['cluster_mapping_url']
 
@@ -215,45 +199,42 @@ async def main():
     eps = 0.001
     max_runs = 10
     url_root = 'http://127.0.0.1:5000'
-    data_url = url_root + '/static/0_base/embedding.txt'
+    data_url = 'https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/master/2021-icws/data/embedding.txt'
     backend_name = 'aer_qasm_simulator'
-
-    # use later as plot result
-    cluster_mapping_local_url = ''
+    print('Starting test script...')
 
     # call the task
     old_centroids_url = await initialize_centroids(url_root, job_id, k)
     # safe the result from task locally
     old_centroids_local_url = await download_url_and_generate_temp_url(url_root, old_centroids_url, 'old_centroids')
+    print('Initialized centroids and starting iterations...')
 
     for i in range(1, max_runs + 1):
+        print('Running iteration: ' + str(i))
 
         # call the task
         data_angles_url, centroid_angles_url = await calculate_angles(
             url_root, job_id, data_url, old_centroids_local_url)
+        print('Data angles URL: ' + data_angles_url)
+        print('Centroid angles URL: ' + data_angles_url)
 
         # safe the result from task locally
         data_angles_local_url = await download_url_and_generate_temp_url(url_root, data_angles_url, 'data_angles')
-        centroid_angles_local_url = await download_url_and_generate_temp_url(url_root, centroid_angles_url, 'centroid_angles')
+        centroid_angles_local_url = await download_url_and_generate_temp_url(url_root, centroid_angles_url,
+                                                                             'centroid_angles')
 
         # call the task
-        if clustering_algorithm is not 'sklearn':
-            circuits_url = await generate_quantum_circuits(
+        circuits_url = await generate_quantum_circuits(
                 url_root, job_id, data_angles_local_url, centroid_angles_local_url)
 
-            # safe the result from task locally
-            circuits_local_url = await download_url_and_generate_temp_url(url_root, circuits_url, 'circuits')
-
-        if clustering_algorithm is 'sklearn':
-            cluster_mapping_url = await perform_sklearn_clustering(
-                url_root, job_id, data_url, old_centroids_local_url)
-        else:
-            # call the task
-            cluster_mapping_url = await execute_quantum_circuits(
+        # safe the result from task locally
+        circuits_local_url = await download_url_and_generate_temp_url(url_root, circuits_url, 'circuits')
+        cluster_mapping_url = await execute_quantum_circuits(
                 url_root, job_id, circuits_local_url, k, backend_name)
 
         # safe the result from task locally
-        cluster_mapping_local_url = await download_url_and_generate_temp_url(url_root, cluster_mapping_url, 'cluster_mapping')
+        cluster_mapping_local_url = await download_url_and_generate_temp_url(url_root, cluster_mapping_url,
+                                                                             'cluster_mapping')
 
         # call the task
         new_centroids_url = await calculate_centroids(
@@ -276,6 +257,7 @@ async def main():
 
     # plot the results
     await plot_data_from_urls(data_url, cluster_mapping_local_url, k)
+
 
 if __name__ == "__main__":
     asyncio.run(main())
