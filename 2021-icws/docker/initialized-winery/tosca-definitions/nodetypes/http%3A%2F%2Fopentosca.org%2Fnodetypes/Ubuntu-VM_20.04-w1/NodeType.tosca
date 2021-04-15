@@ -35,9 +35,6 @@
                 <winery:type>xsd:string</winery:type>
             </winery:properties>
         </winery:PropertiesDefinition>
-        <RequirementDefinitions>
-            <RequirementDefinition xmlns:requirementtypes="http://opentosca.org/requirementtypes" name="ReqCanHostUbuntuVM" requirementType="requirementtypes:ReqCanHostUbuntuVM" lowerBound="1" upperBound="unbounded"/>
-        </RequirementDefinitions>
         <Interfaces>
             <Interface name="OperatingSystemInterface">
                 <Operation name="installPackage">

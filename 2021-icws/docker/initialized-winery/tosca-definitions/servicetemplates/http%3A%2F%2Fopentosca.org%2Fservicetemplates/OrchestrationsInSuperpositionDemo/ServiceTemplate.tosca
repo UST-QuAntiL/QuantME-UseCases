@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://opentosca.org/servicetemplates" id="winery-defs-for_servicetemplates-OrchestrationsInSuperpositionDemo_w1-wip1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <ServiceTemplate name="OrchestrationsInSuperpositionDemo" targetNamespace="http://opentosca.org/servicetemplates" id="OrchestrationsInSuperpositionDemo">
+        <TopologyTemplate>
+            <NodeTemplate name="OpenStack" minInstances="1" maxInstances="1" type="nodetypes:OpenStack_Train-w1" id="OpenStack_Train-w1_0" winery:x="896" winery:y="582" xmlns:nodetypes="http://opentosca.org/nodetypes">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org">
+                        <ex:HypervisorEndpoint>get_input: OpenStackEndpoint</ex:HypervisorEndpoint>
+                        <ex:HypervisorUserName>get_input: OpenStackUser</ex:HypervisorUserName>
+                        <ex:HypervisorUserPassword>get_input: OpenStackPassword</ex:HypervisorUserPassword>
+                        <ex:HypervisorTenantID>get_input: OpenStackProjectId</ex:HypervisorTenantID>
+                    </ex:Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate name="Ubuntu-VM" minInstances="1" maxInstances="1" type="nodetypes:Ubuntu-VM_20.04-w1" id="Ubuntu-VM_20.04-w1_0" winery:x="289" winery:y="386" xmlns:nodetypes="http://opentosca.org/nodetypes">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org">
+                        <ex:VMIP/>
+                        <ex:VMInstanceID/>
+                        <ex:VMType>m1.small</ex:VMType>
+                        <ex:VMUserName>ubuntu</ex:VMUserName>
+                        <ex:VMUserPassword>N/A</ex:VMUserPassword>
+                        <ex:VMPrivateKey>get_input: VMPrivateKey</ex:VMPrivateKey>
+                        <ex:VMPublicKey>N/A</ex:VMPublicKey>
+                        <ex:VMKeyPairName>get_input:VMKeyPairName</ex:VMKeyPairName>
+                    </ex:Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate name="Ubuntu-VM" minInstances="1" maxInstances="1" type="nodetypes:Ubuntu-VM_20.04-w1" id="Ubuntu-VM_20.04-w1_1" winery:x="730" winery:y="388" xmlns:nodetypes="http://opentosca.org/nodetypes">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org">
+                        <ex:VMIP/>
+                        <ex:VMInstanceID/>
+                        <ex:VMType>m1.small</ex:VMType>
+                        <ex:VMUserName>ubuntu</ex:VMUserName>
+                        <ex:VMUserPassword>N/A</ex:VMUserPassword>
+                        <ex:VMPrivateKey>get_input: VMPrivateKey</ex:VMPrivateKey>
+                        <ex:VMPublicKey>N/A</ex:VMPublicKey>
+                        <ex:VMKeyPairName>get_input:VMKeyPairName</ex:VMKeyPairName>
+                    </ex:Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate name="Ubuntu-VM" minInstances="1" maxInstances="1" type="nodetypes:Ubuntu-VM_20.04-w1" id="Ubuntu-VM_20.04-w1_2" winery:x="1069" winery:y="388" xmlns:nodetypes="http://opentosca.org/nodetypes">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org">
+                        <ex:VMIP/>
+                        <ex:VMInstanceID/>
+                        <ex:VMType>m1.small</ex:VMType>
+                        <ex:VMUserName>ubuntu</ex:VMUserName>
+                        <ex:VMUserPassword>N/A</ex:VMUserPassword>
+                        <ex:VMPrivateKey>get_input: VMPrivateKey</ex:VMPrivateKey>
+                        <ex:VMPublicKey>N/A</ex:VMPublicKey>
+                        <ex:VMKeyPairName>get_input:VMKeyPairName</ex:VMKeyPairName>
+                    </ex:Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate name="Ubuntu-VM" minInstances="1" maxInstances="1" type="nodetypes:Ubuntu-VM_20.04-w1" id="Ubuntu-VM_20.04-w1_3" winery:x="1532" winery:y="383" xmlns:nodetypes="http://opentosca.org/nodetypes">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org">
+                        <ex:VMIP/>
+                        <ex:VMInstanceID/>
+                        <ex:VMType>m1.small</ex:VMType>
+                        <ex:VMUserName>ubuntu</ex:VMUserName>
+                        <ex:VMUserPassword>N/A</ex:VMUserPassword>
+                        <ex:VMPrivateKey>get_input: VMPrivateKey</ex:VMPrivateKey>
+                        <ex:VMPublicKey>N/A</ex:VMPublicKey>
+                        <ex:VMKeyPairName>get_input:VMKeyPairName</ex:VMKeyPairName>
+                    </ex:Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate name="Python_3" minInstances="1" maxInstances="1" type="nodetypes:Python_3" id="Python_3_0" winery:x="1789" winery:y="274" xmlns:nodetypes="http://opentosca.org/nodetypes"/>
+            <NodeTemplate name="Qiskit_w1" minInstances="1" maxInstances="1" type="nodetypes:Qiskit_w1" id="Qiskit_w1_0" winery:x="1528" winery:y="182" xmlns:nodetypes="http://opentosca.org/nodetypes"/>
+            <NodeTemplate name="Python_3" minInstances="1" maxInstances="1" type="nodetypes:Python_3" id="Python_3_1" winery:x="1245" winery:y="281" xmlns:nodetypes="http://opentosca.org/nodetypes"/>
+            <NodeTemplate name="Qiskit_w1" minInstances="1" maxInstances="1" type="nodetypes:Qiskit_w1" id="Qiskit_w1_1" winery:x="1064" winery:y="189" xmlns:nodetypes="http://opentosca.org/nodetypes"/>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Ubuntu-VM_20.04-w1_0"/>
+                <TargetElement ref="OpenStack_Train-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_1" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Ubuntu-VM_20.04-w1_1"/>
+                <TargetElement ref="OpenStack_Train-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_2" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Ubuntu-VM_20.04-w1_2"/>
+                <TargetElement ref="OpenStack_Train-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_3" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Ubuntu-VM_20.04-w1_3"/>
+                <TargetElement ref="OpenStack_Train-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_4" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Python_3_0"/>
+                <TargetElement ref="Ubuntu-VM_20.04-w1_3"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_5" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Qiskit_w1_0"/>
+                <TargetElement ref="Ubuntu-VM_20.04-w1_3"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="DependsOn" type="ToscaBaseTypes:DependsOn" id="con_DependsOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Qiskit_w1_0"/>
+                <TargetElement ref="Python_3_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_6" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Python_3_1"/>
+                <TargetElement ref="Ubuntu-VM_20.04-w1_2"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_7" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Qiskit_w1_1"/>
+                <TargetElement ref="Ubuntu-VM_20.04-w1_2"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="DependsOn" type="ToscaBaseTypes:DependsOn" id="con_DependsOn_1" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Qiskit_w1_1"/>
+                <TargetElement ref="Python_3_1"/>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>
