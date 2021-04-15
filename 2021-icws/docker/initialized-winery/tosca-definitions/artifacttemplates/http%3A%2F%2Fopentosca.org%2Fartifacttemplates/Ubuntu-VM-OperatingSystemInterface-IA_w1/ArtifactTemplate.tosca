@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/artifacttemplates" id="winery-defs-for_artifacttemplates-Ubuntu-VM-OperatingSystemInterface-IA_w1">
+    <ArtifactTemplate xmlns:artifacttypes="http://opentosca.org/artifacttypes" name="Ubuntu-VM-OperatingSystemInterface-IA_w1" type="artifacttypes:WAR" id="Ubuntu-VM-OperatingSystemInterface-IA_w1">
+        <Properties>
+            <ot:WSProperties xmlns:ot="http://www.uni-stuttgart.de/opentosca" xmlns="http://www.uni-stuttgart.de/opentosca" xmlns:artifacttypes1="http://opentosca.org/artifacttypes" xmlns:extt2="http://www.example.com/ToscaTypes" xmlns:ns0="http://www.eclipse.org/winery/model/selfservice" xmlns:ns1="http://www.eclipse.org/winery/model/selfservice" xmlns:ns10="http://opentosca.org/artifacttypes" xmlns:ns2="http://www.example.com/ToscaTypes" xmlns:ns5="http://www.example.com/ToscaTypes" xmlns:ns6="http://www.eclipse.org/winery/model/selfservice" xmlns:ns8="http://www.example.com/ToscaTypes" xmlns:ns9="http://opentosca.org/artifacttypes" xmlns:tosca="http://docs.oasis-open.org/tosca/ns/2011/12">
+                <ServiceEndpoint>/services/org_opentosca_NodeTypes_UbuntuPort</ServiceEndpoint>
+                <PortType>{http://opentosca.org/implementationartifacts}org_opentosca_NodeTypes_Ubuntu</PortType>
+                <InvocationType>SOAP/HTTP</InvocationType>
+            </ot:WSProperties>
+        </Properties>
+        <ArtifactReferences>
+            <ArtifactReference reference="artifacttemplates/http%253A%252F%252Fopentosca.org%252Fartifacttemplates/Ubuntu-VM-OperatingSystemInterface-IA_w1/files/org_opentosca_NodeTypes_Ubuntu-VM_OperatingSystemInterface.war"/>
+        </ArtifactReferences>
+    </ArtifactTemplate>
+</Definitions>

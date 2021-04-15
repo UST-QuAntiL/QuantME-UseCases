@@ -1,0 +1,11 @@
+
+### vngx-jsch
+vngx-jsch is a Java SSH implementation
+Code: https://github.com/vngx/vngx-jsch
+Examples: http://www.jcraft.com/jsch/examples/
+
+
+### Random Alternatives found during research
+http://mina.apache.org/sshd/documentation.html
+https://github.com/shikhar/sshj/
+http://www.informit.com/guides/content.aspx?g=java&seqNum=489

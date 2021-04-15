@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/artifacttemplates" id="winery-defs-for_artifacttemplates-Qiskit_Install_IA_AT_install-IA-w1">
+    <ArtifactTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="Qiskit_Install_IA_AT_install-IA-w1" type="ToscaBaseTypes:ScriptArtifact" id="Qiskit_Install_IA_AT_install-IA-w1">
+        <ArtifactReferences>
+            <ArtifactReference reference="artifacttemplates/http%253A%252F%252Fopentosca.org%252Fartifacttemplates/Qiskit_Install_IA_AT_install-IA-w1/files/install.sh"/>
+        </ArtifactReferences>
+    </ArtifactTemplate>
+</Definitions>

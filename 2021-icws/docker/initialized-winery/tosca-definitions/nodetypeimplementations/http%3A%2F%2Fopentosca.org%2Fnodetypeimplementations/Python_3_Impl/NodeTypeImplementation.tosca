@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tosca:Definitions id="winery-defs-for_ns8-Python_3_Impl" targetNamespace="http://opentosca.org/nodetypeimplementations" xmlns:tosca="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:ns0="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12">
+    <tosca:NodeTypeImplementation name="Python_3_Impl" targetNamespace="http://opentosca.org/nodetypeimplementations" nodeType="ns3:Python_3" xmlns:ns3="http://opentosca.org/nodetypes">
+        <tosca:ImplementationArtifacts>
+            <tosca:ImplementationArtifact name="Python_3_Impl_Install_IA" interfaceName="http://www.example.com/interfaces/lifecycle" operationName="install" artifactType="ns7:ScriptArtifact" artifactRef="ns9:Python_3_Impl_Install_IA" xmlns:ns7="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" xmlns:ns9="http://opentosca.org/artifacttemplates"/>
+        </tosca:ImplementationArtifacts>
+    </tosca:NodeTypeImplementation>
+</tosca:Definitions>

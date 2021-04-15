@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-80(%d{HH:mm:ss.SSS} [%-10thread] %-5level %logger{50}:%line) %-15method - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.jboss.resteasy.resteasy_jaxrs.i18n" level="ERROR"/>
+    <logger name="org.opentosca.NodeTypes" level="TRACE" />
+
+    <root level="error">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

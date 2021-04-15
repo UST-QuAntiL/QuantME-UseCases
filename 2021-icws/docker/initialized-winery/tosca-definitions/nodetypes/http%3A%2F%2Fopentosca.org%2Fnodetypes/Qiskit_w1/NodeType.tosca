@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/nodetypes" id="winery-defs-for_nodetypes-Qiskit_w1">
+    <NodeType name="Qiskit_w1" abstract="no" final="no" targetNamespace="http://opentosca.org/nodetypes" winery:bordercolor="#1b2227">
+        <Interfaces>
+            <Interface name="http://opentosca.org/interfaces/lifecycle">
+                <Operation name="install"/>
+            </Interface>
+            <Interface name="http://opentosca.org/interfaces/connectTo">
+                <Operation name="connectTo">
+                    <InputParameters>
+                        <InputParameter name="IBMQ_TOKEN" type="xsd:string" required="no"/>
+                        <InputParameter name="PROVIDER" type="xsd:string" required="no"/>
+                        <InputParameter name="IBMQ_BACKEND_NAME" type="xsd:string" required="no"/>
+                        <InputParameter name="IBMQ_GROUP" type="xsd:string" required="no"/>
+                        <InputParameter name="IBMQ_PROJECT" type="xsd:string" required="no"/>
+                        <InputParameter name="IBMQ_HUB" type="xsd:string" required="no"/>
+                    </InputParameters>
+                </Operation>
+            </Interface>
+        </Interfaces>
+    </NodeType>
+</Definitions>

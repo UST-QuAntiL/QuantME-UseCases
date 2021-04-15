@@ -1,0 +1,52 @@
+version: '3'
+services:
+  container:
+    image: opentosca/container:v3.0.0
+    ports:
+      - '1337:1337'
+      - '1883:1883' # MQTT
+      - '8081-8087:8081-8087'
+    environment:
+      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      ENGINE_IA_HOSTNAME: engine-ia
+      ENGINE_IA_PORT: 8080
+      CONTAINER_REPOSITORY_HOSTNAME: ${PUBLIC_HOSTNAME}
+      CONTAINER_REPOSITORY_PORT: 8091
+      ENGINE_PLAN_BPEL_HOSTNAME: engine-plan
+      ENGINE_PLAN_BPMN_HOSTNAME: engine-plan-bpmn
+      ENGINE_PLAN_BPMN_PORT: 8080
+      CONTAINER_DEPLOYMENT_TESTS: 'false'
+    networks:
+      - opentosca
+  ui:
+    image: opentosca/ui:v3.0.0
+    ports:
+      - '8088:8080'
+    networks:
+      - opentosca
+  engine-plan:
+    image: opentosca/ode:v3.0.0
+    ports:
+      - '9763:9763' # http
+    networks:
+      - opentosca
+  engine-ia:
+    image: opentosca/engine-ia:v3.0.0
+    ports:
+      - '8090:8080'
+    networks:
+      - opentosca
+  winery:
+    build: initialized-winery
+    environment:
+      WINERY_HOSTNAME: ${PUBLIC_HOSTNAME}
+      WORKFLOWMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      TOPOLOGYMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
+    ports:
+      - '8080:8080'
+    networks:
+      - opentosca
+networks:
+  opentosca:
+    driver: bridge

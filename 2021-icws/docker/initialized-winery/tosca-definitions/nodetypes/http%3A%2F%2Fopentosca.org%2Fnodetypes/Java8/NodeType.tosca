@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tosca:Definitions xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:tosca="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:ns1="http://www.eclipse.org/winery/model/selfservice" id="winery-defs-for_ns2-Java8" targetNamespace="http://opentosca.org/nodetypes">
+    <tosca:NodeType name="Java8" targetNamespace="http://opentosca.org/nodetypes" winery:bordercolor="#40aa36">
+        <tosca:Interfaces>
+            <tosca:Interface name="http://www.example.com/interfaces/lifecycle">
+                <tosca:Operation name="install"/>
+            </tosca:Interface>
+        </tosca:Interfaces>
+    </tosca:NodeType>
+</tosca:Definitions>

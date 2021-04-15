@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="org_opentosca_NodeTypes_UbuntuService" targetNamespace="http://implementationartifacts.opentosca.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://implementationartifacts.opentosca.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://implementationartifacts.opentosca.org/" elementFormDefault="unqualified" targetNamespace="http://implementationartifacts.opentosca.org/" version="1.0">
+<xs:element name="installPackage" type="tns:installPackage"/>
+<xs:element name="runScript" type="tns:runScript"/>
+<xs:element name="transferFile" type="tns:transferFile"/>
+<xs:element name="waitForAvailability" type="tns:waitForAvailability"/>
+<xs:complexType name="installPackage">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="VMIP" type="xs:string"/>
+      <xs:element form="qualified" minOccurs="0" name="VMUserName" type="xs:string"/>
+      <xs:element form="qualified" minOccurs="0" name="VMPrivateKey" type="xs:string"/>
+      <xs:element form="qualified" minOccurs="0" name="PackageNames" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="transferFile">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="VMIP" type="xs:string"/>
+      <xs:element form="qualified" minOccurs="0" name="VMUserName" type="xs:string"/>
+      <xs:element form="qualified" minOccurs="0" name="VMPrivateKey" type="xs:string"/>
+      <xs:element form="qualified" minOccurs="0" name="TargetAbsolutePath" type="xs:string"/>
+      <xs:element form="qualified" minOccurs="0" name="SourceURLorLocalPath" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="waitForAvailability">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="VMIP" type="xs:string"/>
+      <xs:element form="qualified" minOccurs="0" name="VMUserName" type="xs:string"/>
+      <xs:element form="qualified" minOccurs="0" name="VMPrivateKey" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="runScript">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="VMIP" type="xs:string"/>
+      <xs:element form="qualified" minOccurs="0" name="VMUserName" type="xs:string"/>
+      <xs:element form="qualified" minOccurs="0" name="VMPrivateKey" type="xs:string"/>
+      <xs:element form="qualified" minOccurs="0" name="Script" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="transferFile">
+    <wsdl:part name="parameters" element="tns:transferFile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForAvailability">
+    <wsdl:part name="parameters" element="tns:waitForAvailability">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="installPackage">
+    <wsdl:part name="parameters" element="tns:installPackage">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="runScript">
+    <wsdl:part name="parameters" element="tns:runScript">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="org_opentosca_NodeTypes_Ubuntu">
+    <wsdl:operation name="installPackage">
+      <wsdl:input name="installPackage" message="tns:installPackage">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="transferFile">
+      <wsdl:input name="transferFile" message="tns:transferFile">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="waitForAvailability">
+      <wsdl:input name="waitForAvailability" message="tns:waitForAvailability">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="runScript">
+      <wsdl:input name="runScript" message="tns:runScript">
+    </wsdl:input>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="org_opentosca_NodeTypes_UbuntuServiceSoapBinding" type="tns:org_opentosca_NodeTypes_Ubuntu">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="installPackage">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="installPackage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="transferFile">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="transferFile">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="waitForAvailability">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="waitForAvailability">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="runScript">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="runScript">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="org_opentosca_NodeTypes_UbuntuService">
+    <wsdl:port name="org_opentosca_NodeTypes_UbuntuPort" binding="tns:org_opentosca_NodeTypes_UbuntuServiceSoapBinding">
+      <soap:address location="http://localhost:9090/org_opentosca_NodeTypes_UbuntuPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

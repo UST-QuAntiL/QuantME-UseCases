@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/nodetypeimplementations" id="winery-defs-for_nodetypeimplementations-Qiskit-Impl_w1">
+    <NodeTypeImplementation xmlns:nodetypes="http://opentosca.org/nodetypes" targetNamespace="http://opentosca.org/nodetypeimplementations" name="Qiskit-Impl_w1" abstract="no" final="no" nodeType="nodetypes:Qiskit_w1">
+        <ImplementationArtifacts>
+            <ImplementationArtifact xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" xmlns:artifacttemplates="http://opentosca.org/artifacttemplates" name="Qiskit_Install_IA" interfaceName="http://opentosca.org/interfaces/lifecycle" operationName="install" artifactType="ToscaBaseTypes:ScriptArtifact" artifactRef="artifacttemplates:Qiskit_Install_IA_AT_install-IA-w1"/>
+            <ImplementationArtifact xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" xmlns:artifacttemplates="http://opentosca.org/artifacttemplates" name="Qiskit_ConnectTo_IA" interfaceName="http://opentosca.org/interfaces/connectTo" operationName="connectTo" artifactType="ToscaBaseTypes:ScriptArtifact" artifactRef="artifacttemplates:Qiskit_ConnectTo_IA_AT_connectTo-IA-w1"/>
+        </ImplementationArtifacts>
+    </NodeTypeImplementation>
+</Definitions>
