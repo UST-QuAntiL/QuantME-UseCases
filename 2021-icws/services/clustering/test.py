@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import asyncio
 from dataProcessingService import DataProcessingService
 from fileService import FileService
-from numpySerializer import NumpySerializer
+import numpy as np
 import requests
 import json
 
@@ -114,8 +114,8 @@ async def plot_data_from_urls(data_url, cluster_mapping_url, k):
     await FileService.download_to_file(cluster_mapping_url, cluster_mapping_file_path)
 
     # deserialize data
-    data = NumpySerializer.deserialize(data_file_path)
-    cluster_mapping = NumpySerializer.deserialize(cluster_mapping_file_path)
+    data = np.loadtxt(data_file_path)
+    cluster_mapping = np.loadtxt(cluster_mapping_file_path)
 
     # prepare plot data
     data_preprocessed = DataProcessingService.normalize(DataProcessingService.standardize(data))
@@ -205,6 +205,7 @@ async def main():
 
     # call the task
     old_centroids_url = await initialize_centroids(url_root, job_id, k)
+    print('URL of old centroids: ' + str(old_centroids_url))
     # safe the result from task locally
     old_centroids_local_url = await download_url_and_generate_temp_url(url_root, old_centroids_url, 'old_centroids')
     print('Initialized centroids and starting iterations...')

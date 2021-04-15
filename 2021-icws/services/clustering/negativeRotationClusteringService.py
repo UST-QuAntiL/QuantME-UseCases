@@ -5,12 +5,11 @@ Email: daniel-fink@outlook.com
 
 import numpy as np
 from qiskit import *
-from quantumPostProcessingService import QuantumPostProcessingService
 
 
-class ClusteringCircuitExecutor:
+class NegativeRotationClusteringService:
     """
-    A class for executing clustering quantum circuits.
+    A class for performing a negative rotation clustering
     """
 
     @classmethod
@@ -46,7 +45,7 @@ class ClusteringCircuitExecutor:
 
             # store the result for this sub circuit run
             histogram = job.result().get_counts()
-            hits = QuantumPostProcessingService.calculate_qubits_0_hits(histogram)
+            hits = cls.calculate_qubits_0_hits(histogram)
 
             # We will assign the data point to the centroid
             # with more 0 hits. E.g. if k = 2 we have hits
@@ -95,3 +94,41 @@ class ClusteringCircuitExecutor:
             cluster_mapping[i] = lowest_distance_centroid_index
 
         return cluster_mapping
+
+    @classmethod
+    def map_histogram_to_qubit_hits(cls, histogram):
+        """
+        Maps the histogram (dictionary) to a 2D np.array with the format
+        qubit_i = [#hits |0>, #hits |1>].
+        """
+
+        # create array and store the hits per qubit, i.e. [#|0>, #|1>]
+        length = int(len(list(histogram.keys())[0]))
+        qubit_hits = np.zeros((length, 2))
+
+        for basis_state in histogram:
+            for i in range(0, length):
+                if basis_state[length - i - 1] == '0':
+                    qubit_hits[i][0] = qubit_hits[i][0] + histogram[basis_state]
+                else:
+                    qubit_hits[i][1] = qubit_hits[i][1] + histogram[basis_state]
+
+        return qubit_hits
+
+    @classmethod
+    def calculate_qubits_0_hits(cls, histogram):
+        """
+        Calculates for all qubits how often they hit the
+        |0> state. We use the format qubit_i = #hits|0>.
+        """
+
+        # the length can be read out from the
+        # string of any arbitrary (e.g. the 0th) bitstring
+        length = int(len(list(histogram.keys())[0]))
+        hits = np.zeros(length)
+
+        qubit_hits_map = cls.map_histogram_to_qubit_hits(histogram)
+        for i in range(0, int(qubit_hits_map.shape[0])):
+            hits[i] = int(qubit_hits_map[i][0])
+
+        return hits

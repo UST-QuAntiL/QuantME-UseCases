@@ -19,12 +19,3 @@ class NumpySerializer:
         """
 
         np.savetxt(file_path, array)
-
-    @staticmethod
-    def deserialize(file_path):
-        """
-        Deserializes the file behind the given url
-        to a numpy array.
-        """
-
-        return np.loadtxt(file_path)

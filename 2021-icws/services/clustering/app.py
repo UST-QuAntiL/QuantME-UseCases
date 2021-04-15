@@ -12,7 +12,7 @@ from qiskitSerializer import QiskitSerializer
 from quantumBackendFactory import QuantumBackendFactory
 from clusteringCircuitGenerator import ClusteringCircuitGenerator
 from dataProcessingService import DataProcessingService
-from clusteringCircuitExecutor import ClusteringCircuitExecutor
+from negativeRotationClusteringService import NegativeRotationClusteringService
 from convergenceCalculationService import ConvergenceCalculationService
 from fileService import FileService
 import sys
@@ -127,8 +127,8 @@ async def calculate_angles(job_id):
         await FileService.download_to_file(centroids_url, centroids_file_path)
 
         # deserialize the data
-        data = NumpySerializer.deserialize(data_file_path)
-        centroids = NumpySerializer.deserialize(centroids_file_path)
+        data = np.loadtxt(data_file_path)
+        centroids = np.loadtxt(centroids_file_path)
 
         # map data and centroids to standardized unit sphere
         data = DataProcessingService.normalize(DataProcessingService.standardize(data))
@@ -203,8 +203,8 @@ async def generate_negative_rotation_circuits(job_id):
         await FileService.download_to_file(centroid_angles_url, centroid_angles_file_path)
 
         # deserialize the data and centroid angles
-        data_angles = NumpySerializer.deserialize(data_angles_file_path)
-        centroid_angles = NumpySerializer.deserialize(centroid_angles_file_path)
+        data_angles = np.loadtxt(data_angles_file_path)
+        centroid_angles = np.loadtxt(centroid_angles_file_path)
 
         # perform circuit generation
         circuits = ClusteringCircuitGenerator.generate_negative_rotation_clustering(max_qubits,
@@ -276,7 +276,7 @@ async def execute_negative_rotation_circuits(job_id):
         backend = QuantumBackendFactory.create_backend(backend_name, token)
 
         # execute the circuits
-        cluster_mapping = ClusteringCircuitExecutor.execute_negative_rotation_clustering(circuits,
+        cluster_mapping = NegativeRotationClusteringService.execute_negative_rotation_clustering(circuits,
                                                                                          k,
                                                                                          backend,
                                                                                          shots_per_circuit)
@@ -346,9 +346,9 @@ async def calculate_centroids(job_id):
         await FileService.download_to_file(old_centroids_url, old_centroids_file_path)
 
         # deserialize the data
-        data = NumpySerializer.deserialize(data_file_path)
-        cluster_mapping = NumpySerializer.deserialize(cluster_mapping_file_path)
-        old_centroids = NumpySerializer.deserialize(old_centroids_file_path)
+        data = np.loadtxt(data_file_path)
+        cluster_mapping = np.loadtxt(cluster_mapping_file_path)
+        old_centroids = np.loadtxt(old_centroids_file_path)
 
         # map data and centroids to standardized unit sphere
         data = DataProcessingService.normalize(DataProcessingService.standardize(data))
@@ -415,8 +415,8 @@ async def check_convergence(job_id):
         await FileService.download_to_file(new_centroids_url, new_centroids_file_path)
 
         # deserialize the data
-        old_centroids = NumpySerializer.deserialize(old_centroids_file_path)
-        new_centroids = NumpySerializer.deserialize(new_centroids_file_path)
+        old_centroids = np.loadtxt(old_centroids_file_path)
+        new_centroids = np.loadtxt(new_centroids_file_path)
 
         # check convergence
         distance = ConvergenceCalculationService.calculate_averaged_euclidean_distance(old_centroids, new_centroids)
