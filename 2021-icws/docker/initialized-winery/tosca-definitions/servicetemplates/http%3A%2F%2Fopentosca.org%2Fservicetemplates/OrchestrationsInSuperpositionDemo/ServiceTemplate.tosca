@@ -103,7 +103,7 @@
                     </Properties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate name="BPMN-Workflow_w1" minInstances="1" maxInstances="1" type="nodetypes:BPMN-Workflow_w1" id="BPMN-Workflow_w1_0" winery:x="290" winery:y="57" xmlns:nodetypes="http://opentosca.org/nodetypes"/>
+            <NodeTemplate name="QC-Workflow" minInstances="1" maxInstances="1" type="nodetypes:BPMN-Workflow_w1" id="BPMN-Workflow_w1_0" winery:x="290" winery:y="57" xmlns:nodetypes="http://opentosca.org/nodetypes"/>
             <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
                 <SourceElement ref="Ubuntu-VM_20.04-w1_0"/>
                 <TargetElement ref="OpenStack_Train-w1_0"/>
@@ -167,6 +167,14 @@
             <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_13" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
                 <SourceElement ref="BPMN-Workflow_w1_0"/>
                 <TargetElement ref="Camunda_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="BPMN-Workflow_w1_0"/>
+                <TargetElement ref="Qiskit-Service_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_1" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="BPMN-Workflow_w1_0"/>
+                <TargetElement ref="Qiskit-Service_w1_1"/>
             </RelationshipTemplate>
         </TopologyTemplate>
     </ServiceTemplate>
