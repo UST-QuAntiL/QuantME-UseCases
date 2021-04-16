@@ -17,7 +17,7 @@
                     <Properties xmlns="http://www.example.org">
                         <VMIP/>
                         <VMInstanceID/>
-                        <VMType>m1.small</VMType>
+                        <VMType>m1.medium</VMType>
                         <VMUserName>ubuntu</VMUserName>
                         <VMUserPassword>N/A</VMUserPassword>
                         <VMPrivateKey>get_input: VMPrivateKey</VMPrivateKey>
@@ -31,7 +31,7 @@
                     <Properties xmlns="http://www.example.org">
                         <VMIP/>
                         <VMInstanceID/>
-                        <VMType>m1.small</VMType>
+                        <VMType>m1.medium</VMType>
                         <VMUserName>ubuntu</VMUserName>
                         <VMUserPassword>N/A</VMUserPassword>
                         <VMPrivateKey>get_input: VMPrivateKey</VMPrivateKey>
@@ -45,7 +45,7 @@
                     <Properties xmlns="http://www.example.org">
                         <VMIP/>
                         <VMInstanceID/>
-                        <VMType>m1.small</VMType>
+                        <VMType>m1.medium</VMType>
                         <VMUserName>ubuntu</VMUserName>
                         <VMUserPassword>N/A</VMUserPassword>
                         <VMPrivateKey>get_input: VMPrivateKey</VMPrivateKey>
@@ -59,7 +59,7 @@
                     <Properties xmlns="http://www.example.org">
                         <VMIP/>
                         <VMInstanceID/>
-                        <VMType>m1.small</VMType>
+                        <VMType>m1.medium</VMType>
                         <VMUserName>ubuntu</VMUserName>
                         <VMUserPassword>N/A</VMUserPassword>
                         <VMPrivateKey>get_input: VMPrivateKey</VMPrivateKey>

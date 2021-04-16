@@ -6,6 +6,7 @@ WORKDIR /temp
 RUN tar -czf data-preparation.tar.gz --directory=/temp/services/data-preparation .
 RUN tar -czf clustering.tar.gz --directory=/temp/services/clustering .
 RUN tar -czf classification.tar.gz --directory=/temp/services/classification .
+RUN mvn -f /temp/workflow/pom.xml clean package
 
 
 FROM opentosca/winery:v3.0.0-M1
@@ -24,3 +25,6 @@ COPY --from=builder --chown=winery /temp/clustering.tar.gz /var/repository/hardw
 
 # add the classification service packaged in the builder as DA
 COPY --from=builder --chown=winery /temp/classification.tar.gz /var/repository/hardware-selection/artifacttemplates/http%3A%2F%2Fopentosca.org%2Fartifacttemplates/Classification_QiskitService_DA/files/classification.tar.gz
+
+# add the workflow packaged in the builder as DA
+COPY --from=builder --chown=winery /temp/workflow/target/quantum-workflow.war /var/repository/hardware-selection/artifacttemplates/http%3A%2F%2Fopentosca.org%2Fartifacttemplates/Quantum-Workflow-Demonstrator_DA/files/quantum-workflow.war

@@ -1,6 +1,6 @@
 # OrchestrationsInSuperpositionDemo_w1-wip1 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-> Sets up the execution environment for a hybrid quantum application provisioning the required virtual machines
+> Sets up the execution environment for a hybrid quantum application including provisioning the required virtual machines
 
 
 ## Haftungsausschluss

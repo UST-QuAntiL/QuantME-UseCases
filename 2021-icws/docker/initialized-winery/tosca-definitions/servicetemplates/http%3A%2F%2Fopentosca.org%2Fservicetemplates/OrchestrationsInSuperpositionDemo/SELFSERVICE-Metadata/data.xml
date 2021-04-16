@@ -3,6 +3,6 @@
     <selfservice:displayName>OrchestrationsInSuperpositionDemo_w1-wip1</selfservice:displayName>
     <selfservice:version>1.0</selfservice:version>
     <selfservice:authors>Winery</selfservice:authors>
-    <selfservice:description>Sets up the execution environment for a hybrid quantum application provisioning the required virtual machines.</selfservice:description>
+    <selfservice:description>Sets up the execution environment for a hybrid quantum application including provisioning the required virtual machines.</selfservice:description>
     <selfservice:iconUrl>icon.jpg</selfservice:iconUrl>
 </selfservice:Application>
