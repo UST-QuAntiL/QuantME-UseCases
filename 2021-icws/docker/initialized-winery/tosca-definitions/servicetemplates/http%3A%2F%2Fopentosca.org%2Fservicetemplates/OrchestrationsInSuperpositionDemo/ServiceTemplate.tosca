@@ -75,7 +75,7 @@
             <NodeTemplate name="Clustering Service" minInstances="1" maxInstances="1" type="nodetypes:Qiskit-Service_w1" id="Qiskit-Service_w1_0" winery:x="1060" winery:y="55" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
-                        <Port>8082</Port>
+                        <Port>8081</Port>
                         <Name>clustering</Name>
                     </Properties>
                 </Properties>
