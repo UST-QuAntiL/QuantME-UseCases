@@ -6,7 +6,7 @@ This project contains different use cases for the Quantum Modeling Extension (Qu
 
 ### Electronics 2021 - Special Issue "Quantum Computing System Design and Architecture" - Prototype
 
-In this paper, we demonstrate how to model quantum workflows with Quantum4BPMN independent of a quantum computer to use.
+In this [paper](https://www.mdpi.com/2079-9292/10/8/984), we demonstrate how to model quantum workflows with Quantum4BPMN independent of a quantum computer to use.
 Therefore, the quantum computer is automatically selected during workflow runtime utilizing the [NISQ Analyzer](https://github.com/UST-QuAntiL/nisq-analyzer), and the workflow is dynamically adapted based on reusable workflow fragments depending on the selection.
 For this, a workflow model implementing Simon's algorithm and dynamically selecting quantum computers from IBM or a simulator from Rigetti is presented.
 The corresponding workflow model, as well as instructions on how to set up the required environment, can be found [here](2021-electronics).
@@ -18,6 +18,10 @@ For this, we present three workflow models implementing Simon's algorithm, the B
 The corresponding workflow models can be found [here](2020-ucc).
 
 ## Learn More
+
+* Weder, Benjamin; Barzen, Johanna; Leymann, Frank; Salm, Marie:
+  [**Automated Quantum Hardware Selection for Quantum Workflows**](https://www.mdpi.com/2079-9292/10/8/984/pdf).
+  In: Electronics 2021, 10(8), 984
 
 * Weder, Benjamin; Breitenbücher, Uwe; Leymann, Frank; Wild, Karoline:
   [**Integrating Quantum Computing into Workflow Modeling and Execution**](https://www.iaas.uni-stuttgart.de/publications/Weder2020_QuantumWorkflows.pdf).
