@@ -28,6 +28,8 @@ services:
     image: opentosca/ode:v3.0.0
     ports:
       - '9763:9763' # http
+    environment:
+      _JAVA_OPTIONS: "-Xms512m -Xss4m"
     networks:
       - opentosca
   engine-ia:
