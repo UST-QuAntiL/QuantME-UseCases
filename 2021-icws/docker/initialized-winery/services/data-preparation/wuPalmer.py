@@ -124,7 +124,7 @@ class WuPalmerService:
             # Get maximum compare_wu_palmer(b, a) with a in first
             max_value = 0.0
             for a in values_1:
-                temp = cls.compare_wu_palmer(attribute,b, a)
+                temp = cls.compare_wu_palmer(attribute, b, a)
                 if temp > max_value:
                     max_value = temp
 
