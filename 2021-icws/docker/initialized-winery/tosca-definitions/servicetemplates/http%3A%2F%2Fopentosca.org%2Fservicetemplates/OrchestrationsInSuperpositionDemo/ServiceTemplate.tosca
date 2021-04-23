@@ -108,6 +108,17 @@
                     <DeploymentArtifact name="Quantum-Workflow-Demonstrator_DA" artifactType="ToscaBaseTypes:ArchiveArtifact" artifactRef="artifacttemplates:Quantum-Workflow-Demonstrator_DA" xmlns:artifacttemplates="http://opentosca.org/artifacttemplates" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
+            <NodeTemplate name="PythonApp_3" minInstances="1" maxInstances="1" type="nodetypes:PythonApp_3" id="PythonApp_3_0" winery:x="730" winery:y="107" xmlns:nodetypes="http://opentosca.org/nodetypes">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>8081</Port>
+                        <Name>data-preparation</Name>
+                    </Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact name="DataPreparation_PythonService_DA" artifactType="ToscaBaseTypes:ArchiveArtifact" artifactRef="artifacttemplates:DataPreparation_PythonService_DA" xmlns:artifacttemplates="http://opentosca.org/artifacttemplates" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
             <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
                 <SourceElement ref="Ubuntu-VM_20.04-w1_0"/>
                 <TargetElement ref="OpenStack_Train-w1_0"/>
@@ -179,6 +190,14 @@
             <RelationshipTemplate name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_1" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
                 <SourceElement ref="BPMN-Workflow_w1_0"/>
                 <TargetElement ref="Qiskit-Service_w1_1"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_14" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="PythonApp_3_0"/>
+                <TargetElement ref="Python_3_2"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_2" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="BPMN-Workflow_w1_0"/>
+                <TargetElement ref="PythonApp_3_0"/>
             </RelationshipTemplate>
         </TopologyTemplate>
     </ServiceTemplate>

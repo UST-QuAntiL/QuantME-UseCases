@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<tosca:Definitions id="winery-defs-for_ns4-PythonApp_3" targetNamespace="http://opentosca.org/nodetypes" xmlns:tosca="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:ns0="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12">
-    <tosca:NodeType name="PythonApp_3" targetNamespace="http://opentosca.org/nodetypes" winery:bordercolor="#b799c1">
+<Definitions targetNamespace="http://opentosca.org/nodetypes" id="winery-defs-for_ns4-PythonApp_3" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <NodeType name="PythonApp_3" abstract="no" final="no" targetNamespace="http://opentosca.org/nodetypes" winery:bordercolor="#b799c1">
         <winery:PropertiesDefinition elementname="properties" namespace="http://opentosca.org/nodetypes/propertiesdefinition/winery">
             <winery:properties>
                 <winery:key>Port</winery:key>
@@ -15,16 +15,16 @@
             <Interface name="http://opentosca.org/interfaces/lifecycle">
                 <Operation name="install">
                     <InputParameters>
-                        <InputParameter name="Name" type="xsd:string" required="yes"/>
+                        <InputParameter name="Name" type="xsd:string" required="true"/>
                     </InputParameters>
                 </Operation>
                 <Operation name="start">
                     <InputParameters>
-                        <InputParameter name="Name" type="xsd:string" required="yes"/>
-                        <InputParameter name="Port" type="xsd:string" required="yes"/>
+                        <InputParameter name="Name" type="xsd:string" required="true"/>
+                        <InputParameter name="Port" type="xsd:string" required="true"/>
                     </InputParameters>
                 </Operation>
             </Interface>
         </Interfaces>
-    </tosca:NodeType>
-</tosca:Definitions>
+    </NodeType>
+</Definitions>
