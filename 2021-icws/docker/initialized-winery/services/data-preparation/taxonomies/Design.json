@@ -1,0 +1,222 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Abstrakte Muster"
+    },
+    {
+      "id": "Asymetrische Muster"
+    },
+    {
+      "id": "Geometrische Muster"
+    },
+    {
+      "id": "Gepunktet"
+    },
+    {
+      "id": "Animale Muster"
+    },
+    {
+      "id": "Leoprint"
+    },
+    {
+      "id": "Zebraprint"
+    },
+    {
+      "id": "Batik"
+    },
+    {
+      "id": "Camouflage"
+    },
+    {
+      "id": "Bedruckt"
+    },
+    {
+      "id": "Bild"
+    },
+    {
+      "id": "Logo"
+    },
+    {
+      "id": "Text"
+    },
+    {
+      "id": "Design"
+    },
+    {
+      "id": "Beklebt"
+    },
+    {
+      "id": "Bemalt"
+    },
+    {
+      "id": "Beschichtet"
+    },
+    {
+      "id": "Bestickt"
+    },
+    {
+      "id": "Gemustert"
+    },
+    {
+      "id": "Unifarben"
+    },
+    {
+      "id": "Florale Muster"
+    },
+    {
+      "id": "Paisley"
+    },
+    {
+      "id": "Changierend"
+    },
+    {
+      "id": "Figurale Muster"
+    },
+    {
+      "id": "Meliert"
+    },
+    {
+      "id": "Gestreift"
+    },
+    {
+      "id": "Hahnentritt"
+    },
+    {
+      "id": "Indianermuster"
+    },
+    {
+      "id": "Kariert"
+    },
+    {
+      "id": "Norwegermuster"
+    },
+    {
+      "id": "Nadelstreifen"
+    }
+  ],
+  "links": [
+    {
+      "source": "Abstrakte Muster",
+      "target": "Asymetrische Muster"
+    },
+    {
+      "source": "Abstrakte Muster",
+      "target": "Geometrische Muster"
+    },
+    {
+      "source": "Abstrakte Muster",
+      "target": "Gepunktet"
+    },
+    {
+      "source": "Asymetrische Muster",
+      "target": "Batik"
+    },
+    {
+      "source": "Asymetrische Muster",
+      "target": "Camouflage"
+    },
+    {
+      "source": "Geometrische Muster",
+      "target": "Gestreift"
+    },
+    {
+      "source": "Geometrische Muster",
+      "target": "Hahnentritt"
+    },
+    {
+      "source": "Geometrische Muster",
+      "target": "Indianermuster"
+    },
+    {
+      "source": "Geometrische Muster",
+      "target": "Kariert"
+    },
+    {
+      "source": "Geometrische Muster",
+      "target": "Norwegermuster"
+    },
+    {
+      "source": "Animale Muster",
+      "target": "Leoprint"
+    },
+    {
+      "source": "Animale Muster",
+      "target": "Zebraprint"
+    },
+    {
+      "source": "Bedruckt",
+      "target": "Bild"
+    },
+    {
+      "source": "Bedruckt",
+      "target": "Logo"
+    },
+    {
+      "source": "Bedruckt",
+      "target": "Text"
+    },
+    {
+      "source": "Design",
+      "target": "Bedruckt"
+    },
+    {
+      "source": "Design",
+      "target": "Beklebt"
+    },
+    {
+      "source": "Design",
+      "target": "Bemalt"
+    },
+    {
+      "source": "Design",
+      "target": "Beschichtet"
+    },
+    {
+      "source": "Design",
+      "target": "Bestickt"
+    },
+    {
+      "source": "Design",
+      "target": "Gemustert"
+    },
+    {
+      "source": "Design",
+      "target": "Unifarben"
+    },
+    {
+      "source": "Gemustert",
+      "target": "Abstrakte Muster"
+    },
+    {
+      "source": "Gemustert",
+      "target": "Animale Muster"
+    },
+    {
+      "source": "Gemustert",
+      "target": "Changierend"
+    },
+    {
+      "source": "Gemustert",
+      "target": "Figurale Muster"
+    },
+    {
+      "source": "Gemustert",
+      "target": "Florale Muster"
+    },
+    {
+      "source": "Gemustert",
+      "target": "Meliert"
+    },
+    {
+      "source": "Florale Muster",
+      "target": "Paisley"
+    },
+    {
+      "source": "Gestreift",
+      "target": "Nadelstreifen"
+    }
+  ]
+}

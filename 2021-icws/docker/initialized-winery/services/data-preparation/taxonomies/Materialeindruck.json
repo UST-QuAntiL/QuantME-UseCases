@@ -1,0 +1,89 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Materialeindruck"
+    },
+    {
+      "id": "anschmiegsam"
+    },
+    {
+      "id": "fest"
+    },
+    {
+      "id": "flauschig"
+    },
+    {
+      "id": "flie\u00dfend"
+    },
+    {
+      "id": "k\u00fcnstlich"
+    },
+    {
+      "id": "leicht"
+    },
+    {
+      "id": "nat\u00fcrlich"
+    },
+    {
+      "id": "normal"
+    },
+    {
+      "id": "schwer"
+    },
+    {
+      "id": "steif"
+    },
+    {
+      "id": "weich"
+    }
+  ],
+  "links": [
+    {
+      "source": "Materialeindruck",
+      "target": "anschmiegsam"
+    },
+    {
+      "source": "Materialeindruck",
+      "target": "fest"
+    },
+    {
+      "source": "Materialeindruck",
+      "target": "flauschig"
+    },
+    {
+      "source": "Materialeindruck",
+      "target": "flie\u00dfend"
+    },
+    {
+      "source": "Materialeindruck",
+      "target": "k\u00fcnstlich"
+    },
+    {
+      "source": "Materialeindruck",
+      "target": "leicht"
+    },
+    {
+      "source": "Materialeindruck",
+      "target": "nat\u00fcrlich"
+    },
+    {
+      "source": "Materialeindruck",
+      "target": "normal"
+    },
+    {
+      "source": "Materialeindruck",
+      "target": "schwer"
+    },
+    {
+      "source": "Materialeindruck",
+      "target": "steif"
+    },
+    {
+      "source": "Materialeindruck",
+      "target": "weich"
+    }
+  ]
+}

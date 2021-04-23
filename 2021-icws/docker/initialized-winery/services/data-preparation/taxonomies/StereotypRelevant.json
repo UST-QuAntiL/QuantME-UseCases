@@ -1,0 +1,26 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "StereotypRelevant"
+    },
+    {
+      "id": "ja"
+    },
+    {
+      "id": "nein"
+    }
+  ],
+  "links": [
+    {
+      "source": "StereotypRelevant",
+      "target": "ja"
+    },
+    {
+      "source": "StereotypRelevant",
+      "target": "nein"
+    }
+  ]
+}

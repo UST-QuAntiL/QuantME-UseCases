@@ -1,0 +1,61 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "farbig"
+    },
+    {
+      "id": "koloriert"
+    },
+    {
+      "id": "Farbkonzept"
+    },
+    {
+      "id": "gebleicht"
+    },
+    {
+      "id": "reduziert"
+    },
+    {
+      "id": "schwarz/wei\u00df"
+    },
+    {
+      "id": "sepia"
+    },
+    {
+      "id": "\u00fcberzeichnet"
+    }
+  ],
+  "links": [
+    {
+      "source": "farbig",
+      "target": "koloriert"
+    },
+    {
+      "source": "Farbkonzept",
+      "target": "farbig"
+    },
+    {
+      "source": "Farbkonzept",
+      "target": "gebleicht"
+    },
+    {
+      "source": "Farbkonzept",
+      "target": "reduziert"
+    },
+    {
+      "source": "Farbkonzept",
+      "target": "schwarz/wei\u00df"
+    },
+    {
+      "source": "Farbkonzept",
+      "target": "sepia"
+    },
+    {
+      "source": "Farbkonzept",
+      "target": "\u00fcberzeichnet"
+    }
+  ]
+}

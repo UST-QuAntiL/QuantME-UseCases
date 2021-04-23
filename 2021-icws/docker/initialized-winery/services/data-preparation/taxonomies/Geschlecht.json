@@ -1,0 +1,26 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Geschlecht"
+    },
+    {
+      "id": "weiblich"
+    },
+    {
+      "id": "m\u00e4nnlich"
+    }
+  ],
+  "links": [
+    {
+      "source": "Geschlecht",
+      "target": "weiblich"
+    },
+    {
+      "source": "Geschlecht",
+      "target": "m\u00e4nnlich"
+    }
+  ]
+}

@@ -1,0 +1,376 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Blaut\u00f6ne"
+    },
+    {
+      "id": "Dunkelblau"
+    },
+    {
+      "id": "Hellblau"
+    },
+    {
+      "id": "Mittelblau"
+    },
+    {
+      "id": "Braunt\u00f6ne"
+    },
+    {
+      "id": "Dunkelbraun"
+    },
+    {
+      "id": "Hellbraun"
+    },
+    {
+      "id": "Mittelbraun"
+    },
+    {
+      "id": "Farben"
+    },
+    {
+      "id": "Gl\u00e4nzende Farben"
+    },
+    {
+      "id": "Prim\u00e4rfarben"
+    },
+    {
+      "id": "Sekund\u00e4rfarben"
+    },
+    {
+      "id": "Terti\u00e4rfarben"
+    },
+    {
+      "id": "Unbunt"
+    },
+    {
+      "id": "Gelbt\u00f6ne"
+    },
+    {
+      "id": "Bernsteingelb"
+    },
+    {
+      "id": "Postgelb"
+    },
+    {
+      "id": "Vanille"
+    },
+    {
+      "id": "Zitronengelb"
+    },
+    {
+      "id": "Metallicfarben"
+    },
+    {
+      "id": "Perlmutt"
+    },
+    {
+      "id": "Graut\u00f6ne"
+    },
+    {
+      "id": "Anthrazit"
+    },
+    {
+      "id": "Hellgrau"
+    },
+    {
+      "id": "Mittelgrau"
+    },
+    {
+      "id": "Gr\u00fcnt\u00f6ne"
+    },
+    {
+      "id": "Dunkelgr\u00fcn"
+    },
+    {
+      "id": "Gelbgr\u00fcn"
+    },
+    {
+      "id": "Hellgr\u00fcn"
+    },
+    {
+      "id": "Mint"
+    },
+    {
+      "id": "Oliv"
+    },
+    {
+      "id": "T\u00fcrkis"
+    },
+    {
+      "id": "Gold"
+    },
+    {
+      "id": "Kupfer"
+    },
+    {
+      "id": "Silber"
+    },
+    {
+      "id": "Oranget\u00f6ne"
+    },
+    {
+      "id": "Apricot"
+    },
+    {
+      "id": "Orange"
+    },
+    {
+      "id": "Terrakotta"
+    },
+    {
+      "id": "Rott\u00f6ne"
+    },
+    {
+      "id": "Blutrot"
+    },
+    {
+      "id": "Pink"
+    },
+    {
+      "id": "Rosa"
+    },
+    {
+      "id": "Rostrot"
+    },
+    {
+      "id": "Weinrot"
+    },
+    {
+      "id": "Violettt\u00f6ne"
+    },
+    {
+      "id": "Schwarz"
+    },
+    {
+      "id": "Wei\u00dft\u00f6ne"
+    },
+    {
+      "id": "Blauviolett"
+    },
+    {
+      "id": "Dunkelviolett"
+    },
+    {
+      "id": "Rotviolett"
+    },
+    {
+      "id": "Creme"
+    },
+    {
+      "id": "Reinwei\u00df"
+    }
+  ],
+  "links": [
+    {
+      "source": "Blaut\u00f6ne",
+      "target": "Dunkelblau"
+    },
+    {
+      "source": "Blaut\u00f6ne",
+      "target": "Hellblau"
+    },
+    {
+      "source": "Blaut\u00f6ne",
+      "target": "Mittelblau"
+    },
+    {
+      "source": "Braunt\u00f6ne",
+      "target": "Dunkelbraun"
+    },
+    {
+      "source": "Braunt\u00f6ne",
+      "target": "Hellbraun"
+    },
+    {
+      "source": "Braunt\u00f6ne",
+      "target": "Mittelbraun"
+    },
+    {
+      "source": "Farben",
+      "target": "Gl\u00e4nzende Farben"
+    },
+    {
+      "source": "Farben",
+      "target": "Prim\u00e4rfarben"
+    },
+    {
+      "source": "Farben",
+      "target": "Sekund\u00e4rfarben"
+    },
+    {
+      "source": "Farben",
+      "target": "Terti\u00e4rfarben"
+    },
+    {
+      "source": "Farben",
+      "target": "Unbunt"
+    },
+    {
+      "source": "Gl\u00e4nzende Farben",
+      "target": "Metallicfarben"
+    },
+    {
+      "source": "Gl\u00e4nzende Farben",
+      "target": "Perlmutt"
+    },
+    {
+      "source": "Prim\u00e4rfarben",
+      "target": "Blaut\u00f6ne"
+    },
+    {
+      "source": "Prim\u00e4rfarben",
+      "target": "Gelbt\u00f6ne"
+    },
+    {
+      "source": "Prim\u00e4rfarben",
+      "target": "Rott\u00f6ne"
+    },
+    {
+      "source": "Sekund\u00e4rfarben",
+      "target": "Gr\u00fcnt\u00f6ne"
+    },
+    {
+      "source": "Sekund\u00e4rfarben",
+      "target": "Oranget\u00f6ne"
+    },
+    {
+      "source": "Sekund\u00e4rfarben",
+      "target": "Violettt\u00f6ne"
+    },
+    {
+      "source": "Terti\u00e4rfarben",
+      "target": "Braunt\u00f6ne"
+    },
+    {
+      "source": "Unbunt",
+      "target": "Graut\u00f6ne"
+    },
+    {
+      "source": "Unbunt",
+      "target": "Schwarz"
+    },
+    {
+      "source": "Unbunt",
+      "target": "Wei\u00dft\u00f6ne"
+    },
+    {
+      "source": "Gelbt\u00f6ne",
+      "target": "Bernsteingelb"
+    },
+    {
+      "source": "Gelbt\u00f6ne",
+      "target": "Postgelb"
+    },
+    {
+      "source": "Gelbt\u00f6ne",
+      "target": "Vanille"
+    },
+    {
+      "source": "Gelbt\u00f6ne",
+      "target": "Zitronengelb"
+    },
+    {
+      "source": "Metallicfarben",
+      "target": "Gold"
+    },
+    {
+      "source": "Metallicfarben",
+      "target": "Kupfer"
+    },
+    {
+      "source": "Metallicfarben",
+      "target": "Silber"
+    },
+    {
+      "source": "Graut\u00f6ne",
+      "target": "Anthrazit"
+    },
+    {
+      "source": "Graut\u00f6ne",
+      "target": "Hellgrau"
+    },
+    {
+      "source": "Graut\u00f6ne",
+      "target": "Mittelgrau"
+    },
+    {
+      "source": "Gr\u00fcnt\u00f6ne",
+      "target": "Dunkelgr\u00fcn"
+    },
+    {
+      "source": "Gr\u00fcnt\u00f6ne",
+      "target": "Gelbgr\u00fcn"
+    },
+    {
+      "source": "Gr\u00fcnt\u00f6ne",
+      "target": "Hellgr\u00fcn"
+    },
+    {
+      "source": "Gr\u00fcnt\u00f6ne",
+      "target": "Mint"
+    },
+    {
+      "source": "Gr\u00fcnt\u00f6ne",
+      "target": "Oliv"
+    },
+    {
+      "source": "Gr\u00fcnt\u00f6ne",
+      "target": "T\u00fcrkis"
+    },
+    {
+      "source": "Oranget\u00f6ne",
+      "target": "Apricot"
+    },
+    {
+      "source": "Oranget\u00f6ne",
+      "target": "Orange"
+    },
+    {
+      "source": "Oranget\u00f6ne",
+      "target": "Terrakotta"
+    },
+    {
+      "source": "Rott\u00f6ne",
+      "target": "Blutrot"
+    },
+    {
+      "source": "Rott\u00f6ne",
+      "target": "Pink"
+    },
+    {
+      "source": "Rott\u00f6ne",
+      "target": "Rosa"
+    },
+    {
+      "source": "Rott\u00f6ne",
+      "target": "Rostrot"
+    },
+    {
+      "source": "Rott\u00f6ne",
+      "target": "Weinrot"
+    },
+    {
+      "source": "Violettt\u00f6ne",
+      "target": "Blauviolett"
+    },
+    {
+      "source": "Violettt\u00f6ne",
+      "target": "Dunkelviolett"
+    },
+    {
+      "source": "Violettt\u00f6ne",
+      "target": "Rotviolett"
+    },
+    {
+      "source": "Wei\u00dft\u00f6ne",
+      "target": "Creme"
+    },
+    {
+      "source": "Wei\u00dft\u00f6ne",
+      "target": "Reinwei\u00df"
+    }
+  ]
+}

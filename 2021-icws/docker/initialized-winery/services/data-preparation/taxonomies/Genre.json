@@ -1,0 +1,467 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Abenteuerfilm"
+    },
+    {
+      "id": "Mantel-und-Degen-Film"
+    },
+    {
+      "id": "Piratenfilm"
+    },
+    {
+      "id": "Ritterfilm"
+    },
+    {
+      "id": "Actionfilm"
+    },
+    {
+      "id": "Katastrophenfilm"
+    },
+    {
+      "id": "Animationsfilm"
+    },
+    {
+      "id": "Anime"
+    },
+    {
+      "id": "Drama"
+    },
+    {
+      "id": "Melodram"
+    },
+    {
+      "id": "Trag\u00f6die"
+    },
+    {
+      "id": "Eastern"
+    },
+    {
+      "id": "Martial-Arts-Film"
+    },
+    {
+      "id": "Erotikfilm"
+    },
+    {
+      "id": "Porno"
+    },
+    {
+      "id": "Fantasyfilm"
+    },
+    {
+      "id": "M\u00e4rchenfilm"
+    },
+    {
+      "id": "Filmgenre"
+    },
+    {
+      "id": "Biografie"
+    },
+    {
+      "id": "Bollywood"
+    },
+    {
+      "id": "Dokumentarfilm"
+    },
+    {
+      "id": "Heimatfilm"
+    },
+    {
+      "id": "Historienfilm"
+    },
+    {
+      "id": "Horrorfilm"
+    },
+    {
+      "id": "Kom\u00f6die"
+    },
+    {
+      "id": "Kriegsfilm"
+    },
+    {
+      "id": "Kriminalfilm"
+    },
+    {
+      "id": "Kurzfilm"
+    },
+    {
+      "id": "Liebesfilm"
+    },
+    {
+      "id": "Milieustudie"
+    },
+    {
+      "id": "Monumentalfilm"
+    },
+    {
+      "id": "Musikfilm"
+    },
+    {
+      "id": "Mystery-Film"
+    },
+    {
+      "id": "Science-Fiction-Film"
+    },
+    {
+      "id": "Sportfilm"
+    },
+    {
+      "id": "Thriller"
+    },
+    {
+      "id": "Western"
+    },
+    {
+      "id": "Kost\u00fcmfilm"
+    },
+    {
+      "id": "Monsterfilm"
+    },
+    {
+      "id": "Splatterfilm"
+    },
+    {
+      "id": "Vampirfilm"
+    },
+    {
+      "id": "Zombiefilm"
+    },
+    {
+      "id": "Culture-Clash-Kom\u00f6die"
+    },
+    {
+      "id": "Filmparodie"
+    },
+    {
+      "id": "Highschool Kom\u00f6die"
+    },
+    {
+      "id": "Screwball-Kom\u00f6die"
+    },
+    {
+      "id": "Slapstick-Kom\u00f6die"
+    },
+    {
+      "id": "Tragikom\u00f6die"
+    },
+    {
+      "id": "Verwechslungskom\u00f6die"
+    },
+    {
+      "id": "Antikriegsfilm"
+    },
+    {
+      "id": "Detektivfilm"
+    },
+    {
+      "id": "Film Noir"
+    },
+    {
+      "id": "Gangsterfilm"
+    },
+    {
+      "id": "Gef\u00e4ngnisfilm"
+    },
+    {
+      "id": "Gerichtsfilm"
+    },
+    {
+      "id": "Polizeifilm"
+    },
+    {
+      "id": "Spionagefilm"
+    },
+    {
+      "id": "Filmmusical"
+    },
+    {
+      "id": "Tanzfilm"
+    },
+    {
+      "id": "Endzeitfilm"
+    },
+    {
+      "id": "Bergfilm"
+    },
+    {
+      "id": "Boxerfilm"
+    },
+    {
+      "id": "Politthriller"
+    },
+    {
+      "id": "Psychothriller"
+    },
+    {
+      "id": "Italo-Western"
+    },
+    {
+      "id": "Sp\u00e4twestern"
+    }
+  ],
+  "links": [
+    {
+      "source": "Abenteuerfilm",
+      "target": "Mantel-und-Degen-Film"
+    },
+    {
+      "source": "Abenteuerfilm",
+      "target": "Piratenfilm"
+    },
+    {
+      "source": "Abenteuerfilm",
+      "target": "Ritterfilm"
+    },
+    {
+      "source": "Actionfilm",
+      "target": "Katastrophenfilm"
+    },
+    {
+      "source": "Animationsfilm",
+      "target": "Anime"
+    },
+    {
+      "source": "Drama",
+      "target": "Melodram"
+    },
+    {
+      "source": "Drama",
+      "target": "Trag\u00f6die"
+    },
+    {
+      "source": "Eastern",
+      "target": "Martial-Arts-Film"
+    },
+    {
+      "source": "Erotikfilm",
+      "target": "Porno"
+    },
+    {
+      "source": "Fantasyfilm",
+      "target": "M\u00e4rchenfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Abenteuerfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Actionfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Animationsfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Biografie"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Bollywood"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Dokumentarfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Drama"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Eastern"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Erotikfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Fantasyfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Heimatfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Historienfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Horrorfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Kom\u00f6die"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Kriegsfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Kriminalfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Kurzfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Liebesfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Milieustudie"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Monumentalfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Musikfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Mystery-Film"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Science-Fiction-Film"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Sportfilm"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Thriller"
+    },
+    {
+      "source": "Filmgenre",
+      "target": "Western"
+    },
+    {
+      "source": "Historienfilm",
+      "target": "Kost\u00fcmfilm"
+    },
+    {
+      "source": "Horrorfilm",
+      "target": "Monsterfilm"
+    },
+    {
+      "source": "Horrorfilm",
+      "target": "Splatterfilm"
+    },
+    {
+      "source": "Horrorfilm",
+      "target": "Vampirfilm"
+    },
+    {
+      "source": "Horrorfilm",
+      "target": "Zombiefilm"
+    },
+    {
+      "source": "Kom\u00f6die",
+      "target": "Culture-Clash-Kom\u00f6die"
+    },
+    {
+      "source": "Kom\u00f6die",
+      "target": "Filmparodie"
+    },
+    {
+      "source": "Kom\u00f6die",
+      "target": "Highschool Kom\u00f6die"
+    },
+    {
+      "source": "Kom\u00f6die",
+      "target": "Screwball-Kom\u00f6die"
+    },
+    {
+      "source": "Kom\u00f6die",
+      "target": "Slapstick-Kom\u00f6die"
+    },
+    {
+      "source": "Kom\u00f6die",
+      "target": "Tragikom\u00f6die"
+    },
+    {
+      "source": "Kom\u00f6die",
+      "target": "Verwechslungskom\u00f6die"
+    },
+    {
+      "source": "Kriegsfilm",
+      "target": "Antikriegsfilm"
+    },
+    {
+      "source": "Kriminalfilm",
+      "target": "Detektivfilm"
+    },
+    {
+      "source": "Kriminalfilm",
+      "target": "Film Noir"
+    },
+    {
+      "source": "Kriminalfilm",
+      "target": "Gangsterfilm"
+    },
+    {
+      "source": "Kriminalfilm",
+      "target": "Gef\u00e4ngnisfilm"
+    },
+    {
+      "source": "Kriminalfilm",
+      "target": "Gerichtsfilm"
+    },
+    {
+      "source": "Kriminalfilm",
+      "target": "Polizeifilm"
+    },
+    {
+      "source": "Kriminalfilm",
+      "target": "Spionagefilm"
+    },
+    {
+      "source": "Musikfilm",
+      "target": "Filmmusical"
+    },
+    {
+      "source": "Musikfilm",
+      "target": "Tanzfilm"
+    },
+    {
+      "source": "Science-Fiction-Film",
+      "target": "Endzeitfilm"
+    },
+    {
+      "source": "Sportfilm",
+      "target": "Bergfilm"
+    },
+    {
+      "source": "Sportfilm",
+      "target": "Boxerfilm"
+    },
+    {
+      "source": "Thriller",
+      "target": "Politthriller"
+    },
+    {
+      "source": "Thriller",
+      "target": "Psychothriller"
+    },
+    {
+      "source": "Western",
+      "target": "Italo-Western"
+    },
+    {
+      "source": "Western",
+      "target": "Sp\u00e4twestern"
+    }
+  ]
+}

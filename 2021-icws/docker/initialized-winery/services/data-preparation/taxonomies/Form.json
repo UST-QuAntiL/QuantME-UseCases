@@ -1,0 +1,215 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "ausgestellt"
+    },
+    {
+      "id": "glockig"
+    },
+    {
+      "id": "eng"
+    },
+    {
+      "id": "schmal"
+    },
+    {
+      "id": "Form"
+    },
+    {
+      "id": "H\u00f6he"
+    },
+    {
+      "id": "L\u00e4nge"
+    },
+    {
+      "id": "Linie"
+    },
+    {
+      "id": "Weite"
+    },
+    {
+      "id": "hoch"
+    },
+    {
+      "id": "mittelhoch"
+    },
+    {
+      "id": "sehr hoch"
+    },
+    {
+      "id": "flach"
+    },
+    {
+      "id": "lang"
+    },
+    {
+      "id": "bodenlang"
+    },
+    {
+      "id": "kn\u00f6chellang"
+    },
+    {
+      "id": "ellbogenlang"
+    },
+    {
+      "id": "handgelenklang"
+    },
+    {
+      "id": "h\u00fcftlang"
+    },
+    {
+      "id": "knielang"
+    },
+    {
+      "id": "kurz"
+    },
+    {
+      "id": "taillenlang"
+    },
+    {
+      "id": "wadenlang"
+    },
+    {
+      "id": "ballonartig"
+    },
+    {
+      "id": "gradlinig"
+    },
+    {
+      "id": "tailliert"
+    },
+    {
+      "id": "weit"
+    },
+    {
+      "id": "breit"
+    },
+    {
+      "id": "normal"
+    },
+    {
+      "id": "\u00fcberweit"
+    }
+  ],
+  "links": [
+    {
+      "source": "ausgestellt",
+      "target": "glockig"
+    },
+    {
+      "source": "eng",
+      "target": "schmal"
+    },
+    {
+      "source": "Form",
+      "target": "H\u00f6he"
+    },
+    {
+      "source": "Form",
+      "target": "L\u00e4nge"
+    },
+    {
+      "source": "Form",
+      "target": "Linie"
+    },
+    {
+      "source": "Form",
+      "target": "Weite"
+    },
+    {
+      "source": "H\u00f6he",
+      "target": "flach"
+    },
+    {
+      "source": "H\u00f6he",
+      "target": "hoch"
+    },
+    {
+      "source": "L\u00e4nge",
+      "target": "ellbogenlang"
+    },
+    {
+      "source": "L\u00e4nge",
+      "target": "handgelenklang"
+    },
+    {
+      "source": "L\u00e4nge",
+      "target": "h\u00fcftlang"
+    },
+    {
+      "source": "L\u00e4nge",
+      "target": "knielang"
+    },
+    {
+      "source": "L\u00e4nge",
+      "target": "kurz"
+    },
+    {
+      "source": "L\u00e4nge",
+      "target": "lang"
+    },
+    {
+      "source": "L\u00e4nge",
+      "target": "taillenlang"
+    },
+    {
+      "source": "L\u00e4nge",
+      "target": "wadenlang"
+    },
+    {
+      "source": "Linie",
+      "target": "ausgestellt"
+    },
+    {
+      "source": "Linie",
+      "target": "ballonartig"
+    },
+    {
+      "source": "Linie",
+      "target": "gradlinig"
+    },
+    {
+      "source": "Linie",
+      "target": "tailliert"
+    },
+    {
+      "source": "Weite",
+      "target": "eng"
+    },
+    {
+      "source": "Weite",
+      "target": "normal"
+    },
+    {
+      "source": "Weite",
+      "target": "\u00fcberweit"
+    },
+    {
+      "source": "Weite",
+      "target": "weit"
+    },
+    {
+      "source": "hoch",
+      "target": "mittelhoch"
+    },
+    {
+      "source": "hoch",
+      "target": "sehr hoch"
+    },
+    {
+      "source": "lang",
+      "target": "bodenlang"
+    },
+    {
+      "source": "lang",
+      "target": "kn\u00f6chellang"
+    },
+    {
+      "source": "weit",
+      "target": "breit"
+    }
+  ]
+}

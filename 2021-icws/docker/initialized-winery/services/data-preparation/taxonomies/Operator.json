@@ -1,0 +1,110 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "daran befestigt"
+    },
+    {
+      "id": "angeh\u00e4ngt"
+    },
+    {
+      "id": "angekn\u00f6pft"
+    },
+    {
+      "id": "angen\u00e4ht"
+    },
+    {
+      "id": "angesteckt"
+    },
+    {
+      "id": "aufgeklebt"
+    },
+    {
+      "id": "Operatoren"
+    },
+    {
+      "id": "am K\u00f6rper getragen"
+    },
+    {
+      "id": "aufgesetzt"
+    },
+    {
+      "id": "dar\u00fcber getragen"
+    },
+    {
+      "id": "hineingesteckt"
+    },
+    {
+      "id": "umgeg\u00fcrtet"
+    },
+    {
+      "id": "umgeh\u00e4ngt"
+    },
+    {
+      "id": "umgewickelt"
+    },
+    {
+      "id": "umgelegt"
+    }
+  ],
+  "links": [
+    {
+      "source": "daran befestigt",
+      "target": "angeh\u00e4ngt"
+    },
+    {
+      "source": "daran befestigt",
+      "target": "angekn\u00f6pft"
+    },
+    {
+      "source": "daran befestigt",
+      "target": "angen\u00e4ht"
+    },
+    {
+      "source": "daran befestigt",
+      "target": "angesteckt"
+    },
+    {
+      "source": "daran befestigt",
+      "target": "aufgeklebt"
+    },
+    {
+      "source": "Operatoren",
+      "target": "am K\u00f6rper getragen"
+    },
+    {
+      "source": "Operatoren",
+      "target": "aufgesetzt"
+    },
+    {
+      "source": "Operatoren",
+      "target": "daran befestigt"
+    },
+    {
+      "source": "Operatoren",
+      "target": "dar\u00fcber getragen"
+    },
+    {
+      "source": "Operatoren",
+      "target": "hineingesteckt"
+    },
+    {
+      "source": "Operatoren",
+      "target": "umgeg\u00fcrtet"
+    },
+    {
+      "source": "Operatoren",
+      "target": "umgeh\u00e4ngt"
+    },
+    {
+      "source": "Operatoren",
+      "target": "umgewickelt"
+    },
+    {
+      "source": "umgeh\u00e4ngt",
+      "target": "umgelegt"
+    }
+  ]
+}

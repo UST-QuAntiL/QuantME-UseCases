@@ -1,0 +1,33 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Rollenrelevanz"
+    },
+    {
+      "id": "Hauptrolle"
+    },
+    {
+      "id": "Nebenrolle"
+    },
+    {
+      "id": "Statist"
+    }
+  ],
+  "links": [
+    {
+      "source": "Rollenrelevanz",
+      "target": "Hauptrolle"
+    },
+    {
+      "source": "Rollenrelevanz",
+      "target": "Nebenrolle"
+    },
+    {
+      "source": "Rollenrelevanz",
+      "target": "Statist"
+    }
+  ]
+}

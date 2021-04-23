@@ -1,0 +1,54 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Tag"
+    },
+    {
+      "id": "Abend"
+    },
+    {
+      "id": "Mittag"
+    },
+    {
+      "id": "Nachmittag"
+    },
+    {
+      "id": "Vormittag"
+    },
+    {
+      "id": "Tageszeit"
+    },
+    {
+      "id": "Nacht"
+    }
+  ],
+  "links": [
+    {
+      "source": "Tag",
+      "target": "Abend"
+    },
+    {
+      "source": "Tag",
+      "target": "Mittag"
+    },
+    {
+      "source": "Tag",
+      "target": "Nachmittag"
+    },
+    {
+      "source": "Tag",
+      "target": "Vormittag"
+    },
+    {
+      "source": "Tageszeit",
+      "target": "Nacht"
+    },
+    {
+      "source": "Tageszeit",
+      "target": "Tag"
+    }
+  ]
+}

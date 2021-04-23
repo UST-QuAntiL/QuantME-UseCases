@@ -1,0 +1,54 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Typus"
+    },
+    {
+      "id": "aktiv"
+    },
+    {
+      "id": "b\u00f6se"
+    },
+    {
+      "id": "gut"
+    },
+    {
+      "id": "passiv"
+    },
+    {
+      "id": "schwach"
+    },
+    {
+      "id": "stark"
+    }
+  ],
+  "links": [
+    {
+      "source": "Typus",
+      "target": "aktiv"
+    },
+    {
+      "source": "Typus",
+      "target": "b\u00f6se"
+    },
+    {
+      "source": "Typus",
+      "target": "gut"
+    },
+    {
+      "source": "Typus",
+      "target": "passiv"
+    },
+    {
+      "source": "Typus",
+      "target": "schwach"
+    },
+    {
+      "source": "Typus",
+      "target": "stark"
+    }
+  ]
+}

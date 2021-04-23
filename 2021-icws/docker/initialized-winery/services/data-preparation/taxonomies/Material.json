@@ -1,0 +1,733 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Arbeitsstoff"
+    },
+    {
+      "id": "Flanell"
+    },
+    {
+      "id": "K\u00f6per"
+    },
+    {
+      "id": "Segeltuch"
+    },
+    {
+      "id": "Dehnbarer Stoff"
+    },
+    {
+      "id": "Elasthan"
+    },
+    {
+      "id": "Geh\u00e4keltes"
+    },
+    {
+      "id": "Jersey"
+    },
+    {
+      "id": "Nicky"
+    },
+    {
+      "id": "Sweatstoff"
+    },
+    {
+      "id": "Denim"
+    },
+    {
+      "id": "Jeans"
+    },
+    {
+      "id": "Durchscheinender Stoff"
+    },
+    {
+      "id": "Batist"
+    },
+    {
+      "id": "Chiffon"
+    },
+    {
+      "id": "Musselin"
+    },
+    {
+      "id": "Netz"
+    },
+    {
+      "id": "Nylon"
+    },
+    {
+      "id": "Organza"
+    },
+    {
+      "id": "Spitze"
+    },
+    {
+      "id": "T\u00fcll"
+    },
+    {
+      "id": "Edelstein"
+    },
+    {
+      "id": "Diamant"
+    },
+    {
+      "id": "Lycra"
+    },
+    {
+      "id": "Spandex"
+    },
+    {
+      "id": "Feiner Stoff"
+    },
+    {
+      "id": "Krepp"
+    },
+    {
+      "id": "Lam\u00e9"
+    },
+    {
+      "id": "Paillettenstoff"
+    },
+    {
+      "id": "Piqu\u00e9"
+    },
+    {
+      "id": "Prunkstoff"
+    },
+    {
+      "id": "Satin"
+    },
+    {
+      "id": "Seidenstoff"
+    },
+    {
+      "id": "Taft"
+    },
+    {
+      "id": "Freizeitstoff"
+    },
+    {
+      "id": "Baumwollstoff"
+    },
+    {
+      "id": "Cord"
+    },
+    {
+      "id": "Leinenstoff"
+    },
+    {
+      "id": "Nesselstoff"
+    },
+    {
+      "id": "Synthetisches Material"
+    },
+    {
+      "id": "Viskosestoff"
+    },
+    {
+      "id": "Drillich"
+    },
+    {
+      "id": "Gabardine"
+    },
+    {
+      "id": "K\u00fcnstliches Material"
+    },
+    {
+      "id": "Glas"
+    },
+    {
+      "id": "Gummi"
+    },
+    {
+      "id": "Kunstfell"
+    },
+    {
+      "id": "Kunstleder"
+    },
+    {
+      "id": "Lack"
+    },
+    {
+      "id": "Papier"
+    },
+    {
+      "id": "Plastik"
+    },
+    {
+      "id": "Schaumstoff"
+    },
+    {
+      "id": "Material"
+    },
+    {
+      "id": "Nicht textiles Material"
+    },
+    {
+      "id": "Textiles Material"
+    },
+    {
+      "id": "Metallenes Material"
+    },
+    {
+      "id": "Gold"
+    },
+    {
+      "id": "Kupfer"
+    },
+    {
+      "id": "Silber"
+    },
+    {
+      "id": "Pflanzliches Material"
+    },
+    {
+      "id": "Stein"
+    },
+    {
+      "id": "Tierisches Material"
+    },
+    {
+      "id": "Holz"
+    },
+    {
+      "id": "Kork"
+    },
+    {
+      "id": "Rinde"
+    },
+    {
+      "id": "Stroh"
+    },
+    {
+      "id": "Brokat"
+    },
+    {
+      "id": "Damast"
+    },
+    {
+      "id": "Jacquard"
+    },
+    {
+      "id": "Samt"
+    },
+    {
+      "id": "Crepe de chine"
+    },
+    {
+      "id": "Duchessseide"
+    },
+    {
+      "id": "Pong\u00e9 Seide"
+    },
+    {
+      "id": "Wildseide"
+    },
+    {
+      "id": "Strick"
+    },
+    {
+      "id": "Angorastrick"
+    },
+    {
+      "id": "Baumwollstrick"
+    },
+    {
+      "id": "Kaschmirstrick"
+    },
+    {
+      "id": "Wollstrick"
+    },
+    {
+      "id": "Polyester"
+    },
+    {
+      "id": "W\u00e4rmender Stoff"
+    },
+    {
+      "id": "Elfenbein"
+    },
+    {
+      "id": "Federn"
+    },
+    {
+      "id": "Fell"
+    },
+    {
+      "id": "Fischbein"
+    },
+    {
+      "id": "Fischhaut"
+    },
+    {
+      "id": "Horn"
+    },
+    {
+      "id": "Knochen"
+    },
+    {
+      "id": "Leder"
+    },
+    {
+      "id": "Perlen"
+    },
+    {
+      "id": "Perlmutt"
+    },
+    {
+      "id": "Z\u00e4hne"
+    },
+    {
+      "id": "Walkstoff"
+    },
+    {
+      "id": "Filz"
+    },
+    {
+      "id": "Fleece"
+    },
+    {
+      "id": "Frottee"
+    },
+    {
+      "id": "Molton"
+    },
+    {
+      "id": "Pl\u00fcsch"
+    },
+    {
+      "id": "Steppstoff"
+    },
+    {
+      "id": "Vlies"
+    },
+    {
+      "id": "Wollstoff"
+    },
+    {
+      "id": "Feiner Wollstoff"
+    },
+    {
+      "id": "Loden"
+    },
+    {
+      "id": "Tweed"
+    }
+  ],
+  "links": [
+    {
+      "source": "Arbeitsstoff",
+      "target": "Flanell"
+    },
+    {
+      "source": "Arbeitsstoff",
+      "target": "K\u00f6per"
+    },
+    {
+      "source": "Arbeitsstoff",
+      "target": "Segeltuch"
+    },
+    {
+      "source": "K\u00f6per",
+      "target": "Denim"
+    },
+    {
+      "source": "K\u00f6per",
+      "target": "Drillich"
+    },
+    {
+      "source": "K\u00f6per",
+      "target": "Gabardine"
+    },
+    {
+      "source": "Dehnbarer Stoff",
+      "target": "Elasthan"
+    },
+    {
+      "source": "Dehnbarer Stoff",
+      "target": "Geh\u00e4keltes"
+    },
+    {
+      "source": "Dehnbarer Stoff",
+      "target": "Jersey"
+    },
+    {
+      "source": "Dehnbarer Stoff",
+      "target": "Nicky"
+    },
+    {
+      "source": "Dehnbarer Stoff",
+      "target": "Sweatstoff"
+    },
+    {
+      "source": "Elasthan",
+      "target": "Lycra"
+    },
+    {
+      "source": "Elasthan",
+      "target": "Spandex"
+    },
+    {
+      "source": "Denim",
+      "target": "Jeans"
+    },
+    {
+      "source": "Durchscheinender Stoff",
+      "target": "Batist"
+    },
+    {
+      "source": "Durchscheinender Stoff",
+      "target": "Chiffon"
+    },
+    {
+      "source": "Durchscheinender Stoff",
+      "target": "Musselin"
+    },
+    {
+      "source": "Durchscheinender Stoff",
+      "target": "Netz"
+    },
+    {
+      "source": "Durchscheinender Stoff",
+      "target": "Nylon"
+    },
+    {
+      "source": "Durchscheinender Stoff",
+      "target": "Organza"
+    },
+    {
+      "source": "Durchscheinender Stoff",
+      "target": "Spitze"
+    },
+    {
+      "source": "Durchscheinender Stoff",
+      "target": "T\u00fcll"
+    },
+    {
+      "source": "Edelstein",
+      "target": "Diamant"
+    },
+    {
+      "source": "Feiner Stoff",
+      "target": "Durchscheinender Stoff"
+    },
+    {
+      "source": "Feiner Stoff",
+      "target": "Krepp"
+    },
+    {
+      "source": "Feiner Stoff",
+      "target": "Lam\u00e9"
+    },
+    {
+      "source": "Feiner Stoff",
+      "target": "Paillettenstoff"
+    },
+    {
+      "source": "Feiner Stoff",
+      "target": "Piqu\u00e9"
+    },
+    {
+      "source": "Feiner Stoff",
+      "target": "Prunkstoff"
+    },
+    {
+      "source": "Feiner Stoff",
+      "target": "Satin"
+    },
+    {
+      "source": "Feiner Stoff",
+      "target": "Seidenstoff"
+    },
+    {
+      "source": "Feiner Stoff",
+      "target": "Taft"
+    },
+    {
+      "source": "Prunkstoff",
+      "target": "Brokat"
+    },
+    {
+      "source": "Prunkstoff",
+      "target": "Damast"
+    },
+    {
+      "source": "Prunkstoff",
+      "target": "Jacquard"
+    },
+    {
+      "source": "Prunkstoff",
+      "target": "Samt"
+    },
+    {
+      "source": "Seidenstoff",
+      "target": "Crepe de chine"
+    },
+    {
+      "source": "Seidenstoff",
+      "target": "Duchessseide"
+    },
+    {
+      "source": "Seidenstoff",
+      "target": "Pong\u00e9 Seide"
+    },
+    {
+      "source": "Seidenstoff",
+      "target": "Wildseide"
+    },
+    {
+      "source": "Freizeitstoff",
+      "target": "Baumwollstoff"
+    },
+    {
+      "source": "Freizeitstoff",
+      "target": "Cord"
+    },
+    {
+      "source": "Freizeitstoff",
+      "target": "Dehnbarer Stoff"
+    },
+    {
+      "source": "Freizeitstoff",
+      "target": "Leinenstoff"
+    },
+    {
+      "source": "Freizeitstoff",
+      "target": "Nesselstoff"
+    },
+    {
+      "source": "Freizeitstoff",
+      "target": "Synthetisches Material"
+    },
+    {
+      "source": "Freizeitstoff",
+      "target": "Viskosestoff"
+    },
+    {
+      "source": "Synthetisches Material",
+      "target": "Polyester"
+    },
+    {
+      "source": "K\u00fcnstliches Material",
+      "target": "Glas"
+    },
+    {
+      "source": "K\u00fcnstliches Material",
+      "target": "Gummi"
+    },
+    {
+      "source": "K\u00fcnstliches Material",
+      "target": "Kunstfell"
+    },
+    {
+      "source": "K\u00fcnstliches Material",
+      "target": "Kunstleder"
+    },
+    {
+      "source": "K\u00fcnstliches Material",
+      "target": "Lack"
+    },
+    {
+      "source": "K\u00fcnstliches Material",
+      "target": "Papier"
+    },
+    {
+      "source": "K\u00fcnstliches Material",
+      "target": "Plastik"
+    },
+    {
+      "source": "K\u00fcnstliches Material",
+      "target": "Schaumstoff"
+    },
+    {
+      "source": "Material",
+      "target": "Nicht textiles Material"
+    },
+    {
+      "source": "Material",
+      "target": "Textiles Material"
+    },
+    {
+      "source": "Nicht textiles Material",
+      "target": "K\u00fcnstliches Material"
+    },
+    {
+      "source": "Nicht textiles Material",
+      "target": "Metallenes Material"
+    },
+    {
+      "source": "Nicht textiles Material",
+      "target": "Pflanzliches Material"
+    },
+    {
+      "source": "Nicht textiles Material",
+      "target": "Stein"
+    },
+    {
+      "source": "Nicht textiles Material",
+      "target": "Tierisches Material"
+    },
+    {
+      "source": "Textiles Material",
+      "target": "Arbeitsstoff"
+    },
+    {
+      "source": "Textiles Material",
+      "target": "Feiner Stoff"
+    },
+    {
+      "source": "Textiles Material",
+      "target": "Freizeitstoff"
+    },
+    {
+      "source": "Textiles Material",
+      "target": "Strick"
+    },
+    {
+      "source": "Textiles Material",
+      "target": "W\u00e4rmender Stoff"
+    },
+    {
+      "source": "Metallenes Material",
+      "target": "Gold"
+    },
+    {
+      "source": "Metallenes Material",
+      "target": "Kupfer"
+    },
+    {
+      "source": "Metallenes Material",
+      "target": "Silber"
+    },
+    {
+      "source": "Pflanzliches Material",
+      "target": "Holz"
+    },
+    {
+      "source": "Pflanzliches Material",
+      "target": "Kork"
+    },
+    {
+      "source": "Pflanzliches Material",
+      "target": "Rinde"
+    },
+    {
+      "source": "Pflanzliches Material",
+      "target": "Stroh"
+    },
+    {
+      "source": "Stein",
+      "target": "Edelstein"
+    },
+    {
+      "source": "Tierisches Material",
+      "target": "Elfenbein"
+    },
+    {
+      "source": "Tierisches Material",
+      "target": "Federn"
+    },
+    {
+      "source": "Tierisches Material",
+      "target": "Fell"
+    },
+    {
+      "source": "Tierisches Material",
+      "target": "Fischbein"
+    },
+    {
+      "source": "Tierisches Material",
+      "target": "Fischhaut"
+    },
+    {
+      "source": "Tierisches Material",
+      "target": "Horn"
+    },
+    {
+      "source": "Tierisches Material",
+      "target": "Knochen"
+    },
+    {
+      "source": "Tierisches Material",
+      "target": "Leder"
+    },
+    {
+      "source": "Tierisches Material",
+      "target": "Perlen"
+    },
+    {
+      "source": "Tierisches Material",
+      "target": "Perlmutt"
+    },
+    {
+      "source": "Tierisches Material",
+      "target": "Z\u00e4hne"
+    },
+    {
+      "source": "Strick",
+      "target": "Angorastrick"
+    },
+    {
+      "source": "Strick",
+      "target": "Baumwollstrick"
+    },
+    {
+      "source": "Strick",
+      "target": "Kaschmirstrick"
+    },
+    {
+      "source": "Strick",
+      "target": "Wollstrick"
+    },
+    {
+      "source": "W\u00e4rmender Stoff",
+      "target": "Fleece"
+    },
+    {
+      "source": "W\u00e4rmender Stoff",
+      "target": "Frottee"
+    },
+    {
+      "source": "W\u00e4rmender Stoff",
+      "target": "Molton"
+    },
+    {
+      "source": "W\u00e4rmender Stoff",
+      "target": "Pl\u00fcsch"
+    },
+    {
+      "source": "W\u00e4rmender Stoff",
+      "target": "Steppstoff"
+    },
+    {
+      "source": "W\u00e4rmender Stoff",
+      "target": "Vlies"
+    },
+    {
+      "source": "W\u00e4rmender Stoff",
+      "target": "Wollstoff"
+    },
+    {
+      "source": "Walkstoff",
+      "target": "Filz"
+    },
+    {
+      "source": "Wollstoff",
+      "target": "Feiner Wollstoff"
+    },
+    {
+      "source": "Wollstoff",
+      "target": "Loden"
+    },
+    {
+      "source": "Wollstoff",
+      "target": "Tweed"
+    },
+    {
+      "source": "Wollstoff",
+      "target": "Walkstoff"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Farbeindruck"
+    },
+    {
+      "id": "gl\u00e4nzend"
+    },
+    {
+      "id": "kr\u00e4ftig"
+    },
+    {
+      "id": "neon"
+    },
+    {
+      "id": "normal"
+    },
+    {
+      "id": "pastellig"
+    },
+    {
+      "id": "stumpf"
+    },
+    {
+      "id": "transparent"
+    }
+  ],
+  "links": [
+    {
+      "source": "Farbeindruck",
+      "target": "gl\u00e4nzend"
+    },
+    {
+      "source": "Farbeindruck",
+      "target": "kr\u00e4ftig"
+    },
+    {
+      "source": "Farbeindruck",
+      "target": "neon"
+    },
+    {
+      "source": "Farbeindruck",
+      "target": "normal"
+    },
+    {
+      "source": "Farbeindruck",
+      "target": "pastellig"
+    },
+    {
+      "source": "Farbeindruck",
+      "target": "stumpf"
+    },
+    {
+      "source": "Farbeindruck",
+      "target": "transparent"
+    }
+  ]
+}

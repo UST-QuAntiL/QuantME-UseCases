@@ -1,0 +1,75 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "hochgezogen"
+    },
+    {
+      "id": "geschoppt"
+    },
+    {
+      "id": "Trageweise"
+    },
+    {
+      "id": "halboffen getragen"
+    },
+    {
+      "id": "offen getragen"
+    },
+    {
+      "id": "runtergezogen"
+    },
+    {
+      "id": "umgeschlagen"
+    },
+    {
+      "id": "zu getragen"
+    },
+    {
+      "id": "eingeschlagen"
+    },
+    {
+      "id": "hochgekrempelt"
+    }
+  ],
+  "links": [
+    {
+      "source": "hochgezogen",
+      "target": "geschoppt"
+    },
+    {
+      "source": "Trageweise",
+      "target": "halboffen getragen"
+    },
+    {
+      "source": "Trageweise",
+      "target": "hochgezogen"
+    },
+    {
+      "source": "Trageweise",
+      "target": "offen getragen"
+    },
+    {
+      "source": "Trageweise",
+      "target": "runtergezogen"
+    },
+    {
+      "source": "Trageweise",
+      "target": "umgeschlagen"
+    },
+    {
+      "source": "Trageweise",
+      "target": "zu getragen"
+    },
+    {
+      "source": "umgeschlagen",
+      "target": "eingeschlagen"
+    },
+    {
+      "source": "umgeschlagen",
+      "target": "hochgekrempelt"
+    }
+  ]
+}

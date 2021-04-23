@@ -1,0 +1,1454 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Absatz"
+    },
+    {
+      "id": "Flacher Absatz"
+    },
+    {
+      "id": "Hoher Absatz"
+    },
+    {
+      "id": "\u00c4rmel"
+    },
+    {
+      "id": "Geteilter \u00c4rmel"
+    },
+    {
+      "id": "Kurzer \u00c4rmel"
+    },
+    {
+      "id": "Langer \u00c4rmel"
+    },
+    {
+      "id": "\u00c4rmelaufschlag"
+    },
+    {
+      "id": "Doppelmanschette"
+    },
+    {
+      "id": "Umschlagmanschette"
+    },
+    {
+      "id": "Ausschnitt"
+    },
+    {
+      "id": "Carmen Ausschnitt"
+    },
+    {
+      "id": "Carr\u00e9 Ausschnitt"
+    },
+    {
+      "id": "Empire Ausschnitt"
+    },
+    {
+      "id": "Gerader Ausschnitt"
+    },
+    {
+      "id": "Herzform Ausschnitt"
+    },
+    {
+      "id": "R\u00fcckenausschnitt"
+    },
+    {
+      "id": "Rundhals Ausschnitt"
+    },
+    {
+      "id": "Schr\u00e4ger Ausschnitt"
+    },
+    {
+      "id": "Serafino Ausschnitt"
+    },
+    {
+      "id": "U-Boot Ausschnitt"
+    },
+    {
+      "id": "V-Ausschnitt"
+    },
+    {
+      "id": "Wasserfallausschnitt"
+    },
+    {
+      "id": "Band"
+    },
+    {
+      "id": "Hutband"
+    },
+    {
+      "id": "Beinteil"
+    },
+    {
+      "id": "Hinteres Beinteil"
+    },
+    {
+      "id": "Vorderes Beinteil"
+    },
+    {
+      "id": "Beinzugeh\u00f6rig"
+    },
+    {
+      "id": "G\u00fcrtelschlaufen"
+    },
+    {
+      "id": "Schleppe"
+    },
+    {
+      "id": "Schlitz"
+    },
+    {
+      "id": "Zwickel"
+    },
+    {
+      "id": "Besatz"
+    },
+    {
+      "id": "Pelzbesatz"
+    },
+    {
+      "id": "Bund"
+    },
+    {
+      "id": "B\u00fcndchen"
+    },
+    {
+      "id": "Einfachmanschette"
+    },
+    {
+      "id": "Sportmanschette"
+    },
+    {
+      "id": "Einsatz"
+    },
+    {
+      "id": "Keil"
+    },
+    {
+      "id": "Falte"
+    },
+    {
+      "id": "B\u00fcgelfalte"
+    },
+    {
+      "id": "Glockenfalte"
+    },
+    {
+      "id": "Kellerfalte"
+    },
+    {
+      "id": "Kr\u00e4uselfalte"
+    },
+    {
+      "id": "Plisseefalte"
+    },
+    {
+      "id": "Raffung"
+    },
+    {
+      "id": "Fu\u00dfzugeh\u00f6rig"
+    },
+    {
+      "id": "Riemen"
+    },
+    {
+      "id": "Schaft"
+    },
+    {
+      "id": "Sohle"
+    },
+    {
+      "id": "Geschlitzter \u00c4rmel"
+    },
+    {
+      "id": "Breite G\u00fcrtelschlaufen"
+    },
+    {
+      "id": "Schmale G\u00fcrtelschlaufen"
+    },
+    {
+      "id": "Hinterteil"
+    },
+    {
+      "id": "Mittleres Hinterteil"
+    },
+    {
+      "id": "Seitliches Hinterteil"
+    },
+    {
+      "id": "Barock"
+    },
+    {
+      "id": "Block"
+    },
+    {
+      "id": "Keilabsatz"
+    },
+    {
+      "id": "Plateau"
+    },
+    {
+      "id": "Schlank"
+    },
+    {
+      "id": "Standard"
+    },
+    {
+      "id": "Knopf"
+    },
+    {
+      "id": "Doppelknopf"
+    },
+    {
+      "id": "Druckknopf"
+    },
+    {
+      "id": "Knopfleiste"
+    },
+    {
+      "id": "Knopfloch"
+    },
+    {
+      "id": "Einreihige Knopfleiste"
+    },
+    {
+      "id": "Zweireihige Knopfleiste"
+    },
+    {
+      "id": "Kopfzugeh\u00f6rig"
+    },
+    {
+      "id": "Krempe"
+    },
+    {
+      "id": "Kronenteil"
+    },
+    {
+      "id": "Kragen"
+    },
+    {
+      "id": "Kapuzenkragen"
+    },
+    {
+      "id": "Kuttenkragen"
+    },
+    {
+      "id": "Liegekragen"
+    },
+    {
+      "id": "Pelzkragen"
+    },
+    {
+      "id": "Pierrotkragen"
+    },
+    {
+      "id": "Rollkragen"
+    },
+    {
+      "id": "Schalkragen"
+    },
+    {
+      "id": "Stehkragen"
+    },
+    {
+      "id": "Stuart-Kragen"
+    },
+    {
+      "id": "Umlegekragen"
+    },
+    {
+      "id": "Hutkrempe"
+    },
+    {
+      "id": "Schirm"
+    },
+    {
+      "id": "Fl\u00fcgel\u00e4rmel"
+    },
+    {
+      "id": "Puff\u00e4rmel"
+    },
+    {
+      "id": "Ballon\u00e4rmel"
+    },
+    {
+      "id": "Fledermaus\u00e4rmel"
+    },
+    {
+      "id": "Glocken\u00e4rmel"
+    },
+    {
+      "id": "Keulen\u00e4rmel"
+    },
+    {
+      "id": "Kimono\u00e4rmel"
+    },
+    {
+      "id": "Pagoden\u00e4rmel"
+    },
+    {
+      "id": "Bubikragen"
+    },
+    {
+      "id": "Matrosenkragen"
+    },
+    {
+      "id": "Manschette"
+    },
+    {
+      "id": "\u00c4rmelb\u00fcndchen"
+    },
+    {
+      "id": "Mehrfach vorkommend"
+    },
+    {
+      "id": "Abn\u00e4her"
+    },
+    {
+      "id": "Futter"
+    },
+    {
+      "id": "Kapuze"
+    },
+    {
+      "id": "Naht"
+    },
+    {
+      "id": "Patte"
+    },
+    {
+      "id": "Rand"
+    },
+    {
+      "id": "Schoss"
+    },
+    {
+      "id": "Steg"
+    },
+    {
+      "id": "Taschen"
+    },
+    {
+      "id": "Tr\u00e4ger"
+    },
+    {
+      "id": "Umschlag"
+    },
+    {
+      "id": "Verschluss"
+    },
+    {
+      "id": "Vorderteil"
+    },
+    {
+      "id": "Zierelemente"
+    },
+    {
+      "id": "Zipfel"
+    },
+    {
+      "id": "Doppelnaht"
+    },
+    {
+      "id": "Gesteppt"
+    },
+    {
+      "id": "Nicht textile Zierelemente"
+    },
+    {
+      "id": "Anh\u00e4nger"
+    },
+    {
+      "id": "Nieten"
+    },
+    {
+      "id": "Pailletten"
+    },
+    {
+      "id": "Perlen"
+    },
+    {
+      "id": "Strass"
+    },
+    {
+      "id": "Oberk\u00f6rperzugeh\u00f6rig"
+    },
+    {
+      "id": "K\u00f6rbchen"
+    },
+    {
+      "id": "Passe"
+    },
+    {
+      "id": "Revers"
+    },
+    {
+      "id": "Schulterklappen"
+    },
+    {
+      "id": "Schulterpartie"
+    },
+    {
+      "id": "St\u00e4bchen"
+    },
+    {
+      "id": "Blende"
+    },
+    {
+      "id": "Klappe"
+    },
+    {
+      "id": "Kante"
+    },
+    {
+      "id": "Saum"
+    },
+    {
+      "id": "Umrandung"
+    },
+    {
+      "id": "Fallendes Revers"
+    },
+    {
+      "id": "Gerades Revers"
+    },
+    {
+      "id": "Geschweiftes Revers"
+    },
+    {
+      "id": "Steigendes Revers"
+    },
+    {
+      "id": "Capekragen"
+    },
+    {
+      "id": "Stiletto"
+    },
+    {
+      "id": "Schnalle"
+    },
+    {
+      "id": "Doppeldornschnalle"
+    },
+    {
+      "id": "Dornschnalle"
+    },
+    {
+      "id": "Klemmschnalle"
+    },
+    {
+      "id": "Klickschnalle"
+    },
+    {
+      "id": "Koppelschnalle"
+    },
+    {
+      "id": "Schn\u00fcrung"
+    },
+    {
+      "id": "Schn\u00fcrsenkel"
+    },
+    {
+      "id": "Sch\u00f6\u00dfchen"
+    },
+    {
+      "id": "Schwalbenschw\u00e4nze"
+    },
+    {
+      "id": "Epauletten"
+    },
+    {
+      "id": "Gepolstert"
+    },
+    {
+      "id": "Gepufft"
+    },
+    {
+      "id": "Gerafft"
+    },
+    {
+      "id": "Gummisohle"
+    },
+    {
+      "id": "Ledersohle"
+    },
+    {
+      "id": "Plateausohle"
+    },
+    {
+      "id": "Kollar"
+    },
+    {
+      "id": "Vaterm\u00f6rder"
+    },
+    {
+      "id": "Aufgesetzte Tasche"
+    },
+    {
+      "id": "Brusttasche"
+    },
+    {
+      "id": "Ges\u00e4\u00dftasche"
+    },
+    {
+      "id": "Innentasche"
+    },
+    {
+      "id": "K\u00e4ngurutasche"
+    },
+    {
+      "id": "Leistentasche"
+    },
+    {
+      "id": "Paspeltasche"
+    },
+    {
+      "id": "Pattentasche"
+    },
+    {
+      "id": "Teilelemente"
+    },
+    {
+      "id": "Textile Zierelemente"
+    },
+    {
+      "id": "Biese"
+    },
+    {
+      "id": "Borte"
+    },
+    {
+      "id": "Flicken"
+    },
+    {
+      "id": "Fransen"
+    },
+    {
+      "id": "Litze"
+    },
+    {
+      "id": "Paspel"
+    },
+    {
+      "id": "R\u00fcsche"
+    },
+    {
+      "id": "Spitze"
+    },
+    {
+      "id": "Stickerei"
+    },
+    {
+      "id": "Tresse"
+    },
+    {
+      "id": "Volant"
+    },
+    {
+      "id": "Breite Tr\u00e4ger"
+    },
+    {
+      "id": "Neckholder"
+    },
+    {
+      "id": "Spaghetti Tr\u00e4ger"
+    },
+    {
+      "id": "Button-down-Kragen"
+    },
+    {
+      "id": "Cutawaykragen"
+    },
+    {
+      "id": "Doppelter Kragen"
+    },
+    {
+      "id": "Haifischkragen"
+    },
+    {
+      "id": "Kentkragen"
+    },
+    {
+      "id": "Lidokragen"
+    },
+    {
+      "id": "Schillerkragen"
+    },
+    {
+      "id": "Tap-Kragen"
+    },
+    {
+      "id": "Eingefasste Kante"
+    },
+    {
+      "id": "Butterfly-Verschluss"
+    },
+    {
+      "id": "Clip"
+    },
+    {
+      "id": "Gummi"
+    },
+    {
+      "id": "Haken und \u00d6se"
+    },
+    {
+      "id": "Klettverschluss"
+    },
+    {
+      "id": "Knebelverschluss"
+    },
+    {
+      "id": "Knoten"
+    },
+    {
+      "id": "Rei\u00dfverschluss"
+    },
+    {
+      "id": "Spange"
+    },
+    {
+      "id": "Mittleres Vorderteil"
+    },
+    {
+      "id": "Seitliches Vorderteil"
+    },
+    {
+      "id": "Applikation"
+    },
+    {
+      "id": "Blume"
+    },
+    {
+      "id": "Schleife"
+    }
+  ],
+  "links": [
+    {
+      "source": "Absatz",
+      "target": "Flacher Absatz"
+    },
+    {
+      "source": "Absatz",
+      "target": "Hoher Absatz"
+    },
+    {
+      "source": "Hoher Absatz",
+      "target": "Barock"
+    },
+    {
+      "source": "Hoher Absatz",
+      "target": "Block"
+    },
+    {
+      "source": "Hoher Absatz",
+      "target": "Keilabsatz"
+    },
+    {
+      "source": "Hoher Absatz",
+      "target": "Plateau"
+    },
+    {
+      "source": "Hoher Absatz",
+      "target": "Schlank"
+    },
+    {
+      "source": "Hoher Absatz",
+      "target": "Standard"
+    },
+    {
+      "source": "\u00c4rmel",
+      "target": "Geteilter \u00c4rmel"
+    },
+    {
+      "source": "\u00c4rmel",
+      "target": "Kurzer \u00c4rmel"
+    },
+    {
+      "source": "\u00c4rmel",
+      "target": "Langer \u00c4rmel"
+    },
+    {
+      "source": "Geteilter \u00c4rmel",
+      "target": "Geschlitzter \u00c4rmel"
+    },
+    {
+      "source": "Kurzer \u00c4rmel",
+      "target": "Fl\u00fcgel\u00e4rmel"
+    },
+    {
+      "source": "Kurzer \u00c4rmel",
+      "target": "Puff\u00e4rmel"
+    },
+    {
+      "source": "Langer \u00c4rmel",
+      "target": "Ballon\u00e4rmel"
+    },
+    {
+      "source": "Langer \u00c4rmel",
+      "target": "Fledermaus\u00e4rmel"
+    },
+    {
+      "source": "Langer \u00c4rmel",
+      "target": "Glocken\u00e4rmel"
+    },
+    {
+      "source": "Langer \u00c4rmel",
+      "target": "Keulen\u00e4rmel"
+    },
+    {
+      "source": "Langer \u00c4rmel",
+      "target": "Kimono\u00e4rmel"
+    },
+    {
+      "source": "Langer \u00c4rmel",
+      "target": "Pagoden\u00e4rmel"
+    },
+    {
+      "source": "\u00c4rmelaufschlag",
+      "target": "Doppelmanschette"
+    },
+    {
+      "source": "\u00c4rmelaufschlag",
+      "target": "Umschlagmanschette"
+    },
+    {
+      "source": "Ausschnitt",
+      "target": "Carmen Ausschnitt"
+    },
+    {
+      "source": "Ausschnitt",
+      "target": "Carr\u00e9 Ausschnitt"
+    },
+    {
+      "source": "Ausschnitt",
+      "target": "Empire Ausschnitt"
+    },
+    {
+      "source": "Ausschnitt",
+      "target": "Gerader Ausschnitt"
+    },
+    {
+      "source": "Ausschnitt",
+      "target": "Herzform Ausschnitt"
+    },
+    {
+      "source": "Ausschnitt",
+      "target": "R\u00fcckenausschnitt"
+    },
+    {
+      "source": "Ausschnitt",
+      "target": "Rundhals Ausschnitt"
+    },
+    {
+      "source": "Ausschnitt",
+      "target": "Schr\u00e4ger Ausschnitt"
+    },
+    {
+      "source": "Ausschnitt",
+      "target": "Serafino Ausschnitt"
+    },
+    {
+      "source": "Ausschnitt",
+      "target": "U-Boot Ausschnitt"
+    },
+    {
+      "source": "Ausschnitt",
+      "target": "V-Ausschnitt"
+    },
+    {
+      "source": "Ausschnitt",
+      "target": "Wasserfallausschnitt"
+    },
+    {
+      "source": "Band",
+      "target": "Hutband"
+    },
+    {
+      "source": "Beinteil",
+      "target": "Hinteres Beinteil"
+    },
+    {
+      "source": "Beinteil",
+      "target": "Vorderes Beinteil"
+    },
+    {
+      "source": "Beinzugeh\u00f6rig",
+      "target": "Beinteil"
+    },
+    {
+      "source": "Beinzugeh\u00f6rig",
+      "target": "G\u00fcrtelschlaufen"
+    },
+    {
+      "source": "Beinzugeh\u00f6rig",
+      "target": "Schleppe"
+    },
+    {
+      "source": "Beinzugeh\u00f6rig",
+      "target": "Schlitz"
+    },
+    {
+      "source": "Beinzugeh\u00f6rig",
+      "target": "Zwickel"
+    },
+    {
+      "source": "G\u00fcrtelschlaufen",
+      "target": "Breite G\u00fcrtelschlaufen"
+    },
+    {
+      "source": "G\u00fcrtelschlaufen",
+      "target": "Schmale G\u00fcrtelschlaufen"
+    },
+    {
+      "source": "Besatz",
+      "target": "Pelzbesatz"
+    },
+    {
+      "source": "Bund",
+      "target": "B\u00fcndchen"
+    },
+    {
+      "source": "Einfachmanschette",
+      "target": "Sportmanschette"
+    },
+    {
+      "source": "Einsatz",
+      "target": "Keil"
+    },
+    {
+      "source": "Falte",
+      "target": "B\u00fcgelfalte"
+    },
+    {
+      "source": "Falte",
+      "target": "Glockenfalte"
+    },
+    {
+      "source": "Falte",
+      "target": "Kellerfalte"
+    },
+    {
+      "source": "Falte",
+      "target": "Kr\u00e4uselfalte"
+    },
+    {
+      "source": "Falte",
+      "target": "Plisseefalte"
+    },
+    {
+      "source": "Falte",
+      "target": "Raffung"
+    },
+    {
+      "source": "Fu\u00dfzugeh\u00f6rig",
+      "target": "Absatz"
+    },
+    {
+      "source": "Fu\u00dfzugeh\u00f6rig",
+      "target": "Riemen"
+    },
+    {
+      "source": "Fu\u00dfzugeh\u00f6rig",
+      "target": "Schaft"
+    },
+    {
+      "source": "Fu\u00dfzugeh\u00f6rig",
+      "target": "Sohle"
+    },
+    {
+      "source": "Sohle",
+      "target": "Gummisohle"
+    },
+    {
+      "source": "Sohle",
+      "target": "Ledersohle"
+    },
+    {
+      "source": "Sohle",
+      "target": "Plateausohle"
+    },
+    {
+      "source": "Hinterteil",
+      "target": "Mittleres Hinterteil"
+    },
+    {
+      "source": "Hinterteil",
+      "target": "Seitliches Hinterteil"
+    },
+    {
+      "source": "Schlank",
+      "target": "Stiletto"
+    },
+    {
+      "source": "Knopf",
+      "target": "Doppelknopf"
+    },
+    {
+      "source": "Knopf",
+      "target": "Druckknopf"
+    },
+    {
+      "source": "Knopf",
+      "target": "Knopfleiste"
+    },
+    {
+      "source": "Knopf",
+      "target": "Knopfloch"
+    },
+    {
+      "source": "Knopfleiste",
+      "target": "Einreihige Knopfleiste"
+    },
+    {
+      "source": "Knopfleiste",
+      "target": "Zweireihige Knopfleiste"
+    },
+    {
+      "source": "Kopfzugeh\u00f6rig",
+      "target": "Krempe"
+    },
+    {
+      "source": "Kopfzugeh\u00f6rig",
+      "target": "Kronenteil"
+    },
+    {
+      "source": "Krempe",
+      "target": "Hutkrempe"
+    },
+    {
+      "source": "Krempe",
+      "target": "Schirm"
+    },
+    {
+      "source": "Kragen",
+      "target": "Kapuzenkragen"
+    },
+    {
+      "source": "Kragen",
+      "target": "Kuttenkragen"
+    },
+    {
+      "source": "Kragen",
+      "target": "Liegekragen"
+    },
+    {
+      "source": "Kragen",
+      "target": "Pelzkragen"
+    },
+    {
+      "source": "Kragen",
+      "target": "Pierrotkragen"
+    },
+    {
+      "source": "Kragen",
+      "target": "Rollkragen"
+    },
+    {
+      "source": "Kragen",
+      "target": "Schalkragen"
+    },
+    {
+      "source": "Kragen",
+      "target": "Stehkragen"
+    },
+    {
+      "source": "Kragen",
+      "target": "Stuart-Kragen"
+    },
+    {
+      "source": "Kragen",
+      "target": "Umlegekragen"
+    },
+    {
+      "source": "Liegekragen",
+      "target": "Bubikragen"
+    },
+    {
+      "source": "Liegekragen",
+      "target": "Matrosenkragen"
+    },
+    {
+      "source": "Schalkragen",
+      "target": "Capekragen"
+    },
+    {
+      "source": "Stehkragen",
+      "target": "Kollar"
+    },
+    {
+      "source": "Stehkragen",
+      "target": "Vaterm\u00f6rder"
+    },
+    {
+      "source": "Umlegekragen",
+      "target": "Button-down-Kragen"
+    },
+    {
+      "source": "Umlegekragen",
+      "target": "Cutawaykragen"
+    },
+    {
+      "source": "Umlegekragen",
+      "target": "Doppelter Kragen"
+    },
+    {
+      "source": "Umlegekragen",
+      "target": "Haifischkragen"
+    },
+    {
+      "source": "Umlegekragen",
+      "target": "Kentkragen"
+    },
+    {
+      "source": "Umlegekragen",
+      "target": "Lidokragen"
+    },
+    {
+      "source": "Umlegekragen",
+      "target": "Schillerkragen"
+    },
+    {
+      "source": "Umlegekragen",
+      "target": "Tap-Kragen"
+    },
+    {
+      "source": "Manschette",
+      "target": "\u00c4rmelaufschlag"
+    },
+    {
+      "source": "Manschette",
+      "target": "\u00c4rmelb\u00fcndchen"
+    },
+    {
+      "source": "Manschette",
+      "target": "Einfachmanschette"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Abn\u00e4her"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Bund"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Einsatz"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Falte"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Futter"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Hinterteil"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Kapuze"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Naht"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Patte"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Rand"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Schoss"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Steg"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Taschen"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Tr\u00e4ger"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Umschlag"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Verschluss"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Vorderteil"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Zierelemente"
+    },
+    {
+      "source": "Mehrfach vorkommend",
+      "target": "Zipfel"
+    },
+    {
+      "source": "Naht",
+      "target": "Doppelnaht"
+    },
+    {
+      "source": "Naht",
+      "target": "Gesteppt"
+    },
+    {
+      "source": "Patte",
+      "target": "Blende"
+    },
+    {
+      "source": "Patte",
+      "target": "Klappe"
+    },
+    {
+      "source": "Rand",
+      "target": "Kante"
+    },
+    {
+      "source": "Rand",
+      "target": "Saum"
+    },
+    {
+      "source": "Rand",
+      "target": "Umrandung"
+    },
+    {
+      "source": "Schoss",
+      "target": "Sch\u00f6\u00dfchen"
+    },
+    {
+      "source": "Schoss",
+      "target": "Schwalbenschw\u00e4nze"
+    },
+    {
+      "source": "Taschen",
+      "target": "Aufgesetzte Tasche"
+    },
+    {
+      "source": "Taschen",
+      "target": "Brusttasche"
+    },
+    {
+      "source": "Taschen",
+      "target": "Ges\u00e4\u00dftasche"
+    },
+    {
+      "source": "Taschen",
+      "target": "Innentasche"
+    },
+    {
+      "source": "Taschen",
+      "target": "K\u00e4ngurutasche"
+    },
+    {
+      "source": "Taschen",
+      "target": "Leistentasche"
+    },
+    {
+      "source": "Taschen",
+      "target": "Paspeltasche"
+    },
+    {
+      "source": "Taschen",
+      "target": "Pattentasche"
+    },
+    {
+      "source": "Tr\u00e4ger",
+      "target": "Breite Tr\u00e4ger"
+    },
+    {
+      "source": "Tr\u00e4ger",
+      "target": "Neckholder"
+    },
+    {
+      "source": "Tr\u00e4ger",
+      "target": "Spaghetti Tr\u00e4ger"
+    },
+    {
+      "source": "Verschluss",
+      "target": "Butterfly-Verschluss"
+    },
+    {
+      "source": "Verschluss",
+      "target": "Clip"
+    },
+    {
+      "source": "Verschluss",
+      "target": "Gummi"
+    },
+    {
+      "source": "Verschluss",
+      "target": "Haken und \u00d6se"
+    },
+    {
+      "source": "Verschluss",
+      "target": "Klettverschluss"
+    },
+    {
+      "source": "Verschluss",
+      "target": "Knebelverschluss"
+    },
+    {
+      "source": "Verschluss",
+      "target": "Knopf"
+    },
+    {
+      "source": "Verschluss",
+      "target": "Knoten"
+    },
+    {
+      "source": "Verschluss",
+      "target": "Rei\u00dfverschluss"
+    },
+    {
+      "source": "Verschluss",
+      "target": "Schnalle"
+    },
+    {
+      "source": "Verschluss",
+      "target": "Schn\u00fcrung"
+    },
+    {
+      "source": "Verschluss",
+      "target": "Spange"
+    },
+    {
+      "source": "Vorderteil",
+      "target": "Mittleres Vorderteil"
+    },
+    {
+      "source": "Vorderteil",
+      "target": "Seitliches Vorderteil"
+    },
+    {
+      "source": "Zierelemente",
+      "target": "Applikation"
+    },
+    {
+      "source": "Zierelemente",
+      "target": "Besatz"
+    },
+    {
+      "source": "Zierelemente",
+      "target": "Blume"
+    },
+    {
+      "source": "Zierelemente",
+      "target": "Nicht textile Zierelemente"
+    },
+    {
+      "source": "Zierelemente",
+      "target": "Schleife"
+    },
+    {
+      "source": "Zierelemente",
+      "target": "Textile Zierelemente"
+    },
+    {
+      "source": "Nicht textile Zierelemente",
+      "target": "Anh\u00e4nger"
+    },
+    {
+      "source": "Nicht textile Zierelemente",
+      "target": "Nieten"
+    },
+    {
+      "source": "Nicht textile Zierelemente",
+      "target": "Pailletten"
+    },
+    {
+      "source": "Nicht textile Zierelemente",
+      "target": "Perlen"
+    },
+    {
+      "source": "Nicht textile Zierelemente",
+      "target": "Strass"
+    },
+    {
+      "source": "Oberk\u00f6rperzugeh\u00f6rig",
+      "target": "\u00c4rmel"
+    },
+    {
+      "source": "Oberk\u00f6rperzugeh\u00f6rig",
+      "target": "Ausschnitt"
+    },
+    {
+      "source": "Oberk\u00f6rperzugeh\u00f6rig",
+      "target": "K\u00f6rbchen"
+    },
+    {
+      "source": "Oberk\u00f6rperzugeh\u00f6rig",
+      "target": "Kragen"
+    },
+    {
+      "source": "Oberk\u00f6rperzugeh\u00f6rig",
+      "target": "Manschette"
+    },
+    {
+      "source": "Oberk\u00f6rperzugeh\u00f6rig",
+      "target": "Passe"
+    },
+    {
+      "source": "Oberk\u00f6rperzugeh\u00f6rig",
+      "target": "Revers"
+    },
+    {
+      "source": "Oberk\u00f6rperzugeh\u00f6rig",
+      "target": "Schulterklappen"
+    },
+    {
+      "source": "Oberk\u00f6rperzugeh\u00f6rig",
+      "target": "Schulterpartie"
+    },
+    {
+      "source": "Oberk\u00f6rperzugeh\u00f6rig",
+      "target": "St\u00e4bchen"
+    },
+    {
+      "source": "Revers",
+      "target": "Fallendes Revers"
+    },
+    {
+      "source": "Revers",
+      "target": "Gerades Revers"
+    },
+    {
+      "source": "Revers",
+      "target": "Geschweiftes Revers"
+    },
+    {
+      "source": "Revers",
+      "target": "Steigendes Revers"
+    },
+    {
+      "source": "Schulterklappen",
+      "target": "Epauletten"
+    },
+    {
+      "source": "Schulterpartie",
+      "target": "Gepolstert"
+    },
+    {
+      "source": "Schulterpartie",
+      "target": "Gepufft"
+    },
+    {
+      "source": "Schulterpartie",
+      "target": "Gerafft"
+    },
+    {
+      "source": "Umrandung",
+      "target": "Eingefasste Kante"
+    },
+    {
+      "source": "Schnalle",
+      "target": "Doppeldornschnalle"
+    },
+    {
+      "source": "Schnalle",
+      "target": "Dornschnalle"
+    },
+    {
+      "source": "Schnalle",
+      "target": "Klemmschnalle"
+    },
+    {
+      "source": "Schnalle",
+      "target": "Klickschnalle"
+    },
+    {
+      "source": "Schnalle",
+      "target": "Koppelschnalle"
+    },
+    {
+      "source": "Schn\u00fcrung",
+      "target": "Schn\u00fcrsenkel"
+    },
+    {
+      "source": "Teilelemente",
+      "target": "Beinzugeh\u00f6rig"
+    },
+    {
+      "source": "Teilelemente",
+      "target": "Fu\u00dfzugeh\u00f6rig"
+    },
+    {
+      "source": "Teilelemente",
+      "target": "Kopfzugeh\u00f6rig"
+    },
+    {
+      "source": "Teilelemente",
+      "target": "Mehrfach vorkommend"
+    },
+    {
+      "source": "Teilelemente",
+      "target": "Oberk\u00f6rperzugeh\u00f6rig"
+    },
+    {
+      "source": "Textile Zierelemente",
+      "target": "Band"
+    },
+    {
+      "source": "Textile Zierelemente",
+      "target": "Biese"
+    },
+    {
+      "source": "Textile Zierelemente",
+      "target": "Borte"
+    },
+    {
+      "source": "Textile Zierelemente",
+      "target": "Flicken"
+    },
+    {
+      "source": "Textile Zierelemente",
+      "target": "Fransen"
+    },
+    {
+      "source": "Textile Zierelemente",
+      "target": "Litze"
+    },
+    {
+      "source": "Textile Zierelemente",
+      "target": "Paspel"
+    },
+    {
+      "source": "Textile Zierelemente",
+      "target": "R\u00fcsche"
+    },
+    {
+      "source": "Textile Zierelemente",
+      "target": "Spitze"
+    },
+    {
+      "source": "Textile Zierelemente",
+      "target": "Stickerei"
+    },
+    {
+      "source": "Textile Zierelemente",
+      "target": "Tresse"
+    },
+    {
+      "source": "Textile Zierelemente",
+      "target": "Volant"
+    }
+  ]
+}

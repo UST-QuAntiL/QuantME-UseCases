@@ -1,0 +1,1076 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Alte"
+    },
+    {
+      "id": "Gro\u00dfmutter"
+    },
+    {
+      "id": "Alter"
+    },
+    {
+      "id": "Gro\u00dfvater"
+    },
+    {
+      "id": "Aufmerksamkeitsheischer"
+    },
+    {
+      "id": "Klassenclown"
+    },
+    {
+      "id": "Bed\u00e4chtiger"
+    },
+    {
+      "id": "Eigenbr\u00f6tler"
+    },
+    {
+      "id": "Genie\u00dfer"
+    },
+    {
+      "id": "Gutm\u00fctiger"
+    },
+    {
+      "id": "Beliebtes M\u00e4dchen"
+    },
+    {
+      "id": "Highschool-Queen"
+    },
+    {
+      "id": "Party-Girl"
+    },
+    {
+      "id": "Beruf Stereotypen"
+    },
+    {
+      "id": "Agent"
+    },
+    {
+      "id": "Arbeiter"
+    },
+    {
+      "id": "B\u00f6sewicht"
+    },
+    {
+      "id": "Cowboy"
+    },
+    {
+      "id": "Erfolgstyp"
+    },
+    {
+      "id": "Gesch\u00e4ftsmann"
+    },
+    {
+      "id": "Gesetzesh\u00fcter"
+    },
+    {
+      "id": "Indianer"
+    },
+    {
+      "id": "Krieger"
+    },
+    {
+      "id": "K\u00fcnstler"
+    },
+    {
+      "id": "Lehrer"
+    },
+    {
+      "id": "Nerd"
+    },
+    {
+      "id": "Sch\u00fcler"
+    },
+    {
+      "id": "Spieler"
+    },
+    {
+      "id": "Wissenschaftler"
+    },
+    {
+      "id": "Betr\u00fcger"
+    },
+    {
+      "id": "Dieb"
+    },
+    {
+      "id": "Gangster"
+    },
+    {
+      "id": "Mobber"
+    },
+    {
+      "id": "Schl\u00e4ger"
+    },
+    {
+      "id": "Braver"
+    },
+    {
+      "id": "Gesetzestreuer"
+    },
+    {
+      "id": "Bruder"
+    },
+    {
+      "id": "Gro\u00dfer Bruder"
+    },
+    {
+      "id": "Kleiner Bruder"
+    },
+    {
+      "id": "Charakter Stereotypen"
+    },
+    {
+      "id": "Chaot"
+    },
+    {
+      "id": "Cooler Typ"
+    },
+    {
+      "id": "Egoist"
+    },
+    {
+      "id": "Ehrgeiziger"
+    },
+    {
+      "id": "Ehrhafter"
+    },
+    {
+      "id": "Eiskalter"
+    },
+    {
+      "id": "Fanatiker"
+    },
+    {
+      "id": "Feigling"
+    },
+    {
+      "id": "Flei\u00dfiger"
+    },
+    {
+      "id": "Gl\u00e4ubiger"
+    },
+    {
+      "id": "Held"
+    },
+    {
+      "id": "Helfer"
+    },
+    {
+      "id": "Intellektueller"
+    },
+    {
+      "id": "Intrigant"
+    },
+    {
+      "id": "Junggebliebener"
+    },
+    {
+      "id": "Miesepeter"
+    },
+    {
+      "id": "Naiver"
+    },
+    {
+      "id": "Neugieriger"
+    },
+    {
+      "id": "Plappermaul"
+    },
+    {
+      "id": "Schillernde Pers\u00f6nlichkeit"
+    },
+    {
+      "id": "Schlaue"
+    },
+    {
+      "id": "Schw\u00e4chling"
+    },
+    {
+      "id": "Softie"
+    },
+    {
+      "id": "Sonnenschein"
+    },
+    {
+      "id": "Strenger"
+    },
+    {
+      "id": "Tollpatsch"
+    },
+    {
+      "id": "Undurchschaubarer"
+    },
+    {
+      "id": "Ungeduldiger"
+    },
+    {
+      "id": "Unsicherer"
+    },
+    {
+      "id": "Verr\u00fcckter"
+    },
+    {
+      "id": "Diva"
+    },
+    {
+      "id": "Femme Fatale"
+    },
+    {
+      "id": "K\u00f6nigin"
+    },
+    {
+      "id": "Prinzessin"
+    },
+    {
+      "id": "Sexbombe"
+    },
+    {
+      "id": "Draufg\u00e4nger"
+    },
+    {
+      "id": "Angeber"
+    },
+    {
+      "id": "Bad Boy"
+    },
+    {
+      "id": "Hitzkopf"
+    },
+    {
+      "id": "Rebell"
+    },
+    {
+      "id": "Vorlauter"
+    },
+    {
+      "id": "Dummchen"
+    },
+    {
+      "id": "Tussi"
+    },
+    {
+      "id": "Freund"
+    },
+    {
+      "id": "Bester Freund"
+    },
+    {
+      "id": "Freundin"
+    },
+    {
+      "id": "Beste Freundin"
+    },
+    {
+      "id": "Chef"
+    },
+    {
+      "id": "Herrscher"
+    },
+    {
+      "id": "K\u00f6nig"
+    },
+    {
+      "id": "Prinz"
+    },
+    {
+      "id": "Life Style Stereotypen"
+    },
+    {
+      "id": "Boh\u00e9mien"
+    },
+    {
+      "id": "Hippie"
+    },
+    {
+      "id": "Kiffer"
+    },
+    {
+      "id": "Rastafarian"
+    },
+    {
+      "id": "Trinker"
+    },
+    {
+      "id": "Vorzeige-Schwarzer"
+    },
+    {
+      "id": "Waffenbesitzer"
+    },
+    {
+      "id": "Macho"
+    },
+    {
+      "id": "Aufrei\u00dfer"
+    },
+    {
+      "id": "Frauenheld"
+    },
+    {
+      "id": "Gigolo"
+    },
+    {
+      "id": "M\u00e4dchenschwarm"
+    },
+    {
+      "id": "Sch\u00f6nling"
+    },
+    {
+      "id": "M\u00e4nnliche Stereotypen"
+    },
+    {
+      "id": "Beliebter Junge"
+    },
+    {
+      "id": "Junggeselle"
+    },
+    {
+      "id": "Schwuler"
+    },
+    {
+      "id": "Sportler"
+    },
+    {
+      "id": "Vater"
+    },
+    {
+      "id": "Veteran"
+    },
+    {
+      "id": "Zauberer"
+    },
+    {
+      "id": "Mutter"
+    },
+    {
+      "id": "Big Mama"
+    },
+    {
+      "id": "Ehefrau"
+    },
+    {
+      "id": "\u00dcbermutter"
+    },
+    {
+      "id": "Argloser"
+    },
+    {
+      "id": "Dummer"
+    },
+    {
+      "id": "Romantiker"
+    },
+    {
+      "id": "Neutrale Stereotypen"
+    },
+    {
+      "id": "Au\u00dfenseiter"
+    },
+    {
+      "id": "Der Dicke"
+    },
+    {
+      "id": "Empork\u00f6mmling"
+    },
+    {
+      "id": "Liebhaber"
+    },
+    {
+      "id": "Liebling"
+    },
+    {
+      "id": "Mitl\u00e4ufer"
+    },
+    {
+      "id": "M\u00f6chtegern"
+    },
+    {
+      "id": "Sexbesessener"
+    },
+    {
+      "id": "Vasall"
+    },
+    {
+      "id": "Vertrauter"
+    },
+    {
+      "id": "Vorbild"
+    },
+    {
+      "id": "Zwerg"
+    },
+    {
+      "id": "Besserwisser"
+    },
+    {
+      "id": "Streber"
+    },
+    {
+      "id": "Schwester"
+    },
+    {
+      "id": "Gro\u00dfe Schwester"
+    },
+    {
+      "id": "Kleine Schwester"
+    },
+    {
+      "id": "Notgeiler"
+    },
+    {
+      "id": "Muskelprotz"
+    },
+    {
+      "id": "Skater"
+    },
+    {
+      "id": "Stereotyp"
+    },
+    {
+      "id": "Weibliche Stereotypen"
+    },
+    {
+      "id": "Schleimer"
+    },
+    {
+      "id": "Desinteressierter Vater"
+    },
+    {
+      "id": "Ehemann"
+    },
+    {
+      "id": "\u00dcbervater"
+    },
+    {
+      "id": "Dame"
+    },
+    {
+      "id": "Fee"
+    },
+    {
+      "id": "Hexe"
+    },
+    {
+      "id": "Mannsweib"
+    },
+    {
+      "id": "Mauerbl\u00fcmchen"
+    },
+    {
+      "id": "Zicke"
+    }
+  ],
+  "links": [
+    {
+      "source": "Alte",
+      "target": "Gro\u00dfmutter"
+    },
+    {
+      "source": "Alter",
+      "target": "Gro\u00dfvater"
+    },
+    {
+      "source": "Aufmerksamkeitsheischer",
+      "target": "Klassenclown"
+    },
+    {
+      "source": "Bed\u00e4chtiger",
+      "target": "Eigenbr\u00f6tler"
+    },
+    {
+      "source": "Bed\u00e4chtiger",
+      "target": "Genie\u00dfer"
+    },
+    {
+      "source": "Bed\u00e4chtiger",
+      "target": "Gutm\u00fctiger"
+    },
+    {
+      "source": "Beliebtes M\u00e4dchen",
+      "target": "Highschool-Queen"
+    },
+    {
+      "source": "Beliebtes M\u00e4dchen",
+      "target": "Party-Girl"
+    },
+    {
+      "source": "Beruf Stereotypen",
+      "target": "Agent"
+    },
+    {
+      "source": "Beruf Stereotypen",
+      "target": "Arbeiter"
+    },
+    {
+      "source": "Beruf Stereotypen",
+      "target": "B\u00f6sewicht"
+    },
+    {
+      "source": "Beruf Stereotypen",
+      "target": "Cowboy"
+    },
+    {
+      "source": "Beruf Stereotypen",
+      "target": "Erfolgstyp"
+    },
+    {
+      "source": "Beruf Stereotypen",
+      "target": "Gesch\u00e4ftsmann"
+    },
+    {
+      "source": "Beruf Stereotypen",
+      "target": "Gesetzesh\u00fcter"
+    },
+    {
+      "source": "Beruf Stereotypen",
+      "target": "Indianer"
+    },
+    {
+      "source": "Beruf Stereotypen",
+      "target": "Krieger"
+    },
+    {
+      "source": "Beruf Stereotypen",
+      "target": "K\u00fcnstler"
+    },
+    {
+      "source": "Beruf Stereotypen",
+      "target": "Lehrer"
+    },
+    {
+      "source": "Beruf Stereotypen",
+      "target": "Nerd"
+    },
+    {
+      "source": "Beruf Stereotypen",
+      "target": "Sch\u00fcler"
+    },
+    {
+      "source": "Beruf Stereotypen",
+      "target": "Spieler"
+    },
+    {
+      "source": "Beruf Stereotypen",
+      "target": "Wissenschaftler"
+    },
+    {
+      "source": "B\u00f6sewicht",
+      "target": "Betr\u00fcger"
+    },
+    {
+      "source": "B\u00f6sewicht",
+      "target": "Dieb"
+    },
+    {
+      "source": "B\u00f6sewicht",
+      "target": "Gangster"
+    },
+    {
+      "source": "B\u00f6sewicht",
+      "target": "Mobber"
+    },
+    {
+      "source": "B\u00f6sewicht",
+      "target": "Schl\u00e4ger"
+    },
+    {
+      "source": "Gesch\u00e4ftsmann",
+      "target": "Chef"
+    },
+    {
+      "source": "Sch\u00fcler",
+      "target": "Streber"
+    },
+    {
+      "source": "Braver",
+      "target": "Gesetzestreuer"
+    },
+    {
+      "source": "Bruder",
+      "target": "Gro\u00dfer Bruder"
+    },
+    {
+      "source": "Bruder",
+      "target": "Kleiner Bruder"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Bed\u00e4chtiger"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Braver"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Chaot"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Cooler Typ"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Egoist"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Ehrgeiziger"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Ehrhafter"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Eiskalter"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Fanatiker"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Feigling"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Flei\u00dfiger"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Gl\u00e4ubiger"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Held"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Helfer"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Intellektueller"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Intrigant"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Junggebliebener"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Miesepeter"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Naiver"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Neugieriger"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Plappermaul"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Schillernde Pers\u00f6nlichkeit"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Schlaue"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Schw\u00e4chling"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Softie"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Sonnenschein"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Strenger"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Tollpatsch"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Undurchschaubarer"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Ungeduldiger"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Unsicherer"
+    },
+    {
+      "source": "Charakter Stereotypen",
+      "target": "Verr\u00fcckter"
+    },
+    {
+      "source": "Naiver",
+      "target": "Argloser"
+    },
+    {
+      "source": "Naiver",
+      "target": "Dummer"
+    },
+    {
+      "source": "Naiver",
+      "target": "Romantiker"
+    },
+    {
+      "source": "Plappermaul",
+      "target": "Besserwisser"
+    },
+    {
+      "source": "Diva",
+      "target": "Femme Fatale"
+    },
+    {
+      "source": "Diva",
+      "target": "K\u00f6nigin"
+    },
+    {
+      "source": "Diva",
+      "target": "Prinzessin"
+    },
+    {
+      "source": "Diva",
+      "target": "Sexbombe"
+    },
+    {
+      "source": "Draufg\u00e4nger",
+      "target": "Angeber"
+    },
+    {
+      "source": "Draufg\u00e4nger",
+      "target": "Bad Boy"
+    },
+    {
+      "source": "Draufg\u00e4nger",
+      "target": "Hitzkopf"
+    },
+    {
+      "source": "Draufg\u00e4nger",
+      "target": "Rebell"
+    },
+    {
+      "source": "Draufg\u00e4nger",
+      "target": "Vorlauter"
+    },
+    {
+      "source": "Dummchen",
+      "target": "Tussi"
+    },
+    {
+      "source": "Freund",
+      "target": "Bester Freund"
+    },
+    {
+      "source": "Freundin",
+      "target": "Beste Freundin"
+    },
+    {
+      "source": "Herrscher",
+      "target": "K\u00f6nig"
+    },
+    {
+      "source": "Herrscher",
+      "target": "Prinz"
+    },
+    {
+      "source": "Life Style Stereotypen",
+      "target": "Boh\u00e9mien"
+    },
+    {
+      "source": "Life Style Stereotypen",
+      "target": "Hippie"
+    },
+    {
+      "source": "Life Style Stereotypen",
+      "target": "Kiffer"
+    },
+    {
+      "source": "Life Style Stereotypen",
+      "target": "Rastafarian"
+    },
+    {
+      "source": "Life Style Stereotypen",
+      "target": "Trinker"
+    },
+    {
+      "source": "Life Style Stereotypen",
+      "target": "Vorzeige-Schwarzer"
+    },
+    {
+      "source": "Life Style Stereotypen",
+      "target": "Waffenbesitzer"
+    },
+    {
+      "source": "Macho",
+      "target": "Aufrei\u00dfer"
+    },
+    {
+      "source": "Macho",
+      "target": "Frauenheld"
+    },
+    {
+      "source": "Macho",
+      "target": "Gigolo"
+    },
+    {
+      "source": "Macho",
+      "target": "M\u00e4dchenschwarm"
+    },
+    {
+      "source": "Macho",
+      "target": "Sch\u00f6nling"
+    },
+    {
+      "source": "M\u00e4nnliche Stereotypen",
+      "target": "Alter"
+    },
+    {
+      "source": "M\u00e4nnliche Stereotypen",
+      "target": "Beliebter Junge"
+    },
+    {
+      "source": "M\u00e4nnliche Stereotypen",
+      "target": "Bruder"
+    },
+    {
+      "source": "M\u00e4nnliche Stereotypen",
+      "target": "Draufg\u00e4nger"
+    },
+    {
+      "source": "M\u00e4nnliche Stereotypen",
+      "target": "Freund"
+    },
+    {
+      "source": "M\u00e4nnliche Stereotypen",
+      "target": "Herrscher"
+    },
+    {
+      "source": "M\u00e4nnliche Stereotypen",
+      "target": "Junggeselle"
+    },
+    {
+      "source": "M\u00e4nnliche Stereotypen",
+      "target": "Macho"
+    },
+    {
+      "source": "M\u00e4nnliche Stereotypen",
+      "target": "Schwuler"
+    },
+    {
+      "source": "M\u00e4nnliche Stereotypen",
+      "target": "Sportler"
+    },
+    {
+      "source": "M\u00e4nnliche Stereotypen",
+      "target": "Vater"
+    },
+    {
+      "source": "M\u00e4nnliche Stereotypen",
+      "target": "Veteran"
+    },
+    {
+      "source": "M\u00e4nnliche Stereotypen",
+      "target": "Zauberer"
+    },
+    {
+      "source": "Sportler",
+      "target": "Muskelprotz"
+    },
+    {
+      "source": "Sportler",
+      "target": "Skater"
+    },
+    {
+      "source": "Vater",
+      "target": "Desinteressierter Vater"
+    },
+    {
+      "source": "Vater",
+      "target": "Ehemann"
+    },
+    {
+      "source": "Vater",
+      "target": "\u00dcbervater"
+    },
+    {
+      "source": "Mutter",
+      "target": "Big Mama"
+    },
+    {
+      "source": "Mutter",
+      "target": "Ehefrau"
+    },
+    {
+      "source": "Mutter",
+      "target": "\u00dcbermutter"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "Aufmerksamkeitsheischer"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "Au\u00dfenseiter"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "Beruf Stereotypen"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "Charakter Stereotypen"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "Der Dicke"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "Empork\u00f6mmling"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "Liebhaber"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "Liebling"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "Life Style Stereotypen"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "Mitl\u00e4ufer"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "M\u00f6chtegern"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "Sexbesessener"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "Vasall"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "Vertrauter"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "Vorbild"
+    },
+    {
+      "source": "Neutrale Stereotypen",
+      "target": "Zwerg"
+    },
+    {
+      "source": "Sexbesessener",
+      "target": "Notgeiler"
+    },
+    {
+      "source": "Vasall",
+      "target": "Schleimer"
+    },
+    {
+      "source": "Schwester",
+      "target": "Gro\u00dfe Schwester"
+    },
+    {
+      "source": "Schwester",
+      "target": "Kleine Schwester"
+    },
+    {
+      "source": "Stereotyp",
+      "target": "M\u00e4nnliche Stereotypen"
+    },
+    {
+      "source": "Stereotyp",
+      "target": "Neutrale Stereotypen"
+    },
+    {
+      "source": "Stereotyp",
+      "target": "Weibliche Stereotypen"
+    },
+    {
+      "source": "Weibliche Stereotypen",
+      "target": "Alte"
+    },
+    {
+      "source": "Weibliche Stereotypen",
+      "target": "Beliebtes M\u00e4dchen"
+    },
+    {
+      "source": "Weibliche Stereotypen",
+      "target": "Dame"
+    },
+    {
+      "source": "Weibliche Stereotypen",
+      "target": "Diva"
+    },
+    {
+      "source": "Weibliche Stereotypen",
+      "target": "Dummchen"
+    },
+    {
+      "source": "Weibliche Stereotypen",
+      "target": "Fee"
+    },
+    {
+      "source": "Weibliche Stereotypen",
+      "target": "Freundin"
+    },
+    {
+      "source": "Weibliche Stereotypen",
+      "target": "Hexe"
+    },
+    {
+      "source": "Weibliche Stereotypen",
+      "target": "Mannsweib"
+    },
+    {
+      "source": "Weibliche Stereotypen",
+      "target": "Mauerbl\u00fcmchen"
+    },
+    {
+      "source": "Weibliche Stereotypen",
+      "target": "Mutter"
+    },
+    {
+      "source": "Weibliche Stereotypen",
+      "target": "Schwester"
+    },
+    {
+      "source": "Weibliche Stereotypen",
+      "target": "Zicke"
+    }
+  ]
+}

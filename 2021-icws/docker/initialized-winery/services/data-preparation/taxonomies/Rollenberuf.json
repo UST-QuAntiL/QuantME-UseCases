@@ -1,0 +1,1083 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Adeliger"
+    },
+    {
+      "id": "Baron"
+    },
+    {
+      "id": "Graf"
+    },
+    {
+      "id": "Herzog"
+    },
+    {
+      "id": "K\u00f6nig"
+    },
+    {
+      "id": "Prinz"
+    },
+    {
+      "id": "Prinzessin"
+    },
+    {
+      "id": "Bademeister"
+    },
+    {
+      "id": "Badehausdame"
+    },
+    {
+      "id": "B\u00f6sewicht"
+    },
+    {
+      "id": "Bandit"
+    },
+    {
+      "id": "Gauner"
+    },
+    {
+      "id": "Hexe"
+    },
+    {
+      "id": "Killer"
+    },
+    {
+      "id": "R\u00e4uber"
+    },
+    {
+      "id": "Schl\u00e4ger"
+    },
+    {
+      "id": "B\u00fcroangestellter"
+    },
+    {
+      "id": "Assistent"
+    },
+    {
+      "id": "Bankangestellter"
+    },
+    {
+      "id": "Sekret\u00e4rin"
+    },
+    {
+      "id": "Telegraphist"
+    },
+    {
+      "id": "B\u00fcroarbeitender"
+    },
+    {
+      "id": "Chef"
+    },
+    {
+      "id": "Gesch\u00e4ftsmann"
+    },
+    {
+      "id": "Journalist"
+    },
+    {
+      "id": "Inhaber"
+    },
+    {
+      "id": "Vorsitzender"
+    },
+    {
+      "id": "Diener"
+    },
+    {
+      "id": "Bediensteter"
+    },
+    {
+      "id": "Butler"
+    },
+    {
+      "id": "Gep\u00e4cktr\u00e4ger"
+    },
+    {
+      "id": "Hausdame"
+    },
+    {
+      "id": "Kellner"
+    },
+    {
+      "id": "Sklave"
+    },
+    {
+      "id": "Stallbursche"
+    },
+    {
+      "id": "Dienstleistung"
+    },
+    {
+      "id": "Angestellter"
+    },
+    {
+      "id": "B\u00e4cker"
+    },
+    {
+      "id": "Barmann"
+    },
+    {
+      "id": "Bestatter"
+    },
+    {
+      "id": "Fortbewegungshelfer"
+    },
+    {
+      "id": "Fris\u00f6r"
+    },
+    {
+      "id": "Golflehrer"
+    },
+    {
+      "id": "Handwerker"
+    },
+    {
+      "id": "Pilot"
+    },
+    {
+      "id": "Prostituierte"
+    },
+    {
+      "id": "Reinigungskraft"
+    },
+    {
+      "id": "Rezeptionist"
+    },
+    {
+      "id": "Sklaventreiber"
+    },
+    {
+      "id": "Tourguide"
+    },
+    {
+      "id": "Verk\u00e4ufer"
+    },
+    {
+      "id": "Wirt"
+    },
+    {
+      "id": "Direktor"
+    },
+    {
+      "id": "stellvertretender Direktor"
+    },
+    {
+      "id": "Familie"
+    },
+    {
+      "id": "Gro\u00dfmutter"
+    },
+    {
+      "id": "Gro\u00dfvater"
+    },
+    {
+      "id": "Jugendlicher"
+    },
+    {
+      "id": "Kind"
+    },
+    {
+      "id": "Mutter"
+    },
+    {
+      "id": "Vater"
+    },
+    {
+      "id": "Witwer"
+    },
+    {
+      "id": "Busfahrer"
+    },
+    {
+      "id": "Kapit\u00e4n"
+    },
+    {
+      "id": "Kutscher"
+    },
+    {
+      "id": "Lokf\u00fchrer"
+    },
+    {
+      "id": "Barbier"
+    },
+    {
+      "id": "Geistlicher"
+    },
+    {
+      "id": "M\u00f6nch"
+    },
+    {
+      "id": "Pastor"
+    },
+    {
+      "id": "Pilgerin"
+    },
+    {
+      "id": "Oma"
+    },
+    {
+      "id": "Opa"
+    },
+    {
+      "id": "Bauarbeiter"
+    },
+    {
+      "id": "Hausmeister"
+    },
+    {
+      "id": "Schmied"
+    },
+    {
+      "id": "Schneider"
+    },
+    {
+      "id": "Schornsteinfeger"
+    },
+    {
+      "id": "Schreiner"
+    },
+    {
+      "id": "Techniker"
+    },
+    {
+      "id": "Helfer"
+    },
+    {
+      "id": "Apotheker"
+    },
+    {
+      "id": "Arzt"
+    },
+    {
+      "id": "Krankenschwester"
+    },
+    {
+      "id": "Pfleger"
+    },
+    {
+      "id": "Wachmann"
+    },
+    {
+      "id": "Duke"
+    },
+    {
+      "id": "Sohn"
+    },
+    {
+      "id": "Tochter"
+    },
+    {
+      "id": "K\u00fcnstler"
+    },
+    {
+      "id": "DJ"
+    },
+    {
+      "id": "Filmproduzent"
+    },
+    {
+      "id": "Fotograf"
+    },
+    {
+      "id": "Model"
+    },
+    {
+      "id": "S\u00e4nger"
+    },
+    {
+      "id": "Schauspieler"
+    },
+    {
+      "id": "Talkmaster"
+    },
+    {
+      "id": "T\u00e4nzer"
+    },
+    {
+      "id": "Landbewohner"
+    },
+    {
+      "id": "Bauer"
+    },
+    {
+      "id": "Plantagenbesitzer"
+    },
+    {
+      "id": "Lebensstil"
+    },
+    {
+      "id": "Cowboy"
+    },
+    {
+      "id": "Geliebte"
+    },
+    {
+      "id": "Hippie"
+    },
+    {
+      "id": "Indianer"
+    },
+    {
+      "id": "Obdachloser"
+    },
+    {
+      "id": "Trinker"
+    },
+    {
+      "id": "Zugbegleiter"
+    },
+    {
+      "id": "Ehefrau"
+    },
+    {
+      "id": "Polizist"
+    },
+    {
+      "id": "Sheriff"
+    },
+    {
+      "id": "Pornodarsteller"
+    },
+    {
+      "id": "Saloon Lady"
+    },
+    {
+      "id": "Bankr\u00e4uber"
+    },
+    {
+      "id": "Pool Reiniger"
+    },
+    {
+      "id": "Rollenberuf"
+    },
+    {
+      "id": "-"
+    },
+    {
+      "id": "Rentner"
+    },
+    {
+      "id": "Schulangestellter"
+    },
+    {
+      "id": "Spieler"
+    },
+    {
+      "id": "Staatsangestellter"
+    },
+    {
+      "id": "Universit\u00e4tsangestellter"
+    },
+    {
+      "id": "Weihnachtsmann"
+    },
+    {
+      "id": "Coach"
+    },
+    {
+      "id": "Lehrer"
+    },
+    {
+      "id": "Sch\u00fcler"
+    },
+    {
+      "id": "Hilfssheriff"
+    },
+    {
+      "id": "Feldsklave"
+    },
+    {
+      "id": "Haussklave"
+    },
+    {
+      "id": "Bruder"
+    },
+    {
+      "id": "Soldat"
+    },
+    {
+      "id": "Captain"
+    },
+    {
+      "id": "General"
+    },
+    {
+      "id": "Kommandeur"
+    },
+    {
+      "id": "Marshal"
+    },
+    {
+      "id": "Pokerdealer"
+    },
+    {
+      "id": "Pokerspieler"
+    },
+    {
+      "id": "Agent"
+    },
+    {
+      "id": "B\u00fcrgermeister"
+    },
+    {
+      "id": "Feuerwehrmann"
+    },
+    {
+      "id": "Kopfgeldj\u00e4ger"
+    },
+    {
+      "id": "Pr\u00e4sident"
+    },
+    {
+      "id": "Rechtsanwalt"
+    },
+    {
+      "id": "Schulinspektor"
+    },
+    {
+      "id": "Schwester"
+    },
+    {
+      "id": "Erfinder"
+    },
+    {
+      "id": "Professor"
+    },
+    {
+      "id": "Pr\u00fcfer"
+    },
+    {
+      "id": "Student"
+    },
+    {
+      "id": "Wissenschaftler"
+    },
+    {
+      "id": "Ehemann"
+    },
+    {
+      "id": "Waffenh\u00e4ndler"
+    },
+    {
+      "id": "Security"
+    }
+  ],
+  "links": [
+    {
+      "source": "Adeliger",
+      "target": "Baron"
+    },
+    {
+      "source": "Adeliger",
+      "target": "Graf"
+    },
+    {
+      "source": "Adeliger",
+      "target": "Herzog"
+    },
+    {
+      "source": "Adeliger",
+      "target": "K\u00f6nig"
+    },
+    {
+      "source": "Adeliger",
+      "target": "Prinz"
+    },
+    {
+      "source": "Adeliger",
+      "target": "Prinzessin"
+    },
+    {
+      "source": "Herzog",
+      "target": "Duke"
+    },
+    {
+      "source": "Bademeister",
+      "target": "Badehausdame"
+    },
+    {
+      "source": "B\u00f6sewicht",
+      "target": "Bandit"
+    },
+    {
+      "source": "B\u00f6sewicht",
+      "target": "Gauner"
+    },
+    {
+      "source": "B\u00f6sewicht",
+      "target": "Hexe"
+    },
+    {
+      "source": "B\u00f6sewicht",
+      "target": "Killer"
+    },
+    {
+      "source": "B\u00f6sewicht",
+      "target": "R\u00e4uber"
+    },
+    {
+      "source": "B\u00f6sewicht",
+      "target": "Schl\u00e4ger"
+    },
+    {
+      "source": "R\u00e4uber",
+      "target": "Bankr\u00e4uber"
+    },
+    {
+      "source": "B\u00fcroangestellter",
+      "target": "Assistent"
+    },
+    {
+      "source": "B\u00fcroangestellter",
+      "target": "Bankangestellter"
+    },
+    {
+      "source": "B\u00fcroangestellter",
+      "target": "Sekret\u00e4rin"
+    },
+    {
+      "source": "B\u00fcroangestellter",
+      "target": "Telegraphist"
+    },
+    {
+      "source": "B\u00fcroarbeitender",
+      "target": "B\u00fcroangestellter"
+    },
+    {
+      "source": "B\u00fcroarbeitender",
+      "target": "Chef"
+    },
+    {
+      "source": "B\u00fcroarbeitender",
+      "target": "Gesch\u00e4ftsmann"
+    },
+    {
+      "source": "B\u00fcroarbeitender",
+      "target": "Journalist"
+    },
+    {
+      "source": "Chef",
+      "target": "Inhaber"
+    },
+    {
+      "source": "Chef",
+      "target": "Vorsitzender"
+    },
+    {
+      "source": "Diener",
+      "target": "Bediensteter"
+    },
+    {
+      "source": "Diener",
+      "target": "Butler"
+    },
+    {
+      "source": "Diener",
+      "target": "Gep\u00e4cktr\u00e4ger"
+    },
+    {
+      "source": "Diener",
+      "target": "Hausdame"
+    },
+    {
+      "source": "Diener",
+      "target": "Kellner"
+    },
+    {
+      "source": "Diener",
+      "target": "Sklave"
+    },
+    {
+      "source": "Diener",
+      "target": "Stallbursche"
+    },
+    {
+      "source": "Sklave",
+      "target": "Feldsklave"
+    },
+    {
+      "source": "Sklave",
+      "target": "Haussklave"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Angestellter"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "B\u00e4cker"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Bademeister"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Barmann"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Bestatter"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Diener"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Fortbewegungshelfer"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Fris\u00f6r"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Golflehrer"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Handwerker"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Pilot"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Prostituierte"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Reinigungskraft"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Rezeptionist"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Sklaventreiber"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Tourguide"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Verk\u00e4ufer"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Wirt"
+    },
+    {
+      "source": "Fortbewegungshelfer",
+      "target": "Busfahrer"
+    },
+    {
+      "source": "Fortbewegungshelfer",
+      "target": "Kapit\u00e4n"
+    },
+    {
+      "source": "Fortbewegungshelfer",
+      "target": "Kutscher"
+    },
+    {
+      "source": "Fortbewegungshelfer",
+      "target": "Lokf\u00fchrer"
+    },
+    {
+      "source": "Fris\u00f6r",
+      "target": "Barbier"
+    },
+    {
+      "source": "Handwerker",
+      "target": "Bauarbeiter"
+    },
+    {
+      "source": "Handwerker",
+      "target": "Hausmeister"
+    },
+    {
+      "source": "Handwerker",
+      "target": "Schmied"
+    },
+    {
+      "source": "Handwerker",
+      "target": "Schneider"
+    },
+    {
+      "source": "Handwerker",
+      "target": "Schornsteinfeger"
+    },
+    {
+      "source": "Handwerker",
+      "target": "Schreiner"
+    },
+    {
+      "source": "Handwerker",
+      "target": "Techniker"
+    },
+    {
+      "source": "Prostituierte",
+      "target": "Pornodarsteller"
+    },
+    {
+      "source": "Prostituierte",
+      "target": "Saloon Lady"
+    },
+    {
+      "source": "Reinigungskraft",
+      "target": "Pool Reiniger"
+    },
+    {
+      "source": "Verk\u00e4ufer",
+      "target": "Waffenh\u00e4ndler"
+    },
+    {
+      "source": "Direktor",
+      "target": "stellvertretender Direktor"
+    },
+    {
+      "source": "Familie",
+      "target": "Gro\u00dfmutter"
+    },
+    {
+      "source": "Familie",
+      "target": "Gro\u00dfvater"
+    },
+    {
+      "source": "Familie",
+      "target": "Jugendlicher"
+    },
+    {
+      "source": "Familie",
+      "target": "Kind"
+    },
+    {
+      "source": "Familie",
+      "target": "Mutter"
+    },
+    {
+      "source": "Familie",
+      "target": "Vater"
+    },
+    {
+      "source": "Familie",
+      "target": "Witwer"
+    },
+    {
+      "source": "Gro\u00dfmutter",
+      "target": "Oma"
+    },
+    {
+      "source": "Gro\u00dfvater",
+      "target": "Opa"
+    },
+    {
+      "source": "Kind",
+      "target": "Sohn"
+    },
+    {
+      "source": "Kind",
+      "target": "Tochter"
+    },
+    {
+      "source": "Mutter",
+      "target": "Ehefrau"
+    },
+    {
+      "source": "Vater",
+      "target": "Ehemann"
+    },
+    {
+      "source": "Lokf\u00fchrer",
+      "target": "Zugbegleiter"
+    },
+    {
+      "source": "Geistlicher",
+      "target": "M\u00f6nch"
+    },
+    {
+      "source": "Geistlicher",
+      "target": "Pastor"
+    },
+    {
+      "source": "Geistlicher",
+      "target": "Pilgerin"
+    },
+    {
+      "source": "Helfer",
+      "target": "Apotheker"
+    },
+    {
+      "source": "Helfer",
+      "target": "Arzt"
+    },
+    {
+      "source": "Helfer",
+      "target": "Krankenschwester"
+    },
+    {
+      "source": "Helfer",
+      "target": "Pfleger"
+    },
+    {
+      "source": "Helfer",
+      "target": "Wachmann"
+    },
+    {
+      "source": "Wachmann",
+      "target": "Security"
+    },
+    {
+      "source": "Sohn",
+      "target": "Bruder"
+    },
+    {
+      "source": "Tochter",
+      "target": "Schwester"
+    },
+    {
+      "source": "K\u00fcnstler",
+      "target": "DJ"
+    },
+    {
+      "source": "K\u00fcnstler",
+      "target": "Filmproduzent"
+    },
+    {
+      "source": "K\u00fcnstler",
+      "target": "Fotograf"
+    },
+    {
+      "source": "K\u00fcnstler",
+      "target": "Model"
+    },
+    {
+      "source": "K\u00fcnstler",
+      "target": "S\u00e4nger"
+    },
+    {
+      "source": "K\u00fcnstler",
+      "target": "Schauspieler"
+    },
+    {
+      "source": "K\u00fcnstler",
+      "target": "Talkmaster"
+    },
+    {
+      "source": "K\u00fcnstler",
+      "target": "T\u00e4nzer"
+    },
+    {
+      "source": "Landbewohner",
+      "target": "Bauer"
+    },
+    {
+      "source": "Landbewohner",
+      "target": "Plantagenbesitzer"
+    },
+    {
+      "source": "Lebensstil",
+      "target": "Cowboy"
+    },
+    {
+      "source": "Lebensstil",
+      "target": "Geliebte"
+    },
+    {
+      "source": "Lebensstil",
+      "target": "Hippie"
+    },
+    {
+      "source": "Lebensstil",
+      "target": "Indianer"
+    },
+    {
+      "source": "Lebensstil",
+      "target": "Obdachloser"
+    },
+    {
+      "source": "Lebensstil",
+      "target": "Trinker"
+    },
+    {
+      "source": "Polizist",
+      "target": "Sheriff"
+    },
+    {
+      "source": "Sheriff",
+      "target": "Hilfssheriff"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "-"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "Adeliger"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "B\u00f6sewicht"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "B\u00fcroarbeitender"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "Dienstleistung"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "Familie"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "Geistlicher"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "Helfer"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "K\u00fcnstler"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "Landbewohner"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "Lebensstil"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "Rentner"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "Schulangestellter"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "Spieler"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "Staatsangestellter"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "Universit\u00e4tsangestellter"
+    },
+    {
+      "source": "Rollenberuf",
+      "target": "Weihnachtsmann"
+    },
+    {
+      "source": "Schulangestellter",
+      "target": "Coach"
+    },
+    {
+      "source": "Schulangestellter",
+      "target": "Direktor"
+    },
+    {
+      "source": "Schulangestellter",
+      "target": "Lehrer"
+    },
+    {
+      "source": "Schulangestellter",
+      "target": "Sch\u00fcler"
+    },
+    {
+      "source": "Spieler",
+      "target": "Pokerdealer"
+    },
+    {
+      "source": "Spieler",
+      "target": "Pokerspieler"
+    },
+    {
+      "source": "Staatsangestellter",
+      "target": "Agent"
+    },
+    {
+      "source": "Staatsangestellter",
+      "target": "B\u00fcrgermeister"
+    },
+    {
+      "source": "Staatsangestellter",
+      "target": "Feuerwehrmann"
+    },
+    {
+      "source": "Staatsangestellter",
+      "target": "Kopfgeldj\u00e4ger"
+    },
+    {
+      "source": "Staatsangestellter",
+      "target": "Polizist"
+    },
+    {
+      "source": "Staatsangestellter",
+      "target": "Pr\u00e4sident"
+    },
+    {
+      "source": "Staatsangestellter",
+      "target": "Rechtsanwalt"
+    },
+    {
+      "source": "Staatsangestellter",
+      "target": "Schulinspektor"
+    },
+    {
+      "source": "Staatsangestellter",
+      "target": "Soldat"
+    },
+    {
+      "source": "Universit\u00e4tsangestellter",
+      "target": "Erfinder"
+    },
+    {
+      "source": "Universit\u00e4tsangestellter",
+      "target": "Professor"
+    },
+    {
+      "source": "Universit\u00e4tsangestellter",
+      "target": "Pr\u00fcfer"
+    },
+    {
+      "source": "Universit\u00e4tsangestellter",
+      "target": "Student"
+    },
+    {
+      "source": "Universit\u00e4tsangestellter",
+      "target": "Wissenschaftler"
+    },
+    {
+      "source": "Soldat",
+      "target": "Captain"
+    },
+    {
+      "source": "Soldat",
+      "target": "General"
+    },
+    {
+      "source": "Soldat",
+      "target": "Kommandeur"
+    },
+    {
+      "source": "Soldat",
+      "target": "Marshal"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "K\u00f6rperteil"
+    },
+    {
+      "id": "Bein"
+    },
+    {
+      "id": "Fu\u00df"
+    },
+    {
+      "id": "Ganzk\u00f6rper"
+    },
+    {
+      "id": "Hals"
+    },
+    {
+      "id": "Hand"
+    },
+    {
+      "id": "Kopf"
+    },
+    {
+      "id": "Oberk\u00f6rper"
+    },
+    {
+      "id": "Taille"
+    }
+  ],
+  "links": [
+    {
+      "source": "K\u00f6rperteil",
+      "target": "Bein"
+    },
+    {
+      "source": "K\u00f6rperteil",
+      "target": "Fu\u00df"
+    },
+    {
+      "source": "K\u00f6rperteil",
+      "target": "Ganzk\u00f6rper"
+    },
+    {
+      "source": "K\u00f6rperteil",
+      "target": "Hals"
+    },
+    {
+      "source": "K\u00f6rperteil",
+      "target": "Hand"
+    },
+    {
+      "source": "K\u00f6rperteil",
+      "target": "Kopf"
+    },
+    {
+      "source": "K\u00f6rperteil",
+      "target": "Oberk\u00f6rper"
+    },
+    {
+      "source": "K\u00f6rperteil",
+      "target": "Taille"
+    }
+  ]
+}

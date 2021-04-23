@@ -1,0 +1,5864 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "abweisend"
+    },
+    {
+      "id": "griesgr\u00e4mig"
+    },
+    {
+      "id": "grimmig"
+    },
+    {
+      "id": "aggressiv"
+    },
+    {
+      "id": "brutal"
+    },
+    {
+      "id": "gewaltsam"
+    },
+    {
+      "id": "akkurat"
+    },
+    {
+      "id": "korrekt"
+    },
+    {
+      "id": "perfektionistisch"
+    },
+    {
+      "id": "prinzipientreu"
+    },
+    {
+      "id": "albern"
+    },
+    {
+      "id": "aufgedreht"
+    },
+    {
+      "id": "kindisch"
+    },
+    {
+      "id": "altmodisch"
+    },
+    {
+      "id": "reaktion\u00e4r"
+    },
+    {
+      "id": "angeberisch"
+    },
+    {
+      "id": "aufgeblasen"
+    },
+    {
+      "id": "gro\u00dfkotzig"
+    },
+    {
+      "id": "gro\u00dfm\u00e4ulig"
+    },
+    {
+      "id": "gro\u00dfspurig"
+    },
+    {
+      "id": "prahlerisch"
+    },
+    {
+      "id": "prollig"
+    },
+    {
+      "id": "wichtigtuerisch"
+    },
+    {
+      "id": "angsteinfl\u00f6\u00dfend"
+    },
+    {
+      "id": "ber\u00fcchtigt"
+    },
+    {
+      "id": "b\u00f6sartig"
+    },
+    {
+      "id": "angsterf\u00fcllt"
+    },
+    {
+      "id": "paranoid"
+    },
+    {
+      "id": "\u00e4ngstlich"
+    },
+    {
+      "id": "eingesch\u00fcchtert"
+    },
+    {
+      "id": "furchtsam"
+    },
+    {
+      "id": "anstrengend"
+    },
+    {
+      "id": "humorlos"
+    },
+    {
+      "id": "kompliziert"
+    },
+    {
+      "id": "nervig"
+    },
+    {
+      "id": "redselig"
+    },
+    {
+      "id": "st\u00f6rend"
+    },
+    {
+      "id": "\u00fcberf\u00fcrsorglich"
+    },
+    {
+      "id": "undankbar"
+    },
+    {
+      "id": "verw\u00f6hnt"
+    },
+    {
+      "id": "anz\u00fcglich"
+    },
+    {
+      "id": "frivol"
+    },
+    {
+      "id": "l\u00fcstern"
+    },
+    {
+      "id": "schamlos"
+    },
+    {
+      "id": "sexistisch"
+    },
+    {
+      "id": "versaut"
+    },
+    {
+      "id": "vulg\u00e4r"
+    },
+    {
+      "id": "arbeitssam"
+    },
+    {
+      "id": "diszipliniert"
+    },
+    {
+      "id": "engagiert"
+    },
+    {
+      "id": "flei\u00dfig"
+    },
+    {
+      "id": "organisiert"
+    },
+    {
+      "id": "t\u00fcchtig"
+    },
+    {
+      "id": "unkompliziert"
+    },
+    {
+      "id": "verantwortungsbewusst"
+    },
+    {
+      "id": "arm"
+    },
+    {
+      "id": "dreckig"
+    },
+    {
+      "id": "heruntergekommen"
+    },
+    {
+      "id": "verwahrlost"
+    },
+    {
+      "id": "arrogant"
+    },
+    {
+      "id": "aalglatt"
+    },
+    {
+      "id": "autorit\u00e4r"
+    },
+    {
+      "id": "g\u00f6nnerhaft"
+    },
+    {
+      "id": "hochm\u00fctig"
+    },
+    {
+      "id": "kaprizi\u00f6s"
+    },
+    {
+      "id": "manipulativ"
+    },
+    {
+      "id": "selbstherrlich"
+    },
+    {
+      "id": "\u00fcberlegen"
+    },
+    {
+      "id": "asketisch"
+    },
+    {
+      "id": "enthaltsam"
+    },
+    {
+      "id": "asozial"
+    },
+    {
+      "id": "bitchy"
+    },
+    {
+      "id": "ignorant"
+    },
+    {
+      "id": "intolerant"
+    },
+    {
+      "id": "aufffallend"
+    },
+    {
+      "id": "exotisch"
+    },
+    {
+      "id": "markant"
+    },
+    {
+      "id": "modisch"
+    },
+    {
+      "id": "ungew\u00f6hnlich"
+    },
+    {
+      "id": "aufgeschlossen"
+    },
+    {
+      "id": "offenherzig"
+    },
+    {
+      "id": "weltoffen"
+    },
+    {
+      "id": "au\u00dfergew\u00f6hnlich"
+    },
+    {
+      "id": "einzigartig"
+    },
+    {
+      "id": "exzentrisch"
+    },
+    {
+      "id": "individuell"
+    },
+    {
+      "id": "schillernd"
+    },
+    {
+      "id": "talentiert"
+    },
+    {
+      "id": "herrisch"
+    },
+    {
+      "id": "herrschs\u00fcchtig"
+    },
+    {
+      "id": "tyrannisch"
+    },
+    {
+      "id": "bedrohlich"
+    },
+    {
+      "id": "besessen"
+    },
+    {
+      "id": "einsch\u00fcchternd"
+    },
+    {
+      "id": "gef\u00e4hrlich"
+    },
+    {
+      "id": "gewaltt\u00e4tig"
+    },
+    {
+      "id": "grausam"
+    },
+    {
+      "id": "hasserf\u00fcllt"
+    },
+    {
+      "id": "skrupellos"
+    },
+    {
+      "id": "verbrecherisch"
+    },
+    {
+      "id": "zerst\u00f6rerisch"
+    },
+    {
+      "id": "beherrscht"
+    },
+    {
+      "id": "bed\u00e4chtig"
+    },
+    {
+      "id": "besonnen"
+    },
+    {
+      "id": "dickh\u00e4utig"
+    },
+    {
+      "id": "eisern"
+    },
+    {
+      "id": "geduldig"
+    },
+    {
+      "id": "hart"
+    },
+    {
+      "id": "knallhart"
+    },
+    {
+      "id": "kontrolliert"
+    },
+    {
+      "id": "k\u00fchl"
+    },
+    {
+      "id": "belehrend"
+    },
+    {
+      "id": "besserwisserisch"
+    },
+    {
+      "id": "fanatisch"
+    },
+    {
+      "id": "fixiert"
+    },
+    {
+      "id": "besitzergreifend"
+    },
+    {
+      "id": "machtbesessen"
+    },
+    {
+      "id": "machtgierig"
+    },
+    {
+      "id": "machthungrig"
+    },
+    {
+      "id": "raffend"
+    },
+    {
+      "id": "bestechlich"
+    },
+    {
+      "id": "falsch"
+    },
+    {
+      "id": "illoyal"
+    },
+    {
+      "id": "korrupt"
+    },
+    {
+      "id": "bieder"
+    },
+    {
+      "id": "schrullig"
+    },
+    {
+      "id": "spie\u00dfig"
+    },
+    {
+      "id": "brav"
+    },
+    {
+      "id": "folgsam"
+    },
+    {
+      "id": "f\u00fcgsam"
+    },
+    {
+      "id": "gef\u00fcgig"
+    },
+    {
+      "id": "gehorsam"
+    },
+    {
+      "id": "keusch"
+    },
+    {
+      "id": "willig"
+    },
+    {
+      "id": "z\u00fcchtig"
+    },
+    {
+      "id": "blutr\u00fcnstig"
+    },
+    {
+      "id": "chaotisch"
+    },
+    {
+      "id": "schlampig"
+    },
+    {
+      "id": "umst\u00e4ndlich"
+    },
+    {
+      "id": "unordentlich"
+    },
+    {
+      "id": "Charaktereigenschaften"
+    },
+    {
+      "id": "negativ belegt"
+    },
+    {
+      "id": "positiv belegt"
+    },
+    {
+      "id": "charismatisch"
+    },
+    {
+      "id": "charmant"
+    },
+    {
+      "id": "galant"
+    },
+    {
+      "id": "cholerisch"
+    },
+    {
+      "id": "aufbrausend"
+    },
+    {
+      "id": "j\u00e4hzornig"
+    },
+    {
+      "id": "reizbar"
+    },
+    {
+      "id": "\u00fcberreagierend"
+    },
+    {
+      "id": "unbeherrscht"
+    },
+    {
+      "id": "cool"
+    },
+    {
+      "id": "l\u00e4ssig"
+    },
+    {
+      "id": "locker"
+    },
+    {
+      "id": "smart"
+    },
+    {
+      "id": "dekadent"
+    },
+    {
+      "id": "hedonistisch"
+    },
+    {
+      "id": "dem\u00fctig"
+    },
+    {
+      "id": "aufopfernd"
+    },
+    {
+      "id": "begn\u00fcgsam"
+    },
+    {
+      "id": "devot"
+    },
+    {
+      "id": "duldsam"
+    },
+    {
+      "id": "feige"
+    },
+    {
+      "id": "masochistisch"
+    },
+    {
+      "id": "unterw\u00fcrfig"
+    },
+    {
+      "id": "dick"
+    },
+    {
+      "id": "verfressen"
+    },
+    {
+      "id": "dickk\u00f6pfig"
+    },
+    {
+      "id": "eigensinnig"
+    },
+    {
+      "id": "eigenwillig"
+    },
+    {
+      "id": "distinguiert"
+    },
+    {
+      "id": "anspruchsvoll"
+    },
+    {
+      "id": "gediegen"
+    },
+    {
+      "id": "konservativ"
+    },
+    {
+      "id": "kultiviert"
+    },
+    {
+      "id": "mond\u00e4n"
+    },
+    {
+      "id": "nonchalant"
+    },
+    {
+      "id": "effizient"
+    },
+    {
+      "id": "konsequent"
+    },
+    {
+      "id": "versiert"
+    },
+    {
+      "id": "dominant"
+    },
+    {
+      "id": "energisch"
+    },
+    {
+      "id": "resolut"
+    },
+    {
+      "id": "rigoros"
+    },
+    {
+      "id": "dumm"
+    },
+    {
+      "id": "doof"
+    },
+    {
+      "id": "einf\u00e4ltig"
+    },
+    {
+      "id": "idiotisch"
+    },
+    {
+      "id": "inkompetent"
+    },
+    {
+      "id": "leichtsinnig"
+    },
+    {
+      "id": "t\u00f6richt"
+    },
+    {
+      "id": "dynamisch"
+    },
+    {
+      "id": "energetisch"
+    },
+    {
+      "id": "energiegeladen"
+    },
+    {
+      "id": "energievoll"
+    },
+    {
+      "id": "egoistisch"
+    },
+    {
+      "id": "egozentrisch"
+    },
+    {
+      "id": "ehrenhaft"
+    },
+    {
+      "id": "erhaben"
+    },
+    {
+      "id": "fair"
+    },
+    {
+      "id": "heldenhaft"
+    },
+    {
+      "id": "heldenm\u00fctig"
+    },
+    {
+      "id": "hilfsbereit"
+    },
+    {
+      "id": "pflichtbewusst"
+    },
+    {
+      "id": "treu"
+    },
+    {
+      "id": "w\u00fcrdevoll"
+    },
+    {
+      "id": "ehrgeizig"
+    },
+    {
+      "id": "ambitioniert"
+    },
+    {
+      "id": "hartn\u00e4ckig"
+    },
+    {
+      "id": "ehrlich"
+    },
+    {
+      "id": "anst\u00e4ndig"
+    },
+    {
+      "id": "aufrichtig"
+    },
+    {
+      "id": "authentisch"
+    },
+    {
+      "id": "echt"
+    },
+    {
+      "id": "integer"
+    },
+    {
+      "id": "loyal"
+    },
+    {
+      "id": "transparent"
+    },
+    {
+      "id": "wahrhaftig"
+    },
+    {
+      "id": "wahrheitsliebend"
+    },
+    {
+      "id": "einfach"
+    },
+    {
+      "id": "bequem"
+    },
+    {
+      "id": "h\u00e4uslich"
+    },
+    {
+      "id": "einf\u00fchlsam"
+    },
+    {
+      "id": "empathisch"
+    },
+    {
+      "id": "gro\u00dfherzig"
+    },
+    {
+      "id": "gro\u00dfm\u00fctig"
+    },
+    {
+      "id": "gro\u00dfz\u00fcgig"
+    },
+    {
+      "id": "gutherzig"
+    },
+    {
+      "id": "g\u00fctig"
+    },
+    {
+      "id": "gutm\u00fctig"
+    },
+    {
+      "id": "mitf\u00fchlend"
+    },
+    {
+      "id": "nachsichtig"
+    },
+    {
+      "id": "r\u00fccksichtsvoll"
+    },
+    {
+      "id": "verst\u00e4ndnisvoll"
+    },
+    {
+      "id": "warmherzig"
+    },
+    {
+      "id": "einsam"
+    },
+    {
+      "id": "aufmerksamkeitsbed\u00fcrftig"
+    },
+    {
+      "id": "besonders"
+    },
+    {
+      "id": "einmalig"
+    },
+    {
+      "id": "\u00fcberragend"
+    },
+    {
+      "id": "unverwechselbar"
+    },
+    {
+      "id": "ekelig"
+    },
+    {
+      "id": "widerlich"
+    },
+    {
+      "id": "elegant"
+    },
+    {
+      "id": "anmutig"
+    },
+    {
+      "id": "ansprechend"
+    },
+    {
+      "id": "damenhaft"
+    },
+    {
+      "id": "dezent"
+    },
+    {
+      "id": "edel"
+    },
+    {
+      "id": "fein"
+    },
+    {
+      "id": "gepflegt"
+    },
+    {
+      "id": "grazil"
+    },
+    {
+      "id": "grazi\u00f6s"
+    },
+    {
+      "id": "schneidig"
+    },
+    {
+      "id": "stilbewusst"
+    },
+    {
+      "id": "stilsicher"
+    },
+    {
+      "id": "stilvoll"
+    },
+    {
+      "id": "tadellos"
+    },
+    {
+      "id": "vornehm"
+    },
+    {
+      "id": "zeitlos"
+    },
+    {
+      "id": "eloquent"
+    },
+    {
+      "id": "kommunikativ"
+    },
+    {
+      "id": "kontaktfreudig"
+    },
+    {
+      "id": "redegewandt"
+    },
+    {
+      "id": "emotional"
+    },
+    {
+      "id": "gef\u00fchlsbetont"
+    },
+    {
+      "id": "humorvoll"
+    },
+    {
+      "id": "sensibel"
+    },
+    {
+      "id": "sentimental"
+    },
+    {
+      "id": "temperamentvoll"
+    },
+    {
+      "id": "energielos"
+    },
+    {
+      "id": "lethargisch"
+    },
+    {
+      "id": "enthemmt"
+    },
+    {
+      "id": "hemmungslos"
+    },
+    {
+      "id": "ma\u00dflos"
+    },
+    {
+      "id": "\u00fcberdreht"
+    },
+    {
+      "id": "ungez\u00fcgelt"
+    },
+    {
+      "id": "entschlossen"
+    },
+    {
+      "id": "erfolgsorientiert"
+    },
+    {
+      "id": "f\u00fchrungsstark"
+    },
+    {
+      "id": "leistungsstark"
+    },
+    {
+      "id": "pragmatisch"
+    },
+    {
+      "id": "tatkr\u00e4ftig"
+    },
+    {
+      "id": "erotisch"
+    },
+    {
+      "id": "feminin"
+    },
+    {
+      "id": "freiz\u00fcgig"
+    },
+    {
+      "id": "leidenschaftlich"
+    },
+    {
+      "id": "maskulin"
+    },
+    {
+      "id": "sexy"
+    },
+    {
+      "id": "unartig"
+    },
+    {
+      "id": "verf\u00fchrerisch"
+    },
+    {
+      "id": "verrucht"
+    },
+    {
+      "id": "extravagant"
+    },
+    {
+      "id": "k\u00fcnstlich"
+    },
+    {
+      "id": "originell"
+    },
+    {
+      "id": "faul"
+    },
+    {
+      "id": "lustlos"
+    },
+    {
+      "id": "tr\u00e4ge"
+    },
+    {
+      "id": "fit"
+    },
+    {
+      "id": "rege"
+    },
+    {
+      "id": "vital"
+    },
+    {
+      "id": "freiheitsliebend"
+    },
+    {
+      "id": "emanzipiert"
+    },
+    {
+      "id": "patriotisch"
+    },
+    {
+      "id": "freundlich"
+    },
+    {
+      "id": "herzlich"
+    },
+    {
+      "id": "fr\u00f6hlich"
+    },
+    {
+      "id": "frohnatur"
+    },
+    {
+      "id": "heiter"
+    },
+    {
+      "id": "rohsinnig"
+    },
+    {
+      "id": "spa\u00dfig"
+    },
+    {
+      "id": "memmenhaft"
+    },
+    {
+      "id": "schreckhaft"
+    },
+    {
+      "id": "gef\u00fchllos"
+    },
+    {
+      "id": "eiskalt"
+    },
+    {
+      "id": "frostig"
+    },
+    {
+      "id": "gef\u00fchlskalt"
+    },
+    {
+      "id": "kaltbl\u00fctig"
+    },
+    {
+      "id": "kaltherzig"
+    },
+    {
+      "id": "lieblos"
+    },
+    {
+      "id": "geizig"
+    },
+    {
+      "id": "kleinlich"
+    },
+    {
+      "id": "knickrig"
+    },
+    {
+      "id": "gemein"
+    },
+    {
+      "id": "niedertr\u00e4chtig"
+    },
+    {
+      "id": "sadistisch"
+    },
+    {
+      "id": "verschlagen"
+    },
+    {
+      "id": "gerecht"
+    },
+    {
+      "id": "moralisch"
+    },
+    {
+      "id": "rechtschaffen"
+    },
+    {
+      "id": "solidarisch"
+    },
+    {
+      "id": "tolerant"
+    },
+    {
+      "id": "gew\u00f6hnlich"
+    },
+    {
+      "id": "blass"
+    },
+    {
+      "id": "nichtssagend"
+    },
+    {
+      "id": "unscheinbar"
+    },
+    {
+      "id": "gierig"
+    },
+    {
+      "id": "geldgierig"
+    },
+    {
+      "id": "habgierig"
+    },
+    {
+      "id": "giftig"
+    },
+    {
+      "id": "bissig"
+    },
+    {
+      "id": "garstig"
+    },
+    {
+      "id": "gl\u00e4ubig"
+    },
+    {
+      "id": "ehrf\u00fcrchtig"
+    },
+    {
+      "id": "fromm"
+    },
+    {
+      "id": "glaubensstark"
+    },
+    {
+      "id": "gottergeben"
+    },
+    {
+      "id": "gottesf\u00fcrchtig"
+    },
+    {
+      "id": "inbr\u00fcnstig"
+    },
+    {
+      "id": "religi\u00f6s"
+    },
+    {
+      "id": "spirituell"
+    },
+    {
+      "id": "gleichg\u00fcltig"
+    },
+    {
+      "id": "gleichm\u00fctig"
+    },
+    {
+      "id": "jovial"
+    },
+    {
+      "id": "grob"
+    },
+    {
+      "id": "derb"
+    },
+    {
+      "id": "plump"
+    },
+    {
+      "id": "unsensibel"
+    },
+    {
+      "id": "h\u00e4\u00dflich"
+    },
+    {
+      "id": "gr\u00e4\u00dflich"
+    },
+    {
+      "id": "sch\u00e4big"
+    },
+    {
+      "id": "hektisch"
+    },
+    {
+      "id": "hibbelig"
+    },
+    {
+      "id": "nerv\u00f6s"
+    },
+    {
+      "id": "schnell"
+    },
+    {
+      "id": "zappelig"
+    },
+    {
+      "id": "heroisch"
+    },
+    {
+      "id": "selbstlos"
+    },
+    {
+      "id": "hilflos"
+    },
+    {
+      "id": "unselbst\u00e4ndig"
+    },
+    {
+      "id": "eingebildet"
+    },
+    {
+      "id": "eitel"
+    },
+    {
+      "id": "herablassend"
+    },
+    {
+      "id": "hochn\u00e4sig"
+    },
+    {
+      "id": "\u00fcberheblich"
+    },
+    {
+      "id": "lustig"
+    },
+    {
+      "id": "verschmitzt"
+    },
+    {
+      "id": "witzig"
+    },
+    {
+      "id": "individualistisch"
+    },
+    {
+      "id": "unkonventionell"
+    },
+    {
+      "id": "intelektuell"
+    },
+    {
+      "id": "n\u00fcchtern"
+    },
+    {
+      "id": "objektiv"
+    },
+    {
+      "id": "rational"
+    },
+    {
+      "id": "realistisch"
+    },
+    {
+      "id": "reif"
+    },
+    {
+      "id": "vern\u00fcnftig"
+    },
+    {
+      "id": "intelligent"
+    },
+    {
+      "id": "genial"
+    },
+    {
+      "id": "hochbegabt"
+    },
+    {
+      "id": "ironisch"
+    },
+    {
+      "id": "subtil"
+    },
+    {
+      "id": "kalt"
+    },
+    {
+      "id": "mitleidlos"
+    },
+    {
+      "id": "k\u00e4mpferisch"
+    },
+    {
+      "id": "impulsiv"
+    },
+    {
+      "id": "provokant"
+    },
+    {
+      "id": "unbeugsam"
+    },
+    {
+      "id": "wild"
+    },
+    {
+      "id": "affektiert"
+    },
+    {
+      "id": "keck"
+    },
+    {
+      "id": "kess"
+    },
+    {
+      "id": "kokett"
+    },
+    {
+      "id": "neckisch"
+    },
+    {
+      "id": "schelmisch"
+    },
+    {
+      "id": "vorwitzig"
+    },
+    {
+      "id": "infantil"
+    },
+    {
+      "id": "klug"
+    },
+    {
+      "id": "clever"
+    },
+    {
+      "id": "diplomatisch"
+    },
+    {
+      "id": "einfallsreich"
+    },
+    {
+      "id": "erfinderisch"
+    },
+    {
+      "id": "gebildet"
+    },
+    {
+      "id": "gescheit"
+    },
+    {
+      "id": "kompetent"
+    },
+    {
+      "id": "reflektiert"
+    },
+    {
+      "id": "sachlich"
+    },
+    {
+      "id": "strebsam"
+    },
+    {
+      "id": "\u00fcberlegt"
+    },
+    {
+      "id": "weise"
+    },
+    {
+      "id": "weitsichtig"
+    },
+    {
+      "id": "wissensdurstig"
+    },
+    {
+      "id": "komisch"
+    },
+    {
+      "id": "merkw\u00fcrdig"
+    },
+    {
+      "id": "seltsam"
+    },
+    {
+      "id": "skurril"
+    },
+    {
+      "id": "ulkig"
+    },
+    {
+      "id": "verschroben"
+    },
+    {
+      "id": "schlagfertig"
+    },
+    {
+      "id": "eigen"
+    },
+    {
+      "id": "stur"
+    },
+    {
+      "id": "kopflastig"
+    },
+    {
+      "id": "abgebr\u00fcht"
+    },
+    {
+      "id": "abgekl\u00e4rt"
+    },
+    {
+      "id": "berechnend"
+    },
+    {
+      "id": "kalkulierend"
+    },
+    {
+      "id": "kraftvoll"
+    },
+    {
+      "id": "belastbar"
+    },
+    {
+      "id": "kr\u00e4ftig"
+    },
+    {
+      "id": "krank"
+    },
+    {
+      "id": "labil"
+    },
+    {
+      "id": "s\u00fcchtig"
+    },
+    {
+      "id": "verr\u00fcckt"
+    },
+    {
+      "id": "zwanghaft"
+    },
+    {
+      "id": "langweilig"
+    },
+    {
+      "id": "einfallslos"
+    },
+    {
+      "id": "\u00f6de"
+    },
+    {
+      "id": "launisch"
+    },
+    {
+      "id": "sprunghaft"
+    },
+    {
+      "id": "wechselhaft"
+    },
+    {
+      "id": "lebendig"
+    },
+    {
+      "id": "lebensfroh"
+    },
+    {
+      "id": "lebhaft"
+    },
+    {
+      "id": "motivierend"
+    },
+    {
+      "id": "spontan"
+    },
+    {
+      "id": "\u00fcberm\u00fctig"
+    },
+    {
+      "id": "unternehmungslustig"
+    },
+    {
+      "id": "lebensbejahend"
+    },
+    {
+      "id": "lebenslustig"
+    },
+    {
+      "id": "optimistisch"
+    },
+    {
+      "id": "aufgeweckt"
+    },
+    {
+      "id": "enthusiastisch"
+    },
+    {
+      "id": "\u00fcberschwenglich"
+    },
+    {
+      "id": "leichtfertig"
+    },
+    {
+      "id": "leichtlebig"
+    },
+    {
+      "id": "leidend"
+    },
+    {
+      "id": "traurig"
+    },
+    {
+      "id": "ungl\u00fccklich"
+    },
+    {
+      "id": "zimperlich"
+    },
+    {
+      "id": "melancholisch"
+    },
+    {
+      "id": "bedr\u00fcckt"
+    },
+    {
+      "id": "niedergeschlagen"
+    },
+    {
+      "id": "schwerm\u00fctig"
+    },
+    {
+      "id": "tr\u00fcbsinnig"
+    },
+    {
+      "id": "wehm\u00fctig"
+    },
+    {
+      "id": "missmutig"
+    },
+    {
+      "id": "sauert\u00f6pfisch"
+    },
+    {
+      "id": "mitleiderregend"
+    },
+    {
+      "id": "erb\u00e4rmlich"
+    },
+    {
+      "id": "erbarmungslos"
+    },
+    {
+      "id": "gewissenlos"
+    },
+    {
+      "id": "gnadenlos"
+    },
+    {
+      "id": "hartherzig"
+    },
+    {
+      "id": "herzlos"
+    },
+    {
+      "id": "mutig"
+    },
+    {
+      "id": "beherzt"
+    },
+    {
+      "id": "couragiert"
+    },
+    {
+      "id": "furchtlos"
+    },
+    {
+      "id": "tapfer"
+    },
+    {
+      "id": "unerschrocken"
+    },
+    {
+      "id": "verwegen"
+    },
+    {
+      "id": "nachdenklich"
+    },
+    {
+      "id": "besorgt"
+    },
+    {
+      "id": "gr\u00fcbelnd"
+    },
+    {
+      "id": "tiefgr\u00fcndig"
+    },
+    {
+      "id": "nachtragend"
+    },
+    {
+      "id": "rachs\u00fcchtig"
+    },
+    {
+      "id": "verbittert"
+    },
+    {
+      "id": "naiv"
+    },
+    {
+      "id": "arglos"
+    },
+    {
+      "id": "ausnutzbar"
+    },
+    {
+      "id": "beeinflussbar"
+    },
+    {
+      "id": "blau\u00e4ugig"
+    },
+    {
+      "id": "kindlich"
+    },
+    {
+      "id": "lammfromm"
+    },
+    {
+      "id": "leichtgl\u00e4ubig"
+    },
+    {
+      "id": "weltfremd"
+    },
+    {
+      "id": "nat\u00fcrlich"
+    },
+    {
+      "id": "bodenst\u00e4ndig"
+    },
+    {
+      "id": "naturverbunden"
+    },
+    {
+      "id": "negativ"
+    },
+    {
+      "id": "pessimistisch"
+    },
+    {
+      "id": "unzufrieden"
+    },
+    {
+      "id": "dunkel"
+    },
+    {
+      "id": "neidisch"
+    },
+    {
+      "id": "oberfl\u00e4chlich"
+    },
+    {
+      "id": "pedantisch"
+    },
+    {
+      "id": "phlegmatisch"
+    },
+    {
+      "id": "respektlos"
+    },
+    {
+      "id": "ruhelos"
+    },
+    {
+      "id": "schwach"
+    },
+    {
+      "id": "sexbegierig"
+    },
+    {
+      "id": "streits\u00fcchtig"
+    },
+    {
+      "id": "streng"
+    },
+    {
+      "id": "suspekt"
+    },
+    {
+      "id": "tollpatschig"
+    },
+    {
+      "id": "\u00fcbellaunig"
+    },
+    {
+      "id": "unehrlich"
+    },
+    {
+      "id": "ungehorsam"
+    },
+    {
+      "id": "unglaubw\u00fcrdig"
+    },
+    {
+      "id": "unh\u00f6flich"
+    },
+    {
+      "id": "unkonzentriert"
+    },
+    {
+      "id": "unmoralisch"
+    },
+    {
+      "id": "unnahbar"
+    },
+    {
+      "id": "unsachlich"
+    },
+    {
+      "id": "unsicher"
+    },
+    {
+      "id": "unzuverl\u00e4ssig"
+    },
+    {
+      "id": "verschlossen"
+    },
+    {
+      "id": "eifers\u00fcchtig"
+    },
+    {
+      "id": "missg\u00fcnstig"
+    },
+    {
+      "id": "neiderf\u00fcllt"
+    },
+    {
+      "id": "nett"
+    },
+    {
+      "id": "einnehmend"
+    },
+    {
+      "id": "entgegenkommend"
+    },
+    {
+      "id": "h\u00f6flich"
+    },
+    {
+      "id": "kollegial"
+    },
+    {
+      "id": "kumpelhaft"
+    },
+    {
+      "id": "lieb"
+    },
+    {
+      "id": "sympathisch"
+    },
+    {
+      "id": "umg\u00e4nglich"
+    },
+    {
+      "id": "wohlerzogen"
+    },
+    {
+      "id": "zur\u00fcckhaltend"
+    },
+    {
+      "id": "zuvorkommend"
+    },
+    {
+      "id": "neu"
+    },
+    {
+      "id": "erfrischend"
+    },
+    {
+      "id": "frisch"
+    },
+    {
+      "id": "herzerfrischend"
+    },
+    {
+      "id": "innovativ"
+    },
+    {
+      "id": "jugendlich"
+    },
+    {
+      "id": "knackig"
+    },
+    {
+      "id": "fies"
+    },
+    {
+      "id": "heimt\u00fcckisch"
+    },
+    {
+      "id": "mies"
+    },
+    {
+      "id": "notgeil"
+    },
+    {
+      "id": "pervers"
+    },
+    {
+      "id": "promiskuitiv"
+    },
+    {
+      "id": "sexs\u00fcchtig"
+    },
+    {
+      "id": "seicht"
+    },
+    {
+      "id": "offen"
+    },
+    {
+      "id": "einladend"
+    },
+    {
+      "id": "ordentlich"
+    },
+    {
+      "id": "adrett"
+    },
+    {
+      "id": "gewissenhaft"
+    },
+    {
+      "id": "gr\u00fcndlich"
+    },
+    {
+      "id": "sorgf\u00e4ltig"
+    },
+    {
+      "id": "sorgsam"
+    },
+    {
+      "id": "umsichtig"
+    },
+    {
+      "id": "kleinkariert"
+    },
+    {
+      "id": "penibel"
+    },
+    {
+      "id": "pingelig"
+    },
+    {
+      "id": "rechthaberisch"
+    },
+    {
+      "id": "streberhaft"
+    },
+    {
+      "id": "\u00fcbergenau"
+    },
+    {
+      "id": "starr"
+    },
+    {
+      "id": "tatenlos"
+    },
+    {
+      "id": "temperamentlos"
+    },
+    {
+      "id": "beliebt"
+    },
+    {
+      "id": "direkt"
+    },
+    {
+      "id": "harmlos"
+    },
+    {
+      "id": "imposant"
+    },
+    {
+      "id": "leicht"
+    },
+    {
+      "id": "positiv"
+    },
+    {
+      "id": "respektvoll"
+    },
+    {
+      "id": "reum\u00fctig"
+    },
+    {
+      "id": "ruhig"
+    },
+    {
+      "id": "sanft"
+    },
+    {
+      "id": "schlau"
+    },
+    {
+      "id": "sch\u00f6n"
+    },
+    {
+      "id": "selbstbewusst"
+    },
+    {
+      "id": "sorglos"
+    },
+    {
+      "id": "sparsam"
+    },
+    {
+      "id": "sportlich"
+    },
+    {
+      "id": "stark"
+    },
+    {
+      "id": "stolz"
+    },
+    {
+      "id": "s\u00fc\u00df"
+    },
+    {
+      "id": "tr\u00e4umerisch"
+    },
+    {
+      "id": "uneigenn\u00fctzig"
+    },
+    {
+      "id": "vorsichtig"
+    },
+    {
+      "id": "warm"
+    },
+    {
+      "id": "zufrieden"
+    },
+    {
+      "id": "rebellisch"
+    },
+    {
+      "id": "pr\u00fcde"
+    },
+    {
+      "id": "zugekn\u00f6pft"
+    },
+    {
+      "id": "geschw\u00e4tzig"
+    },
+    {
+      "id": "aufdringlich"
+    },
+    {
+      "id": "dreist"
+    },
+    {
+      "id": "frauenfeindlich"
+    },
+    {
+      "id": "m\u00e4nnerfeindlich"
+    },
+    {
+      "id": "r\u00fccksichtslos"
+    },
+    {
+      "id": "schadenfroh"
+    },
+    {
+      "id": "sensationsl\u00fcstern"
+    },
+    {
+      "id": "unmenschlich"
+    },
+    {
+      "id": "ergeben"
+    },
+    {
+      "id": "wohlwollend"
+    },
+    {
+      "id": "romantisch"
+    },
+    {
+      "id": "verspielt"
+    },
+    {
+      "id": "r\u00fcckgratlos"
+    },
+    {
+      "id": "willenlos"
+    },
+    {
+      "id": "willensschwach"
+    },
+    {
+      "id": "w\u00fcrdelos"
+    },
+    {
+      "id": "militant"
+    },
+    {
+      "id": "radikal"
+    },
+    {
+      "id": "unruhig"
+    },
+    {
+      "id": "unstet"
+    },
+    {
+      "id": "ausgeglichen"
+    },
+    {
+      "id": "best\u00e4ndig"
+    },
+    {
+      "id": "entspannt"
+    },
+    {
+      "id": "gelassen"
+    },
+    {
+      "id": "still"
+    },
+    {
+      "id": "f\u00fcrsorglich"
+    },
+    {
+      "id": "liebevoll"
+    },
+    {
+      "id": "sanftm\u00fctig"
+    },
+    {
+      "id": "sinnlich"
+    },
+    {
+      "id": "weich"
+    },
+    {
+      "id": "zart"
+    },
+    {
+      "id": "z\u00e4rtlich"
+    },
+    {
+      "id": "zerbrechlich"
+    },
+    {
+      "id": "facettenreich"
+    },
+    {
+      "id": "fantasievoll"
+    },
+    {
+      "id": "furios"
+    },
+    {
+      "id": "glamur\u00f6s"
+    },
+    {
+      "id": "phantasievoll"
+    },
+    {
+      "id": "ausgefuchst"
+    },
+    {
+      "id": "gerissen"
+    },
+    {
+      "id": "gewieft"
+    },
+    {
+      "id": "pfiffig"
+    },
+    {
+      "id": "spitzfindig"
+    },
+    {
+      "id": "apart"
+    },
+    {
+      "id": "angepasst"
+    },
+    {
+      "id": "defensiv"
+    },
+    {
+      "id": "ersch\u00f6pft"
+    },
+    {
+      "id": "verletzbar"
+    },
+    {
+      "id": "selbstreflektierend"
+    },
+    {
+      "id": "selbstsicher"
+    },
+    {
+      "id": "selbstst\u00e4ndig"
+    },
+    {
+      "id": "souver\u00e4n"
+    },
+    {
+      "id": "narzisstisch"
+    },
+    {
+      "id": "profilierungss\u00fcchtig"
+    },
+    {
+      "id": "selbstdarstellerisch"
+    },
+    {
+      "id": "selbstgef\u00e4llig"
+    },
+    {
+      "id": "selbstgerecht"
+    },
+    {
+      "id": "selbsts\u00fcchtig"
+    },
+    {
+      "id": "selbstverliebt"
+    },
+    {
+      "id": "unabh\u00e4ngig"
+    },
+    {
+      "id": "willensstark"
+    },
+    {
+      "id": "kriminell"
+    },
+    {
+      "id": "unbek\u00fcmmert"
+    },
+    {
+      "id": "vertrauensvoll"
+    },
+    {
+      "id": "flexibel"
+    },
+    {
+      "id": "agil"
+    },
+    {
+      "id": "athletisch"
+    },
+    {
+      "id": "ausdauernd"
+    },
+    {
+      "id": "wendig"
+    },
+    {
+      "id": "sp\u00f6ttisch"
+    },
+    {
+      "id": "h\u00e4misch"
+    },
+    {
+      "id": "h\u00f6hnisch"
+    },
+    {
+      "id": "sarkastisch"
+    },
+    {
+      "id": "autark"
+    },
+    {
+      "id": "robust"
+    },
+    {
+      "id": "solide"
+    },
+    {
+      "id": "unersch\u00fctterlich"
+    },
+    {
+      "id": "z\u00e4h"
+    },
+    {
+      "id": "unbeweglich"
+    },
+    {
+      "id": "ernst"
+    },
+    {
+      "id": "schweigsam"
+    },
+    {
+      "id": "wortkarg"
+    },
+    {
+      "id": "intrigant"
+    },
+    {
+      "id": "strikt"
+    },
+    {
+      "id": "stoisch"
+    },
+    {
+      "id": "sturk\u00f6pfig"
+    },
+    {
+      "id": "unnachgiebig"
+    },
+    {
+      "id": "unbelehrbar"
+    },
+    {
+      "id": "lieblich"
+    },
+    {
+      "id": "niedlich"
+    },
+    {
+      "id": "putzig"
+    },
+    {
+      "id": "reizend"
+    },
+    {
+      "id": "zauberhaft"
+    },
+    {
+      "id": "geschickt"
+    },
+    {
+      "id": "kreativ"
+    },
+    {
+      "id": "k\u00fcnstlerisch"
+    },
+    {
+      "id": "musikalisch"
+    },
+    {
+      "id": "sch\u00f6ngeistig"
+    },
+    {
+      "id": "sprachbegabt"
+    },
+    {
+      "id": "vielf\u00e4ltig"
+    },
+    {
+      "id": "unverzagt"
+    },
+    {
+      "id": "zielstrebig"
+    },
+    {
+      "id": "zupackend"
+    },
+    {
+      "id": "ungeschickt"
+    },
+    {
+      "id": "geheimnisvoll"
+    },
+    {
+      "id": "vertr\u00e4umt"
+    },
+    {
+      "id": "depressiv"
+    },
+    {
+      "id": "standhaft"
+    },
+    {
+      "id": "vertrauensw\u00fcrdig"
+    },
+    {
+      "id": "zuverl\u00e4ssig"
+    },
+    {
+      "id": "trotzig"
+    },
+    {
+      "id": "aufs\u00e4ssig"
+    },
+    {
+      "id": "bockig"
+    },
+    {
+      "id": "genervt"
+    },
+    {
+      "id": "quengelig"
+    },
+    {
+      "id": "stachelig"
+    },
+    {
+      "id": "starrsinnig"
+    },
+    {
+      "id": "st\u00f6rrisch"
+    },
+    {
+      "id": "\u00fcberspannt"
+    },
+    {
+      "id": "elit\u00e4r"
+    },
+    {
+      "id": "ausgeflippt"
+    },
+    {
+      "id": "ausgelassen"
+    },
+    {
+      "id": "draufg\u00e4ngerisch"
+    },
+    {
+      "id": "mitrei\u00dfend"
+    },
+    {
+      "id": "quirlig"
+    },
+    {
+      "id": "unanst\u00e4ndig"
+    },
+    {
+      "id": "unbesonnen"
+    },
+    {
+      "id": "nachl\u00e4ssig"
+    },
+    {
+      "id": "taff"
+    },
+    {
+      "id": "heuchlerisch"
+    },
+    {
+      "id": "kriecherisch"
+    },
+    {
+      "id": "l\u00fcgnerisch"
+    },
+    {
+      "id": "scheinheilig"
+    },
+    {
+      "id": "schleimig"
+    },
+    {
+      "id": "unaufrichtig"
+    },
+    {
+      "id": "verlogen"
+    },
+    {
+      "id": "verr\u00e4terisch"
+    },
+    {
+      "id": "bescheiden"
+    },
+    {
+      "id": "gener\u00f6s"
+    },
+    {
+      "id": "gen\u00fcgsam"
+    },
+    {
+      "id": "unfair"
+    },
+    {
+      "id": "hinterh\u00e4ltig"
+    },
+    {
+      "id": "ungerecht"
+    },
+    {
+      "id": "halsstarrig"
+    },
+    {
+      "id": "kratzb\u00fcrstig"
+    },
+    {
+      "id": "widerspenstig"
+    },
+    {
+      "id": "verzweifelt"
+    },
+    {
+      "id": "\u00e4tzend"
+    },
+    {
+      "id": "flapsig"
+    },
+    {
+      "id": "forsch"
+    },
+    {
+      "id": "frech"
+    },
+    {
+      "id": "geh\u00e4ssig"
+    },
+    {
+      "id": "r\u00fcde"
+    },
+    {
+      "id": "ruppig"
+    },
+    {
+      "id": "schnoddrig"
+    },
+    {
+      "id": "taktlos"
+    },
+    {
+      "id": "unfreundlich"
+    },
+    {
+      "id": "ungezogen"
+    },
+    {
+      "id": "unversch\u00e4mt"
+    },
+    {
+      "id": "verletzend"
+    },
+    {
+      "id": "vorlaut"
+    },
+    {
+      "id": "wirsch"
+    },
+    {
+      "id": "zickig"
+    },
+    {
+      "id": "schusselig"
+    },
+    {
+      "id": "senil"
+    },
+    {
+      "id": "vergesslich"
+    },
+    {
+      "id": "zerstreut"
+    },
+    {
+      "id": "menschenverachtend"
+    },
+    {
+      "id": "untreu"
+    },
+    {
+      "id": "unerbittlich"
+    },
+    {
+      "id": "misstrauisch"
+    },
+    {
+      "id": "spr\u00f6de"
+    },
+    {
+      "id": "undurchschaubar"
+    },
+    {
+      "id": "ungeduldig"
+    },
+    {
+      "id": "voreingenommen"
+    },
+    {
+      "id": "zweifelnd"
+    },
+    {
+      "id": "abenteuerlustig"
+    },
+    {
+      "id": "begeisterungsf\u00e4hig"
+    },
+    {
+      "id": "feurig"
+    },
+    {
+      "id": "neugierig"
+    },
+    {
+      "id": "verbissen"
+    },
+    {
+      "id": "opportunistisch"
+    },
+    {
+      "id": "unbest\u00e4ndig"
+    },
+    {
+      "id": "unentschlossen"
+    },
+    {
+      "id": "verantwortungslos"
+    },
+    {
+      "id": "teamf\u00e4hig"
+    },
+    {
+      "id": "verantwortungsvoll"
+    },
+    {
+      "id": "vorausschauend"
+    },
+    {
+      "id": "irre"
+    },
+    {
+      "id": "wahnhaft"
+    },
+    {
+      "id": "wahnsinnig"
+    },
+    {
+      "id": "gehemmt"
+    },
+    {
+      "id": "verst\u00f6rt"
+    },
+    {
+      "id": "wagemutig"
+    },
+    {
+      "id": "waghalsig"
+    },
+    {
+      "id": "vielschichtig"
+    },
+    {
+      "id": "vielseitig"
+    },
+    {
+      "id": "achtsam"
+    },
+    {
+      "id": "introvertiert"
+    },
+    {
+      "id": "menschenscheu"
+    },
+    {
+      "id": "reserviert"
+    },
+    {
+      "id": "scheu"
+    },
+    {
+      "id": "sch\u00fcchtern"
+    },
+    {
+      "id": "zaghaft"
+    },
+    {
+      "id": "m\u00fctterlich"
+    },
+    {
+      "id": "v\u00e4terlich"
+    },
+    {
+      "id": "k\u00fchn"
+    },
+    {
+      "id": "wissbegierig"
+    },
+    {
+      "id": "destruktiv"
+    },
+    {
+      "id": "divenhaft"
+    },
+    {
+      "id": "zielbewusst"
+    },
+    {
+      "id": "zielorientiert"
+    },
+    {
+      "id": "mimosenhaft"
+    },
+    {
+      "id": "verl\u00e4sslich"
+    },
+    {
+      "id": "neurotisch"
+    },
+    {
+      "id": "selbstkritisch"
+    },
+    {
+      "id": "selbstzweifelnd"
+    },
+    {
+      "id": "skeptisch"
+    },
+    {
+      "id": "unschl\u00fcssig"
+    },
+    {
+      "id": "wankelm\u00fctig"
+    },
+    {
+      "id": "widerspr\u00fcchlich"
+    },
+    {
+      "id": "zwiegespalten"
+    }
+  ],
+  "links": [
+    {
+      "source": "abweisend",
+      "target": "griesgr\u00e4mig"
+    },
+    {
+      "source": "abweisend",
+      "target": "grimmig"
+    },
+    {
+      "source": "aggressiv",
+      "target": "brutal"
+    },
+    {
+      "source": "aggressiv",
+      "target": "gewaltsam"
+    },
+    {
+      "source": "brutal",
+      "target": "blutr\u00fcnstig"
+    },
+    {
+      "source": "akkurat",
+      "target": "korrekt"
+    },
+    {
+      "source": "akkurat",
+      "target": "perfektionistisch"
+    },
+    {
+      "source": "akkurat",
+      "target": "prinzipientreu"
+    },
+    {
+      "source": "albern",
+      "target": "aufgedreht"
+    },
+    {
+      "source": "albern",
+      "target": "kindisch"
+    },
+    {
+      "source": "kindisch",
+      "target": "infantil"
+    },
+    {
+      "source": "altmodisch",
+      "target": "reaktion\u00e4r"
+    },
+    {
+      "source": "angeberisch",
+      "target": "aufgeblasen"
+    },
+    {
+      "source": "angeberisch",
+      "target": "gro\u00dfkotzig"
+    },
+    {
+      "source": "angeberisch",
+      "target": "gro\u00dfm\u00e4ulig"
+    },
+    {
+      "source": "angeberisch",
+      "target": "gro\u00dfspurig"
+    },
+    {
+      "source": "angeberisch",
+      "target": "prahlerisch"
+    },
+    {
+      "source": "angeberisch",
+      "target": "prollig"
+    },
+    {
+      "source": "angeberisch",
+      "target": "wichtigtuerisch"
+    },
+    {
+      "source": "angsteinfl\u00f6\u00dfend",
+      "target": "ber\u00fcchtigt"
+    },
+    {
+      "source": "angsteinfl\u00f6\u00dfend",
+      "target": "b\u00f6sartig"
+    },
+    {
+      "source": "angsterf\u00fcllt",
+      "target": "paranoid"
+    },
+    {
+      "source": "\u00e4ngstlich",
+      "target": "angsterf\u00fcllt"
+    },
+    {
+      "source": "\u00e4ngstlich",
+      "target": "eingesch\u00fcchtert"
+    },
+    {
+      "source": "\u00e4ngstlich",
+      "target": "furchtsam"
+    },
+    {
+      "source": "furchtsam",
+      "target": "memmenhaft"
+    },
+    {
+      "source": "furchtsam",
+      "target": "schreckhaft"
+    },
+    {
+      "source": "anstrengend",
+      "target": "albern"
+    },
+    {
+      "source": "anstrengend",
+      "target": "humorlos"
+    },
+    {
+      "source": "anstrengend",
+      "target": "kompliziert"
+    },
+    {
+      "source": "anstrengend",
+      "target": "nervig"
+    },
+    {
+      "source": "anstrengend",
+      "target": "redselig"
+    },
+    {
+      "source": "anstrengend",
+      "target": "st\u00f6rend"
+    },
+    {
+      "source": "anstrengend",
+      "target": "\u00fcberf\u00fcrsorglich"
+    },
+    {
+      "source": "anstrengend",
+      "target": "undankbar"
+    },
+    {
+      "source": "anstrengend",
+      "target": "verw\u00f6hnt"
+    },
+    {
+      "source": "kompliziert",
+      "target": "eigen"
+    },
+    {
+      "source": "kompliziert",
+      "target": "stur"
+    },
+    {
+      "source": "redselig",
+      "target": "geschw\u00e4tzig"
+    },
+    {
+      "source": "anz\u00fcglich",
+      "target": "frivol"
+    },
+    {
+      "source": "anz\u00fcglich",
+      "target": "l\u00fcstern"
+    },
+    {
+      "source": "anz\u00fcglich",
+      "target": "schamlos"
+    },
+    {
+      "source": "anz\u00fcglich",
+      "target": "sexistisch"
+    },
+    {
+      "source": "anz\u00fcglich",
+      "target": "versaut"
+    },
+    {
+      "source": "anz\u00fcglich",
+      "target": "vulg\u00e4r"
+    },
+    {
+      "source": "arbeitssam",
+      "target": "diszipliniert"
+    },
+    {
+      "source": "arbeitssam",
+      "target": "engagiert"
+    },
+    {
+      "source": "arbeitssam",
+      "target": "flei\u00dfig"
+    },
+    {
+      "source": "arbeitssam",
+      "target": "organisiert"
+    },
+    {
+      "source": "arbeitssam",
+      "target": "t\u00fcchtig"
+    },
+    {
+      "source": "arbeitssam",
+      "target": "unkompliziert"
+    },
+    {
+      "source": "arbeitssam",
+      "target": "verantwortungsbewusst"
+    },
+    {
+      "source": "diszipliniert",
+      "target": "effizient"
+    },
+    {
+      "source": "diszipliniert",
+      "target": "konsequent"
+    },
+    {
+      "source": "diszipliniert",
+      "target": "versiert"
+    },
+    {
+      "source": "organisiert",
+      "target": "sorgf\u00e4ltig"
+    },
+    {
+      "source": "organisiert",
+      "target": "sorgsam"
+    },
+    {
+      "source": "organisiert",
+      "target": "umsichtig"
+    },
+    {
+      "source": "verantwortungsbewusst",
+      "target": "teamf\u00e4hig"
+    },
+    {
+      "source": "verantwortungsbewusst",
+      "target": "verantwortungsvoll"
+    },
+    {
+      "source": "verantwortungsbewusst",
+      "target": "vorausschauend"
+    },
+    {
+      "source": "arm",
+      "target": "dreckig"
+    },
+    {
+      "source": "arm",
+      "target": "heruntergekommen"
+    },
+    {
+      "source": "arm",
+      "target": "verwahrlost"
+    },
+    {
+      "source": "arrogant",
+      "target": "aalglatt"
+    },
+    {
+      "source": "arrogant",
+      "target": "angeberisch"
+    },
+    {
+      "source": "arrogant",
+      "target": "autorit\u00e4r"
+    },
+    {
+      "source": "arrogant",
+      "target": "g\u00f6nnerhaft"
+    },
+    {
+      "source": "arrogant",
+      "target": "hochm\u00fctig"
+    },
+    {
+      "source": "arrogant",
+      "target": "kaprizi\u00f6s"
+    },
+    {
+      "source": "arrogant",
+      "target": "manipulativ"
+    },
+    {
+      "source": "arrogant",
+      "target": "selbstherrlich"
+    },
+    {
+      "source": "arrogant",
+      "target": "\u00fcberlegen"
+    },
+    {
+      "source": "autorit\u00e4r",
+      "target": "herrisch"
+    },
+    {
+      "source": "autorit\u00e4r",
+      "target": "herrschs\u00fcchtig"
+    },
+    {
+      "source": "autorit\u00e4r",
+      "target": "tyrannisch"
+    },
+    {
+      "source": "g\u00f6nnerhaft",
+      "target": "jovial"
+    },
+    {
+      "source": "hochm\u00fctig",
+      "target": "eingebildet"
+    },
+    {
+      "source": "hochm\u00fctig",
+      "target": "eitel"
+    },
+    {
+      "source": "hochm\u00fctig",
+      "target": "herablassend"
+    },
+    {
+      "source": "hochm\u00fctig",
+      "target": "hochn\u00e4sig"
+    },
+    {
+      "source": "hochm\u00fctig",
+      "target": "\u00fcberheblich"
+    },
+    {
+      "source": "kaprizi\u00f6s",
+      "target": "affektiert"
+    },
+    {
+      "source": "selbstherrlich",
+      "target": "narzisstisch"
+    },
+    {
+      "source": "selbstherrlich",
+      "target": "profilierungss\u00fcchtig"
+    },
+    {
+      "source": "selbstherrlich",
+      "target": "selbstdarstellerisch"
+    },
+    {
+      "source": "selbstherrlich",
+      "target": "selbstgef\u00e4llig"
+    },
+    {
+      "source": "selbstherrlich",
+      "target": "selbstgerecht"
+    },
+    {
+      "source": "selbstherrlich",
+      "target": "selbsts\u00fcchtig"
+    },
+    {
+      "source": "selbstherrlich",
+      "target": "selbstverliebt"
+    },
+    {
+      "source": "\u00fcberlegen",
+      "target": "elit\u00e4r"
+    },
+    {
+      "source": "asketisch",
+      "target": "enthaltsam"
+    },
+    {
+      "source": "asozial",
+      "target": "bitchy"
+    },
+    {
+      "source": "asozial",
+      "target": "ignorant"
+    },
+    {
+      "source": "asozial",
+      "target": "intolerant"
+    },
+    {
+      "source": "aufffallend",
+      "target": "exotisch"
+    },
+    {
+      "source": "aufffallend",
+      "target": "markant"
+    },
+    {
+      "source": "aufffallend",
+      "target": "modisch"
+    },
+    {
+      "source": "aufffallend",
+      "target": "ungew\u00f6hnlich"
+    },
+    {
+      "source": "aufgeschlossen",
+      "target": "offenherzig"
+    },
+    {
+      "source": "aufgeschlossen",
+      "target": "weltoffen"
+    },
+    {
+      "source": "au\u00dfergew\u00f6hnlich",
+      "target": "aufffallend"
+    },
+    {
+      "source": "au\u00dfergew\u00f6hnlich",
+      "target": "einzigartig"
+    },
+    {
+      "source": "au\u00dfergew\u00f6hnlich",
+      "target": "exzentrisch"
+    },
+    {
+      "source": "au\u00dfergew\u00f6hnlich",
+      "target": "individuell"
+    },
+    {
+      "source": "au\u00dfergew\u00f6hnlich",
+      "target": "schillernd"
+    },
+    {
+      "source": "au\u00dfergew\u00f6hnlich",
+      "target": "talentiert"
+    },
+    {
+      "source": "einzigartig",
+      "target": "besonders"
+    },
+    {
+      "source": "einzigartig",
+      "target": "einmalig"
+    },
+    {
+      "source": "einzigartig",
+      "target": "\u00fcberragend"
+    },
+    {
+      "source": "einzigartig",
+      "target": "unverwechselbar"
+    },
+    {
+      "source": "exzentrisch",
+      "target": "extravagant"
+    },
+    {
+      "source": "exzentrisch",
+      "target": "k\u00fcnstlich"
+    },
+    {
+      "source": "exzentrisch",
+      "target": "originell"
+    },
+    {
+      "source": "individuell",
+      "target": "individualistisch"
+    },
+    {
+      "source": "individuell",
+      "target": "unkonventionell"
+    },
+    {
+      "source": "schillernd",
+      "target": "facettenreich"
+    },
+    {
+      "source": "schillernd",
+      "target": "fantasievoll"
+    },
+    {
+      "source": "schillernd",
+      "target": "furios"
+    },
+    {
+      "source": "schillernd",
+      "target": "glamur\u00f6s"
+    },
+    {
+      "source": "schillernd",
+      "target": "phantasievoll"
+    },
+    {
+      "source": "talentiert",
+      "target": "geschickt"
+    },
+    {
+      "source": "talentiert",
+      "target": "kreativ"
+    },
+    {
+      "source": "talentiert",
+      "target": "k\u00fcnstlerisch"
+    },
+    {
+      "source": "talentiert",
+      "target": "musikalisch"
+    },
+    {
+      "source": "talentiert",
+      "target": "sch\u00f6ngeistig"
+    },
+    {
+      "source": "talentiert",
+      "target": "sprachbegabt"
+    },
+    {
+      "source": "talentiert",
+      "target": "vielf\u00e4ltig"
+    },
+    {
+      "source": "bedrohlich",
+      "target": "aggressiv"
+    },
+    {
+      "source": "bedrohlich",
+      "target": "angsteinfl\u00f6\u00dfend"
+    },
+    {
+      "source": "bedrohlich",
+      "target": "besessen"
+    },
+    {
+      "source": "bedrohlich",
+      "target": "einsch\u00fcchternd"
+    },
+    {
+      "source": "bedrohlich",
+      "target": "gef\u00e4hrlich"
+    },
+    {
+      "source": "bedrohlich",
+      "target": "gewaltt\u00e4tig"
+    },
+    {
+      "source": "bedrohlich",
+      "target": "grausam"
+    },
+    {
+      "source": "bedrohlich",
+      "target": "hasserf\u00fcllt"
+    },
+    {
+      "source": "bedrohlich",
+      "target": "skrupellos"
+    },
+    {
+      "source": "bedrohlich",
+      "target": "verbrecherisch"
+    },
+    {
+      "source": "bedrohlich",
+      "target": "zerst\u00f6rerisch"
+    },
+    {
+      "source": "besessen",
+      "target": "fanatisch"
+    },
+    {
+      "source": "besessen",
+      "target": "fixiert"
+    },
+    {
+      "source": "skrupellos",
+      "target": "kriminell"
+    },
+    {
+      "source": "zerst\u00f6rerisch",
+      "target": "destruktiv"
+    },
+    {
+      "source": "beherrscht",
+      "target": "bed\u00e4chtig"
+    },
+    {
+      "source": "beherrscht",
+      "target": "besonnen"
+    },
+    {
+      "source": "beherrscht",
+      "target": "dickh\u00e4utig"
+    },
+    {
+      "source": "beherrscht",
+      "target": "eisern"
+    },
+    {
+      "source": "beherrscht",
+      "target": "geduldig"
+    },
+    {
+      "source": "beherrscht",
+      "target": "hart"
+    },
+    {
+      "source": "beherrscht",
+      "target": "knallhart"
+    },
+    {
+      "source": "beherrscht",
+      "target": "kontrolliert"
+    },
+    {
+      "source": "beherrscht",
+      "target": "k\u00fchl"
+    },
+    {
+      "source": "belehrend",
+      "target": "besserwisserisch"
+    },
+    {
+      "source": "besitzergreifend",
+      "target": "machtbesessen"
+    },
+    {
+      "source": "besitzergreifend",
+      "target": "machtgierig"
+    },
+    {
+      "source": "besitzergreifend",
+      "target": "machthungrig"
+    },
+    {
+      "source": "besitzergreifend",
+      "target": "raffend"
+    },
+    {
+      "source": "bestechlich",
+      "target": "falsch"
+    },
+    {
+      "source": "bestechlich",
+      "target": "illoyal"
+    },
+    {
+      "source": "bestechlich",
+      "target": "korrupt"
+    },
+    {
+      "source": "bieder",
+      "target": "schrullig"
+    },
+    {
+      "source": "bieder",
+      "target": "spie\u00dfig"
+    },
+    {
+      "source": "brav",
+      "target": "folgsam"
+    },
+    {
+      "source": "brav",
+      "target": "f\u00fcgsam"
+    },
+    {
+      "source": "brav",
+      "target": "gef\u00fcgig"
+    },
+    {
+      "source": "brav",
+      "target": "gehorsam"
+    },
+    {
+      "source": "brav",
+      "target": "keusch"
+    },
+    {
+      "source": "brav",
+      "target": "willig"
+    },
+    {
+      "source": "brav",
+      "target": "z\u00fcchtig"
+    },
+    {
+      "source": "chaotisch",
+      "target": "schlampig"
+    },
+    {
+      "source": "chaotisch",
+      "target": "umst\u00e4ndlich"
+    },
+    {
+      "source": "chaotisch",
+      "target": "unordentlich"
+    },
+    {
+      "source": "Charaktereigenschaften",
+      "target": "negativ belegt"
+    },
+    {
+      "source": "Charaktereigenschaften",
+      "target": "positiv belegt"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "abweisend"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "altmodisch"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "anstrengend"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "arm"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "arrogant"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "bedrohlich"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "besitzergreifend"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "chaotisch"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "cholerisch"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "dekadent"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "dick"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "dickk\u00f6pfig"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "dumm"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "dunkel"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "egoistisch"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "einsam"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "ekelig"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "enthemmt"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "faul"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "gemein"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "gew\u00f6hnlich"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "gierig"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "grob"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "h\u00e4\u00dflich"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "ironisch"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "kalt"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "komisch"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "kopflastig"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "krank"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "leidend"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "naiv"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "negativ"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "neidisch"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "oberfl\u00e4chlich"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "pedantisch"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "phlegmatisch"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "respektlos"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "ruhelos"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "schwach"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "sexbegierig"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "streits\u00fcchtig"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "streng"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "suspekt"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "tollpatschig"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "\u00fcbellaunig"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "unehrlich"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "ungehorsam"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "unglaubw\u00fcrdig"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "unh\u00f6flich"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "unkonzentriert"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "unmoralisch"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "unnahbar"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "unsachlich"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "unsicher"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "unzuverl\u00e4ssig"
+    },
+    {
+      "source": "negativ belegt",
+      "target": "verschlossen"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "arbeitssam"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "au\u00dfergew\u00f6hnlich"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "beherrscht"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "beliebt"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "charismatisch"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "cool"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "direkt"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "distinguiert"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "ehrenhaft"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "ehrgeizig"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "ehrlich"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "elegant"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "eloquent"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "emotional"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "entschlossen"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "erotisch"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "gerecht"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "gl\u00e4ubig"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "harmlos"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "imposant"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "intelektuell"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "k\u00e4mpferisch"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "klug"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "lebendig"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "leicht"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "mutig"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "nat\u00fcrlich"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "nett"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "neu"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "offen"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "ordentlich"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "positiv"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "respektvoll"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "reum\u00fctig"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "ruhig"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "sanft"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "schlau"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "sch\u00f6n"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "selbstbewusst"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "sorglos"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "sparsam"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "sportlich"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "stark"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "stolz"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "s\u00fc\u00df"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "tr\u00e4umerisch"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "uneigenn\u00fctzig"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "vorsichtig"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "warm"
+    },
+    {
+      "source": "positiv belegt",
+      "target": "zufrieden"
+    },
+    {
+      "source": "charismatisch",
+      "target": "charmant"
+    },
+    {
+      "source": "charismatisch",
+      "target": "galant"
+    },
+    {
+      "source": "cholerisch",
+      "target": "aufbrausend"
+    },
+    {
+      "source": "cholerisch",
+      "target": "j\u00e4hzornig"
+    },
+    {
+      "source": "cholerisch",
+      "target": "reizbar"
+    },
+    {
+      "source": "cholerisch",
+      "target": "\u00fcberreagierend"
+    },
+    {
+      "source": "cholerisch",
+      "target": "unbeherrscht"
+    },
+    {
+      "source": "cool",
+      "target": "l\u00e4ssig"
+    },
+    {
+      "source": "cool",
+      "target": "locker"
+    },
+    {
+      "source": "cool",
+      "target": "smart"
+    },
+    {
+      "source": "dekadent",
+      "target": "hedonistisch"
+    },
+    {
+      "source": "dem\u00fctig",
+      "target": "aufopfernd"
+    },
+    {
+      "source": "dem\u00fctig",
+      "target": "begn\u00fcgsam"
+    },
+    {
+      "source": "devot",
+      "target": "duldsam"
+    },
+    {
+      "source": "devot",
+      "target": "feige"
+    },
+    {
+      "source": "devot",
+      "target": "masochistisch"
+    },
+    {
+      "source": "devot",
+      "target": "unterw\u00fcrfig"
+    },
+    {
+      "source": "dick",
+      "target": "verfressen"
+    },
+    {
+      "source": "dickk\u00f6pfig",
+      "target": "eigensinnig"
+    },
+    {
+      "source": "dickk\u00f6pfig",
+      "target": "eigenwillig"
+    },
+    {
+      "source": "distinguiert",
+      "target": "anspruchsvoll"
+    },
+    {
+      "source": "distinguiert",
+      "target": "gediegen"
+    },
+    {
+      "source": "distinguiert",
+      "target": "konservativ"
+    },
+    {
+      "source": "distinguiert",
+      "target": "kultiviert"
+    },
+    {
+      "source": "distinguiert",
+      "target": "mond\u00e4n"
+    },
+    {
+      "source": "distinguiert",
+      "target": "nonchalant"
+    },
+    {
+      "source": "dominant",
+      "target": "energisch"
+    },
+    {
+      "source": "dominant",
+      "target": "resolut"
+    },
+    {
+      "source": "dominant",
+      "target": "rigoros"
+    },
+    {
+      "source": "dumm",
+      "target": "asozial"
+    },
+    {
+      "source": "dumm",
+      "target": "doof"
+    },
+    {
+      "source": "dumm",
+      "target": "einf\u00e4ltig"
+    },
+    {
+      "source": "dumm",
+      "target": "idiotisch"
+    },
+    {
+      "source": "dumm",
+      "target": "inkompetent"
+    },
+    {
+      "source": "dumm",
+      "target": "leichtsinnig"
+    },
+    {
+      "source": "dumm",
+      "target": "t\u00f6richt"
+    },
+    {
+      "source": "leichtsinnig",
+      "target": "leichtfertig"
+    },
+    {
+      "source": "leichtsinnig",
+      "target": "leichtlebig"
+    },
+    {
+      "source": "dynamisch",
+      "target": "energetisch"
+    },
+    {
+      "source": "dynamisch",
+      "target": "energiegeladen"
+    },
+    {
+      "source": "dynamisch",
+      "target": "energievoll"
+    },
+    {
+      "source": "egoistisch",
+      "target": "egozentrisch"
+    },
+    {
+      "source": "ehrenhaft",
+      "target": "erhaben"
+    },
+    {
+      "source": "ehrenhaft",
+      "target": "fair"
+    },
+    {
+      "source": "ehrenhaft",
+      "target": "heldenhaft"
+    },
+    {
+      "source": "ehrenhaft",
+      "target": "heldenm\u00fctig"
+    },
+    {
+      "source": "ehrenhaft",
+      "target": "hilfsbereit"
+    },
+    {
+      "source": "ehrenhaft",
+      "target": "pflichtbewusst"
+    },
+    {
+      "source": "ehrenhaft",
+      "target": "treu"
+    },
+    {
+      "source": "ehrenhaft",
+      "target": "w\u00fcrdevoll"
+    },
+    {
+      "source": "heldenhaft",
+      "target": "heroisch"
+    },
+    {
+      "source": "heldenhaft",
+      "target": "selbstlos"
+    },
+    {
+      "source": "treu",
+      "target": "standhaft"
+    },
+    {
+      "source": "treu",
+      "target": "vertrauensw\u00fcrdig"
+    },
+    {
+      "source": "treu",
+      "target": "zuverl\u00e4ssig"
+    },
+    {
+      "source": "ehrgeizig",
+      "target": "ambitioniert"
+    },
+    {
+      "source": "ehrgeizig",
+      "target": "dominant"
+    },
+    {
+      "source": "ehrgeizig",
+      "target": "hartn\u00e4ckig"
+    },
+    {
+      "source": "ehrlich",
+      "target": "anst\u00e4ndig"
+    },
+    {
+      "source": "ehrlich",
+      "target": "aufrichtig"
+    },
+    {
+      "source": "ehrlich",
+      "target": "authentisch"
+    },
+    {
+      "source": "ehrlich",
+      "target": "echt"
+    },
+    {
+      "source": "ehrlich",
+      "target": "integer"
+    },
+    {
+      "source": "ehrlich",
+      "target": "loyal"
+    },
+    {
+      "source": "ehrlich",
+      "target": "transparent"
+    },
+    {
+      "source": "ehrlich",
+      "target": "wahrhaftig"
+    },
+    {
+      "source": "ehrlich",
+      "target": "wahrheitsliebend"
+    },
+    {
+      "source": "einfach",
+      "target": "bequem"
+    },
+    {
+      "source": "einfach",
+      "target": "h\u00e4uslich"
+    },
+    {
+      "source": "einf\u00fchlsam",
+      "target": "empathisch"
+    },
+    {
+      "source": "einf\u00fchlsam",
+      "target": "gro\u00dfherzig"
+    },
+    {
+      "source": "einf\u00fchlsam",
+      "target": "gro\u00dfm\u00fctig"
+    },
+    {
+      "source": "einf\u00fchlsam",
+      "target": "gro\u00dfz\u00fcgig"
+    },
+    {
+      "source": "einf\u00fchlsam",
+      "target": "gutherzig"
+    },
+    {
+      "source": "einf\u00fchlsam",
+      "target": "g\u00fctig"
+    },
+    {
+      "source": "einf\u00fchlsam",
+      "target": "gutm\u00fctig"
+    },
+    {
+      "source": "einf\u00fchlsam",
+      "target": "mitf\u00fchlend"
+    },
+    {
+      "source": "einf\u00fchlsam",
+      "target": "nachsichtig"
+    },
+    {
+      "source": "einf\u00fchlsam",
+      "target": "r\u00fccksichtsvoll"
+    },
+    {
+      "source": "einf\u00fchlsam",
+      "target": "verst\u00e4ndnisvoll"
+    },
+    {
+      "source": "einf\u00fchlsam",
+      "target": "warmherzig"
+    },
+    {
+      "source": "einsam",
+      "target": "aufmerksamkeitsbed\u00fcrftig"
+    },
+    {
+      "source": "ekelig",
+      "target": "widerlich"
+    },
+    {
+      "source": "elegant",
+      "target": "anmutig"
+    },
+    {
+      "source": "elegant",
+      "target": "ansprechend"
+    },
+    {
+      "source": "elegant",
+      "target": "damenhaft"
+    },
+    {
+      "source": "elegant",
+      "target": "dezent"
+    },
+    {
+      "source": "elegant",
+      "target": "edel"
+    },
+    {
+      "source": "elegant",
+      "target": "fein"
+    },
+    {
+      "source": "elegant",
+      "target": "gepflegt"
+    },
+    {
+      "source": "elegant",
+      "target": "grazil"
+    },
+    {
+      "source": "elegant",
+      "target": "grazi\u00f6s"
+    },
+    {
+      "source": "elegant",
+      "target": "schneidig"
+    },
+    {
+      "source": "elegant",
+      "target": "stilbewusst"
+    },
+    {
+      "source": "elegant",
+      "target": "stilsicher"
+    },
+    {
+      "source": "elegant",
+      "target": "stilvoll"
+    },
+    {
+      "source": "elegant",
+      "target": "tadellos"
+    },
+    {
+      "source": "elegant",
+      "target": "vornehm"
+    },
+    {
+      "source": "elegant",
+      "target": "zeitlos"
+    },
+    {
+      "source": "eloquent",
+      "target": "kommunikativ"
+    },
+    {
+      "source": "eloquent",
+      "target": "kontaktfreudig"
+    },
+    {
+      "source": "eloquent",
+      "target": "redegewandt"
+    },
+    {
+      "source": "emotional",
+      "target": "gef\u00fchlsbetont"
+    },
+    {
+      "source": "emotional",
+      "target": "humorvoll"
+    },
+    {
+      "source": "emotional",
+      "target": "sensibel"
+    },
+    {
+      "source": "emotional",
+      "target": "sentimental"
+    },
+    {
+      "source": "emotional",
+      "target": "temperamentvoll"
+    },
+    {
+      "source": "humorvoll",
+      "target": "fr\u00f6hlich"
+    },
+    {
+      "source": "humorvoll",
+      "target": "lustig"
+    },
+    {
+      "source": "humorvoll",
+      "target": "verschmitzt"
+    },
+    {
+      "source": "humorvoll",
+      "target": "witzig"
+    },
+    {
+      "source": "energielos",
+      "target": "lethargisch"
+    },
+    {
+      "source": "enthemmt",
+      "target": "hemmungslos"
+    },
+    {
+      "source": "enthemmt",
+      "target": "ma\u00dflos"
+    },
+    {
+      "source": "enthemmt",
+      "target": "\u00fcberdreht"
+    },
+    {
+      "source": "enthemmt",
+      "target": "ungez\u00fcgelt"
+    },
+    {
+      "source": "entschlossen",
+      "target": "erfolgsorientiert"
+    },
+    {
+      "source": "entschlossen",
+      "target": "f\u00fchrungsstark"
+    },
+    {
+      "source": "entschlossen",
+      "target": "leistungsstark"
+    },
+    {
+      "source": "entschlossen",
+      "target": "pragmatisch"
+    },
+    {
+      "source": "entschlossen",
+      "target": "tatkr\u00e4ftig"
+    },
+    {
+      "source": "tatkr\u00e4ftig",
+      "target": "zielstrebig"
+    },
+    {
+      "source": "tatkr\u00e4ftig",
+      "target": "zupackend"
+    },
+    {
+      "source": "erotisch",
+      "target": "feminin"
+    },
+    {
+      "source": "erotisch",
+      "target": "freiz\u00fcgig"
+    },
+    {
+      "source": "erotisch",
+      "target": "leidenschaftlich"
+    },
+    {
+      "source": "erotisch",
+      "target": "maskulin"
+    },
+    {
+      "source": "erotisch",
+      "target": "sexy"
+    },
+    {
+      "source": "erotisch",
+      "target": "unartig"
+    },
+    {
+      "source": "erotisch",
+      "target": "verf\u00fchrerisch"
+    },
+    {
+      "source": "erotisch",
+      "target": "verrucht"
+    },
+    {
+      "source": "unartig",
+      "target": "unanst\u00e4ndig"
+    },
+    {
+      "source": "faul",
+      "target": "lustlos"
+    },
+    {
+      "source": "faul",
+      "target": "tr\u00e4ge"
+    },
+    {
+      "source": "fit",
+      "target": "rege"
+    },
+    {
+      "source": "fit",
+      "target": "vital"
+    },
+    {
+      "source": "freiheitsliebend",
+      "target": "emanzipiert"
+    },
+    {
+      "source": "freiheitsliebend",
+      "target": "patriotisch"
+    },
+    {
+      "source": "freundlich",
+      "target": "herzlich"
+    },
+    {
+      "source": "fr\u00f6hlich",
+      "target": "frohnatur"
+    },
+    {
+      "source": "fr\u00f6hlich",
+      "target": "heiter"
+    },
+    {
+      "source": "fr\u00f6hlich",
+      "target": "rohsinnig"
+    },
+    {
+      "source": "fr\u00f6hlich",
+      "target": "spa\u00dfig"
+    },
+    {
+      "source": "gef\u00fchllos",
+      "target": "eiskalt"
+    },
+    {
+      "source": "gef\u00fchllos",
+      "target": "frostig"
+    },
+    {
+      "source": "gef\u00fchllos",
+      "target": "gef\u00fchlskalt"
+    },
+    {
+      "source": "gef\u00fchllos",
+      "target": "kaltbl\u00fctig"
+    },
+    {
+      "source": "gef\u00fchllos",
+      "target": "kaltherzig"
+    },
+    {
+      "source": "gef\u00fchllos",
+      "target": "lieblos"
+    },
+    {
+      "source": "geizig",
+      "target": "kleinlich"
+    },
+    {
+      "source": "geizig",
+      "target": "knickrig"
+    },
+    {
+      "source": "gemein",
+      "target": "niedertr\u00e4chtig"
+    },
+    {
+      "source": "gemein",
+      "target": "sadistisch"
+    },
+    {
+      "source": "gemein",
+      "target": "verschlagen"
+    },
+    {
+      "source": "niedertr\u00e4chtig",
+      "target": "fies"
+    },
+    {
+      "source": "niedertr\u00e4chtig",
+      "target": "heimt\u00fcckisch"
+    },
+    {
+      "source": "niedertr\u00e4chtig",
+      "target": "mies"
+    },
+    {
+      "source": "gerecht",
+      "target": "moralisch"
+    },
+    {
+      "source": "gerecht",
+      "target": "rechtschaffen"
+    },
+    {
+      "source": "gerecht",
+      "target": "solidarisch"
+    },
+    {
+      "source": "gerecht",
+      "target": "tolerant"
+    },
+    {
+      "source": "gew\u00f6hnlich",
+      "target": "blass"
+    },
+    {
+      "source": "gew\u00f6hnlich",
+      "target": "nichtssagend"
+    },
+    {
+      "source": "gew\u00f6hnlich",
+      "target": "unscheinbar"
+    },
+    {
+      "source": "gierig",
+      "target": "geizig"
+    },
+    {
+      "source": "gierig",
+      "target": "geldgierig"
+    },
+    {
+      "source": "gierig",
+      "target": "habgierig"
+    },
+    {
+      "source": "giftig",
+      "target": "bissig"
+    },
+    {
+      "source": "giftig",
+      "target": "garstig"
+    },
+    {
+      "source": "gl\u00e4ubig",
+      "target": "ehrf\u00fcrchtig"
+    },
+    {
+      "source": "gl\u00e4ubig",
+      "target": "fromm"
+    },
+    {
+      "source": "gl\u00e4ubig",
+      "target": "glaubensstark"
+    },
+    {
+      "source": "gl\u00e4ubig",
+      "target": "gottergeben"
+    },
+    {
+      "source": "gl\u00e4ubig",
+      "target": "gottesf\u00fcrchtig"
+    },
+    {
+      "source": "gl\u00e4ubig",
+      "target": "inbr\u00fcnstig"
+    },
+    {
+      "source": "gl\u00e4ubig",
+      "target": "religi\u00f6s"
+    },
+    {
+      "source": "gl\u00e4ubig",
+      "target": "spirituell"
+    },
+    {
+      "source": "gleichg\u00fcltig",
+      "target": "gleichm\u00fctig"
+    },
+    {
+      "source": "grob",
+      "target": "derb"
+    },
+    {
+      "source": "grob",
+      "target": "plump"
+    },
+    {
+      "source": "grob",
+      "target": "unsensibel"
+    },
+    {
+      "source": "h\u00e4\u00dflich",
+      "target": "gr\u00e4\u00dflich"
+    },
+    {
+      "source": "h\u00e4\u00dflich",
+      "target": "sch\u00e4big"
+    },
+    {
+      "source": "hektisch",
+      "target": "hibbelig"
+    },
+    {
+      "source": "hektisch",
+      "target": "nerv\u00f6s"
+    },
+    {
+      "source": "hektisch",
+      "target": "schnell"
+    },
+    {
+      "source": "hektisch",
+      "target": "zappelig"
+    },
+    {
+      "source": "hilflos",
+      "target": "unselbst\u00e4ndig"
+    },
+    {
+      "source": "intelektuell",
+      "target": "n\u00fcchtern"
+    },
+    {
+      "source": "intelektuell",
+      "target": "objektiv"
+    },
+    {
+      "source": "intelektuell",
+      "target": "rational"
+    },
+    {
+      "source": "intelektuell",
+      "target": "realistisch"
+    },
+    {
+      "source": "intelektuell",
+      "target": "reif"
+    },
+    {
+      "source": "intelektuell",
+      "target": "vern\u00fcnftig"
+    },
+    {
+      "source": "intelligent",
+      "target": "genial"
+    },
+    {
+      "source": "intelligent",
+      "target": "hochbegabt"
+    },
+    {
+      "source": "ironisch",
+      "target": "subtil"
+    },
+    {
+      "source": "kalt",
+      "target": "gef\u00fchllos"
+    },
+    {
+      "source": "kalt",
+      "target": "mitleidlos"
+    },
+    {
+      "source": "mitleidlos",
+      "target": "erbarmungslos"
+    },
+    {
+      "source": "mitleidlos",
+      "target": "gewissenlos"
+    },
+    {
+      "source": "mitleidlos",
+      "target": "gnadenlos"
+    },
+    {
+      "source": "mitleidlos",
+      "target": "hartherzig"
+    },
+    {
+      "source": "mitleidlos",
+      "target": "herzlos"
+    },
+    {
+      "source": "k\u00e4mpferisch",
+      "target": "freiheitsliebend"
+    },
+    {
+      "source": "k\u00e4mpferisch",
+      "target": "impulsiv"
+    },
+    {
+      "source": "k\u00e4mpferisch",
+      "target": "provokant"
+    },
+    {
+      "source": "k\u00e4mpferisch",
+      "target": "unbeugsam"
+    },
+    {
+      "source": "k\u00e4mpferisch",
+      "target": "wild"
+    },
+    {
+      "source": "provokant",
+      "target": "rebellisch"
+    },
+    {
+      "source": "unbeugsam",
+      "target": "taff"
+    },
+    {
+      "source": "wild",
+      "target": "k\u00fchn"
+    },
+    {
+      "source": "keck",
+      "target": "kess"
+    },
+    {
+      "source": "keck",
+      "target": "kokett"
+    },
+    {
+      "source": "keck",
+      "target": "neckisch"
+    },
+    {
+      "source": "keck",
+      "target": "schelmisch"
+    },
+    {
+      "source": "keck",
+      "target": "vorwitzig"
+    },
+    {
+      "source": "klug",
+      "target": "clever"
+    },
+    {
+      "source": "klug",
+      "target": "diplomatisch"
+    },
+    {
+      "source": "klug",
+      "target": "einfallsreich"
+    },
+    {
+      "source": "klug",
+      "target": "erfinderisch"
+    },
+    {
+      "source": "klug",
+      "target": "gebildet"
+    },
+    {
+      "source": "klug",
+      "target": "gescheit"
+    },
+    {
+      "source": "klug",
+      "target": "intelligent"
+    },
+    {
+      "source": "klug",
+      "target": "kompetent"
+    },
+    {
+      "source": "klug",
+      "target": "reflektiert"
+    },
+    {
+      "source": "klug",
+      "target": "sachlich"
+    },
+    {
+      "source": "klug",
+      "target": "strebsam"
+    },
+    {
+      "source": "klug",
+      "target": "\u00fcberlegt"
+    },
+    {
+      "source": "klug",
+      "target": "weise"
+    },
+    {
+      "source": "klug",
+      "target": "weitsichtig"
+    },
+    {
+      "source": "klug",
+      "target": "wissensdurstig"
+    },
+    {
+      "source": "kompetent",
+      "target": "schlagfertig"
+    },
+    {
+      "source": "wissensdurstig",
+      "target": "wissbegierig"
+    },
+    {
+      "source": "komisch",
+      "target": "merkw\u00fcrdig"
+    },
+    {
+      "source": "komisch",
+      "target": "seltsam"
+    },
+    {
+      "source": "komisch",
+      "target": "skurril"
+    },
+    {
+      "source": "komisch",
+      "target": "ulkig"
+    },
+    {
+      "source": "komisch",
+      "target": "verschroben"
+    },
+    {
+      "source": "stur",
+      "target": "stoisch"
+    },
+    {
+      "source": "stur",
+      "target": "sturk\u00f6pfig"
+    },
+    {
+      "source": "stur",
+      "target": "unnachgiebig"
+    },
+    {
+      "source": "kopflastig",
+      "target": "abgebr\u00fcht"
+    },
+    {
+      "source": "kopflastig",
+      "target": "abgekl\u00e4rt"
+    },
+    {
+      "source": "kopflastig",
+      "target": "berechnend"
+    },
+    {
+      "source": "kopflastig",
+      "target": "kalkulierend"
+    },
+    {
+      "source": "kraftvoll",
+      "target": "belastbar"
+    },
+    {
+      "source": "kraftvoll",
+      "target": "kr\u00e4ftig"
+    },
+    {
+      "source": "krank",
+      "target": "labil"
+    },
+    {
+      "source": "krank",
+      "target": "s\u00fcchtig"
+    },
+    {
+      "source": "krank",
+      "target": "verr\u00fcckt"
+    },
+    {
+      "source": "krank",
+      "target": "zwanghaft"
+    },
+    {
+      "source": "verr\u00fcckt",
+      "target": "irre"
+    },
+    {
+      "source": "verr\u00fcckt",
+      "target": "wahnhaft"
+    },
+    {
+      "source": "verr\u00fcckt",
+      "target": "wahnsinnig"
+    },
+    {
+      "source": "zwanghaft",
+      "target": "neurotisch"
+    },
+    {
+      "source": "langweilig",
+      "target": "einfallslos"
+    },
+    {
+      "source": "langweilig",
+      "target": "\u00f6de"
+    },
+    {
+      "source": "launisch",
+      "target": "sprunghaft"
+    },
+    {
+      "source": "launisch",
+      "target": "wechselhaft"
+    },
+    {
+      "source": "lebendig",
+      "target": "dynamisch"
+    },
+    {
+      "source": "lebendig",
+      "target": "fit"
+    },
+    {
+      "source": "lebendig",
+      "target": "keck"
+    },
+    {
+      "source": "lebendig",
+      "target": "lebensfroh"
+    },
+    {
+      "source": "lebendig",
+      "target": "lebhaft"
+    },
+    {
+      "source": "lebendig",
+      "target": "motivierend"
+    },
+    {
+      "source": "lebendig",
+      "target": "spontan"
+    },
+    {
+      "source": "lebendig",
+      "target": "\u00fcberm\u00fctig"
+    },
+    {
+      "source": "lebendig",
+      "target": "unternehmungslustig"
+    },
+    {
+      "source": "lebensfroh",
+      "target": "lebensbejahend"
+    },
+    {
+      "source": "lebensfroh",
+      "target": "lebenslustig"
+    },
+    {
+      "source": "lebensfroh",
+      "target": "optimistisch"
+    },
+    {
+      "source": "lebhaft",
+      "target": "aufgeweckt"
+    },
+    {
+      "source": "lebhaft",
+      "target": "enthusiastisch"
+    },
+    {
+      "source": "lebhaft",
+      "target": "\u00fcberschwenglich"
+    },
+    {
+      "source": "spontan",
+      "target": "flexibel"
+    },
+    {
+      "source": "\u00fcberm\u00fctig",
+      "target": "ausgeflippt"
+    },
+    {
+      "source": "\u00fcberm\u00fctig",
+      "target": "ausgelassen"
+    },
+    {
+      "source": "\u00fcberm\u00fctig",
+      "target": "draufg\u00e4ngerisch"
+    },
+    {
+      "source": "\u00fcberm\u00fctig",
+      "target": "mitrei\u00dfend"
+    },
+    {
+      "source": "\u00fcberm\u00fctig",
+      "target": "quirlig"
+    },
+    {
+      "source": "unternehmungslustig",
+      "target": "abenteuerlustig"
+    },
+    {
+      "source": "unternehmungslustig",
+      "target": "begeisterungsf\u00e4hig"
+    },
+    {
+      "source": "unternehmungslustig",
+      "target": "feurig"
+    },
+    {
+      "source": "unternehmungslustig",
+      "target": "neugierig"
+    },
+    {
+      "source": "leidend",
+      "target": "traurig"
+    },
+    {
+      "source": "leidend",
+      "target": "ungl\u00fccklich"
+    },
+    {
+      "source": "leidend",
+      "target": "zimperlich"
+    },
+    {
+      "source": "traurig",
+      "target": "depressiv"
+    },
+    {
+      "source": "traurig",
+      "target": "melancholisch"
+    },
+    {
+      "source": "ungl\u00fccklich",
+      "target": "verzweifelt"
+    },
+    {
+      "source": "zimperlich",
+      "target": "mimosenhaft"
+    },
+    {
+      "source": "melancholisch",
+      "target": "bedr\u00fcckt"
+    },
+    {
+      "source": "melancholisch",
+      "target": "niedergeschlagen"
+    },
+    {
+      "source": "melancholisch",
+      "target": "schwerm\u00fctig"
+    },
+    {
+      "source": "melancholisch",
+      "target": "tr\u00fcbsinnig"
+    },
+    {
+      "source": "melancholisch",
+      "target": "wehm\u00fctig"
+    },
+    {
+      "source": "missmutig",
+      "target": "sauert\u00f6pfisch"
+    },
+    {
+      "source": "mitleiderregend",
+      "target": "erb\u00e4rmlich"
+    },
+    {
+      "source": "mutig",
+      "target": "beherzt"
+    },
+    {
+      "source": "mutig",
+      "target": "couragiert"
+    },
+    {
+      "source": "mutig",
+      "target": "furchtlos"
+    },
+    {
+      "source": "mutig",
+      "target": "tapfer"
+    },
+    {
+      "source": "mutig",
+      "target": "unerschrocken"
+    },
+    {
+      "source": "mutig",
+      "target": "verwegen"
+    },
+    {
+      "source": "tapfer",
+      "target": "unverzagt"
+    },
+    {
+      "source": "verwegen",
+      "target": "wagemutig"
+    },
+    {
+      "source": "verwegen",
+      "target": "waghalsig"
+    },
+    {
+      "source": "nachdenklich",
+      "target": "besorgt"
+    },
+    {
+      "source": "nachdenklich",
+      "target": "gr\u00fcbelnd"
+    },
+    {
+      "source": "nachdenklich",
+      "target": "tiefgr\u00fcndig"
+    },
+    {
+      "source": "nachtragend",
+      "target": "rachs\u00fcchtig"
+    },
+    {
+      "source": "nachtragend",
+      "target": "verbittert"
+    },
+    {
+      "source": "naiv",
+      "target": "arglos"
+    },
+    {
+      "source": "naiv",
+      "target": "ausnutzbar"
+    },
+    {
+      "source": "naiv",
+      "target": "beeinflussbar"
+    },
+    {
+      "source": "naiv",
+      "target": "blau\u00e4ugig"
+    },
+    {
+      "source": "naiv",
+      "target": "kindlich"
+    },
+    {
+      "source": "naiv",
+      "target": "lammfromm"
+    },
+    {
+      "source": "naiv",
+      "target": "leichtgl\u00e4ubig"
+    },
+    {
+      "source": "naiv",
+      "target": "weltfremd"
+    },
+    {
+      "source": "nat\u00fcrlich",
+      "target": "bodenst\u00e4ndig"
+    },
+    {
+      "source": "nat\u00fcrlich",
+      "target": "einfach"
+    },
+    {
+      "source": "nat\u00fcrlich",
+      "target": "naturverbunden"
+    },
+    {
+      "source": "negativ",
+      "target": "pessimistisch"
+    },
+    {
+      "source": "negativ",
+      "target": "unzufrieden"
+    },
+    {
+      "source": "unzufrieden",
+      "target": "verbissen"
+    },
+    {
+      "source": "neidisch",
+      "target": "eifers\u00fcchtig"
+    },
+    {
+      "source": "neidisch",
+      "target": "missg\u00fcnstig"
+    },
+    {
+      "source": "neidisch",
+      "target": "neiderf\u00fcllt"
+    },
+    {
+      "source": "oberfl\u00e4chlich",
+      "target": "seicht"
+    },
+    {
+      "source": "pedantisch",
+      "target": "kleinkariert"
+    },
+    {
+      "source": "pedantisch",
+      "target": "penibel"
+    },
+    {
+      "source": "pedantisch",
+      "target": "pingelig"
+    },
+    {
+      "source": "pedantisch",
+      "target": "rechthaberisch"
+    },
+    {
+      "source": "pedantisch",
+      "target": "streberhaft"
+    },
+    {
+      "source": "pedantisch",
+      "target": "\u00fcbergenau"
+    },
+    {
+      "source": "phlegmatisch",
+      "target": "energielos"
+    },
+    {
+      "source": "phlegmatisch",
+      "target": "gleichg\u00fcltig"
+    },
+    {
+      "source": "phlegmatisch",
+      "target": "starr"
+    },
+    {
+      "source": "phlegmatisch",
+      "target": "tatenlos"
+    },
+    {
+      "source": "phlegmatisch",
+      "target": "temperamentlos"
+    },
+    {
+      "source": "respektlos",
+      "target": "aufdringlich"
+    },
+    {
+      "source": "respektlos",
+      "target": "dreist"
+    },
+    {
+      "source": "respektlos",
+      "target": "frauenfeindlich"
+    },
+    {
+      "source": "respektlos",
+      "target": "m\u00e4nnerfeindlich"
+    },
+    {
+      "source": "respektlos",
+      "target": "r\u00fccksichtslos"
+    },
+    {
+      "source": "respektlos",
+      "target": "schadenfroh"
+    },
+    {
+      "source": "respektlos",
+      "target": "sensationsl\u00fcstern"
+    },
+    {
+      "source": "respektlos",
+      "target": "unmenschlich"
+    },
+    {
+      "source": "ruhelos",
+      "target": "hektisch"
+    },
+    {
+      "source": "ruhelos",
+      "target": "unruhig"
+    },
+    {
+      "source": "ruhelos",
+      "target": "unstet"
+    },
+    {
+      "source": "schwach",
+      "target": "angepasst"
+    },
+    {
+      "source": "schwach",
+      "target": "defensiv"
+    },
+    {
+      "source": "schwach",
+      "target": "devot"
+    },
+    {
+      "source": "schwach",
+      "target": "ersch\u00f6pft"
+    },
+    {
+      "source": "schwach",
+      "target": "hilflos"
+    },
+    {
+      "source": "schwach",
+      "target": "mitleiderregend"
+    },
+    {
+      "source": "schwach",
+      "target": "verletzbar"
+    },
+    {
+      "source": "sexbegierig",
+      "target": "anz\u00fcglich"
+    },
+    {
+      "source": "sexbegierig",
+      "target": "notgeil"
+    },
+    {
+      "source": "streits\u00fcchtig",
+      "target": "intrigant"
+    },
+    {
+      "source": "streits\u00fcchtig",
+      "target": "nachtragend"
+    },
+    {
+      "source": "streits\u00fcchtig",
+      "target": "sp\u00f6ttisch"
+    },
+    {
+      "source": "streng",
+      "target": "belehrend"
+    },
+    {
+      "source": "streng",
+      "target": "strikt"
+    },
+    {
+      "source": "tollpatschig",
+      "target": "ungeschickt"
+    },
+    {
+      "source": "\u00fcbellaunig",
+      "target": "genervt"
+    },
+    {
+      "source": "\u00fcbellaunig",
+      "target": "launisch"
+    },
+    {
+      "source": "\u00fcbellaunig",
+      "target": "missmutig"
+    },
+    {
+      "source": "\u00fcbellaunig",
+      "target": "quengelig"
+    },
+    {
+      "source": "\u00fcbellaunig",
+      "target": "stachelig"
+    },
+    {
+      "source": "\u00fcbellaunig",
+      "target": "starrsinnig"
+    },
+    {
+      "source": "\u00fcbellaunig",
+      "target": "st\u00f6rrisch"
+    },
+    {
+      "source": "\u00fcbellaunig",
+      "target": "trotzig"
+    },
+    {
+      "source": "\u00fcbellaunig",
+      "target": "\u00fcberspannt"
+    },
+    {
+      "source": "unehrlich",
+      "target": "heuchlerisch"
+    },
+    {
+      "source": "unehrlich",
+      "target": "kriecherisch"
+    },
+    {
+      "source": "unehrlich",
+      "target": "l\u00fcgnerisch"
+    },
+    {
+      "source": "unehrlich",
+      "target": "scheinheilig"
+    },
+    {
+      "source": "unehrlich",
+      "target": "schleimig"
+    },
+    {
+      "source": "unehrlich",
+      "target": "unaufrichtig"
+    },
+    {
+      "source": "unehrlich",
+      "target": "verlogen"
+    },
+    {
+      "source": "unehrlich",
+      "target": "verr\u00e4terisch"
+    },
+    {
+      "source": "ungehorsam",
+      "target": "halsstarrig"
+    },
+    {
+      "source": "ungehorsam",
+      "target": "kratzb\u00fcrstig"
+    },
+    {
+      "source": "ungehorsam",
+      "target": "widerspenstig"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "\u00e4tzend"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "flapsig"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "forsch"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "frech"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "geh\u00e4ssig"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "giftig"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "r\u00fcde"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "ruppig"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "schnoddrig"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "taktlos"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "unfreundlich"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "ungezogen"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "unversch\u00e4mt"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "verletzend"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "vorlaut"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "wirsch"
+    },
+    {
+      "source": "unh\u00f6flich",
+      "target": "zickig"
+    },
+    {
+      "source": "unkonzentriert",
+      "target": "schusselig"
+    },
+    {
+      "source": "unkonzentriert",
+      "target": "senil"
+    },
+    {
+      "source": "unkonzentriert",
+      "target": "vergesslich"
+    },
+    {
+      "source": "unkonzentriert",
+      "target": "zerstreut"
+    },
+    {
+      "source": "unmoralisch",
+      "target": "bestechlich"
+    },
+    {
+      "source": "unmoralisch",
+      "target": "unfair"
+    },
+    {
+      "source": "unmoralisch",
+      "target": "untreu"
+    },
+    {
+      "source": "unnahbar",
+      "target": "bieder"
+    },
+    {
+      "source": "unnahbar",
+      "target": "misstrauisch"
+    },
+    {
+      "source": "unnahbar",
+      "target": "pr\u00fcde"
+    },
+    {
+      "source": "unnahbar",
+      "target": "spr\u00f6de"
+    },
+    {
+      "source": "unnahbar",
+      "target": "undurchschaubar"
+    },
+    {
+      "source": "unsachlich",
+      "target": "voreingenommen"
+    },
+    {
+      "source": "unsicher",
+      "target": "\u00e4ngstlich"
+    },
+    {
+      "source": "unsicher",
+      "target": "r\u00fcckgratlos"
+    },
+    {
+      "source": "unsicher",
+      "target": "zweifelnd"
+    },
+    {
+      "source": "unzuverl\u00e4ssig",
+      "target": "opportunistisch"
+    },
+    {
+      "source": "unzuverl\u00e4ssig",
+      "target": "unbesonnen"
+    },
+    {
+      "source": "unzuverl\u00e4ssig",
+      "target": "unbest\u00e4ndig"
+    },
+    {
+      "source": "unzuverl\u00e4ssig",
+      "target": "unentschlossen"
+    },
+    {
+      "source": "unzuverl\u00e4ssig",
+      "target": "verantwortungslos"
+    },
+    {
+      "source": "verschlossen",
+      "target": "gehemmt"
+    },
+    {
+      "source": "verschlossen",
+      "target": "verst\u00f6rt"
+    },
+    {
+      "source": "nett",
+      "target": "einnehmend"
+    },
+    {
+      "source": "nett",
+      "target": "entgegenkommend"
+    },
+    {
+      "source": "nett",
+      "target": "freundlich"
+    },
+    {
+      "source": "nett",
+      "target": "h\u00f6flich"
+    },
+    {
+      "source": "nett",
+      "target": "kollegial"
+    },
+    {
+      "source": "nett",
+      "target": "kumpelhaft"
+    },
+    {
+      "source": "nett",
+      "target": "lieb"
+    },
+    {
+      "source": "nett",
+      "target": "sympathisch"
+    },
+    {
+      "source": "nett",
+      "target": "umg\u00e4nglich"
+    },
+    {
+      "source": "nett",
+      "target": "wohlerzogen"
+    },
+    {
+      "source": "nett",
+      "target": "zur\u00fcckhaltend"
+    },
+    {
+      "source": "nett",
+      "target": "zuvorkommend"
+    },
+    {
+      "source": "neu",
+      "target": "erfrischend"
+    },
+    {
+      "source": "neu",
+      "target": "frisch"
+    },
+    {
+      "source": "neu",
+      "target": "herzerfrischend"
+    },
+    {
+      "source": "neu",
+      "target": "innovativ"
+    },
+    {
+      "source": "neu",
+      "target": "jugendlich"
+    },
+    {
+      "source": "neu",
+      "target": "knackig"
+    },
+    {
+      "source": "notgeil",
+      "target": "pervers"
+    },
+    {
+      "source": "notgeil",
+      "target": "promiskuitiv"
+    },
+    {
+      "source": "notgeil",
+      "target": "sexs\u00fcchtig"
+    },
+    {
+      "source": "offen",
+      "target": "aufgeschlossen"
+    },
+    {
+      "source": "offen",
+      "target": "einf\u00fchlsam"
+    },
+    {
+      "source": "offen",
+      "target": "einladend"
+    },
+    {
+      "source": "ordentlich",
+      "target": "adrett"
+    },
+    {
+      "source": "ordentlich",
+      "target": "akkurat"
+    },
+    {
+      "source": "ordentlich",
+      "target": "gewissenhaft"
+    },
+    {
+      "source": "ordentlich",
+      "target": "gr\u00fcndlich"
+    },
+    {
+      "source": "starr",
+      "target": "unbeweglich"
+    },
+    {
+      "source": "temperamentlos",
+      "target": "langweilig"
+    },
+    {
+      "source": "respektvoll",
+      "target": "ergeben"
+    },
+    {
+      "source": "respektvoll",
+      "target": "wohlwollend"
+    },
+    {
+      "source": "ruhig",
+      "target": "ausgeglichen"
+    },
+    {
+      "source": "ruhig",
+      "target": "best\u00e4ndig"
+    },
+    {
+      "source": "ruhig",
+      "target": "brav"
+    },
+    {
+      "source": "ruhig",
+      "target": "entspannt"
+    },
+    {
+      "source": "ruhig",
+      "target": "gelassen"
+    },
+    {
+      "source": "ruhig",
+      "target": "still"
+    },
+    {
+      "source": "sanft",
+      "target": "f\u00fcrsorglich"
+    },
+    {
+      "source": "sanft",
+      "target": "liebevoll"
+    },
+    {
+      "source": "sanft",
+      "target": "sanftm\u00fctig"
+    },
+    {
+      "source": "sanft",
+      "target": "sinnlich"
+    },
+    {
+      "source": "sanft",
+      "target": "weich"
+    },
+    {
+      "source": "sanft",
+      "target": "zart"
+    },
+    {
+      "source": "sanft",
+      "target": "z\u00e4rtlich"
+    },
+    {
+      "source": "sanft",
+      "target": "zerbrechlich"
+    },
+    {
+      "source": "schlau",
+      "target": "ausgefuchst"
+    },
+    {
+      "source": "schlau",
+      "target": "gerissen"
+    },
+    {
+      "source": "schlau",
+      "target": "gewieft"
+    },
+    {
+      "source": "schlau",
+      "target": "pfiffig"
+    },
+    {
+      "source": "schlau",
+      "target": "spitzfindig"
+    },
+    {
+      "source": "sch\u00f6n",
+      "target": "apart"
+    },
+    {
+      "source": "selbstbewusst",
+      "target": "selbstreflektierend"
+    },
+    {
+      "source": "selbstbewusst",
+      "target": "selbstsicher"
+    },
+    {
+      "source": "selbstbewusst",
+      "target": "selbstst\u00e4ndig"
+    },
+    {
+      "source": "selbstbewusst",
+      "target": "souver\u00e4n"
+    },
+    {
+      "source": "sorglos",
+      "target": "unbek\u00fcmmert"
+    },
+    {
+      "source": "sorglos",
+      "target": "vertrauensvoll"
+    },
+    {
+      "source": "sportlich",
+      "target": "agil"
+    },
+    {
+      "source": "sportlich",
+      "target": "athletisch"
+    },
+    {
+      "source": "sportlich",
+      "target": "ausdauernd"
+    },
+    {
+      "source": "sportlich",
+      "target": "wendig"
+    },
+    {
+      "source": "stark",
+      "target": "autark"
+    },
+    {
+      "source": "stark",
+      "target": "kraftvoll"
+    },
+    {
+      "source": "stark",
+      "target": "robust"
+    },
+    {
+      "source": "stark",
+      "target": "solide"
+    },
+    {
+      "source": "stark",
+      "target": "unersch\u00fctterlich"
+    },
+    {
+      "source": "stark",
+      "target": "z\u00e4h"
+    },
+    {
+      "source": "s\u00fc\u00df",
+      "target": "lieblich"
+    },
+    {
+      "source": "s\u00fc\u00df",
+      "target": "niedlich"
+    },
+    {
+      "source": "s\u00fc\u00df",
+      "target": "putzig"
+    },
+    {
+      "source": "s\u00fc\u00df",
+      "target": "reizend"
+    },
+    {
+      "source": "s\u00fc\u00df",
+      "target": "zauberhaft"
+    },
+    {
+      "source": "tr\u00e4umerisch",
+      "target": "geheimnisvoll"
+    },
+    {
+      "source": "tr\u00e4umerisch",
+      "target": "romantisch"
+    },
+    {
+      "source": "tr\u00e4umerisch",
+      "target": "vertr\u00e4umt"
+    },
+    {
+      "source": "uneigenn\u00fctzig",
+      "target": "asketisch"
+    },
+    {
+      "source": "uneigenn\u00fctzig",
+      "target": "bescheiden"
+    },
+    {
+      "source": "uneigenn\u00fctzig",
+      "target": "dem\u00fctig"
+    },
+    {
+      "source": "uneigenn\u00fctzig",
+      "target": "gener\u00f6s"
+    },
+    {
+      "source": "uneigenn\u00fctzig",
+      "target": "gen\u00fcgsam"
+    },
+    {
+      "source": "vorsichtig",
+      "target": "achtsam"
+    },
+    {
+      "source": "vorsichtig",
+      "target": "introvertiert"
+    },
+    {
+      "source": "vorsichtig",
+      "target": "menschenscheu"
+    },
+    {
+      "source": "vorsichtig",
+      "target": "reserviert"
+    },
+    {
+      "source": "vorsichtig",
+      "target": "scheu"
+    },
+    {
+      "source": "vorsichtig",
+      "target": "sch\u00fcchtern"
+    },
+    {
+      "source": "vorsichtig",
+      "target": "zaghaft"
+    },
+    {
+      "source": "warm",
+      "target": "m\u00fctterlich"
+    },
+    {
+      "source": "warm",
+      "target": "v\u00e4terlich"
+    },
+    {
+      "source": "pr\u00fcde",
+      "target": "zugekn\u00f6pft"
+    },
+    {
+      "source": "r\u00fccksichtslos",
+      "target": "militant"
+    },
+    {
+      "source": "r\u00fccksichtslos",
+      "target": "radikal"
+    },
+    {
+      "source": "unmenschlich",
+      "target": "menschenverachtend"
+    },
+    {
+      "source": "romantisch",
+      "target": "verspielt"
+    },
+    {
+      "source": "r\u00fcckgratlos",
+      "target": "willenlos"
+    },
+    {
+      "source": "r\u00fcckgratlos",
+      "target": "willensschwach"
+    },
+    {
+      "source": "r\u00fcckgratlos",
+      "target": "w\u00fcrdelos"
+    },
+    {
+      "source": "unruhig",
+      "target": "ungeduldig"
+    },
+    {
+      "source": "still",
+      "target": "ernst"
+    },
+    {
+      "source": "still",
+      "target": "nachdenklich"
+    },
+    {
+      "source": "still",
+      "target": "schweigsam"
+    },
+    {
+      "source": "still",
+      "target": "wortkarg"
+    },
+    {
+      "source": "selbstst\u00e4ndig",
+      "target": "unabh\u00e4ngig"
+    },
+    {
+      "source": "selbstst\u00e4ndig",
+      "target": "willensstark"
+    },
+    {
+      "source": "sp\u00f6ttisch",
+      "target": "h\u00e4misch"
+    },
+    {
+      "source": "sp\u00f6ttisch",
+      "target": "h\u00f6hnisch"
+    },
+    {
+      "source": "sp\u00f6ttisch",
+      "target": "sarkastisch"
+    },
+    {
+      "source": "sturk\u00f6pfig",
+      "target": "unbelehrbar"
+    },
+    {
+      "source": "unnachgiebig",
+      "target": "unerbittlich"
+    },
+    {
+      "source": "vielf\u00e4ltig",
+      "target": "vielschichtig"
+    },
+    {
+      "source": "vielf\u00e4ltig",
+      "target": "vielseitig"
+    },
+    {
+      "source": "zielstrebig",
+      "target": "zielbewusst"
+    },
+    {
+      "source": "zielstrebig",
+      "target": "zielorientiert"
+    },
+    {
+      "source": "zuverl\u00e4ssig",
+      "target": "verl\u00e4sslich"
+    },
+    {
+      "source": "trotzig",
+      "target": "aufs\u00e4ssig"
+    },
+    {
+      "source": "trotzig",
+      "target": "bockig"
+    },
+    {
+      "source": "unbesonnen",
+      "target": "nachl\u00e4ssig"
+    },
+    {
+      "source": "unfair",
+      "target": "hinterh\u00e4ltig"
+    },
+    {
+      "source": "unfair",
+      "target": "ungerecht"
+    },
+    {
+      "source": "zickig",
+      "target": "divenhaft"
+    },
+    {
+      "source": "zweifelnd",
+      "target": "selbstkritisch"
+    },
+    {
+      "source": "zweifelnd",
+      "target": "selbstzweifelnd"
+    },
+    {
+      "source": "zweifelnd",
+      "target": "skeptisch"
+    },
+    {
+      "source": "zweifelnd",
+      "target": "unschl\u00fcssig"
+    },
+    {
+      "source": "zweifelnd",
+      "target": "wankelm\u00fctig"
+    },
+    {
+      "source": "zweifelnd",
+      "target": "widerspr\u00fcchlich"
+    },
+    {
+      "source": "zweifelnd",
+      "target": "zwiegespalten"
+    }
+  ]
+}

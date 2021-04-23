@@ -1,0 +1,348 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Afrika"
+    },
+    {
+      "id": "S\u00fcdafrika"
+    },
+    {
+      "id": "Asien"
+    },
+    {
+      "id": "China"
+    },
+    {
+      "id": "Hong Kong"
+    },
+    {
+      "id": "Indien"
+    },
+    {
+      "id": "Iran"
+    },
+    {
+      "id": "Japan"
+    },
+    {
+      "id": "Malaysia"
+    },
+    {
+      "id": "Pakistan"
+    },
+    {
+      "id": "Russland"
+    },
+    {
+      "id": "Singapur"
+    },
+    {
+      "id": "S\u00fcdkorea"
+    },
+    {
+      "id": "Thailand"
+    },
+    {
+      "id": "Australischer Kontinent"
+    },
+    {
+      "id": "Australien"
+    },
+    {
+      "id": "Neuseeland"
+    },
+    {
+      "id": "Europa"
+    },
+    {
+      "id": "Belgien"
+    },
+    {
+      "id": "Bulgarien"
+    },
+    {
+      "id": "Deutschland"
+    },
+    {
+      "id": "Finnland"
+    },
+    {
+      "id": "Frankreich"
+    },
+    {
+      "id": "Griechenland"
+    },
+    {
+      "id": "Irland"
+    },
+    {
+      "id": "Island"
+    },
+    {
+      "id": "Italien"
+    },
+    {
+      "id": "Niederlande"
+    },
+    {
+      "id": "\u00d6sterreich"
+    },
+    {
+      "id": "Polen"
+    },
+    {
+      "id": "Portugal"
+    },
+    {
+      "id": "Rum\u00e4nien"
+    },
+    {
+      "id": "Schweden"
+    },
+    {
+      "id": "Schweiz"
+    },
+    {
+      "id": "Spanien"
+    },
+    {
+      "id": "Tschechien"
+    },
+    {
+      "id": "Ungarn"
+    },
+    {
+      "id": "Vereinigtes K\u00f6nigreich"
+    },
+    {
+      "id": "Nordamerika"
+    },
+    {
+      "id": "Costa Rica"
+    },
+    {
+      "id": "Kanada"
+    },
+    {
+      "id": "Mexiko"
+    },
+    {
+      "id": "Vereinigte Staaten"
+    },
+    {
+      "id": "Produktionsland"
+    },
+    {
+      "id": "Antarktika"
+    },
+    {
+      "id": "S\u00fcdamerika"
+    },
+    {
+      "id": "Argentinien"
+    },
+    {
+      "id": "Brasilien"
+    },
+    {
+      "id": "Kolumbien"
+    }
+  ],
+  "links": [
+    {
+      "source": "Afrika",
+      "target": "S\u00fcdafrika"
+    },
+    {
+      "source": "Asien",
+      "target": "China"
+    },
+    {
+      "source": "Asien",
+      "target": "Hong Kong"
+    },
+    {
+      "source": "Asien",
+      "target": "Indien"
+    },
+    {
+      "source": "Asien",
+      "target": "Iran"
+    },
+    {
+      "source": "Asien",
+      "target": "Japan"
+    },
+    {
+      "source": "Asien",
+      "target": "Malaysia"
+    },
+    {
+      "source": "Asien",
+      "target": "Pakistan"
+    },
+    {
+      "source": "Asien",
+      "target": "Russland"
+    },
+    {
+      "source": "Asien",
+      "target": "Singapur"
+    },
+    {
+      "source": "Asien",
+      "target": "S\u00fcdkorea"
+    },
+    {
+      "source": "Asien",
+      "target": "Thailand"
+    },
+    {
+      "source": "Australischer Kontinent",
+      "target": "Australien"
+    },
+    {
+      "source": "Australischer Kontinent",
+      "target": "Neuseeland"
+    },
+    {
+      "source": "Europa",
+      "target": "Belgien"
+    },
+    {
+      "source": "Europa",
+      "target": "Bulgarien"
+    },
+    {
+      "source": "Europa",
+      "target": "Deutschland"
+    },
+    {
+      "source": "Europa",
+      "target": "Finnland"
+    },
+    {
+      "source": "Europa",
+      "target": "Frankreich"
+    },
+    {
+      "source": "Europa",
+      "target": "Griechenland"
+    },
+    {
+      "source": "Europa",
+      "target": "Irland"
+    },
+    {
+      "source": "Europa",
+      "target": "Island"
+    },
+    {
+      "source": "Europa",
+      "target": "Italien"
+    },
+    {
+      "source": "Europa",
+      "target": "Niederlande"
+    },
+    {
+      "source": "Europa",
+      "target": "\u00d6sterreich"
+    },
+    {
+      "source": "Europa",
+      "target": "Polen"
+    },
+    {
+      "source": "Europa",
+      "target": "Portugal"
+    },
+    {
+      "source": "Europa",
+      "target": "Rum\u00e4nien"
+    },
+    {
+      "source": "Europa",
+      "target": "Schweden"
+    },
+    {
+      "source": "Europa",
+      "target": "Schweiz"
+    },
+    {
+      "source": "Europa",
+      "target": "Spanien"
+    },
+    {
+      "source": "Europa",
+      "target": "Tschechien"
+    },
+    {
+      "source": "Europa",
+      "target": "Ungarn"
+    },
+    {
+      "source": "Europa",
+      "target": "Vereinigtes K\u00f6nigreich"
+    },
+    {
+      "source": "Nordamerika",
+      "target": "Costa Rica"
+    },
+    {
+      "source": "Nordamerika",
+      "target": "Kanada"
+    },
+    {
+      "source": "Nordamerika",
+      "target": "Mexiko"
+    },
+    {
+      "source": "Nordamerika",
+      "target": "Vereinigte Staaten"
+    },
+    {
+      "source": "Produktionsland",
+      "target": "Afrika"
+    },
+    {
+      "source": "Produktionsland",
+      "target": "Antarktika"
+    },
+    {
+      "source": "Produktionsland",
+      "target": "Asien"
+    },
+    {
+      "source": "Produktionsland",
+      "target": "Australischer Kontinent"
+    },
+    {
+      "source": "Produktionsland",
+      "target": "Europa"
+    },
+    {
+      "source": "Produktionsland",
+      "target": "Nordamerika"
+    },
+    {
+      "source": "Produktionsland",
+      "target": "S\u00fcdamerika"
+    },
+    {
+      "source": "S\u00fcdamerika",
+      "target": "Argentinien"
+    },
+    {
+      "source": "S\u00fcdamerika",
+      "target": "Brasilien"
+    },
+    {
+      "source": "S\u00fcdamerika",
+      "target": "Kolumbien"
+    }
+  ]
+}

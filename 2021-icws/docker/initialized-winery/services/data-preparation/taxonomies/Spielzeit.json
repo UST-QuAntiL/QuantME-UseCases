@@ -1,0 +1,222 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Antike"
+    },
+    {
+      "id": "Griechenland"
+    },
+    {
+      "id": "R\u00f6misches Reich"
+    },
+    {
+      "id": "Fr\u00fchmittelalter"
+    },
+    {
+      "id": "Byzantinische Tracht"
+    },
+    {
+      "id": "Historisch"
+    },
+    {
+      "id": "Mittelalter"
+    },
+    {
+      "id": "Neuzeit"
+    },
+    {
+      "id": "Steinzeit"
+    },
+    {
+      "id": "Hochmittelalter"
+    },
+    {
+      "id": "Sp\u00e4tmittelalter"
+    },
+    {
+      "id": "20er Jahre"
+    },
+    {
+      "id": "30er Jahre"
+    },
+    {
+      "id": "40er Jahre"
+    },
+    {
+      "id": "50er Jahre"
+    },
+    {
+      "id": "60er Jahre"
+    },
+    {
+      "id": "80er Jahre"
+    },
+    {
+      "id": "90er Jahre"
+    },
+    {
+      "id": "Barock"
+    },
+    {
+      "id": "Biedermeier"
+    },
+    {
+      "id": "Empire"
+    },
+    {
+      "id": "Gr\u00fcnderzeit"
+    },
+    {
+      "id": "Jahrtausendwende"
+    },
+    {
+      "id": "Jugendstil"
+    },
+    {
+      "id": "Renaissance"
+    },
+    {
+      "id": "Rokoko"
+    },
+    {
+      "id": "Spanische Mode"
+    },
+    {
+      "id": "Gotik"
+    },
+    {
+      "id": "Spielzeit"
+    },
+    {
+      "id": "Gegenwart"
+    },
+    {
+      "id": "Zukunft"
+    }
+  ],
+  "links": [
+    {
+      "source": "Antike",
+      "target": "Griechenland"
+    },
+    {
+      "source": "Antike",
+      "target": "R\u00f6misches Reich"
+    },
+    {
+      "source": "Fr\u00fchmittelalter",
+      "target": "Byzantinische Tracht"
+    },
+    {
+      "source": "Historisch",
+      "target": "Antike"
+    },
+    {
+      "source": "Historisch",
+      "target": "Mittelalter"
+    },
+    {
+      "source": "Historisch",
+      "target": "Neuzeit"
+    },
+    {
+      "source": "Historisch",
+      "target": "Steinzeit"
+    },
+    {
+      "source": "Mittelalter",
+      "target": "Fr\u00fchmittelalter"
+    },
+    {
+      "source": "Mittelalter",
+      "target": "Hochmittelalter"
+    },
+    {
+      "source": "Mittelalter",
+      "target": "Sp\u00e4tmittelalter"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "20er Jahre"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "30er Jahre"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "40er Jahre"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "50er Jahre"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "60er Jahre"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "80er Jahre"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "90er Jahre"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "Barock"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "Biedermeier"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "Empire"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "Gr\u00fcnderzeit"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "Jahrtausendwende"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "Jugendstil"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "Renaissance"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "Rokoko"
+    },
+    {
+      "source": "Neuzeit",
+      "target": "Spanische Mode"
+    },
+    {
+      "source": "Sp\u00e4tmittelalter",
+      "target": "Gotik"
+    },
+    {
+      "source": "Spielzeit",
+      "target": "Gegenwart"
+    },
+    {
+      "source": "Spielzeit",
+      "target": "Historisch"
+    },
+    {
+      "source": "Spielzeit",
+      "target": "Zukunft"
+    }
+  ]
+}

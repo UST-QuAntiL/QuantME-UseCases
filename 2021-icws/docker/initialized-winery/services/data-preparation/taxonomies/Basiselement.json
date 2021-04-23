@@ -1,0 +1,6466 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Abendkleid"
+    },
+    {
+      "id": "One-Shoulder-Kleid"
+    },
+    {
+      "id": "Schulterfreies Kleid"
+    },
+    {
+      "id": "Abzeichen"
+    },
+    {
+      "id": "Anstecker"
+    },
+    {
+      "id": "Cocarde"
+    },
+    {
+      "id": "Fangschnur"
+    },
+    {
+      "id": "Medaille"
+    },
+    {
+      "id": "Orden"
+    },
+    {
+      "id": "Schulterklappen"
+    },
+    {
+      "id": "Achselshirt"
+    },
+    {
+      "id": "Achseltrikot"
+    },
+    {
+      "id": "Netzshirt"
+    },
+    {
+      "id": "Unterhemd"
+    },
+    {
+      "id": "Anlasshemd"
+    },
+    {
+      "id": "Frackhemd"
+    },
+    {
+      "id": "Smokinghemd"
+    },
+    {
+      "id": "Anlassjacke"
+    },
+    {
+      "id": "Cutaway"
+    },
+    {
+      "id": "Dinner-Jackett"
+    },
+    {
+      "id": "Frack"
+    },
+    {
+      "id": "Gehrock (festlich)"
+    },
+    {
+      "id": "Smoking Jackett"
+    },
+    {
+      "id": "Anorak"
+    },
+    {
+      "id": "Windbluse"
+    },
+    {
+      "id": "Button"
+    },
+    {
+      "id": "Sheriffstern"
+    },
+    {
+      "id": "Anzughose"
+    },
+    {
+      "id": "B\u00fcgelfaltenhose"
+    },
+    {
+      "id": "Bundfaltenhose"
+    },
+    {
+      "id": "Cutaway Hose"
+    },
+    {
+      "id": "Frackhose"
+    },
+    {
+      "id": "Anzugsakko"
+    },
+    {
+      "id": "Einreihiges Sakko"
+    },
+    {
+      "id": "Zweireihiges Sakko"
+    },
+    {
+      "id": "Anzugweste"
+    },
+    {
+      "id": "Frackweste"
+    },
+    {
+      "id": "Nadelstreifenweste"
+    },
+    {
+      "id": "Arbeitshandschuhe"
+    },
+    {
+      "id": "Gartenhandschuhe"
+    },
+    {
+      "id": "Maurerhandschuhe"
+    },
+    {
+      "id": "Arbeitshemd"
+    },
+    {
+      "id": "Fischerhemd"
+    },
+    {
+      "id": "Flanellhemd"
+    },
+    {
+      "id": "Arbeitsschuhe"
+    },
+    {
+      "id": "Stahlkappenschuhe"
+    },
+    {
+      "id": "Armband"
+    },
+    {
+      "id": "Armreif"
+    },
+    {
+      "id": "Blumenarmband"
+    },
+    {
+      "id": "Nietenarmband"
+    },
+    {
+      "id": "Armprotektoren"
+    },
+    {
+      "id": "Armsch\u00fctzer"
+    },
+    {
+      "id": "Ellbogenschoner"
+    },
+    {
+      "id": "Unterarmschoner"
+    },
+    {
+      "id": "Augenbrauenpiercing"
+    },
+    {
+      "id": "Augenbrauenringe"
+    },
+    {
+      "id": "Badehose"
+    },
+    {
+      "id": "Badeshorts"
+    },
+    {
+      "id": "Bikini-Hose"
+    },
+    {
+      "id": "Tankini-Hose"
+    },
+    {
+      "id": "Badeschuhe"
+    },
+    {
+      "id": "Badesandalen"
+    },
+    {
+      "id": "Badeschlappen"
+    },
+    {
+      "id": "Schwimmschuhe"
+    },
+    {
+      "id": "Baggy Pants"
+    },
+    {
+      "id": "Skater-Hosen"
+    },
+    {
+      "id": "Ballerinas"
+    },
+    {
+      "id": "Peeptoe Ballerinas"
+    },
+    {
+      "id": "Riemchenballerinas"
+    },
+    {
+      "id": "Barett"
+    },
+    {
+      "id": "Baskenm\u00fctze"
+    },
+    {
+      "id": "Basiselemente"
+    },
+    {
+      "id": "Bein zugeh\u00f6rige Teile"
+    },
+    {
+      "id": "Externe Accessoires"
+    },
+    {
+      "id": "Fu\u00df zugeh\u00f6rige Teile"
+    },
+    {
+      "id": "Ganzk\u00f6rper zugeh\u00f6rige Teile"
+    },
+    {
+      "id": "Hals zugeh\u00f6rige Teile"
+    },
+    {
+      "id": "Hand zugeh\u00f6rige Teile"
+    },
+    {
+      "id": "Kopf zugeh\u00f6rige Teile"
+    },
+    {
+      "id": "K\u00f6rper"
+    },
+    {
+      "id": "Oberk\u00f6rper zugeh\u00f6rige Teile"
+    },
+    {
+      "id": "Taille zugeh\u00f6rige Teile"
+    },
+    {
+      "id": "Bein zugeh\u00f6rige Accessoires"
+    },
+    {
+      "id": "Beinprotektoren"
+    },
+    {
+      "id": "Beinprothese"
+    },
+    {
+      "id": "Chaps"
+    },
+    {
+      "id": "Strumpfband"
+    },
+    {
+      "id": "Strumpfhalter"
+    },
+    {
+      "id": "Bein zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "id": "Gamaschen"
+    },
+    {
+      "id": "Hose"
+    },
+    {
+      "id": "Hosenrock"
+    },
+    {
+      "id": "Lendenschurz"
+    },
+    {
+      "id": "Rock"
+    },
+    {
+      "id": "Stulpen"
+    },
+    {
+      "id": "Knieschoner"
+    },
+    {
+      "id": "Oberschenkelschoner"
+    },
+    {
+      "id": "Schienbeinschoner"
+    },
+    {
+      "id": "BH"
+    },
+    {
+      "id": "B\u00fcgel-BH"
+    },
+    {
+      "id": "B\u00fcgelloser BH"
+    },
+    {
+      "id": "Nackentr\u00e4ger-BH"
+    },
+    {
+      "id": "Still-BH"
+    },
+    {
+      "id": "Tr\u00e4gerloser BH"
+    },
+    {
+      "id": "Bikini-Slip"
+    },
+    {
+      "id": "Bikinipanty"
+    },
+    {
+      "id": "Bikini-Top"
+    },
+    {
+      "id": "Bikini-BH-Oberteil"
+    },
+    {
+      "id": "Bikinineckholderoberteil"
+    },
+    {
+      "id": "Bindeg\u00fcrtel"
+    },
+    {
+      "id": "Karateg\u00fcrtel"
+    },
+    {
+      "id": "Blazer"
+    },
+    {
+      "id": "Navy Blazer."
+    },
+    {
+      "id": "Bleistiftrock"
+    },
+    {
+      "id": "Businessrock"
+    },
+    {
+      "id": "Blindenabzeichen"
+    },
+    {
+      "id": "Blindenbinde"
+    },
+    {
+      "id": "Blouson"
+    },
+    {
+      "id": "Bomberjacke"
+    },
+    {
+      "id": "Pilotenjacke"
+    },
+    {
+      "id": "Bluse"
+    },
+    {
+      "id": "Blusentunika"
+    },
+    {
+      "id": "Dirndlbluse"
+    },
+    {
+      "id": "Kurzarmbluse"
+    },
+    {
+      "id": "Langarmbluse"
+    },
+    {
+      "id": "Puff\u00e4rmelblusen"
+    },
+    {
+      "id": "Body"
+    },
+    {
+      "id": "Catsuit"
+    },
+    {
+      "id": "Fatsuit"
+    },
+    {
+      "id": "Gymnastiktrikot"
+    },
+    {
+      "id": "Korselett"
+    },
+    {
+      "id": "Strampler"
+    },
+    {
+      "id": "Boots"
+    },
+    {
+      "id": "Bikerboots"
+    },
+    {
+      "id": "Moonboots"
+    },
+    {
+      "id": "Schneeboots"
+    },
+    {
+      "id": "Schn\u00fcrboots"
+    },
+    {
+      "id": "Boxhandschuhe"
+    },
+    {
+      "id": "Sandsackhandschuh"
+    },
+    {
+      "id": "Brille"
+    },
+    {
+      "id": "3D-Brille"
+    },
+    {
+      "id": "Historische Brille"
+    },
+    {
+      "id": "Korrektionsbrille"
+    },
+    {
+      "id": "Schlafbrille"
+    },
+    {
+      "id": "Schutzbrille"
+    },
+    {
+      "id": "Schwimmbrille"
+    },
+    {
+      "id": "Skibrille"
+    },
+    {
+      "id": "Sonnenbrillen"
+    },
+    {
+      "id": "Brillenkordel"
+    },
+    {
+      "id": "Brillenkette"
+    },
+    {
+      "id": "Brillenschnur"
+    },
+    {
+      "id": "Brustst\u00fctzkleidung"
+    },
+    {
+      "id": "Bandeau"
+    },
+    {
+      "id": "Bustier"
+    },
+    {
+      "id": "Korsage"
+    },
+    {
+      "id": "Korsett"
+    },
+    {
+      "id": "Tankini-Top"
+    },
+    {
+      "id": "Push-up"
+    },
+    {
+      "id": "Sport BH"
+    },
+    {
+      "id": "Businesskleid"
+    },
+    {
+      "id": "Etuikleid"
+    },
+    {
+      "id": "Businesstasche"
+    },
+    {
+      "id": "Laptoptasche"
+    },
+    {
+      "id": "Cape"
+    },
+    {
+      "id": "Pelerine"
+    },
+    {
+      "id": "Poncho"
+    },
+    {
+      "id": "Regencape"
+    },
+    {
+      "id": "Chucks"
+    },
+    {
+      "id": "Halbschuh Chucks"
+    },
+    {
+      "id": "Schaft-Chucks"
+    },
+    {
+      "id": "Cordhose"
+    },
+    {
+      "id": "Zimmermannshose"
+    },
+    {
+      "id": "Cowboy Hut"
+    },
+    {
+      "id": "Akubra"
+    },
+    {
+      "id": "Damenhut"
+    },
+    {
+      "id": "Florentinerhut"
+    },
+    {
+      "id": "Glockenhut"
+    },
+    {
+      "id": "Schute"
+    },
+    {
+      "id": "Topfhut"
+    },
+    {
+      "id": "Doktorhut"
+    },
+    {
+      "id": "Abschluss-Barett"
+    },
+    {
+      "id": "Dreiviertel Hose"
+    },
+    {
+      "id": "Breeches kurz"
+    },
+    {
+      "id": "Capri-Hose"
+    },
+    {
+      "id": "Clochardhose"
+    },
+    {
+      "id": "Kniebundhose"
+    },
+    {
+      "id": "Torerohose"
+    },
+    {
+      "id": "Etui"
+    },
+    {
+      "id": "Brillenetui"
+    },
+    {
+      "id": "Visitenkartenetui"
+    },
+    {
+      "id": "Zigarettenetui"
+    },
+    {
+      "id": "Evangelische Kopfbedeckung"
+    },
+    {
+      "id": "Lutherbarett"
+    },
+    {
+      "id": "Exotisches Kleid"
+    },
+    {
+      "id": "Cheongsam"
+    },
+    {
+      "id": "Kimono"
+    },
+    {
+      "id": "Sari"
+    },
+    {
+      "id": "Toga"
+    },
+    {
+      "id": "Tunika"
+    },
+    {
+      "id": "Koffer"
+    },
+    {
+      "id": "Portemonnaie"
+    },
+    {
+      "id": "Rucksack"
+    },
+    {
+      "id": "Schl\u00fcsselanh\u00e4nger"
+    },
+    {
+      "id": "Tasche"
+    },
+    {
+      "id": "Waffe"
+    },
+    {
+      "id": "F\u00e4ustlinge"
+    },
+    {
+      "id": "Klappf\u00e4ustling"
+    },
+    {
+      "id": "Federschmuck"
+    },
+    {
+      "id": "H\u00e4uptlingsfederschmuck"
+    },
+    {
+      "id": "Fedoras"
+    },
+    {
+      "id": "Borsalino"
+    },
+    {
+      "id": "Trilby"
+    },
+    {
+      "id": "Feuerwaffe"
+    },
+    {
+      "id": "Gewehr"
+    },
+    {
+      "id": "Pistole"
+    },
+    {
+      "id": "Revolver"
+    },
+    {
+      "id": "Fingerhandschuhe"
+    },
+    {
+      "id": "Abendhandschuhe"
+    },
+    {
+      "id": "Glaceehandschuhe"
+    },
+    {
+      "id": "Winterhandschuhe"
+    },
+    {
+      "id": "Flache Pantoletten"
+    },
+    {
+      "id": "Crocs"
+    },
+    {
+      "id": "Freizeithemd"
+    },
+    {
+      "id": "Hawaii-Hemd"
+    },
+    {
+      "id": "Husarenhemd"
+    },
+    {
+      "id": "Leinenhemd"
+    },
+    {
+      "id": "Matrosenhemden"
+    },
+    {
+      "id": "Freizeitsakko"
+    },
+    {
+      "id": "Funktionshose"
+    },
+    {
+      "id": "Lange Unterhose"
+    },
+    {
+      "id": "Regenhose"
+    },
+    {
+      "id": "Thermohose"
+    },
+    {
+      "id": "Funktionsshirt"
+    },
+    {
+      "id": "Sportshirt"
+    },
+    {
+      "id": "Thermoshirt"
+    },
+    {
+      "id": "Funktionstop"
+    },
+    {
+      "id": "Sport Top"
+    },
+    {
+      "id": "Fu\u00df zugeh\u00f6rige Accessoires"
+    },
+    {
+      "id": "Fu\u00dfprotektor"
+    },
+    {
+      "id": "Fu\u00dfschmuck"
+    },
+    {
+      "id": "Schwimmflossen"
+    },
+    {
+      "id": "Skier"
+    },
+    {
+      "id": "Sporen"
+    },
+    {
+      "id": "Steigeisen"
+    },
+    {
+      "id": "Fu\u00df zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "id": "Schuhe"
+    },
+    {
+      "id": "Str\u00fcmpfe"
+    },
+    {
+      "id": "Fu\u00dfkettchen"
+    },
+    {
+      "id": "Zehenring"
+    },
+    {
+      "id": "Wickelgamaschen"
+    },
+    {
+      "id": "Ganzk\u00f6rper zugeh\u00f6rige Accessoires"
+    },
+    {
+      "id": "Handtuch"
+    },
+    {
+      "id": "Wundmaterial"
+    },
+    {
+      "id": "Ganzk\u00f6rper zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "id": "Hauskleidung"
+    },
+    {
+      "id": "Jumpsuits"
+    },
+    {
+      "id": "Kleid"
+    },
+    {
+      "id": "K\u00f6rperschutzkleidung"
+    },
+    {
+      "id": "Mantel"
+    },
+    {
+      "id": "Robe"
+    },
+    {
+      "id": "Schwimmanzug"
+    },
+    {
+      "id": "Umhang"
+    },
+    {
+      "id": "Gehstock"
+    },
+    {
+      "id": "Spazierstock"
+    },
+    {
+      "id": "Gliederkette"
+    },
+    {
+      "id": "Gliederkette mit Anh\u00e4nger"
+    },
+    {
+      "id": "Kettchen"
+    },
+    {
+      "id": "Panzerkette"
+    },
+    {
+      "id": "Amulettkette"
+    },
+    {
+      "id": "Kreuzkettchen"
+    },
+    {
+      "id": "G\u00fcrtel"
+    },
+    {
+      "id": "Breiter G\u00fcrtel"
+    },
+    {
+      "id": "Charivari"
+    },
+    {
+      "id": "Geflochtener G\u00fcrtel"
+    },
+    {
+      "id": "Klassischer G\u00fcrtel"
+    },
+    {
+      "id": "Nieteng\u00fcrtel"
+    },
+    {
+      "id": "Patronengurt"
+    },
+    {
+      "id": "Schmaler G\u00fcrtel"
+    },
+    {
+      "id": "Uniformg\u00fcrtel"
+    },
+    {
+      "id": "Schlittschuhtrikot"
+    },
+    {
+      "id": "Tanztrikot"
+    },
+    {
+      "id": "Haaraccessoire"
+    },
+    {
+      "id": "Federspange"
+    },
+    {
+      "id": "Haarband"
+    },
+    {
+      "id": "Haarnetz"
+    },
+    {
+      "id": "Haarreif"
+    },
+    {
+      "id": "Haarschleife"
+    },
+    {
+      "id": "Haarspange"
+    },
+    {
+      "id": "K\u00e4mmchen"
+    },
+    {
+      "id": "Zopfgummi"
+    },
+    {
+      "id": "Haarteil"
+    },
+    {
+      "id": "Extension"
+    },
+    {
+      "id": "Per\u00fccke"
+    },
+    {
+      "id": "Toupet"
+    },
+    {
+      "id": "Halbschuhe"
+    },
+    {
+      "id": "Schlupfschuhe"
+    },
+    {
+      "id": "Schn\u00fcrschuhe"
+    },
+    {
+      "id": "Hals zugeh\u00f6rige Accessoires"
+    },
+    {
+      "id": "Amtskette"
+    },
+    {
+      "id": "Federboa"
+    },
+    {
+      "id": "Halsschmuck"
+    },
+    {
+      "id": "Halstuchring"
+    },
+    {
+      "id": "Kragen"
+    },
+    {
+      "id": "Kragenklammer"
+    },
+    {
+      "id": "Krawattennadel"
+    },
+    {
+      "id": "Krawattenspange"
+    },
+    {
+      "id": "Hals zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "id": "Beffchen"
+    },
+    {
+      "id": "Fliege"
+    },
+    {
+      "id": "Halsband"
+    },
+    {
+      "id": "Halsbinde"
+    },
+    {
+      "id": "Halskrause"
+    },
+    {
+      "id": "Jabots"
+    },
+    {
+      "id": "Krawatte"
+    },
+    {
+      "id": "L\u00e4tzschen"
+    },
+    {
+      "id": "Schal"
+    },
+    {
+      "id": "Schleife"
+    },
+    {
+      "id": "Tuch"
+    },
+    {
+      "id": "Halskette"
+    },
+    {
+      "id": "Collier"
+    },
+    {
+      "id": "Doppelreihige Kette"
+    },
+    {
+      "id": "Mehrreihige Kette"
+    },
+    {
+      "id": "Schnurkette"
+    },
+    {
+      "id": "Halskrause historisch"
+    },
+    {
+      "id": "Halsreifen"
+    },
+    {
+      "id": "Halsreifen mit Anh\u00e4nger"
+    },
+    {
+      "id": "Spiralringe"
+    },
+    {
+      "id": "Blumenkette"
+    },
+    {
+      "id": "Chokers"
+    },
+    {
+      "id": "Nietenhalsband"
+    },
+    {
+      "id": "Tattookette"
+    },
+    {
+      "id": "Halstuch"
+    },
+    {
+      "id": "Pal\u00e4stinensertuch"
+    },
+    {
+      "id": "Seidentuch"
+    },
+    {
+      "id": "Hand zugeh\u00f6rige Accessoires"
+    },
+    {
+      "id": "Besen"
+    },
+    {
+      "id": "F\u00e4cher"
+    },
+    {
+      "id": "Handprotektoren"
+    },
+    {
+      "id": "Handschellen"
+    },
+    {
+      "id": "Handschmuck"
+    },
+    {
+      "id": "Muff"
+    },
+    {
+      "id": "Peitsche"
+    },
+    {
+      "id": "Poms"
+    },
+    {
+      "id": "Schirm"
+    },
+    {
+      "id": "Schutzschild"
+    },
+    {
+      "id": "Stock"
+    },
+    {
+      "id": "Uhr"
+    },
+    {
+      "id": "Zauberstab"
+    },
+    {
+      "id": "Hand zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "id": "Handschuhe"
+    },
+    {
+      "id": "Manschette"
+    },
+    {
+      "id": "Pulsw\u00e4rmer"
+    },
+    {
+      "id": "Handschoner"
+    },
+    {
+      "id": "Manschettenkn\u00f6pfe"
+    },
+    {
+      "id": "Ring"
+    },
+    {
+      "id": "Kurzfingerhandschuhe"
+    },
+    {
+      "id": "Schutzhandschuhe"
+    },
+    {
+      "id": "Sporthandschuhe"
+    },
+    {
+      "id": "Stulpenhandschuhe"
+    },
+    {
+      "id": "Haremshose"
+    },
+    {
+      "id": "Pluderhose"
+    },
+    {
+      "id": "Haube"
+    },
+    {
+      "id": "Historische Haube"
+    },
+    {
+      "id": "Kochhaube"
+    },
+    {
+      "id": "Op-Haube"
+    },
+    {
+      "id": "Regenhaube"
+    },
+    {
+      "id": "Schlafhaube"
+    },
+    {
+      "id": "Bademantel"
+    },
+    {
+      "id": "Morgenmantel"
+    },
+    {
+      "id": "Nachthemd"
+    },
+    {
+      "id": "Schlafrock"
+    },
+    {
+      "id": "Hausschuhe"
+    },
+    {
+      "id": "Pantoffeln"
+    },
+    {
+      "id": "Helm"
+    },
+    {
+      "id": "Schutzhelm"
+    },
+    {
+      "id": "Sporthelm"
+    },
+    {
+      "id": "Tropenhelm"
+    },
+    {
+      "id": "Hemd"
+    },
+    {
+      "id": "Businesshemd"
+    },
+    {
+      "id": "Funktionshemd"
+    },
+    {
+      "id": "Kurzarmhemd"
+    },
+    {
+      "id": "Uniformhemd"
+    },
+    {
+      "id": "Monokel"
+    },
+    {
+      "id": "Zwicker"
+    },
+    {
+      "id": "Kurze Hose"
+    },
+    {
+      "id": "Lange Hose"
+    },
+    {
+      "id": "Latzhose"
+    },
+    {
+      "id": "Leggins"
+    },
+    {
+      "id": "Windel"
+    },
+    {
+      "id": "Hut"
+    },
+    {
+      "id": "Anglerhut"
+    },
+    {
+      "id": "Asiatischer Kegelhut"
+    },
+    {
+      "id": "Dreispitz"
+    },
+    {
+      "id": "Federhut"
+    },
+    {
+      "id": "Feenhut"
+    },
+    {
+      "id": "Fes"
+    },
+    {
+      "id": "Hexenhut"
+    },
+    {
+      "id": "Homburger Hut"
+    },
+    {
+      "id": "Melone"
+    },
+    {
+      "id": "Safari-Hut"
+    },
+    {
+      "id": "Schlapphut"
+    },
+    {
+      "id": "Sombrero"
+    },
+    {
+      "id": "Strohhut"
+    },
+    {
+      "id": "S\u00fcdwester"
+    },
+    {
+      "id": "Trachtenhut"
+    },
+    {
+      "id": "Zimmermannshut"
+    },
+    {
+      "id": "Zweispitz"
+    },
+    {
+      "id": "Zylinder"
+    },
+    {
+      "id": "Islamische Kopfbedeckung"
+    },
+    {
+      "id": "Burka"
+    },
+    {
+      "id": "Gebetskappe"
+    },
+    {
+      "id": "Turban"
+    },
+    {
+      "id": "Jacke"
+    },
+    {
+      "id": "Bolero"
+    },
+    {
+      "id": "Justaucorps"
+    },
+    {
+      "id": "Livr\u00e9e-Jacke"
+    },
+    {
+      "id": "Sakko"
+    },
+    {
+      "id": "Sportjacke"
+    },
+    {
+      "id": "Strickjacke"
+    },
+    {
+      "id": "Sweaterjacke"
+    },
+    {
+      "id": "Trachtenjacke"
+    },
+    {
+      "id": "Uniformjacke"
+    },
+    {
+      "id": "W\u00e4rmende Jacke"
+    },
+    {
+      "id": "Jeans"
+    },
+    {
+      "id": "H\u00fcftjeans"
+    },
+    {
+      "id": "Karottenjeans"
+    },
+    {
+      "id": "R\u00f6hrenjeans"
+    },
+    {
+      "id": "Schlagjeans"
+    },
+    {
+      "id": "J\u00fcdische Kopfbedeckung"
+    },
+    {
+      "id": "Kippa"
+    },
+    {
+      "id": "Tallit"
+    },
+    {
+      "id": "Kappe"
+    },
+    {
+      "id": "Badekappe"
+    },
+    {
+      "id": "Narrenkappe"
+    },
+    {
+      "id": "Schirmkappe"
+    },
+    {
+      "id": "Skull Cap"
+    },
+    {
+      "id": "Tenniskappe"
+    },
+    {
+      "id": "Kasack"
+    },
+    {
+      "id": "OP- Kasack"
+    },
+    {
+      "id": "Katholische Kopfbedeckung"
+    },
+    {
+      "id": "Bischofshut"
+    },
+    {
+      "id": "Kardinalshut"
+    },
+    {
+      "id": "Mitra"
+    },
+    {
+      "id": "Nonnenschleier"
+    },
+    {
+      "id": "Priesterhut"
+    },
+    {
+      "id": "Tiara"
+    },
+    {
+      "id": "Tonsurk\u00e4ppchen"
+    },
+    {
+      "id": "Kittel"
+    },
+    {
+      "id": "Laborkittel"
+    },
+    {
+      "id": "Medizinerkittel"
+    },
+    {
+      "id": "Brautkleid"
+    },
+    {
+      "id": "Cocktail-Kleid"
+    },
+    {
+      "id": "Dirndl"
+    },
+    {
+      "id": "Tageskleid"
+    },
+    {
+      "id": "Unterkleid"
+    },
+    {
+      "id": "Rollkoffer"
+    },
+    {
+      "id": "Kopf zugeh\u00f6rige Accessoires"
+    },
+    {
+      "id": "Augenklappe"
+    },
+    {
+      "id": "Kopfh\u00f6rer"
+    },
+    {
+      "id": "Kopfschmuck"
+    },
+    {
+      "id": "Kopftuch"
+    },
+    {
+      "id": "Kranz"
+    },
+    {
+      "id": "Krone"
+    },
+    {
+      "id": "Maske"
+    },
+    {
+      "id": "Mundschutz"
+    },
+    {
+      "id": "Ohrsch\u00fctzer"
+    },
+    {
+      "id": "Schnorchel"
+    },
+    {
+      "id": "Schnuller"
+    },
+    {
+      "id": "Zahnspange"
+    },
+    {
+      "id": "Kopf zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "id": "Kapuze"
+    },
+    {
+      "id": "M\u00fctze"
+    },
+    {
+      "id": "Ohrw\u00e4rmer"
+    },
+    {
+      "id": "Religi\u00f6se Kopfbedeckung"
+    },
+    {
+      "id": "Schiffchen"
+    },
+    {
+      "id": "Schleier"
+    },
+    {
+      "id": "Schwei\u00dfband"
+    },
+    {
+      "id": "Stirnband"
+    },
+    {
+      "id": "Strumpfmaske"
+    },
+    {
+      "id": "Ohrring"
+    },
+    {
+      "id": "Piercing"
+    },
+    {
+      "id": "Zahnglitzerstein"
+    },
+    {
+      "id": "Bein"
+    },
+    {
+      "id": "Fu\u00df"
+    },
+    {
+      "id": "Ganzk\u00f6rper"
+    },
+    {
+      "id": "Hals"
+    },
+    {
+      "id": "Hand"
+    },
+    {
+      "id": "Kopf"
+    },
+    {
+      "id": "Oberk\u00f6rper"
+    },
+    {
+      "id": "Taille"
+    },
+    {
+      "id": "Neoprenanzug"
+    },
+    {
+      "id": "Overall"
+    },
+    {
+      "id": "Ritterr\u00fcstung"
+    },
+    {
+      "id": "Sch\u00fcrze"
+    },
+    {
+      "id": "Kunststoffbrille"
+    },
+    {
+      "id": "Lesebrille"
+    },
+    {
+      "id": "Metallbrille"
+    },
+    {
+      "id": "Unterbrustkorsett"
+    },
+    {
+      "id": "Vollbrustkorsett"
+    },
+    {
+      "id": "Kost\u00fcmjackett"
+    },
+    {
+      "id": "Chanelj\u00e4ckchen"
+    },
+    {
+      "id": "Blumenkranz"
+    },
+    {
+      "id": "Lorbeerkranz"
+    },
+    {
+      "id": "Diadem"
+    },
+    {
+      "id": "Kr\u00f6nchen"
+    },
+    {
+      "id": "Nerdbrille"
+    },
+    {
+      "id": "Hot Pants"
+    },
+    {
+      "id": "Knickerbocker"
+    },
+    {
+      "id": "Radlerhose"
+    },
+    {
+      "id": "Shorts"
+    },
+    {
+      "id": "Unterhose"
+    },
+    {
+      "id": "Kurzmantel"
+    },
+    {
+      "id": "Boxmantel"
+    },
+    {
+      "id": "Caban-Mantel"
+    },
+    {
+      "id": "Capuchon"
+    },
+    {
+      "id": "Paletot"
+    },
+    {
+      "id": "Parka"
+    },
+    {
+      "id": "Bondagehosen"
+    },
+    {
+      "id": "Breeches lang"
+    },
+    {
+      "id": "Cargo-Hosen"
+    },
+    {
+      "id": "Chino"
+    },
+    {
+      "id": "Karottenhose"
+    },
+    {
+      "id": "Lederhose"
+    },
+    {
+      "id": "Marlene-Dietrich-Hose"
+    },
+    {
+      "id": "Schlafanzughose"
+    },
+    {
+      "id": "Schlaghose"
+    },
+    {
+      "id": "Sporthose"
+    },
+    {
+      "id": "Stoffhose"
+    },
+    {
+      "id": "Uniformhose"
+    },
+    {
+      "id": "Langmantel"
+    },
+    {
+      "id": "Garrick"
+    },
+    {
+      "id": "Gehrock (Mantel)"
+    },
+    {
+      "id": "Kapuzenmantel"
+    },
+    {
+      "id": "Lackmantel"
+    },
+    {
+      "id": "Ledermantel"
+    },
+    {
+      "id": "Redingote"
+    },
+    {
+      "id": "Trenchcoat"
+    },
+    {
+      "id": "Uniformmantel"
+    },
+    {
+      "id": "Wintermantel"
+    },
+    {
+      "id": "Lederjacke"
+    },
+    {
+      "id": "Lammfelljacke"
+    },
+    {
+      "id": "Jeggings"
+    },
+    {
+      "id": "Treggings"
+    },
+    {
+      "id": "Leichter Schal"
+    },
+    {
+      "id": "Seidenschal"
+    },
+    {
+      "id": "Regenmantel"
+    },
+    {
+      "id": "Fechtmaske"
+    },
+    {
+      "id": "Gasmaske"
+    },
+    {
+      "id": "Halbmaske"
+    },
+    {
+      "id": "Schutzmaske"
+    },
+    {
+      "id": "Vollmaske"
+    },
+    {
+      "id": "Maxirock"
+    },
+    {
+      "id": "Tourn\u00fcrenrock"
+    },
+    {
+      "id": "Mechanische Waffe"
+    },
+    {
+      "id": "Messer"
+    },
+    {
+      "id": "Schwert"
+    },
+    {
+      "id": "Schwertscheide"
+    },
+    {
+      "id": "OP-Kittel"
+    },
+    {
+      "id": "Bowler"
+    },
+    {
+      "id": "Halbrandbrillen"
+    },
+    {
+      "id": "Rahmenlose Brillen"
+    },
+    {
+      "id": "Fliegerm\u00fctze"
+    },
+    {
+      "id": "Pelzm\u00fctze"
+    },
+    {
+      "id": "Schirmm\u00fctze"
+    },
+    {
+      "id": "Tellerm\u00fctze"
+    },
+    {
+      "id": "Wollm\u00fctze"
+    },
+    {
+      "id": "Zipfelm\u00fctze"
+    },
+    {
+      "id": "Neglig\u00e9"
+    },
+    {
+      "id": "Nasenpiercing"
+    },
+    {
+      "id": "Nasenringe"
+    },
+    {
+      "id": "Neoprenschuhe"
+    },
+    {
+      "id": "Surfschuhe"
+    },
+    {
+      "id": "Oberk\u00f6rper zugeh\u00f6rige Accessoires"
+    },
+    {
+      "id": "\u00c4rmelhalter"
+    },
+    {
+      "id": "\u00c4rmelschutz"
+    },
+    {
+      "id": "Fl\u00fcgel"
+    },
+    {
+      "id": "Hosentr\u00e4ger"
+    },
+    {
+      "id": "Knopflochblume"
+    },
+    {
+      "id": "K\u00fcnstliche Brust"
+    },
+    {
+      "id": "K\u00fcnstlicher Bauch"
+    },
+    {
+      "id": "Oberk\u00f6rperprotektoren"
+    },
+    {
+      "id": "Rumpfschmuck"
+    },
+    {
+      "id": "Sch\u00e4rpe"
+    },
+    {
+      "id": "Spezial Uhr"
+    },
+    {
+      "id": "Taschentuch"
+    },
+    {
+      "id": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "id": "Kettenhemd"
+    },
+    {
+      "id": "Pollunder"
+    },
+    {
+      "id": "Pullover"
+    },
+    {
+      "id": "Schlafanzugoberteil"
+    },
+    {
+      "id": "Shirt"
+    },
+    {
+      "id": "Top"
+    },
+    {
+      "id": "Weste"
+    },
+    {
+      "id": "Armprothese"
+    },
+    {
+      "id": "Brustschutz"
+    },
+    {
+      "id": "Schulterschutz"
+    },
+    {
+      "id": "Offene Schuhe"
+    },
+    {
+      "id": "Flip Flops"
+    },
+    {
+      "id": "Pantoletten"
+    },
+    {
+      "id": "Sandalen"
+    },
+    {
+      "id": "Creolen"
+    },
+    {
+      "id": "Klips"
+    },
+    {
+      "id": "Ohrh\u00e4nger"
+    },
+    {
+      "id": "Ohrstecker"
+    },
+    {
+      "id": "Ohrst\u00f6psel"
+    },
+    {
+      "id": "Outdoorjacke"
+    },
+    {
+      "id": "Fleecejacke"
+    },
+    {
+      "id": "Regenjacke"
+    },
+    {
+      "id": "Softshelljacke"
+    },
+    {
+      "id": "Windjacke"
+    },
+    {
+      "id": "Outdoorschuhe"
+    },
+    {
+      "id": "Trekkingschuhe"
+    },
+    {
+      "id": "Wanderschuhe"
+    },
+    {
+      "id": "Blaumann"
+    },
+    {
+      "id": "Schutzanzug"
+    },
+    {
+      "id": "Skianzug"
+    },
+    {
+      "id": "Absatz Pantoletten"
+    },
+    {
+      "id": "Clocks"
+    },
+    {
+      "id": "Reitgerte"
+    },
+    {
+      "id": "Perlenkette"
+    },
+    {
+      "id": "Kurze Perlenkette"
+    },
+    {
+      "id": "Lange Perlenkette"
+    },
+    {
+      "id": "Allongeper\u00fccke"
+    },
+    {
+      "id": "Lockenkopfper\u00fccken"
+    },
+    {
+      "id": "Pagenkopfper\u00fccken"
+    },
+    {
+      "id": "Lippenpiercing"
+    },
+    {
+      "id": "Zungenpiercing"
+    },
+    {
+      "id": "Kapuzenpullover"
+    },
+    {
+      "id": "Norwegerpullovern"
+    },
+    {
+      "id": "Rollkragenpullover"
+    },
+    {
+      "id": "Rundhalsausschnittpullover"
+    },
+    {
+      "id": "Strickpullover"
+    },
+    {
+      "id": "Sweater"
+    },
+    {
+      "id": "V-Ausschnittpullover"
+    },
+    {
+      "id": "Pumps"
+    },
+    {
+      "id": "Keilpumps"
+    },
+    {
+      "id": "Peeptoes"
+    },
+    {
+      "id": "Plateaupumps"
+    },
+    {
+      "id": "Riemchenpumps"
+    },
+    {
+      "id": "Slingpumps"
+    },
+    {
+      "id": "\u00d6lzeug"
+    },
+    {
+      "id": "Rettungsweste"
+    },
+    {
+      "id": "Schwimmweste"
+    },
+    {
+      "id": "Ehering"
+    },
+    {
+      "id": "Ring mit Stein"
+    },
+    {
+      "id": "Siegelring"
+    },
+    {
+      "id": "Verlobungsring"
+    },
+    {
+      "id": "Chorhemd"
+    },
+    {
+      "id": "Habit"
+    },
+    {
+      "id": "Kaftan"
+    },
+    {
+      "id": "Messgewand"
+    },
+    {
+      "id": "M\u00f6nchskutte"
+    },
+    {
+      "id": "Soutane"
+    },
+    {
+      "id": "Talar"
+    },
+    {
+      "id": "Waffenrock"
+    },
+    {
+      "id": "Ballonrock"
+    },
+    {
+      "id": "Faltenrock"
+    },
+    {
+      "id": "Glockenrock"
+    },
+    {
+      "id": "Kilt"
+    },
+    {
+      "id": "Kleiderrock"
+    },
+    {
+      "id": "Minirock"
+    },
+    {
+      "id": "Sarong"
+    },
+    {
+      "id": "Sportrock"
+    },
+    {
+      "id": "Tellerrock"
+    },
+    {
+      "id": "Tutu"
+    },
+    {
+      "id": "Uniformrock"
+    },
+    {
+      "id": "Unterrock"
+    },
+    {
+      "id": "Volantrock"
+    },
+    {
+      "id": "Wickelrock"
+    },
+    {
+      "id": "Schulrucksack"
+    },
+    {
+      "id": "Wanderrucksack"
+    },
+    {
+      "id": "Bauchnabelpiercing"
+    },
+    {
+      "id": "Brosche"
+    },
+    {
+      "id": "Uhrenkette"
+    },
+    {
+      "id": "Jackett"
+    },
+    {
+      "id": "Jesussandalen"
+    },
+    {
+      "id": "Sandaletten"
+    },
+    {
+      "id": "Keilsandaletten"
+    },
+    {
+      "id": "Plateausandaletten"
+    },
+    {
+      "id": "Riemchensandaletten"
+    },
+    {
+      "id": "Schaftsandaletten"
+    },
+    {
+      "id": "Zehentrenner"
+    },
+    {
+      "id": "Schaftstiefel"
+    },
+    {
+      "id": "Reitstiefel"
+    },
+    {
+      "id": "Pashmina-Schals"
+    },
+    {
+      "id": "Winterschal"
+    },
+    {
+      "id": "Regenschirm"
+    },
+    {
+      "id": "Sonnenschirm"
+    },
+    {
+      "id": "Baseball-Cap"
+    },
+    {
+      "id": "Basketballcap"
+    },
+    {
+      "id": "Bergm\u00fctze"
+    },
+    {
+      "id": "Kapit\u00e4nsm\u00fctze"
+    },
+    {
+      "id": "Prinz-Heinrich-M\u00fctze"
+    },
+    {
+      "id": "Schieberm\u00fctze"
+    },
+    {
+      "id": "Uniformm\u00fctze"
+    },
+    {
+      "id": "Brautschleier"
+    },
+    {
+      "id": "Hutschleier"
+    },
+    {
+      "id": "Espadrilles"
+    },
+    {
+      "id": "Lackschuhe"
+    },
+    {
+      "id": "Mokassin"
+    },
+    {
+      "id": "Slippers"
+    },
+    {
+      "id": "Muschelkette"
+    },
+    {
+      "id": "Schnurkette mit Anh\u00e4nger"
+    },
+    {
+      "id": "Absatz Schn\u00fcrschuhe"
+    },
+    {
+      "id": "Bootsschuhe"
+    },
+    {
+      "id": "Budapester"
+    },
+    {
+      "id": "Oxfords"
+    },
+    {
+      "id": "Plateau Schn\u00fcrschuhe"
+    },
+    {
+      "id": "Schn\u00fcrstiefel"
+    },
+    {
+      "id": "Milit\u00e4rstiefel"
+    },
+    {
+      "id": "Springerstiefel"
+    },
+    {
+      "id": "Sneakers"
+    },
+    {
+      "id": "Spezialschuhe"
+    },
+    {
+      "id": "Sportschuhe"
+    },
+    {
+      "id": "Stiefel"
+    },
+    {
+      "id": "Stiefeletten"
+    },
+    {
+      "id": "Schultertuch"
+    },
+    {
+      "id": "Berthe"
+    },
+    {
+      "id": "Stola"
+    },
+    {
+      "id": "Kittelsch\u00fcrze"
+    },
+    {
+      "id": "Ledersch\u00fcrze"
+    },
+    {
+      "id": "Serviersch\u00fcrze"
+    },
+    {
+      "id": "Trachtensch\u00fcrze"
+    },
+    {
+      "id": "Chemieschutzanzug"
+    },
+    {
+      "id": "Latexhandschuhe"
+    },
+    {
+      "id": "Stahlhelm"
+    },
+    {
+      "id": "Schutzweste"
+    },
+    {
+      "id": "Kugelsichere Weste"
+    },
+    {
+      "id": "Tarnweste"
+    },
+    {
+      "id": "Warnweste"
+    },
+    {
+      "id": "Badeanzug"
+    },
+    {
+      "id": "Bistrosch\u00fcrze"
+    },
+    {
+      "id": "Longsleeve"
+    },
+    {
+      "id": "Schwimm T-Shirt"
+    },
+    {
+      "id": "Shirt-Tunika"
+    },
+    {
+      "id": "Sporttrikot"
+    },
+    {
+      "id": "T-Shirt"
+    },
+    {
+      "id": "Bermudas"
+    },
+    {
+      "id": "Cargoshorts"
+    },
+    {
+      "id": "Sportshorts"
+    },
+    {
+      "id": "Schaft-Sneakers"
+    },
+    {
+      "id": "Skater Schuhe"
+    },
+    {
+      "id": "Socken"
+    },
+    {
+      "id": "Noppensocken"
+    },
+    {
+      "id": "S\u00f6ckchen"
+    },
+    {
+      "id": "Sportsocken"
+    },
+    {
+      "id": "W\u00e4rmesocken"
+    },
+    {
+      "id": "Fliegerbrillen"
+    },
+    {
+      "id": "Schwesternuhr"
+    },
+    {
+      "id": "Taschenuhr"
+    },
+    {
+      "id": "Inliner"
+    },
+    {
+      "id": "Rollschuhe"
+    },
+    {
+      "id": "Schlittschuhe"
+    },
+    {
+      "id": "Skischuhe"
+    },
+    {
+      "id": "Baseballhandschuhe"
+    },
+    {
+      "id": "Bogenschie\u00dfhandschuhe"
+    },
+    {
+      "id": "Fecht-Handschuhe"
+    },
+    {
+      "id": "Fitnesshandschuhe"
+    },
+    {
+      "id": "Footballhandschuhe"
+    },
+    {
+      "id": "Radfahrerhandschuhe"
+    },
+    {
+      "id": "Reithandschuhe"
+    },
+    {
+      "id": "Taucherhandschuhe"
+    },
+    {
+      "id": "Torwarthandschuhe"
+    },
+    {
+      "id": "Baseball-Helm"
+    },
+    {
+      "id": "Boxhelm"
+    },
+    {
+      "id": "Fahrradhelm"
+    },
+    {
+      "id": "Footballhelm"
+    },
+    {
+      "id": "Kletterhelm"
+    },
+    {
+      "id": "Reithelm"
+    },
+    {
+      "id": "Skihelm"
+    },
+    {
+      "id": "Fahrradhose"
+    },
+    {
+      "id": "Fechthose"
+    },
+    {
+      "id": "Jazzpants"
+    },
+    {
+      "id": "Karatehose"
+    },
+    {
+      "id": "Reithose"
+    },
+    {
+      "id": "Skihose"
+    },
+    {
+      "id": "Trainingshose"
+    },
+    {
+      "id": "Fechtjacke"
+    },
+    {
+      "id": "Karatejacke"
+    },
+    {
+      "id": "Skijacke"
+    },
+    {
+      "id": "Trainingsjacke"
+    },
+    {
+      "id": "Turnierjackett"
+    },
+    {
+      "id": "Tennisrock"
+    },
+    {
+      "id": "Bowlingschuhe"
+    },
+    {
+      "id": "Boxerstiefel"
+    },
+    {
+      "id": "Fahrradschuhe"
+    },
+    {
+      "id": "Golfschuhe"
+    },
+    {
+      "id": "Kletterschuhe"
+    },
+    {
+      "id": "Stollenschuhe"
+    },
+    {
+      "id": "Tanzschuhe"
+    },
+    {
+      "id": "Trainingsschuhe"
+    },
+    {
+      "id": "Trainingsshorts"
+    },
+    {
+      "id": "Laufsocken"
+    },
+    {
+      "id": "Wandersocken"
+    },
+    {
+      "id": "Fahrradtrikot"
+    },
+    {
+      "id": "Footballtrikot"
+    },
+    {
+      "id": "Fu\u00dfballtrikot"
+    },
+    {
+      "id": "Cowboystiefel"
+    },
+    {
+      "id": "Gummistiefel"
+    },
+    {
+      "id": "Keilstiefel"
+    },
+    {
+      "id": "Overknees"
+    },
+    {
+      "id": "Plateaustiefel"
+    },
+    {
+      "id": "Stulpenstiefel"
+    },
+    {
+      "id": "Watstiefel"
+    },
+    {
+      "id": "Ankle Boots"
+    },
+    {
+      "id": "Keilabsatzstiefeletten"
+    },
+    {
+      "id": "Plateaustiefeletten"
+    },
+    {
+      "id": "Reitstiefelette"
+    },
+    {
+      "id": "Schn\u00fcrstiefeletten"
+    },
+    {
+      "id": "Skistock"
+    },
+    {
+      "id": "Trekkingstock"
+    },
+    {
+      "id": "Leinenhose"
+    },
+    {
+      "id": "Fu\u00dfballschuhe"
+    },
+    {
+      "id": "Strapse"
+    },
+    {
+      "id": "Halterlose Str\u00fcmpfe"
+    },
+    {
+      "id": "Cardigan"
+    },
+    {
+      "id": "Kreiss\u00e4ge"
+    },
+    {
+      "id": "Panama-Hut"
+    },
+    {
+      "id": "F\u00fc\u00dflinge"
+    },
+    {
+      "id": "Kniestr\u00fcmpfe"
+    },
+    {
+      "id": "Overknee Str\u00fcmpfe"
+    },
+    {
+      "id": "Strumpfhosen"
+    },
+    {
+      "id": "Sockenhalter"
+    },
+    {
+      "id": "Blickdichte Strumpfhosen"
+    },
+    {
+      "id": "Feinstrumpfhosen"
+    },
+    {
+      "id": "College-Sweatjacket"
+    },
+    {
+      "id": "Kapuzenjacke"
+    },
+    {
+      "id": "Poloshirt"
+    },
+    {
+      "id": "Babydollkleid"
+    },
+    {
+      "id": "Hemdblusenkleid"
+    },
+    {
+      "id": "Sommerkleid"
+    },
+    {
+      "id": "Strickkleid"
+    },
+    {
+      "id": "T-Shirtkleid"
+    },
+    {
+      "id": "Taille zugeh\u00f6rige Accessoires"
+    },
+    {
+      "id": "G\u00fcrteltasche"
+    },
+    {
+      "id": "Holster"
+    },
+    {
+      "id": "Karabiner"
+    },
+    {
+      "id": "Strapsg\u00fcrtel"
+    },
+    {
+      "id": "Taille zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "id": "Kummerbund"
+    },
+    {
+      "id": "Taillenkorsett"
+    },
+    {
+      "id": "Flamencoschuhe"
+    },
+    {
+      "id": "Jazzschuhe"
+    },
+    {
+      "id": "Schl\u00e4ppchen"
+    },
+    {
+      "id": "Spitzenschuhe"
+    },
+    {
+      "id": "Steppschuhe"
+    },
+    {
+      "id": "Cluche"
+    },
+    {
+      "id": "Einkaufstasche"
+    },
+    {
+      "id": "Handtasche"
+    },
+    {
+      "id": "Reisetasche"
+    },
+    {
+      "id": "Sporttasche"
+    },
+    {
+      "id": "Umh\u00e4ngetasche"
+    },
+    {
+      "id": "Einstecktuch"
+    },
+    {
+      "id": "Ziertuch"
+    },
+    {
+      "id": "Neckholder-Top"
+    },
+    {
+      "id": "Spaghetti-Top"
+    },
+    {
+      "id": "Tank Top"
+    },
+    {
+      "id": "Tr\u00e4gerloses Top"
+    },
+    {
+      "id": "J\u00e4gerhut"
+    },
+    {
+      "id": "Janker"
+    },
+    {
+      "id": "Tube-Top"
+    },
+    {
+      "id": "Hallenschuhe"
+    },
+    {
+      "id": "Laufschuhe"
+    },
+    {
+      "id": "Zehenschuhe"
+    },
+    {
+      "id": "Trekkingsandalen"
+    },
+    {
+      "id": "Armbanduhr"
+    },
+    {
+      "id": "Pulsmesser"
+    },
+    {
+      "id": "Ringuhr"
+    },
+    {
+      "id": "Feldhemd"
+    },
+    {
+      "id": "Husarenjacke"
+    },
+    {
+      "id": "Boxershorts"
+    },
+    {
+      "id": "Hipster"
+    },
+    {
+      "id": "Miederhose"
+    },
+    {
+      "id": "Panty"
+    },
+    {
+      "id": "Schamkapsel"
+    },
+    {
+      "id": "Schl\u00fcpfer"
+    },
+    {
+      "id": "Slip"
+    },
+    {
+      "id": "String"
+    },
+    {
+      "id": "Suspensorium"
+    },
+    {
+      "id": "Tanga"
+    },
+    {
+      "id": "Miederkleid"
+    },
+    {
+      "id": "Cul de Paris"
+    },
+    {
+      "id": "Krinoline"
+    },
+    {
+      "id": "Petticoat"
+    },
+    {
+      "id": "Reifrock"
+    },
+    {
+      "id": "Guy-Fawkes-Maske"
+    },
+    {
+      "id": "Halloweenmaske"
+    },
+    {
+      "id": "Tiermaske"
+    },
+    {
+      "id": "Bikerjacke"
+    },
+    {
+      "id": "Daunenjacke"
+    },
+    {
+      "id": "Anglerweste"
+    },
+    {
+      "id": "Gilet"
+    },
+    {
+      "id": "Jeansweste"
+    },
+    {
+      "id": "Lederweste"
+    },
+    {
+      "id": "Steppweste"
+    },
+    {
+      "id": "Strickweste"
+    },
+    {
+      "id": "Trachtenweste"
+    },
+    {
+      "id": "Trainingsweste"
+    },
+    {
+      "id": "Wams"
+    },
+    {
+      "id": "Zimmermannsweste"
+    },
+    {
+      "id": "Lederhandschuhe"
+    },
+    {
+      "id": "Strickhandschuhe"
+    },
+    {
+      "id": "Daunenmantel"
+    },
+    {
+      "id": "Lodenmantel"
+    },
+    {
+      "id": "Pelzmantel"
+    },
+    {
+      "id": "Ulster"
+    },
+    {
+      "id": "Wollmantel"
+    },
+    {
+      "id": "Schlauchschals"
+    },
+    {
+      "id": "Wollschal"
+    },
+    {
+      "id": "Dufflecoat"
+    },
+    {
+      "id": "Norwegerm\u00fctze"
+    },
+    {
+      "id": "Pudelm\u00fctzen"
+    },
+    {
+      "id": "Schlupfm\u00fctze"
+    },
+    {
+      "id": "Strickm\u00fctze"
+    },
+    {
+      "id": "Pflaster"
+    },
+    {
+      "id": "Verband"
+    },
+    {
+      "id": "Feste Zahnspange"
+    },
+    {
+      "id": "Headgear (B\u00fcgel)"
+    },
+    {
+      "id": "Lose Zahnspange"
+    },
+    {
+      "id": "Zahnschiene"
+    },
+    {
+      "id": "Phrygische M\u00fctze"
+    },
+    {
+      "id": "Schlafm\u00fctze"
+    },
+    {
+      "id": "Dressurzylinder"
+    }
+  ],
+  "links": [
+    {
+      "source": "Abendkleid",
+      "target": "One-Shoulder-Kleid"
+    },
+    {
+      "source": "Abendkleid",
+      "target": "Schulterfreies Kleid"
+    },
+    {
+      "source": "Abzeichen",
+      "target": "Anstecker"
+    },
+    {
+      "source": "Abzeichen",
+      "target": "Cocarde"
+    },
+    {
+      "source": "Abzeichen",
+      "target": "Fangschnur"
+    },
+    {
+      "source": "Abzeichen",
+      "target": "Medaille"
+    },
+    {
+      "source": "Abzeichen",
+      "target": "Orden"
+    },
+    {
+      "source": "Abzeichen",
+      "target": "Schulterklappen"
+    },
+    {
+      "source": "Anstecker",
+      "target": "Button"
+    },
+    {
+      "source": "Anstecker",
+      "target": "Sheriffstern"
+    },
+    {
+      "source": "Achselshirt",
+      "target": "Achseltrikot"
+    },
+    {
+      "source": "Achselshirt",
+      "target": "Netzshirt"
+    },
+    {
+      "source": "Achselshirt",
+      "target": "Unterhemd"
+    },
+    {
+      "source": "Anlasshemd",
+      "target": "Frackhemd"
+    },
+    {
+      "source": "Anlasshemd",
+      "target": "Smokinghemd"
+    },
+    {
+      "source": "Anlassjacke",
+      "target": "Cutaway"
+    },
+    {
+      "source": "Anlassjacke",
+      "target": "Dinner-Jackett"
+    },
+    {
+      "source": "Anlassjacke",
+      "target": "Frack"
+    },
+    {
+      "source": "Anlassjacke",
+      "target": "Gehrock (festlich)"
+    },
+    {
+      "source": "Anlassjacke",
+      "target": "Smoking Jackett"
+    },
+    {
+      "source": "Anorak",
+      "target": "Windbluse"
+    },
+    {
+      "source": "Anzughose",
+      "target": "B\u00fcgelfaltenhose"
+    },
+    {
+      "source": "Anzughose",
+      "target": "Bundfaltenhose"
+    },
+    {
+      "source": "Anzughose",
+      "target": "Cutaway Hose"
+    },
+    {
+      "source": "Anzughose",
+      "target": "Frackhose"
+    },
+    {
+      "source": "Anzugsakko",
+      "target": "Einreihiges Sakko"
+    },
+    {
+      "source": "Anzugsakko",
+      "target": "Zweireihiges Sakko"
+    },
+    {
+      "source": "Anzugweste",
+      "target": "Frackweste"
+    },
+    {
+      "source": "Anzugweste",
+      "target": "Nadelstreifenweste"
+    },
+    {
+      "source": "Arbeitshandschuhe",
+      "target": "Gartenhandschuhe"
+    },
+    {
+      "source": "Arbeitshandschuhe",
+      "target": "Maurerhandschuhe"
+    },
+    {
+      "source": "Arbeitshemd",
+      "target": "Fischerhemd"
+    },
+    {
+      "source": "Arbeitshemd",
+      "target": "Flanellhemd"
+    },
+    {
+      "source": "Arbeitsschuhe",
+      "target": "Stahlkappenschuhe"
+    },
+    {
+      "source": "Armband",
+      "target": "Armreif"
+    },
+    {
+      "source": "Armband",
+      "target": "Blumenarmband"
+    },
+    {
+      "source": "Armband",
+      "target": "Nietenarmband"
+    },
+    {
+      "source": "Armprotektoren",
+      "target": "Armsch\u00fctzer"
+    },
+    {
+      "source": "Armprotektoren",
+      "target": "Ellbogenschoner"
+    },
+    {
+      "source": "Armprotektoren",
+      "target": "Unterarmschoner"
+    },
+    {
+      "source": "Augenbrauenpiercing",
+      "target": "Augenbrauenringe"
+    },
+    {
+      "source": "Badehose",
+      "target": "Badeshorts"
+    },
+    {
+      "source": "Badehose",
+      "target": "Bikini-Hose"
+    },
+    {
+      "source": "Badehose",
+      "target": "Tankini-Hose"
+    },
+    {
+      "source": "Bikini-Hose",
+      "target": "Bikini-Slip"
+    },
+    {
+      "source": "Bikini-Hose",
+      "target": "Bikinipanty"
+    },
+    {
+      "source": "Badeschuhe",
+      "target": "Badesandalen"
+    },
+    {
+      "source": "Badeschuhe",
+      "target": "Badeschlappen"
+    },
+    {
+      "source": "Badeschuhe",
+      "target": "Schwimmschuhe"
+    },
+    {
+      "source": "Schwimmschuhe",
+      "target": "Neoprenschuhe"
+    },
+    {
+      "source": "Baggy Pants",
+      "target": "Skater-Hosen"
+    },
+    {
+      "source": "Ballerinas",
+      "target": "Peeptoe Ballerinas"
+    },
+    {
+      "source": "Ballerinas",
+      "target": "Riemchenballerinas"
+    },
+    {
+      "source": "Barett",
+      "target": "Baskenm\u00fctze"
+    },
+    {
+      "source": "Basiselemente",
+      "target": "Bein zugeh\u00f6rige Teile"
+    },
+    {
+      "source": "Basiselemente",
+      "target": "Externe Accessoires"
+    },
+    {
+      "source": "Basiselemente",
+      "target": "Fu\u00df zugeh\u00f6rige Teile"
+    },
+    {
+      "source": "Basiselemente",
+      "target": "Ganzk\u00f6rper zugeh\u00f6rige Teile"
+    },
+    {
+      "source": "Basiselemente",
+      "target": "Hals zugeh\u00f6rige Teile"
+    },
+    {
+      "source": "Basiselemente",
+      "target": "Hand zugeh\u00f6rige Teile"
+    },
+    {
+      "source": "Basiselemente",
+      "target": "Kopf zugeh\u00f6rige Teile"
+    },
+    {
+      "source": "Basiselemente",
+      "target": "K\u00f6rper"
+    },
+    {
+      "source": "Basiselemente",
+      "target": "Oberk\u00f6rper zugeh\u00f6rige Teile"
+    },
+    {
+      "source": "Basiselemente",
+      "target": "Taille zugeh\u00f6rige Teile"
+    },
+    {
+      "source": "Bein zugeh\u00f6rige Teile",
+      "target": "Bein zugeh\u00f6rige Accessoires"
+    },
+    {
+      "source": "Bein zugeh\u00f6rige Teile",
+      "target": "Bein zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "source": "Externe Accessoires",
+      "target": "Etui"
+    },
+    {
+      "source": "Externe Accessoires",
+      "target": "Koffer"
+    },
+    {
+      "source": "Externe Accessoires",
+      "target": "Portemonnaie"
+    },
+    {
+      "source": "Externe Accessoires",
+      "target": "Rucksack"
+    },
+    {
+      "source": "Externe Accessoires",
+      "target": "Schl\u00fcsselanh\u00e4nger"
+    },
+    {
+      "source": "Externe Accessoires",
+      "target": "Tasche"
+    },
+    {
+      "source": "Externe Accessoires",
+      "target": "Waffe"
+    },
+    {
+      "source": "Fu\u00df zugeh\u00f6rige Teile",
+      "target": "Fu\u00df zugeh\u00f6rige Accessoires"
+    },
+    {
+      "source": "Fu\u00df zugeh\u00f6rige Teile",
+      "target": "Fu\u00df zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "source": "Ganzk\u00f6rper zugeh\u00f6rige Teile",
+      "target": "Ganzk\u00f6rper zugeh\u00f6rige Accessoires"
+    },
+    {
+      "source": "Ganzk\u00f6rper zugeh\u00f6rige Teile",
+      "target": "Ganzk\u00f6rper zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Teile",
+      "target": "Hals zugeh\u00f6rige Accessoires"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Teile",
+      "target": "Hals zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Teile",
+      "target": "Hand zugeh\u00f6rige Accessoires"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Teile",
+      "target": "Hand zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Teile",
+      "target": "Kopf zugeh\u00f6rige Accessoires"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Teile",
+      "target": "Kopf zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "source": "K\u00f6rper",
+      "target": "Bein"
+    },
+    {
+      "source": "K\u00f6rper",
+      "target": "Fu\u00df"
+    },
+    {
+      "source": "K\u00f6rper",
+      "target": "Ganzk\u00f6rper"
+    },
+    {
+      "source": "K\u00f6rper",
+      "target": "Hals"
+    },
+    {
+      "source": "K\u00f6rper",
+      "target": "Hand"
+    },
+    {
+      "source": "K\u00f6rper",
+      "target": "Kopf"
+    },
+    {
+      "source": "K\u00f6rper",
+      "target": "Oberk\u00f6rper"
+    },
+    {
+      "source": "K\u00f6rper",
+      "target": "Taille"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Teile",
+      "target": "Armprothese"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Teile",
+      "target": "Oberk\u00f6rper zugeh\u00f6rige Accessoires"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Teile",
+      "target": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "source": "Taille zugeh\u00f6rige Teile",
+      "target": "Taille zugeh\u00f6rige Accessoires"
+    },
+    {
+      "source": "Taille zugeh\u00f6rige Teile",
+      "target": "Taille zugeh\u00f6rige Bekleidungsteile"
+    },
+    {
+      "source": "Bein zugeh\u00f6rige Accessoires",
+      "target": "Beinprotektoren"
+    },
+    {
+      "source": "Bein zugeh\u00f6rige Accessoires",
+      "target": "Beinprothese"
+    },
+    {
+      "source": "Bein zugeh\u00f6rige Accessoires",
+      "target": "Chaps"
+    },
+    {
+      "source": "Bein zugeh\u00f6rige Accessoires",
+      "target": "Strumpfband"
+    },
+    {
+      "source": "Bein zugeh\u00f6rige Accessoires",
+      "target": "Strumpfhalter"
+    },
+    {
+      "source": "Beinprotektoren",
+      "target": "Knieschoner"
+    },
+    {
+      "source": "Beinprotektoren",
+      "target": "Oberschenkelschoner"
+    },
+    {
+      "source": "Beinprotektoren",
+      "target": "Schienbeinschoner"
+    },
+    {
+      "source": "Strumpfhalter",
+      "target": "Sockenhalter"
+    },
+    {
+      "source": "Bein zugeh\u00f6rige Bekleidungsteile",
+      "target": "Gamaschen"
+    },
+    {
+      "source": "Bein zugeh\u00f6rige Bekleidungsteile",
+      "target": "Hose"
+    },
+    {
+      "source": "Bein zugeh\u00f6rige Bekleidungsteile",
+      "target": "Hosenrock"
+    },
+    {
+      "source": "Bein zugeh\u00f6rige Bekleidungsteile",
+      "target": "Lendenschurz"
+    },
+    {
+      "source": "Bein zugeh\u00f6rige Bekleidungsteile",
+      "target": "Rock"
+    },
+    {
+      "source": "Bein zugeh\u00f6rige Bekleidungsteile",
+      "target": "Stulpen"
+    },
+    {
+      "source": "Gamaschen",
+      "target": "Wickelgamaschen"
+    },
+    {
+      "source": "Hose",
+      "target": "Dreiviertel Hose"
+    },
+    {
+      "source": "Hose",
+      "target": "Kurze Hose"
+    },
+    {
+      "source": "Hose",
+      "target": "Lange Hose"
+    },
+    {
+      "source": "Hose",
+      "target": "Latzhose"
+    },
+    {
+      "source": "Hose",
+      "target": "Leggins"
+    },
+    {
+      "source": "Hose",
+      "target": "Windel"
+    },
+    {
+      "source": "Rock",
+      "target": "Ballonrock"
+    },
+    {
+      "source": "Rock",
+      "target": "Bleistiftrock"
+    },
+    {
+      "source": "Rock",
+      "target": "Faltenrock"
+    },
+    {
+      "source": "Rock",
+      "target": "Glockenrock"
+    },
+    {
+      "source": "Rock",
+      "target": "Kilt"
+    },
+    {
+      "source": "Rock",
+      "target": "Kleiderrock"
+    },
+    {
+      "source": "Rock",
+      "target": "Maxirock"
+    },
+    {
+      "source": "Rock",
+      "target": "Minirock"
+    },
+    {
+      "source": "Rock",
+      "target": "Sarong"
+    },
+    {
+      "source": "Rock",
+      "target": "Sportrock"
+    },
+    {
+      "source": "Rock",
+      "target": "Tellerrock"
+    },
+    {
+      "source": "Rock",
+      "target": "Tutu"
+    },
+    {
+      "source": "Rock",
+      "target": "Uniformrock"
+    },
+    {
+      "source": "Rock",
+      "target": "Unterrock"
+    },
+    {
+      "source": "Rock",
+      "target": "Volantrock"
+    },
+    {
+      "source": "Rock",
+      "target": "Wickelrock"
+    },
+    {
+      "source": "BH",
+      "target": "B\u00fcgel-BH"
+    },
+    {
+      "source": "BH",
+      "target": "B\u00fcgelloser BH"
+    },
+    {
+      "source": "BH",
+      "target": "Nackentr\u00e4ger-BH"
+    },
+    {
+      "source": "BH",
+      "target": "Still-BH"
+    },
+    {
+      "source": "BH",
+      "target": "Tr\u00e4gerloser BH"
+    },
+    {
+      "source": "B\u00fcgel-BH",
+      "target": "Push-up"
+    },
+    {
+      "source": "B\u00fcgelloser BH",
+      "target": "Sport BH"
+    },
+    {
+      "source": "Bikini-Top",
+      "target": "Bikini-BH-Oberteil"
+    },
+    {
+      "source": "Bikini-Top",
+      "target": "Bikinineckholderoberteil"
+    },
+    {
+      "source": "Bindeg\u00fcrtel",
+      "target": "Karateg\u00fcrtel"
+    },
+    {
+      "source": "Blazer",
+      "target": "Navy Blazer."
+    },
+    {
+      "source": "Bleistiftrock",
+      "target": "Businessrock"
+    },
+    {
+      "source": "Blindenabzeichen",
+      "target": "Blindenbinde"
+    },
+    {
+      "source": "Blouson",
+      "target": "Bomberjacke"
+    },
+    {
+      "source": "Blouson",
+      "target": "Pilotenjacke"
+    },
+    {
+      "source": "Bluse",
+      "target": "Blusentunika"
+    },
+    {
+      "source": "Bluse",
+      "target": "Dirndlbluse"
+    },
+    {
+      "source": "Bluse",
+      "target": "Kurzarmbluse"
+    },
+    {
+      "source": "Bluse",
+      "target": "Langarmbluse"
+    },
+    {
+      "source": "Bluse",
+      "target": "Puff\u00e4rmelblusen"
+    },
+    {
+      "source": "Body",
+      "target": "Catsuit"
+    },
+    {
+      "source": "Body",
+      "target": "Fatsuit"
+    },
+    {
+      "source": "Body",
+      "target": "Gymnastiktrikot"
+    },
+    {
+      "source": "Body",
+      "target": "Korselett"
+    },
+    {
+      "source": "Body",
+      "target": "Strampler"
+    },
+    {
+      "source": "Gymnastiktrikot",
+      "target": "Schlittschuhtrikot"
+    },
+    {
+      "source": "Gymnastiktrikot",
+      "target": "Tanztrikot"
+    },
+    {
+      "source": "Boots",
+      "target": "Bikerboots"
+    },
+    {
+      "source": "Boots",
+      "target": "Moonboots"
+    },
+    {
+      "source": "Boots",
+      "target": "Schneeboots"
+    },
+    {
+      "source": "Boots",
+      "target": "Schn\u00fcrboots"
+    },
+    {
+      "source": "Boxhandschuhe",
+      "target": "Sandsackhandschuh"
+    },
+    {
+      "source": "Brille",
+      "target": "3D-Brille"
+    },
+    {
+      "source": "Brille",
+      "target": "Historische Brille"
+    },
+    {
+      "source": "Brille",
+      "target": "Korrektionsbrille"
+    },
+    {
+      "source": "Brille",
+      "target": "Schlafbrille"
+    },
+    {
+      "source": "Brille",
+      "target": "Schutzbrille"
+    },
+    {
+      "source": "Brille",
+      "target": "Schwimmbrille"
+    },
+    {
+      "source": "Brille",
+      "target": "Skibrille"
+    },
+    {
+      "source": "Brille",
+      "target": "Sonnenbrillen"
+    },
+    {
+      "source": "Historische Brille",
+      "target": "Monokel"
+    },
+    {
+      "source": "Historische Brille",
+      "target": "Zwicker"
+    },
+    {
+      "source": "Korrektionsbrille",
+      "target": "Kunststoffbrille"
+    },
+    {
+      "source": "Korrektionsbrille",
+      "target": "Lesebrille"
+    },
+    {
+      "source": "Korrektionsbrille",
+      "target": "Metallbrille"
+    },
+    {
+      "source": "Sonnenbrillen",
+      "target": "Fliegerbrillen"
+    },
+    {
+      "source": "Brillenkordel",
+      "target": "Brillenkette"
+    },
+    {
+      "source": "Brillenkordel",
+      "target": "Brillenschnur"
+    },
+    {
+      "source": "Brustst\u00fctzkleidung",
+      "target": "Bandeau"
+    },
+    {
+      "source": "Brustst\u00fctzkleidung",
+      "target": "BH"
+    },
+    {
+      "source": "Brustst\u00fctzkleidung",
+      "target": "Bikini-Top"
+    },
+    {
+      "source": "Brustst\u00fctzkleidung",
+      "target": "Bustier"
+    },
+    {
+      "source": "Brustst\u00fctzkleidung",
+      "target": "Korsage"
+    },
+    {
+      "source": "Brustst\u00fctzkleidung",
+      "target": "Korsett"
+    },
+    {
+      "source": "Brustst\u00fctzkleidung",
+      "target": "Tankini-Top"
+    },
+    {
+      "source": "Korsett",
+      "target": "Unterbrustkorsett"
+    },
+    {
+      "source": "Korsett",
+      "target": "Vollbrustkorsett"
+    },
+    {
+      "source": "Businesskleid",
+      "target": "Etuikleid"
+    },
+    {
+      "source": "Businesstasche",
+      "target": "Laptoptasche"
+    },
+    {
+      "source": "Cape",
+      "target": "Pelerine"
+    },
+    {
+      "source": "Cape",
+      "target": "Poncho"
+    },
+    {
+      "source": "Cape",
+      "target": "Regencape"
+    },
+    {
+      "source": "Chucks",
+      "target": "Halbschuh Chucks"
+    },
+    {
+      "source": "Chucks",
+      "target": "Schaft-Chucks"
+    },
+    {
+      "source": "Cordhose",
+      "target": "Zimmermannshose"
+    },
+    {
+      "source": "Cowboy Hut",
+      "target": "Akubra"
+    },
+    {
+      "source": "Damenhut",
+      "target": "Florentinerhut"
+    },
+    {
+      "source": "Damenhut",
+      "target": "Glockenhut"
+    },
+    {
+      "source": "Damenhut",
+      "target": "Schute"
+    },
+    {
+      "source": "Damenhut",
+      "target": "Topfhut"
+    },
+    {
+      "source": "Doktorhut",
+      "target": "Abschluss-Barett"
+    },
+    {
+      "source": "Dreiviertel Hose",
+      "target": "Breeches kurz"
+    },
+    {
+      "source": "Dreiviertel Hose",
+      "target": "Capri-Hose"
+    },
+    {
+      "source": "Dreiviertel Hose",
+      "target": "Clochardhose"
+    },
+    {
+      "source": "Dreiviertel Hose",
+      "target": "Kniebundhose"
+    },
+    {
+      "source": "Dreiviertel Hose",
+      "target": "Torerohose"
+    },
+    {
+      "source": "Etui",
+      "target": "Brillenetui"
+    },
+    {
+      "source": "Etui",
+      "target": "Visitenkartenetui"
+    },
+    {
+      "source": "Etui",
+      "target": "Zigarettenetui"
+    },
+    {
+      "source": "Evangelische Kopfbedeckung",
+      "target": "Lutherbarett"
+    },
+    {
+      "source": "Exotisches Kleid",
+      "target": "Cheongsam"
+    },
+    {
+      "source": "Exotisches Kleid",
+      "target": "Kimono"
+    },
+    {
+      "source": "Exotisches Kleid",
+      "target": "Sari"
+    },
+    {
+      "source": "Exotisches Kleid",
+      "target": "Toga"
+    },
+    {
+      "source": "Exotisches Kleid",
+      "target": "Tunika"
+    },
+    {
+      "source": "Koffer",
+      "target": "Rollkoffer"
+    },
+    {
+      "source": "Rucksack",
+      "target": "Schulrucksack"
+    },
+    {
+      "source": "Rucksack",
+      "target": "Wanderrucksack"
+    },
+    {
+      "source": "Tasche",
+      "target": "Businesstasche"
+    },
+    {
+      "source": "Tasche",
+      "target": "Cluche"
+    },
+    {
+      "source": "Tasche",
+      "target": "Einkaufstasche"
+    },
+    {
+      "source": "Tasche",
+      "target": "Handtasche"
+    },
+    {
+      "source": "Tasche",
+      "target": "Reisetasche"
+    },
+    {
+      "source": "Tasche",
+      "target": "Sporttasche"
+    },
+    {
+      "source": "Tasche",
+      "target": "Umh\u00e4ngetasche"
+    },
+    {
+      "source": "Waffe",
+      "target": "Feuerwaffe"
+    },
+    {
+      "source": "Waffe",
+      "target": "Mechanische Waffe"
+    },
+    {
+      "source": "F\u00e4ustlinge",
+      "target": "Klappf\u00e4ustling"
+    },
+    {
+      "source": "Federschmuck",
+      "target": "H\u00e4uptlingsfederschmuck"
+    },
+    {
+      "source": "Fedoras",
+      "target": "Borsalino"
+    },
+    {
+      "source": "Fedoras",
+      "target": "Trilby"
+    },
+    {
+      "source": "Feuerwaffe",
+      "target": "Gewehr"
+    },
+    {
+      "source": "Feuerwaffe",
+      "target": "Pistole"
+    },
+    {
+      "source": "Feuerwaffe",
+      "target": "Revolver"
+    },
+    {
+      "source": "Fingerhandschuhe",
+      "target": "Abendhandschuhe"
+    },
+    {
+      "source": "Fingerhandschuhe",
+      "target": "Glaceehandschuhe"
+    },
+    {
+      "source": "Fingerhandschuhe",
+      "target": "Winterhandschuhe"
+    },
+    {
+      "source": "Winterhandschuhe",
+      "target": "Lederhandschuhe"
+    },
+    {
+      "source": "Winterhandschuhe",
+      "target": "Strickhandschuhe"
+    },
+    {
+      "source": "Flache Pantoletten",
+      "target": "Crocs"
+    },
+    {
+      "source": "Freizeithemd",
+      "target": "Hawaii-Hemd"
+    },
+    {
+      "source": "Freizeithemd",
+      "target": "Husarenhemd"
+    },
+    {
+      "source": "Freizeithemd",
+      "target": "Leinenhemd"
+    },
+    {
+      "source": "Freizeithemd",
+      "target": "Matrosenhemden"
+    },
+    {
+      "source": "Freizeitsakko",
+      "target": "Blazer"
+    },
+    {
+      "source": "Funktionshose",
+      "target": "Lange Unterhose"
+    },
+    {
+      "source": "Funktionshose",
+      "target": "Regenhose"
+    },
+    {
+      "source": "Funktionshose",
+      "target": "Thermohose"
+    },
+    {
+      "source": "Funktionsshirt",
+      "target": "Sportshirt"
+    },
+    {
+      "source": "Funktionsshirt",
+      "target": "Thermoshirt"
+    },
+    {
+      "source": "Funktionstop",
+      "target": "Sport Top"
+    },
+    {
+      "source": "Fu\u00df zugeh\u00f6rige Accessoires",
+      "target": "Fu\u00dfprotektor"
+    },
+    {
+      "source": "Fu\u00df zugeh\u00f6rige Accessoires",
+      "target": "Fu\u00dfschmuck"
+    },
+    {
+      "source": "Fu\u00df zugeh\u00f6rige Accessoires",
+      "target": "Schwimmflossen"
+    },
+    {
+      "source": "Fu\u00df zugeh\u00f6rige Accessoires",
+      "target": "Skier"
+    },
+    {
+      "source": "Fu\u00df zugeh\u00f6rige Accessoires",
+      "target": "Sporen"
+    },
+    {
+      "source": "Fu\u00df zugeh\u00f6rige Accessoires",
+      "target": "Steigeisen"
+    },
+    {
+      "source": "Fu\u00dfschmuck",
+      "target": "Fu\u00dfkettchen"
+    },
+    {
+      "source": "Fu\u00dfschmuck",
+      "target": "Zehenring"
+    },
+    {
+      "source": "Fu\u00df zugeh\u00f6rige Bekleidungsteile",
+      "target": "Schuhe"
+    },
+    {
+      "source": "Fu\u00df zugeh\u00f6rige Bekleidungsteile",
+      "target": "Str\u00fcmpfe"
+    },
+    {
+      "source": "Schuhe",
+      "target": "Arbeitsschuhe"
+    },
+    {
+      "source": "Schuhe",
+      "target": "Badeschuhe"
+    },
+    {
+      "source": "Schuhe",
+      "target": "Ballerinas"
+    },
+    {
+      "source": "Schuhe",
+      "target": "Halbschuhe"
+    },
+    {
+      "source": "Schuhe",
+      "target": "Hausschuhe"
+    },
+    {
+      "source": "Schuhe",
+      "target": "Offene Schuhe"
+    },
+    {
+      "source": "Schuhe",
+      "target": "Outdoorschuhe"
+    },
+    {
+      "source": "Schuhe",
+      "target": "Pumps"
+    },
+    {
+      "source": "Schuhe",
+      "target": "Sneakers"
+    },
+    {
+      "source": "Schuhe",
+      "target": "Spezialschuhe"
+    },
+    {
+      "source": "Schuhe",
+      "target": "Sportschuhe"
+    },
+    {
+      "source": "Schuhe",
+      "target": "Stiefel"
+    },
+    {
+      "source": "Schuhe",
+      "target": "Stiefeletten"
+    },
+    {
+      "source": "Str\u00fcmpfe",
+      "target": "F\u00fc\u00dflinge"
+    },
+    {
+      "source": "Str\u00fcmpfe",
+      "target": "Kniestr\u00fcmpfe"
+    },
+    {
+      "source": "Str\u00fcmpfe",
+      "target": "Overknee Str\u00fcmpfe"
+    },
+    {
+      "source": "Str\u00fcmpfe",
+      "target": "Socken"
+    },
+    {
+      "source": "Str\u00fcmpfe",
+      "target": "Strapse"
+    },
+    {
+      "source": "Str\u00fcmpfe",
+      "target": "Strumpfhosen"
+    },
+    {
+      "source": "Ganzk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "Handtuch"
+    },
+    {
+      "source": "Ganzk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "Wundmaterial"
+    },
+    {
+      "source": "Wundmaterial",
+      "target": "Pflaster"
+    },
+    {
+      "source": "Wundmaterial",
+      "target": "Verband"
+    },
+    {
+      "source": "Ganzk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Body"
+    },
+    {
+      "source": "Ganzk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Hauskleidung"
+    },
+    {
+      "source": "Ganzk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Jumpsuits"
+    },
+    {
+      "source": "Ganzk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Kleid"
+    },
+    {
+      "source": "Ganzk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "K\u00f6rperschutzkleidung"
+    },
+    {
+      "source": "Ganzk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Mantel"
+    },
+    {
+      "source": "Ganzk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Robe"
+    },
+    {
+      "source": "Ganzk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Schwimmanzug"
+    },
+    {
+      "source": "Ganzk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Umhang"
+    },
+    {
+      "source": "Hauskleidung",
+      "target": "Bademantel"
+    },
+    {
+      "source": "Hauskleidung",
+      "target": "Morgenmantel"
+    },
+    {
+      "source": "Hauskleidung",
+      "target": "Nachthemd"
+    },
+    {
+      "source": "Hauskleidung",
+      "target": "Schlafrock"
+    },
+    {
+      "source": "Kleid",
+      "target": "Abendkleid"
+    },
+    {
+      "source": "Kleid",
+      "target": "Brautkleid"
+    },
+    {
+      "source": "Kleid",
+      "target": "Businesskleid"
+    },
+    {
+      "source": "Kleid",
+      "target": "Cocktail-Kleid"
+    },
+    {
+      "source": "Kleid",
+      "target": "Dirndl"
+    },
+    {
+      "source": "Kleid",
+      "target": "Exotisches Kleid"
+    },
+    {
+      "source": "Kleid",
+      "target": "Tageskleid"
+    },
+    {
+      "source": "Kleid",
+      "target": "Unterkleid"
+    },
+    {
+      "source": "K\u00f6rperschutzkleidung",
+      "target": "Kittel"
+    },
+    {
+      "source": "K\u00f6rperschutzkleidung",
+      "target": "Neoprenanzug"
+    },
+    {
+      "source": "K\u00f6rperschutzkleidung",
+      "target": "Overall"
+    },
+    {
+      "source": "K\u00f6rperschutzkleidung",
+      "target": "Ritterr\u00fcstung"
+    },
+    {
+      "source": "K\u00f6rperschutzkleidung",
+      "target": "Sch\u00fcrze"
+    },
+    {
+      "source": "Mantel",
+      "target": "Kurzmantel"
+    },
+    {
+      "source": "Mantel",
+      "target": "Langmantel"
+    },
+    {
+      "source": "Mantel",
+      "target": "Regenmantel"
+    },
+    {
+      "source": "Robe",
+      "target": "Chorhemd"
+    },
+    {
+      "source": "Robe",
+      "target": "Habit"
+    },
+    {
+      "source": "Robe",
+      "target": "Kaftan"
+    },
+    {
+      "source": "Robe",
+      "target": "Messgewand"
+    },
+    {
+      "source": "Robe",
+      "target": "M\u00f6nchskutte"
+    },
+    {
+      "source": "Robe",
+      "target": "Soutane"
+    },
+    {
+      "source": "Robe",
+      "target": "Talar"
+    },
+    {
+      "source": "Robe",
+      "target": "Waffenrock"
+    },
+    {
+      "source": "Schwimmanzug",
+      "target": "Badeanzug"
+    },
+    {
+      "source": "Gehstock",
+      "target": "Spazierstock"
+    },
+    {
+      "source": "Gliederkette",
+      "target": "Gliederkette mit Anh\u00e4nger"
+    },
+    {
+      "source": "Gliederkette",
+      "target": "Kettchen"
+    },
+    {
+      "source": "Gliederkette",
+      "target": "Panzerkette"
+    },
+    {
+      "source": "Gliederkette mit Anh\u00e4nger",
+      "target": "Amulettkette"
+    },
+    {
+      "source": "Gliederkette mit Anh\u00e4nger",
+      "target": "Kreuzkettchen"
+    },
+    {
+      "source": "G\u00fcrtel",
+      "target": "Bindeg\u00fcrtel"
+    },
+    {
+      "source": "G\u00fcrtel",
+      "target": "Breiter G\u00fcrtel"
+    },
+    {
+      "source": "G\u00fcrtel",
+      "target": "Charivari"
+    },
+    {
+      "source": "G\u00fcrtel",
+      "target": "Geflochtener G\u00fcrtel"
+    },
+    {
+      "source": "G\u00fcrtel",
+      "target": "Klassischer G\u00fcrtel"
+    },
+    {
+      "source": "G\u00fcrtel",
+      "target": "Nieteng\u00fcrtel"
+    },
+    {
+      "source": "G\u00fcrtel",
+      "target": "Patronengurt"
+    },
+    {
+      "source": "G\u00fcrtel",
+      "target": "Schmaler G\u00fcrtel"
+    },
+    {
+      "source": "G\u00fcrtel",
+      "target": "Uniformg\u00fcrtel"
+    },
+    {
+      "source": "Haaraccessoire",
+      "target": "Federspange"
+    },
+    {
+      "source": "Haaraccessoire",
+      "target": "Haarband"
+    },
+    {
+      "source": "Haaraccessoire",
+      "target": "Haarnetz"
+    },
+    {
+      "source": "Haaraccessoire",
+      "target": "Haarreif"
+    },
+    {
+      "source": "Haaraccessoire",
+      "target": "Haarschleife"
+    },
+    {
+      "source": "Haaraccessoire",
+      "target": "Haarspange"
+    },
+    {
+      "source": "Haaraccessoire",
+      "target": "K\u00e4mmchen"
+    },
+    {
+      "source": "Haaraccessoire",
+      "target": "Zopfgummi"
+    },
+    {
+      "source": "Haarteil",
+      "target": "Extension"
+    },
+    {
+      "source": "Haarteil",
+      "target": "Per\u00fccke"
+    },
+    {
+      "source": "Haarteil",
+      "target": "Toupet"
+    },
+    {
+      "source": "Per\u00fccke",
+      "target": "Allongeper\u00fccke"
+    },
+    {
+      "source": "Per\u00fccke",
+      "target": "Lockenkopfper\u00fccken"
+    },
+    {
+      "source": "Per\u00fccke",
+      "target": "Pagenkopfper\u00fccken"
+    },
+    {
+      "source": "Halbschuhe",
+      "target": "Schlupfschuhe"
+    },
+    {
+      "source": "Halbschuhe",
+      "target": "Schn\u00fcrschuhe"
+    },
+    {
+      "source": "Schlupfschuhe",
+      "target": "Espadrilles"
+    },
+    {
+      "source": "Schlupfschuhe",
+      "target": "Lackschuhe"
+    },
+    {
+      "source": "Schlupfschuhe",
+      "target": "Mokassin"
+    },
+    {
+      "source": "Schlupfschuhe",
+      "target": "Slippers"
+    },
+    {
+      "source": "Schn\u00fcrschuhe",
+      "target": "Absatz Schn\u00fcrschuhe"
+    },
+    {
+      "source": "Schn\u00fcrschuhe",
+      "target": "Bootsschuhe"
+    },
+    {
+      "source": "Schn\u00fcrschuhe",
+      "target": "Budapester"
+    },
+    {
+      "source": "Schn\u00fcrschuhe",
+      "target": "Oxfords"
+    },
+    {
+      "source": "Schn\u00fcrschuhe",
+      "target": "Plateau Schn\u00fcrschuhe"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Accessoires",
+      "target": "Amtskette"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Accessoires",
+      "target": "Federboa"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Accessoires",
+      "target": "Halsschmuck"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Accessoires",
+      "target": "Halstuchring"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Accessoires",
+      "target": "Kragen"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Accessoires",
+      "target": "Kragenklammer"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Accessoires",
+      "target": "Krawattennadel"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Accessoires",
+      "target": "Krawattenspange"
+    },
+    {
+      "source": "Halsschmuck",
+      "target": "Blumenkette"
+    },
+    {
+      "source": "Halsschmuck",
+      "target": "Chokers"
+    },
+    {
+      "source": "Halsschmuck",
+      "target": "Halskette"
+    },
+    {
+      "source": "Halsschmuck",
+      "target": "Halsreifen"
+    },
+    {
+      "source": "Halsschmuck",
+      "target": "Nietenhalsband"
+    },
+    {
+      "source": "Halsschmuck",
+      "target": "Tattookette"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Bekleidungsteile",
+      "target": "Beffchen"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Bekleidungsteile",
+      "target": "Fliege"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Bekleidungsteile",
+      "target": "Halsband"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Bekleidungsteile",
+      "target": "Halsbinde"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Bekleidungsteile",
+      "target": "Halskrause"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Bekleidungsteile",
+      "target": "Jabots"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Bekleidungsteile",
+      "target": "Krawatte"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Bekleidungsteile",
+      "target": "L\u00e4tzschen"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Bekleidungsteile",
+      "target": "Schal"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Bekleidungsteile",
+      "target": "Schleife"
+    },
+    {
+      "source": "Hals zugeh\u00f6rige Bekleidungsteile",
+      "target": "Tuch"
+    },
+    {
+      "source": "Halskrause",
+      "target": "Halskrause historisch"
+    },
+    {
+      "source": "Schal",
+      "target": "Leichter Schal"
+    },
+    {
+      "source": "Schal",
+      "target": "Pashmina-Schals"
+    },
+    {
+      "source": "Schal",
+      "target": "Winterschal"
+    },
+    {
+      "source": "Tuch",
+      "target": "Halstuch"
+    },
+    {
+      "source": "Tuch",
+      "target": "Schultertuch"
+    },
+    {
+      "source": "Halskette",
+      "target": "Collier"
+    },
+    {
+      "source": "Halskette",
+      "target": "Doppelreihige Kette"
+    },
+    {
+      "source": "Halskette",
+      "target": "Gliederkette"
+    },
+    {
+      "source": "Halskette",
+      "target": "Mehrreihige Kette"
+    },
+    {
+      "source": "Halskette",
+      "target": "Schnurkette"
+    },
+    {
+      "source": "Schnurkette",
+      "target": "Muschelkette"
+    },
+    {
+      "source": "Schnurkette",
+      "target": "Perlenkette"
+    },
+    {
+      "source": "Schnurkette",
+      "target": "Schnurkette mit Anh\u00e4nger"
+    },
+    {
+      "source": "Halsreifen",
+      "target": "Halsreifen mit Anh\u00e4nger"
+    },
+    {
+      "source": "Halsreifen",
+      "target": "Spiralringe"
+    },
+    {
+      "source": "Halstuch",
+      "target": "Pal\u00e4stinensertuch"
+    },
+    {
+      "source": "Halstuch",
+      "target": "Seidentuch"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Accessoires",
+      "target": "Besen"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Accessoires",
+      "target": "F\u00e4cher"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Accessoires",
+      "target": "Handprotektoren"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Accessoires",
+      "target": "Handschellen"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Accessoires",
+      "target": "Handschmuck"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Accessoires",
+      "target": "Muff"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Accessoires",
+      "target": "Peitsche"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Accessoires",
+      "target": "Poms"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Accessoires",
+      "target": "Schirm"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Accessoires",
+      "target": "Schutzschild"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Accessoires",
+      "target": "Stock"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Accessoires",
+      "target": "Uhr"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Accessoires",
+      "target": "Zauberstab"
+    },
+    {
+      "source": "Handprotektoren",
+      "target": "Handschoner"
+    },
+    {
+      "source": "Handschmuck",
+      "target": "Armband"
+    },
+    {
+      "source": "Handschmuck",
+      "target": "Manschettenkn\u00f6pfe"
+    },
+    {
+      "source": "Handschmuck",
+      "target": "Ring"
+    },
+    {
+      "source": "Peitsche",
+      "target": "Reitgerte"
+    },
+    {
+      "source": "Schirm",
+      "target": "Regenschirm"
+    },
+    {
+      "source": "Schirm",
+      "target": "Sonnenschirm"
+    },
+    {
+      "source": "Stock",
+      "target": "Gehstock"
+    },
+    {
+      "source": "Stock",
+      "target": "Skistock"
+    },
+    {
+      "source": "Stock",
+      "target": "Trekkingstock"
+    },
+    {
+      "source": "Uhr",
+      "target": "Armbanduhr"
+    },
+    {
+      "source": "Uhr",
+      "target": "Pulsmesser"
+    },
+    {
+      "source": "Uhr",
+      "target": "Ringuhr"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Bekleidungsteile",
+      "target": "Handschuhe"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Bekleidungsteile",
+      "target": "Manschette"
+    },
+    {
+      "source": "Hand zugeh\u00f6rige Bekleidungsteile",
+      "target": "Pulsw\u00e4rmer"
+    },
+    {
+      "source": "Handschuhe",
+      "target": "F\u00e4ustlinge"
+    },
+    {
+      "source": "Handschuhe",
+      "target": "Fingerhandschuhe"
+    },
+    {
+      "source": "Handschuhe",
+      "target": "Kurzfingerhandschuhe"
+    },
+    {
+      "source": "Handschuhe",
+      "target": "Schutzhandschuhe"
+    },
+    {
+      "source": "Handschuhe",
+      "target": "Sporthandschuhe"
+    },
+    {
+      "source": "Handschuhe",
+      "target": "Stulpenhandschuhe"
+    },
+    {
+      "source": "Ring",
+      "target": "Ehering"
+    },
+    {
+      "source": "Ring",
+      "target": "Ring mit Stein"
+    },
+    {
+      "source": "Ring",
+      "target": "Siegelring"
+    },
+    {
+      "source": "Ring",
+      "target": "Verlobungsring"
+    },
+    {
+      "source": "Schutzhandschuhe",
+      "target": "Arbeitshandschuhe"
+    },
+    {
+      "source": "Schutzhandschuhe",
+      "target": "Latexhandschuhe"
+    },
+    {
+      "source": "Sporthandschuhe",
+      "target": "Baseballhandschuhe"
+    },
+    {
+      "source": "Sporthandschuhe",
+      "target": "Bogenschie\u00dfhandschuhe"
+    },
+    {
+      "source": "Sporthandschuhe",
+      "target": "Boxhandschuhe"
+    },
+    {
+      "source": "Sporthandschuhe",
+      "target": "Fecht-Handschuhe"
+    },
+    {
+      "source": "Sporthandschuhe",
+      "target": "Fitnesshandschuhe"
+    },
+    {
+      "source": "Sporthandschuhe",
+      "target": "Footballhandschuhe"
+    },
+    {
+      "source": "Sporthandschuhe",
+      "target": "Radfahrerhandschuhe"
+    },
+    {
+      "source": "Sporthandschuhe",
+      "target": "Reithandschuhe"
+    },
+    {
+      "source": "Sporthandschuhe",
+      "target": "Taucherhandschuhe"
+    },
+    {
+      "source": "Sporthandschuhe",
+      "target": "Torwarthandschuhe"
+    },
+    {
+      "source": "Haremshose",
+      "target": "Pluderhose"
+    },
+    {
+      "source": "Haube",
+      "target": "Historische Haube"
+    },
+    {
+      "source": "Haube",
+      "target": "Kochhaube"
+    },
+    {
+      "source": "Haube",
+      "target": "Op-Haube"
+    },
+    {
+      "source": "Haube",
+      "target": "Regenhaube"
+    },
+    {
+      "source": "Haube",
+      "target": "Schlafhaube"
+    },
+    {
+      "source": "Nachthemd",
+      "target": "Neglig\u00e9"
+    },
+    {
+      "source": "Hausschuhe",
+      "target": "Pantoffeln"
+    },
+    {
+      "source": "Helm",
+      "target": "Schutzhelm"
+    },
+    {
+      "source": "Helm",
+      "target": "Sporthelm"
+    },
+    {
+      "source": "Helm",
+      "target": "Tropenhelm"
+    },
+    {
+      "source": "Schutzhelm",
+      "target": "Stahlhelm"
+    },
+    {
+      "source": "Sporthelm",
+      "target": "Baseball-Helm"
+    },
+    {
+      "source": "Sporthelm",
+      "target": "Boxhelm"
+    },
+    {
+      "source": "Sporthelm",
+      "target": "Fahrradhelm"
+    },
+    {
+      "source": "Sporthelm",
+      "target": "Footballhelm"
+    },
+    {
+      "source": "Sporthelm",
+      "target": "Kletterhelm"
+    },
+    {
+      "source": "Sporthelm",
+      "target": "Reithelm"
+    },
+    {
+      "source": "Sporthelm",
+      "target": "Skihelm"
+    },
+    {
+      "source": "Hemd",
+      "target": "Anlasshemd"
+    },
+    {
+      "source": "Hemd",
+      "target": "Arbeitshemd"
+    },
+    {
+      "source": "Hemd",
+      "target": "Businesshemd"
+    },
+    {
+      "source": "Hemd",
+      "target": "Freizeithemd"
+    },
+    {
+      "source": "Hemd",
+      "target": "Funktionshemd"
+    },
+    {
+      "source": "Hemd",
+      "target": "Kurzarmhemd"
+    },
+    {
+      "source": "Hemd",
+      "target": "Uniformhemd"
+    },
+    {
+      "source": "Uniformhemd",
+      "target": "Feldhemd"
+    },
+    {
+      "source": "Kurze Hose",
+      "target": "Badehose"
+    },
+    {
+      "source": "Kurze Hose",
+      "target": "Hot Pants"
+    },
+    {
+      "source": "Kurze Hose",
+      "target": "Knickerbocker"
+    },
+    {
+      "source": "Kurze Hose",
+      "target": "Radlerhose"
+    },
+    {
+      "source": "Kurze Hose",
+      "target": "Shorts"
+    },
+    {
+      "source": "Kurze Hose",
+      "target": "Unterhose"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Anzughose"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Baggy Pants"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Bondagehosen"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Breeches lang"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Cargo-Hosen"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Chino"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Cordhose"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Funktionshose"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Haremshose"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Jeans"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Karottenhose"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Lederhose"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Marlene-Dietrich-Hose"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Schlafanzughose"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Schlaghose"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Sporthose"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Stoffhose"
+    },
+    {
+      "source": "Lange Hose",
+      "target": "Uniformhose"
+    },
+    {
+      "source": "Leggins",
+      "target": "Jeggings"
+    },
+    {
+      "source": "Leggins",
+      "target": "Treggings"
+    },
+    {
+      "source": "Hut",
+      "target": "Anglerhut"
+    },
+    {
+      "source": "Hut",
+      "target": "Asiatischer Kegelhut"
+    },
+    {
+      "source": "Hut",
+      "target": "Cowboy Hut"
+    },
+    {
+      "source": "Hut",
+      "target": "Damenhut"
+    },
+    {
+      "source": "Hut",
+      "target": "Doktorhut"
+    },
+    {
+      "source": "Hut",
+      "target": "Dreispitz"
+    },
+    {
+      "source": "Hut",
+      "target": "Federhut"
+    },
+    {
+      "source": "Hut",
+      "target": "Fedoras"
+    },
+    {
+      "source": "Hut",
+      "target": "Feenhut"
+    },
+    {
+      "source": "Hut",
+      "target": "Fes"
+    },
+    {
+      "source": "Hut",
+      "target": "Hexenhut"
+    },
+    {
+      "source": "Hut",
+      "target": "Homburger Hut"
+    },
+    {
+      "source": "Hut",
+      "target": "Melone"
+    },
+    {
+      "source": "Hut",
+      "target": "Safari-Hut"
+    },
+    {
+      "source": "Hut",
+      "target": "Schlapphut"
+    },
+    {
+      "source": "Hut",
+      "target": "Sombrero"
+    },
+    {
+      "source": "Hut",
+      "target": "Strohhut"
+    },
+    {
+      "source": "Hut",
+      "target": "S\u00fcdwester"
+    },
+    {
+      "source": "Hut",
+      "target": "Trachtenhut"
+    },
+    {
+      "source": "Hut",
+      "target": "Zimmermannshut"
+    },
+    {
+      "source": "Hut",
+      "target": "Zweispitz"
+    },
+    {
+      "source": "Hut",
+      "target": "Zylinder"
+    },
+    {
+      "source": "Melone",
+      "target": "Bowler"
+    },
+    {
+      "source": "Strohhut",
+      "target": "Kreiss\u00e4ge"
+    },
+    {
+      "source": "Strohhut",
+      "target": "Panama-Hut"
+    },
+    {
+      "source": "Trachtenhut",
+      "target": "J\u00e4gerhut"
+    },
+    {
+      "source": "Zylinder",
+      "target": "Dressurzylinder"
+    },
+    {
+      "source": "Islamische Kopfbedeckung",
+      "target": "Burka"
+    },
+    {
+      "source": "Islamische Kopfbedeckung",
+      "target": "Gebetskappe"
+    },
+    {
+      "source": "Islamische Kopfbedeckung",
+      "target": "Turban"
+    },
+    {
+      "source": "Jacke",
+      "target": "Anlassjacke"
+    },
+    {
+      "source": "Jacke",
+      "target": "Bolero"
+    },
+    {
+      "source": "Jacke",
+      "target": "Justaucorps"
+    },
+    {
+      "source": "Jacke",
+      "target": "Livr\u00e9e-Jacke"
+    },
+    {
+      "source": "Jacke",
+      "target": "Sakko"
+    },
+    {
+      "source": "Jacke",
+      "target": "Sportjacke"
+    },
+    {
+      "source": "Jacke",
+      "target": "Strickjacke"
+    },
+    {
+      "source": "Jacke",
+      "target": "Sweaterjacke"
+    },
+    {
+      "source": "Jacke",
+      "target": "Trachtenjacke"
+    },
+    {
+      "source": "Jacke",
+      "target": "Uniformjacke"
+    },
+    {
+      "source": "Jacke",
+      "target": "W\u00e4rmende Jacke"
+    },
+    {
+      "source": "Sakko",
+      "target": "Anzugsakko"
+    },
+    {
+      "source": "Sakko",
+      "target": "Freizeitsakko"
+    },
+    {
+      "source": "Sakko",
+      "target": "Jackett"
+    },
+    {
+      "source": "Sakko",
+      "target": "Kost\u00fcmjackett"
+    },
+    {
+      "source": "Sportjacke",
+      "target": "Fechtjacke"
+    },
+    {
+      "source": "Sportjacke",
+      "target": "Karatejacke"
+    },
+    {
+      "source": "Sportjacke",
+      "target": "Skijacke"
+    },
+    {
+      "source": "Sportjacke",
+      "target": "Trainingsjacke"
+    },
+    {
+      "source": "Sportjacke",
+      "target": "Turnierjackett"
+    },
+    {
+      "source": "Strickjacke",
+      "target": "Cardigan"
+    },
+    {
+      "source": "Sweaterjacke",
+      "target": "College-Sweatjacket"
+    },
+    {
+      "source": "Sweaterjacke",
+      "target": "Kapuzenjacke"
+    },
+    {
+      "source": "Trachtenjacke",
+      "target": "Janker"
+    },
+    {
+      "source": "Uniformjacke",
+      "target": "Husarenjacke"
+    },
+    {
+      "source": "W\u00e4rmende Jacke",
+      "target": "Bikerjacke"
+    },
+    {
+      "source": "W\u00e4rmende Jacke",
+      "target": "Blouson"
+    },
+    {
+      "source": "W\u00e4rmende Jacke",
+      "target": "Daunenjacke"
+    },
+    {
+      "source": "W\u00e4rmende Jacke",
+      "target": "Lederjacke"
+    },
+    {
+      "source": "W\u00e4rmende Jacke",
+      "target": "Outdoorjacke"
+    },
+    {
+      "source": "Jeans",
+      "target": "H\u00fcftjeans"
+    },
+    {
+      "source": "Jeans",
+      "target": "Karottenjeans"
+    },
+    {
+      "source": "Jeans",
+      "target": "R\u00f6hrenjeans"
+    },
+    {
+      "source": "Jeans",
+      "target": "Schlagjeans"
+    },
+    {
+      "source": "J\u00fcdische Kopfbedeckung",
+      "target": "Kippa"
+    },
+    {
+      "source": "J\u00fcdische Kopfbedeckung",
+      "target": "Tallit"
+    },
+    {
+      "source": "Kappe",
+      "target": "Badekappe"
+    },
+    {
+      "source": "Kappe",
+      "target": "Narrenkappe"
+    },
+    {
+      "source": "Kappe",
+      "target": "Schirmkappe"
+    },
+    {
+      "source": "Kappe",
+      "target": "Skull Cap"
+    },
+    {
+      "source": "Kappe",
+      "target": "Tenniskappe"
+    },
+    {
+      "source": "Schirmkappe",
+      "target": "Baseball-Cap"
+    },
+    {
+      "source": "Schirmkappe",
+      "target": "Basketballcap"
+    },
+    {
+      "source": "Kasack",
+      "target": "OP- Kasack"
+    },
+    {
+      "source": "Katholische Kopfbedeckung",
+      "target": "Bischofshut"
+    },
+    {
+      "source": "Katholische Kopfbedeckung",
+      "target": "Kardinalshut"
+    },
+    {
+      "source": "Katholische Kopfbedeckung",
+      "target": "Mitra"
+    },
+    {
+      "source": "Katholische Kopfbedeckung",
+      "target": "Nonnenschleier"
+    },
+    {
+      "source": "Katholische Kopfbedeckung",
+      "target": "Priesterhut"
+    },
+    {
+      "source": "Katholische Kopfbedeckung",
+      "target": "Tiara"
+    },
+    {
+      "source": "Katholische Kopfbedeckung",
+      "target": "Tonsurk\u00e4ppchen"
+    },
+    {
+      "source": "Kittel",
+      "target": "Laborkittel"
+    },
+    {
+      "source": "Kittel",
+      "target": "Medizinerkittel"
+    },
+    {
+      "source": "Medizinerkittel",
+      "target": "OP-Kittel"
+    },
+    {
+      "source": "Tageskleid",
+      "target": "Babydollkleid"
+    },
+    {
+      "source": "Tageskleid",
+      "target": "Hemdblusenkleid"
+    },
+    {
+      "source": "Tageskleid",
+      "target": "Sommerkleid"
+    },
+    {
+      "source": "Tageskleid",
+      "target": "Strickkleid"
+    },
+    {
+      "source": "Tageskleid",
+      "target": "T-Shirtkleid"
+    },
+    {
+      "source": "Unterkleid",
+      "target": "Miederkleid"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Augenklappe"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Brille"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Brillenkordel"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Federschmuck"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Haarteil"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Helm"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Kopfh\u00f6rer"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Kopfschmuck"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Kopftuch"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Kranz"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Krone"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Maske"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Mundschutz"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Ohrsch\u00fctzer"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Schnorchel"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Schnuller"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Accessoires",
+      "target": "Zahnspange"
+    },
+    {
+      "source": "Kopfschmuck",
+      "target": "Haaraccessoire"
+    },
+    {
+      "source": "Kopfschmuck",
+      "target": "Ohrring"
+    },
+    {
+      "source": "Kopfschmuck",
+      "target": "Piercing"
+    },
+    {
+      "source": "Kopfschmuck",
+      "target": "Zahnglitzerstein"
+    },
+    {
+      "source": "Kranz",
+      "target": "Blumenkranz"
+    },
+    {
+      "source": "Kranz",
+      "target": "Lorbeerkranz"
+    },
+    {
+      "source": "Krone",
+      "target": "Diadem"
+    },
+    {
+      "source": "Krone",
+      "target": "Kr\u00f6nchen"
+    },
+    {
+      "source": "Maske",
+      "target": "Fechtmaske"
+    },
+    {
+      "source": "Maske",
+      "target": "Gasmaske"
+    },
+    {
+      "source": "Maske",
+      "target": "Halbmaske"
+    },
+    {
+      "source": "Maske",
+      "target": "Schutzmaske"
+    },
+    {
+      "source": "Maske",
+      "target": "Vollmaske"
+    },
+    {
+      "source": "Ohrsch\u00fctzer",
+      "target": "Ohrst\u00f6psel"
+    },
+    {
+      "source": "Zahnspange",
+      "target": "Feste Zahnspange"
+    },
+    {
+      "source": "Zahnspange",
+      "target": "Headgear (B\u00fcgel)"
+    },
+    {
+      "source": "Zahnspange",
+      "target": "Lose Zahnspange"
+    },
+    {
+      "source": "Zahnspange",
+      "target": "Zahnschiene"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Bekleidungsteile",
+      "target": "Haube"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Bekleidungsteile",
+      "target": "Hut"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Bekleidungsteile",
+      "target": "Kappe"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Bekleidungsteile",
+      "target": "Kapuze"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Bekleidungsteile",
+      "target": "M\u00fctze"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Bekleidungsteile",
+      "target": "Ohrw\u00e4rmer"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Bekleidungsteile",
+      "target": "Religi\u00f6se Kopfbedeckung"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Bekleidungsteile",
+      "target": "Schiffchen"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Bekleidungsteile",
+      "target": "Schleier"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Bekleidungsteile",
+      "target": "Schwei\u00dfband"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Bekleidungsteile",
+      "target": "Stirnband"
+    },
+    {
+      "source": "Kopf zugeh\u00f6rige Bekleidungsteile",
+      "target": "Strumpfmaske"
+    },
+    {
+      "source": "M\u00fctze",
+      "target": "Barett"
+    },
+    {
+      "source": "M\u00fctze",
+      "target": "Fliegerm\u00fctze"
+    },
+    {
+      "source": "M\u00fctze",
+      "target": "Pelzm\u00fctze"
+    },
+    {
+      "source": "M\u00fctze",
+      "target": "Schirmm\u00fctze"
+    },
+    {
+      "source": "M\u00fctze",
+      "target": "Tellerm\u00fctze"
+    },
+    {
+      "source": "M\u00fctze",
+      "target": "Wollm\u00fctze"
+    },
+    {
+      "source": "M\u00fctze",
+      "target": "Zipfelm\u00fctze"
+    },
+    {
+      "source": "Religi\u00f6se Kopfbedeckung",
+      "target": "Evangelische Kopfbedeckung"
+    },
+    {
+      "source": "Religi\u00f6se Kopfbedeckung",
+      "target": "Islamische Kopfbedeckung"
+    },
+    {
+      "source": "Religi\u00f6se Kopfbedeckung",
+      "target": "J\u00fcdische Kopfbedeckung"
+    },
+    {
+      "source": "Religi\u00f6se Kopfbedeckung",
+      "target": "Katholische Kopfbedeckung"
+    },
+    {
+      "source": "Schleier",
+      "target": "Brautschleier"
+    },
+    {
+      "source": "Schleier",
+      "target": "Hutschleier"
+    },
+    {
+      "source": "Ohrring",
+      "target": "Creolen"
+    },
+    {
+      "source": "Ohrring",
+      "target": "Klips"
+    },
+    {
+      "source": "Ohrring",
+      "target": "Ohrh\u00e4nger"
+    },
+    {
+      "source": "Ohrring",
+      "target": "Ohrstecker"
+    },
+    {
+      "source": "Piercing",
+      "target": "Augenbrauenpiercing"
+    },
+    {
+      "source": "Piercing",
+      "target": "Lippenpiercing"
+    },
+    {
+      "source": "Piercing",
+      "target": "Nasenpiercing"
+    },
+    {
+      "source": "Piercing",
+      "target": "Zungenpiercing"
+    },
+    {
+      "source": "Overall",
+      "target": "Blaumann"
+    },
+    {
+      "source": "Overall",
+      "target": "Schutzanzug"
+    },
+    {
+      "source": "Overall",
+      "target": "Skianzug"
+    },
+    {
+      "source": "Sch\u00fcrze",
+      "target": "Kittelsch\u00fcrze"
+    },
+    {
+      "source": "Sch\u00fcrze",
+      "target": "Ledersch\u00fcrze"
+    },
+    {
+      "source": "Sch\u00fcrze",
+      "target": "Serviersch\u00fcrze"
+    },
+    {
+      "source": "Sch\u00fcrze",
+      "target": "Trachtensch\u00fcrze"
+    },
+    {
+      "source": "Kunststoffbrille",
+      "target": "Nerdbrille"
+    },
+    {
+      "source": "Metallbrille",
+      "target": "Halbrandbrillen"
+    },
+    {
+      "source": "Metallbrille",
+      "target": "Rahmenlose Brillen"
+    },
+    {
+      "source": "Kost\u00fcmjackett",
+      "target": "Chanelj\u00e4ckchen"
+    },
+    {
+      "source": "Shorts",
+      "target": "Bermudas"
+    },
+    {
+      "source": "Shorts",
+      "target": "Cargoshorts"
+    },
+    {
+      "source": "Shorts",
+      "target": "Sportshorts"
+    },
+    {
+      "source": "Unterhose",
+      "target": "Boxershorts"
+    },
+    {
+      "source": "Unterhose",
+      "target": "Hipster"
+    },
+    {
+      "source": "Unterhose",
+      "target": "Miederhose"
+    },
+    {
+      "source": "Unterhose",
+      "target": "Panty"
+    },
+    {
+      "source": "Unterhose",
+      "target": "Schamkapsel"
+    },
+    {
+      "source": "Unterhose",
+      "target": "Schl\u00fcpfer"
+    },
+    {
+      "source": "Unterhose",
+      "target": "Slip"
+    },
+    {
+      "source": "Unterhose",
+      "target": "String"
+    },
+    {
+      "source": "Unterhose",
+      "target": "Suspensorium"
+    },
+    {
+      "source": "Unterhose",
+      "target": "Tanga"
+    },
+    {
+      "source": "Kurzmantel",
+      "target": "Boxmantel"
+    },
+    {
+      "source": "Kurzmantel",
+      "target": "Caban-Mantel"
+    },
+    {
+      "source": "Kurzmantel",
+      "target": "Capuchon"
+    },
+    {
+      "source": "Kurzmantel",
+      "target": "Paletot"
+    },
+    {
+      "source": "Kurzmantel",
+      "target": "Parka"
+    },
+    {
+      "source": "Sporthose",
+      "target": "Fahrradhose"
+    },
+    {
+      "source": "Sporthose",
+      "target": "Fechthose"
+    },
+    {
+      "source": "Sporthose",
+      "target": "Jazzpants"
+    },
+    {
+      "source": "Sporthose",
+      "target": "Karatehose"
+    },
+    {
+      "source": "Sporthose",
+      "target": "Reithose"
+    },
+    {
+      "source": "Sporthose",
+      "target": "Skihose"
+    },
+    {
+      "source": "Sporthose",
+      "target": "Trainingshose"
+    },
+    {
+      "source": "Stoffhose",
+      "target": "Leinenhose"
+    },
+    {
+      "source": "Langmantel",
+      "target": "Garrick"
+    },
+    {
+      "source": "Langmantel",
+      "target": "Gehrock (Mantel)"
+    },
+    {
+      "source": "Langmantel",
+      "target": "Kapuzenmantel"
+    },
+    {
+      "source": "Langmantel",
+      "target": "Lackmantel"
+    },
+    {
+      "source": "Langmantel",
+      "target": "Ledermantel"
+    },
+    {
+      "source": "Langmantel",
+      "target": "Redingote"
+    },
+    {
+      "source": "Langmantel",
+      "target": "Trenchcoat"
+    },
+    {
+      "source": "Langmantel",
+      "target": "Uniformmantel"
+    },
+    {
+      "source": "Langmantel",
+      "target": "Wintermantel"
+    },
+    {
+      "source": "Wintermantel",
+      "target": "Daunenmantel"
+    },
+    {
+      "source": "Wintermantel",
+      "target": "Lodenmantel"
+    },
+    {
+      "source": "Wintermantel",
+      "target": "Pelzmantel"
+    },
+    {
+      "source": "Wintermantel",
+      "target": "Ulster"
+    },
+    {
+      "source": "Wintermantel",
+      "target": "Wollmantel"
+    },
+    {
+      "source": "Lederjacke",
+      "target": "Lammfelljacke"
+    },
+    {
+      "source": "Leichter Schal",
+      "target": "Seidenschal"
+    },
+    {
+      "source": "Regenmantel",
+      "target": "\u00d6lzeug"
+    },
+    {
+      "source": "Vollmaske",
+      "target": "Guy-Fawkes-Maske"
+    },
+    {
+      "source": "Vollmaske",
+      "target": "Halloweenmaske"
+    },
+    {
+      "source": "Vollmaske",
+      "target": "Tiermaske"
+    },
+    {
+      "source": "Maxirock",
+      "target": "Tourn\u00fcrenrock"
+    },
+    {
+      "source": "Mechanische Waffe",
+      "target": "Messer"
+    },
+    {
+      "source": "Mechanische Waffe",
+      "target": "Schwert"
+    },
+    {
+      "source": "Mechanische Waffe",
+      "target": "Schwertscheide"
+    },
+    {
+      "source": "Schirmm\u00fctze",
+      "target": "Bergm\u00fctze"
+    },
+    {
+      "source": "Schirmm\u00fctze",
+      "target": "Kapit\u00e4nsm\u00fctze"
+    },
+    {
+      "source": "Schirmm\u00fctze",
+      "target": "Prinz-Heinrich-M\u00fctze"
+    },
+    {
+      "source": "Schirmm\u00fctze",
+      "target": "Schieberm\u00fctze"
+    },
+    {
+      "source": "Schirmm\u00fctze",
+      "target": "Uniformm\u00fctze"
+    },
+    {
+      "source": "Wollm\u00fctze",
+      "target": "Norwegerm\u00fctze"
+    },
+    {
+      "source": "Wollm\u00fctze",
+      "target": "Pudelm\u00fctzen"
+    },
+    {
+      "source": "Wollm\u00fctze",
+      "target": "Schlupfm\u00fctze"
+    },
+    {
+      "source": "Wollm\u00fctze",
+      "target": "Strickm\u00fctze"
+    },
+    {
+      "source": "Zipfelm\u00fctze",
+      "target": "Phrygische M\u00fctze"
+    },
+    {
+      "source": "Zipfelm\u00fctze",
+      "target": "Schlafm\u00fctze"
+    },
+    {
+      "source": "Nasenpiercing",
+      "target": "Nasenringe"
+    },
+    {
+      "source": "Neoprenschuhe",
+      "target": "Surfschuhe"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "Abzeichen"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "\u00c4rmelhalter"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "\u00c4rmelschutz"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "Blindenabzeichen"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "Fl\u00fcgel"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "Hosentr\u00e4ger"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "Knopflochblume"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "K\u00fcnstliche Brust"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "K\u00fcnstlicher Bauch"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "Oberk\u00f6rperprotektoren"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "Rumpfschmuck"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "Sch\u00e4rpe"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "Spezial Uhr"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Accessoires",
+      "target": "Taschentuch"
+    },
+    {
+      "source": "Oberk\u00f6rperprotektoren",
+      "target": "Armprotektoren"
+    },
+    {
+      "source": "Oberk\u00f6rperprotektoren",
+      "target": "Brustschutz"
+    },
+    {
+      "source": "Oberk\u00f6rperprotektoren",
+      "target": "Schulterschutz"
+    },
+    {
+      "source": "Rumpfschmuck",
+      "target": "Bauchnabelpiercing"
+    },
+    {
+      "source": "Rumpfschmuck",
+      "target": "Brosche"
+    },
+    {
+      "source": "Rumpfschmuck",
+      "target": "Uhrenkette"
+    },
+    {
+      "source": "Spezial Uhr",
+      "target": "Schwesternuhr"
+    },
+    {
+      "source": "Spezial Uhr",
+      "target": "Taschenuhr"
+    },
+    {
+      "source": "Taschentuch",
+      "target": "Einstecktuch"
+    },
+    {
+      "source": "Taschentuch",
+      "target": "Ziertuch"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Anorak"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Bluse"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Brustst\u00fctzkleidung"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Cape"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Hemd"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Jacke"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Kasack"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Kettenhemd"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Pollunder"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Pullover"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Schlafanzugoberteil"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Shirt"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Top"
+    },
+    {
+      "source": "Oberk\u00f6rper zugeh\u00f6rige Bekleidungsteile",
+      "target": "Weste"
+    },
+    {
+      "source": "Pullover",
+      "target": "Kapuzenpullover"
+    },
+    {
+      "source": "Pullover",
+      "target": "Norwegerpullovern"
+    },
+    {
+      "source": "Pullover",
+      "target": "Rollkragenpullover"
+    },
+    {
+      "source": "Pullover",
+      "target": "Rundhalsausschnittpullover"
+    },
+    {
+      "source": "Pullover",
+      "target": "Strickpullover"
+    },
+    {
+      "source": "Pullover",
+      "target": "Sweater"
+    },
+    {
+      "source": "Pullover",
+      "target": "V-Ausschnittpullover"
+    },
+    {
+      "source": "Shirt",
+      "target": "Achselshirt"
+    },
+    {
+      "source": "Shirt",
+      "target": "Funktionsshirt"
+    },
+    {
+      "source": "Shirt",
+      "target": "Longsleeve"
+    },
+    {
+      "source": "Shirt",
+      "target": "Schwimm T-Shirt"
+    },
+    {
+      "source": "Shirt",
+      "target": "Shirt-Tunika"
+    },
+    {
+      "source": "Shirt",
+      "target": "Sporttrikot"
+    },
+    {
+      "source": "Shirt",
+      "target": "T-Shirt"
+    },
+    {
+      "source": "Top",
+      "target": "Funktionstop"
+    },
+    {
+      "source": "Top",
+      "target": "Neckholder-Top"
+    },
+    {
+      "source": "Top",
+      "target": "Spaghetti-Top"
+    },
+    {
+      "source": "Top",
+      "target": "Tank Top"
+    },
+    {
+      "source": "Top",
+      "target": "Tr\u00e4gerloses Top"
+    },
+    {
+      "source": "Weste",
+      "target": "Anglerweste"
+    },
+    {
+      "source": "Weste",
+      "target": "Anzugweste"
+    },
+    {
+      "source": "Weste",
+      "target": "Gilet"
+    },
+    {
+      "source": "Weste",
+      "target": "Jeansweste"
+    },
+    {
+      "source": "Weste",
+      "target": "Lederweste"
+    },
+    {
+      "source": "Weste",
+      "target": "Schutzweste"
+    },
+    {
+      "source": "Weste",
+      "target": "Steppweste"
+    },
+    {
+      "source": "Weste",
+      "target": "Strickweste"
+    },
+    {
+      "source": "Weste",
+      "target": "Trachtenweste"
+    },
+    {
+      "source": "Weste",
+      "target": "Trainingsweste"
+    },
+    {
+      "source": "Weste",
+      "target": "Wams"
+    },
+    {
+      "source": "Weste",
+      "target": "Zimmermannsweste"
+    },
+    {
+      "source": "Offene Schuhe",
+      "target": "Flip Flops"
+    },
+    {
+      "source": "Offene Schuhe",
+      "target": "Pantoletten"
+    },
+    {
+      "source": "Offene Schuhe",
+      "target": "Sandalen"
+    },
+    {
+      "source": "Pantoletten",
+      "target": "Absatz Pantoletten"
+    },
+    {
+      "source": "Pantoletten",
+      "target": "Clocks"
+    },
+    {
+      "source": "Pantoletten",
+      "target": "Flache Pantoletten"
+    },
+    {
+      "source": "Sandalen",
+      "target": "Jesussandalen"
+    },
+    {
+      "source": "Sandalen",
+      "target": "Sandaletten"
+    },
+    {
+      "source": "Outdoorjacke",
+      "target": "Fleecejacke"
+    },
+    {
+      "source": "Outdoorjacke",
+      "target": "Regenjacke"
+    },
+    {
+      "source": "Outdoorjacke",
+      "target": "Softshelljacke"
+    },
+    {
+      "source": "Outdoorjacke",
+      "target": "Windjacke"
+    },
+    {
+      "source": "Outdoorschuhe",
+      "target": "Trekkingschuhe"
+    },
+    {
+      "source": "Outdoorschuhe",
+      "target": "Wanderschuhe"
+    },
+    {
+      "source": "Trekkingschuhe",
+      "target": "Trekkingsandalen"
+    },
+    {
+      "source": "Schutzanzug",
+      "target": "Chemieschutzanzug"
+    },
+    {
+      "source": "Perlenkette",
+      "target": "Kurze Perlenkette"
+    },
+    {
+      "source": "Perlenkette",
+      "target": "Lange Perlenkette"
+    },
+    {
+      "source": "Pumps",
+      "target": "Keilpumps"
+    },
+    {
+      "source": "Pumps",
+      "target": "Peeptoes"
+    },
+    {
+      "source": "Pumps",
+      "target": "Plateaupumps"
+    },
+    {
+      "source": "Pumps",
+      "target": "Riemchenpumps"
+    },
+    {
+      "source": "Pumps",
+      "target": "Slingpumps"
+    },
+    {
+      "source": "Rettungsweste",
+      "target": "Schwimmweste"
+    },
+    {
+      "source": "Sportrock",
+      "target": "Tennisrock"
+    },
+    {
+      "source": "Unterrock",
+      "target": "Cul de Paris"
+    },
+    {
+      "source": "Unterrock",
+      "target": "Krinoline"
+    },
+    {
+      "source": "Unterrock",
+      "target": "Petticoat"
+    },
+    {
+      "source": "Unterrock",
+      "target": "Reifrock"
+    },
+    {
+      "source": "Sandaletten",
+      "target": "Keilsandaletten"
+    },
+    {
+      "source": "Sandaletten",
+      "target": "Plateausandaletten"
+    },
+    {
+      "source": "Sandaletten",
+      "target": "Riemchensandaletten"
+    },
+    {
+      "source": "Sandaletten",
+      "target": "Schaftsandaletten"
+    },
+    {
+      "source": "Sandaletten",
+      "target": "Zehentrenner"
+    },
+    {
+      "source": "Schaftstiefel",
+      "target": "Reitstiefel"
+    },
+    {
+      "source": "Winterschal",
+      "target": "Schlauchschals"
+    },
+    {
+      "source": "Winterschal",
+      "target": "Wollschal"
+    },
+    {
+      "source": "Schn\u00fcrstiefel",
+      "target": "Milit\u00e4rstiefel"
+    },
+    {
+      "source": "Schn\u00fcrstiefel",
+      "target": "Springerstiefel"
+    },
+    {
+      "source": "Sneakers",
+      "target": "Chucks"
+    },
+    {
+      "source": "Sneakers",
+      "target": "Schaft-Sneakers"
+    },
+    {
+      "source": "Sneakers",
+      "target": "Skater Schuhe"
+    },
+    {
+      "source": "Spezialschuhe",
+      "target": "Inliner"
+    },
+    {
+      "source": "Spezialschuhe",
+      "target": "Rollschuhe"
+    },
+    {
+      "source": "Spezialschuhe",
+      "target": "Schlittschuhe"
+    },
+    {
+      "source": "Spezialschuhe",
+      "target": "Skischuhe"
+    },
+    {
+      "source": "Sportschuhe",
+      "target": "Bowlingschuhe"
+    },
+    {
+      "source": "Sportschuhe",
+      "target": "Boxerstiefel"
+    },
+    {
+      "source": "Sportschuhe",
+      "target": "Fahrradschuhe"
+    },
+    {
+      "source": "Sportschuhe",
+      "target": "Golfschuhe"
+    },
+    {
+      "source": "Sportschuhe",
+      "target": "Kletterschuhe"
+    },
+    {
+      "source": "Sportschuhe",
+      "target": "Stollenschuhe"
+    },
+    {
+      "source": "Sportschuhe",
+      "target": "Tanzschuhe"
+    },
+    {
+      "source": "Sportschuhe",
+      "target": "Trainingsschuhe"
+    },
+    {
+      "source": "Stiefel",
+      "target": "Boots"
+    },
+    {
+      "source": "Stiefel",
+      "target": "Cowboystiefel"
+    },
+    {
+      "source": "Stiefel",
+      "target": "Gummistiefel"
+    },
+    {
+      "source": "Stiefel",
+      "target": "Keilstiefel"
+    },
+    {
+      "source": "Stiefel",
+      "target": "Overknees"
+    },
+    {
+      "source": "Stiefel",
+      "target": "Plateaustiefel"
+    },
+    {
+      "source": "Stiefel",
+      "target": "Schaftstiefel"
+    },
+    {
+      "source": "Stiefel",
+      "target": "Schn\u00fcrstiefel"
+    },
+    {
+      "source": "Stiefel",
+      "target": "Stulpenstiefel"
+    },
+    {
+      "source": "Stiefel",
+      "target": "Watstiefel"
+    },
+    {
+      "source": "Stiefeletten",
+      "target": "Ankle Boots"
+    },
+    {
+      "source": "Stiefeletten",
+      "target": "Keilabsatzstiefeletten"
+    },
+    {
+      "source": "Stiefeletten",
+      "target": "Plateaustiefeletten"
+    },
+    {
+      "source": "Stiefeletten",
+      "target": "Reitstiefelette"
+    },
+    {
+      "source": "Stiefeletten",
+      "target": "Schn\u00fcrstiefeletten"
+    },
+    {
+      "source": "Schultertuch",
+      "target": "Berthe"
+    },
+    {
+      "source": "Schultertuch",
+      "target": "Stola"
+    },
+    {
+      "source": "Serviersch\u00fcrze",
+      "target": "Bistrosch\u00fcrze"
+    },
+    {
+      "source": "Schutzweste",
+      "target": "Kugelsichere Weste"
+    },
+    {
+      "source": "Schutzweste",
+      "target": "Rettungsweste"
+    },
+    {
+      "source": "Schutzweste",
+      "target": "Tarnweste"
+    },
+    {
+      "source": "Schutzweste",
+      "target": "Warnweste"
+    },
+    {
+      "source": "Sporttrikot",
+      "target": "Fahrradtrikot"
+    },
+    {
+      "source": "Sporttrikot",
+      "target": "Footballtrikot"
+    },
+    {
+      "source": "Sporttrikot",
+      "target": "Fu\u00dfballtrikot"
+    },
+    {
+      "source": "T-Shirt",
+      "target": "Poloshirt"
+    },
+    {
+      "source": "Sportshorts",
+      "target": "Trainingsshorts"
+    },
+    {
+      "source": "Socken",
+      "target": "Noppensocken"
+    },
+    {
+      "source": "Socken",
+      "target": "S\u00f6ckchen"
+    },
+    {
+      "source": "Socken",
+      "target": "Sportsocken"
+    },
+    {
+      "source": "Socken",
+      "target": "W\u00e4rmesocken"
+    },
+    {
+      "source": "Sportsocken",
+      "target": "Laufsocken"
+    },
+    {
+      "source": "Sportsocken",
+      "target": "Wandersocken"
+    },
+    {
+      "source": "Stollenschuhe",
+      "target": "Fu\u00dfballschuhe"
+    },
+    {
+      "source": "Tanzschuhe",
+      "target": "Flamencoschuhe"
+    },
+    {
+      "source": "Tanzschuhe",
+      "target": "Jazzschuhe"
+    },
+    {
+      "source": "Tanzschuhe",
+      "target": "Schl\u00e4ppchen"
+    },
+    {
+      "source": "Tanzschuhe",
+      "target": "Spitzenschuhe"
+    },
+    {
+      "source": "Tanzschuhe",
+      "target": "Steppschuhe"
+    },
+    {
+      "source": "Trainingsschuhe",
+      "target": "Hallenschuhe"
+    },
+    {
+      "source": "Trainingsschuhe",
+      "target": "Laufschuhe"
+    },
+    {
+      "source": "Trainingsschuhe",
+      "target": "Zehenschuhe"
+    },
+    {
+      "source": "Strapse",
+      "target": "Halterlose Str\u00fcmpfe"
+    },
+    {
+      "source": "Strumpfhosen",
+      "target": "Blickdichte Strumpfhosen"
+    },
+    {
+      "source": "Strumpfhosen",
+      "target": "Feinstrumpfhosen"
+    },
+    {
+      "source": "Taille zugeh\u00f6rige Accessoires",
+      "target": "G\u00fcrtel"
+    },
+    {
+      "source": "Taille zugeh\u00f6rige Accessoires",
+      "target": "G\u00fcrteltasche"
+    },
+    {
+      "source": "Taille zugeh\u00f6rige Accessoires",
+      "target": "Holster"
+    },
+    {
+      "source": "Taille zugeh\u00f6rige Accessoires",
+      "target": "Karabiner"
+    },
+    {
+      "source": "Taille zugeh\u00f6rige Accessoires",
+      "target": "Strapsg\u00fcrtel"
+    },
+    {
+      "source": "Taille zugeh\u00f6rige Bekleidungsteile",
+      "target": "Kummerbund"
+    },
+    {
+      "source": "Taille zugeh\u00f6rige Bekleidungsteile",
+      "target": "Taillenkorsett"
+    },
+    {
+      "source": "Tr\u00e4gerloses Top",
+      "target": "Tube-Top"
+    },
+    {
+      "source": "Wollmantel",
+      "target": "Dufflecoat"
+    }
+  ]
+}

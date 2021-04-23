@@ -1,0 +1,117 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Alter"
+    },
+    {
+      "id": "-"
+    },
+    {
+      "id": "Erwachsener"
+    },
+    {
+      "id": "Kind"
+    },
+    {
+      "id": "20ern"
+    },
+    {
+      "id": "30ern"
+    },
+    {
+      "id": "40ern"
+    },
+    {
+      "id": "50ern"
+    },
+    {
+      "id": "60ern"
+    },
+    {
+      "id": "Senior"
+    },
+    {
+      "id": "Baby"
+    },
+    {
+      "id": "Jugendlicher"
+    },
+    {
+      "id": "Kleinkind"
+    },
+    {
+      "id": "70ern"
+    },
+    {
+      "id": "80ern"
+    },
+    {
+      "id": "90ern"
+    }
+  ],
+  "links": [
+    {
+      "source": "Alter",
+      "target": "-"
+    },
+    {
+      "source": "Alter",
+      "target": "Erwachsener"
+    },
+    {
+      "source": "Alter",
+      "target": "Kind"
+    },
+    {
+      "source": "Erwachsener",
+      "target": "20ern"
+    },
+    {
+      "source": "Erwachsener",
+      "target": "30ern"
+    },
+    {
+      "source": "Erwachsener",
+      "target": "40ern"
+    },
+    {
+      "source": "Erwachsener",
+      "target": "50ern"
+    },
+    {
+      "source": "Erwachsener",
+      "target": "60ern"
+    },
+    {
+      "source": "Erwachsener",
+      "target": "Senior"
+    },
+    {
+      "source": "Kind",
+      "target": "Baby"
+    },
+    {
+      "source": "Kind",
+      "target": "Jugendlicher"
+    },
+    {
+      "source": "Kind",
+      "target": "Kleinkind"
+    },
+    {
+      "source": "Senior",
+      "target": "70ern"
+    },
+    {
+      "source": "Senior",
+      "target": "80ern"
+    },
+    {
+      "source": "Senior",
+      "target": "90ern"
+    }
+  ]
+}

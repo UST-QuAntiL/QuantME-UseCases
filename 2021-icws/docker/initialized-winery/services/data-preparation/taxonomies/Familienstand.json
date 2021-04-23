@@ -1,0 +1,40 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Familienstand"
+    },
+    {
+      "id": "ledig"
+    },
+    {
+      "id": "verheiratet"
+    },
+    {
+      "id": "geschieden"
+    },
+    {
+      "id": "verwitwet"
+    }
+  ],
+  "links": [
+    {
+      "source": "Familienstand",
+      "target": "ledig"
+    },
+    {
+      "source": "Familienstand",
+      "target": "verheiratet"
+    },
+    {
+      "source": "Familienstand",
+      "target": "geschieden"
+    },
+    {
+      "source": "Familienstand",
+      "target": "verwitwet"
+    }
+  ]
+}

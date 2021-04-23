@@ -1,0 +1,208 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "alt"
+    },
+    {
+      "id": "abgetragen"
+    },
+    {
+      "id": "geflickt"
+    },
+    {
+      "id": "gestopft"
+    },
+    {
+      "id": "verwaschen"
+    },
+    {
+      "id": "dreckig"
+    },
+    {
+      "id": "beschmutzt"
+    },
+    {
+      "id": "fleckig"
+    },
+    {
+      "id": "kaputt"
+    },
+    {
+      "id": "eingeschnitten"
+    },
+    {
+      "id": "l\u00f6chrig"
+    },
+    {
+      "id": "zerfranst"
+    },
+    {
+      "id": "zerrissen"
+    },
+    {
+      "id": "nass"
+    },
+    {
+      "id": "verschwitzt"
+    },
+    {
+      "id": "ordentlich"
+    },
+    {
+      "id": "geb\u00fcgelt"
+    },
+    {
+      "id": "unordentlich"
+    },
+    {
+      "id": "derangiert"
+    },
+    {
+      "id": "sch\u00e4big"
+    },
+    {
+      "id": "zerknittert"
+    },
+    {
+      "id": "zerzaust"
+    },
+    {
+      "id": "ausgewaschen"
+    },
+    {
+      "id": "zerknautscht"
+    },
+    {
+      "id": "Zustand"
+    },
+    {
+      "id": "neu"
+    },
+    {
+      "id": "sauber"
+    },
+    {
+      "id": "zu gro\u00df"
+    },
+    {
+      "id": "zu klein"
+    }
+  ],
+  "links": [
+    {
+      "source": "alt",
+      "target": "abgetragen"
+    },
+    {
+      "source": "alt",
+      "target": "geflickt"
+    },
+    {
+      "source": "alt",
+      "target": "gestopft"
+    },
+    {
+      "source": "alt",
+      "target": "verwaschen"
+    },
+    {
+      "source": "verwaschen",
+      "target": "ausgewaschen"
+    },
+    {
+      "source": "dreckig",
+      "target": "beschmutzt"
+    },
+    {
+      "source": "dreckig",
+      "target": "fleckig"
+    },
+    {
+      "source": "kaputt",
+      "target": "eingeschnitten"
+    },
+    {
+      "source": "kaputt",
+      "target": "l\u00f6chrig"
+    },
+    {
+      "source": "kaputt",
+      "target": "zerfranst"
+    },
+    {
+      "source": "kaputt",
+      "target": "zerrissen"
+    },
+    {
+      "source": "nass",
+      "target": "verschwitzt"
+    },
+    {
+      "source": "ordentlich",
+      "target": "geb\u00fcgelt"
+    },
+    {
+      "source": "unordentlich",
+      "target": "derangiert"
+    },
+    {
+      "source": "unordentlich",
+      "target": "sch\u00e4big"
+    },
+    {
+      "source": "unordentlich",
+      "target": "zerknittert"
+    },
+    {
+      "source": "unordentlich",
+      "target": "zerzaust"
+    },
+    {
+      "source": "zerknittert",
+      "target": "zerknautscht"
+    },
+    {
+      "source": "Zustand",
+      "target": "alt"
+    },
+    {
+      "source": "Zustand",
+      "target": "dreckig"
+    },
+    {
+      "source": "Zustand",
+      "target": "kaputt"
+    },
+    {
+      "source": "Zustand",
+      "target": "nass"
+    },
+    {
+      "source": "Zustand",
+      "target": "neu"
+    },
+    {
+      "source": "Zustand",
+      "target": "ordentlich"
+    },
+    {
+      "source": "Zustand",
+      "target": "sauber"
+    },
+    {
+      "source": "Zustand",
+      "target": "unordentlich"
+    },
+    {
+      "source": "Zustand",
+      "target": "zu gro\u00df"
+    },
+    {
+      "source": "Zustand",
+      "target": "zu klein"
+    }
+  ]
+}

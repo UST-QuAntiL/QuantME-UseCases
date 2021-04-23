@@ -1,0 +1,1552 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Amtskleidung"
+    },
+    {
+      "id": "Anwaltskleidung"
+    },
+    {
+      "id": "Beamtenkleidung"
+    },
+    {
+      "id": "B\u00fcrgermeisterkleidung"
+    },
+    {
+      "id": "Ministerkleidung"
+    },
+    {
+      "id": "Notarkleidung"
+    },
+    {
+      "id": "Professorenkleidung"
+    },
+    {
+      "id": "Richterkleidung"
+    },
+    {
+      "id": "Anlasskleidung"
+    },
+    {
+      "id": "Businesskleidung"
+    },
+    {
+      "id": "Festliche Kleidung"
+    },
+    {
+      "id": "Freizeitkleidung"
+    },
+    {
+      "id": "Hauskleidung"
+    },
+    {
+      "id": "Trauerkleidung"
+    },
+    {
+      "id": "Staatsanwaltskleidung"
+    },
+    {
+      "id": "Arbeitskleidung"
+    },
+    {
+      "id": "Dienstleistungskleidung"
+    },
+    {
+      "id": "Handwerkerkleidung"
+    },
+    {
+      "id": "Medizinerkleidung"
+    },
+    {
+      "id": "Verkehrspersonalkleidung"
+    },
+    {
+      "id": "Arztkleidung"
+    },
+    {
+      "id": "Chirurgenkleidung"
+    },
+    {
+      "id": "Asiatisch"
+    },
+    {
+      "id": "Chinesisch"
+    },
+    {
+      "id": "Indisch"
+    },
+    {
+      "id": "Japanisch"
+    },
+    {
+      "id": "Badmintonkleidung"
+    },
+    {
+      "id": "Federfu\u00dfballkleidung"
+    },
+    {
+      "id": "Bahnpersonalkleidung"
+    },
+    {
+      "id": "Lokf\u00fchrer"
+    },
+    {
+      "id": "Schaffneruniform"
+    },
+    {
+      "id": "Ballspielkleidung"
+    },
+    {
+      "id": "American-Football"
+    },
+    {
+      "id": "Baseballkleidung"
+    },
+    {
+      "id": "Cricketkleidung"
+    },
+    {
+      "id": "Eishockeykleidung"
+    },
+    {
+      "id": "Fu\u00dfballkleidung"
+    },
+    {
+      "id": "Handballkleidung"
+    },
+    {
+      "id": "Lacrossekleidung"
+    },
+    {
+      "id": "Paintballkleidung"
+    },
+    {
+      "id": "Volleyballkleidung"
+    },
+    {
+      "id": "Barmannkleidung"
+    },
+    {
+      "id": "Kellneruniform"
+    },
+    {
+      "id": "Berufsbekleidung"
+    },
+    {
+      "id": "Dienstkleidung"
+    },
+    {
+      "id": "sonstige Uniformen"
+    },
+    {
+      "id": "Brandschutzkleidung"
+    },
+    {
+      "id": "Hitzeschutzkleidung"
+    },
+    {
+      "id": "Dienstbotenkleidung"
+    },
+    {
+      "id": "Dienstbotenuniform"
+    },
+    {
+      "id": "Feuerwehruniform"
+    },
+    {
+      "id": "Milit\u00e4runiform"
+    },
+    {
+      "id": "Polizeiuniform"
+    },
+    {
+      "id": "Zolluniform"
+    },
+    {
+      "id": "Bestatterkleidung"
+    },
+    {
+      "id": "Hotelangestelltenkleidung"
+    },
+    {
+      "id": "M\u00fcllmannkleidung"
+    },
+    {
+      "id": "Paketdienstpersonalkleidung"
+    },
+    {
+      "id": "Securitypersonalkleidung"
+    },
+    {
+      "id": "Verk\u00e4uferkleidung"
+    },
+    {
+      "id": "Elegant"
+    },
+    {
+      "id": "Chanel-Stil"
+    },
+    {
+      "id": "New Look"
+    },
+    {
+      "id": "Ethnische Zugeh\u00f6rigkeit"
+    },
+    {
+      "id": "Afrikanisch"
+    },
+    {
+      "id": "Afroamerikanisch"
+    },
+    {
+      "id": "Arabisch"
+    },
+    {
+      "id": "Australisch"
+    },
+    {
+      "id": "Europ\u00e4isch"
+    },
+    {
+      "id": "Indianisch"
+    },
+    {
+      "id": "Mexikanisch"
+    },
+    {
+      "id": "Orientalisch"
+    },
+    {
+      "id": "S\u00fcdamerikanisch"
+    },
+    {
+      "id": "Deutsch"
+    },
+    {
+      "id": "Englisch"
+    },
+    {
+      "id": "Franz\u00f6sisch"
+    },
+    {
+      "id": "Griechisch"
+    },
+    {
+      "id": "Schwedisch"
+    },
+    {
+      "id": "Spanisch"
+    },
+    {
+      "id": "Hochzeitskleidung"
+    },
+    {
+      "id": "Kr\u00f6nungsornat"
+    },
+    {
+      "id": "Fitnesskleidung"
+    },
+    {
+      "id": "Aerobickleidung"
+    },
+    {
+      "id": "Laufkleidung"
+    },
+    {
+      "id": "Funktion"
+    },
+    {
+      "id": "Gruppenzugeh\u00f6rigkeit"
+    },
+    {
+      "id": "Religi\u00f6se Amtsbekleidung"
+    },
+    {
+      "id": "Schutzkleidung"
+    },
+    {
+      "id": "Sportbekleidung"
+    },
+    {
+      "id": "Style"
+    },
+    {
+      "id": "Verkleidung"
+    },
+    {
+      "id": "Gesinnungszugeh\u00f6rigkeit"
+    },
+    {
+      "id": "Biker"
+    },
+    {
+      "id": "Bohemian"
+    },
+    {
+      "id": "Dandy"
+    },
+    {
+      "id": "Gothic"
+    },
+    {
+      "id": "Hippie"
+    },
+    {
+      "id": "Nerd"
+    },
+    {
+      "id": "Preps"
+    },
+    {
+      "id": "Punker"
+    },
+    {
+      "id": "Raver"
+    },
+    {
+      "id": "Rockabilly"
+    },
+    {
+      "id": "Rocker"
+    },
+    {
+      "id": "Skater"
+    },
+    {
+      "id": "Skinhead"
+    },
+    {
+      "id": "Klassenzugeh\u00f6rigkeit"
+    },
+    {
+      "id": "Religi\u00f6se Zugeh\u00f6rigkeit"
+    },
+    {
+      "id": "Bauarbeiterkleidung"
+    },
+    {
+      "id": "Elektrikerkleidung"
+    },
+    {
+      "id": "Fischerkleidung"
+    },
+    {
+      "id": "Fleischerkleidung"
+    },
+    {
+      "id": "G\u00e4rtnerkleidung"
+    },
+    {
+      "id": "Kochkleidung"
+    },
+    {
+      "id": "Konditorkleidung"
+    },
+    {
+      "id": "Malerkleidung"
+    },
+    {
+      "id": "Maurerkleidung"
+    },
+    {
+      "id": "Sanit\u00e4rtechnikerkleidung"
+    },
+    {
+      "id": "Schornsteinfegerkleidung"
+    },
+    {
+      "id": "Zimmermannskleidung"
+    },
+    {
+      "id": "Schlafkleidung"
+    },
+    {
+      "id": "Hotellangestelltenuniform"
+    },
+    {
+      "id": "Kampfsportkleidung"
+    },
+    {
+      "id": "Asiatische Kampfsportkleidung"
+    },
+    {
+      "id": "Boxkleidung"
+    },
+    {
+      "id": "Arbeiterklasse"
+    },
+    {
+      "id": "Mittelklasse"
+    },
+    {
+      "id": "Obdachlos"
+    },
+    {
+      "id": "Oberklasse"
+    },
+    {
+      "id": "Klassischer Look"
+    },
+    {
+      "id": "Kost\u00fcmierungskleidung"
+    },
+    {
+      "id": "Fantasiekost\u00fcm"
+    },
+    {
+      "id": "Historisches Kost\u00fcm"
+    },
+    {
+      "id": "Nachahmungsverkleidung"
+    },
+    {
+      "id": "Krankenpflegepersonalkleidung"
+    },
+    {
+      "id": "Pflegerkleidung"
+    },
+    {
+      "id": "Schwesternkleidung"
+    },
+    {
+      "id": "Leger Look"
+    },
+    {
+      "id": "Casual"
+    },
+    {
+      "id": "Sportlich"
+    },
+    {
+      "id": "Liturgische Kleidung"
+    },
+    {
+      "id": "Bischofskleidung"
+    },
+    {
+      "id": "Diakonkleidung"
+    },
+    {
+      "id": "Kommunionshelferkleidung"
+    },
+    {
+      "id": "Messdienerkleidung"
+    },
+    {
+      "id": "Pastorenkleidung"
+    },
+    {
+      "id": "Priesterkleidung"
+    },
+    {
+      "id": "Luftfahrtpersonalkleidung"
+    },
+    {
+      "id": "Pilotenuniform"
+    },
+    {
+      "id": "Stewardessenuniform"
+    },
+    {
+      "id": "Apothekerkleidung"
+    },
+    {
+      "id": "Rettungsdienstkleidung"
+    },
+    {
+      "id": "Heer-Uniform"
+    },
+    {
+      "id": "Luftwaffe-Uniform"
+    },
+    {
+      "id": "Marine-Uniform"
+    },
+    {
+      "id": "Adel"
+    },
+    {
+      "id": "Ordenskleidung"
+    },
+    {
+      "id": "M\u00f6nchskleidung"
+    },
+    {
+      "id": "Nonnenkleidung"
+    },
+    {
+      "id": "Outdoorsportkleidung"
+    },
+    {
+      "id": "Bergsteigerkeidung"
+    },
+    {
+      "id": "Kletterkleidung"
+    },
+    {
+      "id": "Walkingkleidung"
+    },
+    {
+      "id": "Postbeamtenuniform"
+    },
+    {
+      "id": "Religi\u00f6se buddhistische Kleidung"
+    },
+    {
+      "id": "Religi\u00f6se christliche Kleidung"
+    },
+    {
+      "id": "Religi\u00f6se hinduistische Kleidung"
+    },
+    {
+      "id": "Religi\u00f6se j\u00fcdische Kleidung"
+    },
+    {
+      "id": "Religi\u00f6se muslimische Kleidung"
+    },
+    {
+      "id": "Buddhistische M\u00f6nchskleidung"
+    },
+    {
+      "id": "Rabbiner"
+    },
+    {
+      "id": "Imam"
+    },
+    {
+      "id": "Buddhistisch"
+    },
+    {
+      "id": "Christlich"
+    },
+    {
+      "id": "Hinduistisch"
+    },
+    {
+      "id": "J\u00fcdisch"
+    },
+    {
+      "id": "Muslimisch"
+    },
+    {
+      "id": "Schifffahrtspersonalkleidung"
+    },
+    {
+      "id": "Kapit\u00e4nuniform"
+    },
+    {
+      "id": "Matrosenkleidung"
+    },
+    {
+      "id": "Protektoren"
+    },
+    {
+      "id": "Signalkleidung"
+    },
+    {
+      "id": "Strahlenkleidung"
+    },
+    {
+      "id": "W\u00e4rmekleidung"
+    },
+    {
+      "id": "Wetterschutzkleidung"
+    },
+    {
+      "id": "Warnkleidung"
+    },
+    {
+      "id": "Gefangenenuniform"
+    },
+    {
+      "id": "Pfadfinderuniform"
+    },
+    {
+      "id": "Schuluniform"
+    },
+    {
+      "id": "Angelkleidung"
+    },
+    {
+      "id": "Bowlingkleidung"
+    },
+    {
+      "id": "Fahrradkleidung"
+    },
+    {
+      "id": "Fechtkleidung"
+    },
+    {
+      "id": "Golfkleidung"
+    },
+    {
+      "id": "Reitkleidung"
+    },
+    {
+      "id": "Schlittschuhlaufkleidung"
+    },
+    {
+      "id": "Skatkleidung"
+    },
+    {
+      "id": "Skikleidung"
+    },
+    {
+      "id": "Tanzkleidung"
+    },
+    {
+      "id": "Tenniskleidung"
+    },
+    {
+      "id": "Wassersportartkleidung"
+    },
+    {
+      "id": "Braver Look"
+    },
+    {
+      "id": "Ethno Look"
+    },
+    {
+      "id": "Marine Look"
+    },
+    {
+      "id": "Military Look"
+    },
+    {
+      "id": "Retro Look"
+    },
+    {
+      "id": "Russischer Look"
+    },
+    {
+      "id": "Rustikal Look"
+    },
+    {
+      "id": "Safari Look"
+    },
+    {
+      "id": "Sexy Look"
+    },
+    {
+      "id": "Used Look"
+    },
+    {
+      "id": "Western  Look"
+    },
+    {
+      "id": "Zwiebel Look"
+    },
+    {
+      "id": "Ballettkleidung"
+    },
+    {
+      "id": "Cheerleadingkleidung"
+    },
+    {
+      "id": "Verk\u00e4uferuniform"
+    },
+    {
+      "id": "Vermummungskleidung"
+    },
+    {
+      "id": "Schnorchelkleidung"
+    },
+    {
+      "id": "Schwimmkleidung"
+    },
+    {
+      "id": "Surfkleidung"
+    },
+    {
+      "id": "Tauchkleidung"
+    },
+    {
+      "id": "Regenkleidung"
+    }
+  ],
+  "links": [
+    {
+      "source": "Amtskleidung",
+      "target": "Anwaltskleidung"
+    },
+    {
+      "source": "Amtskleidung",
+      "target": "Beamtenkleidung"
+    },
+    {
+      "source": "Amtskleidung",
+      "target": "B\u00fcrgermeisterkleidung"
+    },
+    {
+      "source": "Amtskleidung",
+      "target": "Ministerkleidung"
+    },
+    {
+      "source": "Amtskleidung",
+      "target": "Notarkleidung"
+    },
+    {
+      "source": "Amtskleidung",
+      "target": "Professorenkleidung"
+    },
+    {
+      "source": "Amtskleidung",
+      "target": "Richterkleidung"
+    },
+    {
+      "source": "Anwaltskleidung",
+      "target": "Staatsanwaltskleidung"
+    },
+    {
+      "source": "Anlasskleidung",
+      "target": "Businesskleidung"
+    },
+    {
+      "source": "Anlasskleidung",
+      "target": "Festliche Kleidung"
+    },
+    {
+      "source": "Anlasskleidung",
+      "target": "Freizeitkleidung"
+    },
+    {
+      "source": "Anlasskleidung",
+      "target": "Hauskleidung"
+    },
+    {
+      "source": "Anlasskleidung",
+      "target": "Trauerkleidung"
+    },
+    {
+      "source": "Festliche Kleidung",
+      "target": "Hochzeitskleidung"
+    },
+    {
+      "source": "Festliche Kleidung",
+      "target": "Kr\u00f6nungsornat"
+    },
+    {
+      "source": "Hauskleidung",
+      "target": "Schlafkleidung"
+    },
+    {
+      "source": "Arbeitskleidung",
+      "target": "Dienstleistungskleidung"
+    },
+    {
+      "source": "Arbeitskleidung",
+      "target": "Handwerkerkleidung"
+    },
+    {
+      "source": "Arbeitskleidung",
+      "target": "Medizinerkleidung"
+    },
+    {
+      "source": "Arbeitskleidung",
+      "target": "Verkehrspersonalkleidung"
+    },
+    {
+      "source": "Dienstleistungskleidung",
+      "target": "Barmannkleidung"
+    },
+    {
+      "source": "Dienstleistungskleidung",
+      "target": "Bestatterkleidung"
+    },
+    {
+      "source": "Dienstleistungskleidung",
+      "target": "Dienstbotenkleidung"
+    },
+    {
+      "source": "Dienstleistungskleidung",
+      "target": "Hotelangestelltenkleidung"
+    },
+    {
+      "source": "Dienstleistungskleidung",
+      "target": "M\u00fcllmannkleidung"
+    },
+    {
+      "source": "Dienstleistungskleidung",
+      "target": "Paketdienstpersonalkleidung"
+    },
+    {
+      "source": "Dienstleistungskleidung",
+      "target": "Securitypersonalkleidung"
+    },
+    {
+      "source": "Dienstleistungskleidung",
+      "target": "Verk\u00e4uferkleidung"
+    },
+    {
+      "source": "Handwerkerkleidung",
+      "target": "Bauarbeiterkleidung"
+    },
+    {
+      "source": "Handwerkerkleidung",
+      "target": "Elektrikerkleidung"
+    },
+    {
+      "source": "Handwerkerkleidung",
+      "target": "Fischerkleidung"
+    },
+    {
+      "source": "Handwerkerkleidung",
+      "target": "Fleischerkleidung"
+    },
+    {
+      "source": "Handwerkerkleidung",
+      "target": "G\u00e4rtnerkleidung"
+    },
+    {
+      "source": "Handwerkerkleidung",
+      "target": "Kochkleidung"
+    },
+    {
+      "source": "Handwerkerkleidung",
+      "target": "Konditorkleidung"
+    },
+    {
+      "source": "Handwerkerkleidung",
+      "target": "Malerkleidung"
+    },
+    {
+      "source": "Handwerkerkleidung",
+      "target": "Maurerkleidung"
+    },
+    {
+      "source": "Handwerkerkleidung",
+      "target": "Sanit\u00e4rtechnikerkleidung"
+    },
+    {
+      "source": "Handwerkerkleidung",
+      "target": "Schornsteinfegerkleidung"
+    },
+    {
+      "source": "Handwerkerkleidung",
+      "target": "Zimmermannskleidung"
+    },
+    {
+      "source": "Medizinerkleidung",
+      "target": "Apothekerkleidung"
+    },
+    {
+      "source": "Medizinerkleidung",
+      "target": "Arztkleidung"
+    },
+    {
+      "source": "Medizinerkleidung",
+      "target": "Krankenpflegepersonalkleidung"
+    },
+    {
+      "source": "Medizinerkleidung",
+      "target": "Rettungsdienstkleidung"
+    },
+    {
+      "source": "Verkehrspersonalkleidung",
+      "target": "Bahnpersonalkleidung"
+    },
+    {
+      "source": "Verkehrspersonalkleidung",
+      "target": "Luftfahrtpersonalkleidung"
+    },
+    {
+      "source": "Verkehrspersonalkleidung",
+      "target": "Schifffahrtspersonalkleidung"
+    },
+    {
+      "source": "Arztkleidung",
+      "target": "Chirurgenkleidung"
+    },
+    {
+      "source": "Asiatisch",
+      "target": "Chinesisch"
+    },
+    {
+      "source": "Asiatisch",
+      "target": "Indisch"
+    },
+    {
+      "source": "Asiatisch",
+      "target": "Japanisch"
+    },
+    {
+      "source": "Badmintonkleidung",
+      "target": "Federfu\u00dfballkleidung"
+    },
+    {
+      "source": "Bahnpersonalkleidung",
+      "target": "Lokf\u00fchrer"
+    },
+    {
+      "source": "Bahnpersonalkleidung",
+      "target": "Schaffneruniform"
+    },
+    {
+      "source": "Ballspielkleidung",
+      "target": "American-Football"
+    },
+    {
+      "source": "Ballspielkleidung",
+      "target": "Baseballkleidung"
+    },
+    {
+      "source": "Ballspielkleidung",
+      "target": "Cricketkleidung"
+    },
+    {
+      "source": "Ballspielkleidung",
+      "target": "Eishockeykleidung"
+    },
+    {
+      "source": "Ballspielkleidung",
+      "target": "Fu\u00dfballkleidung"
+    },
+    {
+      "source": "Ballspielkleidung",
+      "target": "Handballkleidung"
+    },
+    {
+      "source": "Ballspielkleidung",
+      "target": "Lacrossekleidung"
+    },
+    {
+      "source": "Ballspielkleidung",
+      "target": "Paintballkleidung"
+    },
+    {
+      "source": "Ballspielkleidung",
+      "target": "Volleyballkleidung"
+    },
+    {
+      "source": "Barmannkleidung",
+      "target": "Kellneruniform"
+    },
+    {
+      "source": "Berufsbekleidung",
+      "target": "Amtskleidung"
+    },
+    {
+      "source": "Berufsbekleidung",
+      "target": "Arbeitskleidung"
+    },
+    {
+      "source": "Berufsbekleidung",
+      "target": "Dienstkleidung"
+    },
+    {
+      "source": "Berufsbekleidung",
+      "target": "sonstige Uniformen"
+    },
+    {
+      "source": "Dienstkleidung",
+      "target": "Feuerwehruniform"
+    },
+    {
+      "source": "Dienstkleidung",
+      "target": "Milit\u00e4runiform"
+    },
+    {
+      "source": "Dienstkleidung",
+      "target": "Polizeiuniform"
+    },
+    {
+      "source": "Dienstkleidung",
+      "target": "Zolluniform"
+    },
+    {
+      "source": "sonstige Uniformen",
+      "target": "Gefangenenuniform"
+    },
+    {
+      "source": "sonstige Uniformen",
+      "target": "Pfadfinderuniform"
+    },
+    {
+      "source": "sonstige Uniformen",
+      "target": "Schuluniform"
+    },
+    {
+      "source": "Brandschutzkleidung",
+      "target": "Hitzeschutzkleidung"
+    },
+    {
+      "source": "Dienstbotenkleidung",
+      "target": "Dienstbotenuniform"
+    },
+    {
+      "source": "Milit\u00e4runiform",
+      "target": "Heer-Uniform"
+    },
+    {
+      "source": "Milit\u00e4runiform",
+      "target": "Luftwaffe-Uniform"
+    },
+    {
+      "source": "Milit\u00e4runiform",
+      "target": "Marine-Uniform"
+    },
+    {
+      "source": "Hotelangestelltenkleidung",
+      "target": "Hotellangestelltenuniform"
+    },
+    {
+      "source": "Paketdienstpersonalkleidung",
+      "target": "Postbeamtenuniform"
+    },
+    {
+      "source": "Verk\u00e4uferkleidung",
+      "target": "Verk\u00e4uferuniform"
+    },
+    {
+      "source": "Elegant",
+      "target": "Chanel-Stil"
+    },
+    {
+      "source": "Elegant",
+      "target": "New Look"
+    },
+    {
+      "source": "Ethnische Zugeh\u00f6rigkeit",
+      "target": "Afrikanisch"
+    },
+    {
+      "source": "Ethnische Zugeh\u00f6rigkeit",
+      "target": "Afroamerikanisch"
+    },
+    {
+      "source": "Ethnische Zugeh\u00f6rigkeit",
+      "target": "Arabisch"
+    },
+    {
+      "source": "Ethnische Zugeh\u00f6rigkeit",
+      "target": "Asiatisch"
+    },
+    {
+      "source": "Ethnische Zugeh\u00f6rigkeit",
+      "target": "Australisch"
+    },
+    {
+      "source": "Ethnische Zugeh\u00f6rigkeit",
+      "target": "Europ\u00e4isch"
+    },
+    {
+      "source": "Ethnische Zugeh\u00f6rigkeit",
+      "target": "Indianisch"
+    },
+    {
+      "source": "Ethnische Zugeh\u00f6rigkeit",
+      "target": "Mexikanisch"
+    },
+    {
+      "source": "Ethnische Zugeh\u00f6rigkeit",
+      "target": "Orientalisch"
+    },
+    {
+      "source": "Ethnische Zugeh\u00f6rigkeit",
+      "target": "S\u00fcdamerikanisch"
+    },
+    {
+      "source": "Europ\u00e4isch",
+      "target": "Deutsch"
+    },
+    {
+      "source": "Europ\u00e4isch",
+      "target": "Englisch"
+    },
+    {
+      "source": "Europ\u00e4isch",
+      "target": "Franz\u00f6sisch"
+    },
+    {
+      "source": "Europ\u00e4isch",
+      "target": "Griechisch"
+    },
+    {
+      "source": "Europ\u00e4isch",
+      "target": "Schwedisch"
+    },
+    {
+      "source": "Europ\u00e4isch",
+      "target": "Spanisch"
+    },
+    {
+      "source": "Fitnesskleidung",
+      "target": "Aerobickleidung"
+    },
+    {
+      "source": "Fitnesskleidung",
+      "target": "Laufkleidung"
+    },
+    {
+      "source": "Funktion",
+      "target": "Anlasskleidung"
+    },
+    {
+      "source": "Funktion",
+      "target": "Berufsbekleidung"
+    },
+    {
+      "source": "Funktion",
+      "target": "Gruppenzugeh\u00f6rigkeit"
+    },
+    {
+      "source": "Funktion",
+      "target": "Religi\u00f6se Amtsbekleidung"
+    },
+    {
+      "source": "Funktion",
+      "target": "Schutzkleidung"
+    },
+    {
+      "source": "Funktion",
+      "target": "Sportbekleidung"
+    },
+    {
+      "source": "Funktion",
+      "target": "Style"
+    },
+    {
+      "source": "Funktion",
+      "target": "Verkleidung"
+    },
+    {
+      "source": "Gruppenzugeh\u00f6rigkeit",
+      "target": "Ethnische Zugeh\u00f6rigkeit"
+    },
+    {
+      "source": "Gruppenzugeh\u00f6rigkeit",
+      "target": "Gesinnungszugeh\u00f6rigkeit"
+    },
+    {
+      "source": "Gruppenzugeh\u00f6rigkeit",
+      "target": "Klassenzugeh\u00f6rigkeit"
+    },
+    {
+      "source": "Gruppenzugeh\u00f6rigkeit",
+      "target": "Religi\u00f6se Zugeh\u00f6rigkeit"
+    },
+    {
+      "source": "Religi\u00f6se Amtsbekleidung",
+      "target": "Religi\u00f6se buddhistische Kleidung"
+    },
+    {
+      "source": "Religi\u00f6se Amtsbekleidung",
+      "target": "Religi\u00f6se christliche Kleidung"
+    },
+    {
+      "source": "Religi\u00f6se Amtsbekleidung",
+      "target": "Religi\u00f6se hinduistische Kleidung"
+    },
+    {
+      "source": "Religi\u00f6se Amtsbekleidung",
+      "target": "Religi\u00f6se j\u00fcdische Kleidung"
+    },
+    {
+      "source": "Religi\u00f6se Amtsbekleidung",
+      "target": "Religi\u00f6se muslimische Kleidung"
+    },
+    {
+      "source": "Schutzkleidung",
+      "target": "Brandschutzkleidung"
+    },
+    {
+      "source": "Schutzkleidung",
+      "target": "Protektoren"
+    },
+    {
+      "source": "Schutzkleidung",
+      "target": "Signalkleidung"
+    },
+    {
+      "source": "Schutzkleidung",
+      "target": "Strahlenkleidung"
+    },
+    {
+      "source": "Schutzkleidung",
+      "target": "W\u00e4rmekleidung"
+    },
+    {
+      "source": "Schutzkleidung",
+      "target": "Wetterschutzkleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Angelkleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Badmintonkleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Ballspielkleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Bowlingkleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Fahrradkleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Fechtkleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Fitnesskleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Golfkleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Kampfsportkleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Outdoorsportkleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Reitkleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Schlittschuhlaufkleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Skatkleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Skikleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Tanzkleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Tenniskleidung"
+    },
+    {
+      "source": "Sportbekleidung",
+      "target": "Wassersportartkleidung"
+    },
+    {
+      "source": "Style",
+      "target": "Braver Look"
+    },
+    {
+      "source": "Style",
+      "target": "Ethno Look"
+    },
+    {
+      "source": "Style",
+      "target": "Klassischer Look"
+    },
+    {
+      "source": "Style",
+      "target": "Leger Look"
+    },
+    {
+      "source": "Style",
+      "target": "Marine Look"
+    },
+    {
+      "source": "Style",
+      "target": "Military Look"
+    },
+    {
+      "source": "Style",
+      "target": "Retro Look"
+    },
+    {
+      "source": "Style",
+      "target": "Russischer Look"
+    },
+    {
+      "source": "Style",
+      "target": "Rustikal Look"
+    },
+    {
+      "source": "Style",
+      "target": "Safari Look"
+    },
+    {
+      "source": "Style",
+      "target": "Sexy Look"
+    },
+    {
+      "source": "Style",
+      "target": "Used Look"
+    },
+    {
+      "source": "Style",
+      "target": "Western  Look"
+    },
+    {
+      "source": "Style",
+      "target": "Zwiebel Look"
+    },
+    {
+      "source": "Verkleidung",
+      "target": "Kost\u00fcmierungskleidung"
+    },
+    {
+      "source": "Verkleidung",
+      "target": "Vermummungskleidung"
+    },
+    {
+      "source": "Gesinnungszugeh\u00f6rigkeit",
+      "target": "Biker"
+    },
+    {
+      "source": "Gesinnungszugeh\u00f6rigkeit",
+      "target": "Bohemian"
+    },
+    {
+      "source": "Gesinnungszugeh\u00f6rigkeit",
+      "target": "Dandy"
+    },
+    {
+      "source": "Gesinnungszugeh\u00f6rigkeit",
+      "target": "Gothic"
+    },
+    {
+      "source": "Gesinnungszugeh\u00f6rigkeit",
+      "target": "Hippie"
+    },
+    {
+      "source": "Gesinnungszugeh\u00f6rigkeit",
+      "target": "Nerd"
+    },
+    {
+      "source": "Gesinnungszugeh\u00f6rigkeit",
+      "target": "Preps"
+    },
+    {
+      "source": "Gesinnungszugeh\u00f6rigkeit",
+      "target": "Punker"
+    },
+    {
+      "source": "Gesinnungszugeh\u00f6rigkeit",
+      "target": "Raver"
+    },
+    {
+      "source": "Gesinnungszugeh\u00f6rigkeit",
+      "target": "Rockabilly"
+    },
+    {
+      "source": "Gesinnungszugeh\u00f6rigkeit",
+      "target": "Rocker"
+    },
+    {
+      "source": "Gesinnungszugeh\u00f6rigkeit",
+      "target": "Skater"
+    },
+    {
+      "source": "Gesinnungszugeh\u00f6rigkeit",
+      "target": "Skinhead"
+    },
+    {
+      "source": "Klassenzugeh\u00f6rigkeit",
+      "target": "Arbeiterklasse"
+    },
+    {
+      "source": "Klassenzugeh\u00f6rigkeit",
+      "target": "Mittelklasse"
+    },
+    {
+      "source": "Klassenzugeh\u00f6rigkeit",
+      "target": "Obdachlos"
+    },
+    {
+      "source": "Klassenzugeh\u00f6rigkeit",
+      "target": "Oberklasse"
+    },
+    {
+      "source": "Religi\u00f6se Zugeh\u00f6rigkeit",
+      "target": "Buddhistisch"
+    },
+    {
+      "source": "Religi\u00f6se Zugeh\u00f6rigkeit",
+      "target": "Christlich"
+    },
+    {
+      "source": "Religi\u00f6se Zugeh\u00f6rigkeit",
+      "target": "Hinduistisch"
+    },
+    {
+      "source": "Religi\u00f6se Zugeh\u00f6rigkeit",
+      "target": "J\u00fcdisch"
+    },
+    {
+      "source": "Religi\u00f6se Zugeh\u00f6rigkeit",
+      "target": "Muslimisch"
+    },
+    {
+      "source": "Kampfsportkleidung",
+      "target": "Asiatische Kampfsportkleidung"
+    },
+    {
+      "source": "Kampfsportkleidung",
+      "target": "Boxkleidung"
+    },
+    {
+      "source": "Oberklasse",
+      "target": "Adel"
+    },
+    {
+      "source": "Klassischer Look",
+      "target": "Elegant"
+    },
+    {
+      "source": "Kost\u00fcmierungskleidung",
+      "target": "Fantasiekost\u00fcm"
+    },
+    {
+      "source": "Kost\u00fcmierungskleidung",
+      "target": "Historisches Kost\u00fcm"
+    },
+    {
+      "source": "Kost\u00fcmierungskleidung",
+      "target": "Nachahmungsverkleidung"
+    },
+    {
+      "source": "Krankenpflegepersonalkleidung",
+      "target": "Pflegerkleidung"
+    },
+    {
+      "source": "Krankenpflegepersonalkleidung",
+      "target": "Schwesternkleidung"
+    },
+    {
+      "source": "Leger Look",
+      "target": "Casual"
+    },
+    {
+      "source": "Leger Look",
+      "target": "Sportlich"
+    },
+    {
+      "source": "Liturgische Kleidung",
+      "target": "Bischofskleidung"
+    },
+    {
+      "source": "Liturgische Kleidung",
+      "target": "Diakonkleidung"
+    },
+    {
+      "source": "Liturgische Kleidung",
+      "target": "Kommunionshelferkleidung"
+    },
+    {
+      "source": "Liturgische Kleidung",
+      "target": "Messdienerkleidung"
+    },
+    {
+      "source": "Liturgische Kleidung",
+      "target": "Pastorenkleidung"
+    },
+    {
+      "source": "Liturgische Kleidung",
+      "target": "Priesterkleidung"
+    },
+    {
+      "source": "Luftfahrtpersonalkleidung",
+      "target": "Pilotenuniform"
+    },
+    {
+      "source": "Luftfahrtpersonalkleidung",
+      "target": "Stewardessenuniform"
+    },
+    {
+      "source": "Ordenskleidung",
+      "target": "M\u00f6nchskleidung"
+    },
+    {
+      "source": "Ordenskleidung",
+      "target": "Nonnenkleidung"
+    },
+    {
+      "source": "Outdoorsportkleidung",
+      "target": "Bergsteigerkeidung"
+    },
+    {
+      "source": "Outdoorsportkleidung",
+      "target": "Kletterkleidung"
+    },
+    {
+      "source": "Outdoorsportkleidung",
+      "target": "Walkingkleidung"
+    },
+    {
+      "source": "Religi\u00f6se buddhistische Kleidung",
+      "target": "Buddhistische M\u00f6nchskleidung"
+    },
+    {
+      "source": "Religi\u00f6se christliche Kleidung",
+      "target": "Liturgische Kleidung"
+    },
+    {
+      "source": "Religi\u00f6se christliche Kleidung",
+      "target": "Ordenskleidung"
+    },
+    {
+      "source": "Religi\u00f6se j\u00fcdische Kleidung",
+      "target": "Rabbiner"
+    },
+    {
+      "source": "Religi\u00f6se muslimische Kleidung",
+      "target": "Imam"
+    },
+    {
+      "source": "Schifffahrtspersonalkleidung",
+      "target": "Kapit\u00e4nuniform"
+    },
+    {
+      "source": "Schifffahrtspersonalkleidung",
+      "target": "Matrosenkleidung"
+    },
+    {
+      "source": "Signalkleidung",
+      "target": "Warnkleidung"
+    },
+    {
+      "source": "Wetterschutzkleidung",
+      "target": "Regenkleidung"
+    },
+    {
+      "source": "Tanzkleidung",
+      "target": "Ballettkleidung"
+    },
+    {
+      "source": "Tanzkleidung",
+      "target": "Cheerleadingkleidung"
+    },
+    {
+      "source": "Wassersportartkleidung",
+      "target": "Schnorchelkleidung"
+    },
+    {
+      "source": "Wassersportartkleidung",
+      "target": "Schwimmkleidung"
+    },
+    {
+      "source": "Wassersportartkleidung",
+      "target": "Surfkleidung"
+    },
+    {
+      "source": "Wassersportartkleidung",
+      "target": "Tauchkleidung"
+    }
+  ]
+}

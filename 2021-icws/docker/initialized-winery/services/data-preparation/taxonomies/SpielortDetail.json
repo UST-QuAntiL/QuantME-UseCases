@@ -1,0 +1,1314 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Arztpraxis"
+    },
+    {
+      "id": "Krankenhaus"
+    },
+    {
+      "id": "Krankenzimmer"
+    },
+    {
+      "id": "Auto"
+    },
+    {
+      "id": "Limousine"
+    },
+    {
+      "id": "Waschanlage"
+    },
+    {
+      "id": "Badezimmer"
+    },
+    {
+      "id": "Dusche"
+    },
+    {
+      "id": "Toilette"
+    },
+    {
+      "id": "Bahn"
+    },
+    {
+      "id": "Bahngleise"
+    },
+    {
+      "id": "Bahnhof"
+    },
+    {
+      "id": "Zug"
+    },
+    {
+      "id": "Ballsaal"
+    },
+    {
+      "id": "Abschlussball-Raum"
+    },
+    {
+      "id": "Berge"
+    },
+    {
+      "id": "Canyon"
+    },
+    {
+      "id": "Stein"
+    },
+    {
+      "id": "B\u00fcro"
+    },
+    {
+      "id": "Besprechungszimmer"
+    },
+    {
+      "id": "Bus"
+    },
+    {
+      "id": "Schulbus"
+    },
+    {
+      "id": "Campus"
+    },
+    {
+      "id": "Schulparkplatz"
+    },
+    {
+      "id": "Dienstleistung"
+    },
+    {
+      "id": "Bank"
+    },
+    {
+      "id": "Fabrik"
+    },
+    {
+      "id": "Fris\u00f6r"
+    },
+    {
+      "id": "Gef\u00e4ngnis"
+    },
+    {
+      "id": "Gericht"
+    },
+    {
+      "id": "Gesch\u00e4ft"
+    },
+    {
+      "id": "Hotel"
+    },
+    {
+      "id": "Massage"
+    },
+    {
+      "id": "Messe"
+    },
+    {
+      "id": "M\u00fcllkippe"
+    },
+    {
+      "id": "Pfandleihhaus"
+    },
+    {
+      "id": "Polizeistation"
+    },
+    {
+      "id": "Restaurant"
+    },
+    {
+      "id": "Tankstelle"
+    },
+    {
+      "id": "Tattoo-Studio"
+    },
+    {
+      "id": "Wahllokal"
+    },
+    {
+      "id": "Dorf"
+    },
+    {
+      "id": "Indianerdorf"
+    },
+    {
+      "id": "Fantasy-Mobile"
+    },
+    {
+      "id": "Riesenspinne"
+    },
+    {
+      "id": "Feld"
+    },
+    {
+      "id": "Feldweg"
+    },
+    {
+      "id": "Plantage"
+    },
+    {
+      "id": "Fest"
+    },
+    {
+      "id": "Hochzeit"
+    },
+    {
+      "id": "Party"
+    },
+    {
+      "id": "Film"
+    },
+    {
+      "id": "Filmset"
+    },
+    {
+      "id": "Filmszene"
+    },
+    {
+      "id": "Flur"
+    },
+    {
+      "id": "Eingangsbereich"
+    },
+    {
+      "id": "Garderobe"
+    },
+    {
+      "id": "Fluss"
+    },
+    {
+      "id": "Flussufer"
+    },
+    {
+      "id": "Fortbewegungsmittel"
+    },
+    {
+      "id": "Fahrrad"
+    },
+    {
+      "id": "Flughafen"
+    },
+    {
+      "id": "Flugzeug"
+    },
+    {
+      "id": "Kutsche"
+    },
+    {
+      "id": "Parkplatz"
+    },
+    {
+      "id": "Schiff"
+    },
+    {
+      "id": "Freizeitbesch\u00e4ftigung"
+    },
+    {
+      "id": "Club"
+    },
+    {
+      "id": "Kino"
+    },
+    {
+      "id": "Konzert"
+    },
+    {
+      "id": "Museum"
+    },
+    {
+      "id": "Stadion"
+    },
+    {
+      "id": "Stripclub"
+    },
+    {
+      "id": "Theater"
+    },
+    {
+      "id": "Barbershop"
+    },
+    {
+      "id": "Salon"
+    },
+    {
+      "id": "Garten"
+    },
+    {
+      "id": "Garagenauffahrt"
+    },
+    {
+      "id": "Pavillon"
+    },
+    {
+      "id": "Schaukel"
+    },
+    {
+      "id": "Terrasse"
+    },
+    {
+      "id": "Vorgarten"
+    },
+    {
+      "id": "Geb\u00e4ude"
+    },
+    {
+      "id": "Bauernhof"
+    },
+    {
+      "id": "Haus"
+    },
+    {
+      "id": "Kirche"
+    },
+    {
+      "id": "Schloss"
+    },
+    {
+      "id": "Schule"
+    },
+    {
+      "id": "Stall"
+    },
+    {
+      "id": "Universit\u00e4t"
+    },
+    {
+      "id": "Abendmodegesch\u00e4ft"
+    },
+    {
+      "id": "Bauhaus"
+    },
+    {
+      "id": "Boutique"
+    },
+    {
+      "id": "Einkaufscenter"
+    },
+    {
+      "id": "Supermarkt"
+    },
+    {
+      "id": "Halle"
+    },
+    {
+      "id": "Aula"
+    },
+    {
+      "id": "Sporthalle"
+    },
+    {
+      "id": "Balkon"
+    },
+    {
+      "id": "Keller"
+    },
+    {
+      "id": "Raum"
+    },
+    {
+      "id": "Treppe"
+    },
+    {
+      "id": "Wei\u00dfes Haus"
+    },
+    {
+      "id": "Wohnung"
+    },
+    {
+      "id": "Hotelflur"
+    },
+    {
+      "id": "Hotelrezeption"
+    },
+    {
+      "id": "Hotelzimmer"
+    },
+    {
+      "id": "Kloster"
+    },
+    {
+      "id": "Kutschenstation"
+    },
+    {
+      "id": "Landschaft"
+    },
+    {
+      "id": "Friedhof"
+    },
+    {
+      "id": "Gel\u00e4nde"
+    },
+    {
+      "id": "H\u00f6hle"
+    },
+    {
+      "id": "Park"
+    },
+    {
+      "id": "Steinbruch"
+    },
+    {
+      "id": "Wald"
+    },
+    {
+      "id": "Wiese"
+    },
+    {
+      "id": "W\u00fcste"
+    },
+    {
+      "id": "Medien"
+    },
+    {
+      "id": "Fernseh-Studio"
+    },
+    {
+      "id": "Plakat"
+    },
+    {
+      "id": "Pressekonferenz"
+    },
+    {
+      "id": "Radio"
+    },
+    {
+      "id": "Talkshow"
+    },
+    {
+      "id": "Telegrafenamt"
+    },
+    {
+      "id": "Wettbewerb"
+    },
+    {
+      "id": "Convention"
+    },
+    {
+      "id": "Freilichtmuseum"
+    },
+    {
+      "id": "Skate-Park"
+    },
+    {
+      "id": "Rasthof"
+    },
+    {
+      "id": "Arbeitszimmer"
+    },
+    {
+      "id": "Esszimmer"
+    },
+    {
+      "id": "K\u00fcche"
+    },
+    {
+      "id": "Schlafzimmer"
+    },
+    {
+      "id": "Veranda"
+    },
+    {
+      "id": "Wohnzimmer"
+    },
+    {
+      "id": "Bar"
+    },
+    {
+      "id": "Bistro"
+    },
+    {
+      "id": "Caf\u00e9"
+    },
+    {
+      "id": "Caf\u00e9teria"
+    },
+    {
+      "id": "Diner"
+    },
+    {
+      "id": "Eisdiele"
+    },
+    {
+      "id": "Imbiss"
+    },
+    {
+      "id": "Pizzeria"
+    },
+    {
+      "id": "Saloon"
+    },
+    {
+      "id": "Boot"
+    },
+    {
+      "id": "Schiffsanlegerhafen"
+    },
+    {
+      "id": "Bett"
+    },
+    {
+      "id": "Palast"
+    },
+    {
+      "id": "Schulb\u00fcro"
+    },
+    {
+      "id": "Rektorat"
+    },
+    {
+      "id": "Schulsekretariat"
+    },
+    {
+      "id": "Kantine"
+    },
+    {
+      "id": "Klassenzimmer"
+    },
+    {
+      "id": "Lehrerzimmer"
+    },
+    {
+      "id": "Schulbibliothek"
+    },
+    {
+      "id": "Schulflur"
+    },
+    {
+      "id": "Schulsportplatz"
+    },
+    {
+      "id": "Schultoiletten"
+    },
+    {
+      "id": "Umkleidekabine"
+    },
+    {
+      "id": "Schwimmbad"
+    },
+    {
+      "id": "Badehaus"
+    },
+    {
+      "id": "Pool"
+    },
+    {
+      "id": "Rutsche"
+    },
+    {
+      "id": "See"
+    },
+    {
+      "id": "Seeufer"
+    },
+    {
+      "id": "Spielort"
+    },
+    {
+      "id": "M\u00e4rchenland"
+    },
+    {
+      "id": "Stadt"
+    },
+    {
+      "id": "Stra\u00dfe"
+    },
+    {
+      "id": "Wasser"
+    },
+    {
+      "id": "Zelt"
+    },
+    {
+      "id": "Baseball"
+    },
+    {
+      "id": "Florida"
+    },
+    {
+      "id": "Las Vegas"
+    },
+    {
+      "id": "New York"
+    },
+    {
+      "id": "Spielplatz"
+    },
+    {
+      "id": "Westernstadt"
+    },
+    {
+      "id": "Baustelle"
+    },
+    {
+      "id": "Gehweg"
+    },
+    {
+      "id": "Studentenwohnheim"
+    },
+    {
+      "id": "Wahlkabine"
+    },
+    {
+      "id": "Waldlichtung"
+    },
+    {
+      "id": "Brunnen"
+    },
+    {
+      "id": "Strand"
+    },
+    {
+      "id": "Wassertank"
+    },
+    {
+      "id": "Steppe"
+    }
+  ],
+  "links": [
+    {
+      "source": "Arztpraxis",
+      "target": "Krankenhaus"
+    },
+    {
+      "source": "Arztpraxis",
+      "target": "Krankenzimmer"
+    },
+    {
+      "source": "Auto",
+      "target": "Limousine"
+    },
+    {
+      "source": "Auto",
+      "target": "Waschanlage"
+    },
+    {
+      "source": "Badezimmer",
+      "target": "Dusche"
+    },
+    {
+      "source": "Badezimmer",
+      "target": "Toilette"
+    },
+    {
+      "source": "Bahn",
+      "target": "Bahngleise"
+    },
+    {
+      "source": "Bahn",
+      "target": "Bahnhof"
+    },
+    {
+      "source": "Bahn",
+      "target": "Zug"
+    },
+    {
+      "source": "Ballsaal",
+      "target": "Abschlussball-Raum"
+    },
+    {
+      "source": "Berge",
+      "target": "Canyon"
+    },
+    {
+      "source": "Berge",
+      "target": "Stein"
+    },
+    {
+      "source": "B\u00fcro",
+      "target": "Besprechungszimmer"
+    },
+    {
+      "source": "Bus",
+      "target": "Schulbus"
+    },
+    {
+      "source": "Campus",
+      "target": "Schulparkplatz"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Arztpraxis"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Bank"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Fabrik"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Fris\u00f6r"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Gef\u00e4ngnis"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Gericht"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Gesch\u00e4ft"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Hotel"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Massage"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Messe"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "M\u00fcllkippe"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Pfandleihhaus"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Polizeistation"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Restaurant"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Tankstelle"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Tattoo-Studio"
+    },
+    {
+      "source": "Dienstleistung",
+      "target": "Wahllokal"
+    },
+    {
+      "source": "Fris\u00f6r",
+      "target": "Barbershop"
+    },
+    {
+      "source": "Fris\u00f6r",
+      "target": "Salon"
+    },
+    {
+      "source": "Gesch\u00e4ft",
+      "target": "Abendmodegesch\u00e4ft"
+    },
+    {
+      "source": "Gesch\u00e4ft",
+      "target": "Bauhaus"
+    },
+    {
+      "source": "Gesch\u00e4ft",
+      "target": "Boutique"
+    },
+    {
+      "source": "Gesch\u00e4ft",
+      "target": "Einkaufscenter"
+    },
+    {
+      "source": "Gesch\u00e4ft",
+      "target": "Supermarkt"
+    },
+    {
+      "source": "Hotel",
+      "target": "Hotelflur"
+    },
+    {
+      "source": "Hotel",
+      "target": "Hotelrezeption"
+    },
+    {
+      "source": "Hotel",
+      "target": "Hotelzimmer"
+    },
+    {
+      "source": "Messe",
+      "target": "Convention"
+    },
+    {
+      "source": "Restaurant",
+      "target": "Bar"
+    },
+    {
+      "source": "Restaurant",
+      "target": "Bistro"
+    },
+    {
+      "source": "Restaurant",
+      "target": "Caf\u00e9"
+    },
+    {
+      "source": "Restaurant",
+      "target": "Caf\u00e9teria"
+    },
+    {
+      "source": "Restaurant",
+      "target": "Diner"
+    },
+    {
+      "source": "Restaurant",
+      "target": "Eisdiele"
+    },
+    {
+      "source": "Restaurant",
+      "target": "Imbiss"
+    },
+    {
+      "source": "Restaurant",
+      "target": "Pizzeria"
+    },
+    {
+      "source": "Restaurant",
+      "target": "Saloon"
+    },
+    {
+      "source": "Wahllokal",
+      "target": "Wahlkabine"
+    },
+    {
+      "source": "Dorf",
+      "target": "Indianerdorf"
+    },
+    {
+      "source": "Fantasy-Mobile",
+      "target": "Riesenspinne"
+    },
+    {
+      "source": "Feld",
+      "target": "Feldweg"
+    },
+    {
+      "source": "Feld",
+      "target": "Plantage"
+    },
+    {
+      "source": "Fest",
+      "target": "Hochzeit"
+    },
+    {
+      "source": "Fest",
+      "target": "Party"
+    },
+    {
+      "source": "Film",
+      "target": "Filmset"
+    },
+    {
+      "source": "Film",
+      "target": "Filmszene"
+    },
+    {
+      "source": "Flur",
+      "target": "Eingangsbereich"
+    },
+    {
+      "source": "Flur",
+      "target": "Garderobe"
+    },
+    {
+      "source": "Fluss",
+      "target": "Flussufer"
+    },
+    {
+      "source": "Fortbewegungsmittel",
+      "target": "Auto"
+    },
+    {
+      "source": "Fortbewegungsmittel",
+      "target": "Bahn"
+    },
+    {
+      "source": "Fortbewegungsmittel",
+      "target": "Bus"
+    },
+    {
+      "source": "Fortbewegungsmittel",
+      "target": "Fahrrad"
+    },
+    {
+      "source": "Fortbewegungsmittel",
+      "target": "Fantasy-Mobile"
+    },
+    {
+      "source": "Fortbewegungsmittel",
+      "target": "Flughafen"
+    },
+    {
+      "source": "Fortbewegungsmittel",
+      "target": "Flugzeug"
+    },
+    {
+      "source": "Fortbewegungsmittel",
+      "target": "Kutsche"
+    },
+    {
+      "source": "Fortbewegungsmittel",
+      "target": "Parkplatz"
+    },
+    {
+      "source": "Fortbewegungsmittel",
+      "target": "Schiff"
+    },
+    {
+      "source": "Kutsche",
+      "target": "Kutschenstation"
+    },
+    {
+      "source": "Parkplatz",
+      "target": "Rasthof"
+    },
+    {
+      "source": "Schiff",
+      "target": "Boot"
+    },
+    {
+      "source": "Schiff",
+      "target": "Schiffsanlegerhafen"
+    },
+    {
+      "source": "Freizeitbesch\u00e4ftigung",
+      "target": "Club"
+    },
+    {
+      "source": "Freizeitbesch\u00e4ftigung",
+      "target": "Fest"
+    },
+    {
+      "source": "Freizeitbesch\u00e4ftigung",
+      "target": "Kino"
+    },
+    {
+      "source": "Freizeitbesch\u00e4ftigung",
+      "target": "Konzert"
+    },
+    {
+      "source": "Freizeitbesch\u00e4ftigung",
+      "target": "Museum"
+    },
+    {
+      "source": "Freizeitbesch\u00e4ftigung",
+      "target": "Stadion"
+    },
+    {
+      "source": "Freizeitbesch\u00e4ftigung",
+      "target": "Stripclub"
+    },
+    {
+      "source": "Freizeitbesch\u00e4ftigung",
+      "target": "Theater"
+    },
+    {
+      "source": "Museum",
+      "target": "Freilichtmuseum"
+    },
+    {
+      "source": "Stadion",
+      "target": "Baseball"
+    },
+    {
+      "source": "Garten",
+      "target": "Garagenauffahrt"
+    },
+    {
+      "source": "Garten",
+      "target": "Pavillon"
+    },
+    {
+      "source": "Garten",
+      "target": "Schaukel"
+    },
+    {
+      "source": "Garten",
+      "target": "Terrasse"
+    },
+    {
+      "source": "Garten",
+      "target": "Vorgarten"
+    },
+    {
+      "source": "Geb\u00e4ude",
+      "target": "Bauernhof"
+    },
+    {
+      "source": "Geb\u00e4ude",
+      "target": "Haus"
+    },
+    {
+      "source": "Geb\u00e4ude",
+      "target": "Kirche"
+    },
+    {
+      "source": "Geb\u00e4ude",
+      "target": "Schloss"
+    },
+    {
+      "source": "Geb\u00e4ude",
+      "target": "Schule"
+    },
+    {
+      "source": "Geb\u00e4ude",
+      "target": "Stall"
+    },
+    {
+      "source": "Geb\u00e4ude",
+      "target": "Universit\u00e4t"
+    },
+    {
+      "source": "Haus",
+      "target": "Balkon"
+    },
+    {
+      "source": "Haus",
+      "target": "Flur"
+    },
+    {
+      "source": "Haus",
+      "target": "Keller"
+    },
+    {
+      "source": "Haus",
+      "target": "Raum"
+    },
+    {
+      "source": "Haus",
+      "target": "Treppe"
+    },
+    {
+      "source": "Haus",
+      "target": "Wei\u00dfes Haus"
+    },
+    {
+      "source": "Haus",
+      "target": "Wohnung"
+    },
+    {
+      "source": "Kirche",
+      "target": "Kloster"
+    },
+    {
+      "source": "Schloss",
+      "target": "Palast"
+    },
+    {
+      "source": "Schule",
+      "target": "Campus"
+    },
+    {
+      "source": "Schule",
+      "target": "Halle"
+    },
+    {
+      "source": "Schule",
+      "target": "Kantine"
+    },
+    {
+      "source": "Schule",
+      "target": "Klassenzimmer"
+    },
+    {
+      "source": "Schule",
+      "target": "Lehrerzimmer"
+    },
+    {
+      "source": "Schule",
+      "target": "Schulbibliothek"
+    },
+    {
+      "source": "Schule",
+      "target": "Schulb\u00fcro"
+    },
+    {
+      "source": "Schule",
+      "target": "Schulflur"
+    },
+    {
+      "source": "Schule",
+      "target": "Schulsportplatz"
+    },
+    {
+      "source": "Schule",
+      "target": "Schultoiletten"
+    },
+    {
+      "source": "Schule",
+      "target": "Umkleidekabine"
+    },
+    {
+      "source": "Universit\u00e4t",
+      "target": "Studentenwohnheim"
+    },
+    {
+      "source": "Halle",
+      "target": "Aula"
+    },
+    {
+      "source": "Halle",
+      "target": "Ballsaal"
+    },
+    {
+      "source": "Halle",
+      "target": "Sporthalle"
+    },
+    {
+      "source": "Raum",
+      "target": "Arbeitszimmer"
+    },
+    {
+      "source": "Raum",
+      "target": "Badezimmer"
+    },
+    {
+      "source": "Raum",
+      "target": "B\u00fcro"
+    },
+    {
+      "source": "Raum",
+      "target": "Esszimmer"
+    },
+    {
+      "source": "Raum",
+      "target": "K\u00fcche"
+    },
+    {
+      "source": "Raum",
+      "target": "Schlafzimmer"
+    },
+    {
+      "source": "Raum",
+      "target": "Veranda"
+    },
+    {
+      "source": "Raum",
+      "target": "Wohnzimmer"
+    },
+    {
+      "source": "Landschaft",
+      "target": "Berge"
+    },
+    {
+      "source": "Landschaft",
+      "target": "Feld"
+    },
+    {
+      "source": "Landschaft",
+      "target": "Friedhof"
+    },
+    {
+      "source": "Landschaft",
+      "target": "Gel\u00e4nde"
+    },
+    {
+      "source": "Landschaft",
+      "target": "H\u00f6hle"
+    },
+    {
+      "source": "Landschaft",
+      "target": "Park"
+    },
+    {
+      "source": "Landschaft",
+      "target": "Steinbruch"
+    },
+    {
+      "source": "Landschaft",
+      "target": "Wald"
+    },
+    {
+      "source": "Landschaft",
+      "target": "Wiese"
+    },
+    {
+      "source": "Landschaft",
+      "target": "W\u00fcste"
+    },
+    {
+      "source": "Park",
+      "target": "Skate-Park"
+    },
+    {
+      "source": "Wald",
+      "target": "Waldlichtung"
+    },
+    {
+      "source": "W\u00fcste",
+      "target": "Steppe"
+    },
+    {
+      "source": "Medien",
+      "target": "Fernseh-Studio"
+    },
+    {
+      "source": "Medien",
+      "target": "Film"
+    },
+    {
+      "source": "Medien",
+      "target": "Plakat"
+    },
+    {
+      "source": "Medien",
+      "target": "Pressekonferenz"
+    },
+    {
+      "source": "Medien",
+      "target": "Radio"
+    },
+    {
+      "source": "Medien",
+      "target": "Talkshow"
+    },
+    {
+      "source": "Medien",
+      "target": "Telegrafenamt"
+    },
+    {
+      "source": "Medien",
+      "target": "Wettbewerb"
+    },
+    {
+      "source": "Schlafzimmer",
+      "target": "Bett"
+    },
+    {
+      "source": "Schulb\u00fcro",
+      "target": "Rektorat"
+    },
+    {
+      "source": "Schulb\u00fcro",
+      "target": "Schulsekretariat"
+    },
+    {
+      "source": "Schwimmbad",
+      "target": "Badehaus"
+    },
+    {
+      "source": "Schwimmbad",
+      "target": "Pool"
+    },
+    {
+      "source": "Schwimmbad",
+      "target": "Rutsche"
+    },
+    {
+      "source": "See",
+      "target": "Seeufer"
+    },
+    {
+      "source": "Spielort",
+      "target": "Dienstleistung"
+    },
+    {
+      "source": "Spielort",
+      "target": "Dorf"
+    },
+    {
+      "source": "Spielort",
+      "target": "Fortbewegungsmittel"
+    },
+    {
+      "source": "Spielort",
+      "target": "Freizeitbesch\u00e4ftigung"
+    },
+    {
+      "source": "Spielort",
+      "target": "Garten"
+    },
+    {
+      "source": "Spielort",
+      "target": "Geb\u00e4ude"
+    },
+    {
+      "source": "Spielort",
+      "target": "Landschaft"
+    },
+    {
+      "source": "Spielort",
+      "target": "M\u00e4rchenland"
+    },
+    {
+      "source": "Spielort",
+      "target": "Medien"
+    },
+    {
+      "source": "Spielort",
+      "target": "Stadt"
+    },
+    {
+      "source": "Spielort",
+      "target": "Stra\u00dfe"
+    },
+    {
+      "source": "Spielort",
+      "target": "Wasser"
+    },
+    {
+      "source": "Spielort",
+      "target": "Zelt"
+    },
+    {
+      "source": "Stadt",
+      "target": "Florida"
+    },
+    {
+      "source": "Stadt",
+      "target": "Las Vegas"
+    },
+    {
+      "source": "Stadt",
+      "target": "New York"
+    },
+    {
+      "source": "Stadt",
+      "target": "Spielplatz"
+    },
+    {
+      "source": "Stadt",
+      "target": "Westernstadt"
+    },
+    {
+      "source": "Stra\u00dfe",
+      "target": "Baustelle"
+    },
+    {
+      "source": "Stra\u00dfe",
+      "target": "Gehweg"
+    },
+    {
+      "source": "Wasser",
+      "target": "Brunnen"
+    },
+    {
+      "source": "Wasser",
+      "target": "Fluss"
+    },
+    {
+      "source": "Wasser",
+      "target": "Schwimmbad"
+    },
+    {
+      "source": "Wasser",
+      "target": "See"
+    },
+    {
+      "source": "Wasser",
+      "target": "Strand"
+    },
+    {
+      "source": "Wasser",
+      "target": "Wassertank"
+    }
+  ]
+}

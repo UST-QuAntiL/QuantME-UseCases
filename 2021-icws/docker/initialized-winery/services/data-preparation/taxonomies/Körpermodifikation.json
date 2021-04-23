@@ -1,0 +1,411 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Bartstyling"
+    },
+    {
+      "id": "Drei-Tage-Bart"
+    },
+    {
+      "id": "Schnauzer"
+    },
+    {
+      "id": "Vollbart"
+    },
+    {
+      "id": "Blond"
+    },
+    {
+      "id": "Blondiert"
+    },
+    {
+      "id": "Farbige Kontaktlinsen"
+    },
+    {
+      "id": "Blaue Kontaktlinsen"
+    },
+    {
+      "id": "Farbiger Nagellack"
+    },
+    {
+      "id": "Roter Nagellack"
+    },
+    {
+      "id": "Schwarzer Nagellack"
+    },
+    {
+      "id": "Gek\u00e4mmt"
+    },
+    {
+      "id": "Dutt"
+    },
+    {
+      "id": "Gegelt"
+    },
+    {
+      "id": "Hochsteckfrisur"
+    },
+    {
+      "id": "Offen"
+    },
+    {
+      "id": "Zopf"
+    },
+    {
+      "id": "Geschminkt"
+    },
+    {
+      "id": "Dezent geschminkt"
+    },
+    {
+      "id": "Stark geschminkt"
+    },
+    {
+      "id": "Gewichtsver\u00e4nderung"
+    },
+    {
+      "id": "Gewichtsabnahme"
+    },
+    {
+      "id": "Gewichtszunahme"
+    },
+    {
+      "id": "Gr\u00f6\u00dfenver\u00e4nderung"
+    },
+    {
+      "id": "Schuheinlagen"
+    },
+    {
+      "id": "Stelzen"
+    },
+    {
+      "id": "Haare Stylen"
+    },
+    {
+      "id": "Frisch Geschnitten"
+    },
+    {
+      "id": "Frisch Gewaschen"
+    },
+    {
+      "id": "Frisch Rasiert"
+    },
+    {
+      "id": "Ungek\u00e4mmt"
+    },
+    {
+      "id": "ungepflegt"
+    },
+    {
+      "id": "Haarfarben"
+    },
+    {
+      "id": "Br\u00fcnett"
+    },
+    {
+      "id": "Bunt gef\u00e4rbt"
+    },
+    {
+      "id": "Grauhaarig"
+    },
+    {
+      "id": "Rothaarig"
+    },
+    {
+      "id": "Schwarzhaarig"
+    },
+    {
+      "id": "K\u00f6rperbemalung"
+    },
+    {
+      "id": "Brustbetonung"
+    },
+    {
+      "id": "Muskelbetonung"
+    },
+    {
+      "id": "Tattoo"
+    },
+    {
+      "id": "K\u00f6rpermodifikation"
+    },
+    {
+      "id": "Sch\u00f6nheitschirurgie"
+    },
+    {
+      "id": "Schwangerschaft"
+    },
+    {
+      "id": "Styling"
+    },
+    {
+      "id": "Zahnver\u00e4nderung"
+    },
+    {
+      "id": "Make-Up"
+    },
+    {
+      "id": "Ungeschminkt"
+    },
+    {
+      "id": "Nagellack"
+    },
+    {
+      "id": "French Manicure"
+    },
+    {
+      "id": "Glatt"
+    },
+    {
+      "id": "Lockig"
+    },
+    {
+      "id": "Henna-Tattoo"
+    },
+    {
+      "id": "Zerzaust"
+    },
+    {
+      "id": "Fettige Haare"
+    },
+    {
+      "id": "Falsches Gebiss"
+    },
+    {
+      "id": "Gebleichte Z\u00e4hne"
+    }
+  ],
+  "links": [
+    {
+      "source": "Bartstyling",
+      "target": "Drei-Tage-Bart"
+    },
+    {
+      "source": "Bartstyling",
+      "target": "Schnauzer"
+    },
+    {
+      "source": "Bartstyling",
+      "target": "Vollbart"
+    },
+    {
+      "source": "Blond",
+      "target": "Blondiert"
+    },
+    {
+      "source": "Farbige Kontaktlinsen",
+      "target": "Blaue Kontaktlinsen"
+    },
+    {
+      "source": "Farbiger Nagellack",
+      "target": "Roter Nagellack"
+    },
+    {
+      "source": "Farbiger Nagellack",
+      "target": "Schwarzer Nagellack"
+    },
+    {
+      "source": "Gek\u00e4mmt",
+      "target": "Dutt"
+    },
+    {
+      "source": "Gek\u00e4mmt",
+      "target": "Gegelt"
+    },
+    {
+      "source": "Gek\u00e4mmt",
+      "target": "Hochsteckfrisur"
+    },
+    {
+      "source": "Gek\u00e4mmt",
+      "target": "Offen"
+    },
+    {
+      "source": "Gek\u00e4mmt",
+      "target": "Zopf"
+    },
+    {
+      "source": "Offen",
+      "target": "Glatt"
+    },
+    {
+      "source": "Offen",
+      "target": "Lockig"
+    },
+    {
+      "source": "Geschminkt",
+      "target": "Dezent geschminkt"
+    },
+    {
+      "source": "Geschminkt",
+      "target": "Stark geschminkt"
+    },
+    {
+      "source": "Gewichtsver\u00e4nderung",
+      "target": "Gewichtsabnahme"
+    },
+    {
+      "source": "Gewichtsver\u00e4nderung",
+      "target": "Gewichtszunahme"
+    },
+    {
+      "source": "Gr\u00f6\u00dfenver\u00e4nderung",
+      "target": "Schuheinlagen"
+    },
+    {
+      "source": "Gr\u00f6\u00dfenver\u00e4nderung",
+      "target": "Stelzen"
+    },
+    {
+      "source": "Haare Stylen",
+      "target": "Frisch Geschnitten"
+    },
+    {
+      "source": "Haare Stylen",
+      "target": "Frisch Gewaschen"
+    },
+    {
+      "source": "Haare Stylen",
+      "target": "Frisch Rasiert"
+    },
+    {
+      "source": "Haare Stylen",
+      "target": "Gek\u00e4mmt"
+    },
+    {
+      "source": "Haare Stylen",
+      "target": "Ungek\u00e4mmt"
+    },
+    {
+      "source": "Haare Stylen",
+      "target": "ungepflegt"
+    },
+    {
+      "source": "Ungek\u00e4mmt",
+      "target": "Zerzaust"
+    },
+    {
+      "source": "ungepflegt",
+      "target": "Fettige Haare"
+    },
+    {
+      "source": "Haarfarben",
+      "target": "Blond"
+    },
+    {
+      "source": "Haarfarben",
+      "target": "Br\u00fcnett"
+    },
+    {
+      "source": "Haarfarben",
+      "target": "Bunt gef\u00e4rbt"
+    },
+    {
+      "source": "Haarfarben",
+      "target": "Grauhaarig"
+    },
+    {
+      "source": "Haarfarben",
+      "target": "Rothaarig"
+    },
+    {
+      "source": "Haarfarben",
+      "target": "Schwarzhaarig"
+    },
+    {
+      "source": "K\u00f6rperbemalung",
+      "target": "Brustbetonung"
+    },
+    {
+      "source": "K\u00f6rperbemalung",
+      "target": "Muskelbetonung"
+    },
+    {
+      "source": "K\u00f6rperbemalung",
+      "target": "Tattoo"
+    },
+    {
+      "source": "Tattoo",
+      "target": "Henna-Tattoo"
+    },
+    {
+      "source": "K\u00f6rpermodifikation",
+      "target": "Farbige Kontaktlinsen"
+    },
+    {
+      "source": "K\u00f6rpermodifikation",
+      "target": "Gewichtsver\u00e4nderung"
+    },
+    {
+      "source": "K\u00f6rpermodifikation",
+      "target": "Gr\u00f6\u00dfenver\u00e4nderung"
+    },
+    {
+      "source": "K\u00f6rpermodifikation",
+      "target": "Haarfarben"
+    },
+    {
+      "source": "K\u00f6rpermodifikation",
+      "target": "K\u00f6rperbemalung"
+    },
+    {
+      "source": "K\u00f6rpermodifikation",
+      "target": "Sch\u00f6nheitschirurgie"
+    },
+    {
+      "source": "K\u00f6rpermodifikation",
+      "target": "Schwangerschaft"
+    },
+    {
+      "source": "K\u00f6rpermodifikation",
+      "target": "Styling"
+    },
+    {
+      "source": "K\u00f6rpermodifikation",
+      "target": "Zahnver\u00e4nderung"
+    },
+    {
+      "source": "Styling",
+      "target": "Bartstyling"
+    },
+    {
+      "source": "Styling",
+      "target": "Haare Stylen"
+    },
+    {
+      "source": "Styling",
+      "target": "Make-Up"
+    },
+    {
+      "source": "Styling",
+      "target": "Nagellack"
+    },
+    {
+      "source": "Zahnver\u00e4nderung",
+      "target": "Falsches Gebiss"
+    },
+    {
+      "source": "Zahnver\u00e4nderung",
+      "target": "Gebleichte Z\u00e4hne"
+    },
+    {
+      "source": "Make-Up",
+      "target": "Geschminkt"
+    },
+    {
+      "source": "Make-Up",
+      "target": "Ungeschminkt"
+    },
+    {
+      "source": "Nagellack",
+      "target": "Farbiger Nagellack"
+    },
+    {
+      "source": "Nagellack",
+      "target": "French Manicure"
+    }
+  ]
+}

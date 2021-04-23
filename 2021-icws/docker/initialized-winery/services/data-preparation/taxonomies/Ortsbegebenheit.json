@@ -1,0 +1,33 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "id": "Ortsbegebenheit"
+    },
+    {
+      "id": "drinnen"
+    },
+    {
+      "id": "drau\u00dfen"
+    },
+    {
+      "id": "drinnen und drau\u00dfen"
+    }
+  ],
+  "links": [
+    {
+      "source": "Ortsbegebenheit",
+      "target": "drinnen"
+    },
+    {
+      "source": "Ortsbegebenheit",
+      "target": "drau\u00dfen"
+    },
+    {
+      "source": "Ortsbegebenheit",
+      "target": "drinnen und drau\u00dfen"
+    }
+  ]
+}
