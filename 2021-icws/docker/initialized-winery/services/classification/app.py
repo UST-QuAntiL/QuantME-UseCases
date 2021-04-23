@@ -15,6 +15,8 @@ app = Quart(__name__)
 app.config["DEBUG"] = False
 loop = asyncio.get_event_loop()
 
+default_optimizer_params = [0.6283185307179586, 0.1, 0.602, 0.101, 0]
+
 
 def generate_url(url_root, route, file_name):
     return url_root + '/static/' + route + '/' + file_name + '.txt'
@@ -82,7 +84,17 @@ async def initialize_classification(job_id):
 
         # download the data and store it locally
         await FileService.download_to_file(data_url, data_file_path)
-        await FileService.download_to_file(optimizer_parameters_url, optimizer_parameters_file_path)
+
+        if optimizer_parameters_url is None:
+            print('Using default parameterization!')
+            optimizer_parameters = default_optimizer_params
+        else:
+            # deserialize optimizer parameters
+            print('Donwloading parameterization from URL: ' + str(optimizer_parameters_url))
+            await FileService.download_to_file(optimizer_parameters_url, optimizer_parameters_file_path)
+            optimizer_parameters = NumpySerializer.deserialize(optimizer_parameters_file_path)
+            if len(optimizer_parameters) is not 5:
+                raise Exception("Wrong number of optimizer parameters. 5 parameters c0 through c4 expected.")
 
         # deserialize the data
         data = NumpySerializer.deserialize(data_file_path)
@@ -96,11 +108,6 @@ async def initialize_classification(job_id):
         # store circuit template
         # WORKAROUND until https://github.com/Qiskit/qiskit-terra/issues/5710 is fixed
         PickleSerializer.serialize(circuit_template, circuit_template_file_path)
-
-        # deserialize optimizer parameters
-        optimizer_parameters = NumpySerializer.deserialize(optimizer_parameters_file_path)
-        if len(optimizer_parameters) is not 5:
-            raise Exception("Wrong number of optimizer parameters. 5 parameters c0 through c4 expected.")
 
         # initialize thetas for optimization
         n_thetas = len(var_form_parameters)
@@ -416,13 +423,22 @@ async def optimize(job_id):
         await FileService.download_to_file(labels_url, labels_file_path)
         await FileService.download_to_file(thetas_in_url, thetas_in_file_path)
         await FileService.download_to_file(delta_in_url, delta_in_file_path)
-        await FileService.download_to_file(optimizer_parameters_url, optimizer_parameters_file_path)
+
+        if optimizer_parameters_url is None:
+            print('Using default parameterization!')
+            optimizer_parameters = default_optimizer_params
+        else:
+            # deserialize optimizer parameters
+            print('Downloading parameterization from URL: ' + str(optimizer_parameters_url))
+            await FileService.download_to_file(optimizer_parameters_url, optimizer_parameters_file_path)
+            optimizer_parameters = NumpySerializer.deserialize(optimizer_parameters_file_path)
+            if len(optimizer_parameters) is not 5:
+                raise Exception("Wrong number of optimizer parameters. 5 parameters c0 through c4 expected.")
 
         results = ResultsSerializer.deserialize(results_file_path)
         labels = NumpySerializer.deserialize(labels_file_path)
         thetas = NumpySerializer.deserialize(thetas_in_file_path)
         delta = NumpySerializer.deserialize(delta_in_file_path)
-        optimizer_parameters = NumpySerializer.deserialize(optimizer_parameters_file_path)
 
         # make that sure labels are integers
         labels = labels.astype(int)

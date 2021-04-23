@@ -18,6 +18,7 @@ public class Constants {
     public static final String VARIABLE_NAME_BACKEND_NAME = "qpuName";
     public static final String VARIABLE_NAME_TOKEN = "ibmAccessToken";
     public static final String VARIABLE_NAME_EMBEDDINGS_FILE = "embeddingsFile";
+    public static final String VARIABLE_NAME_OPTIMIZER_PARAMETERS_URL = "classificationOptimizerConfigUrl";
 
     // internal variable names related to clustering
     public static final String VARIABLE_NAME_CLUSTERING_CONVERGED = "clusertingConverged";

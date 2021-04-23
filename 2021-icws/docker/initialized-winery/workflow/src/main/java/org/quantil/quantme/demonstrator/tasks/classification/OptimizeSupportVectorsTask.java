@@ -1,6 +1,7 @@
 package org.quantil.quantme.demonstrator.tasks.classification;
 
 import java.net.URL;
+import java.util.Objects;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -46,10 +47,16 @@ public class OptimizeSupportVectorsTask implements JavaDelegate {
         final int iterations = Integer
                 .valueOf(execution.getVariable(Constants.VARIABLE_NAME_CLASSIFICATION_ITERATIONS).toString());
 
+        // check if custom config file is defined for the optimizer
+        final Object optimizerParamFile = execution.getVariable(Constants.VARIABLE_NAME_CLASSIFICATION_CONFIG_FILE)
+                .toString();
+
         // create request
         final OptimizeSupportVectorsRequest request = new OptimizeSupportVectorsRequest();
-        request.setClassificationConfigUrl(Utils.getUrlToProcessVariable(execution.getProcessInstanceId(),
-                Constants.VARIABLE_NAME_CLASSIFICATION_CONFIG_FILE));
+        if (Objects.nonNull(optimizerParamFile)) {
+            request.setClassificationConfigUrl(Utils.getUrlToProcessVariable(execution.getProcessInstanceId(),
+                    Constants.VARIABLE_NAME_CLASSIFICATION_CONFIG_FILE));
+        }
         request.setResultsUrl(Utils.getUrlToProcessVariable(execution.getProcessInstanceId(),
                 Constants.VARIABLE_NAME_CLASSIFICATION_RESULTS_FILE));
         request.setDeltaUrl(Utils.getUrlToProcessVariable(execution.getProcessInstanceId(),

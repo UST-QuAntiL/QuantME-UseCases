@@ -47,7 +47,7 @@ public class Utils {
 
             // download using https if in secure environment
             if (tempFile.length() == 0 && downloadUrl.getProtocol().equals("http")) {
-                LOGGER.info("Unable to download file using http. Procedding with https...");
+                LOGGER.info("Unable to download file using http. Proceeding with https...");
                 final URL httpsUrl = new URL("https://" + downloadUrl.getHost() + "/" + downloadUrl.getPath());
                 LOGGER.info("Downloading file from URL: {}", httpsUrl);
                 FileUtils.copyURLToFile(httpsUrl, tempFile);

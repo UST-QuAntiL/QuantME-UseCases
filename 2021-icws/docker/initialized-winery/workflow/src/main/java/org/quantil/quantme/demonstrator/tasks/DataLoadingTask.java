@@ -1,6 +1,7 @@
 package org.quantil.quantme.demonstrator.tasks;
 
 import java.net.URL;
+import java.util.Objects;
 
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
@@ -34,11 +35,12 @@ public class DataLoadingTask implements JavaDelegate {
         Utils.addFileFromUrlAsVariable(embeddingUrl, "embeddings-", null, Constants.VARIABLE_NAME_EMBEDDINGS_FILE, null,
                 execution);
 
-        // download configuration file for the classification service
-        final URL configUrl = new URL(
-                "https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/master/TBD/data/optimizer-parameters.txt");
-        LOGGER.info("Downloading classification configuration file from URL: {}", configUrl);
-        Utils.addFileFromUrlAsVariable(configUrl, "classification-config-", null,
-                Constants.VARIABLE_NAME_CLASSIFICATION_CONFIG_FILE, null, execution);
+        // download configuration file for the classification service if defined
+        final Object optimizerParamUrl = execution.getVariable(Constants.VARIABLE_NAME_OPTIMIZER_PARAMETERS_URL);
+        if (Objects.nonNull(optimizerParamUrl) && !optimizerParamUrl.toString().isEmpty()) {
+            LOGGER.info("Downloading classification optimizer configuration file from URL: {}", optimizerParamUrl);
+            Utils.addFileFromUrlAsVariable(new URL(optimizerParamUrl.toString()), "classification-config-", null,
+                    Constants.VARIABLE_NAME_CLASSIFICATION_CONFIG_FILE, null, execution);
+        }
     }
 }

@@ -1,6 +1,7 @@
 package org.quantil.quantme.demonstrator.tasks.classification;
 
 import java.net.URL;
+import java.util.Objects;
 import java.util.Random;
 
 import javax.ws.rs.client.Client;
@@ -47,12 +48,18 @@ public class InitializeSVMTask implements JavaDelegate {
         // variable to track number of classification iterations
         execution.setVariable(Constants.VARIABLE_NAME_CLASSIFICATION_ITERATIONS, 0);
 
+        // check if custom config file is defined for the optimizer
+        final Object optimizerParamFile = execution.getVariable(Constants.VARIABLE_NAME_CLASSIFICATION_CONFIG_FILE)
+                .toString();
+
         // create request
         final IntititalizeSVMRequest request = new IntititalizeSVMRequest();
         request.setDataUrl(Utils.getUrlToProcessVariable(execution.getProcessInstanceId(),
                 Constants.VARIABLE_NAME_EMBEDDINGS_FILE));
-        request.setClassificationConfigUrl(Utils.getUrlToProcessVariable(execution.getProcessInstanceId(),
-                Constants.VARIABLE_NAME_CLASSIFICATION_CONFIG_FILE));
+        if (Objects.nonNull(optimizerParamFile)) {
+            request.setClassificationConfigUrl(Utils.getUrlToProcessVariable(execution.getProcessInstanceId(),
+                    Constants.VARIABLE_NAME_CLASSIFICATION_CONFIG_FILE));
+        }
 
         // send request and retrieve result
         final String requestUrl = getRequestUrl(jobId);
