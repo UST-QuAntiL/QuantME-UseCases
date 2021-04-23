@@ -1,4 +1,4 @@
-package org.quantil.quantme.demonstrator.tasks;
+package org.quantil.quantme.demonstrator.tasks.data;
 
 import java.net.URL;
 import java.util.Objects;
@@ -27,12 +27,12 @@ public class DataLoadingTask implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution execution) throws Exception {
-        LOGGER.info("Downloading data file with embeddings...");
+        LOGGER.info("Downloading input data file with MUSE data...");
 
-        final URL embeddingUrl = new URL(execution.getVariable(Constants.VARIABLE_NAME_EMBEDDINGS_URL).toString());
-        LOGGER.info("Embedding URL: {}", embeddingUrl);
+        final URL inputDataUrl = new URL(execution.getVariable(Constants.VARIABLE_NAME_INPUT_DATA_URL).toString());
+        LOGGER.info("Input Data URL: {}", inputDataUrl);
 
-        Utils.addFileFromUrlAsVariable(embeddingUrl, "embeddings-", null, Constants.VARIABLE_NAME_EMBEDDINGS_FILE, null,
+        Utils.addFileFromUrlAsVariable(inputDataUrl, "input-data-", null, Constants.VARIABLE_NAME_INPUT_DATA_FILE, null,
                 execution);
 
         // download configuration file for the classification service if defined

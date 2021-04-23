@@ -49,8 +49,7 @@ public class InitializeSVMTask implements JavaDelegate {
         execution.setVariable(Constants.VARIABLE_NAME_CLASSIFICATION_ITERATIONS, 0);
 
         // check if custom config file is defined for the optimizer
-        final Object optimizerParamFile = execution.getVariable(Constants.VARIABLE_NAME_CLASSIFICATION_CONFIG_FILE)
-                .toString();
+        final Object optimizerParamFile = execution.getVariable(Constants.VARIABLE_NAME_CLASSIFICATION_CONFIG_FILE);
 
         // create request
         final IntititalizeSVMRequest request = new IntititalizeSVMRequest();

@@ -14,9 +14,10 @@ package org.quantil.quantme.demonstrator;
 public class Constants {
 
     // general internal variable names
-    public static final String VARIABLE_NAME_EMBEDDINGS_URL = "embeddingsUrl";
+    public static final String VARIABLE_NAME_INPUT_DATA_URL = "inputDataUrl";
     public static final String VARIABLE_NAME_BACKEND_NAME = "qpuName";
     public static final String VARIABLE_NAME_TOKEN = "ibmAccessToken";
+    public static final String VARIABLE_NAME_INPUT_DATA_FILE = "inputDataFile";
     public static final String VARIABLE_NAME_EMBEDDINGS_FILE = "embeddingsFile";
     public static final String VARIABLE_NAME_OPTIMIZER_PARAMETERS_URL = "classificationOptimizerConfigUrl";
 
