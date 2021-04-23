@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/artifacttemplates" id="winery-defs-for_artifacttemplates-PyhtonApp_3_Impl_Start_IA">
-    <ArtifactTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="PyhtonApp_3_Impl_Start_IA" type="ToscaBaseTypes:ScriptArtifact" id="PyhtonApp_3_Impl_Start_IA">
-        <ArtifactReferences>
-            <ArtifactReference reference="artifacttemplates/http%253A%252F%252Fopentosca.org%252Fartifacttemplates/PyhtonApp_3_Impl_Start_IA/files/start.sh"/>
-        </ArtifactReferences>
-    </ArtifactTemplate>
-</Definitions>
