@@ -1,0 +1,26 @@
+Frequency,KostuemID,RollenID,FilmID,DominanteFarbe,DominanterZustand,Genre,DominanteCharaktereigenschaft,DominanterAlterseindruck,Geschlecht
+1,1,4,46,Hellgrau,sauber,"Highschool Komödie",aktiv,40ern,männlich
+1,1,5,48,Hellblau,sauber,"Highschool Komödie",aktiv,40ern,männlich
+1,2,10,45,Hellbraun,sauber,"Highschool Komödie",gut,50ern,weiblich
+1,3,9,48,Hellgrau,gebügelt,"Highschool Komödie",aktiv,50ern,männlich
+1,6,3,63,Hellgrau,sauber,"Highschool Komödie",gut,30ern,männlich
+1,5,5,48,Hellblau,gebügelt,"Highschool Komödie",aktiv,40ern,männlich
+1,15,2,55,Hellblau,sauber,"Highschool Komödie",aktiv,30ern,weiblich
+1,3,18,47,Hellblau,sauber,"Highschool Komödie",gut,50ern,weiblich
+1,2,9,49,Hellblau,sauber,"Highschool Komödie",aktiv,50ern,männlich
+1,6,9,61,Hellbraun,sauber,"Highschool Komödie",aktiv,50ern,männlich
+1,1,18,49,Hellblau,gebügelt,"Highschool Komödie",aktiv,40ern,männlich
+1,6,8,62,Hellbraun,sauber,"Highschool Komödie",aktiv,40ern,männlich
+1,9,6,55,Hellblau,sauber,"Highschool Komödie",gut,40ern,männlich
+1,1,1,51,Dunkelblau,alt,"Highschool Komödie",passiv,Jugendlicher,männlich
+1,2,7,45,Dunkelbraun,alt,"Highschool Komödie",passiv,Jugendlicher,männlich
+1,1,2,64,Dunkelblau,ausgewaschen,"Highschool Komödie",passiv,Jugendlicher,weiblich
+1,1,20,46,Dunkelgrün,abgetragen,"Highschool Komödie",schwach,Jugendlicher,männlich
+1,14,3,62,Dunkelbraun,abgetragen,"Highschool Komödie",passiv,Jugendlicher,männlich
+1,5,7,45,Dunkelbraun,alt,"Highschool Komödie",passiv,Jugendlicher,männlich
+1,1,27,64,Dunkelblau,verwaschen,"Highschool Komödie",böse,Jugendlicher,männlich
+1,3,19,48,Dunkelbraun,ausgewaschen,"Highschool Komödie",passiv,Jugendlicher,männlich
+1,1,30,60,Dunkelgrün,abgetragen,"Highschool Komödie",passiv,Jugendlicher,weiblich
+1,1,7,49,Dunkelgrün,abgetragen,"Highschool Komödie",passiv,Jugendlicher,männlich
+1,1,19,48,Dunkelblau,nass,"Highschool Komödie",passiv,Jugendlicher,männlich
+1,3,3,93,Dunkelbraun,abgetragen,"Highschool Komödie",passiv,Jugendlicher,männlich
