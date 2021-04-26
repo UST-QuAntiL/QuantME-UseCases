@@ -42,12 +42,17 @@ Thereby, in the ``Service Templates`` tab, two different representations of our 
 
   * ``OrchestrationsInSuperpositionDemo``:  This Service Template contains a topology where the required virtual machines are automatically provisioned using an OpenStack cloud.
 Thus, this is the easiest version to provision the execution environment completely automatically.
-However, it requires acces to an OpenStack cloud, and if no such cloud is available, the corresponding Node Template in the topology can be replaced by another Node Template, e.g., to provision the virtual machines on AWS.
+However, it requires access to an OpenStack cloud, and if no such cloud is available, the corresponding Node Template in the topology can be replaced by another Node Template, e.g., to provision the virtual machines on AWS.
 
   * ``OrchestrationsInSuperpositionDemo_RunningVMs``: This Service Template enables the provisioning of the required services and the workflow engine on already running virtual machines.
 Therefore, four Ubuntu 20.04 virtual machines have to be provided to use this Service Template.
 
 In the following, we use the ``OrchestrationsInSuperpositionDemo`` Service template, but the other Service Template differs only slightly with respect to the required input parameters.
+
+To visualize the topology of the hybrid quantum application and enable its adaptation, click on the corresponding Service Template.
+Afterward, select the ``Topology Template`` tab and click on ``Open Editor`` as shown below. 
+
+![Open Editor](./docs/winery-open-modeler.png)
 
 TODO
 
