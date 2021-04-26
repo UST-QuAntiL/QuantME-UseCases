@@ -68,6 +68,23 @@ This CSAR can then be transferred as a self-contained package into the target en
 
 ## Provisioning the Execution Environment
 
+After modeling the workflow and topology of the hybrid quantum application, the corresponding execution environment can be automatically provisioned using the [OpenTOSCA Container](https://github.com/OpenTOSCA/container).
+
+For this, open the user interface available at ``$PUBLIC_HOSTNAME:8088``.
+Thereby, it is important to use the IP address and not ``localhost`` to enable a successful deployment.
+
+![OpenTOSCA UI](./docs/opentosca-applications-overview.png)
+
+The user interface displays all CSARs that are currently uploaded to the OpenTOSCA container.
+Furthermore, it enables uploading CSARs that were previously exported from the Winery (see above).
+However, we will directly load the corresponding CSAR from the Winery.
+For this, select the ``Repository`` tab, visualizing the CSARs available in the connected Winery.
+Select one of the two alternatives discussed above, and click on the plus sign as shown in the following:
+
+![OpenTOSCA UI - Repository](./docs/opentosca-repository.png)
+
+In the pop-up, click on ``install`` and wait until the upload completes and a green arrow is displayed.
+
 TODO
 
 ## Execution of the Hybrid Quantum Application
