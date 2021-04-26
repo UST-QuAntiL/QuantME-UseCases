@@ -1,6 +1,8 @@
 from quart import Quart, request, jsonify
 import asyncio
+import numpy as np
 import sys
+from sklearn import manifold
 from fileService import FileService
 from wuPalmer import WuPalmerService
 
@@ -114,8 +116,19 @@ async def perform_mds_data_preparation(job_id):
         await FileService.download_to_file(distance_matrix_url, distance_matrix_path)
         print('Successfully loaded distance matrix...')
 
-        # TODO
-        await FileService.download_to_file("https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/master/2021-icws/data/embedding.txt", embeddings_path)
+        # deserialize distance matrix to numpy array
+        distance_matrix = np.loadtxt(distance_matrix_path)
+        print('Created numpy array from file. Applying MDS...')
+
+        # apply MDS
+        mds = manifold.MDS(n_components=2, n_init=4,
+                           max_iter=300,
+                           eps=1e-3,
+                           dissimilarity="euclidean",
+                           n_jobs=1).fit(distance_matrix)
+        embedding = mds.embedding_
+        print('Successfully applied MDS to given distance matrix!')
+        np.savetxt(embeddings_path, embedding)
 
         embeddings_url = generate_url(request.host_url,
                                       'mds',
