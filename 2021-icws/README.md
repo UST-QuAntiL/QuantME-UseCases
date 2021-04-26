@@ -85,6 +85,11 @@ Select one of the two alternatives discussed above, and click on the plus sign a
 
 In the pop-up, click on ``install`` and wait until the upload completes and a green arrow is displayed.
 
+Switch back to the ``Applications`` tab, where the uploaded CSAR is shown.
+Next, click on the ``Show details...`` button:
+
+![OpenTOSCA UI - Uploaded CSAR](./docs/opentosca-upload-complete.png)
+
 TODO
 
 ## Execution of the Hybrid Quantum Application
