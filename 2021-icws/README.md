@@ -54,9 +54,19 @@ Afterward, select the ``Topology Template`` tab and click on ``Open Editor`` as 
 
 ![Open Editor](./docs/winery-open-modeler.png)
 
-TODO
+Wait until the topology modeler successfully loads the topology and displays it graphically:
 
-## Provisioing the Execution Environment
+![Toplogy Modeler](./docs/winery-topology-modeler.png)
+
+In the modeler, the topology can be adapted by dragging and dropping new elements into the canvas, e.g., to add another service or to change the cloud offering that is used to provision the virtual machines.
+However, in this example, we will utilize the provided topology without any adaptations.
+
+Switch back to the first tab, where the hybrid quantum application can be exported as a CSAR (implementing a QAA) with all required information to provision the execution environment for the application.
+This CSAR can then be transferred as a self-contained package into the target environment.
+
+![Export CSAR](./docs/winery-export-csar.png)
+
+## Provisioning the Execution Environment
 
 TODO
 
