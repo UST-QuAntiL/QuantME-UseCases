@@ -1,15 +1,14 @@
-from cached_property import asyncio
+import asyncio
 import matplotlib.pyplot as plt
 import json
 import requests
 import webbrowser
 
 
-async def initialize_varSVM(url_root, job_id, data_url, optimizer_parameters_url):
+async def initialize_varSVM(url_root, job_id, data_url):
     request_url = url_root + '/api/variational-svm-classification/initialization/' + \
                   str(job_id) + \
-                  '?data-url=' + data_url + \
-                  '&optimizer-parameters-url=' + optimizer_parameters_url
+                  '?data-url=' + data_url
     response = json.loads(requests.request("POST", request_url, headers={}, data={}).text)
     return response['circuit_template_url'], \
            response['thetas_url'], \
@@ -43,7 +42,7 @@ async def run_circuit_parameterizations(url_root, job_id, circuit_template_url, 
            response['is_statevector']
 
 
-async def optimize_varSVM(url_root, job_id, results_url, labels_url, thetas_url, delta_url, optimizer_parameters_url,
+async def optimize_varSVM(url_root, job_id, results_url, labels_url, thetas_url, delta_url,
                           iteration, is_statevector):
     request_url = url_root + '/api/variational-svm-classification/optimization/' + \
                   str(job_id) + \
@@ -51,7 +50,6 @@ async def optimize_varSVM(url_root, job_id, results_url, labels_url, thetas_url,
                   '&labels-url=' + labels_url + \
                   '&thetas-url=' + thetas_url + \
                   '&delta-url=' + delta_url + \
-                  '&optimizer-parameters-url=' + optimizer_parameters_url + \
                   '&is-statevector=' + str(is_statevector) + \
                   '&iteration=' + str(iteration)
     response = json.loads(requests.request("POST", request_url, headers={}, data={}).text)
@@ -100,10 +98,9 @@ async def test_varSVM():
     """ test variational SVM classification workflow """
 
     maxiter = 20
-    url_root = 'http://127.0.0.1:5001'
+    url_root = 'http://127.0.0.1:5000'
     data_url = 'https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/master/2021-icws/data/embedding.txt'
     labels_url = url_root + '/static/0_base/labels0.txt'
-    optimizer_parameters_url = 'https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/master/2021-icws/data/optimizer-parameters.txt'
     backend = 'aer_statevector_simulator'
     token = ''
     resolution = 25
@@ -114,8 +111,7 @@ async def test_varSVM():
     circuit_template_url, thetas_url, thetas_plus_url, thetas_minus_url, delta_url = \
         await initialize_varSVM(url_root,
                                 job_id,
-                                data_url,
-                                optimizer_parameters_url)
+                                data_url)
 
     """ Optimize """
     costs = []
@@ -147,7 +143,6 @@ async def test_varSVM():
                                   labels_url,
                                   thetas_url,
                                   delta_url,
-                                  optimizer_parameters_url,
                                   i + 1,
                                   is_statevector)
 

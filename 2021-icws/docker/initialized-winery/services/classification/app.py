@@ -46,7 +46,9 @@ async def initialize_classification(job_id):
 
     optimizer_parameters_url = request.args.get('optimizer-parameters-url', type=str)
     if optimizer_parameters_url is None:
-        optimizer_parameters_url = (await request.get_json())['optimizer-parameters-url']
+        body = (await request.get_json())
+        if body is not None:
+            optimizer_parameters_url = body['optimizer-parameters-url']
 
     entanglement = request.args.get('entanglement', type=str, default='full')
     feature_map_reps = request.args.get('feature-map-reps', type=int, default=1)
@@ -93,7 +95,7 @@ async def initialize_classification(job_id):
             print('Donwloading parameterization from URL: ' + str(optimizer_parameters_url))
             await FileService.download_to_file(optimizer_parameters_url, optimizer_parameters_file_path)
             optimizer_parameters = NumpySerializer.deserialize(optimizer_parameters_file_path)
-            if len(optimizer_parameters) is not 5:
+            if len(optimizer_parameters) != 5:
                 raise Exception("Wrong number of optimizer parameters. 5 parameters c0 through c4 expected.")
 
         # deserialize the data
@@ -432,7 +434,7 @@ async def optimize(job_id):
             print('Downloading parameterization from URL: ' + str(optimizer_parameters_url))
             await FileService.download_to_file(optimizer_parameters_url, optimizer_parameters_file_path)
             optimizer_parameters = NumpySerializer.deserialize(optimizer_parameters_file_path)
-            if len(optimizer_parameters) is not 5:
+            if len(optimizer_parameters) != 5:
                 raise Exception("Wrong number of optimizer parameters. 5 parameters c0 through c4 expected.")
 
         results = ResultsSerializer.deserialize(results_file_path)
