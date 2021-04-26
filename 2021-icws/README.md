@@ -1,6 +1,16 @@
 # ICWS 2021 Prototype
 
-TODO
+This use case shows how to model hybrid quantum applications by using workflow technologies to specify the control- and data flow, and provisioning technologies to enable the automatic provisioning of the required execution environment for the hybrid quantum application.
+Furthermore, it is demonstrated, how all required artifacts comprising the hybrid quantum application can be packaged in a self-contained manner.
+
+The following figure shows the workflow model implementing the sample hybrid quantum application:
+
+![Workflow Model](./docs/sample-quantum-application.png)
+
+Thereby, the three sub-workflows are represented as collapsed sub-processes, but a visual representation is available [here](./docs/sub-workflows).
+Furthermore, the complete workflow model can be visualized using the [Camunda Modeler](https://camunda.com/download/modeler/) or the [QuantME Transformation Framework](https://github.com/UST-QuAntiL/QuantME-TransformationFramework), implementing our [workflow modeling extension](https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN) for quantum computing.
+
+In the following, it is presented how a hybrid quantum application can be created, adapted, packaged, and executed.
 
 ## Setting up the Hybrid Quantum-Classical Environment
 
