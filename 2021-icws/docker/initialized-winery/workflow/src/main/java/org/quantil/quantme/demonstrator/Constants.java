@@ -17,9 +17,21 @@ public class Constants {
     public static final String VARIABLE_NAME_INPUT_DATA_URL = "inputDataUrl";
     public static final String VARIABLE_NAME_BACKEND_NAME = "qpuName";
     public static final String VARIABLE_NAME_TOKEN = "ibmAccessToken";
-    public static final String VARIABLE_NAME_INPUT_DATA_FILE = "inputDataFile";
-    public static final String VARIABLE_NAME_EMBEDDINGS_FILE = "embeddingsFile";
     public static final String VARIABLE_NAME_OPTIMIZER_PARAMETERS_URL = "classificationOptimizerConfigUrl";
+
+    // internal variable names related to data-preparation
+    public static final String VARIABLE_NAME_INPUT_DATA_FILE = "inputDataFile";
+    public static final String VARIABLE_NAME_DISTANCE_MATRIX_FILE = "distanceMatrixFile";
+    public static final String VARIABLE_NAME_EMBEDDINGS_FILE = "embeddingsFile";
+    public static final String VARIABLE_NAME_DATA_PREPARATION_JOB_ID = "dataPreparationJobId";
+
+    // API paths for the data-preparation service
+    public static final String DATA_PREPARATION_API_WU_PALMER = "/api/wu-palmer/";
+    public static final String DATA_PREPARATION_API_MDS = "/api/mds/";
+
+    // response objects for the data-preparation service
+    public static final String DATA_PREPARATION_RESPONSE_DISTANCE_MATRIX = "distance_matrix_url";
+    public static final String DATA_PREPARATION_RESPONSE_EMBEDDINGS = "embeddings_url";
 
     // internal variable names related to clustering
     public static final String VARIABLE_NAME_CLUSTERING_CONVERGED = "clusertingConverged";
