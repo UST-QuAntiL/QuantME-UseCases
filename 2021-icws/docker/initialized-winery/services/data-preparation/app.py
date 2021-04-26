@@ -43,7 +43,7 @@ async def perform_wu_palmer_data_preparation(job_id):
     attributes = request.args.get('attributes', type=list)
     if attributes is None:
         attributesResponse = (await request.get_json())
-        if (attributesResponse is None) or (attributesResponse['attributes'] is None):
+        if (attributesResponse is None) or (attributesResponse.get('attributes') is None):
             print('Using default attributes for comparison: ' + str(default_attributes))
             attributes = default_attributes
         else:
