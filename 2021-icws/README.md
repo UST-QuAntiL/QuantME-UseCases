@@ -110,6 +110,23 @@ Thereby, the ``OrchestrationsInSuperpositionDemo`` CSAR requires six input param
 This defines which public key is added to enable later access.
   * ``VMPrivateKey``: The private key corresponding to the defined key pair.
 
+Please note, that the other CSAR requests different input parameters, such as the IP addresses of the virtual machines to use.
+
+By clicking on ``Run``, the provisioning is initiated, which requires several minutes.
+During the provisioning the current state can be displayed, by clicking on the ``Show Details``button:
+
+![OpenTOSCA UI - Open Instance View](./docs/opentosca-instance-details.png)
+
+This opens the following page:
+
+![OpenTOSCA UI - Instance View](./docs/opentosca-wait-completion.png)
+
+On this page, the current state of the provisioning (``CREATING``) is shown, which can be refreshed by clicking on the corresponding button.
+Furthermore, the page also shows the logs of the build plan used to create the instance of the CSAR.
+Please wait until the state changes to ``CREATED`` as depicted below:
+
+![OpenTOSCA UI - Instance View](./docs/opentosca-camunda-endpoint.png)
+
 TODO
 
 ## Execution of the Hybrid Quantum Application
