@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Definitions targetNamespace="http://opentosca.org/servicetemplates" id="winery-defs-for_servicetemplates-OrchestrationsInSuperpositionDemo_w1-wip1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
     <ServiceTemplate name="OrchestrationsInSuperpositionDemo" targetNamespace="http://opentosca.org/servicetemplates" id="OrchestrationsInSuperpositionDemo">
+        <BoundaryDefinitions>
+            <Properties>
+                <ns0:selfserviceApplicationUrl xmlns:ns0="http://www.eclipse.org/winery/model/selfservice" xmlns:ns10="http://www.eclipse.org/winery/model/selfservice" xmlns:tosca="http://docs.oasis-open.org/tosca/ns/2011/12"/>
+                <PropertyMappings>
+                    <PropertyMapping serviceTemplatePropertyRef="/*[local-name()='selfserviceApplicationUrl']" targetObjectRef="Ubuntu-VM_20.04-w1_0" targetPropertyRef="concat('http://', Ubuntu-VM_20.04-w1_0.Properties.VMIP, ':', Camunda_w1_0.Properties.Port,'/camunda')"/>
+                </PropertyMappings>
+            </Properties>
+        </BoundaryDefinitions>
         <TopologyTemplate>
             <NodeTemplate name="OpenStack" minInstances="1" maxInstances="1" type="nodetypes:OpenStack_Train-w1" id="OpenStack_Train-w1_0" winery:x="896" winery:y="582" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Properties>
