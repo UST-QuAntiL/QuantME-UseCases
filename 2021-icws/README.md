@@ -90,6 +90,26 @@ Next, click on the ``Show details...`` button:
 
 ![OpenTOSCA UI - Uploaded CSAR](./docs/opentosca-upload-complete.png)
 
+Afterward, an instance of the uploaded CSAR can be provisioned.
+For this, click on the plus sign, then select the ``OpenTOSCA-Lifecycle-Interface`` and the ``initiate`` operation.
+Finally, click on ``Next`` as depicted in the following figure:
+
+![OpenTOSCA UI - Select Plan](./docs/opentosca-select-plan.png)
+
+This opens a pop-up requesting the required input parameters for the provisioning:
+
+![OpenTOSCA UI - Input Parameters](./docs/opentosca-input-parameters.png)
+
+Thereby, the ``OrchestrationsInSuperpositionDemo`` CSAR requires six input parameters:
+
+  * ``OpenStackUser``: The user name to access the OpenStack cloud used to provision the virtual machines.
+  * ``OpenStackPassword``: The password corresponding to the OpenStack account.
+  * ``OpenStackEndpoint``: The API endpoint of the OpenStack cloud to use.
+  * ``OpenStackProjectId``: The project Id of the project under which the virtual machines are created.
+  * ``VMKeyPairName``: The name of the key pair that should be used to initialize the virtual machines.
+This defines which public key is added to enable later access.
+  * ``VMPrivateKey``: The private key corresponding to the defined key pair.
+
 TODO
 
 ## Execution of the Hybrid Quantum Application
