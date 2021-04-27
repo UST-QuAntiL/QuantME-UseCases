@@ -127,9 +127,17 @@ Please wait until the state changes to ``CREATED`` as depicted below:
 
 ![OpenTOSCA UI - Instance View](./docs/opentosca-camunda-endpoint.png)
 
-TODO
+Finally, the endpoint of the deployed Camunda engine with the uploaded workflow of the sample hybrid quantum application can be retrieved.
+For this, open the drop-down menu of the build plan instance and extract the endpoint under ``selfserviceApplicationUrl``.
 
 ## Execution of the Hybrid Quantum Application
+
+After successfully provisioning the execution environment of the hybrid quantum application, the corresponding workflow can be executed.
+Therefore, open the URL of the Camunda engine extracted in the previous step (``http://193.196.52.165:443/camunda`` in the example).
+First, create an account in the Camunda engine and log in.
+Then, the following screen is displayed:
+
+![Camunda Overview](./docs/camunda-overview.png)
 
 TODO
 
