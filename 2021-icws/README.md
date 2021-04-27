@@ -137,7 +137,13 @@ Therefore, open the URL of the Camunda engine extracted in the previous step (``
 First, create an account in the Camunda engine and log in.
 Then, the following screen is displayed:
 
-![Camunda Overview](./docs/camunda-overview.png)
+![Camunda - Overview](./docs/camunda-overview.png)
+
+Click on the top-right button and open two tabs with the ``Cockpit`` and ``Tasklist`` applications.
+Next, select the tab with the ``Tasklist`` and click on ``Start process`` on the top-right corner.
+In the pop-up select ``quantum-workflow-demonstrator``, which results in the following screen:
+
+![Camunda - Start Process](./docs/camunda-start-instance.png)
 
 TODO
 
