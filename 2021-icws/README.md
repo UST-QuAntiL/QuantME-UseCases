@@ -169,10 +169,18 @@ Then, the workflow and the current position of the token within the workflow, in
 
 The execution of the workflow takes some time, depending on the size of the used data set.
 Refresh the page to track the progress and wait until the token reaches the human task at the end of the workflow.
-Afterward, switch back to the ``Tasklist`` tab and ``Add a simple filter`` on the left.
+Afterward, switch back to the ``Tasklist`` tab and click on ``Add a simple filter`` on the left.
 Now, the task object for the human task should be visible in the task list.
+Click on the task object to visualize the plot of the boundary definition resulting from the evaluation of the trained classifier:
 
-TODO
+![Camunda - Human Task](./docs/camunda-human-task.png)
+
+By clicking on the ``Claim`` button, the resulting plot can also be downloaded.
+Finally, click on ``Complete`` to finish the human task, and as it is the last activity in the workflow to terminate the workflow instance.
+
+To terminate the environment, execute the following command in the [folder](./docker) with the Docker-Compose file: ``docker-compose down -v``
+
+Furthermore, make sure to terminate the created virtual machines.
 
 ## Troubleshooting
 
@@ -181,4 +189,4 @@ For example, it displays the name `ibmq_5_yorktown - ibmqx2`, but Qiskit uses th
 However, the implementation of the services utilized by the workflow relies on the names used by Qiskit, which has to be passed in the ``IBMQ QPU Name`` input parameter.
 Thus, if the execution fails because of an unknown quantum computer, please check the name using Qiskit.
 
-TODO
+If the deployment of the execution environment fails, please make sure to provide enough resources to the docker engine to host the five required containers.
