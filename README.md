@@ -2,7 +2,16 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-This project contains different use cases for the Quantum Modeling Extension (QuantME), the BPMN extension [Quantum4BPMN](https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN), and the [QuantME Modeling and Transformation Framework](https://github.com/UST-QuAntiL/QuantME-TransformationFramework).
+This project contains different use cases for quantum workflows, the Quantum Modeling Extension (QuantME), the BPMN extension [Quantum4BPMN](https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN), and the [QuantME Modeling and Transformation Framework](https://github.com/UST-QuAntiL/QuantME-TransformationFramework).
+
+### ICWS 2021 - Prototype
+
+In this paper, we motivate the need for two orchestrations that are required to implement non-trivial hybrid quantum applications:
+(i) the orchestration of the data- and control flow between the different components comprising the application, and (ii) the orchestration of the provisioning of the execution environment required by the application.
+We motivate this by a use case from the humanities, performing data preparation, clustering, and classification on costume data.
+Thereby, the [OpenTOSCA ecosystem](https://github.com/OpenTOSCA) is used to automatically provision the corresponding execution environment.
+Furthermore, the [Camunda BPMN engine](https://camunda.com/products/camunda-platform/bpmn-engine/) is utilized to execute the workflow orchestrating the data- and control flow.
+The corresponding workflow model, topology model, as well as instructions on how to set up the required environment and execute the hybrid quantum application are available [here](2021-icws).
 
 ### Electronics 2021 - Special Issue "Quantum Computing System Design and Architecture" - Prototype
 
