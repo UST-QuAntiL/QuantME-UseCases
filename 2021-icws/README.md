@@ -145,8 +145,27 @@ In the pop-up select ``quantum-workflow-demonstrator``, which results in the fol
 
 ![Camunda - Start Process](./docs/camunda-start-instance.png)
 
+Here, the input parameters for the workflow instance to create are defined.
+Thereby, the workflow requests four input parameters:
+
+  * ``IBM Access Token``: The access token from the [IBM Quantum Experience](https://quantum-computing.ibm.com/) to enable executing the quantum circuits using quantum computers or simulators available over the cloud.
+  * ``IBMQ QPU Name``: The name of the quantum computer or simulator to use for the execution. 
+This can either be the name of a quantum computer or simulator available over IBM Quantum Experience or of a local simulator.
+For our example, we use the local simulator available in Qiskit and thus specify ``aer_qasm_simulator``.
+Please note, when using the local simulator, no access token is required.
+  * ``Input Data URL``: The URL to the input data to use for the data preparation, clustering, and classification steps in the workflow.
+For this, we utilize subsets from the [MUSE](https://www.iaas.uni-stuttgart.de/en/projects/muse) repository containing data about costumes.
+Thereby, three subsets are available in [this folder](./data) comprising 10, 25, and 40 costumes.
+Please make sure to use the URL to the raw content starting with ``https://raw...`` as depicted in the figure.
+  * ``Classification Optimizer Parameters URL``: This parameter is optional and enables to customize the optimizer used for the variational quantum support vector machine in the workflow by providing an URL to a corresponding config file.
+
 TODO
 
 ## Troubleshooting
+
+The names of the quantum computers and simulators displayed in [IBM Quantum Experience](https://quantum-computing.ibm.com/) sometimes differ from the names used in Qiskit.
+For example, it displays the name `ibmq_5_yorktown - ibmqx2`, but Qiskit uses the name `ibmq_5_yorktown` for this quantum computer.
+However, the implementation of the services utilized by the workflow relies on the names used by Qiskit, which has to be passed in the ``IBMQ QPU Name`` input parameter.
+Thus, if the execution fails because of an unknown quantum computer, please check the name using Qiskit.
 
 TODO
