@@ -159,6 +159,19 @@ Thereby, three subsets are available in [this folder](./data) comprising 10, 25,
 Please make sure to use the URL to the raw content starting with ``https://raw...`` as depicted in the figure.
   * ``Classification Optimizer Parameters URL``: This parameter is optional and enables to customize the optimizer used for the variational quantum support vector machine in the workflow by providing an URL to a corresponding config file.
 
+Finally, click on the ``Start`` button to initiate the workflow.
+
+To monitor the running workflow instance, switch to the ``Cockpit`` tab and click on ``Processes`` at the top-left.
+Next, select ``quantum-workflow-demonstrator`` from the list of deployed workflow models.
+Then, the workflow and the current position of the token within the workflow, indicating the activity that is currently executed, is visualized as shown below:
+
+![Camunda - Monitor Instance](./docs/camunda-monitor-instance.png)
+
+The execution of the workflow takes some time, depending on the size of the used data set.
+Refresh the page to track the progress and wait until the token reaches the human task at the end of the workflow.
+Afterward, switch back to the ``Tasklist`` tab and ``Add a simple filter`` on the left.
+Now, the task object for the human task should be visible in the task list.
+
 TODO
 
 ## Troubleshooting
