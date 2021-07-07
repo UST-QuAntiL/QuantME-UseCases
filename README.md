@@ -28,6 +28,10 @@ The corresponding workflow models can be found [here](2020-ucc).
 
 ## Learn More
 
+* Weder, Benjamin; Barzen, Johanna; Leymann, Frank; Zimmermann, Michael: 
+  Hybrid Quantum Applications Need Two Orchestrations in Superposition: A Software Architecture Perspective. 
+  In: Proceedings of the 18th IEEE International Conference on Web Services (ICWS 2021)
+
 * Weder, Benjamin; Barzen, Johanna; Leymann, Frank; Salm, Marie:
   [**Automated Quantum Hardware Selection for Quantum Workflows**](https://www.mdpi.com/2079-9292/10/8/984/pdf).
   In: Electronics 2021, 10(8), 984
