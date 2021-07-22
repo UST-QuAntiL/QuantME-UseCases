@@ -62,26 +62,34 @@ Next, the topology is modeled by opening the ``Topology Template`` tab and click
 ![Winery Topology Modeler](./docs/winery-open-topology-modeler.png)
 
 On the left, you can see the available Node Types, which can be added by drag-and-drop to the topology.
-Add a ``Docker Engine`` and a ``IbmMitigationServiceContainer_w1-wip1`` to the topology and connect them by a ``hostedOn`` relation, as depicted in the figure bellow.
+Add a ``Docker Engine`` and an ``IbmMitigationServiceContainer_w1-wip1`` to the topology and connect them by a ``hostedOn`` relation, as depicted in the figure bellow.
 Then, click on the ``Properties`` button on the top and open the properties of both components.
 Add the following values to the properties:
 
 * ``Docker Engine``:
 
-    ** DockerEngineURL: ``tcp://dind:2375`` (this is the docker engine endpoint to use to deploy the required container)
-    ** State: ``Running`` (indicating that the Docker engine was already started and must not be deployed)
+    * DockerEngineURL: ``tcp://dind:2375`` (this is the docker engine endpoint to use to deploy the required container)
+    * State: ``Running`` (indicating that the Docker engine was already started and must not be deployed)
     
 * ``IbmMitigationServiceContainer_w1-wip1``:
 
-    ** ContainerPort: ``80`` (the port to use for the created container)
-    ** ENV_CAMUNDA_ENDPOINT: ``get_input: camundaEndpoint`` (the endpoint of the Camunda engine to pull task objects)
-    ** ENV_CAMUNDA_TOPIC: ``get_input: camundaTopic`` (the topic to use to pull for task objects)
+    * ContainerPort: ``80`` (the port to use for the created container)
+    * ENV_CAMUNDA_ENDPOINT: ``get_input: camundaEndpoint`` (the endpoint of the Camunda engine to pull task objects)
+    * ENV_CAMUNDA_TOPIC: ``get_input: camundaTopic`` (the topic to use to pull for task objects)
     
 Thereby, by using ``get_input`` these values are dynamically passed when creating an instance of the modeled service.
 
 ![Winery Application Modeling](./docs/winery-model-topology.png)
 
-TODO
+Finally, add the deployment artifact implementing the functionality of the service to the ``IbmMitigationServiceContainer_w1-wip1`` component.
+For this, click on the ``Deployment Artifacts`` button on the top and afterwards at the ``IbmMitigationServiceContainer_w1-wip1``.
+Then, select ``Add new Deployment Artifact`` showing the following window:
+
+![Winery Add Deployment Artifact](./docs/winery-add-deployment-artifact.png)
+
+Use ``IbmMitigationServiceContainer_DA`` as name and select ``Link Artifact Template``.
+Then, chose ``IbmMitigationServiceContainer_DA_w1-wip1`` from the drop-down menu and click on ``Add``.
+Finally, store the created deployment model using the ``Save`` button at the top-left.
 
 ### Modeling QuantME Replacement Models (QRMs)
 
