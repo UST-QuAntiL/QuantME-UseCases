@@ -1,62 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_044o75t" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20210722">
   <bpmn:process id="Process_1i0oaza" isExecutable="true">
-    <bpmn:startEvent id="StartEvent_1">
-      <bpmn:outgoing>SequenceFlow_0oig8li</bpmn:outgoing>
-    </bpmn:startEvent>
-    <bpmn:sendTask id="Task_16e8yo1" name="Request Calibration Matrix" camunda:type="external" camunda:topic="calibration-matrix">
-      <bpmn:incoming>SequenceFlow_0oig8li</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0es17k7</bpmn:outgoing>
-    </bpmn:sendTask>
-    <bpmn:sequenceFlow id="SequenceFlow_0es17k7" sourceRef="Task_16e8yo1" targetRef="Task_0mr0ney" />
-    <bpmn:receiveTask id="Task_0mr0ney" name="Receive Calibration Matrix" messageRef="Message_0ookqwt">
-      <bpmn:incoming>SequenceFlow_0es17k7</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1wbxxmc</bpmn:outgoing>
-    </bpmn:receiveTask>
-    <bpmn:sequenceFlow id="SequenceFlow_0oig8li" sourceRef="StartEvent_1" targetRef="Task_16e8yo1" />
-    <bpmn:sequenceFlow id="SequenceFlow_1wbxxmc" sourceRef="Task_0mr0ney" targetRef="Task_0olepwp" />
-    <bpmn:serviceTask id="Task_0olepwp" name="Mitigate Readout-Errors" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/IbmMitigationService_w1-wip1/?csar">
-      <bpmn:incoming>SequenceFlow_1wbxxmc</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1toz1y0</bpmn:outgoing>
-    </bpmn:serviceTask>
-    <bpmn:endEvent id="EndEvent_12m2go9">
-      <bpmn:incoming>SequenceFlow_1toz1y0</bpmn:incoming>
-    </bpmn:endEvent>
-    <bpmn:sequenceFlow id="SequenceFlow_1toz1y0" sourceRef="Task_0olepwp" targetRef="EndEvent_12m2go9" />
+    <bpmn:subProcess id="Task_0mj7yjv" name="Mitigate Readout-Errors">
+      <bpmn:startEvent id="StartEvent_1">
+        <bpmn:outgoing>SequenceFlow_0h58pky</bpmn:outgoing>
+      </bpmn:startEvent>
+      <bpmn:sendTask id="Task_16e8yo1" name="Request Calibration Matrix" camunda:type="external" camunda:topic="calibration-matrix">
+        <bpmn:incoming>SequenceFlow_0h58pky</bpmn:incoming>
+        <bpmn:outgoing>SequenceFlow_0ilhcqo</bpmn:outgoing>
+      </bpmn:sendTask>
+      <bpmn:sequenceFlow id="SequenceFlow_0h58pky" sourceRef="StartEvent_1" targetRef="Task_16e8yo1" />
+      <bpmn:receiveTask id="Task_0mr0ney" name="Receive Calibration Matrix" messageRef="Message_0ookqwt">
+        <bpmn:incoming>SequenceFlow_0ilhcqo</bpmn:incoming>
+        <bpmn:outgoing>SequenceFlow_185e8c0</bpmn:outgoing>
+      </bpmn:receiveTask>
+      <bpmn:sequenceFlow id="SequenceFlow_0ilhcqo" sourceRef="Task_16e8yo1" targetRef="Task_0mr0ney" />
+      <bpmn:serviceTask id="Task_0olepwp" name="Mitigate Readout-Errors" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/IbmMitigationService_w1-wip1/?csar">
+        <bpmn:incoming>SequenceFlow_185e8c0</bpmn:incoming>
+        <bpmn:outgoing>SequenceFlow_15ahcvj</bpmn:outgoing>
+      </bpmn:serviceTask>
+      <bpmn:sequenceFlow id="SequenceFlow_185e8c0" sourceRef="Task_0mr0ney" targetRef="Task_0olepwp" />
+      <bpmn:endEvent id="EndEvent_12m2go9">
+        <bpmn:incoming>SequenceFlow_15ahcvj</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:sequenceFlow id="SequenceFlow_15ahcvj" sourceRef="Task_0olepwp" targetRef="EndEvent_12m2go9" />
+    </bpmn:subProcess>
   </bpmn:process>
   <bpmn:message id="Message_0ookqwt" name="calibration-matrix" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1i0oaza">
-      <bpmndi:BPMNEdge id="SequenceFlow_0es17k7_di" bpmnElement="SequenceFlow_0es17k7">
-        <di:waypoint x="370" y="117" />
-        <di:waypoint x="420" y="117" />
+      <bpmndi:BPMNShape id="SubProcess_1hnh0po_di" bpmnElement="Task_0mj7yjv" isExpanded="true">
+        <dc:Bounds x="160" y="80" width="590" height="200" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0h58pky_di" bpmnElement="SequenceFlow_0h58pky">
+        <di:waypoint x="218" y="180" />
+        <di:waypoint x="260" y="180" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_0oig8li_di" bpmnElement="SequenceFlow_0oig8li">
-        <di:waypoint x="215" y="117" />
-        <di:waypoint x="270" y="117" />
+      <bpmndi:BPMNEdge id="SequenceFlow_0ilhcqo_di" bpmnElement="SequenceFlow_0ilhcqo">
+        <di:waypoint x="360" y="180" />
+        <di:waypoint x="400" y="180" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_1wbxxmc_di" bpmnElement="SequenceFlow_1wbxxmc">
-        <di:waypoint x="520" y="117" />
-        <di:waypoint x="570" y="117" />
+      <bpmndi:BPMNEdge id="SequenceFlow_185e8c0_di" bpmnElement="SequenceFlow_185e8c0">
+        <di:waypoint x="500" y="180" />
+        <di:waypoint x="550" y="180" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_1toz1y0_di" bpmnElement="SequenceFlow_1toz1y0">
-        <di:waypoint x="670" y="117" />
-        <di:waypoint x="722" y="117" />
+      <bpmndi:BPMNEdge id="SequenceFlow_15ahcvj_di" bpmnElement="SequenceFlow_15ahcvj">
+        <di:waypoint x="650" y="180" />
+        <di:waypoint x="692" y="180" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
-        <dc:Bounds x="179" y="99" width="36" height="36" />
+        <dc:Bounds x="182" y="162" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="SendTask_0u2r3w1_di" bpmnElement="Task_16e8yo1">
-        <dc:Bounds x="270" y="77" width="100" height="80" />
+        <dc:Bounds x="260" y="140" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ReceiveTask_06wctae_di" bpmnElement="Task_0mr0ney">
-        <dc:Bounds x="420" y="77" width="100" height="80" />
+        <dc:Bounds x="400" y="140" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_0v59kxf_di" bpmnElement="Task_0olepwp">
-        <dc:Bounds x="570" y="77" width="100" height="80" />
+        <dc:Bounds x="550" y="140" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_12m2go9_di" bpmnElement="EndEvent_12m2go9">
-        <dc:Bounds x="722" y="99" width="36" height="36" />
+        <dc:Bounds x="692" y="162" width="36" height="36" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
