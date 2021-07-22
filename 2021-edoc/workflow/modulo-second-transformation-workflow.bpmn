@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_0ywh91y" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20210722">
+  <bpmn:process id="Process_0d31b4q" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>SequenceFlow_1qyb4qv</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1qyb4qv" sourceRef="StartEvent_1" targetRef="Task_13lsq0u" />
+    <bpmn:sequenceFlow id="SequenceFlow_0njs4b4" sourceRef="Task_13lsq0u" targetRef="Task_1bcvjjy" />
+    <bpmn:userTask id="Task_1bcvjjy" name="Analyze Results">
+      <bpmn:incoming>SequenceFlow_0njs4b4</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1getqd8</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="EndEvent_1ih96eq">
+      <bpmn:incoming>SequenceFlow_1getqd8</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1getqd8" sourceRef="Task_1bcvjjy" targetRef="EndEvent_1ih96eq" />
+    <bpmn:subProcess id="Task_13lsq0u" name="Execute Simon&#39;s Algorithm using IBMQ">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="algorithm">simon</camunda:inputParameter>
+          <camunda:inputParameter name="provider">ibmq</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1qyb4qv</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0njs4b4</bpmn:outgoing>
+      <bpmn:startEvent id="StartEvent_0gvsgf4">
+        <bpmn:outgoing>SequenceFlow_06aivkj</bpmn:outgoing>
+      </bpmn:startEvent>
+      <bpmn:serviceTask id="ServiceTask_0rkq06i" name="Generate Circuit" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/SimonGenerateCircuitService_w1-wip1/?csar">
+        <bpmn:incoming>SequenceFlow_06aivkj</bpmn:incoming>
+        <bpmn:outgoing>SequenceFlow_1u53946</bpmn:outgoing>
+      </bpmn:serviceTask>
+      <bpmn:exclusiveGateway id="ExclusiveGateway_0enbt9o">
+        <bpmn:incoming>SequenceFlow_1u53946</bpmn:incoming>
+        <bpmn:incoming>SequenceFlow_0jr8hum</bpmn:incoming>
+        <bpmn:outgoing>SequenceFlow_11mtc2e</bpmn:outgoing>
+      </bpmn:exclusiveGateway>
+      <bpmn:serviceTask id="ServiceTask_01lwfwc" name="Check Linear Independence" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/LinearIndependenceCheckService_w1-wip1/?csar">
+        <bpmn:incoming>SequenceFlow_0h6827o</bpmn:incoming>
+        <bpmn:outgoing>SequenceFlow_1uguox4</bpmn:outgoing>
+      </bpmn:serviceTask>
+      <bpmn:exclusiveGateway id="ExclusiveGateway_1tk39ch" name="n-1 linear independent results?">
+        <bpmn:incoming>SequenceFlow_1uguox4</bpmn:incoming>
+        <bpmn:outgoing>SequenceFlow_0jr8hum</bpmn:outgoing>
+        <bpmn:outgoing>SequenceFlow_0midtc4</bpmn:outgoing>
+      </bpmn:exclusiveGateway>
+      <bpmn:serviceTask id="ServiceTask_0hrtsil" name="Solve Linear System" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/LinearSystemSolverService_w1-wip1/?csar">
+        <bpmn:incoming>SequenceFlow_0midtc4</bpmn:incoming>
+        <bpmn:outgoing>SequenceFlow_0xpd5ss</bpmn:outgoing>
+      </bpmn:serviceTask>
+      <bpmn:endEvent id="EndEvent_1nwluaq">
+        <bpmn:incoming>SequenceFlow_0xpd5ss</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:sequenceFlow id="SequenceFlow_06aivkj" sourceRef="StartEvent_0gvsgf4" targetRef="ServiceTask_0rkq06i" />
+      <bpmn:sequenceFlow id="SequenceFlow_1u53946" sourceRef="ServiceTask_0rkq06i" targetRef="ExclusiveGateway_0enbt9o" />
+      <bpmn:sequenceFlow id="SequenceFlow_0jr8hum" name="no" sourceRef="ExclusiveGateway_1tk39ch" targetRef="ExclusiveGateway_0enbt9o">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${finished == 'false'}</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
+      <bpmn:sequenceFlow id="SequenceFlow_11mtc2e" sourceRef="ExclusiveGateway_0enbt9o" targetRef="QuantumCircuitExecutionTask_06of9ck" />
+      <bpmn:sequenceFlow id="SequenceFlow_06735jm" sourceRef="QuantumCircuitExecutionTask_06of9ck" targetRef="ReadoutErrorMitigationTask_101wwkc" />
+      <bpmn:sequenceFlow id="SequenceFlow_0h6827o" sourceRef="ReadoutErrorMitigationTask_101wwkc" targetRef="ServiceTask_01lwfwc" />
+      <bpmn:sequenceFlow id="SequenceFlow_1uguox4" sourceRef="ServiceTask_01lwfwc" targetRef="ExclusiveGateway_1tk39ch" />
+      <bpmn:sequenceFlow id="SequenceFlow_0midtc4" name="yes" sourceRef="ExclusiveGateway_1tk39ch" targetRef="ServiceTask_0hrtsil">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${finished == 'true'}</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
+      <bpmn:sequenceFlow id="SequenceFlow_0xpd5ss" sourceRef="ServiceTask_0hrtsil" targetRef="EndEvent_1nwluaq" />
+      <bpmn:subProcess id="QuantumCircuitExecutionTask_06of9ck" name="Execute Circuit on IBMQ">
+        <bpmn:extensionElements>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="provider">ibmq</camunda:inputParameter>
+            <camunda:inputParameter name="qpu">aer_qasm_simulator</camunda:inputParameter>
+            <camunda:inputParameter name="shots">1024</camunda:inputParameter>
+            <camunda:inputParameter name="programmingLanguage">openqasm</camunda:inputParameter>
+          </camunda:inputOutput>
+        </bpmn:extensionElements>
+        <bpmn:incoming>SequenceFlow_11mtc2e</bpmn:incoming>
+        <bpmn:outgoing>SequenceFlow_06735jm</bpmn:outgoing>
+        <bpmn:startEvent id="StartEvent_0buy3gm">
+          <bpmn:outgoing>SequenceFlow_1ipxsd5</bpmn:outgoing>
+        </bpmn:startEvent>
+        <bpmn:endEvent id="EndEvent_0pi55tf">
+          <bpmn:incoming>SequenceFlow_12fb6e1</bpmn:incoming>
+        </bpmn:endEvent>
+        <bpmn:serviceTask id="ServiceTask_0q97twa" name="Request Circuit Execution" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/QasmExecutorService_w1-wip1/?csar">
+          <bpmn:incoming>SequenceFlow_1ipxsd5</bpmn:incoming>
+          <bpmn:outgoing>SequenceFlow_12fb6e1</bpmn:outgoing>
+        </bpmn:serviceTask>
+        <bpmn:sequenceFlow id="SequenceFlow_1ipxsd5" sourceRef="StartEvent_0buy3gm" targetRef="ServiceTask_0q97twa" />
+        <bpmn:sequenceFlow id="SequenceFlow_12fb6e1" sourceRef="ServiceTask_0q97twa" targetRef="EndEvent_0pi55tf" />
+      </bpmn:subProcess>
+      <bpmn:subProcess id="ReadoutErrorMitigationTask_101wwkc" name="Mitigate Readout-Errors">
+        <bpmn:extensionElements>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="unfoldingTechnique">matrix-inversion</camunda:inputParameter>
+            <camunda:inputParameter name="provider">ibmq</camunda:inputParameter>
+            <camunda:inputParameter name="qpu">aer_qasm_simulator</camunda:inputParameter>
+            <camunda:inputParameter name="maxAge">120</camunda:inputParameter>
+          </camunda:inputOutput>
+        </bpmn:extensionElements>
+        <bpmn:incoming>SequenceFlow_06735jm</bpmn:incoming>
+        <bpmn:outgoing>SequenceFlow_0h6827o</bpmn:outgoing>
+        <bpmn:startEvent id="StartEvent_1lmnul4">
+          <bpmn:outgoing>SequenceFlow_1u2peb6</bpmn:outgoing>
+        </bpmn:startEvent>
+        <bpmn:sendTask id="SendTask_1gxp5vr" name="Request Calibration Matrix" camunda:type="external" camunda:topic="calibration-matrix">
+          <bpmn:incoming>SequenceFlow_1u2peb6</bpmn:incoming>
+          <bpmn:outgoing>SequenceFlow_1vb1kla</bpmn:outgoing>
+        </bpmn:sendTask>
+        <bpmn:receiveTask id="ReceiveTask_0qqqmv2" name="Receive Calibration Matrix">
+          <bpmn:incoming>SequenceFlow_1vb1kla</bpmn:incoming>
+          <bpmn:outgoing>SequenceFlow_03tqiw3</bpmn:outgoing>
+        </bpmn:receiveTask>
+        <bpmn:serviceTask id="ServiceTask_0vse2dj" name="Mitigate Readout-Errors" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/IbmMitigationService_w1-wip1/?csar">
+          <bpmn:incoming>SequenceFlow_03tqiw3</bpmn:incoming>
+          <bpmn:outgoing>SequenceFlow_0xz9394</bpmn:outgoing>
+        </bpmn:serviceTask>
+        <bpmn:endEvent id="EndEvent_07x23sm">
+          <bpmn:incoming>SequenceFlow_0xz9394</bpmn:incoming>
+        </bpmn:endEvent>
+        <bpmn:sequenceFlow id="SequenceFlow_1u2peb6" sourceRef="StartEvent_1lmnul4" targetRef="SendTask_1gxp5vr" />
+        <bpmn:sequenceFlow id="SequenceFlow_1vb1kla" sourceRef="SendTask_1gxp5vr" targetRef="ReceiveTask_0qqqmv2" />
+        <bpmn:sequenceFlow id="SequenceFlow_03tqiw3" sourceRef="ReceiveTask_0qqqmv2" targetRef="ServiceTask_0vse2dj" />
+        <bpmn:sequenceFlow id="SequenceFlow_0xz9394" sourceRef="ServiceTask_0vse2dj" targetRef="EndEvent_07x23sm" />
+      </bpmn:subProcess>
+    </bpmn:subProcess>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0d31b4q">
+      <bpmndi:BPMNEdge id="SequenceFlow_1getqd8_di" bpmnElement="SequenceFlow_1getqd8">
+        <di:waypoint x="2716" y="213" />
+        <di:waypoint x="2766" y="213" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0njs4b4_di" bpmnElement="SequenceFlow_0njs4b4">
+        <di:waypoint x="2566" y="213" />
+        <di:waypoint x="2616" y="213" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1qyb4qv_di" bpmnElement="SequenceFlow_1qyb4qv">
+        <di:waypoint x="196" y="213" />
+        <di:waypoint x="246" y="213" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="160" y="195" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_05f58tg_di" bpmnElement="Task_1bcvjjy">
+        <dc:Bounds x="2616" y="173" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_1ih96eq_di" bpmnElement="EndEvent_1ih96eq">
+        <dc:Bounds x="2766" y="195" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SubProcess_1gwwg40_di" bpmnElement="Task_13lsq0u" isExpanded="true">
+        <dc:Bounds x="246" y="80" width="2320" height="300" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0xpd5ss_di" bpmnElement="SequenceFlow_0xpd5ss">
+        <di:waypoint x="2380" y="241" />
+        <di:waypoint x="2430" y="241" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0midtc4_di" bpmnElement="SequenceFlow_0midtc4">
+        <di:waypoint x="2230" y="241" />
+        <di:waypoint x="2280" y="241" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2255" y="217" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1uguox4_di" bpmnElement="SequenceFlow_1uguox4">
+        <di:waypoint x="2130" y="241" />
+        <di:waypoint x="2180" y="241" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0h6827o_di" bpmnElement="SequenceFlow_0h6827o">
+        <di:waypoint x="1980" y="241" />
+        <di:waypoint x="2030" y="241" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_06735jm_di" bpmnElement="SequenceFlow_06735jm">
+        <di:waypoint x="1190" y="241" />
+        <di:waypoint x="1240" y="241" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_11mtc2e_di" bpmnElement="SequenceFlow_11mtc2e">
+        <di:waypoint x="700" y="241" />
+        <di:waypoint x="750" y="241" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0jr8hum_di" bpmnElement="SequenceFlow_0jr8hum">
+        <di:waypoint x="2205" y="266" />
+        <di:waypoint x="2205" y="349" />
+        <di:waypoint x="675" y="349" />
+        <di:waypoint x="675" y="266" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1445" y="325" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1u53946_di" bpmnElement="SequenceFlow_1u53946">
+        <di:waypoint x="600" y="241" />
+        <di:waypoint x="650" y="241" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_06aivkj_di" bpmnElement="SequenceFlow_06aivkj">
+        <di:waypoint x="450" y="241" />
+        <di:waypoint x="500" y="241" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="StartEvent_0gvsgf4_di" bpmnElement="StartEvent_0gvsgf4">
+        <dc:Bounds x="414" y="223" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0rkq06i_di" bpmnElement="ServiceTask_0rkq06i">
+        <dc:Bounds x="500" y="201" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0enbt9o_di" bpmnElement="ExclusiveGateway_0enbt9o" isMarkerVisible="true">
+        <dc:Bounds x="650" y="216" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_01lwfwc_di" bpmnElement="ServiceTask_01lwfwc">
+        <dc:Bounds x="2030" y="201" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_1tk39ch_di" bpmnElement="ExclusiveGateway_1tk39ch" isMarkerVisible="true">
+        <dc:Bounds x="2180" y="216" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2174" y="166" width="62" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0hrtsil_di" bpmnElement="ServiceTask_0hrtsil">
+        <dc:Bounds x="2280" y="201" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_1nwluaq_di" bpmnElement="EndEvent_1nwluaq">
+        <dc:Bounds x="2430" y="223" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SubProcess_00x12me_di" bpmnElement="QuantumCircuitExecutionTask_06of9ck" isExpanded="true">
+        <dc:Bounds x="750" y="168" width="440" height="146" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_12fb6e1_di" bpmnElement="SequenceFlow_12fb6e1">
+        <di:waypoint x="1004" y="236" />
+        <di:waypoint x="1054" y="236" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1ipxsd5_di" bpmnElement="SequenceFlow_1ipxsd5">
+        <di:waypoint x="854" y="236" />
+        <di:waypoint x="904" y="236" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="StartEvent_0buy3gm_di" bpmnElement="StartEvent_0buy3gm">
+        <dc:Bounds x="818" y="218" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_0pi55tf_di" bpmnElement="EndEvent_0pi55tf">
+        <dc:Bounds x="1054" y="218" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0q97twa_di" bpmnElement="ServiceTask_0q97twa">
+        <dc:Bounds x="904" y="196" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SubProcess_0uiruqg_di" bpmnElement="ReadoutErrorMitigationTask_101wwkc" isExpanded="true">
+        <dc:Bounds x="1240" y="168" width="740" height="146" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0xz9394_di" bpmnElement="SequenceFlow_0xz9394">
+        <di:waypoint x="1794" y="236" />
+        <di:waypoint x="1844" y="236" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_03tqiw3_di" bpmnElement="SequenceFlow_03tqiw3">
+        <di:waypoint x="1644" y="236" />
+        <di:waypoint x="1694" y="236" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1vb1kla_di" bpmnElement="SequenceFlow_1vb1kla">
+        <di:waypoint x="1494" y="236" />
+        <di:waypoint x="1544" y="236" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1u2peb6_di" bpmnElement="SequenceFlow_1u2peb6">
+        <di:waypoint x="1344" y="236" />
+        <di:waypoint x="1394" y="236" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="StartEvent_1lmnul4_di" bpmnElement="StartEvent_1lmnul4">
+        <dc:Bounds x="1308" y="218" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SendTask_1gxp5vr_di" bpmnElement="SendTask_1gxp5vr">
+        <dc:Bounds x="1394" y="196" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ReceiveTask_0qqqmv2_di" bpmnElement="ReceiveTask_0qqqmv2">
+        <dc:Bounds x="1544" y="196" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0vse2dj_di" bpmnElement="ServiceTask_0vse2dj">
+        <dc:Bounds x="1694" y="196" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_07x23sm_di" bpmnElement="EndEvent_07x23sm">
+        <dc:Bounds x="1844" y="218" width="36" height="36" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
