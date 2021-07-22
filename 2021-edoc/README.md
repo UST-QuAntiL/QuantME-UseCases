@@ -40,9 +40,22 @@ Afterwards, the following screen should be displayed:
 
 ## Preparations
 
-TODO
+The MODULO framework relies on the availability of reusable deployment models and QuantME Replacement Models (QRMs) to transform quantum workflows and deploy required services.
+Next, the modeling of an exemplary deployment model, as well as QRM, is presented.
 
 ### Modeling Deployment Models
+
+Deployment models are defined using the [TOSCA standard](http://docs.oasis-open.org/tosca/TOSCA/v1.0/TOSCA-v1.0.html) in the MODULO framework.
+Hence, we utilize the graphical TOSCA modeling tool [Winery](https://github.com/OpenTOSCA/winery) to define the required deployment models.
+
+Open Winery using the following URL: ``$PUBLIC_HOSTNAME:8093``
+
+![Winery Overview](./docs/winery-overview.png)
+
+Winery already contains all required deployment models for this demonstration, except one, which is later used to mitigate readout-errors of quantum computations on quantum computers from [IBMQ](https://quantum-computing.ibm.com/).
+Thus, this deployment model is created by clicking ``Add new`` on the top-right, and then inserting ``IbmMitigationService`` as name and ``http://quantil.org/quantme/pull'' as namespace:
+
+![Winery Create Service Template](./docs/winery-create-service-template.png)
 
 TODO
 
