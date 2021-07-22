@@ -1,0 +1,55 @@
+version: '3'
+services:
+  ### Camunda Engine ###
+  camunda-engine:
+    build: camunda
+    ports:
+      - 8080:8080
+    networks:
+      - modulo-demo
+  ### OpenTOSCA Ecosystem ###
+  container:
+    image: opentosca/container:v3.0.0
+    ports:
+      - '1337:1337'
+      - '8081-8087:8081-8087'
+    environment:
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+      ENGINE_IA_HOSTNAME: engine-ia
+      ENGINE_IA_PORT: 8080
+      ENGINE_PLAN_BPEL_HOSTNAME: engine-plan
+      CONTAINER_DEPLOYMENT_TESTS: 'false'
+    networks:
+      - modulo-demo
+  engine-plan:
+    image: opentosca/ode:v2.4.0
+    networks:
+      - modulo-demo
+  engine-ia:
+    image: opentosca/engine-ia:v2.1.0
+    networks:
+      - modulo-demo
+  winery:
+    build: initialized-winery
+    logging:
+      driver: none
+    ports:
+      - '8093:8080'
+    environment:
+      WINERY_HOSTNAME: $PUBLIC_HOSTNAME
+      WORKFLOWMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      TOPOLOGYMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+    networks:
+      - modulo-demo
+  dind:
+    image: opentosca/dind:v1.0.0
+    privileged: true
+    environment:
+      - PORT=2375
+      - DOCKER_DAEMON_ARGS=--dns 8.8.8.8 --dns 8.8.4.4 -D
+    networks:
+      - modulo-demo
+networks:
+  modulo-demo:
+    driver: bridge
