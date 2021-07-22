@@ -62,7 +62,7 @@ Next, the topology is modeled by opening the ``Topology Template`` tab and click
 ![Winery Topology Modeler](./docs/winery-open-topology-modeler.png)
 
 On the left, you can see the available Node Types, which can be added by drag-and-drop to the topology.
-Add a ``Docker Engine`` and an ``IbmMitigationServiceContainer_w1-wip1`` to the topology and connect them by a ``hostedOn`` relation, as depicted in the figure bellow.
+Add a ``Docker Engine`` and an ``IbmMitigationServiceContainer_w1-wip1`` to the topology and connect them by a ``HostedOn`` relation, as depicted in the figure below.
 Then, click on the ``Properties`` button on the top and open the properties of both components.
 Add the following values to the properties:
 
@@ -77,7 +77,7 @@ Add the following values to the properties:
     * ENV_CAMUNDA_ENDPOINT: ``get_input: camundaEndpoint`` (the endpoint of the Camunda engine to pull task objects)
     * ENV_CAMUNDA_TOPIC: ``get_input: camundaTopic`` (the topic to use to pull for task objects)
     
-Thereby, by using ``get_input`` these values are dynamically passed when creating an instance of the modeled service.
+Thereby, by using ``get_input``, these values are dynamically passed when creating an instance of the modeled service.
 
 ![Winery Application Modeling](./docs/winery-model-topology.png)
 
@@ -92,6 +92,9 @@ Then, chose ``IbmMitigationServiceContainer_DA_w1-wip1`` from the drop-down menu
 Finally, store the created deployment model using the ``Save`` button at the top-left.
 
 ### Modeling QuantME Replacement Models (QRMs)
+
+In the next step, we will create a QuantME Replacement Model (QRM) that can be used to replace ``ReadoutErrorMitigationTask`` modeling constructs (see [Quantum4BPMN](https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN))in a workflow by an implementing workflow fragment.
+Thereby, this workflow fragment will invoke the service for which we created a deployment model in the previous section.
 
 TODO
 
