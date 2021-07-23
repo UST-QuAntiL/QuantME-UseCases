@@ -1,6 +1,17 @@
 # EDOC 2021 Prototype
 
-TODO
+This use case demonstrates the functionalities of the MODULO framework comprising the [QuantME Transformation Framework](https://github.com/UST-QuAntiL/QuantME-TransformationFramework), the [OpenTOSCA ecosystem](https://github.com/OpenTOSCA), and the [Camunda BPMN engine](https://camunda.com/products/camunda-platform/bpmn-engine/).
+For this, it comprises:
+
+1. Modeling of a quantum workflow implementing [Simon's algorithm](https://qiskit.org/textbook/ch-algorithms/simon.html) using the Quantum Modeling Extension (QuantME).
+
+2. Transformation of the modeled quantum workflow to a native BPMN workflow using QuantME replacement models (QRMs), retaining the workflow portability between different BPMN engines.
+
+3. Self-contained packaging of the native BPMN workflow model together with deployment models for all required services to enable the transmission of only a single archive into the target environment.
+
+4. Automatically deploying the required services using the deployment models, binding them with the workflow activities, and deploying the workflow model to the Camunda BPMN engine.
+
+5. Execution of the workflow accessing the deployed services, as well as quantum computers, solving Simon's problem for the input data of the user.
 
 ## Setting up the MODULO Framework
 
