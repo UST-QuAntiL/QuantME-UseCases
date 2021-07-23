@@ -112,7 +112,7 @@
           <bpmn:incoming>SequenceFlow_1u2peb6</bpmn:incoming>
           <bpmn:outgoing>SequenceFlow_1vb1kla</bpmn:outgoing>
         </bpmn:sendTask>
-        <bpmn:receiveTask id="ReceiveTask_0qqqmv2" name="Receive Calibration Matrix">
+        <bpmn:receiveTask id="ReceiveTask_0qqqmv2" name="Receive Calibration Matrix" messageRef="Message_0ookqwt">
           <bpmn:incoming>SequenceFlow_1vb1kla</bpmn:incoming>
           <bpmn:outgoing>SequenceFlow_03tqiw3</bpmn:outgoing>
         </bpmn:receiveTask>
@@ -130,6 +130,7 @@
       </bpmn:subProcess>
     </bpmn:subProcess>
   </bpmn:process>
+  <bpmn:message id="Message_0ookqwt" name="calibration-matrix" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0d31b4q">
       <bpmndi:BPMNEdge id="SequenceFlow_1getqd8_di" bpmnElement="SequenceFlow_1getqd8">
