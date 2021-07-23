@@ -91,9 +91,11 @@ Use ``IbmMitigationServiceContainer_DA`` as name and select ``Link Artifact Temp
 Then, chose ``IbmMitigationServiceContainer_DA_w1-wip1`` from the drop-down menu and click on ``Add``.
 Finally, store the created deployment model using the ``Save`` button at the top-left.
 
+In case you experience any problems during modeling or deployment of this service, please refer to the [Troubleshooting](#troubleshooting) section at the end of this README.
+
 ### Modeling QuantME Replacement Models (QRMs)
 
-In the next step, we will create a QuantME Replacement Model (QRM) that can be used to replace ``ReadoutErrorMitigationTask`` modeling constructs (see [Quantum4BPMN](https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN))in a workflow by an implementing workflow fragment.
+In the next step, we will create a QuantME Replacement Model (QRM) that can be used to replace ``ReadoutErrorMitigationTask`` modeling constructs (see [Quantum4BPMN](https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN)) in a workflow by an implementing workflow fragment.
 Thereby, this workflow fragment will invoke the service for which we created a deployment model in the previous section.
 
 TODO
@@ -120,4 +122,8 @@ TODO
 
 ## Troubleshooting
 
-TODO
+The ServiceTemplate created in the ``Modeling Deployment Models`` section is available in XML format [here](./docs/ibm-mitigation-service-template.tosca), which can be used to verify the modeling result or replace it in case there are any issues.
+For this, open the ServiceTemplate in Winery, select the ``XML`` tab, and compare the displayed XML with the provided (see below).
+Additionally, the provided XML can also be copied into the field and stored using the ``Save`` button.
+
+![Winery Troubleshooting](./docs/winery-verify-service-template.png)
