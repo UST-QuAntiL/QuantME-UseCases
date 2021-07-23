@@ -5,7 +5,7 @@ For this, it comprises:
 
 1. Modeling of a quantum workflow implementing [Simon's algorithm](https://qiskit.org/textbook/ch-algorithms/simon.html) using the Quantum Modeling Extension (QuantME).
 
-2. Transformation of the modeled quantum workflow to a native BPMN workflow using QuantME replacement models (QRMs), retaining the workflow portability between different BPMN engines.
+2. Transformation of the modeled quantum workflow to a native BPMN workflow using QuantME Replacement Models (QRMs), retaining the workflow portability between different BPMN engines.
 
 3. Self-contained packaging of the native BPMN workflow model together with deployment models for all required services to enable the transmission of only a single archive into the target environment.
 
@@ -128,6 +128,10 @@ TODO
 TODO
 
 ## Workflow Execution
+
+After successfully deploying all required services and the workflow model, open the URL of the Camunda BPMN engine: ``$PUBLIC_HOSTNAME:8080/camunda``
+
+First, create an account in the Camunda engine and log in. Then, the following screen is displayed:
 
 TODO
 
