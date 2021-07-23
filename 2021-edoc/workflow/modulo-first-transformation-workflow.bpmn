@@ -3,6 +3,12 @@
   <bpmn:process id="Process_0d31b4q" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>SequenceFlow_1qyb4qv</bpmn:outgoing>
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="oracle_string" label="Oracle Truth Table" type="string" />
+          <camunda:formField id="token_ibmq" label="IBMQ Access Token" type="string" />
+        </camunda:formData>
+      </bpmn:extensionElements>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="SequenceFlow_1qyb4qv" sourceRef="StartEvent_1" targetRef="Task_13lsq0u" />
     <bpmn:sequenceFlow id="SequenceFlow_0njs4b4" sourceRef="Task_13lsq0u" targetRef="Task_1bcvjjy" />
