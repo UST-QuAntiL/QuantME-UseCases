@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0ywh91y" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20210722">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0ywh91y" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20210722" xmlns:camunda="http://camunda.org/schema/1.0/bpmn">
   <bpmn:process id="Process_0d31b4q" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>SequenceFlow_1qyb4qv</bpmn:outgoing>
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="oracle_string" label="Oracle Truth Table" type="string" />
+          <camunda:formField id="token_ibmq" label="IBMQ Access Token" type="string" />
+        </camunda:formData>
+      </bpmn:extensionElements>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="SequenceFlow_1qyb4qv" sourceRef="StartEvent_1" targetRef="Task_13lsq0u" />
     <quantme:quantumComputationTask id="Task_13lsq0u" name="Execute Simons Algorithm" algorithm="simon" provider="ibmq">
