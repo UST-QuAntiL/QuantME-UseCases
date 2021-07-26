@@ -118,7 +118,7 @@ For this, open a new BPMN diagram in the modeler by clicking ``File``, ``New Fil
 Then, store the new workflow as ``simons-algorithm.bpmn``, as we will implement a workflow executing Simon's algorithm in this demonstration.
 Add two new tasks to the workflow by dragging them from the palette on the left into the workflow.
 Select ``Quantum Computation Task`` as task type for the first task and ``User Task`` for the second.
-Afterwards, add a ``End Event`` to the workflow and connect all modeling elements as depicted in the figure below:
+Afterwards, add an ``End Event`` to the workflow and connect all modeling elements as depicted in the figure below:
 
 ![Modeler Simon Abstract](./docs/modeler-simon-abstract.png)
 
@@ -127,7 +127,22 @@ Add ``simon`` for the ``Algorithm`` property, indicating the algorithm to execut
 
 ![Modeler Quantum Computation Properties](./docs/modeler-quantum-computation-properties.png)
 
-TODO
+Finally, we define the required input parameters for the quantum workflow.
+Select the ``Start Event`` and click on the ``Form`` tab in the property panel on the right.
+Then, click on the ``+`` sign to add a new input parameter.
+Define the properties as displayed in the figure below.
+Thereby, the input parameter is used to request the oracle from the user representing Simon's problem to solve by the workflow execution.
+Details on how and in which format to pass this information to a newly created workflow instance is presented in the [workflow execution section](#workflow-execution).
+
+![Modeler Input Form 1](./docs/modeler-input-form-1.png)
+
+In addition, a second input parameter is required, retrieving the access token from the user to access quantum computers or simulators available over the [IBM Quantum Experience](https://quantum-computing.ibm.com/).
+Add the required information as shown in the next figure:
+
+![Modeler Input Form 2](./docs/modeler-input-form-2.png)
+
+Afterwards, the modeling of the quantum workflow is finished, and it can now be transformed, deployed, and executed in the next steps.
+The resulting workflow model is available in XML format [here](./workflow/modulo-abstract-workflow.bpmn) and can be used to verify the modeling result or as input for the following steps.
 
 ## QuantME Transformation
 
