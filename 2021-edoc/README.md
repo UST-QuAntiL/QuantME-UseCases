@@ -111,6 +111,10 @@ Thereby, this workflow fragment will invoke the service for which we created a d
 
 TODO
 
+### Configuring the QuantME Transformation Framework
+
+TODO
+
 ## QuantME Modeling
 
 In the first step of the MODULO method, the quantum workflow is modeled using the modeling constructs provided by the Quantum Modeling Extension (QuantME).
@@ -128,11 +132,11 @@ Add ``simon`` for the ``Algorithm`` property, indicating the algorithm to execut
 ![Modeler Quantum Computation Properties](./docs/modeler-quantum-computation-properties.png)
 
 Finally, we define the required input parameters for the quantum workflow.
-Select the ``Start Event`` and click on the ``Form`` tab in the property panel on the right.
+Select the ``Start Event`` and click on the ``Forms`` tab in the property panel on the right.
 Then, click on the ``+`` sign to add a new input parameter.
 Define the properties as displayed in the figure below.
 Thereby, the input parameter is used to request the oracle from the user representing Simon's problem to solve by the workflow execution.
-Details on how and in which format to pass this information to a newly created workflow instance is presented in the [workflow execution section](#workflow-execution).
+Details on how and in which format to pass this information to a newly created workflow instance are presented in the [workflow execution section](#workflow-execution).
 
 ![Modeler Input Form 1](./docs/modeler-input-form-1.png)
 
@@ -145,6 +149,10 @@ Afterwards, the modeling of the quantum workflow is finished, and it can now be 
 The resulting workflow model is available in XML format [here](./workflow/modulo-abstract-workflow.bpmn) and can be used to verify the modeling result or as input for the following steps.
 
 ## QuantME Transformation
+
+Next, the modeled quantum workflow is transformed into a native BPMN workflow model, to retain its portability between different BPMN engines.
+This step relies on the availability of different QRMs available in [this folder](./qrms).
+Thus, make sure to configure the QuantME Transformation Framework correctly to access this folder before performing the following steps, as discussed in the previous [configuration section](#configuring-the-quantme-transformation-framework).
 
 TODO
 
