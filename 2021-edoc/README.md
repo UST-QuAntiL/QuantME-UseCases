@@ -113,6 +113,20 @@ TODO
 
 ## QuantME Modeling
 
+In the first step of the MODULO method, the quantum workflow is modeled using the modeling constructs provided by the Quantum Modeling Extension (QuantME).
+For this, open a new BPMN diagram in the modeler by clicking ``File``, ``New File``, and select ``BPMN Diagram``.
+Then, store the new workflow as ``simons-algorithm.bpmn``, as we will implement a workflow executing Simon's algorithm in this demonstration.
+Add two new tasks to the workflow by dragging them from the palette on the left into the workflow.
+Select ``Quantum Computation Task`` as task type for the first task and ``User Task`` for the second.
+Afterwards, add a ``End Event`` to the workflow and connect all modeling elements as depicted in the figure below:
+
+![Modeler Simon Abstract](./docs/modeler-simon-abstract.png)
+
+Next, the ``Quantum Computation Task`` is configured by selecting it and adding the required properties displayed at the bottom-right.
+Add ``simon`` for the ``Algorithm`` property, indicating the algorithm to execute, and ``ibmq`` as ``Provider`` defining that quantum computers or simulators from IBM should be used to execute the quantum circuits in the workflows.
+
+![Modeler Quantum Computation Properties](./docs/modeler-quantum-computation-properties.png)
+
 TODO
 
 ## QuantME Transformation
