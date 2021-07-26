@@ -161,7 +161,31 @@ Provide your IBMQ access token, which can be retrieved from the [IBM Quantum Exp
 Thereby, we utilize the Qiskit functionality for the generation of the corresponding quantum circuits, thus, it can be defined as discussed in the [Qiskit documentation](https://qiskit.org/documentation/stubs/qiskit.aqua.components.oracles.TruthTableOracle.html).
 For this example, the following truth table ``['01101001', '10011001', '01100110']`` is used, which results in the hidden bit string ``s=011``.
 
-TODO
+After entering the input parameters, click on ``Start``.
+The UI displays a notification at the bottom-right that the workflow instance was successfully started.
+Switch back to the Camunda cockpit application in the first tab to observe the token flow in the workflow:
+
+![Camunda Running Workflow](./docs/camunda-cockpit-running-workflow.png)
+
+Click on the corresponding workflow instance at the bottom, to view more details, such as the current values of the variables.
+Wait until the token reaches the final user task in the workflow as depicted below:
+
+![Camunda Wait for Termination](./docs/camunda-cockpit-user-task.png)
+
+To analyze the resulting bitstring ``s`` in the user task, switch to the tasklist tab.
+Click on ``Add a simple filter`` on the left, and then, the user tasks should be visible in the task list as shown below:
+
+![Camunda User Task](./docs/camunda-tasklist-user-task.png)
+
+Next, click on the task and the ``Claim`` button on the right.
+Finally, click on ``Load Variables``, which displays the value of all variables:
+
+![Camunda Loading Variables](./docs/camunda-tasklist-display-variables.png)
+
+Search for the variable with the name ``s``, which has the value ``011`` in our example, providing the solution for Simon's problem and the given oracle. 
+By pressing the Complete button, the workflow instance terminates.
+
+To terminate the environment, close the QuantME Transformation Framework and execute the following command in the [folder](./docker) with the Docker-Compose file: ``docker-compose down -v``
 
 ## Troubleshooting
 
