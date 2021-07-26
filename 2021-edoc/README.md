@@ -131,7 +131,35 @@ TODO
 
 After successfully deploying all required services and the workflow model, open the URL of the Camunda BPMN engine: ``$PUBLIC_HOSTNAME:8080/camunda``
 
-First, create an account in the Camunda engine and log in. Then, the following screen is displayed:
+First, create an account in the Camunda engine and log in. 
+Then, the following screen is displayed:
+
+![Camunda Overview](./docs/camunda-overview.png)
+
+Switch to the Camunda cockpit application by clicking on the top-right and selecting Cockpit:
+
+![Camunda Cockpit](./docs/camunda-cockpit.png)
+
+If the workflow model was successfully deployed in the [deployment step](#deployment), a 1 should be displayed under the Process Definitions label. 
+Click on Processes on the top to get a list of all deployed workflow models:
+
+![Camunda Cockpit Workflow Overview](./docs/camunda-cockpit-workflow-models.png)
+
+Select the previously modeled and deployed workflow model by clicking on its name, which opens a view where the workflow model is shown. 
+In this view, the token flow can be observed during workflow execution, i.e., it is visualized which activity of the workflow model is currently executed. 
+Furthermore, the current values of the different variables in the workflow are displayed. 
+To execute the workflow, open another tab with the Camunda tasklist application by clicking on the top-right and selecting Tasklist:
+
+![Camunda Tasklist](./docs/camunda-tasklist.png)
+
+To instantiate the workflow model, select Start process on the top-right and click on the name of the workflow in the pop-up menu. 
+Next, the required input parameters for the instantiation are shown, which were defined in the start event form during modeling:
+
+![Camunda Start Process](./docs/camunda-tasklist-instantiation.png)
+
+Provide your IBMQ access token, which can be retrieved from the [IBM Quantum Experience website](https://quantum-computing.ibm.com/), as well as the truth table defining the oracle that should be used for the workflow execution.
+Thereby, we utilize the Qiskit functionality for the generation of the corresponding quantum circuits, thus, it can be defined as discussed in the [Qiskit documentation](https://qiskit.org/documentation/stubs/qiskit.aqua.components.oracles.TruthTableOracle.html).
+For this example, the following truth table ``['01101001', '10011001', '01100110']`` is used, which results in the hidden bit string ``s=011``.
 
 TODO
 
