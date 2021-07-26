@@ -133,7 +133,7 @@ First, initiate the deployment of the services by clicking on the ``Service Depl
 
 In the pop-up, an overview of the services to deploy is given, together with the information to which service task they belong and how they are bound to the workflow.
 Click on ``Upload CSARs`` to upload the CSARs containing the deployment models to the [OpenTOSCA Container](https://github.com/OpenTOSCA/container), a TOSCA-compliant deployment system.
-Wait until the upload process terminates and the next step is displayed in the pop-up:
+Wait until the upload process terminates, and the next step is displayed in the pop-up:
 
 ![Modeler CSAR Upload Completed](./docs/modeler-upload-completed.png)
 
@@ -149,9 +149,12 @@ When the deployment finishes, the last part of the service deployment modal is s
 Finally, click on ``Perform Binding`` to automatically configure the workflow with the required information to invoke the deployed service instances.
 If the binding was successful, a corresponding pop-up is displayed (see figure below).
 Afterwards, the workflow model is executable.
-Thus, it is uploaded to the Camunda engine that was started using the Docker-Compose file by clicking on the Workflow Deployment button on the top:
+Thus, it is uploaded to the Camunda engine that was started using the Docker-Compose file by clicking on the ``Workflow Deployment`` button on the top:
 
-TODO
+![Modeler Upload Workflow](./docs/modeler-upload-workflow.png)
+
+Thereby, another pop-up is displayed after the successful deployment of the workflow model.
+If the workflow deployment fails, please have a look at the logs of the Docker-Compose file and the Troubleshooting section at the [end of this file](#troubleshooting).
 
 ## Workflow Execution
 
