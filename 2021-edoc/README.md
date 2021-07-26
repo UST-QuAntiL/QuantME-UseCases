@@ -113,17 +113,17 @@ TODO
 
 ### Configuring the QuantME Transformation Framework
 
-To access the QRMs for the workflow transformation the QuantME Transformation Framework has to be configured with the details about the QRM repository.
-Furthermore, the [Winery](https://github.com/OpenTOSCA/winery) and [OpenTOSCA Container](https://github.com/OpenTOSCA/container) endpoints must be defined to enable the automated service deployment.
+To access the QRMs for the workflow transformation, the QuantME Transformation Framework has to be configured with the details about the QRM repository.
+Furthermore, the [Winery](https://github.com/OpenTOSCA/winery) and [OpenTOSCA Container](https://github.com/OpenTOSCA/container) endpoints must be defined to enable automated service deployment.
 Finally, also the endpoint of the Camunda BPMN engine is defined to allow the upload of the workflow model.
 
-For the configuration click on the ``Configuration`` button in the toolbar, displaying the following pop-up:
+For the configuration, click on the ``Configuration`` button in the toolbar, displaying the following pop-up:
 
 ![Modeler Configuration](./docs/modeler-configuration.png)
 
 Define the following values for the first three properties replacing $PUBLIC_HOSTNAME with your IP address (see 2. in the above figure):
 
-* Camunda Engine Endoint: ``$PUBLIC_HOSTNAME:8080/engine-rest``
+* Camunda Engine Endpoint: ``$PUBLIC_HOSTNAME:8080/engine-rest``
 * OpenTOSCA Endpoint: ``$PUBLIC_HOSTNAME:1337/csars``
 * Winery Endpoint: ``$PUBLIC_HOSTNAME:8093/winery``
 
@@ -132,6 +132,8 @@ Additionally, specify the QRM repository details using the following three prope
 * QRM Repository User: ``UST-QuAntiL``
 * QRM Repository Name: ``QuantME-UseCases``
 * QRM Repository Path: ``2021-edoc/qrms``
+
+Finally, store the configuration using the ``Save`` button.
 
 ## QuantME Modeling
 
