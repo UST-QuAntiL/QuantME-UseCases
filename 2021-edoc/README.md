@@ -121,6 +121,17 @@ Save the diagrams as ``detector.bpmn`` and ``replacement.bpmn`` respectively.
 Open the detector, remove the contained start event, and add a task by dragging it from the palette on the left into the workflow.
 Select the ``Readout-Error Mitigation Task``, and add the properties as shown in the next figure:
 
+* ``Unfolding Technique``: matrix-inversion
+* ``Provider``: ibmq``
+* ``QPU``: *
+* ``Max Age``: *
+
+Thus, this QRM can be used to replace Readout-Error Mitigation Tasks performing the mitigation using the matrix-inversion unfolding technique for all quantum computers available via IBMQ.
+Please refer to [this paper](https://www.iaas.uni-stuttgart.de/publications/Weder2020_QuantumWorkflows.pdf) for the details about QRMs.
+Note: For workflows only numerical values are allowed for the max age attribute.
+Therefore, the wildcard is marked as faulty.
+However, this does not apply to detectors.
+
 ![Modeler Detector](./docs/modeler-detector.png)
 
 TODO
