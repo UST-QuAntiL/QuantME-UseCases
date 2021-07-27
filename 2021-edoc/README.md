@@ -106,8 +106,22 @@ In case you experience any problems during modeling or deployment of this servic
 
 ### Modeling QuantME Replacement Models (QRMs)
 
-In the next step, we will create a QuantME Replacement Model (QRM) that can be used to replace ``ReadoutErrorMitigationTask`` modeling constructs (see [Quantum4BPMN](https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN)) in a workflow by an implementing workflow fragment.
+In the next step, we will create a QuantME Replacement Model (QRM) that can be used to replace ``Readout-Error Mitigation Task`` modeling constructs (see [Quantum4BPMN](https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN)) in a workflow by an implementing workflow fragment.
 Thereby, this workflow fragment will invoke the service for which we created a deployment model in the previous section.
+
+A QRM consists of two parts:
+(i) a detector defining which QuantME modeling construct can be replaced, and
+(ii) a replacement fragment implementing the functionality to replace the QuantME modeling construct.
+Therefore, we create two new BPMN diagrams in the modeler by clicking ``File``, ``New File``, and selecting ``BPMN Diagram``, as shown below.
+
+![Modeler Create BPMN](./docs/modeler-create-bpmn.png)
+
+Save the diagrams as ``detector.bpmn`` and ``replacement.bpmn`` respectively.
+
+Open the detector, remove the contained start event, and add a task by dragging it from the palette on the left into the workflow.
+Select the ``Readout-Error Mitigation Task``, and add the properties as shown in the next figure:
+
+![Modeler Detector](./docs/modeler-detector.png)
 
 TODO
 
