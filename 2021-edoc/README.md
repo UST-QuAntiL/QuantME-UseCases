@@ -200,6 +200,28 @@ After the second transformation, the workflow does not contain any QuantME model
 
 ## Self-Contained Packaging
 
+If the workflow was modeled in the target environment for its execution, this step can be skipped, and the deployment and execution described in the next sections can be performed.
+However, for this demonstration, we assume that the workflow should be transferred into another target environment, and thus, should be packaged as a self-contained Quantum Application Archive (QAA).
+Hence, only this archive has to be transferred into the target environment.
+
+To export the workflow with all connected deployment models as a QAA, click on ``File`` and then ``Export As QAA``:
+
+![Modeler Export QAA](./docs/modeler-export-qaa.png)
+
+Please wait until the ``Save File Dialog`` opens and store the QAA locally.
+This takes some time, as the required CSARs have to be retrieved from the connected Winery in the background to add them to the QAA.
+
+To simulate the transfer into another target environment, we reset the Winery and verify that it contains the required deployment models after importing the QAA into the QuantME Transformation Framework.
+For this, open the Winery at ``$PUBLIC_HOSTNAME:8093``, click on ``Administration``, ``Repository``, and finally ``Clear Repository``, as shown below:
+
+![Winery Reset Repository](./docs/winery-reset-repository.png)
+
+Verify that the repository is empty by switching to the ``Service Templates`` tab.
+
+Switch back to the QuantME Transformation Framework and ... TODO
+
+![Modeler Import QAA](./docs/modeler-import-qaa.png)
+
 TODO
 
 ## Deployment
