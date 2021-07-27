@@ -174,7 +174,29 @@ Next, the modeled quantum workflow is transformed into a native BPMN workflow mo
 This step relies on the availability of different QRMs available in [this folder](./qrms).
 Thus, make sure to configure the QuantME Transformation Framework correctly to access this folder before performing the following steps, as discussed in the previous [configuration section](#configuring-the-quantme-transformation-framework).
 
-TODO
+Use the ``Transformation`` button in the toolbar on the top to trigger the transformation.
+The resulting workflow model is depicted in the following figure:
+
+![Modeler First Transformation](./docs/modeler-first-transformation.png)
+
+The modeled ``Quantum Computation Task`` was replaced by a subprocess implementing its functionality.
+For this, it generates the circuit for Simon's algorithm based on the given input oracle.
+Then, it executes the circuit, mitigates the readout-errors, and checks if the retrieved result and the already received results are linearly independent.
+If this is the case, the result is added to the result set.
+Next, it is checked if the result set contains _n-1_ linearly independent results, whereby _n_ is the size of the input oracle.
+If there are not enough results, the loop is executed again.
+Otherwise, the linear system of equations from the results is solved, leading to the solution of Simon's algorithm, which is displayed in the final user task.
+
+However, the workflow still contains QuantME modeling constructs to execute the quantum circuits and mitigate the readout-errors.
+To execute the workflow on a BPMN engine, a second transformation step is required.
+Thus, start the transformation again using the corresponding button.
+The transformation results in the workflow model below:
+
+![Modeler Second Transformation](./docs/modeler-second-transformation.png)
+
+Both workflow models are also available as distinct figures in [this folder](./workflow).
+Furthermore, it contains an XML representation of the workflows, which can be used to verify the transformation result.
+After the second transformation, the workflow does not contain any QuantME modeling constructs and can be uploaded and executed using a BPMN engine.
 
 ## Self-Contained Packaging
 
