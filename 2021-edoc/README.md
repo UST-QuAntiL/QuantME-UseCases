@@ -122,19 +122,37 @@ Open the detector, remove the contained start event, and add a task by dragging 
 Select the ``Readout-Error Mitigation Task``, and add the properties as shown in the next figure:
 
 * ``Unfolding Technique``: matrix-inversion
-* ``Provider``: ibmq``
+* ``Provider``: ibmq
 * ``QPU``: *
 * ``Max Age``: *
 
 Thus, this QRM can be used to replace Readout-Error Mitigation Tasks performing the mitigation using the matrix-inversion unfolding technique for all quantum computers available via IBMQ.
 Please refer to [this paper](https://www.iaas.uni-stuttgart.de/publications/Weder2020_QuantumWorkflows.pdf) for the details about QRMs.
-Note: For workflows only numerical values are allowed for the max age attribute.
+Note: For quantum workflows, only numerical values are allowed for the max age attribute.
 Therefore, the wildcard is marked as faulty.
 However, this does not apply to detectors.
 
 ![Modeler Detector](./docs/modeler-detector.png)
 
-TODO
+Afterwards, open the ``replacement.bpmn`` to model the replacment fragment for the defined detector.
+For this, we model a subprocess containing three tasks:
+(i) one requesting the current calibration matrix for the used QPU,
+(ii) another to receive the matrix,
+and (iii) finally a service task using the retrieved calibration matrix to mitigate the readout-errors in the result of a quantum computation.
+
+![Modeler Replacement](./docs/modeler-replacement-fragment.png)
+
+Click on the service task to attach the deployment model that was modeled in the previous section to enable the automatic deployment and binding of the required service before the execution of the workflow.
+Thus, select ``Deployment Model`` in the ``Implementation drop-down menu of the service task.
+Afterwards, all deployment models available in the connected Winery are displayed in the ``CSAR Name`` drop-down menu.
+Select the ``IbmMitigationServiceContainer_w1-wip1`` representing the previously created deployment model. 
+
+![Modeler Replacement Refinement](./docs/modeler-replacement-refinement.png)
+
+The modeled QRM can now be uploaded to a Github repository and used for the transformation of quantum workflows to native BPMN workflows.
+For this demonstration, all required QRMs are already available in this [folder](./qrms).
+It also includes the currently modeled QRM, which can be found [here](./qrm/ibm-mitigation).
+Thus, it does not have to be uploaded to perform the next steps.
 
 ### Configuring the QuantME Transformation Framework
 
