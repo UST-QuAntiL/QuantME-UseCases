@@ -218,11 +218,13 @@ For this, open the Winery at ``$PUBLIC_HOSTNAME:8093``, click on ``Administratio
 
 Verify that the repository is empty by switching to the ``Service Templates`` tab.
 
-Switch back to the QuantME Transformation Framework and ... TODO
+Switch back to the QuantME Transformation Framework and import the QAA by clicking ``File`` and then ``Open File...``.
+In the file dialog, select the previously exported QAA.
 
 ![Modeler Import QAA](./docs/modeler-import-qaa.png)
 
-TODO
+The QuantME Transformation Framework opens the workflow from the QAA and performs the upload of the contained CSARs in the background.
+Wait some time and then refresh within the Winery UI to verify the uploaded Service Templates.
 
 ## Deployment
 
