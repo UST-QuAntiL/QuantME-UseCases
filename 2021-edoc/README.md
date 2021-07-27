@@ -134,7 +134,7 @@ However, this does not apply to detectors.
 
 ![Modeler Detector](./docs/modeler-detector.png)
 
-Afterwards, open the ``replacement.bpmn`` to model the replacment fragment for the defined detector.
+Afterwards, open the ``replacement.bpmn`` to model the replacement fragment for the defined detector.
 For this, we model a subprocess containing three tasks:
 (i) one requesting the current calibration matrix for the used QPU,
 (ii) another to receive the matrix,
@@ -143,7 +143,7 @@ and (iii) finally a service task using the retrieved calibration matrix to mitig
 ![Modeler Replacement](./docs/modeler-replacement-fragment.png)
 
 Click on the service task to attach the deployment model that was modeled in the previous section to enable the automatic deployment and binding of the required service before the execution of the workflow.
-Thus, select ``Deployment Model`` in the ``Implementation drop-down menu of the service task.
+Thus, select ``Deployment Model`` in the ``Implementation`` drop-down menu of the service task.
 Afterwards, all deployment models available in the connected Winery are displayed in the ``CSAR Name`` drop-down menu.
 Select the ``IbmMitigationServiceContainer_w1-wip1`` representing the previously created deployment model. 
 
