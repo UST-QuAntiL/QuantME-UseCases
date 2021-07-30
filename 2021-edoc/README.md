@@ -13,6 +13,8 @@ For this, it comprises:
 
 5. Execution of the workflow accessing the deployed services, as well as quantum computers, solving Simon's problem for the input data of the user.
 
+For this demonstration, also a demo video is available on [YouTube](https://youtu.be/7MveQFcfkDQ).
+
 ## Setting up the MODULO Framework
 
 First, we will discuss the steps required to set up the different components comprising the MODULO framework.
