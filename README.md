@@ -21,7 +21,7 @@ Detailed instructions on how to set up the MODULO framework and perform the diff
 
 ### ICWS 2021 - Prototype
 
-In this paper, we motivate the need for two orchestrations that are required to implement non-trivial hybrid quantum applications:
+In this [paper](https://www.iaas.uni-stuttgart.de/publications/Weder2021_OrchestrationsInSuperposition.pdf), we motivate the need for two orchestrations that are required to implement non-trivial hybrid quantum applications:
 (i) the orchestration of the data- and control flow between the different components comprising the application, and (ii) the orchestration of the provisioning of the execution environment required by the application.
 We motivate this by a use case from the humanities, performing data preparation, clustering, and classification on costume data.
 Thereby, the [OpenTOSCA ecosystem](https://github.com/OpenTOSCA) is used to automatically provision the corresponding execution environment.
@@ -43,8 +43,12 @@ The corresponding workflow models can be found [here](2020-ucc).
 
 ## Learn More
 
-* Weder, Benjamin; Barzen, Johanna; Leymann, Frank; Zimmermann, Michael: 
-  Hybrid Quantum Applications Need Two Orchestrations in Superposition: A Software Architecture Perspective. 
+* Weder, Benjamin; Barzen, Johanna; Leymann, Frank:
+  MODULO: Modeling, Transformation, and Deployment of Quantum Workflows.
+  In: Proceedings of the 25th International Enterprise Distributed Object Computing Workshop (EDOCW 2021)
+
+* Weder, Benjamin; Barzen, Johanna; Leymann, Frank; Zimmermann, Michael:
+  [**Hybrid Quantum Applications Need Two Orchestrations in Superposition: A Software Architecture Perspective**](https://www.iaas.uni-stuttgart.de/publications/Weder2021_OrchestrationsInSuperposition.pdf).
   In: Proceedings of the 18th IEEE International Conference on Web Services (ICWS 2021)
 
 * Weder, Benjamin; Barzen, Johanna; Leymann, Frank; Salm, Marie:
