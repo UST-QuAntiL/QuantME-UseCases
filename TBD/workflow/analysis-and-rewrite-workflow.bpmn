@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" id="Definitions_13b49ha" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20211118">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" id="Definitions_13b49ha" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20211119">
   <bpmn:process id="analysis-and-rewrite-workflow" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:extensionElements>
         <camunda:formData>
           <camunda:formField id="input_url" label="URL to the input data" type="string" />
-          <camunda:formField id="token_ibmq" label="IBMQ Access Token" type="string" />
+          <camunda:formField id="ibmq_token" label="IBMQ Access Token" type="string" />
+          <camunda:formField id="ibmq_backend" label="IBMQ Backend" type="string" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:outgoing>SequenceFlow_0kum1kc</bpmn:outgoing>
@@ -63,19 +64,11 @@
     <bpmn:endEvent id="EndEvent_08sc4da">
       <bpmn:incoming>SequenceFlow_1csno8e</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:userTask id="Task_0qfiqux" name="Execute Quantum Circuits">
-      <bpmn:incoming>SequenceFlow_0s6m835</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_15qw95r</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:userTask id="Task_11jwstv" name="Adapt&#10;Quantum&#10;Circuits">
       <bpmn:incoming>SequenceFlow_16yvlag</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_00gjpgx</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_0fxi83k" sourceRef="Task_0lg77kd" targetRef="ExclusiveGateway_052cifa" />
-    <bpmn:userTask id="Task_0lg77kd" name="Calculate&#10;New&#10;Centroids">
-      <bpmn:incoming>SequenceFlow_15qw95r</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0fxi83k</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:userTask id="Task_0ky02vw" name="Initialize Quantum&#10;SVM">
       <bpmn:incoming>SequenceFlow_0591a3g</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1wsvjv1</bpmn:outgoing>
@@ -88,6 +81,14 @@
       <bpmn:incoming>SequenceFlow_08ed0ea</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_09l09is</bpmn:outgoing>
     </bpmn:userTask>
+    <bpmn:serviceTask id="Task_0qfiqux" name="Execute Quantum Circuits" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/KMeansExecutorService/?csar">
+      <bpmn:incoming>SequenceFlow_0s6m835</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_15qw95r</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Task_0lg77kd" name="Calculate&#10;New&#10;Centroids" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/KMeansConvergenceService/?csar">
+      <bpmn:incoming>SequenceFlow_15qw95r</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0fxi83k</bpmn:outgoing>
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="analysis-and-rewrite-workflow">
@@ -197,14 +198,8 @@
       <bpmndi:BPMNShape id="EndEvent_1ruqffc_di" bpmnElement="EndEvent_08sc4da">
         <dc:Bounds x="2002" y="239" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="UserTask_0r4cllw_di" bpmnElement="Task_0qfiqux">
-        <dc:Bounds x="540" y="217" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="UserTask_1557p1l_di" bpmnElement="Task_11jwstv">
         <dc:Bounds x="620" y="80" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="UserTask_03wogu3_di" bpmnElement="Task_0lg77kd">
-        <dc:Bounds x="710" y="217" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="UserTask_0zj6g89_di" bpmnElement="Task_0ky02vw">
         <dc:Bounds x="1010" y="217" width="100" height="80" />
@@ -214,6 +209,12 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="UserTask_0z2t69c_di" bpmnElement="Task_1mspa9s">
         <dc:Bounds x="1490" y="217" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_097k6hr_di" bpmnElement="Task_0qfiqux">
+        <dc:Bounds x="540" y="217" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1hpv5f5_di" bpmnElement="Task_0lg77kd">
+        <dc:Bounds x="710" y="217" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
