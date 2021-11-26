@@ -1,6 +1,15 @@
 # TODO
 
-TODO
+This use case shows how to model quantum workflows independent of a certain runtime to use, analyze them to find workflow fragments that can benefit from a certain runtime, and rewrite the workflow to use these runtimes.
+In the following, we focus on so-called *hybrid runtimes*, such as the [Qiskit Runtime](https://quantum-computing.ibm.com/lab/docs/iql/runtime/).
+They can be used to upload quantum and classical programs comprising a hybrid quantum algorithm together as *hybrid program*.
+Thus, the programs are provisioned close together, and their communication is optimized, which improves the performance of hybrid quantum algorithms performing multiple iterations of quantum and classical processing.
+
+In the following sections, we present the analysis and rewrite method based on the workflow model shown bellow:
+
+![Exemplary Quantum Workflow](./docs/exemplary-quantum-workflow.png)
+
+TODO: use case description
 
 In case you experience any problems during modeling, rewrite, deployment, or execution of the workflow, please refer to the [Troubleshooting](#troubleshooting) section at the end of this README.
 
@@ -50,6 +59,6 @@ Qiskit Runtime is currently [based on the latest Qiskit version](https://quantum
 This means, also the generated hybrid programs must be compatible with the latest Qiskit version.
 As the hybrid programs are generated from the quantum and classical programs, their used Qiskit version influences the Qiskit version of the hybrid programs.
 Thus, the generated hybrid programs might fail if there are breaking changes in newer Qiskit versions.
-The provided programs are based on version 0.32.1, please visit the [Qiskit release page](https://qiskit.org/documentation/release_notes.html), in case you experience any problems, and check for possible changes.
+The provided programs are based on version 0.32.1, please visit the [Qiskit release page](https://qiskit.org/documentation/release_notes.html) in case you experience any problems, and check for possible changes.
 
 TODO
