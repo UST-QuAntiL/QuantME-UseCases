@@ -63,7 +63,7 @@ The following screen is displayed:
 ![Quantum Workflow in Modeler](./docs/quantum-workflow-in-modeler.png)
 
 In case you want to execute the workflow model without optimization, press the ``Transformation`` Button in the toolbar on the top to retrieve a standard-compliant BPMN workflow model.
-Then, directly go to the [Deploying the Required Services](#Deploying the Required Services) section.
+Then, directly go to the [Deploying the Required Services](#deploying-the-required-services) section.
 However, do *not* perform the transformation if you want to optimize the workflow, as this has to be done before.
 
 TODO
