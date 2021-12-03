@@ -68,6 +68,22 @@ However, do *not* perform the transformation if you want to optimize the workflo
 
 TODO
 
+![Hybrid Loop Detection Modal](./docs/hybrid-loop-detection-modal.png)
+
+TODO
+
+![Workflow Rewrite Modal Candidate 1](./docs/workflow-rewrite-modal-1.png)
+
+TODO
+
+![Workflow Rewrite Modal Candidate 2](./docs/workflow-rewrite-modal-2.png)
+
+TODO
+
+![Workflow Rewrite In Progress](./docs/workflow-rewrite-in-progress.png)
+
+TODO
+
 ## Deploying the Required Services
 
 TODO
