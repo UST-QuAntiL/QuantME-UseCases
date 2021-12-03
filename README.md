@@ -13,7 +13,7 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
 
 ### EDOC 2021 - Prototype
 
-In this demonstration, we present the MODULO framework to model, transform, deploy, and execute quantum workflows.
+In this [demonstration](https://www.iaas.uni-stuttgart.de/publications/Weder2021_MODULO.pdf), we present the MODULO framework to model, transform, deploy, and execute quantum workflows.
 It incorporates a workflow modeling extension for quantum computing (see [Quantum4BPMN](https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN)) with a graphical notation to ease the modeling of quantum workflows.
 Additionally, it provides an integrated toolchain supporting the automated transformation of resulting workflow models to native workflow models to retain their portability, as well as the deployment of the quantum workflow with the required services and their binding.
 To demonstrate the functionality, we introduce a workflow model implementing Simon's algorithm and discuss all steps, from the modeling of required deployment models, over the modeling of the quantum workflow and its transformation to a native BPMN workflow model, to the deployment of required services, and the workflow execution.
@@ -44,7 +44,7 @@ The corresponding workflow models can be found [here](2020-ucc).
 ## Learn More
 
 * Weder, Benjamin; Barzen, Johanna; Leymann, Frank:
-  MODULO: Modeling, Transformation, and Deployment of Quantum Workflows.
+  [**MODULO: Modeling, Transformation, and Deployment of Quantum Workflows**](https://www.iaas.uni-stuttgart.de/publications/Weder2021_MODULO.pdf).
   In: Proceedings of the 25th International Enterprise Distributed Object Computing Workshop (EDOCW 2021)
 
 * Weder, Benjamin; Barzen, Johanna; Leymann, Frank; Zimmermann, Michael:
