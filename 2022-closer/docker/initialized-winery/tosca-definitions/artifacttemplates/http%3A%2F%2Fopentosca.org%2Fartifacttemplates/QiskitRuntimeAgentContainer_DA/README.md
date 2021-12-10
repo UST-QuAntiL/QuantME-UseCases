@@ -1,6 +1,4 @@
-# Qiskit Runtime Program [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)  
-
-> This node type represents a hybrid program that can be deployed to Qiskit Runtime.
+# QiskitRuntimeAgentContainer [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Haftungsausschluss
 
