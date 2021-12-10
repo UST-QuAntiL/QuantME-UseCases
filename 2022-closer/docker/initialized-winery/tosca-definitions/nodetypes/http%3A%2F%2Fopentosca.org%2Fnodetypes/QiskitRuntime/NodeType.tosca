@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://ust-quantil.github.io/nodetypes" id="nodeTypesQuantil-QiskitRuntime">
-    <NodeType name="QiskitRuntime" abstract="no" final="no" targetNamespace="https://ust-quantil.github.io/nodetypes"/>
+    <NodeType name="QiskitRuntime" abstract="no" final="no" targetNamespace="https://ust-quantil.github.io/nodetypes">
+        <Interfaces>
+            <Interface name="http://opentosca.org/interfaces/pattern/container">
+                <Operation name="create">
+                    <InputParameters>
+                        <InputParameter name="IBMQ_TOKEN" type="xsd:string" required="true"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="QISKIT_RUNTIME_PROGRAM_ID" type="xsd:string" required="true"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="terminate">
+                    <InputParameters>
+                        <InputParameter name="IBMQ_TOKEN" type="xsd:string" required="true"/>
+                        <InputParameter name="QISKIT_RUNTIME_PROGRAM_ID" type="xsd:string" required="true"/>
+                    </InputParameters>
+                </Operation>
+            </Interface>
+        </Interfaces>
+    </NodeType>
 </Definitions>

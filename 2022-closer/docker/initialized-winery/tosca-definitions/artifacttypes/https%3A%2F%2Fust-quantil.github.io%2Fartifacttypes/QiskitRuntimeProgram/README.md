@@ -1,5 +1,7 @@
 # Qiskit Runtime Program [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
+A ZIP archive comprising two files: (i) a JSON file containing the meta data for the program and (ii) the Qiskit Runtime program as a Python file.
+
 ## Haftungsausschluss
 
 Dies ist ein Forschungsprototyp und enthält insbesondere Beiträge von Studenten.
