@@ -24,7 +24,7 @@
                     </otntypdInodetypes:Properties>
                 </Properties>
                 <DeploymentArtifacts>
-                    <DeploymentArtifact name="QiskitRuntimeAgentContainer_DA" artifactType="otatyIgeneral:DockerContainerArtifact" artifactRef="otateIgeneral:QiskitRuntimeAgentContainer_DA" xmlns:otateIgeneral="http://opentosca.org/artifacttemplates" xmlns:otatyIgeneral="http://opentosca.org/artifacttypes"/>
+                    <DeploymentArtifact name="QiskitRuntimeAgentContainer_DA" artifactType="otatyIgeneral:DockerContainerArtifact" artifactRef="artifacttemplatesQuantME:QiskitRuntimeAgentContainer_DA" xmlns:artifacttemplatesQuantME="http://quantil.org/quantme/pull/artifacttemplates" xmlns:otatyIgeneral="http://opentosca.org/artifacttypes"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
             <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
