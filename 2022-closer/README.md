@@ -134,6 +134,27 @@ After entering the input parameters, click on ``Start``.
 The UI displays a notification at the bottom-right that the workflow instance was successfully started.
 Switch back to the Camunda cockpit application to observe the token flow in the workflow:
 
+![Camunda Token Flow](./docs/camunda-cockpit-running-workflow.png)
+
+Click on the corresponding workflow instance at the bottom, to view more details, such as the current values of the variables:
+
+![Camunda Instance View](./docs/camunda-cockpit-running-workflow.png)
+
+When the token reaches one of the two service tasks invocing hybrid programs, their execution can be monitored in the [IBMQ](https://quantum-computing.ibm.com/) UI:
+
+![Qiskit Runtime Queued](./docs/qiskit-runtime-queued.png)
+
+Furthermore, more details can be displayed when clicking on the queued job:
+
+![Qiskit Runtime Details](./docs/qiskit-runtime-job-details.png)
+
+Once the job finishes, the output parameters are also presented in the UI:
+
+![Qiskit Runtime Output](./docs/qiskit-runtime-job-details-ready.png)
+
+Switch back to the Camunda Cokcpit and wait until the token reaches the final user task in the workflow as depicted below.
+This might take some time depdening on the utilization of the selected QPU.
+
 TODO
 
 To terminate the environment, execute the following command in the [folder](./docker) with the Docker-Compose file: ``docker-compose down -v``
