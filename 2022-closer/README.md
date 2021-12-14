@@ -111,12 +111,17 @@ For this, click on the ``Service Deployment`` button in the toolbar:
 ![Service Deployment Overview](./docs/service-deployment-overview.png)
 
 The pop-up lists the IDs of all service tasks to which deployment models are attached, the name of the CSAR representing the deployment model, and the binding type of the service to deploy.
-All required services are deployed using the [OpenTOSCA Container](), a TOSCA-compliant deployment system.
+All required services are deployed using the [OpenTOSCA Container](https://github.com/OpenTOSCA/container), a TOSCA-compliant deployment system.
 To trigger the upload of the CSARs to the OpenTOSCA Container, press the ``Upload CSARs`` button.
 The OpenTOSCA Container automatically generates a deployment plan for the different services, and analysis if additional input data has to be requested from the user.
-Once the upload is finished, the required input parameters are displayed in the following screen:
+Once the upload is finished, the required input parameters are displayed on the following screen:
 
 ![Service Deployment Create Instances](./docs/service-deployment-overview-create-instances.png)
+
+All services for this use case are deployed as Docker containers in a local [Docker-in-Docker (dind)](https://github.com/jpetazzo/dind) container.
+Thus, now additional input parameters are required for this services.
+However, the hybrid programs must be uploaded to Qiskit Runtime, and for this upload an IBMQ access token is required, which can be retrieved from the [IBM Quantum Experience website](https://quantum-computing.ibm.com/).
+For this use case, we deploy both hybrid programs for the same IBMQ user, and thus, use the same token.
 
 TODO
 
@@ -150,7 +155,8 @@ Next, the required input parameters for the instantiation are shown, which were 
 
 ![Camunda Tasklist Input](./docs/camunda-tasklist-input.png)
 
-Provide your IBMQ access token, which can be retrieved from the [IBM Quantum Experience website](https://quantum-computing.ibm.com/), as well as one of the QPUs available over IBMQ (``ibmq_lima`` in the example) as input parameters.
+Provide your IBMQ access token, as well as one of the QPUs available over IBMQ (``ibmq_lima`` in the example) as input parameters.
+Please make sure to provide the same IBMQ access token as used for the deployment of the hybrid programs, as they are deployed in private mode and are only visible to the user to which the token belongs. 
 Furthermore, the URL to the input data has to be passed as parameter.
 Thereby, the [pre-processed data](./data/embedding.txt) is available in this repository, and thus, the following URL dan be used: ``https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/master/2022-closer/data/embedding.txt``
 
