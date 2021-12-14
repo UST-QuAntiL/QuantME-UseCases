@@ -54,27 +54,27 @@ Afterwards, the following screen should be displayed:
 
 ![QuantME Transformation Framework](./docs/modeler-after-build.png)
 
-The QuantME Transformation Framework must be configured with the endpoints of the services for the deployment and the hybrid program generation.
-For this, click on ``Configuration`` in the toolbar, opening the config pop-up:
-
-TODO
-
-Please update the different configuration properties using the following values. 
-Thereby, $IP has to be replaced with the IP-address of the Docker engine used for the setup described above:
-
-TODO
-
-## Analysis and Rewrite of Quantum Workflows
-
 Open the example workflow model available [here](./workflow/analysis-and-rewrite-workflow.bpmn) using the QuantME Transformation Framework.
 For this, click on ``File`` in the top-right corner, and afterwards, select the workflow model in the dialogue ``Open File...``.
 The following screen is displayed:
 
 ![Quantum Workflow in Modeler](./docs/quantum-workflow-in-modeler.png)
 
+The QuantME Transformation Framework must be configured with the endpoints of the services for the deployment and the hybrid program generation.
+For this, click on ``Configuration`` in the toolbar, opening the config pop-up:
+
+![Quantum Workflow in Modeler](./docs/modeler-configuration.png)
+
+Please update the different configuration properties using the following values. 
+Thereby, $IP has to be replaced with the IP-address of the Docker engine used for the setup described above:
+
+TODO
+
 In case you want to execute the workflow model without optimization, press the ``Transformation`` Button in the toolbar on the top to retrieve a standard-compliant BPMN workflow model.
 Then, directly go to the [Deploying the Required Services](#deploying-the-required-services) section.
 However, do *not* perform the transformation if you want to optimize the workflow, as this has to be done before.
+
+## Analysis and Rewrite of Quantum Workflows
 
 To trigger the workflow analysis and rewrite, click on the ``Improve Hybrid Loops`` button on the top.
 Then, the following modal is displayed, comprising some information about the analysis and rewrite method:
@@ -200,8 +200,8 @@ Once the job finishes, the output parameters are also presented in the UI:
 
 ![Qiskit Runtime Output](./docs/qiskit-runtime-job-details-ready.png)
 
-Switch back to the Camunda Cokcpit and wait until the token reaches the final user task in the workflow as depicted below.
-This might take some time depdening on the utilization of the selected QPU.
+Switch back to the Camunda cockpit and wait until the token reaches the final user task in the workflow as depicted below.
+This might take some time, depending on the utilization of the selected QPU.
 
 TODO
 
