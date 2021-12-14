@@ -54,6 +54,16 @@ Afterwards, the following screen should be displayed:
 
 ![QuantME Transformation Framework](./docs/modeler-after-build.png)
 
+The QuantME Transformation Framework must be configured with the endpoints of the services for the deployment and the hybrid program generation.
+For this, click on ``Configuration`` in the toolbar, opening the config pop-up:
+
+TODO
+
+Please update the different configuration properties using the following values. 
+Thereby, $IP has to be replaced with the IP-address of the Docker engine used for the setup described above:
+
+TODO
+
 ## Analysis and Rewrite of Quantum Workflows
 
 Open the example workflow model available [here](./workflow/analysis-and-rewrite-workflow.bpmn) using the QuantME Transformation Framework.
@@ -119,11 +129,19 @@ Once the upload is finished, the required input parameters are displayed on the 
 ![Service Deployment Create Instances](./docs/service-deployment-overview-create-instances.png)
 
 All services for this use case are deployed as Docker containers in a local [Docker-in-Docker (dind)](https://github.com/jpetazzo/dind) container.
-Thus, now additional input parameters are required for this services.
-However, the hybrid programs must be uploaded to Qiskit Runtime, and for this upload an IBMQ access token is required, which can be retrieved from the [IBM Quantum Experience website](https://quantum-computing.ibm.com/).
+Thus, no additional input parameters are required for these services.
+However, the hybrid programs must be uploaded to Qiskit Runtime, and for this upload, an IBMQ access token is required, which can be retrieved from the [IBM Quantum Experience website](https://quantum-computing.ibm.com/).
 For this use case, we deploy both hybrid programs for the same IBMQ user, and thus, use the same token.
+After adding the token, click on the ``Deploy Services`` button, and wait until the deployment finishes, showing the screen below:
 
-TODO
+![Service Deployment Binding](./docs/service-deployment-binding.png)
+
+In the last step of the service deployment, the newly created service instances are bound to the workflow.
+For this, click on the ``Perform Binding`` button.
+
+Finally, the workflow model can be deployed to the [Camunda BPMN engine](https://camunda.com/products/camunda-platform/bpmn-engine/), by clicking on the ``Workflow Deployment`` button in the toolbar:
+
+![Workflow Deployment](./docs/workflow-deployment.png)
 
 ## Executing the Quantum Workflow
 
@@ -157,8 +175,8 @@ Next, the required input parameters for the instantiation are shown, which were 
 
 Provide your IBMQ access token, as well as one of the QPUs available over IBMQ (``ibmq_lima`` in the example) as input parameters.
 Please make sure to provide the same IBMQ access token as used for the deployment of the hybrid programs, as they are deployed in private mode and are only visible to the user to which the token belongs. 
-Furthermore, the URL to the input data has to be passed as parameter.
-Thereby, the [pre-processed data](./data/embedding.txt) is available in this repository, and thus, the following URL dan be used: ``https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/master/2022-closer/data/embedding.txt``
+Furthermore, the URL to the input data has to be passed as a parameter.
+Thereby, the [pre-processed data](./data/embedding.txt) is available in this repository, and thus, the following URL can be used: ``https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/master/2022-closer/data/embedding.txt``
 
 After entering the input parameters, click on ``Start``.
 The UI displays a notification at the bottom-right that the workflow instance was successfully started.
