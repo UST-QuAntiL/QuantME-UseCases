@@ -105,24 +105,34 @@ Then, the following screen is displayed:
 
 ![Camunda Overview](./docs/camunda-overview.png)
 
-Switch to the Camunda cockpit application by clicking on the top-right and selecting Cockpit:
+Switch to the Camunda cockpit application by clicking on the top-right and selecting ``Cockpit``:
 
 ![Camunda Cockpit](./docs/camunda-cockpit.png)
 
-If the workflow model was successfully deployed in the [deployment step](#deploying-the-required-services), a 1 should be displayed under the Process Definitions label. 
-Click on Processes on the top to get a list of all deployed workflow models:
+If the workflow model was successfully deployed in the [deployment step](#deploying-the-required-services), a 1 should be displayed under the ``Process Definitions`` label. 
+Click on ``Processes`` on the top to get a list of all deployed workflow models:
 
 ![Camunda Cockpit Workflow Overview](./docs/camunda-cockpit-workflow-models.png)
 
 Select the previously modeled and deployed workflow model by clicking on its name, which opens a view where the workflow model is shown. 
 In this view, the token flow can be observed during workflow execution, i.e., it is visualized which activity of the workflow model is currently executed. 
 Furthermore, the current values of the different variables in the workflow are displayed. 
-To execute the workflow, open another tab with the Camunda tasklist application by clicking on the top-right and selecting Tasklist:
+To execute the workflow, open another tab with the Camunda tasklist application by clicking on the top-right and selecting ``Tasklist``:
 
 ![Camunda Tasklist](./docs/camunda-tasklist.png)
 
-To instantiate the workflow model, select Start process on the top-right and click on the name of the workflow in the pop-up menu. 
+To instantiate the workflow model, select ``Start process`` on the top-right and click on the name of the workflow in the pop-up menu. 
 Next, the required input parameters for the instantiation are shown, which were defined in the start event form of the workflow:
+
+![Camunda Tasklist Input](./docs/camunda-tasklist-input.png)
+
+Provide your IBMQ access token, which can be retrieved from the [IBM Quantum Experience website](https://quantum-computing.ibm.com/), as well as one of the QPUs available over IBMQ (``ibmq_lima`` in the example) as input parameters.
+Furthermore, the URL to the input data has to be passed as parameter.
+Thereby, the [pre-processed data](./data/embedding.txt) is available in this repository, and thus, the following URL dan be used: ``https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/master/2022-closer/data/embedding.txt``
+
+After entering the input parameters, click on ``Start``.
+The UI displays a notification at the bottom-right that the workflow instance was successfully started.
+Switch back to the Camunda cockpit application to observe the token flow in the workflow:
 
 TODO
 
