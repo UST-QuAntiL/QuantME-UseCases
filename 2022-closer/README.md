@@ -138,7 +138,7 @@ Switch back to the Camunda cockpit application to observe the token flow in the 
 
 Click on the corresponding workflow instance at the bottom, to view more details, such as the current values of the variables:
 
-![Camunda Instance View](./docs/camunda-cockpit-running-workflow.png)
+![Camunda Instance View](./docs/camunda-cockpit-instance-view.png)
 
 When the token reaches one of the two service tasks invocing hybrid programs, their execution can be monitored in the [IBMQ](https://quantum-computing.ibm.com/) UI:
 
