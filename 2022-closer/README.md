@@ -56,7 +56,7 @@ Afterwards, the following screen should be displayed:
 
 ## Analysis and Rewrite of Quantum Workflows
 
-Open the example workflow model available [here]() using the QuantME Transformation Framework.
+Open the example workflow model available [here](./workflow/analysis-and-rewrite-workflow.bpmn) using the QuantME Transformation Framework.
 For this, click on ``File`` in the top-right corner, and afterwards, select the workflow model in the dialogue ``Open File...``.
 The following screen is displayed:
 
@@ -90,7 +90,7 @@ After clicking on the button, the following screen is displayed until the analys
 
 ![Workflow Rewrite In Progress](./docs/workflow-rewrite-in-progress.png)
 
-If the rewritting is successful, the color of the button is changed to green and the workflow is adapted in the background, as shown on the next figure:
+If the rewriting is successful, the color of the button is changed to green and the workflow is adapted in the background, as shown in the next figure:
 
 ![Workflow Rewrite Successful](./docs/workflow-rewrite-successful.png)
 
@@ -99,9 +99,24 @@ Then, close the modal, which shows the rewritten workflow model within the model
 
 ![Workflow After Rewrite](./docs/workflow-after-rewriting.png)
 
-TODO
+The resulting workflow contains five service tasks.
+Thereby, three service tasks were not part of an optimization candidate and are unchanged.
+In contrast, all remaining tasks contained in the hybrid loops are replaced by two new service tasks invoking the corresponding hybrid programs.
 
 ## Deploying the Required Services
+
+Next, the required services for the workflow execution can be deployed.
+For this, click on the ``Service Deployment`` button in the toolbar:
+
+![Service Deployment Overview](./docs/service-deployment-overview.png)
+
+The pop-up lists the IDs of all service tasks to which deployment models are attached, the name of the CSAR representing the deployment model, and the binding type of the service to deploy.
+All required services are deployed using the [OpenTOSCA Container](), a TOSCA-compliant deployment system.
+To trigger the upload of the CSARs to the OpenTOSCA Container, press the ``Upload CSARs`` button.
+The OpenTOSCA Container automatically generates a deployment plan for the different services, and analysis if additional input data has to be requested from the user.
+Once the upload is finished, the required input parameters are displayed in the following screen:
+
+![Service Deployment Create Instances](./docs/service-deployment-overview-create-instances.png)
 
 TODO
 
