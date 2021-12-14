@@ -10,6 +10,15 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
 * [Camunda BPMN Engine](https://camunda.com/products/camunda-platform/bpmn-engine/): A state-of-the-art BPMN workflow engine used to execute quantum workflows after transforming them to native BPMN workflow models to avoid the need for extending the workflow engine.
 * [Winery](https://github.com/OpenTOSCA/winery): Winery is a web-based environment to graphically model TOSCA-based deployment models, which can then be attached to activities of quantum workflows to enable their automated deployment in the target environment.
 * [OpenTOSCA Container](https://github.com/OpenTOSCA/container): A TOSCA-compliant deployment system to deploy and manage applications or services.
+* [Qiskit Runtime Handler](https://github.com/UST-QuAntiL/qiskit-runtime-handler): A service generating Qiskit Runtime programs for hybrid loops based on corresponding workflow fragments detected by the QuantME Modeling and Transformation Framework.
+
+### CLOSER 2022 - Prototype
+
+In this paper, we introduce a method to enable modeling all tasks implementing hybrid quantum algorithms in a workflow model while increasing the efficiency through hybrid runtimes.
+Such hybrid runtimes allow the upload of quantum and classical programs together as so-called hybrid programs and optimize their execution.
+However, modeling the invocation of hybrid programs directly in the workflow decreases the modularity and understandability, as all tasks implementing the hybrid quantum algorithm are hidden.
+Thus, we analyze the workflow model to detect optimization candidates that can benefit from hybrid runtimes, check their suitability based on constraints of the runtimes, generate a corresponding hybrid program, and rewrite the workflow to invoke it.
+An example workflow model comprising two optimization candidates, as well as detailed instructions on how to set up the required environment and perform the different steps of the method, can be found [here](2022-closer).
 
 ### EDOC 2021 - Prototype
 

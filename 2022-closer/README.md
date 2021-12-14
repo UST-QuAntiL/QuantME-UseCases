@@ -78,7 +78,7 @@ Thereby, $IP has to be replaced with the IP-address of the Docker engine used fo
     * ``QRM Repository Name``: QuantME-UseCases
     * ``QRM Repository Path``: 2022-closer/qrms
 * ``Hybrid Runtimes`` tab:
-    * ``Qiskit Runtime Handler Endpoing``: http://192.168.1.103:8889
+    * ``Qiskit Runtime Handler Endpoint``: http://$IP:8889
 
 In case you want to execute the workflow model without optimization, press the ``Transformation`` Button in the toolbar on the top to retrieve a standard-compliant BPMN workflow model.
 Then, directly go to the [Deploying the Required Services](#deploying-the-required-services) section.
