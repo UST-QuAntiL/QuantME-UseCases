@@ -54,6 +54,7 @@ services:
       - DOCKER_DAEMON_ARGS=--dns 8.8.8.8 --dns 8.8.4.4 -D
     networks:
       - modulo-demo
+  ### Qiskit Runtime Handler ###
   redis:
     image: redis:6.2.6
     command: --port 5040
@@ -62,7 +63,7 @@ services:
     networks:
       - modulo-demo
   qiskit-runtime-handler:
-    image: planqk/qiskit-runtime-handler:latest
+    image: planqk/qiskit-runtime-handler:v1.0.0
     command: sh /startup.sh
     ports:
       - "8889:8889"
@@ -74,7 +75,7 @@ services:
     networks:
       - modulo-demo
   rq-worker:
-    image: planqk/qiskit-runtime-handler:latest
+    image: planqk/qiskit-runtime-handler:v1.0.0
     command: rq worker --url redis://redis:5040 qiskit-runtime-handler
     environment:
       - FLASK_RUN_HOST=qiskit-runtime-handler
