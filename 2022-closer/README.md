@@ -90,6 +90,15 @@ After clicking on the button, the following screen is displayed until the analys
 
 ![Workflow Rewrite In Progress](./docs/workflow-rewrite-in-progress.png)
 
+If the rewritting is successful, the color of the button is changed to green and the workflow is adapted in the background, as shown on the next figure:
+
+![Workflow Rewrite Successful](./docs/workflow-rewrite-successful.png)
+
+Start the rewriting also for the other candidate, and wait until it completes.
+Then, close the modal, which shows the rewritten workflow model within the modeler:
+
+![Workflow After Rewrite](./docs/workflow-after-rewriting.png)
+
 TODO
 
 ## Deploying the Required Services
