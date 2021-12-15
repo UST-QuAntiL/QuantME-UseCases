@@ -211,9 +211,18 @@ Once the job finishes, the output parameters are also presented in the UI:
 ![Qiskit Runtime Output](./docs/qiskit-runtime-job-details-ready.png)
 
 Switch back to the Camunda cockpit and wait until the token reaches the final user task in the workflow as depicted below.
+For this, refresh the page to see the current state of the workflow instance.
 This might take some time, depending on the utilization of the selected QPU.
 
-TODO
+![User Task Reached](./docs/camunda-cockpit-human-task.png)
+
+Afterward, switch to the ``Tasklist`` tab and click on ``Add a simple filter`` on the left.
+Now, the task object for the human task should be visible in the task list.
+Click on the task object, and then on the ``Claim`` button, to get the URL for the plot of the boundary definition resulting from the evaluation of the trained classifier:
+
+![Camunda Tasklist Result](./docs/camunda-tasklist-result.png)
+
+After analysing the result, click on the ``Complete`` button to finish the human task, and as it is the last activity in the workflow to terminate the workflow instance.
 
 To terminate the environment, execute the following command in the [folder](./docker) with the Docker-Compose file: ``docker-compose down -v``
 Furthermore, you can delete the uploaded hybrid programs either using Qiskit and the ``IBMRuntimeService.delete_program()`` method (see [here](https://github.com/Qiskit-Partners/qiskit-runtime/blob/main/tutorials/02_uploading_program.ipynb)) or the [Qiskit Runtime API](https://runtime-us-east.quantum-computing.ibm.com/openapi/#/).
