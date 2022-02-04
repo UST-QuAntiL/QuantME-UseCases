@@ -53,7 +53,7 @@ The corresponding workflow models can be found [here](2020-ucc).
 ## Learn More
 
 * Weder, Benjamin; Barzen, Johanna; Beisel, Martin; Leymann, Frank:
-  Analysis and Rewrite of Quantum Workflows: Improving the Execution of Hybrid Quantum Algorithms
+  Analysis and Rewrite of Quantum Workflows: Improving the Execution of Hybrid Quantum Algorithms.
   In: Proceedings of the 12th International Conference on Cloud Computing and Services Science (CLOSER 2022)
 
 * Weder, Benjamin; Barzen, Johanna; Leymann, Frank:
