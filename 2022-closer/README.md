@@ -5,6 +5,8 @@ In the following, we focus on so-called *hybrid runtimes*, such as the [Qiskit R
 They can be used to upload quantum and classical programs comprising a hybrid quantum algorithm together as *hybrid program*.
 Thus, the programs are provisioned close together, and their communication is optimized, which improves the performance of hybrid quantum algorithms performing multiple iterations of quantum and classical processing.
 
+For this use case, also a demo video is available on [YouTube](https://youtu.be/cXOkt0vVivo).
+
 In the following sections, we present the analysis and rewrite method based on the workflow model shown below:
 
 ![Exemplary Quantum Workflow](./docs/exemplary-quantum-workflow.png)
