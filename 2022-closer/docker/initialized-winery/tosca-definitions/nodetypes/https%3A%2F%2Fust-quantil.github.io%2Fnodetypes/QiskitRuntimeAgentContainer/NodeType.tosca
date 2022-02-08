@@ -21,6 +21,18 @@
             <ns0:properties>
                 <ns0:key>ENV_IBMQ_TOKEN</ns0:key>
             </ns0:properties>
+            <ns0:properties>
+                <ns0:key>IBMQ_URL</ns0:key>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:key>IBMQ_HUB</ns0:key>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:key>IBMQ_GROUP</ns0:key>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:key>IBMQ_PROJECT</ns0:key>
+            </ns0:properties>
         </ns0:PropertiesDefinition>
     </NodeType>
 </Definitions>
