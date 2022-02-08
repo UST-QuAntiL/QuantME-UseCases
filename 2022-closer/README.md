@@ -1,19 +1,21 @@
 # CLOSER 2022 Prototype
 
-This use case shows how to model quantum workflows independent of a certain runtime to use, analyze them to find workflow fragments that can benefit from a certain runtime, and rewrite the workflow to use these runtimes.
+This use case shows how to model quantum workflows independently of a certain hybrid runtime, analyze them to find workflow fragments that can benefit from a certain runtime, and rewrite the workflow to use these runtimes.
 In the following, we focus on so-called *hybrid runtimes*, such as the [Qiskit Runtime](https://quantum-computing.ibm.com/lab/docs/iql/runtime/).
 They can be used to upload quantum and classical programs comprising a hybrid quantum algorithm together as *hybrid program*.
 Thus, the programs are provisioned close together, and their communication is optimized, which improves the performance of hybrid quantum algorithms performing multiple iterations of quantum and classical processing.
+
+For this use case, also a demo video is available on [YouTube](https://youtu.be/cXOkt0vVivo).
 
 In the following sections, we present the analysis and rewrite method based on the workflow model shown below:
 
 ![Exemplary Quantum Workflow](./docs/exemplary-quantum-workflow.png)
 
 First, [pre-processed data](./data/embedding.txt) is loaded, which is used to initialize a quantum k-means algorithm.
-Then, the workflow enters a hybrid loop, executing quantum circuits, calculating new centroids based on the results, and adapting the quantum circuits if needed for the next execution.
+Then, the workflow enters a hybrid loop, executing quantum circuits, calculating new centroids based on the results, and adapting the quantum circuits if needed for the next iteration.
 This loop ends when the clustering converges, i.e., the difference between the new and old centroids is smaller than a given threshold or the maximum number of iterations is reached.
 Next, a variational support vector machine is trained.
-This is done using a hybrid loop again, optimizing the parameters theta until the incurred costs are smaller than 0.2 or 30 iterations are executed.
+This is done using another hybrid loop, optimizing the parameters theta until the incurred costs are smaller than 0.2 or the limit of 30 iterations is reached.
 Finally, the variational support vector machine is evaluated by classifying test data, and the resulting figure is displayed to the user in the last user task.
 
 In case you experience any problems during modeling, rewrite, deployment, or execution of the workflow, please refer to the [Troubleshooting](#troubleshooting) section at the end of this README.
@@ -55,8 +57,8 @@ Afterwards, the following screen should be displayed:
 ![QuantME Transformation Framework](./docs/modeler-after-build.png)
 
 Open the example workflow model available [here](./workflow/analysis-and-rewrite-workflow.bpmn) using the QuantME Transformation Framework.
-For this, click on ``File`` in the top-right corner, and afterwards, select the workflow model in the dialogue ``Open File...``.
-The following screen is displayed:
+For this, click on ``File`` in the top-left corner, and afterwards, select the workflow model in the dialogue ``Open File...``.
+Then, the following screen is displayed:
 
 ![Quantum Workflow in Modeler](./docs/quantum-workflow-in-modeler.png)
 
@@ -82,7 +84,7 @@ Thereby, $IP has to be replaced with the IP-address of the Docker engine used fo
 
 In case you want to execute the workflow model without optimization, press the ``Transformation`` Button in the toolbar on the top to retrieve a standard-compliant BPMN workflow model.
 Then, directly go to the [Deploying the Required Services](#deploying-the-required-services) section.
-However, do *not* perform the transformation if you want to optimize the workflow, as this has to be done before.
+However, do *not* perform the transformation if you want to optimize the workflow, as this has to be done before the transformation step.
 
 ## Analysis and Rewrite of Quantum Workflows
 
@@ -133,7 +135,7 @@ For this, click on the ``Service Deployment`` button in the toolbar:
 The pop-up lists the IDs of all service tasks to which deployment models are attached, the name of the CSAR representing the deployment model, and the binding type of the service to deploy.
 All required services are deployed using the [OpenTOSCA Container](https://github.com/OpenTOSCA/container), a TOSCA-compliant deployment system.
 To trigger the upload of the CSARs to the OpenTOSCA Container, press the ``Upload CSARs`` button.
-The OpenTOSCA Container automatically generates a deployment plan for the different services, and analysis if additional input data has to be requested from the user.
+The OpenTOSCA Container automatically generates a deployment plan for the different services, and analyzes if additional input data has to be requested from the user.
 Once the upload is finished, the required input parameters are displayed on the following screen:
 
 ![Service Deployment Create Instances](./docs/service-deployment-overview-create-instances.png)
@@ -142,7 +144,7 @@ All services for this use case are deployed as Docker containers in a local [Doc
 Thus, no additional input parameters are required for these services.
 However, the hybrid programs must be uploaded to Qiskit Runtime, and for this upload, an IBMQ access token is required, which can be retrieved from the [IBM Quantum Experience website](https://quantum-computing.ibm.com/).
 For this use case, we deploy both hybrid programs for the same IBMQ user, and thus, use the same token.
-After adding the token, click on the ``Deploy Services`` button, and wait until the deployment finishes, showing the screen below:
+After adding the token, click on the ``Deploy Services`` button, and wait until the deployment finishes. Afterwards, the screen below is shown:
 
 ![Service Deployment Binding](./docs/service-deployment-binding.png)
 
@@ -216,13 +218,13 @@ This might take some time, depending on the utilization of the selected QPU.
 
 ![User Task Reached](./docs/camunda-cockpit-human-task.png)
 
-Afterward, switch to the ``Tasklist`` tab and click on ``Add a simple filter`` on the left.
+Afterward, switch to the Camunda tasklist and click on ``Add a simple filter`` on the left.
 Now, the task object for the human task should be visible in the task list.
-Click on the task object, and then on the ``Claim`` button, to get the URL for the plot of the boundary definition resulting from the evaluation of the trained classifier:
+Click on the task object and then on the ``Claim`` button to get the URL for the plot of the boundary definition resulting from the evaluation of the trained classifier:
 
 ![Camunda Tasklist Result](./docs/camunda-tasklist-result.png)
 
-After analysing the result, click on the ``Complete`` button to finish the human task, and as it is the last activity in the workflow to terminate the workflow instance.
+After analyzing the result, click on the ``Complete`` button to finish the human task, and as it is the last activity in the workflow to terminate the workflow instance.
 
 To terminate the environment, execute the following command in the [folder](./docker) with the Docker-Compose file: ``docker-compose down -v``
 Furthermore, you can delete the uploaded hybrid programs either using Qiskit and the ``IBMRuntimeService.delete_program()`` method (see [here](https://github.com/Qiskit-Partners/qiskit-runtime/blob/main/tutorials/02_uploading_program.ipynb)) or the [Qiskit Runtime API](https://runtime-us-east.quantum-computing.ibm.com/openapi/#/).
