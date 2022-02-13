@@ -39,9 +39,9 @@ docker-compose up --build
 
 To start the QuantME Transformation Framework, please execute the following steps:
 
-1. Clone the repository using release v1.4.0: 
+1. Clone the repository using release v1.4.1: 
 ```
-git clone https://github.com/UST-QuAntiL/QuantME-TransformationFramework.git --branch v1.4.0
+git clone https://github.com/UST-QuAntiL/QuantME-TransformationFramework.git --branch v1.4.1
 ```
 
 2. Move to the cloned folder and build the framework:
