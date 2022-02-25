@@ -1,14 +1,26 @@
 import asyncio
+import aiohttp
 import pickle
 import tempfile
-from fileService import FileService
-from serializers.numpySerializer import NumpySerializer
+import numpy as np
 from variationalSVMCircuitGenerator import VariationalSVMCircuitGenerator
 from SPSAOptimizer import SPSAOptimizer
 from circuitExecutor import CircuitExecutor
 from serializers.resultsSerializer import ResultsSerializer
 
 default_optimizer_params = [0.6283185307179586, 0.1, 0.602, 0.101, 0]
+
+
+async def fetch_data_as_text(session, url):
+    async with session.get(url) as response:
+        return await response.text()
+
+
+async def download_to_file(url, file_path):
+    async with aiohttp.ClientSession() as session:
+        file = open(file_path, "w")
+        content_as_text = await fetch_data_as_text(session, url)
+        file.write(content_as_text)
 
 
 async def initialize_classification(data, entanglement, variational_form_reps, feature_map_reps,
@@ -107,7 +119,7 @@ async def optimize(results, labels, optimizer_parameters, thetas, delta, iterati
     return thetas_out, thetas_plus, thetas_minus, delta_out, costs_curr
 
 
-async def classify(data_url, label_url, maxiter, backend, token):
+async def train_classifier(data_url, label_url, maxiter, backend, token):
     print('Starting classification!')
 
     # temp files to store input data and labels from clustering
@@ -115,12 +127,12 @@ async def classify(data_url, label_url, maxiter, backend, token):
     label_file = tempfile.NamedTemporaryFile(delete=False)
 
     # download the data and labels and store it locally
-    await FileService.download_to_file(data_url, data_file.name)
-    await FileService.download_to_file(label_url, label_file.name)
+    await download_to_file(data_url, data_file.name)
+    await download_to_file(label_url, label_file.name)
 
     # deserialize the data and labels
-    data = NumpySerializer.deserialize(data_file)
-    labels = NumpySerializer.deserialize(label_file)
+    data = np.loadtxt(data_file)
+    labels = np.loadtxt(label_file)
     print(labels)
 
     """ Initialize """
@@ -154,7 +166,7 @@ async def classify(data_url, label_url, maxiter, backend, token):
 
 
 if __name__ == "__main__":
-    thetas = asyncio.run(classify(
+    thetas = asyncio.run(train_classifier(
         'https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/scriptSplitting/TBD/data/subset-10_embeddings.txt',
         'https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/scriptSplitting/TBD/data/subset-10_cluster-mappings.txt',
         20, 'aer_statevector_simulator', ''))
