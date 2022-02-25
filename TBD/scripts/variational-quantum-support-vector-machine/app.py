@@ -150,10 +150,12 @@ async def classify(data_url, label_url, maxiter, backend, token):
             break
 
     print('Classification terminated!')
+    return thetas
 
 
 if __name__ == "__main__":
-    asyncio.run(classify(
+    thetas = asyncio.run(classify(
         'https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/scriptSplitting/TBD/data/subset-10_embeddings.txt',
         'https://raw.githubusercontent.com/UST-QuAntiL/QuantME-UseCases/scriptSplitting/TBD/data/subset-10_cluster-mappings.txt',
         20, 'aer_statevector_simulator', ''))
+    print('Final thetas: ', thetas)
