@@ -33,7 +33,7 @@ async def initialize_classification(data, entanglement, variational_form_reps, f
 
     # use default parameters if not set
     if optimizer_parameters is None:
-        print('Using default parameterization!')
+        print('Using default optimizer parameterization!')
         optimizer_parameters = default_optimizer_params
 
     # generate circuit template
@@ -69,10 +69,8 @@ async def generate_circuit_parameterizations(data, circuit_template_pickle, thet
             thetas_array.append(t)
 
     # generate parameterizations
-    parameterizations = VariationalSVMCircuitGenerator.generateCircuitParameterizations(circuit_template, data,
-                                                                                        thetas_array)
-
-    return parameterizations
+    return VariationalSVMCircuitGenerator.generateCircuitParameterizations(circuit_template, data,
+                                                                             thetas_array)
 
 
 async def execute_circuits(circuit_template_pickle, parameterizations, backend_name, token, shots):
@@ -104,7 +102,7 @@ async def optimize(results, labels, optimizer_parameters, thetas, delta, iterati
     """
 
     if optimizer_parameters is None:
-        print('Using default parameterization!')
+        print('Using default optimizer parameterization!')
         optimizer_parameters = default_optimizer_params
 
     # make that sure labels are integers
@@ -156,6 +154,7 @@ async def train_classifier(data_url, label_url, maxiter, backend, token):
         # optimize based on execution results
         thetas, thetas_plus, thetas_minus, delta, costs_curr = await optimize(results, labels, None, thetas, delta, i,
                                                                               'False')
+        print('Current costs: ', costs_curr)
 
         # check if termination condition is met
         if costs_curr < 0.2:
