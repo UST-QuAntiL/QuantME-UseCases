@@ -6,7 +6,7 @@ import numpy as np
 from variationalSVMCircuitGenerator import VariationalSVMCircuitGenerator
 from SPSAOptimizer import SPSAOptimizer
 from circuitExecutor import CircuitExecutor
-from serializers.resultsSerializer import ResultsSerializer
+from resultsSerializer import ResultsSerializer
 
 default_optimizer_params = [0.6283185307179586, 0.1, 0.602, 0.101, 0]
 
