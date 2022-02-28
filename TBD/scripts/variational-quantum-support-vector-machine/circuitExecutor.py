@@ -1,5 +1,5 @@
 from qiskit import QuantumCircuit
-from qiskit.aqua.quantum_instance import QuantumInstance
+from qiskit.utils import QuantumInstance
 from quantumBackendFactory import QuantumBackendFactory
 
 

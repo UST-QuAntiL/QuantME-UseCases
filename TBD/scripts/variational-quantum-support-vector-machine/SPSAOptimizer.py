@@ -1,6 +1,68 @@
 import numpy as np
-from qiskit.aqua.algorithms.classifiers.vqc import cost_estimate, return_probabilities
 import math
+
+
+def cross_entropy(predictions, targets, epsilon=1e-12):
+	predictions = np.clip(predictions, epsilon, 1. - epsilon)
+	N = predictions.shape[0]
+	tmp = np.sum(targets*np.log(predictions), axis=1)
+	ce = -np.sum(tmp)/N
+	return ce
+
+
+def cost_estimate(probs, gt_labels, shots=None):
+	mylabels = np.zeros(probs.shape)
+	for i in range(gt_labels.shape[0]):
+		whichindex = gt_labels[i]
+		mylabels[i][whichindex] = 1
+
+	x = cross_entropy(probs, mylabels)
+	return x
+
+
+def assign_label(measured_key, num_classes):
+	measured_key = np.asarray([int(k) for k in list(measured_key)])
+	num_qubits = len(measured_key)
+	if num_classes == 2:
+		if num_qubits % 2 != 0:
+			total = np.sum(measured_key)
+			return 1 if total > num_qubits / 2 else 0
+		else:
+			hamming_weight = np.sum(measured_key)
+			is_odd_parity = hamming_weight % 2
+			return is_odd_parity
+
+	elif num_classes == 3:
+		first_half = int(np.floor(num_qubits / 2))
+		modulo = num_qubits % 2
+		# First half of key
+		hamming_weight_1 = np.sum(measured_key[0:first_half + modulo])
+		# Second half of key
+		hamming_weight_2 = np.sum(measured_key[first_half + modulo:])
+		is_odd_parity_1 = hamming_weight_1 % 2
+		is_odd_parity_2 = hamming_weight_2 % 2
+
+		return is_odd_parity_1 + is_odd_parity_2
+
+	else:
+		total_size = 2**num_qubits
+		class_step = np.floor(total_size / num_classes)
+
+		decimal_value = measured_key.dot(1 << np.arange(measured_key.shape[-1] - 1, -1, -1))
+		key_order = int(decimal_value / class_step)
+		return key_order if key_order < num_classes else num_classes - 1
+
+
+def return_probabilities(counts, num_classes):
+	probs = np.zeros(((len(counts), num_classes)))
+	for idx in range(len(counts)):
+		count = counts[idx]
+		shots = sum(count.values())
+		for k, v in count.items():
+			label = assign_label(k, num_classes)
+			probs[idx][label] += v / shots
+	return probs
+
 
 class SPSAOptimizer():
     """
