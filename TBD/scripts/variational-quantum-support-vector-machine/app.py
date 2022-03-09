@@ -3,11 +3,105 @@ import aiohttp
 import pickle
 import tempfile
 import numpy as np
+from qiskit.providers.aer import Aer
+from qiskit.providers.ibmq import IBMQ
+from qiskit import QuantumCircuit
+from qiskit.utils import QuantumInstance
 from variationalSVMCircuitGenerator import VariationalSVMCircuitGenerator
 from SPSAOptimizer import SPSAOptimizer
-from circuitExecutor import CircuitExecutor
 
 default_optimizer_params = [0.6283185307179586, 0.1, 0.602, 0.101, 0]
+
+
+def runCircuit(circuit: QuantumCircuit, parameterizations: list, backend, token, shots, add_measurements=False):
+    """
+        Runs the circuit with each parameterization in the provided list and
+        on the provided quantum instance and
+
+        parameters
+            - circuit: a QuantumCircuit to run
+            - parameterizations: a list of dictionaries [parameter name] -> [value]
+            - add_measurements: (optional) adds measurement operations if instance is not a statevector instance
+
+        returns
+            - results: a list of the results from these runs
+            - is_statevector: True if QInstance is statevector
+    """
+
+    Qbackend = create_backend(backend, token)
+    QInstance = QuantumInstance(Qbackend, seed_simulator=9283712, seed_transpiler=9283712, shots=shots)
+
+    # add measurements
+    if not QInstance.is_statevector and add_measurements:
+        circuit.barrier()
+        circuit.measure(circuit.qubits, circuit.clbits)
+
+    circuits = []
+    for parameterization in parameterizations:
+        parameterization = parameterization_from_parameter_names(circuit, parameterization)
+        curr_circuit = circuit.assign_parameters(parameterization)
+        circuits.append(curr_circuit)
+
+    results = QInstance.execute(circuits)
+
+    return results
+
+
+def parameterization_from_parameter_names(circuit, parameterization):
+    """
+        converts the dict [parameter name] -> [value] to
+        [parameter] -> [value]
+        i.e. replaces parameter names by actual parameters in circuit
+    """
+
+    parameters = circuit.parameters
+    parameterization_new = {}
+    for param_name in parameterization:
+        for parameter in parameters:
+            if parameter.name == param_name:
+                parameterization_new[parameter] = parameterization[param_name]
+                break
+    return parameterization_new
+
+
+def create_backend(backend_name, token=''):
+    """
+    Creates a quantum backend given the backend name.
+    We allow two provider: aer, ibmq.
+    We expect the backend_name to follow the format
+    provider_instance
+    i.e. ibmq_santiago, ibmq_16_melbourne, aer_qasm_simulator.
+    """
+
+    backend_name = backend_name.lower()
+    if 'aer' in backend_name:
+        provider = 'aer'
+        instance = backend_name[4:]
+    elif 'ibmq' in backend_name:
+        provider = 'ibmq'
+        instance = backend_name
+    else:
+        raise Exception('Unknown backend name specified.')
+
+    if 'ibmq' in provider:
+        if token == '':
+            raise Exception('A token is needed when using ibm backends.')
+        else:
+            return IBMQ.enable_account(token).get_backend(instance)
+
+    elif 'aer' in provider:
+        if 'qasm' in instance:
+            return Aer.get_backend('qasm_simulator')
+        elif 'vector' in instance:
+            return Aer.get_backend('statevector_simulator')
+        else:
+            raise Exception('Backend provider '
+                            + provider
+                            + ' does not have an instance called '
+                            + instance
+                            + '.')
+    else:
+        raise Exception('Unknown backend provider.')
 
 
 async def fetch_data_as_text(session, url):
@@ -73,20 +167,14 @@ def generate_circuit_parameterizations(data, circuit_template_pickle, thetas, th
 
 
 def execute_circuits(circuit_template_pickle, parameterizations, backend_name, token, shots):
-    """
-        Execute circuits
-        * assigns parameters of circuit template for each parameterization
-        * runs the circuit for each parameterization
-        * returns results as a list
-    """
+    """ Execute circuits """
 
     # deserialize inputs
     # WORKAROUND until https://github.com/Qiskit/qiskit-terra/issues/5710 is fixed
     circuit_template = pickle.loads(circuit_template_pickle)
 
     # execute the circuits
-    return CircuitExecutor.runCircuit(circuit_template, parameterizations, backend_name, token,
-                                      shots, add_measurements=True)
+    return runCircuit(circuit_template, parameterizations, backend_name, token, shots, add_measurements=True)
 
 
 def optimize(results, labels, optimizer_parameters, thetas, delta, iteration, is_statevector):
