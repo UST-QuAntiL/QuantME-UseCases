@@ -3,14 +3,66 @@ import aiohttp
 import pickle
 import tempfile
 import numpy as np
+from qiskit import ClassicalRegister, QuantumCircuit, QuantumRegister
 from qiskit.providers.aer import Aer
 from qiskit.providers.ibmq import IBMQ
-from qiskit import QuantumCircuit
+from qiskit.circuit.library import ZFeatureMap, TwoLocal
 from qiskit.utils import QuantumInstance
-from variationalSVMCircuitGenerator import VariationalSVMCircuitGenerator
 from SPSAOptimizer import SPSAOptimizer
 
 default_optimizer_params = [0.6283185307179586, 0.1, 0.602, 0.101, 0]
+
+
+def generateCircuitTemplate(nqbits, reps_featuremap, reps_varform, entanglement, measure=False):
+    """
+        Generates the quantum circuit for variational SVM, which
+        consists of a FeatureMap and the variational form.
+        Fixed FeatureMap to ZFeatureMap instance and variational form
+        to RyRz (for simplicity)
+    """
+    # instanciate feature map and variational form
+    feature_map = ZFeatureMap(nqbits, reps_featuremap)
+    var_form = TwoLocal(nqbits, ['ry', 'rz'], "cz", entanglement, reps_varform)
+
+    # create empty circuit
+    qr = QuantumRegister(nqbits, name='q')
+    cr = ClassicalRegister(nqbits, name='c')
+    qc = QuantumCircuit(qr, cr)
+
+    # append feature map and variational form
+    qc.append(feature_map.to_instruction(), qr)
+    qc.append(var_form.to_instruction(), qr)
+
+    # add measurements
+    if measure:
+        qc.barrier(qr)
+        qc.measure(qr, cr)
+
+    return qc, feature_map.parameters, var_form.parameters
+
+
+def generateCircuitParameterizations(circuit, data: list, thetas: list):
+    """
+        Prepares the circuit parameterizations for the provided data points and thetas
+
+            data: list of data points, shape N x d
+                where   N = number of data points
+                        d = dimension of data
+            theta: list of trainable parameters, shape n x d
+                with    n = number of parameterizations (with different set of thetas),
+                        d = number of trainable parameters
+    """
+    fm_parameters, var_parameters = circuit[0][0].params, circuit[1][0].params
+    fm_parameters, var_parameters = [param.name for param in fm_parameters], [param.name for param in var_parameters]
+
+    parameterizations = []
+    for theta in thetas:
+        for datum in data:
+            curr_params = dict(zip(fm_parameters, datum))
+            curr_params.update(dict(zip(var_parameters, theta)))
+            parameterizations.append(curr_params)
+
+    return parameterizations
 
 
 def runCircuit(circuit: QuantumCircuit, parameterizations: list, backend, token, shots, add_measurements=False):
@@ -131,9 +183,10 @@ def initialize_classification(data, entanglement, variational_form_reps, feature
 
     # generate circuit template
     n_dimensions = data.shape[1]
-    circuit_template, feature_map_parameters, var_form_parameters = \
-        VariationalSVMCircuitGenerator.generateCircuitTemplate(n_dimensions, feature_map_reps,
-                                                               variational_form_reps, entanglement)
+    circuit_template, feature_map_parameters, var_form_parameters = generateCircuitTemplate(n_dimensions,
+                                                                                            feature_map_reps,
+                                                                                            variational_form_reps,
+                                                                                            entanglement)
 
     # store circuit template
     # WORKAROUND until https://github.com/Qiskit/qiskit-terra/issues/5710 is fixed
@@ -162,8 +215,7 @@ def generate_circuit_parameterizations(data, circuit_template_pickle, thetas, th
             thetas_array.append(t)
 
     # generate parameterizations
-    return VariationalSVMCircuitGenerator.generateCircuitParameterizations(circuit_template, data,
-                                                                           thetas_array)
+    return generateCircuitParameterizations(circuit_template, data, thetas_array)
 
 
 def execute_circuits(circuit_template_pickle, parameterizations, backend_name, token, shots):
