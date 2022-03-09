@@ -22,8 +22,8 @@ async def download_to_file(url, file_path):
         file.write(content_as_text)
 
 
-async def initialize_classification(data, entanglement, variational_form_reps, feature_map_reps,
-                                    optimizer_parameters):
+def initialize_classification(data, entanglement, variational_form_reps, feature_map_reps,
+                              optimizer_parameters):
     """
         Initialize variational SVM classification
         * generates circuit template
@@ -53,7 +53,7 @@ async def initialize_classification(data, entanglement, variational_form_reps, f
     return circuit_template_pickle, thetas, thetas_plus, thetas_minus, delta
 
 
-async def generate_circuit_parameterizations(data, circuit_template_pickle, thetas, thetas_plus, thetas_minus):
+def generate_circuit_parameterizations(data, circuit_template_pickle, thetas, thetas_plus, thetas_minus):
     """
         Generate circuit parameterizations
         * takes circuit template, data, and thetas to generate parameterizations for the circuit execution
@@ -69,10 +69,10 @@ async def generate_circuit_parameterizations(data, circuit_template_pickle, thet
 
     # generate parameterizations
     return VariationalSVMCircuitGenerator.generateCircuitParameterizations(circuit_template, data,
-                                                                             thetas_array)
+                                                                           thetas_array)
 
 
-async def execute_circuits(circuit_template_pickle, parameterizations, backend_name, token, shots):
+def execute_circuits(circuit_template_pickle, parameterizations, backend_name, token, shots):
     """
         Execute circuits
         * assigns parameters of circuit template for each parameterization
@@ -86,10 +86,10 @@ async def execute_circuits(circuit_template_pickle, parameterizations, backend_n
 
     # execute the circuits
     return CircuitExecutor.runCircuit(circuit_template, parameterizations, backend_name, token,
-                                         shots, add_measurements=True)
+                                      shots, add_measurements=True)
 
 
-async def optimize(results, labels, optimizer_parameters, thetas, delta, iteration, is_statevector):
+def optimize(results, labels, optimizer_parameters, thetas, delta, iteration, is_statevector):
     """
         Optimize parameters
         * evaluates the results from circuit execution
@@ -130,8 +130,7 @@ async def train_classifier(data_url, label_url, maxiter, backend, token):
     print(labels)
 
     """ Initialize """
-    circuit_template, thetas, thetas_plus, thetas_minus, delta = await initialize_classification(data, 'full', 3, 1,
-                                                                                                 None)
+    circuit_template, thetas, thetas_plus, thetas_minus, delta = initialize_classification(data, 'full', 3, 1, None)
 
     """ Optimize """
     print('Starting optimization loop!')
@@ -139,17 +138,17 @@ async def train_classifier(data_url, label_url, maxiter, backend, token):
         print('Iteration: ' + str(i + 1))
 
         # get parameterization for current iteration
-        parameterizations = await generate_circuit_parameterizations(data, circuit_template, thetas, thetas_plus,
-                                                                     thetas_minus)
+        parameterizations = generate_circuit_parameterizations(data, circuit_template, thetas, thetas_plus,
+                                                               thetas_minus)
         print('Current parametrization: ', parameterizations)
 
         # run circuit with parametrization
-        results = await execute_circuits(circuit_template, parameterizations, backend, token, 1024)
+        results = execute_circuits(circuit_template, parameterizations, backend, token, 1024)
         print('Circuits successfully executed!')
 
         # optimize based on execution results
-        thetas, thetas_plus, thetas_minus, delta, costs_curr = await optimize(results, labels, None, thetas, delta, i,
-                                                                              'False')
+        thetas, thetas_plus, thetas_minus, delta, costs_curr = optimize(results, labels, None, thetas, delta, i,
+                                                                        'False')
         print('Current costs: ', costs_curr)
 
         # check if termination condition is met
