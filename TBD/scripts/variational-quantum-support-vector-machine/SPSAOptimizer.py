@@ -101,14 +101,8 @@ class SPSAOptimizer():
                 the exact current costs, otherwise those for theta_minus which are close to the current costs
         """
 
-        # this preprocessing ensures that the optimizer can work with both, a list of
-        # results or a single qiskit.result.Result with multiple experiments
-        n_results = len(results)
-        results_list = True # determines whether results is a list of qiskit.result.Result or one single object of that type
-        if (n_results == 1):
-            results = results[0]
-            n_results = len(results.results)
-            results_list = False
+        n_results = len(results.results)
+        results_list = False
 
         n_data = len(labels)
         n_classes = len(set(labels))

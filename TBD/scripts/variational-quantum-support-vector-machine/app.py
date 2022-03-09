@@ -6,7 +6,6 @@ import numpy as np
 from variationalSVMCircuitGenerator import VariationalSVMCircuitGenerator
 from SPSAOptimizer import SPSAOptimizer
 from circuitExecutor import CircuitExecutor
-from resultsSerializer import ResultsSerializer
 
 default_optimizer_params = [0.6283185307179586, 0.1, 0.602, 0.101, 0]
 
@@ -86,11 +85,8 @@ async def execute_circuits(circuit_template_pickle, parameterizations, backend_n
     circuit_template = pickle.loads(circuit_template_pickle)
 
     # execute the circuits
-    results = CircuitExecutor.runCircuit(circuit_template, parameterizations, backend_name, token,
+    return CircuitExecutor.runCircuit(circuit_template, parameterizations, backend_name, token,
                                          shots, add_measurements=True)
-    result_file = tempfile.NamedTemporaryFile(delete=False)
-    ResultsSerializer.serialize(results, result_file.name)
-    return ResultsSerializer.deserialize(result_file.name)
 
 
 async def optimize(results, labels, optimizer_parameters, thetas, delta, iteration, is_statevector):
