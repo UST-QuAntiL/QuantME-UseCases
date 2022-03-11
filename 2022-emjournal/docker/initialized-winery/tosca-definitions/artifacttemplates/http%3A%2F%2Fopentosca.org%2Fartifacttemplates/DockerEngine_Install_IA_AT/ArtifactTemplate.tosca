@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://opentosca.org/artifacttemplates" id="winery-defs-for_otateIgeneral-DockerEngine_Install_IA_AT" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:ns0="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:ns3="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <ArtifactTemplate type="ToscaBaseTypes:ScriptArtifact" id="DockerEngine_Install_IA_AT" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+        <ArtifactReferences>
+            <ArtifactReference reference="artifacttemplates/http%253A%252F%252Fopentosca.org%252Fartifacttemplates/DockerEngine_Install_IA_AT/files/install.sh"/>
+        </ArtifactReferences>
+    </ArtifactTemplate>
+</Definitions>
