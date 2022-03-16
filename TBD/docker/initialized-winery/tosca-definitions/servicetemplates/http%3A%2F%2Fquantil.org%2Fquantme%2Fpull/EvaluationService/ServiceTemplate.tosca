@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://quantil.org/quantme/pull" id="winery-defs-for_pull-EvaluationService" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:ns0="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:ns3="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <ServiceTemplate name="EvaluationService" targetNamespace="http://quantil.org/quantme/pull" id="EvaluationService">
+        <TopologyTemplate>
+            <NodeTemplate name="DockerEngine" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerEngine" id="DockerEngine_0" ns0:x="779" ns0:y="294" xmlns:otntyIgeneral="http://opentosca.org/nodetypes">
+                <Properties>
+                    <otntyIproperties:DockerEngine_Properties xmlns:otntyIproperties="http://opentosca.org/nodetypes/properties">
+                        <otntyIproperties:DockerEngineURL>tcp://dind:2375</otntyIproperties:DockerEngineURL>
+                        <otntyIproperties:DockerEngineCertificate/>
+                        <otntyIproperties:State>Running</otntyIproperties:State>
+                    </otntyIproperties:DockerEngine_Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate name="EvaluationServiceContainer" minInstances="1" maxInstances="1" type="otntyIgeneral:EvaluationServiceContainer" id="EvaluationServiceContainer" ns0:x="775" ns0:y="102" xmlns:otntyIgeneral="http://opentosca.org/nodetypes">
+                <Properties>
+                    <otntypdInodetypes:Properties xmlns:otntypdInodetypes="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <otntypdInodetypes:Port/>
+                        <otntypdInodetypes:ContainerPort>80</otntypdInodetypes:ContainerPort>
+                        <otntypdInodetypes:ContainerID/>
+                        <otntypdInodetypes:ContainerIP/>
+                        <otntypdInodetypes:ENV_CAMUNDA_ENDPOINT>get_input: camundaEndpoint</otntypdInodetypes:ENV_CAMUNDA_ENDPOINT>
+                        <otntypdInodetypes:ENV_CAMUNDA_TOPIC>get_input: camundaTopic</otntypdInodetypes:ENV_CAMUNDA_TOPIC>
+                    </otntypdInodetypes:Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact name="EvaluationServiceContainer_DA" artifactType="otatyIgeneral:DockerContainerArtifact" artifactRef="otateIgeneral:EvaluationServiceContainer_DA" xmlns:otateIgeneral="http://opentosca.org/artifacttemplates" xmlns:otatyIgeneral="http://opentosca.org/artifacttypes"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="EvaluationServiceContainer"/>
+                <TargetElement ref="DockerEngine_0"/>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>

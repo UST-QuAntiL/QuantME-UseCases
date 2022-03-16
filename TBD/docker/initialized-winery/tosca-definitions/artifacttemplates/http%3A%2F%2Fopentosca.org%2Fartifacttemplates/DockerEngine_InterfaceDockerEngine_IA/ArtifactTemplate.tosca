@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://opentosca.org/artifacttemplates" id="winery-defs-for_otateIgeneral-DockerEngine_InterfaceDockerEngine_IA" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:ns0="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:ns3="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <ArtifactTemplate type="otatyIgeneral:WAR" id="DockerEngine_InterfaceDockerEngine_IA" xmlns:otatyIgeneral="http://opentosca.org/artifacttypes">
+        <Properties>
+            <opentosca:WSProperties xmlns:opentosca="http://www.uni-stuttgart.de/opentosca">
+                <opentosca:ServiceEndpoint>/services/org_opentosca_NodeTypes_DockerEngine__InterfaceDockerEnginePort</opentosca:ServiceEndpoint>
+                <opentosca:PortType>{http://opentosca.org/nodetypes}org_opentosca_NodeTypes_DockerEngine__InterfaceDockerEngine</opentosca:PortType>
+                <opentosca:InvocationType>SOAP/HTTP</opentosca:InvocationType>
+            </opentosca:WSProperties>
+        </Properties>
+        <ArtifactReferences>
+            <ArtifactReference reference="artifacttemplates/http%253A%252F%252Fopentosca.org%252Fartifacttemplates/DockerEngine_InterfaceDockerEngine_IA/files/org_opentosca_NodeTypes_DockerEngine__InterfaceDockerEngine.war"/>
+            <ArtifactReference reference="artifacttemplates/http%253A%252F%252Fopentosca.org%252Fartifacttemplates/DockerEngine_InterfaceDockerEngine_IA/files/org_opentosca_NodeTypes_DockerEngine__InterfaceDockerEngine.zip"/>
+        </ArtifactReferences>
+    </ArtifactTemplate>
+</Definitions>
