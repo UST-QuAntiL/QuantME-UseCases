@@ -56,3 +56,5 @@ testem.log
 Thumbs.db
 
 __*__
+
+*/.env

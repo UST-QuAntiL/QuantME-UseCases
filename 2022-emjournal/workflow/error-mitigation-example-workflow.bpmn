@@ -137,16 +137,25 @@
             </camunda:inputParameter>
             <camunda:inputParameter name="url">http://error-mitigation-service:5000/rem/</camunda:inputParameter>
             <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript">var myJson = {"counts": {"111": 129, "000": 131, "101": 134, "100": 142, "011": 97, "110": 117, "001": 125, "010": 125},
-"mitmethod":"ignis","cmgenmethod": "standard", "qpu": ${ibmq_backend}, "qubits": [0,1,2,3,4], "maxage":100, 
+              <camunda:script scriptFormat="JavaScript">//TODO
+var qpu = execution.getVariable("ibmq_backend");
+var token = execution.getVariable("ibmq_token");
+var counts1 = execution.getVariable("counts");
+counts1 = S(counts);
+counts1 = counts1.elements();
+counts1 = counts1[0];
+counts1 = JSON.parse(counts1)
+var myJson = {"counts": counts1,
+"mitmethod":"ignis","cmgenmethod": "standard", "qpu": "ibmq_lima", "qubits": [0,1,2,3,4], "maxage":100, 
 "credentials":{
-    "token": "ibmq_token"
+    "token": token
     
     },
-"provider": "IBM"}
+"provider": "IBM"};
 
 myJson = JSON.stringify(myJson);
 execution.setVariable("myJson",myJson);
+myJson =myJson;
 </camunda:script>
             </camunda:inputParameter>
             <camunda:outputParameter name="counts">${S(response)}</camunda:outputParameter>
@@ -219,11 +228,6 @@ execution.setVariable("myJson",myJson);
           <dc:Bounds x="1153" y="246" width="18" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_00gjpgx_di" bpmnElement="SequenceFlow_00gjpgx">
-        <di:waypoint x="630" y="120" />
-        <di:waypoint x="416" y="120" />
-        <di:waypoint x="416" y="245" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_16yvlag_di" bpmnElement="SequenceFlow_16yvlag">
         <di:waypoint x="1101" y="245" />
         <di:waypoint x="1101" y="120" />
@@ -232,31 +236,27 @@ execution.setVariable("myJson",myJson);
           <dc:Bounds x="1082" y="163" width="15" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_15qw95r_di" bpmnElement="SequenceFlow_15qw95r">
-        <di:waypoint x="560" y="270" />
-        <di:waypoint x="600" y="270" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_0s6m835_di" bpmnElement="SequenceFlow_0s6m835">
-        <di:waypoint x="441" y="270" />
-        <di:waypoint x="460" y="270" />
+      <bpmndi:BPMNEdge id="SequenceFlow_0kum1kc_di" bpmnElement="SequenceFlow_0kum1kc">
+        <di:waypoint x="191" y="270" />
+        <di:waypoint x="241" y="270" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0gw15u7_di" bpmnElement="SequenceFlow_0gw15u7">
         <di:waypoint x="341" y="270" />
         <di:waypoint x="391" y="270" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_0kum1kc_di" bpmnElement="SequenceFlow_0kum1kc">
-        <di:waypoint x="191" y="270" />
-        <di:waypoint x="241" y="270" />
+      <bpmndi:BPMNEdge id="SequenceFlow_00gjpgx_di" bpmnElement="SequenceFlow_00gjpgx">
+        <di:waypoint x="630" y="120" />
+        <di:waypoint x="416" y="120" />
+        <di:waypoint x="416" y="245" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
-        <dc:Bounds x="155" y="252" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_0jfklh6_di" bpmnElement="Task_0bysx93">
-        <dc:Bounds x="241" y="230" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ExclusiveGateway_1g07eb9_di" bpmnElement="ExclusiveGateway_1g07eb9" isMarkerVisible="true">
-        <dc:Bounds x="391" y="245" width="50" height="50" />
-      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0s6m835_di" bpmnElement="SequenceFlow_0s6m835">
+        <di:waypoint x="441" y="270" />
+        <di:waypoint x="460" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_15qw95r_di" bpmnElement="SequenceFlow_15qw95r">
+        <di:waypoint x="560" y="270" />
+        <di:waypoint x="600" y="270" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ExclusiveGateway_052cifa_di" bpmnElement="ExclusiveGateway_052cifa" isMarkerVisible="true">
         <dc:Bounds x="1076" y="245" width="50" height="50" />
         <bpmndi:BPMNLabel>
@@ -281,9 +281,6 @@ execution.setVariable("myJson",myJson);
       <bpmndi:BPMNShape id="ServiceTask_1hpv5f5_di" bpmnElement="Task_0lg77kd">
         <dc:Bounds x="926" y="230" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1igyi96_di" bpmnElement="Task_11jwstv">
-        <dc:Bounds x="630" y="80" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_07lly8e_di" bpmnElement="Task_0ky02vw">
         <dc:Bounds x="1200" y="230" width="100" height="80" />
       </bpmndi:BPMNShape>
@@ -296,11 +293,23 @@ execution.setVariable("myJson",myJson);
       <bpmndi:BPMNShape id="ServiceTask_0veglxy_di" bpmnElement="Task_1ptc5xw">
         <dc:Bounds x="1450" y="230" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_0q65rt0_di" bpmnElement="Task_0qfiqux">
-        <dc:Bounds x="460" y="230" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_123o3cs_di" bpmnElement="Task_12f6kkt">
         <dc:Bounds x="750" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="155" y="252" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0jfklh6_di" bpmnElement="Task_0bysx93">
+        <dc:Bounds x="241" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_1g07eb9_di" bpmnElement="ExclusiveGateway_1g07eb9" isMarkerVisible="true">
+        <dc:Bounds x="391" y="245" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1igyi96_di" bpmnElement="Task_11jwstv">
+        <dc:Bounds x="630" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0q65rt0_di" bpmnElement="Task_0qfiqux">
+        <dc:Bounds x="460" y="230" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_1xjx0vs_di" bpmnElement="Task_1kjq7b0">
         <dc:Bounds x="600" y="230" width="100" height="80" />
