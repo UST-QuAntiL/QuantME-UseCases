@@ -1,7 +1,33 @@
 version: '3'
 
 volumes:
-  exec_data:
+  data1-1:
+  data1-2:
+  data2-1:
+  data2-2:
+
+
+
+
+# Settings and configurations that are common for all containers
+x-minio-common: &minio-common
+  image: quay.io/minio/minio:latest #RELEASE.2022-01-27T03-53-02Z
+  command: server --console-address ":9001"  http://minio{1...2}/data{1...2} 
+  expose:
+    - "9000"
+    - "9001"
+  environment:
+    MINIO_ROOT_USER: minio
+    MINIO_ROOT_PASSWORD: minio123
+  healthcheck:
+    test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+    interval: 30s
+    timeout: 20s
+    retries: 3
+  networks:
+    - modulo-demo
+
+
 
 services:
   ### Camunda Engine ###
@@ -56,42 +82,52 @@ services:
      # - DOCKER_DAEMON_ARGS=--dns 8.8.8.8 --dns 8.8.4.4 -D
     networks:
       - modulo-demo
-  ### Qiskit Runtime Handler ###
-  redis:
-    image: redis:6.2.6
-    command: --port 5040
-    ports:
-      - "5040:5040"
-    networks:
-      - modulo-demo
-  qiskit-runtime-handler:
-    image: planqk/qiskit-runtime-handler:v1.1.0
-    command: sh /startup.sh
-    ports:
-      - "8889:8889"
-    environment:
-      - REDIS_URL=redis://redis:5040
-      - DATABASE_URL=sqlite:////data/app.db
+        
+  minio1:
+    <<: *minio-common
+    hostname: minio1
     volumes:
-      - exec_data:/data
-    networks:
-      - modulo-demo
-  rq-worker:
-    image: planqk/qiskit-runtime-handler:v1.1.0
-    command: rq worker --url redis://redis:5040 qiskit-runtime-handler
-    environment:
-      - FLASK_RUN_HOST=qiskit-runtime-handler
-      - FLASK_RUN_PORT=8889
-      - REDIS_URL=redis://redis:5040
-      - DATABASE_URL=sqlite:////data/app.db
+      - data1-1:/data1
+      - data1-2:/data2
+
+  minio2:
+    <<: *minio-common
+    hostname: minio2
     volumes:
-      - exec_data:/data
+      - data2-1:/data1
+      - data2-2:/data2
+
+  nginx:
+    image: nginx:1.19.2-alpine
+    hostname: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "9000:9000"
+      - "9001:9001"
     depends_on:
-      - redis
-    deploy:
-      replicas: 1
+      - minio1
+      - minio2
     networks:
       - modulo-demo
+
+  error-mitigation-service:
+    #build: .
+    image: planqk/error-mitigation-service:v0.0.1
+    command: app.py
+    ports:
+      - "5071:5000"
+    environment:
+      - MINIO_URL=nginx:9000
+    depends_on:
+      - nginx
+    networks:
+      - modulo-demo
+
 networks:
   modulo-demo:
     driver: bridge
+
+
+
+
