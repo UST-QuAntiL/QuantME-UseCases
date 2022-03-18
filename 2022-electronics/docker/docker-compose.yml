@@ -6,9 +6,6 @@ volumes:
   data2-1:
   data2-2:
 
-
-
-
 # Settings and configurations that are common for all containers
 x-minio-common: &minio-common
   image: quay.io/minio/minio:latest #RELEASE.2022-01-27T03-53-02Z
@@ -26,8 +23,6 @@ x-minio-common: &minio-common
     retries: 3
   networks:
     - modulo-demo
-
-
 
 services:
   ### Camunda Engine ###
@@ -82,21 +77,19 @@ services:
      # - DOCKER_DAEMON_ARGS=--dns 8.8.8.8 --dns 8.8.4.4 -D
     networks:
       - modulo-demo
-        
+  ### Error-Mitigation Service ###
   minio1:
     <<: *minio-common
     hostname: minio1
     volumes:
       - data1-1:/data1
       - data1-2:/data2
-
   minio2:
     <<: *minio-common
     hostname: minio2
     volumes:
       - data2-1:/data1
       - data2-2:/data2
-
   nginx:
     image: nginx:1.19.2-alpine
     hostname: nginx
@@ -110,9 +103,7 @@ services:
       - minio2
     networks:
       - modulo-demo
-
   error-mitigation-service:
-    #build: .
     image: planqk/error-mitigation-service:v0.0.1
     command: app.py
     ports:
@@ -127,7 +118,3 @@ services:
 networks:
   modulo-demo:
     driver: bridge
-
-
-
-
