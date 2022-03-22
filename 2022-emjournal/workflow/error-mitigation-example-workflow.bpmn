@@ -70,7 +70,7 @@
           </camunda:formField>
         </camunda:formData>
       </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_03zrxe7</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_14bd1xg</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1csno8e</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:endEvent id="EndEvent_08sc4da">
@@ -93,8 +93,8 @@
       <bpmn:incoming>SequenceFlow_1qu86m2</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_09l09is</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:sequenceFlow id="SequenceFlow_03zrxe7" sourceRef="Task_1vi6pzv" targetRef="Task_06q9rh6" />
-    <bpmn:serviceTask id="Task_1vi6pzv" name="Evaluate Classifier" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/EvaluationService/?csar">
+    <bpmn:sequenceFlow id="SequenceFlow_03zrxe7" sourceRef="Task_1vi6pzv" targetRef="Task_0jlij88" />
+    <bpmn:serviceTask id="Task_1vi6pzv" name="Execute Classifier" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/EvaluationExecutorService/?csar">
       <bpmn:incoming>SequenceFlow_0vmb89t</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_03zrxe7</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -315,9 +315,118 @@ result;</camunda:script>
       <bpmn:incoming>SequenceFlow_08ed0ea</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1qu86m2</bpmn:outgoing>
     </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0nap8sg" sourceRef="Task_0jlij88" targetRef="Task_0u3ak2n" />
+    <bpmn:sequenceFlow id="SequenceFlow_14bd1xg" sourceRef="Task_0u3ak2n" targetRef="Task_06q9rh6" />
+    <bpmn:serviceTask id="Task_0u3ak2n" name="Plot Evaluation Results" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/EvaluationAnalyzerService/?csar">
+      <bpmn:incoming>SequenceFlow_0nap8sg</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_14bd1xg</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Task_0jlij88" name="Mitigate Readout Errors">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Accept">application/json</camunda:entry>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="url">http://error-mitigation-service:5000/rem/</camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="JavaScript">//TODO
+var qpu = execution.getVariable("ibmq_backend");
+var token = execution.getVariable("ibmq_token");
+var counts = execution.getVariable("counts");
+counts = S(counts);
+counts = counts.elements();
+print(counts);
+
+
+var qubits = [];
+//counts.forEach(dict =&gt; qubits.push(Array.from(Array(Object.keys(dict).length).keys())));
+//print(counts[0]['10010']);
+//counts.forEach(dict =&gt; qubits.push(Array.from(Array(Object.keys(JSON.parse(dict)).length).keys())));
+//counts.forEach(dict =&gt; print(dict));
+//for (let i = 0; i &lt; counts.length; i++) {
+//	print(counts[i])
+//}
+
+function generateArray(length){
+	var array = []
+	var iterator = new java.util.Iterator({
+	  i: 0,
+	  hasNext: function() {
+		return this.i &lt; length;
+	  },
+	  next: function() {
+		return this.i++;
+	  }
+	});
+
+	print(iterator instanceof Java.type("java.util.Iterator"));
+	while (iterator.hasNext()) {
+	  value = iterator.next();
+	  array.push(value);
+	}
+	print(array)
+	return array
+}	
+
+for each (var el in counts) print(Object.keys(JSON.parse(el))[0].length);
+for each (var el in counts) qubits.push(generateArray(Object.keys(JSON.parse(el))[0].length)); 
+
+print(qubits);
+
+
+
+counts_parsed =[]
+for each (var el in counts) counts_parsed.push(JSON.parse(el));
+//counts = counts[0];
+//counts = JSON.parse(counts);
+//print(counts['10010']);
+print(counts_parsed)
+
+
+var myJson = {"counts": counts_parsed,
+"mitigation_method":"inversion","cm_gen_method": "standard", "qpu": "ibmq_lima", "qubits": qubits, "max_age":100, 
+"credentials":{
+    "token": token
+    
+    },
+"provider": "IBM"};
+
+myJson = JSON.stringify(myJson);
+execution.setVariable("myJson",myJson);
+myJson =myJson;</camunda:script>
+            </camunda:inputParameter>
+            <camunda:outputParameter name="counts">
+              <camunda:script scriptFormat="JavaScript">//${S(response)}
+
+var resp = connector.getVariable("response")
+print('resp'+ resp);
+var result = S(resp);
+print('result ' + result );
+result;</camunda:script>
+            </camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_03zrxe7</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0nap8sg</bpmn:outgoing>
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="analysis-and-rewrite-workflow">
+      <bpmndi:BPMNEdge id="SequenceFlow_14bd1xg_di" bpmnElement="SequenceFlow_14bd1xg">
+        <di:waypoint x="2390" y="270" />
+        <di:waypoint x="2430" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0nap8sg_di" bpmnElement="SequenceFlow_0nap8sg">
+        <di:waypoint x="2240" y="270" />
+        <di:waypoint x="2290" y="270" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1qu86m2_di" bpmnElement="SequenceFlow_1qu86m2">
         <di:waypoint x="1700" y="270" />
         <di:waypoint x="1750" y="270" />
@@ -332,15 +441,15 @@ result;</camunda:script>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_03zrxe7_di" bpmnElement="SequenceFlow_03zrxe7">
         <di:waypoint x="2100" y="270" />
-        <di:waypoint x="2150" y="270" />
+        <di:waypoint x="2140" y="270" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0fxi83k_di" bpmnElement="SequenceFlow_0fxi83k">
         <di:waypoint x="1026" y="270" />
         <di:waypoint x="1076" y="270" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1csno8e_di" bpmnElement="SequenceFlow_1csno8e">
-        <di:waypoint x="2250" y="270" />
-        <di:waypoint x="2332" y="270" />
+        <di:waypoint x="2530" y="270" />
+        <di:waypoint x="2612" y="270" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0vmb89t_di" bpmnElement="SequenceFlow_0vmb89t">
         <di:waypoint x="1950" y="270" />
@@ -355,7 +464,7 @@ result;</camunda:script>
         <di:waypoint x="1375" y="120" />
         <di:waypoint x="1375" y="245" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="2052" y="163" width="15" height="14" />
+          <dc:Bounds x="1882" y="143" width="15" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_09l09is_di" bpmnElement="SequenceFlow_09l09is">
@@ -435,10 +544,10 @@ result;</camunda:script>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="UserTask_1dg3wae_di" bpmnElement="Task_06q9rh6">
-        <dc:Bounds x="2150" y="230" width="100" height="80" />
+        <dc:Bounds x="2430" y="230" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_1ruqffc_di" bpmnElement="EndEvent_08sc4da">
-        <dc:Bounds x="2332" y="252" width="36" height="36" />
+        <dc:Bounds x="2612" y="252" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_1hpv5f5_di" bpmnElement="Task_0lg77kd">
         <dc:Bounds x="926" y="230" width="100" height="80" />
@@ -469,6 +578,12 @@ result;</camunda:script>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_1nnf4kc_di" bpmnElement="Task_09pn9sk">
         <dc:Bounds x="1600" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1beb1rb_di" bpmnElement="Task_0u3ak2n">
+        <dc:Bounds x="2290" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0q8ovnq_di" bpmnElement="Task_0jlij88">
+        <dc:Bounds x="2140" y="230" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

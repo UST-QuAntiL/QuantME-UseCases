@@ -11,7 +11,7 @@
                     </otntyIproperties:DockerEngine_Properties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate name="EvaluationServiceContainer" minInstances="1" maxInstances="1" type="otntyIgeneral:EvaluationServiceContainer" id="EvaluationServiceContainer" ns0:x="775" ns0:y="102" xmlns:otntyIgeneral="http://opentosca.org/nodetypes">
+            <NodeTemplate name="EvaluationAnalyzerServiceContainer" minInstances="1" maxInstances="1" type="otntyIgeneral:EvaluationAnalyzerServiceContainer" id="EvaluationAnalyzerServiceContainer" ns0:x="775" ns0:y="102" xmlns:otntyIgeneral="http://opentosca.org/nodetypes">
                 <Properties>
                     <otntypdInodetypes:Properties xmlns:otntypdInodetypes="http://opentosca.org/nodetypes/propertiesdefinition/winery">
                         <otntypdInodetypes:Port/>
@@ -23,11 +23,11 @@
                     </otntypdInodetypes:Properties>
                 </Properties>
                 <DeploymentArtifacts>
-                    <DeploymentArtifact name="EvaluationServiceContainer_DA" artifactType="otatyIgeneral:DockerContainerArtifact" artifactRef="otateIgeneral:EvaluationServiceContainer_DA" xmlns:otateIgeneral="http://opentosca.org/artifacttemplates" xmlns:otatyIgeneral="http://opentosca.org/artifacttypes"/>
+                    <DeploymentArtifact name="EvaluationAnalyzerServiceContainer_DA" artifactType="otatyIgeneral:DockerContainerArtifact" artifactRef="otateIgeneral:EvaluationAnalyzerServiceContainer_DA" xmlns:otateIgeneral="http://opentosca.org/artifacttemplates" xmlns:otatyIgeneral="http://opentosca.org/artifacttypes"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
             <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
-                <SourceElement ref="EvaluationServiceContainer"/>
+                <SourceElement ref="EvaluationAnalyzerServiceContainer"/>
                 <TargetElement ref="DockerEngine_0"/>
             </RelationshipTemplate>
         </TopologyTemplate>
