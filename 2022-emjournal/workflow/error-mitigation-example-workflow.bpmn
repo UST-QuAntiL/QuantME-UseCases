@@ -200,7 +200,7 @@ var myJson = {"counts": counts_parsed,
 "provider": "IBM"};
 
 myJson = JSON.stringify(myJson);
-execution.setVariable("myJson",myJson);
+//execution.setVariable("myJson",myJson);
 myJson =myJson;</camunda:script>
             </camunda:inputParameter>
             <camunda:outputParameter name="counts">
@@ -296,7 +296,7 @@ var myJson = {"counts": counts_parsed,
 "provider": "IBM"};
 
 myJson = JSON.stringify(myJson);
-execution.setVariable("myJson",myJson);
+//execution.setVariable("myJson",myJson);
 myJson =myJson;</camunda:script>
             </camunda:inputParameter>
             <camunda:outputParameter name="counts">
@@ -397,7 +397,7 @@ var myJson = {"counts": counts_parsed,
 "provider": "IBM"};
 
 myJson = JSON.stringify(myJson);
-execution.setVariable("myJson",myJson);
+//execution.setVariable("myJson",myJson);
 myJson =myJson;</camunda:script>
             </camunda:inputParameter>
             <camunda:outputParameter name="counts">
