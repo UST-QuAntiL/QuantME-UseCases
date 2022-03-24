@@ -1,4 +1,4 @@
-# CLOSER 2022 Prototype
+# Electronics 2022 Prototype
 
 This use case shows how to model quantum workflows independently of a certain hybrid runtime, analyze them to find workflow fragments that can benefit from a certain runtime, and rewrite the workflow to use these runtimes.
 In the following, we focus on so-called *hybrid runtimes*, such as the [Qiskit Runtime](https://quantum-computing.ibm.com/lab/docs/iql/runtime/).
