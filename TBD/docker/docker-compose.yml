@@ -47,11 +47,14 @@ services:
     networks:
       - default
   dind:
-    image: opentosca/dind:v1.0.0
+    image: docker:20.10.14-dind
     privileged: true
     environment:
-      - PORT=2375
+      # Leave blank to deactivate TLS
+      - DOCKER_TLS_CERTDIR=
       - DOCKER_DAEMON_ARGS=--dns 8.8.8.8 --dns 8.8.4.4 -D
+      # Replace when in Uni-network
+      #- DOCKER_DAEMON_ARGS=--dns 129.69.211.1 --dns 129.69.215.5 -D
     networks:
       - default
   ### Script Splitter ###
