@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" id="Definitions_13b49ha" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.4.0">
-  <bpmn:process id="analysis-and-rewrite-workflow" isExecutable="true">
+  <bpmn:process id="error-mitigation-example-workflow" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:extensionElements>
         <camunda:formData>
@@ -418,7 +418,7 @@ result;</camunda:script>
     </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="analysis-and-rewrite-workflow">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="error-mitigation-example-workflow">
       <bpmndi:BPMNEdge id="SequenceFlow_14bd1xg_di" bpmnElement="SequenceFlow_14bd1xg">
         <di:waypoint x="2390" y="270" />
         <di:waypoint x="2430" y="270" />
