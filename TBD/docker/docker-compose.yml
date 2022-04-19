@@ -46,17 +46,24 @@ services:
       CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
     networks:
       - default
+  # dind:
+  #   image: jpetazzo/dind:latest
+  #   privileged: true
+  #   environment:
+  #     - PORT=2375
+  #     - DOCKER_DAEMON_ARGS=--dns 8.8.8.8 --dns 8.8.4.4 -D
+  #     - DOCKER_DAEMON_ARGS=--dns 129.69.211.1 --dns 129.69.215.5 -D
+  #   networks:
+  #     - default
   dind:
     image: docker:20.10.14-dind
     privileged: true
     environment:
-      # Leave blank to deactivate TLS
       - DOCKER_TLS_CERTDIR=
-      - DOCKER_DAEMON_ARGS=--dns 8.8.8.8 --dns 8.8.4.4 -D
-      # Replace when in Uni-network
-      #- DOCKER_DAEMON_ARGS=--dns 129.69.211.1 --dns 129.69.215.5 -D
     networks:
       - default
+    volumes:
+      - ./resolv.conf:/etc/resolv.conf
   ### Script Splitter ###
   redis:
     image: redis:6.2.6
