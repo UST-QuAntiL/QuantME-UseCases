@@ -98,26 +98,6 @@
       <bpmn:incoming>SequenceFlow_0vmb89t</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_03zrxe7</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:serviceTask id="Task_1ptc5xw" name="Execute Qiskit" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/QSVMExecutorService/?csar">
-      <bpmn:extensionElements>
-        <camunda:inputOutput>
-          <camunda:inputParameter name="provider">ibmq</camunda:inputParameter>
-          <camunda:inputParameter name="programmingLanguage">qiskit</camunda:inputParameter>
-        </camunda:inputOutput>
-      </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_08ni26o</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_08ed0ea</bpmn:outgoing>
-    </bpmn:serviceTask>
-    <bpmn:serviceTask id="Task_0qfiqux" name="Execute OpenQASM" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/KMeansExecutorService/?csar">
-      <bpmn:extensionElements>
-        <camunda:inputOutput>
-          <camunda:inputParameter name="provider">ibmq</camunda:inputParameter>
-          <camunda:inputParameter name="programmingLanguage">openqasm</camunda:inputParameter>
-        </camunda:inputOutput>
-      </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_0s6m835</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_15qw95r</bpmn:outgoing>
-    </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_0e99b31" sourceRef="Task_12f6kkt" targetRef="Task_0lg77kd" />
     <bpmn:serviceTask id="Task_12f6kkt" name="Assign Labels" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/KMeansLabelAssignerService/?csar">
       <bpmn:incoming>SequenceFlow_12zwgtd</bpmn:incoming>
@@ -416,6 +396,26 @@ result;</camunda:script>
       <bpmn:incoming>SequenceFlow_03zrxe7</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0nap8sg</bpmn:outgoing>
     </bpmn:serviceTask>
+    <quantme:quantumCircuitExecutionTask id="Task_1ptc5xw" name="Execute Qiskit" provider="ibmq" qpu="ibmq_qasm_simulator" shots="1000" programmingLanguage="qiskit">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="provider">ibmq</camunda:inputParameter>
+          <camunda:inputParameter name="programmingLanguage">qiskit</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_08ni26o</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_08ed0ea</bpmn:outgoing>
+    </quantme:quantumCircuitExecutionTask>
+    <quantme:quantumCircuitExecutionTask id="Task_0qfiqux" name="Execute OpenQASM" provider="ibmq" qpu="ibmq_qasm_simulator" shots="1000" programmingLanguage="openqasm">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="provider">ibmq</camunda:inputParameter>
+          <camunda:inputParameter name="programmingLanguage">openqasm</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0s6m835</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_15qw95r</bpmn:outgoing>
+    </quantme:quantumCircuitExecutionTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="error-mitigation-example-workflow">
@@ -564,12 +564,6 @@ result;</camunda:script>
       <bpmndi:BPMNShape id="ServiceTask_1hkb4uw_di" bpmnElement="Task_1vi6pzv">
         <dc:Bounds x="2000" y="230" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_0veglxy_di" bpmnElement="Task_1ptc5xw">
-        <dc:Bounds x="1450" y="230" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_0q65rt0_di" bpmnElement="Task_0qfiqux">
-        <dc:Bounds x="460" y="230" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_123o3cs_di" bpmnElement="Task_12f6kkt">
         <dc:Bounds x="750" y="230" width="100" height="80" />
       </bpmndi:BPMNShape>
@@ -584,6 +578,12 @@ result;</camunda:script>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_0q8ovnq_di" bpmnElement="Task_0jlij88">
         <dc:Bounds x="2140" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="QuantumCircuitExecutionTask_1nb4pt9_di" bpmnElement="Task_1ptc5xw">
+        <dc:Bounds x="1450" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="QuantumCircuitExecutionTask_08bycco_di" bpmnElement="Task_0qfiqux">
+        <dc:Bounds x="460" y="230" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
