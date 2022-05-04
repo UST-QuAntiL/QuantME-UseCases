@@ -14,7 +14,7 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
 
 ### CLOSER 2022 - Prototype
 
-In this paper, we introduce a method to enable modeling all tasks implementing hybrid quantum algorithms in a workflow model while increasing the efficiency through hybrid runtimes.
+In this [paper](https://www.iaas.uni-stuttgart.de/publications/Weder2022_QuantumWorkflowRewrite.pdf), we introduce a method to enable modeling all tasks implementing hybrid quantum algorithms in a workflow model while increasing the efficiency through hybrid runtimes.
 Such hybrid runtimes allow the upload of quantum and classical programs together as so-called hybrid programs and optimize their execution.
 However, modeling the invocation of hybrid programs directly in the workflow decreases the modularity and understandability, as all tasks implementing the hybrid quantum algorithm are hidden.
 Thus, we analyze the workflow model to detect optimization candidates that can benefit from hybrid runtimes, check their suitability based on constraints of the runtimes, generate a corresponding hybrid program, and rewrite the workflow to invoke it.
@@ -53,7 +53,7 @@ The corresponding workflow models can be found [here](2020-ucc).
 ## Learn More
 
 * Weder, Benjamin; Barzen, Johanna; Beisel, Martin; Leymann, Frank:
-  Analysis and Rewrite of Quantum Workflows: Improving the Execution of Hybrid Quantum Algorithms.
+  [**Analysis and Rewrite of Quantum Workflows: Improving the Execution of Hybrid Quantum Algorithms**](https://www.iaas.uni-stuttgart.de/publications/Weder2022_QuantumWorkflowRewrite.pdf).
   In: Proceedings of the 12th International Conference on Cloud Computing and Services Science (CLOSER 2022)
 
 * Weder, Benjamin; Barzen, Johanna; Leymann, Frank:
