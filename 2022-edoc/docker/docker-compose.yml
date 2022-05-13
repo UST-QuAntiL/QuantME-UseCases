@@ -1,0 +1,96 @@
+version: '3'
+
+volumes:
+  exec_data:
+
+services:
+  ### Camunda Engine ###
+  camunda-engine:
+    build: camunda
+    ports:
+      - 8080:8080
+    networks:
+      - default
+  ### OpenTOSCA Ecosystem ###
+  container:
+    image: opentosca/container:v3.0.0
+    ports:
+      - '1337:1337'
+      - '8081-8087:8081-8087'
+    environment:
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+      ENGINE_IA_HOSTNAME: engine-ia
+      ENGINE_IA_PORT: 8080
+      ENGINE_PLAN_BPEL_HOSTNAME: engine-plan
+      CONTAINER_DEPLOYMENT_TESTS: 'false'
+    networks:
+      - default
+  engine-plan:
+    image: opentosca/ode:v2.4.0
+    networks:
+      - default
+  engine-ia:
+    image: opentosca/engine-ia:v2.1.0
+    networks:
+      - default
+  winery:
+    build: initialized-winery
+    logging:
+      driver: none
+    ports:
+      - '8093:8080'
+    environment:
+      WINERY_HOSTNAME: $PUBLIC_HOSTNAME
+      WORKFLOWMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      TOPOLOGYMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+    networks:
+      - default
+  dind:
+    image: docker:20.10.14-dind
+    privileged: true
+    environment:
+      - DOCKER_TLS_CERTDIR=
+    networks:
+      - default
+    volumes:
+      - ./resolv.conf:/etc/resolv.conf
+  ### Script Splitter ###
+  redis:
+    image: redis:6.2.6
+    command: --port 5040
+    ports:
+      - "5040:5040"
+    networks:
+      - default
+  qc-script-splitter:
+    image: planqk/qscript-splitter:v1.0.0
+    command: sh /startup.sh
+    ports:
+      - "8890:8890"
+    environment:
+      - REDIS_URL=redis://redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    networks:
+      - default
+  rq-worker:
+    image: planqk/qscript-splitter:v1.0.0
+    command: rq worker --url redis://redis:5040 script-splitting-handler
+    environment:
+      - FLASK_RUN_HOST=qc-script-splitter
+      - FLASK_RUN_PORT=8890
+      - REDIS_URL=redis://redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    depends_on:
+      - redis
+    deploy:
+      replicas: 1
+    networks:
+      - default
+networks:
+  default:
+    driver: bridge
