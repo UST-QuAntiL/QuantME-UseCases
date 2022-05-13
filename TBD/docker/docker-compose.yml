@@ -46,15 +46,6 @@ services:
       CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
     networks:
       - default
-  # dind:
-  #   image: jpetazzo/dind:latest
-  #   privileged: true
-  #   environment:
-  #     - PORT=2375
-  #     - DOCKER_DAEMON_ARGS=--dns 8.8.8.8 --dns 8.8.4.4 -D
-  #     - DOCKER_DAEMON_ARGS=--dns 129.69.211.1 --dns 129.69.215.5 -D
-  #   networks:
-  #     - default
   dind:
     image: docker:20.10.14-dind
     privileged: true
@@ -73,7 +64,7 @@ services:
     networks:
       - default
   qc-script-splitter:
-    image: planqk/qscript-splitter:latest
+    image: planqk/qscript-splitter:v1.0.0
     command: sh /startup.sh
     ports:
       - "8890:8890"
@@ -85,7 +76,7 @@ services:
     networks:
       - default
   rq-worker:
-    image: planqk/qscript-splitter:latest
+    image: planqk/qscript-splitter:v1.0.0
     command: rq worker --url redis://redis:5040 script-splitting-handler
     environment:
       - FLASK_RUN_HOST=qc-script-splitter
