@@ -74,10 +74,11 @@ Back in the Modeler, click on ``File`` in the top-left corner, and select ``Gene
 A file selection handler pops up.
 Select the zip file containing ``shor_15.py`` and ``requirements.txt``.
 The script splitting and workflow generation is now in process.
-Wait until it is finished; the generated workflow models opens up automatically in the Modeler.
+Wait until it is finished; the generated workflow models opens up automatically in the Modeler:
 
-![Workflow Generation Pending](./docs/modeler-workflow-generation-pending.png)
 ![Generated Workflow](./docs/modeler-workflow-generation-finished.png)
+
+Optionally, you can rearrange the tasks to make the workflow model more intuitive to read:
 ![Rearranged Generated Workflow](./docs/modeler-workflow-rearranged.png)
 
 
