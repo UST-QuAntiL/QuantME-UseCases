@@ -2,11 +2,7 @@
 
 This use case shows how to generate a workflow model from a script-based quantum implementation.
 
-In the following sections, we present the script splitting and workflow generation method based on the implementation in [scripts/shor](scripts/shor) which contains [shor_15.py](scripts/shor/shor_15.py), a Python-based implementation of [Shor's algorithm](https://epubs.siam.org/doi/abs/10.1137/S0036144598347011) and [requirements.txt](scripts/requirements.txt) listing the required packages. The script can be executed using Python:
-```
-pip install -r requirements.txt
-python shor_15.py
-```
+In the following sections, we present the script splitting and workflow generation method based on the implementation in [scripts/shor](scripts/shor) which contains [shor_15.py](scripts/shor/shor_15.py), a Python-based implementation of [Shor's algorithm](https://epubs.siam.org/doi/abs/10.1137/S0036144598347011) and [requirements.txt](scripts/requirements.txt) listing the required packages.
 
 
 ## Setting up the MODULO Framework
@@ -69,8 +65,11 @@ Thereby, $IP has to be replaced with the IP-address of the Docker engine used fo
 
 ## Script Splitting and Workflow Generation
 
-Click on ``File`` in the top-left corner, and afterwards, select the workflow model in the dialogue ``Generate Workflow...``.
-A file selection handler should popup...
+The workflow generation expects a zip file including the Python script as well as a requirements file as input.
+Thus, zip the two files, e.g., using the following command:
+```zip script.zip scripts/shor_sim15.py scripts/requirements.txt```
+Next, click on ``File`` in the top-left corner, and select ``Generate Workflow...``.
+A file selection handler pops up.
 Select the zip file containing ``shor_15.py`` and ``requirements.txt``.
 The script splitting and workflow generation is now in process.
 Wait until it is finished; the generated workflow models opens automatically in the Modeler.
