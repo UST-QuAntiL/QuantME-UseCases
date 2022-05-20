@@ -2,7 +2,7 @@
 
 This use case shows how to generate a workflow model from a script-based quantum implementation.
 
-In the following sections, we present the script splitting and workflow generation method based on the implementation in [scripts/shor](scripts/shor) which contains [shor_15.py](scripts/shor/shor_15.py), a Python-based implementation of [Shor's algorithm](https://epubs.siam.org/doi/abs/10.1137/S0036144598347011) and [requirements.txt](scripts/requirements.txt) listing the required packages.
+In the following sections, we present the script splitting and workflow generation method based on the implementation in [scripts/shor](scripts/shor) which contains [shor_15.py](scripts/shor/shor_15.py), a Python-based implementation of [Shor's algorithm](https://epubs.siam.org/doi/abs/10.1137/S0036144598347011) and [requirements.txt](scripts/shor/requirements.txt) listing the required packages.
 
 
 ## Setting up the MODULO Framework
@@ -42,7 +42,7 @@ Afterwards, the following screen should be displayed:
 ![QuantME Transformation Framework](./docs/modeler-after-build.png)
 
 
-The QuantME Transformation Framework must be configured with the endpoints of the services for the deployment and the hybrid program generation.
+The QuantME Transformation Framework must be configured with the endpoints of the services for the deployment and the workflow generation.
 For this, click on ``BPMN Diagram`` first and then click on ``Configuration`` in the toolbar, opening the config pop-up:
 
 ![Quantum Workflow in Modeler](./docs/modeler-configuration.png)
@@ -99,7 +99,7 @@ Once the upload is finished, the required input parameters are displayed on the 
 
 ![Service Deployment Create Instances](./docs/modeler-service-deployment-upload-finished.png)
 
-All services for this use case are deployed as Docker containers in a local [Docker-in-Docker (dind)](https://github.com/jpetazzo/dind) container.
+All services for this use case are deployed as Docker containers in a local [Docker-in-Docker (dind)](https://hub.docker.com/_/docker) container.
 Thus, no additional input parameters are required for these services.
 After adding the token, click on the ``Deploy Services`` button, and wait until the deployment finishes. Afterwards, the screen below is shown:
 
