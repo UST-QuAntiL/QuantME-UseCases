@@ -1,4 +1,9 @@
-# Case Study Scripts
+# Case Study Script: Shor's Algorithm
 
-This folder contains two scripts used as a case study to showcase the script splitting and workflow generation method.
-The first script executs [Shor's algorithm](https://epubs.siam.org/doi/abs/10.1137/S0036144598347011) and the second a [variational quantum support vector machine](https://www.nature.com/articles/s41586-019-0980-2).
+This folder contains a script-based implementation of [Shor's algorithm](https://epubs.siam.org/doi/abs/10.1137/S0036144598347011) for factoring the number N=15.
+The script can be executed using Python:
+
+```
+pip install -r requirements.txt
+python shor_15.py
+```
