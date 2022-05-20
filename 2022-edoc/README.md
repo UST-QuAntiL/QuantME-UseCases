@@ -66,13 +66,15 @@ Thereby, $IP has to be replaced with the IP-address of the Docker engine used fo
 ## Script Splitting and Workflow Generation
 
 The workflow generation expects a zip file including the Python script as well as a requirements file as input.
-Thus, zip the two files, e.g., using the following command:
+Thus, zip the two files first, e.g., using the following command:
+
 ```zip script.zip scripts/shor_sim15.py scripts/requirements.txt```
-Next, click on ``File`` in the top-left corner, and select ``Generate Workflow...``.
+
+Back in the Modeler, click on ``File`` in the top-left corner, and select ``Generate Workflow...``.
 A file selection handler pops up.
 Select the zip file containing ``shor_15.py`` and ``requirements.txt``.
 The script splitting and workflow generation is now in process.
-Wait until it is finished; the generated workflow models opens automatically in the Modeler.
+Wait until it is finished; the generated workflow models opens up automatically in the Modeler.
 
 
 
