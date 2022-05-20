@@ -6,16 +6,14 @@ from random import randint
 from sympy.ntheory.continued_fraction import continued_fraction_periodic
 
 N = 15
-p1 = 1
-p2 = 1
-while p1 * p2 != N:
+z = 1
+while z == 1 or z == N:
     a = randint(2, N - 2)
-    print('Random: a = {}'.format(a))
-    p1 = gcd(a, N)
-    if p1 != 1:
-        print('Shortcut')
-        p2 = int(N / p1)
-    else:
+    print("a = %s" % a)
+    z = gcd(a, N)
+    print("z = %s" % z)
+    if z == 1:
+        print("Start Quantum Part")
         qr = QuantumRegister(7)
         cr = ClassicalRegister(3)
         qc = QuantumCircuit(qr, cr)
@@ -84,7 +82,6 @@ while p1 * p2 != N:
             qc.cx(qr[3], qr[5])
             qc.cswap(qr[1], qr[6], qr[4])
 
-        # ---force split---
         # inverse fourier transform
         qc.h(qr[2])
         qc.cp(pi / 2, qr[2], qr[1])
@@ -105,61 +102,47 @@ while p1 * p2 != N:
         # print quantum measurement
         x = result.get_counts()
 
+
+
         # perform classical post processing (runs in polynomial time)
         # outputs the prime factors of N from the period
-        count = 0
-        count_max = len(x)
-        while count < count_max:
+        print("Start classical post-processing")
 
-            # performs the continued fractions algorithm on the quantum measurement value
-            # output should be the continued fraction sequence for x/2^n.
-            n = int(log2(N)) + 1
-            d = int(max(x, key=x.get), 2)
-            print('Measurement: d = {}'.format(d))
-            cont_list = continued_fraction_periodic(d, 2 ** n)
+        # performs the continued fractions algorithm on the quantum measurement value
+        # output should be the continued fraction sequence for x/2^n.
+        n = int(log2(N)) + 1
+        d = int(max(x, key=x.get), 2)
+        print('Measurement: d = {}'.format(d))
+        cont_list = continued_fraction_periodic(d, 2 ** n)
+        print('cont fraction sequence: %s' % cont_list)
 
-            # find the period based on the continued fractions sequence
-            # output should be the period.
-            r = 0
-            q_list = [1]
-            i = 1
-            while i < len(cont_list):
-                if i == 1:
-                    q = cont_list[i]
-                else:
-                    q = int(cont_list[i] * q_list[i - 1] + q_list[i - 2])
-                q_list.append(q)
-                if a ** q % N == 1:
-                    r = q
-                    break
-                i += 1
-
-            if r == 0:
-                print("FAIL")
-                p1 = 1
-                p2 = 1
-            elif r > N - 1:
-                print('Period failure, try next Measurement')
-                d_bad = max(x, key=x.get)
-                del x[d_bad]
-                p1 = 1
-                p2 = 1
-            elif r % 2 == 1:
-                print('Odd period, try next Measurement')
-                d_bad = max(x, key=x.get)
-                del x[d_bad]
-                p1 = 1
-                p2 = 1
+        # find the period based on the continued fractions sequence
+        # output should be the period.
+        r = 0
+        q_list = [1]
+        i = 1
+        while i < len(cont_list):
+            if i == 1:
+                q = cont_list[i]
             else:
-                print('Period: r = {}'.format(r))
-                p1 = int(gcd(int(a ** (r / 2) - 1), N))
-                p2 = int(gcd(int(a ** (r / 2) + 1), N))
-                count += count_max
-                if p1 == 1 or p2 == 1:
-                    print('Trivial Factors, try next Measurement')
-                    d_bad = max(x, key=x.get)
-                    del x[d_bad]
-                    p1 = 1
-                    p2 = 1
-                    count -= count_max
-            count += 1
+                q = int(cont_list[i] * q_list[i - 1] + q_list[i - 2])
+            q_list.append(q)
+            if a ** q % N == 1:
+                r = q
+                break
+            i += 1
+
+        print('Period: r = {}'.format(r))
+
+        if r % 2 == 0 and not r == 0 and r < N-1:
+            print('Period is even')
+            z = gcd(a ** (r / 2) - 1, N)
+            print("z = int(gcd(int(a ** (r / 2) - 1), N)) = %s" % z)
+            if z == 1 or z == N:
+                print('z=%s' % z)
+                z = gcd(a**(r/2) + 1, N)
+                print("z = int(gcd(int(a ** (r / 2) + 1), N)) = %s" % z)
+                if z == 1 or z == N:
+                    print('z=%s; try again')
+        else:
+            print('Period is uneven; try again')
