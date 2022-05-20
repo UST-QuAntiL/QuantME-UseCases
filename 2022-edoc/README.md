@@ -2,7 +2,7 @@
 
 This use case shows how to generate a workflow model from a script-based quantum implementation.
 
-In the following sections, we present the script splitting and workflow generation method based on the implementation in [scripts/shor](scripts/shor) which contains [shor_15.py](scripts/shor/shor_15.py), a Python-based implementation of Shor's Algorithm and [requirements.txt](scripts/requirements.txt) listing the required packages. The script can be executed using Python:
+In the following sections, we present the script splitting and workflow generation method based on the implementation in [scripts/shor](scripts/shor) which contains [shor_15.py](scripts/shor/shor_15.py), a Python-based implementation of [Shor's algorithm](https://epubs.siam.org/doi/abs/10.1137/S0036144598347011) and [requirements.txt](scripts/requirements.txt) listing the required packages. The script can be executed using Python:
 ```
 pip install -r requirements.txt
 python shor_15.py
