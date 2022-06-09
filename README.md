@@ -12,6 +12,13 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
 * [OpenTOSCA Container](https://github.com/OpenTOSCA/container): A TOSCA-compliant deployment system to deploy and manage applications or services.
 * [Qiskit Runtime Handler](https://github.com/UST-QuAntiL/qiskit-runtime-handler): A service generating Qiskit Runtime programs for hybrid loops based on corresponding workflow fragments detected by the QuantME Modeling and Transformation Framework.
 
+### EDOC 2022 - Prototype
+We introduce an approach that generates workflow models from existing script-based quantum implementations.
+Our approach first splits the script-based implementations into their quantum and classical parts.
+These parts are then orchestrated by a generated workflow model that resembles the original execution order of the script and ensures correct data flow between them.
+Furthermore, deployment models are generated for each part to enable automated deployment.
+An example script-based implementation, as well as detailed instructions on how to set up the required environment and perform the different steps of the approach, can be found [here](2022-edoc).
+
 ### CLOSER 2022 - Prototype
 
 In this [paper](https://www.iaas.uni-stuttgart.de/publications/Weder2022_QuantumWorkflowRewrite.pdf), we introduce a method to enable modeling all tasks implementing hybrid quantum algorithms in a workflow model while increasing the efficiency through hybrid runtimes.
