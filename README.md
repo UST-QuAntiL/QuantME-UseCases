@@ -21,9 +21,16 @@ To demonstrate its functionality, we implemented a case study from the quantum h
 The corresponding workflow models and instructions on how to set up the environment and execute the application can be found [here](2022-electronics).
 
 
+### EDOC 2022 - Prototype
+We introduce an approach that generates workflow models from existing script-based quantum implementations.
+Our approach first splits the script-based implementations into their quantum and classical parts.
+These parts are then orchestrated by a generated workflow model that resembles the original execution order of the script and ensures correct data flow between them.
+Furthermore, deployment models are generated for each part to enable automated deployment.
+An example script-based implementation, as well as detailed instructions on how to set up the required environment and perform the different steps of the approach, can be found [here](2022-edoc).
+
 ### CLOSER 2022 - Prototype
 
-In this paper, we introduce a method to enable modeling all tasks implementing hybrid quantum algorithms in a workflow model while increasing the efficiency through hybrid runtimes.
+In this [paper](https://www.iaas.uni-stuttgart.de/publications/Weder2022_QuantumWorkflowRewrite.pdf), we introduce a method to enable modeling all tasks implementing hybrid quantum algorithms in a workflow model while increasing the efficiency through hybrid runtimes.
 Such hybrid runtimes allow the upload of quantum and classical programs together as so-called hybrid programs and optimize their execution.
 However, modeling the invocation of hybrid programs directly in the workflow decreases the modularity and understandability, as all tasks implementing the hybrid quantum algorithm are hidden.
 Thus, we analyze the workflow model to detect optimization candidates that can benefit from hybrid runtimes, check their suitability based on constraints of the runtimes, generate a corresponding hybrid program, and rewrite the workflow to invoke it.
@@ -62,7 +69,7 @@ The corresponding workflow models can be found [here](2020-ucc).
 ## Learn More
 
 * Weder, Benjamin; Barzen, Johanna; Beisel, Martin; Leymann, Frank:
-  Analysis and Rewrite of Quantum Workflows: Improving the Execution of Hybrid Quantum Algorithms.
+  [**Analysis and Rewrite of Quantum Workflows: Improving the Execution of Hybrid Quantum Algorithms**](https://www.iaas.uni-stuttgart.de/publications/Weder2022_QuantumWorkflowRewrite.pdf).
   In: Proceedings of the 12th International Conference on Cloud Computing and Services Science (CLOSER 2022)
 
 * Weder, Benjamin; Barzen, Johanna; Leymann, Frank:
