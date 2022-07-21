@@ -56,3 +56,5 @@ testem.log
 Thumbs.db
 
 __*__
+
+/2022-emjournal/docker/.env
