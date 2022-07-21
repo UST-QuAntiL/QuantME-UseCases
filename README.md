@@ -12,6 +12,15 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
 * [OpenTOSCA Container](https://github.com/OpenTOSCA/container): A TOSCA-compliant deployment system to deploy and manage applications or services.
 * [Qiskit Runtime Handler](https://github.com/UST-QuAntiL/qiskit-runtime-handler): A service generating Qiskit Runtime programs for hybrid loops based on corresponding workflow fragments detected by the QuantME Modeling and Transformation Framework.
 
+### Electronics 2022 - Prototype
+
+In this [paper](https://www.iaas.uni-stuttgart.de/publications/TODO.pdf), we show how to automate the configuration of Readout Error Mitigation (REM) methods using QuantME. 
+We analyze the literature for current state-of-the-art REM methods and derive general and method-specific configuration requirements.
+To make the error-prone and time-consuming process of configuring REM more efficient, we present an automation approach based on QuantME.
+To demonstrate its functionality, we implemented a case study from the quantum humanities domain, performing clustering and classification by means of quantum algorithms.
+The corresponding workflow models and instructions on how to set up the environment and execute the application can be found [here](2022-electronics).
+
+
 ### CLOSER 2022 - Prototype
 
 In this paper, we introduce a method to enable modeling all tasks implementing hybrid quantum algorithms in a workflow model while increasing the efficiency through hybrid runtimes.
