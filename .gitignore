@@ -58,3 +58,4 @@ Thumbs.db
 __*__
 
 /2022-emjournal/docker/.env
+/2022-sncs/docker/.env
