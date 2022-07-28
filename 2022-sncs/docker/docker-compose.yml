@@ -1,0 +1,95 @@
+version: '3'
+
+volumes:
+  exec_data:
+
+services:
+  ### Camunda Engine ###
+  camunda-engine:
+    build: camunda
+    ports:
+      - 8080:8080
+    networks:
+      - modulo-demo
+  ### OpenTOSCA Ecosystem ###
+  container:
+    image: opentosca/container:v3.0.0
+    ports:
+      - '1337:1337'
+      - '8081-8087:8081-8087'
+    environment:
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+      ENGINE_IA_HOSTNAME: engine-ia
+      ENGINE_IA_PORT: 8080
+      ENGINE_PLAN_BPEL_HOSTNAME: engine-plan
+      CONTAINER_DEPLOYMENT_TESTS: 'false'
+    networks:
+      - modulo-demo
+  engine-plan:
+    image: opentosca/ode:v2.4.0
+    networks:
+      - modulo-demo
+  engine-ia:
+    image: opentosca/engine-ia:v2.1.0
+    networks:
+      - modulo-demo
+  winery:
+    build: initialized-winery
+    logging:
+      driver: none
+    ports:
+      - '8093:8080'
+    environment:
+      WINERY_HOSTNAME: $PUBLIC_HOSTNAME
+      WORKFLOWMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      TOPOLOGYMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+    networks:
+      - modulo-demo
+  dind:
+    image: opentosca/dind:v1.0.0
+    privileged: true
+    environment:
+      - PORT=2375
+      - DOCKER_DAEMON_ARGS=--dns 8.8.8.8 --dns 8.8.4.4 -D
+    networks:
+      - modulo-demo
+  ### Qiskit Runtime Handler ###
+  redis:
+    image: redis:6.2.6
+    command: --port 5040
+    ports:
+      - "5040:5040"
+    networks:
+      - modulo-demo
+  qiskit-runtime-handler:
+    image: planqk/qiskit-runtime-handler:v1.1.0
+    command: sh /startup.sh
+    ports:
+      - "8889:8889"
+    environment:
+      - REDIS_URL=redis://redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    networks:
+      - modulo-demo
+  rq-worker:
+    image: planqk/qiskit-runtime-handler:v1.1.0
+    command: rq worker --url redis://redis:5040 qiskit-runtime-handler
+    environment:
+      - FLASK_RUN_HOST=qiskit-runtime-handler
+      - FLASK_RUN_PORT=8889
+      - REDIS_URL=redis://redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    depends_on:
+      - redis
+    deploy:
+      replicas: 1
+    networks:
+      - modulo-demo
+networks:
+  modulo-demo:
+    driver: bridge
