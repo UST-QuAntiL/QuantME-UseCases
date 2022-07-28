@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" id="Definitions_13b49ha" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20220701">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" id="Definitions_13b49ha" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20220721">
   <bpmn:process id="error-mitigation-example-workflow" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:extensionElements>
@@ -131,15 +131,15 @@
       <bpmn:incoming>SequenceFlow_0s6m835</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_15qw95r</bpmn:outgoing>
     </quantme:quantumCircuitExecutionTask>
-    <quantme:readoutErrorMitigationTask id="Task_1kjq7b0" name="Mitigate Readout Errors" provider="ibm" qpu="ibmq_lima" calibrationMethod="fullMatrix" mitigationMethod="matrixInversion">
+    <quantme:readoutErrorMitigationTask id="Task_1kjq7b0" name="Mitigate Readout Errors" provider="ibm" qpu="ibmq_lima" calibrationMethod="fullMatrix" mitigationMethod="matrixInversion" maxAge="600">
       <bpmn:incoming>SequenceFlow_15qw95r</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_12zwgtd</bpmn:outgoing>
     </quantme:readoutErrorMitigationTask>
-    <quantme:readoutErrorMitigationTask id="Task_09pn9sk" name="Mitigate Readout Errors" provider="ibm" qpu="ibmq_lima" calibrationMethod="fullMatrix" mitigationMethod="matrixInversion">
+    <quantme:readoutErrorMitigationTask id="Task_09pn9sk" name="Mitigate Readout Errors" provider="ibm" qpu="ibmq_lima" calibrationMethod="fullMatrix" mitigationMethod="matrixInversion" maxAge="600">
       <bpmn:incoming>SequenceFlow_08ed0ea</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1qu86m2</bpmn:outgoing>
     </quantme:readoutErrorMitigationTask>
-    <quantme:readoutErrorMitigationTask id="Task_0jlij88" name="Mitigate Readout Errors" provider="ibm" qpu="ibmq_lima" calibrationMethod="fullMatrix" mitigationMethod="matrixInversion">
+    <quantme:readoutErrorMitigationTask id="Task_0jlij88" name="Mitigate Readout Errors" provider="ibm" qpu="ibmq_lima" calibrationMethod="fullMatrix" mitigationMethod="matrixInversion" maxAge="600">
       <bpmn:incoming>SequenceFlow_03zrxe7</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0nap8sg</bpmn:outgoing>
     </quantme:readoutErrorMitigationTask>
