@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" id="Definitions_13b49ha" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20211129">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" id="Definitions_13b49ha" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20220729">
   <bpmn:process id="analysis-and-rewrite-workflow" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:extensionElements>
@@ -44,7 +44,7 @@
     <bpmn:sequenceFlow id="SequenceFlow_1wsvjv1" sourceRef="Task_0ky02vw" targetRef="ExclusiveGateway_0jbrct6" />
     <bpmn:sequenceFlow id="SequenceFlow_08ni26o" sourceRef="ExclusiveGateway_0jbrct6" targetRef="Task_1ptc5xw" />
     <bpmn:sequenceFlow id="SequenceFlow_08ed0ea" sourceRef="Task_1ptc5xw" targetRef="Task_1mspa9s" />
-    <bpmn:exclusiveGateway id="ExclusiveGateway_1pzukzt" name="iterations &#62; 30 &#10;or costs &#60; 0.2" camunda:asyncBefore="true">
+    <bpmn:exclusiveGateway id="ExclusiveGateway_1pzukzt" name="iterations &#62; 20 &#10;or costs &#60; 0.3" camunda:asyncBefore="true">
       <bpmn:incoming>SequenceFlow_09l09is</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0ncbyt5</bpmn:outgoing>
       <bpmn:outgoing>SequenceFlow_0vmb89t</bpmn:outgoing>
