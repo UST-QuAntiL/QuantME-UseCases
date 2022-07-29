@@ -20,6 +20,10 @@
                         <otntypdInodetypes:ContainerIP/>
                         <otntypdInodetypes:ENV_CAMUNDA_ENDPOINT>get_input: camundaEndpoint</otntypdInodetypes:ENV_CAMUNDA_ENDPOINT>
                         <otntypdInodetypes:ENV_CAMUNDA_TOPIC>get_input: camundaTopic</otntypdInodetypes:ENV_CAMUNDA_TOPIC>
+                        <otntypdInodetypes:ENV_IBMQ_URL>get_input: ibmqUrl</otntypdInodetypes:ENV_IBMQ_URL>
+                        <otntypdInodetypes:ENV_IBMQ_HUB>get_input: ibmqHub</otntypdInodetypes:ENV_IBMQ_HUB>
+                        <otntypdInodetypes:ENV_IBMQ_GROUP>get_input: ibmqGroup</otntypdInodetypes:ENV_IBMQ_GROUP>
+                        <otntypdInodetypes:ENV_IBMQ_PROJECT>get_input: ibmqProject</otntypdInodetypes:ENV_IBMQ_PROJECT>
                     </otntypdInodetypes:Properties>
                 </Properties>
                 <DeploymentArtifacts>
