@@ -16,7 +16,7 @@
             <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="JavaScript">
 var qpu = execution.getVariable("qpu");
-var token = execution.getVariable("credentials");
+var token = execution.getVariable("ibmq_token");
 var counts = execution.getVariable("counts");
 var maxAge = execution.getVariable("maxAge");
 counts = S(counts);

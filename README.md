@@ -67,6 +67,10 @@ The corresponding workflow models can be found [here](2020-ucc).
 
 ## Learn More
 
+* Vietz, Daniel; Barzen, Johanna; Leymann, Frank; Weder, Benjamin:
+  **Quantum-Classical Splitting of Scripts for the Generation of Quantum Workflows**
+  In: Proceedings of the 26th International Enterprise Distributed Object Computing Conference (EDOC 2022)
+
 * Weder, Benjamin; Barzen, Johanna; Beisel, Martin; Leymann, Frank:
   [**Analysis and Rewrite of Quantum Workflows: Improving the Execution of Hybrid Quantum Algorithms**](https://www.iaas.uni-stuttgart.de/publications/Weder2022_QuantumWorkflowRewrite.pdf).
   In: Proceedings of the 12th International Conference on Cloud Computing and Services Science (CLOSER 2022)
