@@ -63,7 +63,7 @@ services:
     networks:
       - modulo-demo
   qiskit-runtime-handler:
-    image: planqk/qiskit-runtime-handler:v1.1.0
+    image: planqk/qiskit-runtime-handler:v1.2.0
     command: sh /startup.sh
     ports:
       - "8889:8889"
@@ -75,7 +75,7 @@ services:
     networks:
       - modulo-demo
   rq-worker:
-    image: planqk/qiskit-runtime-handler:v1.1.0
+    image: planqk/qiskit-runtime-handler:v1.2.0
     command: rq worker --url redis://redis:5040 qiskit-runtime-handler
     environment:
       - FLASK_RUN_HOST=qiskit-runtime-handler
