@@ -223,7 +223,7 @@ To switch between the views, click on the button on the right side of the viewer
 
 Now the token flow within the modeled workflow is visualized, i.e., in the example, a quantum circuit is currently executed within the hybrid program (see 1. in the figure above).
 Thus, more details about the current state of the execution are visualized by using this view.
-Furthermore, also variables representing intermediate result of the workflow execution are shown in the ``Data View`` tab.
+Furthermore, also variables representing intermediate results of the workflow execution are shown in the ``Data View`` tab.
 For example, the current iteration executed within the hybrid program can be retrieved (see 2. in the figure above).
 Wait until the token reaches the final user task in the workflow as depicted below.
 For this, refresh the page to see the current state of the workflow instance.
