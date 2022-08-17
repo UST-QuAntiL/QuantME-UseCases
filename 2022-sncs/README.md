@@ -99,4 +99,33 @@ However, do *not* perform the transformation if you want to optimize the workflo
 
 ## Analysis and Rewrite of Quantum Workflows
 
+To trigger the workflow analysis and rewrite, click on the ``Improve Hybrid Loops`` button on the top.
+Then, the following modal is displayed, comprising some information about the analysis and rewrite method:
+
+![Hybrid Loop Detection Modal](./docs/hybrid-loop-detection-modal.png)
+
+Press the ``Analyse Workflow`` button to start the detection of hybrid loops within the workflow, which could benefit from a hybrid runtime.
+When the analysis finishes, the possible optimization candidates are visualized in the next modal:
+
+![Workflow Rewrite Modal Candidate 1](./docs/workflow-rewrite-modal-1.png)
+
+In our example workflow, two optimization candidates are detected, one performing the clustering, and the second comprising the classification tasks.
+The tabs on the top of the modal can be used to switch between the visualization of all detected optimization candidates:
+
+![Workflow Rewrite Modal Candidate 2](./docs/workflow-rewrite-modal-2.png)
+
+Furthermore, a list of supported hybrid runtimes is displayed in the table below.
+Currently, Qiskit Runtime and AWS Braket Hybrid Jobs are supported.
+As the quantum programs for this use case are implemented using Qiskit, we utilize the Qiskit Runtime in this example.
+Click on the ``Rewrite Workflow`` button to analyze if the selected hybrid runtime supports the current candidate.
+If yes, a hybrid program, as well as a corresponding deployment model, are automatically generated for the candidate.
+Finally, the workflow is rewritten to invoke the generated hybrid program.
+After clicking on the button, the following screen is displayed until the analysis and rewrite terminates, which might take some time:
+
+![Workflow Rewrite In Progress](./docs/workflow-rewrite-in-progress.png)
+
+If the rewriting is successful, the color of the button is changed to green and the workflow is adapted in the background, as shown in the next figure:
+
+![Workflow Rewrite Successful](./docs/workflow-rewrite-successful.png)
+
 TODO
