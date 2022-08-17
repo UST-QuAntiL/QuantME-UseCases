@@ -212,8 +212,19 @@ Switch back to the Camunda cockpit application to observe the token flow in the 
 
 ![Camunda Token Flow](./docs/camunda-cockpit-running-workflow.png)
 
+Click on the corresponding workflow instance at the bottom, to view more details, such as the current values of the variables:
+
 ![Camunda Token Flow Instance](./docs/camunda-cockpit-running-workflow-instance.png)
 
+Switch to the ``Data View`` tab to visualize the variables for the different views:
 
+![Camunda Token Flow Instance](./docs/camunda-cockpit-running-workflow-instance.png)
+
+To switch between the views, click on the button on the right side of the viewer:
+
+![Camunda Token Flow View](./docs/camunda-cockpit-running-workflow-view.png)
+
+Now the token flow within the modeled workflow is visualized, i.e., in the example, a quantum circuit is currently executed within the hybrid program.
+Thus, more details about the current state of the execution is visualized by using this view.
 
 TODO
