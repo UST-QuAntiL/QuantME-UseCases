@@ -222,6 +222,32 @@ To switch between the views, click on the button on the right side of the viewer
 ![Camunda Token Flow View](./docs/camunda-cockpit-running-workflow-view.png)
 
 Now the token flow within the modeled workflow is visualized, i.e., in the example, a quantum circuit is currently executed within the hybrid program.
-Thus, more details about the current state of the execution is visualized by using this view.
+Thus, more details about the current state of the execution are visualized by using this view.
+Furthermore, also variables representing intermediate result of the workflow execution are shown in the ``Data View`` tab.
+Wait until the token reaches the final user task in the workflow as depicted below.
+For this, refresh the page to see the current state of the workflow instance.
+This might take some time, depending on the utilization of the selected QPU.
 
-TODO
+![User Task Reached](./docs/camunda-cockpit-human-task.png)
+
+Afterward, switch to the Camunda tasklist and click on ``Add a simple filter`` on the left.
+Now, the task object for the human task should be visible in the task list.
+Click on the task object and then on the ``Claim`` button to get the URL for the plot of the boundary definition resulting from the evaluation of the trained classifier:
+
+![Camunda Tasklist Result](./docs/camunda-tasklist-result.png)
+
+After analyzing the result, click on the ``Complete`` button to finish the human task, and as it is the last activity in the workflow to terminate the workflow instance.
+
+To terminate the environment, execute the following command in the [folder](./docker) with the Docker-Compose file: ``docker-compose down -v``
+Furthermore, you can delete the uploaded hybrid programs either using Qiskit and the ``IBMRuntimeService.delete_program()`` method (see [here](https://github.com/Qiskit-Partners/qiskit-runtime/blob/main/tutorials/02_uploading_program.ipynb)) or the [Qiskit Runtime API](https://runtime-us-east.quantum-computing.ibm.com/openapi/#/).
+
+## Troubleshooting
+
+Qiskit Runtime is currently [based on the latest Qiskit version](https://quantum-computing.ibm.com/lab/docs/iql/runtime/start).
+This means, also the generated hybrid programs must be compatible with the latest Qiskit version.
+As the hybrid programs are generated from the quantum and classical programs, their used Qiskit version influences the Qiskit version of the hybrid programs.
+Thus, the generated hybrid programs might fail if there are breaking changes in newer Qiskit versions.
+The provided programs are based on version 0.37.1, please visit the [Qiskit release page](https://qiskit.org/documentation/release_notes.html) in case you experience any problems, and check for possible changes.
+
+The setup starts overall 9 Docker containers, and the required services are deployed within one of these containers using so-called [Docker-in-Docker (dind)](https://hub.docker.com/_/docker).
+Thus, if the startup of the Docker-Compose file or the deployment of the services fails, please make sure to provide enough resources to the docker engine, i.e., CPU, main memory, and disk space.
