@@ -212,10 +212,7 @@ Switch back to the Camunda cockpit application to observe the token flow in the 
 
 ![Camunda Token Flow](./docs/camunda-cockpit-running-workflow.png)
 
-Click on the corresponding workflow instance at the bottom, to view more details, such as the current values of the variables:
-
-![Camunda Token Flow Instance](./docs/camunda-cockpit-running-workflow-instance.png)
-
+Click on the corresponding workflow instance at the bottom, to view more details, such as the current values of the variables.
 Switch to the ``Data View`` tab to visualize the variables for the different views:
 
 ![Camunda Token Flow Instance](./docs/camunda-cockpit-running-workflow-instance.png)
