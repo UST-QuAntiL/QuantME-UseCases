@@ -154,10 +154,37 @@ Once the upload is finished, the required input parameters are displayed on the 
 
 All services for this use case are deployed as Docker containers in a local [Docker-in-Docker (dind)](https://hub.docker.com/_/docker) container.
 To upload the hybrid programs to Qiskit Runtime, an IBMQ access token is required, which can be retrieved from the [IBM Quantum Experience website](https://quantum-computing.ibm.com/).
-Furthermore, the URL to the IBMQ service to use (e.g., https://auth.quantum-computing.ibm.com/api), the IBMQ hub (e.g., ibm-q), the IBMQ group (e.g., open), and the IBMQ project (e.g., main) must be defined for all services accessing quantum computers using hybrid programs.
+Furthermore, the URL to the IBMQ service to use (e.g., https://auth.quantum-computing.ibm.com/api), the IBMQ hub (e.g., ibm-q), the IBMQ group (e.g., open), and the IBMQ project (e.g., main) must be defined for all services accessing quantum computers or using hybrid programs.
 In principle, different input parameters could be used for the various services.
 However, for the sake of simplicity, we utilize the same input parameters for all services.
 After adding the input parameters, click on the ``Deploy Services`` button, and wait until the deployment finishes.
 Then, the screen below is shown:
+
+![Service Deployment Binding](./docs/service-deployment-binding.png)
+
+In the last step of the service deployment, the newly created service instances are bound to the workflow.
+For this, click on the ``Perform Binding`` button.
+
+Finally, the workflow model can be deployed to the [Camunda engine](https://camunda.com/products/camunda-platform/bpmn-engine/), by clicking on the ``Workflow Deployment`` button in the toolbar:
+
+![Workflow Deployment](./docs/workflow-deployment.png)
+
+## Executing the Quantum Workflow
+
+After successfully deploying all required services and the workflow model, open the URL of the Camunda BPMN engine: ``$PUBLIC_HOSTNAME:8080/camunda``
+
+First, create an account in the Camunda engine and log in.
+Then, the following screen is displayed:
+
+![Camunda Overview](./docs/camunda-overview.png)
+
+Switch to the Camunda cockpit application by clicking on the top-right and selecting ``Cockpit``:
+
+![Camunda Cockpit](./docs/camunda-cockpit.png)
+
+If the workflow model was successfully deployed in the [deployment step](#deploying-the-required-services), a 1 should be displayed under the ``Process Definitions`` label.
+Click on ``Processes`` on the top to get a list of all deployed workflow models:
+
+![Camunda Cockpit Workflow Overview](./docs/camunda-cockpit-workflow-models.png)
 
 TODO
