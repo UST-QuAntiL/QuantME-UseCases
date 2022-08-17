@@ -50,6 +50,8 @@ services:
     image: opentosca/ode:v2.4.0
     networks:
       - modulo-demo
+    ports:
+      - '9763:9763'
   engine-ia:
     image: opentosca/engine-ia:v2.1.0
     networks:
@@ -104,7 +106,7 @@ services:
     networks:
       - modulo-demo
   error-mitigation-service:
-    image: planqk/error-mitigation-service:v0.0.1
+    image: planqk/error-mitigation-service:v0.1.0
     command: app.py
     ports:
       - "5071:5000"

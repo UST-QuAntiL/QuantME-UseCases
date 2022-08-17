@@ -81,7 +81,7 @@ myJson = JSON.stringify(myJson);
 //execution.setVariable("myJson",myJson);
 myJson =myJson;</camunda:script>
             </camunda:inputParameter>
-            <camunda:outputParameter name="counts">
+            <camunda:outputParameter name="mitigated_counts">
               <camunda:script scriptFormat="JavaScript">//${S(response)}
 
 var resp = connector.getVariable("response")
