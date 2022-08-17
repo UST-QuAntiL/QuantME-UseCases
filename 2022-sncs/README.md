@@ -104,7 +104,7 @@ Then, the following modal is displayed, comprising some information about the an
 
 ![Hybrid Loop Detection Modal](./docs/hybrid-loop-detection-modal.png)
 
-Press the ``Analyse Workflow`` button to start the detection of hybrid loops within the workflow, which could benefit from a hybrid runtime.
+Press the ``Analyze Workflow`` button to start the detection of hybrid loops within the workflow, which could benefit from a hybrid runtime.
 When the analysis finishes, the possible optimization candidates are visualized in the next modal:
 
 ![Workflow Rewrite Modal Candidate 1](./docs/workflow-rewrite-modal-1.png)
@@ -127,5 +127,37 @@ After clicking on the button, the following screen is displayed until the analys
 If the rewriting is successful, the color of the button is changed to green and the workflow is adapted in the background, as shown in the next figure:
 
 ![Workflow Rewrite Successful](./docs/workflow-rewrite-successful.png)
+
+Start the rewriting also for the other candidate, and wait until it completes.
+Then, close the modal, which shows the rewritten workflow model within the modeler:
+
+![Workflow After Rewrite](./docs/workflow-after-rewriting.png)
+
+The resulting workflow contains five service tasks.
+Thereby, three service tasks were not part of an optimization candidate and are unchanged.
+In contrast, all remaining tasks contained in the hybrid loops are replaced by two new service tasks invoking the corresponding hybrid programs.
+
+## Deploying the Required Services
+
+Next, the required services for the workflow execution can be deployed.
+For this, click on the ``Service Deployment`` button in the toolbar:
+
+![Service Deployment Overview](./docs/service-deployment-overview.png)
+
+The pop-up lists the IDs of all service tasks to which deployment models are attached, the name of the CSAR representing the deployment model, and the binding type of the service to deploy.
+All required services are deployed using the OpenTOSCA Container, a TOSCA-compliant deployment system.
+To trigger the upload of the CSARs to the OpenTOSCA Container, press the ``Upload CSARs`` button.
+The OpenTOSCA Container automatically generates a deployment plan for the different services, and analyzes if additional input data has to be requested from the user.
+Once the upload is finished, the required input parameters are displayed on the following screen:
+
+![Service Deployment Create Instances](./docs/service-deployment-overview-create-instances.png)
+
+All services for this use case are deployed as Docker containers in a local [Docker-in-Docker (dind)](https://hub.docker.com/_/docker) container.
+To upload the hybrid programs to Qiskit Runtime, an IBMQ access token is required, which can be retrieved from the [IBM Quantum Experience website](https://quantum-computing.ibm.com/).
+Furthermore, the URL to the IBMQ service to use (e.g., https://auth.quantum-computing.ibm.com/api), the IBMQ hub (e.g., ibm-q), the IBMQ group (e.g., open), and the IBMQ project (e.g., main) must be defined for all services accessing quantum computers using hybrid programs.
+In principle, different input parameters could be used for the various services.
+However, for the sake of simplicity, we utilize the same input parameters for all services.
+After adding the input parameters, click on the ``Deploy Services`` button, and wait until the deployment finishes.
+Then, the screen below is shown:
 
 TODO
