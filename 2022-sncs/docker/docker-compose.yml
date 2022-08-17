@@ -47,11 +47,14 @@ services:
     networks:
       - modulo-demo
   dind:
-    image: opentosca/dind:v1.0.0
+    image: docker:20.10-dind
     privileged: true
     environment:
-      - PORT=2375
-      - DOCKER_DAEMON_ARGS=--dns 8.8.8.8 --dns 8.8.4.4 -D
+      - DOCKER_TLS_CERTDIR=
+    ports:
+      - '2222:2375'
+      - '9990-9999:9990-9999'
+      - '9990-9999:9990-9999/udp'
     networks:
       - modulo-demo
   ### Qiskit Runtime Handler ###
