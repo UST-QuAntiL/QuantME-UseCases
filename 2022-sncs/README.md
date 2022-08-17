@@ -212,4 +212,8 @@ Switch back to the Camunda cockpit application to observe the token flow in the 
 
 ![Camunda Token Flow](./docs/camunda-cockpit-running-workflow.png)
 
+![Camunda Token Flow Instance](./docs/camunda-cockpit-running-workflow-instance.png)
+
+
+
 TODO
