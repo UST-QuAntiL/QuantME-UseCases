@@ -187,4 +187,16 @@ Click on ``Processes`` on the top to get a list of all deployed workflow models:
 
 ![Camunda Cockpit Workflow Overview](./docs/camunda-cockpit-workflow-models.png)
 
+Select the previously modeled and deployed workflow model by clicking on its name, which opens a screen where the workflow model is shown.
+In this screen, the token flow can be observed during workflow execution, i.e., it is visualized which activity of the workflow model is currently executed.
+Furthermore, the current values of the different variables in the workflow are displayed.
+The token flow, as well as the current variables, can also be visualized for the process view comprising the modeled workflow before rewriting.
+To execute the workflow, open another tab with the Camunda tasklist application by clicking on the top-right and selecting ``Tasklist``:
+
+![Camunda Tasklist](./docs/camunda-tasklist.png)
+
+To instantiate the workflow model, select ``Start process`` on the top-right and click on the name of the workflow in the pop-up menu.
+Next, the required input parameters for the instantiation are shown, which were defined in the start event form of the workflow:
+
+
 TODO
