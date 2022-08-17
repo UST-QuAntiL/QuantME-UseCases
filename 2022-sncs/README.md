@@ -64,4 +64,39 @@ npm run build
 
 Afterwards, the following screen should be displayed:
 
+![QuantME Transformation Framework](./docs/modeler-after-build.png)
+
+Open the example workflow model available [here](./workflow/analysis-and-rewrite-workflow.bpmn) using the QuantME Modeling and Transformation Framework.
+For this, click on ``File`` in the top-left corner, and afterwards, select the workflow model in the dialogue ``Open File...``.
+Then, the following screen is displayed:
+
+![Quantum Workflow in Modeler](./docs/quantum-workflow-in-modeler.png)
+
+The QuantME Modeling and Transformation Framework must be configured with the endpoints of the services for the deployment and the hybrid program generation.
+For this, click on ``Configuration`` in the toolbar, opening the config pop-up:
+
+![Quantum Workflow in Modeler](./docs/modeler-configuration.png)
+
+Please update the different configuration properties using the following values.
+Thereby, $IP has to be replaced with the IP-address of the Docker engine used for the setup described above:
+
+* ``BPMN`` tab:
+    * ``Camunda Engine Endpoint``: http://$IP:8080/engine-rest
+* ``OpenTOSCA`` tab:
+    * ``OpenTOSCA Endpoint``: http://$IP:1337/csars
+    * ``Winery Endpoint``: http://$IP:8093/winery
+* ``QRM Data`` tab:
+    * ``QRM Repository User``: UST-QuAntiL
+    * ``QRM Repository Name``: QuantME-UseCases
+    * ``QRM Repository Path``: 2022-sncs/qrms
+* ``Hybrid Runtimes`` tab:
+    * ``Qiskit Runtime Handler Endpoint``: http://$IP:8889
+    * ``Retrieve Intermediate Results``: Tick the checkbox
+
+In case you want to execute the workflow model without optimization, press the ``Transformation`` Button in the toolbar on the top to retrieve a standard-compliant BPMN workflow model.
+Then, directly go to the [Deploying the Required Services](#deploying-the-required-services) section.
+However, do *not* perform the transformation if you want to optimize the workflow, as this has to be done before the transformation step.
+
+## Analysis and Rewrite of Quantum Workflows
+
 TODO
