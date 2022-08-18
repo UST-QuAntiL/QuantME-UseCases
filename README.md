@@ -15,11 +15,11 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
 
 ### Springer Nature Computer Science 2022 - Prototype
 
-In this paper, we extend our [CLOSER 2022 paper](https://www.iaas.uni-stuttgart.de/publications/Weder2022_QuantumWorkflowRewrite.pdf) analyzing and rewritting quantum workflows to execute them more efficiently using hybrid runtimes by integrating a provenance approach.
-Thus, the use cases covers the analysis and rewritting of quantum workflows, while generating a provenance collector in addition to the hybrid programs.
+In this paper, we extend our [CLOSER 2022 paper](https://www.iaas.uni-stuttgart.de/publications/Weder2022_QuantumWorkflowRewrite.pdf), analyzing and rewriting quantum workflows to execute them more efficiently using hybrid runtimes, by integrating a provenance approach.
+Thus, the use case covers the analysis and rewriting of quantum workflows, while generating a provenance collector in addition to the hybrid programs.
 This provenance collector runs in the hybrid runtime and collects provenance data about the quantum computer, the classical hardware, and the running hybrid programs.
 The collected provenance data is used to instrument process views that are visualized in the Camunda engine.
-Hence, they allow the user to display the modeled and rewriten workflow, which eases monitoring and anylsis of quantum workflows.
+Hence, they allow the user to display the modeled and rewritten workflow, which eases monitoring and analysis of quantum workflows.
 An example workflow model, as well as detailed instructions on how to set up the required environment and perform the different steps from analysis, over rewriting, to monitoring using process views, can be found [here](2022-sncs).
 
 ### Electronics 2022 - Prototype
