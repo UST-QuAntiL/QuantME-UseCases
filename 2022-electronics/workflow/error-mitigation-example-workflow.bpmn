@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" id="Definitions_13b49ha" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.4.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" id="Definitions_13b49ha" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20220818">
   <bpmn:process id="error-mitigation-example-workflow" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:extensionElements>
@@ -104,297 +104,12 @@
       <bpmn:outgoing>SequenceFlow_0e99b31</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_12zwgtd" sourceRef="Task_1kjq7b0" targetRef="Task_12f6kkt" />
-    <bpmn:serviceTask id="Task_1kjq7b0" name="Mitigate Readout Errors">
-      <bpmn:extensionElements>
-        <camunda:connector>
-          <camunda:inputOutput>
-            <camunda:inputParameter name="method">POST</camunda:inputParameter>
-            <camunda:inputParameter name="headers">
-              <camunda:map>
-                <camunda:entry key="Accept">application/json</camunda:entry>
-                <camunda:entry key="Content-Type">application/json</camunda:entry>
-              </camunda:map>
-            </camunda:inputParameter>
-            <camunda:inputParameter name="url">http://error-mitigation-service:5000/rem/</camunda:inputParameter>
-            <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript">//TODO
-var qpu = execution.getVariable("ibmq_backend");
-var token = execution.getVariable("ibmq_token");
-var counts = execution.getVariable("counts");
-counts = S(counts);
-counts = counts.elements();
-print(counts);
-
-
-var qubits = [];
-//counts.forEach(dict =&gt; qubits.push(Array.from(Array(Object.keys(dict).length).keys())));
-//print(counts[0]['10010']);
-//counts.forEach(dict =&gt; qubits.push(Array.from(Array(Object.keys(JSON.parse(dict)).length).keys())));
-//counts.forEach(dict =&gt; print(dict));
-//for (let i = 0; i &lt; counts.length; i++) {
-//	print(counts[i])
-//}
-
-function generateArray(length){
-	var array = []
-	var iterator = new java.util.Iterator({
-	  i: 0,
-	  hasNext: function() {
-		return this.i &lt; length;
-	  },
-	  next: function() {
-		return this.i++;
-	  }
-	});
-
-	print(iterator instanceof Java.type("java.util.Iterator"));
-	while (iterator.hasNext()) {
-	  value = iterator.next();
-	  array.push(value);
-	}
-	print(array)
-	return array
-}	
-
-for each (var el in counts) print(Object.keys(JSON.parse(el))[0].length);
-for each (var el in counts) qubits.push(generateArray(Object.keys(JSON.parse(el))[0].length)); 
-
-print(qubits);
-
-
-
-counts_parsed =[]
-for each (var el in counts) counts_parsed.push(JSON.parse(el));
-//counts = counts[0];
-//counts = JSON.parse(counts);
-//print(counts['10010']);
-print(counts_parsed)
-
-
-var myJson = {"counts": counts_parsed,
-"mitigation_method":"inversion","cm_gen_method": "standard", "qpu": "ibmq_lima", "qubits": qubits, "max_age":100, 
-"credentials":{
-    "token": token
-    
-    },
-"provider": "IBM"};
-
-myJson = JSON.stringify(myJson);
-//execution.setVariable("myJson",myJson);
-myJson =myJson;</camunda:script>
-            </camunda:inputParameter>
-            <camunda:outputParameter name="counts">
-              <camunda:script scriptFormat="JavaScript">//${S(response)}
-
-var resp = connector.getVariable("response")
-print('resp'+ resp);
-var result = S(resp);
-print('result ' + result );
-result;</camunda:script>
-            </camunda:outputParameter>
-          </camunda:inputOutput>
-          <camunda:connectorId>http-connector</camunda:connectorId>
-        </camunda:connector>
-      </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_15qw95r</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_12zwgtd</bpmn:outgoing>
-    </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_1qu86m2" sourceRef="Task_09pn9sk" targetRef="Task_1mspa9s" />
-    <bpmn:serviceTask id="Task_09pn9sk" name="Mitigate Readout Errors">
-      <bpmn:extensionElements>
-        <camunda:connector>
-          <camunda:inputOutput>
-            <camunda:inputParameter name="method">POST</camunda:inputParameter>
-            <camunda:inputParameter name="headers">
-              <camunda:map>
-                <camunda:entry key="Accept">application/json</camunda:entry>
-                <camunda:entry key="Content-Type">application/json</camunda:entry>
-              </camunda:map>
-            </camunda:inputParameter>
-            <camunda:inputParameter name="url">http://error-mitigation-service:5000/rem/</camunda:inputParameter>
-            <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript">//TODO
-var qpu = execution.getVariable("ibmq_backend");
-var token = execution.getVariable("ibmq_token");
-var counts = execution.getVariable("counts");
-counts = S(counts);
-counts = counts.elements();
-print(counts);
-
-
-var qubits = [];
-//counts.forEach(dict =&gt; qubits.push(Array.from(Array(Object.keys(dict).length).keys())));
-//print(counts[0]['10010']);
-//counts.forEach(dict =&gt; qubits.push(Array.from(Array(Object.keys(JSON.parse(dict)).length).keys())));
-//counts.forEach(dict =&gt; print(dict));
-//for (let i = 0; i &lt; counts.length; i++) {
-//	print(counts[i])
-//}
-
-function generateArray(length){
-	var array = []
-	var iterator = new java.util.Iterator({
-	  i: 0,
-	  hasNext: function() {
-		return this.i &lt; length;
-	  },
-	  next: function() {
-		return this.i++;
-	  }
-	});
-
-	print(iterator instanceof Java.type("java.util.Iterator"));
-	while (iterator.hasNext()) {
-	  value = iterator.next();
-	  array.push(value);
-	}
-	print(array)
-	return array
-}	
-
-for each (var el in counts) print(Object.keys(JSON.parse(el))[0].length);
-for each (var el in counts) qubits.push(generateArray(Object.keys(JSON.parse(el))[0].length)); 
-
-print(qubits);
-
-
-
-counts_parsed =[]
-for each (var el in counts) counts_parsed.push(JSON.parse(el));
-//counts = counts[0];
-//counts = JSON.parse(counts);
-//print(counts['10010']);
-print(counts_parsed)
-
-
-var myJson = {"counts": counts_parsed,
-"mitigation_method":"inversion","cm_gen_method": "standard", "qpu": "ibmq_lima", "qubits": qubits, "max_age":100, 
-"credentials":{
-    "token": token
-    
-    },
-"provider": "IBM"};
-
-myJson = JSON.stringify(myJson);
-//execution.setVariable("myJson",myJson);
-myJson =myJson;</camunda:script>
-            </camunda:inputParameter>
-            <camunda:outputParameter name="counts">
-              <camunda:script scriptFormat="JavaScript">//${S(response)}
-
-var resp = connector.getVariable("response")
-print('resp'+ resp);
-var result = S(resp);
-print('result ' + result );
-result;</camunda:script>
-            </camunda:outputParameter>
-          </camunda:inputOutput>
-          <camunda:connectorId>http-connector</camunda:connectorId>
-        </camunda:connector>
-      </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_08ed0ea</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1qu86m2</bpmn:outgoing>
-    </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_0nap8sg" sourceRef="Task_0jlij88" targetRef="Task_0u3ak2n" />
     <bpmn:sequenceFlow id="SequenceFlow_14bd1xg" sourceRef="Task_0u3ak2n" targetRef="Task_06q9rh6" />
     <bpmn:serviceTask id="Task_0u3ak2n" name="Plot Evaluation Results" quantme:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpull/EvaluationAnalyzerService/?csar">
       <bpmn:incoming>SequenceFlow_0nap8sg</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_14bd1xg</bpmn:outgoing>
-    </bpmn:serviceTask>
-    <bpmn:serviceTask id="Task_0jlij88" name="Mitigate Readout Errors">
-      <bpmn:extensionElements>
-        <camunda:connector>
-          <camunda:inputOutput>
-            <camunda:inputParameter name="method">POST</camunda:inputParameter>
-            <camunda:inputParameter name="headers">
-              <camunda:map>
-                <camunda:entry key="Accept">application/json</camunda:entry>
-                <camunda:entry key="Content-Type">application/json</camunda:entry>
-              </camunda:map>
-            </camunda:inputParameter>
-            <camunda:inputParameter name="url">http://error-mitigation-service:5000/rem/</camunda:inputParameter>
-            <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript">//TODO
-var qpu = execution.getVariable("ibmq_backend");
-var token = execution.getVariable("ibmq_token");
-var counts = execution.getVariable("counts");
-counts = S(counts);
-counts = counts.elements();
-print(counts);
-
-
-var qubits = [];
-//counts.forEach(dict =&gt; qubits.push(Array.from(Array(Object.keys(dict).length).keys())));
-//print(counts[0]['10010']);
-//counts.forEach(dict =&gt; qubits.push(Array.from(Array(Object.keys(JSON.parse(dict)).length).keys())));
-//counts.forEach(dict =&gt; print(dict));
-//for (let i = 0; i &lt; counts.length; i++) {
-//	print(counts[i])
-//}
-
-function generateArray(length){
-	var array = []
-	var iterator = new java.util.Iterator({
-	  i: 0,
-	  hasNext: function() {
-		return this.i &lt; length;
-	  },
-	  next: function() {
-		return this.i++;
-	  }
-	});
-
-	print(iterator instanceof Java.type("java.util.Iterator"));
-	while (iterator.hasNext()) {
-	  value = iterator.next();
-	  array.push(value);
-	}
-	print(array)
-	return array
-}	
-
-for each (var el in counts) print(Object.keys(JSON.parse(el))[0].length);
-for each (var el in counts) qubits.push(generateArray(Object.keys(JSON.parse(el))[0].length)); 
-
-print(qubits);
-
-
-
-counts_parsed =[]
-for each (var el in counts) counts_parsed.push(JSON.parse(el));
-//counts = counts[0];
-//counts = JSON.parse(counts);
-//print(counts['10010']);
-print(counts_parsed)
-
-
-var myJson = {"counts": counts_parsed,
-"mitigation_method":"inversion","cm_gen_method": "standard", "qpu": "ibmq_lima", "qubits": qubits, "max_age":100, 
-"credentials":{
-    "token": token
-    
-    },
-"provider": "IBM"};
-
-myJson = JSON.stringify(myJson);
-//execution.setVariable("myJson",myJson);
-myJson =myJson;</camunda:script>
-            </camunda:inputParameter>
-            <camunda:outputParameter name="counts">
-              <camunda:script scriptFormat="JavaScript">//${S(response)}
-
-var resp = connector.getVariable("response")
-print('resp'+ resp);
-var result = S(resp);
-print('result ' + result );
-result;</camunda:script>
-            </camunda:outputParameter>
-          </camunda:inputOutput>
-          <camunda:connectorId>http-connector</camunda:connectorId>
-        </camunda:connector>
-      </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_03zrxe7</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0nap8sg</bpmn:outgoing>
     </bpmn:serviceTask>
     <quantme:quantumCircuitExecutionTask id="Task_1ptc5xw" name="Execute Qiskit" provider="ibmq" qpu="ibmq_qasm_simulator" shots="1000" programmingLanguage="qiskit">
       <bpmn:extensionElements>
@@ -416,6 +131,18 @@ result;</camunda:script>
       <bpmn:incoming>SequenceFlow_0s6m835</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_15qw95r</bpmn:outgoing>
     </quantme:quantumCircuitExecutionTask>
+    <quantme:readoutErrorMitigationTask id="Task_1kjq7b0" name="Mitigate Readout Errors" provider="ibm" qpu="ibmq_lima" calibrationMethod="fullMatrix" mitigationMethod="matrixInversion" maxAge="600">
+      <bpmn:incoming>SequenceFlow_15qw95r</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_12zwgtd</bpmn:outgoing>
+    </quantme:readoutErrorMitigationTask>
+    <quantme:readoutErrorMitigationTask id="Task_09pn9sk" name="Mitigate Readout Errors" provider="ibm" qpu="ibmq_lima" calibrationMethod="fullMatrix" mitigationMethod="matrixInversion" maxAge="600">
+      <bpmn:incoming>SequenceFlow_08ed0ea</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1qu86m2</bpmn:outgoing>
+    </quantme:readoutErrorMitigationTask>
+    <quantme:readoutErrorMitigationTask id="Task_0jlij88" name="Mitigate Readout Errors" provider="ibm" qpu="ibmq_lima" calibrationMethod="fullMatrix" mitigationMethod="matrixInversion" maxAge="600">
+      <bpmn:incoming>SequenceFlow_03zrxe7</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0nap8sg</bpmn:outgoing>
+    </quantme:readoutErrorMitigationTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="error-mitigation-example-workflow">
@@ -567,23 +294,23 @@ result;</camunda:script>
       <bpmndi:BPMNShape id="ServiceTask_123o3cs_di" bpmnElement="Task_12f6kkt">
         <dc:Bounds x="750" y="230" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1xjx0vs_di" bpmnElement="Task_1kjq7b0">
-        <dc:Bounds x="600" y="230" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_1nnf4kc_di" bpmnElement="Task_09pn9sk">
-        <dc:Bounds x="1600" y="230" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_1beb1rb_di" bpmnElement="Task_0u3ak2n">
         <dc:Bounds x="2290" y="230" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="ServiceTask_0q8ovnq_di" bpmnElement="Task_0jlij88">
-        <dc:Bounds x="2140" y="230" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="QuantumCircuitExecutionTask_1nb4pt9_di" bpmnElement="Task_1ptc5xw">
         <dc:Bounds x="1450" y="230" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="QuantumCircuitExecutionTask_08bycco_di" bpmnElement="Task_0qfiqux">
         <dc:Bounds x="460" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ReadoutErrorMitigationTask_1l8wqln_di" bpmnElement="Task_1kjq7b0">
+        <dc:Bounds x="600" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ReadoutErrorMitigationTask_14ft2u9_di" bpmnElement="Task_09pn9sk">
+        <dc:Bounds x="1600" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ReadoutErrorMitigationTask_18b913b_di" bpmnElement="Task_0jlij88">
+        <dc:Bounds x="2140" y="230" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

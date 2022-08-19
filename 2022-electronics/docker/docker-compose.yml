@@ -5,6 +5,7 @@ volumes:
   data1-2:
   data2-1:
   data2-2:
+  exec_data:
 
 # Settings and configurations that are common for all containers
 x-minio-common: &minio-common
@@ -75,8 +76,8 @@ services:
     environment:
       - PORT=2375
       # University of Stuttgart internal DNS settings
-      - DOCKER_DAEMON_ARGS=--dns 129.69.211.1 --dns 129.69.215.5 -D
-     # - DOCKER_DAEMON_ARGS=--dns 8.8.8.8 --dns 8.8.4.4 -D
+     # - DOCKER_DAEMON_ARGS=--dns 129.69.211.1 --dns 129.69.215.5 -D
+      - DOCKER_DAEMON_ARGS=--dns 8.8.8.8 --dns 8.8.4.4 -D
     networks:
       - modulo-demo
   ### Error-Mitigation Service ###
@@ -106,7 +107,7 @@ services:
     networks:
       - modulo-demo
   error-mitigation-service:
-    image: planqk/error-mitigation-service:v0.1.0
+    image: planqk/error-mitigation-service:v0.2.0
     command: app.py
     ports:
       - "5071:5000"
@@ -116,6 +117,50 @@ services:
       - nginx
     networks:
       - modulo-demo
+
+  redis:
+    image: redis:latest
+    command: --port 5040
+    ports:
+      - "5040:5040"
+    networks:
+      - modulo-demo
+
+  qiskit-service:
+    image: planqk/qiskit-service:latest
+    command: sh /app/startup.sh
+    ports:
+      - "5013:5013"
+    environment:
+      - REDIS_URL=redis://redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    networks:
+      - modulo-demo
+
+  qiskit-rq-worker:
+    image: planqk/qiskit-service:latest
+    command: rq worker --url redis://redis:5040 qiskit-service_execute
+    environment:
+      - REDIS_URL=redis://redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    depends_on:
+      - redis
+    deploy:
+      replicas: 2
+    networks:
+          - modulo-demo
+
+  
+  rq-dashboard:
+    image: eoranged/rq-dashboard
+    ports:
+      - "9181:9181"
+    environment:
+      - RQ_DASHBOARD_REDIS_URL=redis://redis:5040
 
 networks:
   modulo-demo:
