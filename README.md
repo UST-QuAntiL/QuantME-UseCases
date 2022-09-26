@@ -25,7 +25,7 @@ An example workflow model, as well as detailed instructions on how to set up the
 
 ### Electronics 2022 - Prototype
 
-In this paper, we show how to automate the configuration of Readout Error Mitigation (REM) methods using QuantME. 
+In this [paper](https://www.mdpi.com/2079-9292/11/19/2983/pdf), we show how to automate the configuration of Readout Error Mitigation (REM) methods using QuantME. 
 We analyze the literature for current state-of-the-art REM methods and derive general and method-specific configuration requirements.
 To make the error-prone and time-consuming process of configuring REM more efficient, we present an automation approach based on QuantME.
 To demonstrate its functionality, we implemented a case study from the quantum humanities domain, performing clustering and classification by means of quantum algorithms.
@@ -77,6 +77,10 @@ For this, we present three workflow models implementing Simon's algorithm, the B
 The corresponding workflow models can be found [here](2020-ucc).
 
 ## Learn More
+
+* Beisel, Martin; Barzen, Johanna; Leymann, Frank; Truger, Felix; Weder, Benjamin; Yussupov, Vladimir:
+  [**Configurable Readout Error Mitigation in Quantum Workflows**](https://www.mdpi.com/2079-9292/11/19/2983/pdf).
+  In: Electronics 2022, 11(19), 2983
 
 * Vietz, Daniel; Barzen, Johanna; Leymann, Frank; Weder, Benjamin:
   **Quantum-Classical Splitting of Scripts for the Generation of Quantum Workflows**
