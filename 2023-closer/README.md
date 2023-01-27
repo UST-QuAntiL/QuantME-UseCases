@@ -1,10 +1,9 @@
 # CLOSER 2023 Prototype
 
-Variational quantum algorithms (VQAs) comprise various complex reoccurring tasks that are not part of the original set of [QuantME modeling constructs](https://www.iaas.uni-stuttgart.de/publications/Weder2020_QuantumWorkflows.pdf), e.g., parameter optimization or objective evaluation.
+Variational Quantum Algorithms (VQAs) comprise various complex reoccurring tasks that are not part of the original set of [QuantME modeling constructs](https://www.iaas.uni-stuttgart.de/publications/Weder2020_QuantumWorkflows.pdf), e.g., parameter optimization or objective function evaluation.
 As the lack of modeling support for these tasks complicates the process of modeling VQAs in workflows, we developed an extension for QuantME that introduces a new set of modeling constructs specifically tailored for VQAs.
 
 In the following sections, we showcase how these new QuantME4VQA modeling constructs can be used to model and execute an exemplary VQA that solves the Maximum Cut (MaxCut) problem using the [Quantum Approximate Optimization Algorithm (QAOA)](https://arxiv.org/pdf/1411.4028.pdf).
-
 
 The use case utilizes the QuantME Transformation Framework and Quokka:
 
@@ -53,7 +52,7 @@ Then, the following screen is displayed:
 
 ![Quantum Workflow in Modeler](./docs/quantum-workflow-in-modeler.png)
 
-The QuantME Modeling and Transformation Framework must be configured with the endpoints of the services for the deployment and the QRM repository.
+The QuantME Modeling and Transformation Framework must be configured with the endpoints of the workflow engine and the QRM repository.
 For this, click on ``Configuration`` in the toolbar, opening the config pop-up:
 
 ![Quantum Workflow in Modeler](./docs/modeler-configuration.png)
@@ -71,25 +70,29 @@ Thereby, $IP has to be replaced with the IP-address of the Docker engine used fo
 
 ### Configuring, Transforming and Executing the Quantum Workflow
 
-The imported workflows starts of with a warm-starting task, which is used to approximate a solution that is incorporated into the quantum circuit to facilitate the serach for the optimal solution.
+The imported workflows starts of with a warm-starting task, which is used to approximate a solution that is incorporated into the quantum circuit to facilitate the search for the optimal solution.
 Next, it generates a parameterized QAOA circuit for MaxCut.
-This circuit, is then cut into smaller sub-circuits by the circuit-cutting sub-process, which are subsequently executed.
-Afterwards the results of the sub-circuits are combined to construct the original circuit's result.
+This circuit, is then cut into smaller sub-circuits by the circuit cutting sub-process, which are subsequently executed.
+Afterwards, the results of the sub-circuits are combined to construct the original circuit's result.
 This result is evaluated and used to optimize the QAOA parameters, starting another iteration of the loop.
 Once the optimization is converged the result is returned to the user for analysis.
 
-QuantME4VQA enables the configuration of the warm-starting, optimization and circuit-cutting via the properties panel.
+QuantME4VQA enables the configuration of the warm-starting, optimization and circuit-cutting via the properties panel (see on the right).
+
 ![QuantME4VQA Properties](./docs/modeler-properties.png)
 
 Before executing the workflow it has to be transformed into a BPMN standard-compliant workflow.
 Thus, click the ``Transformation`` button.
 Afterwards, all quantum-specific tasks are replaced with standard-compliant BPMN modeling elements.
+
 ![QuantME Transformation Framework](./docs/modeler-transformation.png)
 
 Next, deploy the workflow by clicking the ``Workflow Deployment`` button.
-Once it is successfully deployed, open the UI of the Camunda BPMN engine via: ``$PUBLIC_HOSTNAME:8080/camunda``
+Once it is successfully deployed, open the UI of the Camunda BPMN engine via: ``$IP:8080/camunda``
 
-First, create an account in the Camunda engine and log in. Then, the following screen is displayed:
+First, create an account in the Camunda engine and log in. 
+Then, the following screen is displayed:
+
 ![Camunda Loginscreen](./docs/camunda-loginscreen.png)
 
 Click on the home icon in the top-right corner and select ``Tasklist``.
@@ -97,13 +100,14 @@ Click on the home icon in the top-right corner and select ``Tasklist``.
 To instantiate the workflow model, click on ``Start process`` on the top-right and select the workflow in the pop-up menu.
 Next, modify the input options according to your requirements and subsequently press ``Start``.
 If the quantum circuits shall be run on a quantum device or a simulated device noise model is used, valid IBMQ credentials giving access to the device must be provided.
+
 ![Camunda Start Process](./docs/camunda-startprocess.png)
 
 The UI displays a notification at the bottom-right that the workflow instance was successfully started.
 
 Afterwards, once more click on the home icon on the top-right and select ``Cockpit``.
 Click on the ``Running Process Instance``, then select the started workflow, and afterwards click on the workflow ID.
-Now the workflow's token flow, and the changing parameters can be observed.
+Now the workflow's token flow, and the changing variables can be observed.
 To see the current state of the workflow instance refresh the page.
 ![Camunda Start Process](./docs/camunda-wfoverview.png)
 
