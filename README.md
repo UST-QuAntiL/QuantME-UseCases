@@ -14,6 +14,14 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
 * [AWS Braket Hybrid Jobs Handler](https://github.com/UST-QuAntiL/amazon-braket-hybrid-jobs-handler): A service generating AWS Braket Hybrid Jobs programs for hybrid loops based on corresponding workflow fragments detected by the QuantME Modeling and Transformation Framework.
 * [Script Splitter](https://github.com/UST-QuAntiL/qscript-splitter): A service analyzing Python scripts to detect quantum and classical parts, which are then orchestrated by a generated workflow model.
 
+### CLOSER 2023 - Prototype
+
+In this paper, we extend QuantME to facilitate the modeling of Variational Quantum Algorithms (VQAs) as quantum workflows.
+To this end, we introduce QuantME4VQA comprising new task types, data objects, and a comprehensible graphical notation.
+Furthermore, we ensure interoperability and portability by extending the QuantME transformation method to enable transforming all new modeling constructs to native modeling constructs of the used workflow language.
+To demonstrate its functionality, we implemented a case study solving the Maximum Cut (MaxCut) problem using the Quantum Approximate Optimization Algorithm (QAOA).
+The corresponding workflow models and instructions on how to set up the environment and execute the application can be found [here](2023-closer).
+
 ### Springer Nature Computer Science 2022 - Prototype
 
 In this paper, we extend our [CLOSER 2022 paper](https://www.iaas.uni-stuttgart.de/publications/Weder2022_QuantumWorkflowRewrite.pdf), analyzing and rewriting quantum workflows to execute them more efficiently using hybrid runtimes, by integrating a provenance approach.
