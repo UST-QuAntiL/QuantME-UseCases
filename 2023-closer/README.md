@@ -68,14 +68,14 @@ Thereby, $IP has to be replaced with the IP-address of the Docker engine used fo
     * ``QRM Repository Path``: 2023-closer/qrms
 
 
-### Configuring, Transforming and Executing the Quantum Workflow
+### Configuring, Transforming, and Executing the Quantum Workflow
 
 The imported workflows starts of with a warm-starting task, which is used to approximate a solution that is incorporated into the quantum circuit to facilitate the search for the optimal solution.
 Next, it generates a parameterized QAOA circuit for MaxCut.
 This circuit, is then cut into smaller sub-circuits by the circuit cutting sub-process, which are subsequently executed.
 Afterwards, the results of the sub-circuits are combined to construct the original circuit's result.
 This result is evaluated and used to optimize the QAOA parameters, starting another iteration of the loop.
-Once the optimization is converged the result is returned to the user for analysis.
+Once the optimization is converged, the result is returned to the user for analysis.
 
 QuantME4VQA enables the configuration of the warm-starting, optimization and circuit-cutting via the properties panel (see on the right).
 
@@ -104,22 +104,23 @@ If the quantum circuits shall be run on a quantum device or a simulated device n
 ![Camunda Start Process](./docs/camunda-startprocess.png)
 
 The UI displays a notification at the bottom-right that the workflow instance was successfully started.
+Afterwards, once more, click on the home icon on the top-right and select Cockpit. 
+Click on the Running Process Instance, select the started workflow, and then click on the workflow ID. 
+Now the workflow's token flow and the changing variables can be observed. To see the current state of the workflow instance refresh the page.
 
-Afterwards, once more click on the home icon on the top-right and select ``Cockpit``.
-Click on the ``Running Process Instance``, then select the started workflow, and afterwards click on the workflow ID.
-Now the workflow's token flow, and the changing variables can be observed.
-To see the current state of the workflow instance refresh the page.
 ![Camunda Start Process](./docs/camunda-wfoverview.png)
 
 Wait until the token reaches the final user task in the workflow, as depicted below.
-This might take some time, depending on the circuit size, the execution parameters, and the utilization of the selected QPU.
+This might take some time, depending on the circuit size, the execution parameters, and the utilization of the selected quantum device or simulator.
+
 ![Camunda Start Process](./docs/camunda-processfinished.png)
 
 Afterwards, switch to the Camunda Tasklist via the home menu and click on ``Add a simple filter`` on the left.
 Now, the task object for the human task should be visible in the task list. Click on the task object and then on the ``Claim`` button to get the URL for the plot of the execution result.
+
 ![Camunda Analyze Results](./docs/camunda-analyzeresults.png)
 
-Finally, click the ``Complete`` button to finish the human task, and as it is the last activity in the workflow to terminate the workflow instance.
+Finally, click the ``Complete`` button to finish the human task, and as it is the last activity in the workflow, to terminate the workflow instance.
 
 ## Disclaimer of Warranty
 Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.
