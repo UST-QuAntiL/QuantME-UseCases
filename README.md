@@ -16,9 +16,9 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
 
 ### CLOSER 2023 - Prototype
 
-In this paper, we extend QuantME to facilitate the modeling of VQAs as quantum workflows.
+In this paper, we extend QuantME to facilitate the modeling of Variational Quantum Algorithms (VQAs) as quantum workflows.
 To this end, we introduce QuantME4VQA comprising new task types, data objects, and a comprehensible graphical notation.
-Furthermore, we ensure interoperability and portability by extending the QuantME transformation method to enable transforming all new modeling constructs to native modeling construct of the used workflow language.
+Furthermore, we ensure interoperability and portability by extending the QuantME transformation method to enable transforming all new modeling constructs to native modeling constructs of the used workflow language.
 To demonstrate its functionality, we implemented a case study solving the Maximum Cut (MaxCut) problem using the Quantum Approximate Optimization Algorithm (QAOA).
 The corresponding workflow models and instructions on how to set up the environment and execute the application can be found [here](2023-closer).
 
