@@ -11,7 +11,7 @@ The use case utilizes the QuantME Transformation Framework and Quokka:
 * [QuantME Modeling and Transformation Framework](https://github.com/UST-QuAntiL/QuantME-TransformationFramework): A graphical BPMN modeler to define quantum workflows, as well as analyzing and rewriting them for the usage of hybrid runtimes.
 * [Quokka](https://github.com/UST-QuAntiL/Quokka): A microservice ecosystem enabling a service-based execution of quantum algorithms.
 
-## Setting up the MODULO Framework
+## Setup
 
 First, we will discuss the steps required to set up the different components.
 All components except the QuantME Modeling and Transformation Framework, providing the graphical BPMN modeler, are available via Docker.
@@ -69,11 +69,17 @@ Thereby, $IP has to be replaced with the IP-address of the Docker engine used fo
     * ``QRM Repository Path``: 2023-closer/qrms
 
 
-In case you want to execute the workflow model without optimization, press the ``Transformation`` Button in the toolbar on the top to retrieve a standard-compliant BPMN workflow model.
-Then, directly go to the [Deploying the Required Services](#deploying-the-required-services) section.
-However, do *not* perform the transformation if you want to optimize the workflow, as this has to be done before the transformation step.
+### Configuring, Transforming and Executing the Quantum Workflow
 
-### Transforming and Executing the Quantum Workflow
+The imported workflows starts of with a warm-starting task, which is used to approximate a solution that is incorporated into the quantum circuit to facilitate the serach for the optimal solution.
+Next, it generates a parameterized QAOA circuit for MaxCut.
+This circuit, is then cut into smaller sub-circuits by the circuit-cutting sub-process, which are subsequently executed.
+Afterwards the results of the sub-circuits are combined to construct the original circuit's result.
+This result is evaluated and used to optimize the QAOA parameters, starting another iteration of the loop.
+Once the optimization is converged the result is returned to the user for analysis.
+
+QuantME4VQA enables the configuration of the warm-starting, optimization and circuit-cutting via the properties panel.
+![QuantME4VQA Properties](./docs/modeler-properties.png)
 
 Before executing the workflow it has to be transformed into a BPMN standard-compliant workflow.
 Thus, click the ``Transformation`` button.
