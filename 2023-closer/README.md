@@ -46,7 +46,7 @@ Afterwards, the following screen should be displayed:
 
 ![QuantME Transformation Framework](./docs/modeler-after-build.png)
 
-Open the example workflow model available [here](./workflow/analysis-and-rewrite-workflow.bpmn) using the QuantME Modeling and Transformation Framework.
+Open the example workflow model available [here](./workflow/workflow_quantme4vqa_case_study.bpmn) using the QuantME Modeling and Transformation Framework.
 For this, click on ``File`` in the top-left corner, and afterwards, select the workflow model in the dialogue ``Open File...``.
 Then, the following screen is displayed:
 
