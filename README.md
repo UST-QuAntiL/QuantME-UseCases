@@ -24,7 +24,7 @@ The corresponding workflow models and instructions on how to set up the environm
 
 ### Springer Nature Computer Science 2022 - Prototype
 
-In this paper, we extend our [CLOSER 2022 paper](https://www.iaas.uni-stuttgart.de/publications/Weder2022_QuantumWorkflowRewrite.pdf), analyzing and rewriting quantum workflows to execute them more efficiently using hybrid runtimes, by integrating a provenance approach.
+In this [paper](https://link.springer.com/content/pdf/10.1007/s42979-022-01625-9.pdf), we extend our [CLOSER 2022 paper](https://www.iaas.uni-stuttgart.de/publications/Weder2022_QuantumWorkflowRewrite.pdf), analyzing and rewriting quantum workflows to execute them more efficiently using hybrid runtimes, by integrating a provenance approach.
 Thus, the use case covers the analysis and rewriting of quantum workflows, while generating a provenance collector in addition to the hybrid programs.
 This provenance collector runs in the hybrid runtime and collects provenance data about the quantum computer, the classical hardware, and the running hybrid programs.
 The collected provenance data is used to instrument process views that are visualized in the Camunda engine.
@@ -40,6 +40,7 @@ To demonstrate its functionality, we implemented a case study from the quantum h
 The corresponding workflow models and instructions on how to set up the environment and execute the application can be found [here](2022-electronics).
 
 ### EDOC 2022 - Prototype
+
 We introduce an approach that generates workflow models from existing script-based quantum implementations.
 Our approach first splits the script-based implementations into their quantum and classical parts.
 These parts are then orchestrated by a generated workflow model that resembles the original execution order of the script and ensures correct data flow between them.
@@ -86,33 +87,41 @@ The corresponding workflow models can be found [here](2020-ucc).
 
 ## Learn More
 
+* Beisel, Martin; Barzen, Johanna; Bechtold, Marvin; Leymann, Frank; Truger, Felix; Weder, Benjamin:
+  QuantME4VQA: Modeling and Executing Variational Quantum Algorithms using Workflows.
+  In: Proceedings of the 13th International Conference on Cloud Computing and Services Science (CLOSER 2023), SciTePress, 2023
+
+* Weder, Benjamin; Barzen, Johanna; Beisel, Martin; Leymann, Frank:
+  [**Provenance‑Preserving Analysis and Rewrite of Quantum Workfows for Hybrid Quantum Algorithms**](https://link.springer.com/content/pdf/10.1007/s42979-022-01625-9.pdf).
+  In: SN Computer Science. Vol. 4(233), Springer, 2023
+
 * Beisel, Martin; Barzen, Johanna; Leymann, Frank; Truger, Felix; Weder, Benjamin; Yussupov, Vladimir:
   [**Configurable Readout Error Mitigation in Quantum Workflows**](https://www.mdpi.com/2079-9292/11/19/2983/pdf).
-  In: Electronics 2022, 11(19), 2983
+  In: Electronics. Vol. 11(19), MDPI, 2022
 
 * Vietz, Daniel; Barzen, Johanna; Leymann, Frank; Weder, Benjamin:
   [**Quantum-Classical Splitting of Scripts for the Generation of Quantum Workflows**](https://link.springer.com/chapter/10.1007/978-3-031-17604-3_15)
-  In: Proceedings of the 26th International Enterprise Distributed Object Computing Conference (EDOC 2022)
+  In: Proceedings of the 26th International Enterprise Distributed Object Computing Conference (EDOC 2022), Springer, 2022
 
 * Weder, Benjamin; Barzen, Johanna; Beisel, Martin; Leymann, Frank:
   [**Analysis and Rewrite of Quantum Workflows: Improving the Execution of Hybrid Quantum Algorithms**](https://www.iaas.uni-stuttgart.de/publications/Weder2022_QuantumWorkflowRewrite.pdf).
-  In: Proceedings of the 12th International Conference on Cloud Computing and Services Science (CLOSER 2022)
+  In: Proceedings of the 12th International Conference on Cloud Computing and Services Science (CLOSER 2022), SciTePress, 2022
 
 * Weder, Benjamin; Barzen, Johanna; Leymann, Frank:
   [**MODULO: Modeling, Transformation, and Deployment of Quantum Workflows**](https://www.iaas.uni-stuttgart.de/publications/Weder2021_MODULO.pdf).
-  In: Proceedings of the 25th International Enterprise Distributed Object Computing Workshop (EDOCW 2021)
+  In: Proceedings of the 25th International Enterprise Distributed Object Computing Workshop (EDOCW 2021), IEEE, 2021
 
 * Weder, Benjamin; Barzen, Johanna; Leymann, Frank; Zimmermann, Michael:
   [**Hybrid Quantum Applications Need Two Orchestrations in Superposition: A Software Architecture Perspective**](https://www.iaas.uni-stuttgart.de/publications/Weder2021_OrchestrationsInSuperposition.pdf).
-  In: Proceedings of the 18th IEEE International Conference on Web Services (ICWS 2021)
+  In: Proceedings of the 18th IEEE International Conference on Web Services (ICWS 2021), IEEE, 2021
 
 * Weder, Benjamin; Barzen, Johanna; Leymann, Frank; Salm, Marie:
   [**Automated Quantum Hardware Selection for Quantum Workflows**](https://www.mdpi.com/2079-9292/10/8/984/pdf).
-  In: Electronics 2021, 10(8), 984
+  In: Electronics. Vol. 10(8), MDPI, 2021
 
 * Weder, Benjamin; Breitenbücher, Uwe; Leymann, Frank; Wild, Karoline:
   [**Integrating Quantum Computing into Workflow Modeling and Execution**](https://www.iaas.uni-stuttgart.de/publications/Weder2020_QuantumWorkflows.pdf).
-  In: Proceedings of the 13th IEEE/ACM International Conference on Utility and Cloud Computing (UCC 2020)
+  In: Proceedings of the 13th IEEE/ACM International Conference on Utility and Cloud Computing (UCC 2020), IEEE, 2020
 
 ## Disclaimer of Warranty
 
