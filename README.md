@@ -16,7 +16,7 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
 
 ### CLOSER 2023 - Prototype
 
-In this paper, we extend QuantME to facilitate the modeling of Variational Quantum Algorithms (VQAs) as quantum workflows.
+In this [paper](https://www.iaas.uni-stuttgart.de/publications/Beisel2023_QuantME4VQA.pdf), we extend QuantME to facilitate the modeling of Variational Quantum Algorithms (VQAs) as quantum workflows.
 To this end, we introduce QuantME4VQA comprising new task types, data objects, and a comprehensible graphical notation.
 Furthermore, we ensure interoperability and portability by extending the QuantME transformation method to enable transforming all new modeling constructs to native modeling constructs of the used workflow language.
 To demonstrate its functionality, we implemented a case study solving the Maximum Cut (MaxCut) problem using the Quantum Approximate Optimization Algorithm (QAOA).
@@ -88,7 +88,7 @@ The corresponding workflow models can be found [here](2020-ucc).
 ## Learn More
 
 * Beisel, Martin; Barzen, Johanna; Bechtold, Marvin; Leymann, Frank; Truger, Felix; Weder, Benjamin:
-  QuantME4VQA: Modeling and Executing Variational Quantum Algorithms using Workflows.
+  [**QuantME4VQA: Modeling and Executing Variational Quantum Algorithms using Workflows**](https://www.iaas.uni-stuttgart.de/publications/Beisel2023_QuantME4VQA.pdf).
   In: Proceedings of the 13th International Conference on Cloud Computing and Services Science (CLOSER 2023), SciTePress, 2023
 
 * Weder, Benjamin; Barzen, Johanna; Beisel, Martin; Leymann, Frank:
