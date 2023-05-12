@@ -1,0 +1,3 @@
+Karl-Heinz, 20, Kassel, karlheinz@iaas.uni-stuttgart.de
+Gustaf, 20, Kassel, gustaf@anaqor.de
+Margold, 20, Kassel, margold@stoneone.de
