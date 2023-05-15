@@ -1,0 +1,69 @@
+version: '3'
+
+volumes:
+  exec_data:
+
+services:
+  ### Workflow Modeler ###
+  workflow-modeler:
+    image: planqk/workflow-modeler:latest
+    ports:
+      - 8080:8080
+    networks:
+      - icwe-tutorial
+  ### Camunda Engine ###
+  camunda-engine:
+    build: camunda
+    ports:
+      - 8090:8080
+    networks:
+      - icwe-tutorial
+  ### OpenTOSCA Ecosystem ###
+  container:
+    image: opentosca/container:v3.0.0
+    ports:
+      - '1337:1337'
+      - '8081-8087:8081-8087'
+    environment:
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+      ENGINE_IA_HOSTNAME: engine-ia
+      ENGINE_IA_PORT: 8080
+      ENGINE_PLAN_BPEL_HOSTNAME: engine-plan
+      CONTAINER_DEPLOYMENT_TESTS: 'false'
+    networks:
+      - icwe-tutorial
+  engine-plan:
+    image: opentosca/ode:v2.4.0
+    networks:
+      - icwe-tutorial
+  engine-ia:
+    image: opentosca/engine-ia:v2.1.0
+    networks:
+      - icwe-tutorial
+  winery:
+    build: initialized-winery
+    logging:
+      driver: none
+    ports:
+      - '8093:8080'
+    environment:
+      WINERY_HOSTNAME: $PUBLIC_HOSTNAME
+      WORKFLOWMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      TOPOLOGYMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+    networks:
+      - icwe-tutorial
+  dind:
+    image: docker:20.10-dind
+    privileged: true
+    environment:
+      - DOCKER_TLS_CERTDIR=
+    ports:
+      - '2222:2375'
+      - '9990-9999:9990-9999'
+      - '9990-9999:9990-9999/udp'
+    networks:
+      - icwe-tutorial
+networks:
+  icwe-tutorial:
+    driver: bridge
