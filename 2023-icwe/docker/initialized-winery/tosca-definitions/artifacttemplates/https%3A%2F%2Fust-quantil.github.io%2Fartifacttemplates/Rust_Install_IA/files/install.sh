@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sudo apt update
-sudo apt install -yqq rustc
+sudo apt-get update
+sudo apt-get install -yqq rustc
