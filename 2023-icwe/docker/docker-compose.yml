@@ -7,6 +7,17 @@ services:
   ### Workflow Modeler ###
   workflow-modeler:
     image: planqk/workflow-modeler:latest
+    environment:
+      CAMUNDA_ENDPOINT: '${PUBLIC_HOSTNAME}:8090/engine-rest'
+      ENABLE_DATA_FLOW_PLUGIN: false
+      ENABLE_PLANQK_PLUGIN: false
+      ENABLE_QHANA_PLUGIN: false
+      ENABLE_QUANTME_PLUGIN: true
+      OPENTOSCA_ENDPOINT: '${PUBLIC_HOSTNAME}:1337/csars'
+      QRM_USERNAME: 'UST-QuAntiL'
+      QRM_REPONAME: 'QuantME-UseCases'
+      QRM_REPOPATH: '2023-icwe/qrms'
+      WINERY_ENDPOINT: '${PUBLIC_HOSTNAME}:8093/winery'
     ports:
       - 8080:8080
     networks:
