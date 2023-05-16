@@ -5,7 +5,7 @@
             <NodeTemplate name="DockerEngine" minInstances="1" maxInstances="1" type="nodetypes:DockerEngine" id="DockerEngine_0" winery:x="708" winery:y="680" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Properties>
                     <otntyIproperties:DockerEngine_Properties xmlns:otntyIproperties="http://opentosca.org/nodetypes/properties">
-                        <otntyIproperties:DockerEngineURL/>
+                        <otntyIproperties:DockerEngineURL>get_input: dockerEngineURL</otntyIproperties:DockerEngineURL>
                         <otntyIproperties:DockerEngineCertificate/>
                         <otntyIproperties:State>Running</otntyIproperties:State>
                     </otntyIproperties:DockerEngine_Properties>
@@ -14,11 +14,11 @@
             <NodeTemplate name="DockerContainer" minInstances="1" maxInstances="1" type="nodetypes:DockerContainer" id="DockerContainer_0" winery:x="710" winery:y="436" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Properties>
                     <otntyIproperties:properties xmlns:otntyIproperties="http://opentosca.org/nodetypes/properties">
-                        <otntyIproperties:Port/>
-                        <otntyIproperties:ContainerPort/>
+                        <otntyIproperties:Port>get_input: distanceServicePort</otntyIproperties:Port>
+                        <otntyIproperties:ContainerPort>80<otntyIproperties:ContainerPort>
                         <otntyIproperties:ContainerID/>
                         <otntyIproperties:ContainerIP/>
-                        <otntyIproperties:ImageID/>
+                        <otntyIproperties:ImageID>ubuntu:22.04</otntyIproperties:ImageID>
                         <otntyIproperties:ContainerMountPath/>
                         <otntyIproperties:HostMountFiles/>
                     </otntyIproperties:properties>
@@ -28,7 +28,7 @@
             <NodeTemplate name="RustApp" minInstances="1" maxInstances="1" type="ntyIgeneral3:RustApp" id="RustApp_0" winery:x="717" winery:y="99" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
                 <Properties>
                     <ntypdInodetypes3:Properties xmlns:ntypdInodetypes3="https://ust-quantil.github.io/nodetypes/propertiesdefinition/winery">
-                        <ntypdInodetypes3:Port/>
+                        <ntypdInodetypes3:Port>80</ntypdInodetypes3:Port>
                     </ntypdInodetypes3:Properties>
                 </Properties>
                 <DeploymentArtifacts>
