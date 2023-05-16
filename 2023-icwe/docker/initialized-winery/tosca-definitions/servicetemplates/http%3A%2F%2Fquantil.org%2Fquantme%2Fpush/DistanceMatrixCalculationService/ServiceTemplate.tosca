@@ -32,7 +32,7 @@
                     </ntypdInodetypes3:Properties>
                 </Properties>
                 <DeploymentArtifacts>
-                    <DeploymentArtifact name="DistanceMatrixCalculationService_DA" artifactType="artifacttypes:ScriptArtifact" artifactRef="ateIgeneral2:DistanceMatrixCalculationService_DA" xmlns:ateIgeneral2="https://ust-quantil.github.io/artifacttemplates" xmlns:artifacttypes="http://opentosca.org/artifacttypes"/>
+                    <DeploymentArtifact name="DistanceMatrixCalculationService_DA" artifactType="baseTypes:ScriptArtifact" artifactRef="ateIgeneral2:DistanceMatrixCalculationService_DA" xmlns:ateIgeneral2="https://ust-quantil.github.io/artifacttemplates" xmlns:baseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
             <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
