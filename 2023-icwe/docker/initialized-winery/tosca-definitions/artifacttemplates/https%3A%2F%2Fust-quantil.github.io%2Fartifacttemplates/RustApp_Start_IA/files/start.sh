@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt-get install unzip
+sudo apt-get install -yqq unzip
 
 echo "Searching for DA containing Rust application"
 IFS=';' read -ra FILES <<< "$DAs"
