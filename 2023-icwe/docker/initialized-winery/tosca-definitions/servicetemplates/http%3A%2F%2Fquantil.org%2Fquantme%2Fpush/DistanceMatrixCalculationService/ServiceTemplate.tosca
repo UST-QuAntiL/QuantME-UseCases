@@ -7,7 +7,7 @@
                     <otntyIproperties:DockerEngine_Properties xmlns:otntyIproperties="http://opentosca.org/nodetypes/properties">
                         <otntyIproperties:DockerEngineURL/>
                         <otntyIproperties:DockerEngineCertificate/>
-                        <otntyIproperties:State/>
+                        <otntyIproperties:State>Running</otntyIproperties:State>
                     </otntyIproperties:DockerEngine_Properties>
                 </Properties>
             </NodeTemplate>
