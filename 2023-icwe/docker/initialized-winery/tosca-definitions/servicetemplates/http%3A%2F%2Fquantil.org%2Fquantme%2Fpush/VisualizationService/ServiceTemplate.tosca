@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://quantil.org/quantme/push" id="winery-defs-for_push-VisualizationService_w1-wip1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <ServiceTemplate name="VisualizationService_w1-wip1" targetNamespace="http://quantil.org/quantme/push" id="VisualizationService_w1-wip1">
+        <TopologyTemplate>
+            <NodeTemplate name="DockerEngine" minInstances="1" maxInstances="1" type="nodetypes:DockerEngine" id="DockerEngine_0" winery:x="708" winery:y="680" xmlns:nodetypes="http://opentosca.org/nodetypes">
+                <Properties>
+                    <otntyIproperties:DockerEngine_Properties xmlns:otntyIproperties="http://opentosca.org/nodetypes/properties">
+                        <otntyIproperties:DockerEngineURL>get_input: dockerEngineURL</otntyIproperties:DockerEngineURL>
+                        <otntyIproperties:DockerEngineCertificate/>
+                        <otntyIproperties:State>Running</otntyIproperties:State>
+                    </otntyIproperties:DockerEngine_Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate name="DockerContainer" minInstances="1" maxInstances="1" type="nodetypes:DockerContainer" id="DockerContainer_0" winery:x="710" winery:y="436" xmlns:nodetypes="http://opentosca.org/nodetypes">
+                <Properties>
+                    <otntyIproperties:properties xmlns:otntyIproperties="http://opentosca.org/nodetypes/properties">
+                        <otntyIproperties:Port>get_input: distanceServicePort</otntyIproperties:Port>
+                        <otntyIproperties:ContainerPort>80</otntyIproperties:ContainerPort>
+                        <otntyIproperties:ContainerID/>
+                        <otntyIproperties:ContainerIP/>
+                        <otntyIproperties:ImageID>ubuntu:22.04</otntyIproperties:ImageID>
+                        <otntyIproperties:ContainerMountPath/>
+                        <otntyIproperties:HostMountFiles/>
+                    </otntyIproperties:properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate name="Rust" minInstances="1" maxInstances="1" type="ntyIgeneral3:Rust" id="Rust_0" winery:x="1033" winery:y="302" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes"/>
+            <NodeTemplate name="RustApp" minInstances="1" maxInstances="1" type="ntyIgeneral3:RustApp" id="RustApp_0" winery:x="717" winery:y="99" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
+                <Properties>
+                    <ntypdInodetypes3:Properties xmlns:ntypdInodetypes3="https://ust-quantil.github.io/nodetypes/propertiesdefinition/winery">
+                        <ntypdInodetypes3:Port>80</ntypdInodetypes3:Port>
+                    </ntypdInodetypes3:Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact name="VisualizationService_DA" artifactType="baseTypes:ScriptArtifact" artifactRef="ateIgeneral2:VisualizationService_DA" xmlns:ateIgeneral2="https://ust-quantil.github.io/artifacttemplates" xmlns:baseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="DockerContainer_0"/>
+                <TargetElement ref="DockerEngine_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_1" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Rust_0"/>
+                <TargetElement ref="DockerContainer_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_2" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="RustApp_0"/>
+                <TargetElement ref="DockerContainer_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="DependsOn" type="ToscaBaseTypes:DependsOn" id="con_DependsOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="RustApp_0"/>
+                <TargetElement ref="Rust_0"/>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>
