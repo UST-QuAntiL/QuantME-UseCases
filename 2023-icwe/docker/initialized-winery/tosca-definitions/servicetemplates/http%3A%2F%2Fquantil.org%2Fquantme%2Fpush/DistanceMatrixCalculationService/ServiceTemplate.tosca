@@ -15,7 +15,7 @@
                 <Properties>
                     <otntyIproperties:properties xmlns:otntyIproperties="http://opentosca.org/nodetypes/properties">
                         <otntyIproperties:Port>get_input: distanceServicePort</otntyIproperties:Port>
-                        <otntyIproperties:ContainerPort>80<otntyIproperties:ContainerPort>
+                        <otntyIproperties:ContainerPort>80</otntyIproperties:ContainerPort>
                         <otntyIproperties:ContainerID/>
                         <otntyIproperties:ContainerIP/>
                         <otntyIproperties:ImageID>ubuntu:22.04</otntyIproperties:ImageID>
