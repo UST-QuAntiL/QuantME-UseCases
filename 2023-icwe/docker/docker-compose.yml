@@ -25,7 +25,7 @@ services:
      API_ENDPOINT_HOST: ${PUBLIC_HOSTNAME}
      API_ENDPOINT_PORT: 1337
      WINERY_HOST: ${PUBLIC_HOSTNAME}
-     WINERY_PORT: 8080
+     WINERY_PORT: 8093
     ports:
       - '8088:8080'
     networks:
