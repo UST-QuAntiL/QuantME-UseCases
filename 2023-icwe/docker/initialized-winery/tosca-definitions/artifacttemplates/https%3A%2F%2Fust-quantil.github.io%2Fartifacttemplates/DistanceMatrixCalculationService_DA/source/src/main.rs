@@ -28,7 +28,7 @@ fn api_distance_matrix(message: Json<Message>) -> Result<Json<Value>, Error> {
                     println!("{}", message.towns[i]);
                     println!("{}", message.towns[j]);
                     let response = reqwest::blocking::get("https://maps.googleapis.com/maps/api/distancematrix/json?destinations=".to_string()+&message.towns[i]+"&origins="+&message.towns[j]+"&units=metric&key="+&message.token)?;
-                    let json = response.json::<Value>()?;
+                    let json = response.json::<Value>()?; 
                     println!("{}", json["rows"][0]["elements"][0]["distance"]["value"].as_i64().unwrap()/1000);
                     println!("{}", json["rows"][0]["elements"][0]["duration"]["value"].as_f64().unwrap()/3600.0);
                     duration_matrix[i][j]=json["rows"][0]["elements"][0]["duration"]["value"].as_f64().unwrap()/3600.0;
