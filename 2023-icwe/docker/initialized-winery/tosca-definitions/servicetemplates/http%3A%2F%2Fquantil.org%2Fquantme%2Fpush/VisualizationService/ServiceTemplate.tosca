@@ -18,7 +18,7 @@
                         <otntyIproperties:ContainerPort>80</otntyIproperties:ContainerPort>
                         <otntyIproperties:ContainerID/>
                         <otntyIproperties:ContainerIP/>
-                        <otntyIproperties:ImageID>ubuntu:22.04</otntyIproperties:ImageID>
+                        <otntyIproperties:ImageID>ubuntu:20.04</otntyIproperties:ImageID>
                         <otntyIproperties:ContainerMountPath/>
                         <otntyIproperties:HostMountFiles/>
                     </otntyIproperties:properties>
@@ -29,6 +29,7 @@
                 <Properties>
                     <ntypdInodetypes3:Properties xmlns:ntypdInodetypes3="https://ust-quantil.github.io/nodetypes/propertiesdefinition/winery">
                         <ntypdInodetypes3:Port>80</ntypdInodetypes3:Port>
+                        <ntypdInodetypes3:AppName>visualization-app</ntypdInodetypes3:AppName>
                     </ntypdInodetypes3:Properties>
                 </Properties>
                 <DeploymentArtifacts>
