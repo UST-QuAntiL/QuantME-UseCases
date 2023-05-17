@@ -29,6 +29,7 @@
                 <Properties>
                     <ntypdInodetypes3:Properties xmlns:ntypdInodetypes3="https://ust-quantil.github.io/nodetypes/propertiesdefinition/winery">
                         <ntypdInodetypes3:Port>80</ntypdInodetypes3:Port>
+                        <ntypdInodetypes3:AppName>distance-matrix-app</ntypdInodetypes3:AppName>
                     </ntypdInodetypes3:Properties>
                 </Properties>
                 <DeploymentArtifacts>
