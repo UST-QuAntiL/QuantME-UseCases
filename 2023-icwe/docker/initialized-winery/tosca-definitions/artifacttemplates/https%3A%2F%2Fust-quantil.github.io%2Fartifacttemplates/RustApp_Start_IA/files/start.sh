@@ -21,5 +21,5 @@ cd ~/app
 echo "Found application comprises the following files:"
 ls
 
-echo "Starting application..."
-sudo cargo run
+echo "Starting application $AppName..."
+sudo ./$AppName

@@ -18,7 +18,7 @@
                         <otntyIproperties:ContainerPort>80</otntyIproperties:ContainerPort>
                         <otntyIproperties:ContainerID/>
                         <otntyIproperties:ContainerIP/>
-                        <otntyIproperties:ImageID>ubuntu:22.04</otntyIproperties:ImageID>
+                        <otntyIproperties:ImageID>ubuntu:20.04</otntyIproperties:ImageID>
                         <otntyIproperties:ContainerMountPath/>
                         <otntyIproperties:HostMountFiles/>
                     </otntyIproperties:properties>
