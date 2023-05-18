@@ -21,5 +21,7 @@ cd ~/app
 echo "Found application comprises the following files:"
 ls
 
-echo "Starting application $AppName..."
-sudo ./$AppName
+echo "Starting application $AppName on port $Port..."
+sudo PORT=$Port nohup ./$AppName > log.txt 2>&1 </dev/null &
+sleep 5
+echo "Successfully started application $AppName"
