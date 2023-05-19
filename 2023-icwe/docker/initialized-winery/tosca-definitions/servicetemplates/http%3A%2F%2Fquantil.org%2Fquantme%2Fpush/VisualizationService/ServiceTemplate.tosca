@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Definitions targetNamespace="http://quantil.org/quantme/push" id="winery-defs-for_push-VisualizationService_w1-wip1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
     <ServiceTemplate name="VisualizationService_w1-wip1" targetNamespace="http://quantil.org/quantme/push" id="VisualizationService_w1-wip1">
+        <BoundaryDefinitions>
+            <Properties>
+                <ns0:selfserviceApplicationUrl xmlns:tosca="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:ns10="http://www.eclipse.org/winery/model/selfservice" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:ns0="http://www.eclipse.org/winery/model/selfservice" xmlns:ns3="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3"/>
+                <PropertyMappings>
+                    <PropertyMapping serviceTemplatePropertyRef="/*[local-name()='selfserviceApplicationUrl']" targetObjectRef="DockerContainer_0" targetPropertyRef="concat('http://', DockerContainer_0.Properties.ContainerIP, ':', DockerContainer_0.Properties.Port)"/>
+                </PropertyMappings>
+            </Properties>
+        </BoundaryDefinitions>        
         <TopologyTemplate>
             <NodeTemplate name="DockerEngine" minInstances="1" maxInstances="1" type="nodetypes:DockerEngine" id="DockerEngine_0" winery:x="708" winery:y="680" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Properties>
