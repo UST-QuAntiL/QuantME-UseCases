@@ -4,24 +4,6 @@ volumes:
   exec_data:
 
 services:
-  ### Workflow Modeler ###
-  workflow-modeler:
-    image: planqk/workflow-modeler:latest
-    environment:
-      CAMUNDA_ENDPOINT: '${PUBLIC_HOSTNAME}:8090/engine-rest'
-      ENABLE_DATA_FLOW_PLUGIN: false
-      ENABLE_PLANQK_PLUGIN: false
-      ENABLE_QHANA_PLUGIN: false
-      ENABLE_QUANTME_PLUGIN: true
-      OPENTOSCA_ENDPOINT: '${PUBLIC_HOSTNAME}:1337/csars'
-      QRM_USERNAME: 'UST-QuAntiL'
-      QRM_REPONAME: 'QuantME-UseCases'
-      QRM_REPOPATH: '2023-icwe/qrms'
-      WINERY_ENDPOINT: '${PUBLIC_HOSTNAME}:8093/winery'
-    ports:
-      - 8080:8080
-    networks:
-      - icwe-tutorial
   ### Camunda Engine ###
   camunda-engine:
     image: camunda/camunda-bpm-platform:run-7.19.0
@@ -84,6 +66,51 @@ services:
       - '2222:2375'
       - '9990-9999:9990-9999'
       - '9990-9999:9990-9999/udp'
+    networks:
+      - icwe-tutorial
+  ### Quokka Ecosystem ###
+  quokka-gateway:
+    image: planqk/quokka-gateway:0.2.0
+    ports:
+      - '6474:6474'
+    networks:
+      - icwe-tutorial  
+  execution-service:
+    image: planqk/execution-service:latest
+    ports:
+      - '5075:5075'
+    networks:
+      - icwe-tutorial
+  optimization-service:
+    image: planqk/optimization-service:latest
+    ports:
+      - '5074:5074'
+    environment:
+      CAMUNDA_ENDPOINT: $PUBLIC_HOSTNAME/engine-rest
+    networks:
+      - icwe-tutorial
+  objective-evaluation-service:
+    image: planqk/objective-evaluation-service:latest
+    ports:
+      - '5072:5072'
+    networks:
+      - icwe-tutorial
+  circuit-generation-service:
+    image: planqk/quantum-circuit-generator:latest
+    ports:
+      - '5073:5073'
+    networks:
+      - icwe-tutorial
+  circuit-cutting-service:
+    image: planqk/circuit-cutting-service:latest
+    ports:
+      - '5076:5076'
+    networks:
+      - icwe-tutorial
+  warm-starting-service:
+    image: planqk/warm-starting-service:latest
+    ports:
+      - '5077:5077'
     networks:
       - icwe-tutorial
 networks:
