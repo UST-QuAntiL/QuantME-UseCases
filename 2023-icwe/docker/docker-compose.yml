@@ -4,6 +4,23 @@ volumes:
   exec_data:
 
 services:
+  ### Workflow Modeler ###
+  workflow-modeler:
+    image: planqk/workflow-modeler:latest
+    environment:
+     ENABLE_DATA_FLOW_PLUGIN: 'false'
+     ENABLE_PLANQK_PLUGIN: 'false'
+     ENABLE_QHANA_PLUGIN: 'false'
+     ENABLE_QUANTME_PLUGIN: 'true'
+     QRM_USERNAME: ${GITHUB_USER}
+     QRM_REPONAME: 'QuantME-UseCases'
+     QRM_REPOPATH: '2023-icwe/qrms'
+     OPENTOSCA_ENDPOINT: http://$PUBLIC_HOSTNAME:1337/csars
+     WINERY_ENDPOINT: http://$PUBLIC_HOSTNAME:8093/winery
+    ports:
+      - 8080:8080
+    networks:
+      - icwe-tutorial
   ### Camunda Engine ###
   camunda-engine:
     image: camunda/camunda-bpm-platform:run-7.19.0
