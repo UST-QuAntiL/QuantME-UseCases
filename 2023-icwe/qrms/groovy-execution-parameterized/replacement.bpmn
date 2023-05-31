@@ -15,7 +15,7 @@
             <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/circuit-execution/execution-service</camunda:inputParameter>
             <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="groovy">
-			    import groovy.json.JsonBuilder
+import groovy.json.JsonBuilder
   def qpu = execution.getVariable("qpu");
   def circuit = execution.getVariable("circuit");
   def token = execution.getVariable("token");
@@ -23,18 +23,15 @@
   def betas = execution.getVariable("betas");
   def optimizedParameters = execution.getVariable("optimizedParameters");
   def subCircuits = execution.getVariable("subCircuits");
-
   if (subCircuits != null) {
     circuit = subCircuits;
   }
-
   def credentials = [:];
   credentials.put("token", token);
   credentials.put("hub", "ibm-q");
   credentials.put("group", "open")
   credentials.put("project", "main");
   credentials.put("url", "https://auth.quantum-computing.ibm.com/api");
-
   def request = [:];
   request.put("qpu", qpu);
   request.put("credentials", credentials)
@@ -42,17 +39,25 @@
   request.put("circuit", circuit);
   request.put("circuit_format", "qiskit");
   request.put("provider", "ibm");
-  
   if (execution.getVariable("wsBitstring") != null) {
     request.put("initial_state", execution.getVariable("wsBitstring"));
   }
-
   if (optimizedParameters == null){
     optimizedParameters = betas + gammas;
-  }
+  } else {
+param_array=[];
+println(optimizedParameters);
+optimizedParameters=optimizedParameters.drop(1).take(optimizedParameters.length()-2);
+println(optimizedParameters);
+optimizedParameters= optimizedParameters.replaceAll("\\s","").split(",");
+println(optimizedParameters);
+optimizedParameters.each{ param->
+param_array.push(param.toDouble());}
+optimizedParameters=param_array;
+}
   request.put("parameters", optimizedParameters);
-
   requeststring = new JsonBuilder(request).toPrettyString()
+println(requeststring);
   return requeststring;</camunda:script>
             </camunda:inputParameter>
                           <camunda:outputParameter name="counts">
