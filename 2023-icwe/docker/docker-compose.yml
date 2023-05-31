@@ -1,0 +1,148 @@
+version: '3'
+
+volumes:
+  exec_data:
+
+services:
+  ### Workflow Modeler ###
+  workflow-modeler:
+    image: planqk/workflow-modeler:latest
+    environment:
+     CAMUNDA_ENDPOINT: http://$PUBLIC_HOSTNAME:8090/engine-rest
+     ENABLE_DATA_FLOW_PLUGIN: 'false'
+     ENABLE_PLANQK_PLUGIN: 'false'
+     ENABLE_QHANA_PLUGIN: 'false'
+     ENABLE_QUANTME_PLUGIN: 'true'
+     QRM_USERNAME: ${GITHUB_USER}
+     QRM_REPONAME: 'QuantME-UseCases'
+     QRM_REPOPATH: '2023-icwe/qrms'
+     OPENTOSCA_ENDPOINT: http://$PUBLIC_HOSTNAME:1337/csars
+     WINERY_ENDPOINT: http://$PUBLIC_HOSTNAME:8093/winery
+    ports:
+      - 8080:8080
+    networks:
+      - icwe-tutorial
+  ### Camunda Engine ###
+  camunda-engine:
+    image: camunda/camunda-bpm-platform:run-7.19.0
+    ports:
+      - 8090:8080
+    networks:
+      - icwe-tutorial
+  ### OpenTOSCA Ecosystem ###
+  ui:
+    image: opentosca/ui:v3.0.0
+    environment:
+     API_ENDPOINT_HOST: ${PUBLIC_HOSTNAME}
+     API_ENDPOINT_PORT: 1337
+     WINERY_HOST: ${PUBLIC_HOSTNAME}
+     WINERY_PORT: 8093
+    ports:
+      - '8088:8080'
+    networks:
+      - icwe-tutorial
+  container:
+    image: opentosca/container:v3.0.0
+    ports:
+      - '1337:1337'
+      - '8081-8087:8081-8087'
+    environment:
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+      ENGINE_IA_HOSTNAME: engine-ia
+      ENGINE_IA_PORT: 8080
+      ENGINE_PLAN_BPEL_HOSTNAME: engine-plan
+      CONTAINER_DEPLOYMENT_TESTS: 'false'
+    networks:
+      - icwe-tutorial
+  engine-plan:
+    image: opentosca/ode:v2.4.0
+    networks:
+      - icwe-tutorial
+  engine-ia:
+    image: opentosca/engine-ia:v2.1.0
+    networks:
+      - icwe-tutorial
+  winery:
+    build: initialized-winery
+    logging:
+      driver: none
+    ports:
+      - '8093:8080'
+    environment:
+      WINERY_HOSTNAME: $PUBLIC_HOSTNAME
+      WORKFLOWMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      TOPOLOGYMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+    networks:
+      - icwe-tutorial
+  dind:
+    image: docker:20.10-dind
+    privileged: true
+    environment:
+      - DOCKER_TLS_CERTDIR=
+    ports:
+      - '2222:2375'
+      - '9990-9999:9990-9999'
+      - '9990-9999:9990-9999/udp'
+    networks:
+      - icwe-tutorial
+  ### Quokka Ecosystem ###
+  quokka-gateway:
+    image: planqk/quokka-gateway:0.2.0
+    ports:
+      - '6474:6474'
+    networks:
+      - icwe-tutorial  
+  execution-service:
+    image: planqk/execution-service:latest
+    ports:
+      - '5075:5075'
+    networks:
+      - icwe-tutorial
+  optimization-service:
+    image: planqk/optimization-service:latest
+    ports:
+      - '5074:5074'
+    environment:
+      CAMUNDA_ENDPOINT: $PUBLIC_HOSTNAME/engine-rest
+    networks:
+      - icwe-tutorial
+  objective-evaluation-service:
+    image: planqk/objective-evaluation-service:latest
+    ports:
+      - '5072:5072'
+    networks:
+      - icwe-tutorial
+  circuit-generation-service:
+    image: planqk/quantum-circuit-generator:latest
+    ports:
+      - '5073:5073'
+    networks:
+      - icwe-tutorial
+  circuit-cutting-service:
+    image: planqk/circuit-cutting-service:latest
+    ports:
+      - '5076:5076'
+    networks:
+      - icwe-tutorial
+  warm-starting-service:
+    image: planqk/warm-starting-service:latest
+    ports:
+      - '5077:5077'
+    networks:
+      - icwe-tutorial
+  distance-matrix:
+    image: planqk/distance-matrix-app:latest
+    ports:
+      - '5078:8101'
+    networks:
+      - icwe-tutorial
+  map-generation:
+    image: planqk/map-generation-app:latest
+    ports:
+      - '5079:8102'
+    networks:
+      - icwe-tutorial
+networks:
+  icwe-tutorial:
+    driver: bridge
