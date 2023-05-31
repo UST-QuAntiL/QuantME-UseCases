@@ -17,7 +17,7 @@
               <camunda:script scriptFormat="groovy">  import groovy.json.JsonBuilder
   def adjMatrix = execution.getVariable("adjMatrix");
   def mitigatedCounts = execution.getVariable("mitigatedCounts");
-  def counts = execution.getVariable("counts");
+  def counts = execution.getVariable("counts")[0];
   def objFun = execution.getVariable("objectiveFunction");
 
   if (mitigatedCounts != null) {
