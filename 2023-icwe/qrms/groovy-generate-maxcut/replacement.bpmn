@@ -49,9 +49,9 @@ return circuitDepthUntranspiled;</camunda:script>
               <camunda:script scriptFormat="groovy">
 def resp = connector.getVariable("response");
 resp = new groovy.json.JsonSlurper().parseText(resp)
-distanceMatrix= resp.get('circuitNumQubits')
-println(circuitNumQubits);
-return circuitNumQubits;</camunda:script>
+n_qubits= resp.get('n_qubits')
+println(n_qubits);
+return n_qubits;</camunda:script>
             </camunda:outputParameter>
           </camunda:inputOutput>
           <camunda:connectorId>http-connector</camunda:connectorId>
