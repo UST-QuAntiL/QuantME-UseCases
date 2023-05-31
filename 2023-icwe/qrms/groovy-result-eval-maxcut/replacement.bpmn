@@ -47,7 +47,7 @@
             <camunda:outputParameter name="objValue">
               <camunda:script scriptFormat="Groovy">def resp = connector.getVariable("response");
 resp = new groovy.json.JsonSlurper().parseText(resp)
-objValue= resp.get('objValue')
+objValue= resp.get('objective_value')
 println(objValue);
 return objValue;</camunda:script>
             </camunda:outputParameter>
