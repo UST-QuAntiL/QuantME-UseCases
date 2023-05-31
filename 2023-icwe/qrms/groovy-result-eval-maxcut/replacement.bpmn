@@ -14,7 +14,7 @@
             </camunda:inputParameter>
             <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/objective-evaluation/objective/max-cut</camunda:inputParameter>
             <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript">  import groovy.json.JsonBuilder
+              <camunda:script scriptFormat="groovy">  import groovy.json.JsonBuilder
   def adjMatrix = execution.getVariable("adjMatrix");
   def mitigatedCounts = execution.getVariable("mitigatedCounts");
   def counts = execution.getVariable("counts");
