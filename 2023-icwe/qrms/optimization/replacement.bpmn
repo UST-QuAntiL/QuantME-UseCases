@@ -57,15 +57,6 @@
                 return requeststring;
                 </camunda:script>
               </camunda:inputParameter>
-              <camunda:outputParameter name="optimizerInit">
-                <camunda:script scriptFormat="groovy">       
-                def resp = connector.getVariable("response");
-                resp = new groovy.json.JsonSlurper().parseText(resp)
-                optimizerInit = resp.get('optimizerInit')
-                println(optimizerInit);
-                return optimizerInit;
-                </camunda:script>
-              </camunda:outputParameter>
 <camunda:outputParameter name="iterations">
                 <camunda:script scriptFormat="groovy">
                 def iterations = connector.getVariable("iterations");
