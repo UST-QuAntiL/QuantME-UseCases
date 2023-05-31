@@ -137,6 +137,12 @@ services:
       - '5078:8101'
     networks:
       - icwe-tutorial
+  map-generation:
+    image: planqk/map-generation-app:latest
+    ports:
+      - '5079:8102'
+    networks:
+      - icwe-tutorial
 networks:
   icwe-tutorial:
     driver: bridge
