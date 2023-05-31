@@ -14,7 +14,7 @@
             </camunda:inputParameter>
             <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/circuit-execution/execution-service</camunda:inputParameter>
             <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript">
+              <camunda:script scriptFormat="groovy">
 			    import groovy.json.JsonBuilder
   def qpu = execution.getVariable("qpu");
   def circuit = execution.getVariable("circuit");
