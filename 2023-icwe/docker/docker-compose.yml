@@ -131,6 +131,12 @@ services:
       - '5077:5077'
     networks:
       - icwe-tutorial
+  distance-matrix:
+    image: planqk/distance-matrix-app:latest
+    ports:
+      - '5078:8101'
+    networks:
+      - icwe-tutorial
 networks:
   icwe-tutorial:
     driver: bridge
