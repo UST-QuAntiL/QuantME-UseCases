@@ -35,7 +35,7 @@ def resp = connector.getVariable("response");
 resp = new groovy.json.JsonSlurper().parseText(resp)
 circuit= resp.get('circuit')
 println(circuit);
-return circuit;</camunda:script>
+return [circuit];</camunda:script>
             </camunda:outputParameter>
             <camunda:outputParameter name="circuitDepthUntranspiled">
               <camunda:script scriptFormat="groovy">
