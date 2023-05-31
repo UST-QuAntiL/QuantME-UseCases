@@ -16,7 +16,10 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
 
 ### ICWE 2023 - Tutorial
 
-TODO
+In this tutorial, we show how to model, transform, deploy, execute, and monitor a real-world hybrid quantum application using workflows.
+Thereby, the [Quokka ecosystem](https://github.com/UST-QuAntiL/Quokka), as well as the [quantum workflow modeler](https://github.com/PlanQK/workflow-modeler), are utilized.
+The hybrid quantum application uses multiple quantum algorithms, as well as multiple classical programs, to solve a use case from the package delivery domain.
+Detailed instructions for the use case are available [here](https://ust-quantil.github.io/icwe-tutorial/handson.html), and the required code can be accessed [here](2023-icwe).
 
 ### CLOSER 2023 - Prototype
 
