@@ -53,7 +53,7 @@ return objValue;</camunda:script>
             </camunda:outputParameter>
             <camunda:outputParameter name="evaluatedCosts">
               <camunda:script scriptFormat="Groovy">def resp = connector.getVariable("response");
-resp = new groovy.json.JsonSlurper().parseText(resp)
+resp = new groovy.json.JsonSlurperClassic().parseText(resp)
 costs= resp.get('costs')
 println(costs);
 return costs;</camunda:script>
