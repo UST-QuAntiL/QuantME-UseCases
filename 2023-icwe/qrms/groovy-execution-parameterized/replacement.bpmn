@@ -58,23 +58,37 @@
                           <camunda:outputParameter name="counts">
                 <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
 resp = new groovy.json.JsonSlurper().parseText(resp)
-counts= resp.get('counts')
-println(counts);
-return counts;</camunda:script>
+println(resp);
+meas_qubits_array= [];
+for ( el in resp){
+println(el);
+   meas_qubits_array.push(el.get('meas_qubits'));
+}
+println(meas_qubits_array);
+meas_qubits_array;</camunda:script>
               </camunda:outputParameter>
               <camunda:outputParameter name="measQubits">
                 <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
 resp = new groovy.json.JsonSlurper().parseText(resp)
-meas_qubits= resp.get('meas_qubits')
-println(meas_qubits);
-return meas_qubits;</camunda:script>
+println(resp);
+counts_array = [];
+for ( el in resp){
+   counts_array.push(el.get('counts'));
+}
+println(counts_array);
+return meas_qubits_array;</camunda:script>
               </camunda:outputParameter>
               <camunda:outputParameter name="circuitDepthTranspiled">
                 <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
 resp = new groovy.json.JsonSlurper().parseText(resp)
-circuitDepthTranspiled= resp.get('circuitDepthTranspiled')
-println(circuitDepthTranspiled);
-return circuitDepthTranspiled;</camunda:script>
+println(resp);
+transpiled_circuit_depth_array = [];
+for ( el in resp){
+println(el);
+   transpiled_circuit_depth_array.push(el.get('transpiled_circuit_depth'));
+}
+println(transpiled_circuit_depth_array );
+return transpiled_circuit_depth_array ;</camunda:script>
               </camunda:outputParameter>
           </camunda:inputOutput>
           <camunda:connectorId>http-connector</camunda:connectorId>
