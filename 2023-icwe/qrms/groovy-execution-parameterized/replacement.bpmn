@@ -36,7 +36,6 @@
   credentials.put("url", "https://auth.quantum-computing.ibm.com/api");
 
   def request = [:];
-  request.put("onlyMeasurementErrors", "false");
   request.put("qpu", qpu);
   request.put("credentials", credentials)
   request.put("shots", 2000);
