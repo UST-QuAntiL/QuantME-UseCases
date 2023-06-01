@@ -39,7 +39,7 @@
   }
   request.put("objFun_hyperparameters", objFun_hyperparameters);
 
-  execution.setVariable("plotUrl", "http://localhost:8080/engine-rest/process-instance/" + execution.getProcessInstanceId() + "/variables/plot/data");
+  execution.setVariable("plotUrl", "http://localhost:8090/engine-rest/process-instance/" + execution.getProcessInstanceId() + "/variables/maxCutPlot/data");
 
   requeststring = new JsonBuilder(request).toPrettyString()
   return requeststring;</camunda:script>
@@ -58,7 +58,7 @@ costs= resp.get('costs')
 println(costs);
 return costs;</camunda:script>
             </camunda:outputParameter>
-            <camunda:outputParameter name="plot">
+            <camunda:outputParameter name="maxCutPlot">
               <camunda:script scriptFormat="Groovy">import org.camunda.bpm.engine.variable.value.FileValue
 								import org.camunda.bpm.engine.variable.Variables
                 import groovy.json.JsonSlurper

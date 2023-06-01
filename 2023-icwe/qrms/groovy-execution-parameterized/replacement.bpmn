@@ -24,9 +24,9 @@ import groovy.json.JsonBuilder
   def optimizedParameters = execution.getVariable("optimizedParameters");
   def subCircuits = execution.getVariable("subCircuits");
   if (subCircuits != null) {
-    println("Subcircuits: " subCircuits.toString());
-    circuit = subCircuitsJson.get("subCircuits");
-    println("Circuits after adding subcircuits: " circuit.toString());
+    println("Subcircuits: " + subCircuits.toString());
+    circuit = subCircuits.get("subCircuits");
+    println("Circuits after adding subcircuits: " + circuit.toString());
   }
   def credentials = [:];
   credentials.put("token", token);
@@ -41,19 +41,18 @@ import groovy.json.JsonBuilder
   request.put("circuit", circuit);
   request.put("circuit_format", "qiskit");
   request.put("provider", "ibm");
-  if (execution.getVariable("wsBitstring") != null) {
-    request.put("initial_state", execution.getVariable("wsBitstring"));
-  }
   if (optimizedParameters == null){
 
     if (betas instanceof String) {
       println("Parsing betas...");
       betas = betas.drop(1).take(betas.length()-2).split(",");
+      execution.setVariable("betas", betas);
     }
 
     if (gammas instanceof String) {
       println("Parsing gammas...");
       gammas = gammas.drop(1).take(gammas.length()-2).split(",");
+      execution.setVariable("gammas", gammas);
     }
 
     optimizedParameters = betas + gammas;

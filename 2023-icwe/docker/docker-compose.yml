@@ -104,7 +104,7 @@ services:
     ports:
       - '5074:5074'
     environment:
-      CAMUNDA_ENDPOINT: $PUBLIC_HOSTNAME/engine-rest
+      CAMUNDA_ENDPOINT: http://$PUBLIC_HOSTNAME:8090/engine-rest
     networks:
       - icwe-tutorial
   objective-evaluation-service:
@@ -120,13 +120,13 @@ services:
     networks:
       - icwe-tutorial
   circuit-cutting-service:
-    image: planqk/circuit-cutting-service:latest
+    image: planqk/circuit-cutting-service:v0.1.0
     ports:
       - '5076:5076'
     networks:
       - icwe-tutorial
   warm-starting-service:
-    image: planqk/warm-starting-service:latest
+    image: planqk/warm-starting-service:v0.1.0
     ports:
       - '5077:5077'
     networks:
