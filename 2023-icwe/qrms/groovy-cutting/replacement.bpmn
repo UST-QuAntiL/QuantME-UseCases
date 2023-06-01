@@ -69,14 +69,20 @@ println("Cutting circuits");
 def circuit = execution.getVariable("circuit")[0];
 def cuttingMethod = execution.getVariable("cuttingMethod");
 def maxSubCircuitWidth = execution.getVariable("maxSubCircuitWidth");
+if (maxSubCircuitWidth == null) {
+  maxSubCircuitWidth = 2;
+}
+maxSubCircuitWidth = maxSubCircuitWidth.toInteger();
 def maxNumberOfCuts = execution.getVariable("maxNumberOfCuts");
 if (maxNumberOfCuts == null) {
   maxNumberOfCuts = 2;
 }
+maxNumberOfCuts = maxNumberOfCuts.toInteger();
 def maxNumSubCircuits = execution.getVariable("maxNumSubCircuits");
 if (maxNumSubCircuits == null) {
   maxNumSubCircuits = 2;
 }
+maxNumSubCircuits = maxNumSubCircuits.toInteger();
 println("Building request...");
 
 def request = [:];
