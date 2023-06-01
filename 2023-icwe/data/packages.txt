@@ -1,7 +1,7 @@
 Stuttgart, 2, 10.05.2023
 Stuttgart, 3, 08.05.2023
 Stuttgart, 1, 09.05.2023
-München, 5, 10.05.2023
+München, 4, 10.05.2023
 München, 1, 10.05.2023
 München, 1, 10.05.2023
 Nürnberg, 2, 09.05.2023
@@ -11,10 +11,10 @@ Berlin, 4, 10.05.2023
 Berlin, 2, 10.05.2023
 Berlin, 1, 09.05.2023
 Hamburg, 3, 10.05.2023
-Hamburg, 3, 08.05.2023
+Hamburg, 2, 08.05.2023
 Hamburg, 2, 09.05.2023
 Frankfurt, 1, 10.05.2023
-Frankfurt, 1, 08.05.2023
+Frankfurt, 2, 08.05.2023
 Frankfurt, 1, 10.05.2023
 Bremen, 3, 10.05.2023
 Bremen, 1, 09.05.2023
@@ -24,7 +24,7 @@ Hannover, 1, 10.05.2023
 Hannover, 4, 10.05.2023
 Dortmund, 1, 08.05.2023
 Dortmund, 1, 10.05.2023
-Dortmund, 7, 10.05.2023
+Dortmund, 5, 10.05.2023
 Leipzig, 3, 09.05.2023
 Leipzig, 1, 10.05.2023
-Leipzig, 2, 10.05.2023
+Leipzig, 1, 10.05.2023
