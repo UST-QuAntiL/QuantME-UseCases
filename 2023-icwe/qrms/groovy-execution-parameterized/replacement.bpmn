@@ -24,8 +24,9 @@ import groovy.json.JsonBuilder
   def optimizedParameters = execution.getVariable("optimizedParameters");
   def subCircuits = execution.getVariable("subCircuits");
   if (subCircuits != null) {
-    subCircuitsJson = new groovy.json.JsonSlurperClassic().parseText(subCircuits);
+    println("Subcircuits: " subCircuits.toString());
     circuit = subCircuitsJson.get("subCircuits");
+    println("Circuits after adding subcircuits: " circuit.toString());
   }
   def credentials = [:];
   credentials.put("token", token);
