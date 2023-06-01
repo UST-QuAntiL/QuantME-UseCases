@@ -67,7 +67,7 @@ println(wsBitstring);
 return wsBitstring;</camunda:script>
             </camunda:outputParameter>
             <camunda:outputParameter name="wsValue">
-              <camunda:script scriptFormat="groovy"def resp = connector.getVariable("response");
+              <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
 resp = new groovy.json.JsonSlurper().parseText(resp)
 println("Response to extract wsValue: " + resp.toString());
 wsValue= resp.get('value')
