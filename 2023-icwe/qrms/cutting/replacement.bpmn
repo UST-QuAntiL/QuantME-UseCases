@@ -16,46 +16,34 @@
             </camunda:inputParameter>
             <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/circuit-cutting/combineResultsQuokka</camunda:inputParameter>
               <camunda:inputParameter name="payload">
-                <camunda:script scriptFormat="JavaScript">print("combine")
-                  var counts = execution.getVariable("counts");
-                  //counts = JSON.parse(counts)
-									//counts = counts["counts"]
-                  counts = counts.prop("counts").elements()
-                  print(execution.getVariable("counts"));
-                  print(counts)
-                  print(JSON.parse(counts[0]))
-                  print(JSON.stringify(JSON.parse(counts[0])))
-                   new_counts = []
-                for each (var val in counts) {
-                  print(val)
-                  print(JSON.stringify(JSON.parse(val)))
-                   new_counts.push(JSON.parse(val));
-                }
-                  print(new_counts)
-                  
-                var cuttingMetaData = JSON.parse(execution.getVariable("cuttingMetaData"));
-                  print(cuttingMetaData)
-                  
-                 var circuit = execution.getVariable("circuit");
-                  circuit = circuit.prop("circuit").value()
+                <camunda:script scriptFormat="groovy">import groovy.json.JsonBuilder
+println("Combining circuits");
+def counts = execution.getVariable("counts");
+println("Counts: " + counts.toString());
+def cuttingMetaData = execution.getVariable("cuttingMetaData");
+cuttingMetaData = new groovy.json.JsonSlurper().parseText(resp);
+println("CuttingMetaData: " + cuttingMetaData.toString());
+def circuit = execution.getVariable("circuit");
 
-                                                              
-                
-                var myJson = {"circuit": circuit, "subcircuit_results": new_counts, "cuts": cuttingMetaData, "unnormalized_results":"True", "shot_scaling_factor":1000, "circuit_format":"qiskit"};
-               
-                
-
-                myJson = JSON.stringify(myJson);
-                  print(myJson);
-myJson =myJson;</camunda:script>
+def request = [:];
+request.put("circuit", circuit);
+request.put("subcircuit_results", counts);
+request.put("cuts", cuttingMetaData);
+request.put("unnormalized_results", "True");
+request.put("shot_scaling_factor", 1000);
+request.put("circuit_format", "qiskit");
+requeststring = new JsonBuilder(request).toPrettyString()
+println(requeststring);
+return requeststring;</camunda:script>
               </camunda:inputParameter>
               <camunda:outputParameter name="counts">
-                <camunda:script scriptFormat="JavaScript">var resp = connector.getVariable("response")
-resp = JSON.parse(resp)
-                  print(resp);
-                  var counts = S(JSON.stringify({"counts":resp.result}));
-                 
-counts;</camunda:script>
+                <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
+resp = new groovy.json.JsonSlurper().parseText(resp)
+println("Response with counts: " + resp.toString());
+def result = [:];
+result.put("counts", resp.get("result"));
+println("Final result: " + result.toString());
+return result;</camunda:script>
               </camunda:outputParameter>
             </camunda:inputOutput>
           <camunda:connectorId>http-connector</camunda:connectorId>
