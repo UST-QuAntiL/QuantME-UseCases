@@ -21,7 +21,7 @@ println("Combining circuits");
 def counts = execution.getVariable("counts");
 println("Counts: " + counts.toString());
 def cuttingMetaData = execution.getVariable("cuttingMetaData");
-cuttingMetaData = new groovy.json.JsonSlurper().parseText(resp);
+cuttingMetaData = new groovy.json.JsonSlurper().parseText(cuttingMetaData);
 println("CuttingMetaData: " + cuttingMetaData.toString());
 def circuit = execution.getVariable("circuit");
 
