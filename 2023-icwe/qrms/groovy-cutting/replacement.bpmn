@@ -2,7 +2,7 @@
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_00v8ddm" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20221215">
   <bpmn:process id="Process_0frghgx" isExecutable="true">
     <bpmn:sequenceFlow id="SequenceFlow_1h1q60o" sourceRef="Task_14ryfsm" targetRef="Task_1ffvrj7" />
-    <bpmn:serviceTask id="Task_1ffvrj7" name="Combine Results">
+    <bpmn:serviceTask id="Task_1ffvrj7" name="Combine Results" camunda:asyncAfter="true" camunda:exclusive="false">
       <bpmn:incoming>SequenceFlow_1h1q60o</bpmn:incoming>
        <bpmn:extensionElements>
         <camunda:connector>
@@ -50,7 +50,7 @@ return result;</camunda:script>
         </camunda:connector>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:serviceTask id="Task_14ryfsm" name="Cut Circuits">
+    <bpmn:serviceTask id="Task_14ryfsm" name="Cut Circuits" camunda:asyncAfter="true" camunda:exclusive="false">
       <bpmn:outgoing>SequenceFlow_1h1q60o</bpmn:outgoing>
              <bpmn:extensionElements>
         <camunda:connector>

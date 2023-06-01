@@ -28,7 +28,7 @@
         <bpmn:incoming>SequenceFlow_1hst7js</bpmn:incoming>
       </bpmn:endEvent>
       <bpmn:sequenceFlow id="SequenceFlow_1hst7js" sourceRef="Task_0twvhh9" targetRef="EndEvent_191hgmf" />
-      <bpmn:serviceTask id="Task_1pg7e2b" name="Initialize Optimizer">
+      <bpmn:serviceTask id="Task_1pg7e2b" name="Initialize Optimizer" camunda:asyncAfter="true" camunda:exclusive="false">
         <bpmn:extensionElements>
           <camunda:connector>
             <camunda:inputOutput>
@@ -74,7 +74,7 @@
         <bpmn:incoming>SequenceFlow_1lffclo</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_100xkhy</bpmn:outgoing>
       </bpmn:serviceTask>
-      <bpmn:serviceTask id="Task_0twvhh9" name="Optimizer Parameters" camunda:type="external" camunda:topic="12345">
+      <bpmn:serviceTask id="Task_0twvhh9" name="Optimizer Parameters" camunda:type="external" camunda:topic="12345" camunda:asyncAfter="true" camunda:exclusive="false">
 		  <bpmn:extensionElements>
 			  <camunda:inputOutput>
 				<camunda:outputParameter name="iterations">
