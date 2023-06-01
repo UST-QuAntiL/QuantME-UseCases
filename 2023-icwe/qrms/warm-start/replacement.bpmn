@@ -59,18 +59,20 @@ println(requeststring);
 return requeststring;</camunda:script>
             </camunda:inputParameter>
             <camunda:outputParameter name="wsBitstring">
-              <camunda:script scriptFormat="JavaScript">var resp = connector.getVariable("response")
-                resp = JSON.parse(resp)
-                var bitstring = resp.bitstring;
-                print(bitstring)
-								bitstring;</camunda:script>
+              <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
+resp = new groovy.json.JsonSlurper().parseText(resp)
+println("Response to extract wsBitstring: " + resp.toString());
+wsBitstring= resp.get('bitstring')
+println(wsBitstring);
+return wsBitstring;</camunda:script>
             </camunda:outputParameter>
             <camunda:outputParameter name="wsValue">
-              <camunda:script scriptFormat="JavaScript">var resp = connector.getVariable("response")
-                resp = JSON.parse(resp)
-                var value = resp.value;
-                print(value)
-				value;</camunda:script>
+              <camunda:script scriptFormat="groovy"def resp = connector.getVariable("response");
+resp = new groovy.json.JsonSlurper().parseText(resp)
+println("Response to extract wsValue: " + resp.toString());
+wsValue= resp.get('value')
+println(wsValue);
+return wsValue;</camunda:script>
             </camunda:outputParameter>
           </camunda:inputOutput>
           <camunda:connectorId>http-connector</camunda:connectorId>
