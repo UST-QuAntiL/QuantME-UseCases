@@ -66,11 +66,17 @@ return result;</camunda:script>
             <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="groovy">import groovy.json.JsonBuilder
 println("Cutting circuits");
-def circuit = execution.getVariable("circuit");
+def circuit = execution.getVariable("circuit")[0];
 def cuttingMethod = execution.getVariable("cuttingMethod");
 def maxSubCircuitWidth = execution.getVariable("maxSubCircuitWidth");
 def maxNumberOfCuts = execution.getVariable("maxNumberOfCuts");
+if (maxNumberOfCuts == null) {
+  maxNumberOfCuts = 2;
+}
 def maxNumSubCircuits = execution.getVariable("maxNumSubCircuits");
+if (maxNumSubCircuits == null) {
+  maxNumSubCircuits = 2;
+}
 println("Building request...");
 
 def request = [:];
