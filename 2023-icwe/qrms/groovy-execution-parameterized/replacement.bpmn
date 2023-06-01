@@ -43,6 +43,17 @@ import groovy.json.JsonBuilder
     request.put("initial_state", execution.getVariable("wsBitstring"));
   }
   if (optimizedParameters == null){
+
+    if (betas instanceof String) {
+      println("Parsing betas...");
+      betas = betas.drop(1).take(betas.length()-2).split(",");
+    }
+
+    if (gammas instanceof String) {
+      println("Parsing gammas...");
+      gammas = gammas.drop(1).take(gammas.length()-2).split(",");
+    }
+
     optimizedParameters = betas + gammas;
   } else {
 param_array=[];
