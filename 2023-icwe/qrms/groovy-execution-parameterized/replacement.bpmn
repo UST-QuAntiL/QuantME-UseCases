@@ -24,7 +24,8 @@ import groovy.json.JsonBuilder
   def optimizedParameters = execution.getVariable("optimizedParameters");
   def subCircuits = execution.getVariable("subCircuits");
   if (subCircuits != null) {
-    circuit = subCircuits;
+    subCircuitsJson = new groovy.json.JsonSlurperClassic().parseText(subCircuits);
+    circuit = subCircuitsJson.get("subCircuits");
   }
   def credentials = [:];
   credentials.put("token", token);
@@ -73,7 +74,7 @@ println(requeststring);
             </camunda:inputParameter>
                           <camunda:outputParameter name="counts">
                 <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
-resp = new groovy.json.JsonSlurperClassic().parseText(resp)
+resp = new groovy.json.JsonSlurperClassic().parseText(resp);
 println(resp);
 counts_array= [];
 for (el in resp){
@@ -85,7 +86,7 @@ counts_array;</camunda:script>
               </camunda:outputParameter>
               <camunda:outputParameter name="measQubits">
                 <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
-resp = new groovy.json.JsonSlurperClassic().parseText(resp)
+resp = new groovy.json.JsonSlurperClassic().parseText(resp);
 println(resp);
 meas_qubits_array = [];
 for (el in resp){
