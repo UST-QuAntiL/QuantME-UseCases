@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_0b7il2s" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20220628">
   <bpmn:process id="Process_03tgi13" isExecutable="true">
-    <bpmn:serviceTask id="ServiceTask_1d6l6i9" name="Generate Circuits">
+    <bpmn:serviceTask id="ServiceTask_1d6l6i9" name="Generate Circuits" camunda:asyncAfter="true" camunda:exclusive="false">
       <bpmn:extensionElements>
         <camunda:connector>
           <camunda:inputOutput>
@@ -35,15 +35,15 @@ def resp = connector.getVariable("response");
 resp = new groovy.json.JsonSlurper().parseText(resp)
 circuit= resp.get('circuit')
 println(circuit);
-return circuit;</camunda:script>
+return [circuit];</camunda:script>
             </camunda:outputParameter>
             <camunda:outputParameter name="circuitDepthUntranspiled">
               <camunda:script scriptFormat="groovy">
 def resp = connector.getVariable("response");
 resp = new groovy.json.JsonSlurper().parseText(resp)
-circuitDepthUntranspiled= resp.get('circuitDepthUntranspiled')
-println(circuitDepthUntranspiled);
-return circuitDepthUntranspiled;</camunda:script>
+depth= resp.get('depth')
+println(depth);
+return depth;</camunda:script>
             </camunda:outputParameter>
                         <camunda:outputParameter name="circuitNumQubits">
               <camunda:script scriptFormat="groovy">

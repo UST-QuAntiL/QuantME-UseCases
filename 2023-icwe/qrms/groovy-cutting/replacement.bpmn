@@ -2,7 +2,7 @@
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_00v8ddm" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20221215">
   <bpmn:process id="Process_0frghgx" isExecutable="true">
     <bpmn:sequenceFlow id="SequenceFlow_1h1q60o" sourceRef="Task_14ryfsm" targetRef="Task_1ffvrj7" />
-    <bpmn:serviceTask id="Task_1ffvrj7" name="Combine Results">
+    <bpmn:serviceTask id="Task_1ffvrj7" name="Combine Results" camunda:asyncAfter="true" camunda:exclusive="false">
       <bpmn:incoming>SequenceFlow_1h1q60o</bpmn:incoming>
        <bpmn:extensionElements>
         <camunda:connector>
@@ -16,53 +16,41 @@
             </camunda:inputParameter>
             <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/circuit-cutting/combineResultsQuokka</camunda:inputParameter>
               <camunda:inputParameter name="payload">
-                <camunda:script scriptFormat="JavaScript">print("combine")
-                  var counts = execution.getVariable("counts");
-                  //counts = JSON.parse(counts)
-									//counts = counts["counts"]
-                  counts = counts.prop("counts").elements()
-                  print(execution.getVariable("counts"));
-                  print(counts)
-                  print(JSON.parse(counts[0]))
-                  print(JSON.stringify(JSON.parse(counts[0])))
-                   new_counts = []
-                for each (var val in counts) {
-                  print(val)
-                  print(JSON.stringify(JSON.parse(val)))
-                   new_counts.push(JSON.parse(val));
-                }
-                  print(new_counts)
-                  
-                var cuttingMetaData = JSON.parse(execution.getVariable("cuttingMetaData"));
-                  print(cuttingMetaData)
-                  
-                 var circuit = execution.getVariable("circuit");
-                  circuit = circuit.prop("circuit").value()
+                <camunda:script scriptFormat="groovy">import groovy.json.JsonBuilder
+println("Combining circuits");
+def counts = execution.getVariable("counts");
+println("Counts: " + counts.toString());
+def cuttingMetaData = execution.getVariable("cuttingMetaData");
+cuttingMetaData = new groovy.json.JsonSlurper().parseText(resp);
+println("CuttingMetaData: " + cuttingMetaData.toString());
+def circuit = execution.getVariable("circuit");
 
-                                                              
-                
-                var myJson = {"circuit": circuit, "subcircuit_results": new_counts, "cuts": cuttingMetaData, "unnormalized_results":"True", "shot_scaling_factor":1000, "circuit_format":"qiskit"};
-               
-                
-
-                myJson = JSON.stringify(myJson);
-                  print(myJson);
-myJson =myJson;</camunda:script>
+def request = [:];
+request.put("circuit", circuit);
+request.put("subcircuit_results", counts);
+request.put("cuts", cuttingMetaData);
+request.put("unnormalized_results", "True");
+request.put("shot_scaling_factor", 1000);
+request.put("circuit_format", "qiskit");
+requeststring = new JsonBuilder(request).toPrettyString()
+println(requeststring);
+return requeststring;</camunda:script>
               </camunda:inputParameter>
               <camunda:outputParameter name="counts">
-                <camunda:script scriptFormat="JavaScript">var resp = connector.getVariable("response")
-resp = JSON.parse(resp)
-                  print(resp);
-                  var counts = S(JSON.stringify({"counts":resp.result}));
-                 
-counts;</camunda:script>
+                <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
+resp = new groovy.json.JsonSlurper().parseText(resp)
+println("Response with counts: " + resp.toString());
+def result = [:];
+result.put("counts", resp.get("result"));
+println("Final result: " + result.toString());
+return result;</camunda:script>
               </camunda:outputParameter>
             </camunda:inputOutput>
           <camunda:connectorId>http-connector</camunda:connectorId>
         </camunda:connector>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:serviceTask id="Task_14ryfsm" name="Cut Circuits">
+    <bpmn:serviceTask id="Task_14ryfsm" name="Cut Circuits" camunda:asyncAfter="true" camunda:exclusive="false">
       <bpmn:outgoing>SequenceFlow_1h1q60o</bpmn:outgoing>
              <bpmn:extensionElements>
         <camunda:connector>
@@ -76,40 +64,52 @@ counts;</camunda:script>
             </camunda:inputParameter>
             <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/circuit-cutting/cutCircuits</camunda:inputParameter>
             <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript">
-                var circuit = execution.getVariable("circuit");
-				circuit = circuit.prop("circuit").value()
-                var cuttingMethod = execution.getVariable("cuttingMethod");
-                var maxSubCircuitWidth = execution.getVariable("maxSubCircuitWidth");
-                var maxNumberOfCuts = execution.getVariable("maxNumberOfCuts");
-                var maxNumSubCircuits = execution.getVariable("maxNumSubCircuits");
-                              
-                
-                var myJson = {"circuit": circuit, "method": "automatic", "max_subcircuit_width": maxSubCircuitWidth, "max_cuts": maxNumberOfCuts, "max_num_subcircuits": maxNumSubCircuits, "circuit_format": "qiskit"
-                };
-               
-                
+              <camunda:script scriptFormat="groovy">import groovy.json.JsonBuilder
+println("Cutting circuits");
+def circuit = execution.getVariable("circuit")[0];
+def cuttingMethod = execution.getVariable("cuttingMethod");
+def maxSubCircuitWidth = execution.getVariable("maxSubCircuitWidth");
+if (maxSubCircuitWidth == null) {
+  maxSubCircuitWidth = 2;
+}
+maxSubCircuitWidth = maxSubCircuitWidth.toInteger();
+def maxNumberOfCuts = execution.getVariable("maxNumberOfCuts");
+if (maxNumberOfCuts == null) {
+  maxNumberOfCuts = 2;
+}
+maxNumberOfCuts = maxNumberOfCuts.toInteger();
+def maxNumSubCircuits = execution.getVariable("maxNumSubCircuits");
+if (maxNumSubCircuits == null) {
+  maxNumSubCircuits = 2;
+}
+maxNumSubCircuits = maxNumSubCircuits.toInteger();
+println("Building request...");
 
-                myJson = JSON.stringify(myJson);
-myJson =myJson;</camunda:script>
+def request = [:];
+request.put("circuit", circuit);
+request.put("method", "automatic");
+request.put("max_subcircuit_width", maxSubCircuitWidth);
+request.put("max_cuts", maxNumberOfCuts);
+request.put("max_num_subcircuits", maxNumSubCircuits);
+request.put("circuit_format", "qiskit");
+requeststring = new JsonBuilder(request).toPrettyString()
+println(requeststring);
+return requeststring;</camunda:script>
             </camunda:inputParameter>
             <camunda:outputParameter name="cuttingMetaData">
-              <camunda:script scriptFormat="JavaScript">
-              var resp = connector.getVariable("response")
-              resp = JSON.parse(resp)
-              var cuttingMetaData = S(JSON.stringify(resp));
-              cuttingMetaData;
-
-              </camunda:script>
+              <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
+resp = new groovy.json.JsonSlurper().parseText(resp)
+println("Response with cuttingMetaData: " + resp.toString());
+return resp;</camunda:script>
             </camunda:outputParameter>
             <camunda:outputParameter name="subCircuits">
-              <camunda:script scriptFormat="JavaScript">
-              var resp = connector.getVariable("response")
-              resp = JSON.parse(resp)
-              var subCircuits = S(JSON.stringify({"subCircuits":resp.individual_subcircuits}));
-              subCircuits;
-
-              </camunda:script>
+              <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
+resp = new groovy.json.JsonSlurper().parseText(resp)
+println("Response with subCircuits: " + resp.toString());
+def result = [:];
+result.put("subCircuits", resp.get("individual_subcircuits"));
+println("Final result: " + result.toString());
+return result;</camunda:script>
             </camunda:outputParameter>
             
           </camunda:inputOutput>
