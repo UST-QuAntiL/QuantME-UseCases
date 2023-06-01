@@ -31,10 +31,10 @@
   request.put("objFun", objFun);
 
   def objFun_hyperparameters = [:]
-  if (execution.getVariable("alpha") !== null){
+  if (execution.getVariable("alpha") != null){
     objFun_hyperparameters.put("alpha", execution.getVariable("alpha"));
   }
-  if (execution.getVariable("eta") !== null){
+  if (execution.getVariable("eta") != null){
     objFun_hyperparameters.put("eta", execution.getVariable("eta"));
   }
   request.put("objFun_hyperparameters", objFun_hyperparameters);
