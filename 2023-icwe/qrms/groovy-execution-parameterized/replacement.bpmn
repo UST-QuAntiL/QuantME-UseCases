@@ -46,11 +46,13 @@ import groovy.json.JsonBuilder
     if (betas instanceof String) {
       println("Parsing betas...");
       betas = betas.drop(1).take(betas.length()-2).split(",");
+      execution.setVariable("betas", betas);
     }
 
     if (gammas instanceof String) {
       println("Parsing gammas...");
       gammas = gammas.drop(1).take(gammas.length()-2).split(",");
+      execution.setVariable("gammas", gammas);
     }
 
     optimizedParameters = betas + gammas;

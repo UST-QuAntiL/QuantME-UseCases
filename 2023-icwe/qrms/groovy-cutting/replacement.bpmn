@@ -22,7 +22,7 @@ def counts = execution.getVariable("counts");
 println("Counts: " + counts.toString());
 def cuttingMetaData = execution.getVariable("cuttingMetaData");
 println("CuttingMetaData: " + cuttingMetaData.toString());
-def circuit = execution.getVariable("circuit");
+def circuit = execution.getVariable("circuit")[0];
 
 def request = [:];
 request.put("circuit", circuit);
@@ -37,10 +37,9 @@ return requeststring;</camunda:script>
               </camunda:inputParameter>
               <camunda:outputParameter name="counts">
                 <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
-resp = new groovy.json.JsonSlurper().parseText(resp);
+resp = new groovy.json.JsonSlurperClassic().parseText(resp);
 println("Response with counts: " + resp.toString());
-def result = [:];
-result.put("counts", resp.get("result"));
+def result = [resp.get("result")];
 println("Final result: " + result.toString());
 return result;</camunda:script>
               </camunda:outputParameter>
