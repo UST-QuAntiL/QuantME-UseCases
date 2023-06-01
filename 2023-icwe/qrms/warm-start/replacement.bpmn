@@ -14,36 +14,49 @@
             </camunda:inputParameter>
             <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/warm-starting/initialStateMaxCut</camunda:inputParameter>
             <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript">print("Start Warmstarting");
-                var matrix = execution.getVariable("adjMatrix");
-                matrix = matrix.substring(1,matrix.length-1).replaceAll(" ", "");
-                matrix = matrix.split("],[");
-								new_matrix = []
-                for each (var arr in matrix) {
-                  new_arr = []
-                  arr = arr.replace("[","").replace("]","")
-                  numbers = arr.split(",")
-                  for each (var num in numbers){
-                    new_arr.push(parseFloat(num))
-                  }
-                  new_matrix.push(new_arr)
-                }
-               
-                var myJson = {"graph": new_matrix};
-                
-                if (execution.getVariable("classicalAlgorithm") !== null){
-                	myJson["classicalAlgorithm"]= execution.getVariable("classicalAlgorithm")
-                }
-				if (execution.getVariable("repetitions") !== null){
-                	myJson["repetitions"]= execution.getVariable("repetitions")
-				}
-				if (execution.getVariable("rounded") !== null){
-                	myJson["rounded"]= execution.getVariable("rounded")
-				}
+              <camunda:script scriptFormat="groovy">import groovy.json.JsonBuilder
+println("Start Warmstarting");
+def matrix = execution.getVariable("adjMatrix");
 
-                myJson = JSON.stringify(myJson);
-                print(myJson);
-myJson =myJson;</camunda:script>
+if (matrix instanceof String) {
+    println("Received matrix of type string: " + matrix);
+    matrix = matrix.drop(1).take(matrix.length()-2);
+    matrix= matrix.replaceAll("\\s","").split("\\],\\[");
+    println("Separated matrix: " + matrix.toString());
+
+    new_matrix = []
+    for (el in matrix){
+        def current_array = el.replaceAll("\\[","").replaceAll("\\]","")
+        println("Current array: " + current_array.toString());
+        new_arr = [];
+        def numbers = current_array.split(",");
+        println("Numbers: " + numbers.toString());
+
+        for (number in numbers){
+            new_arr.push(number.toDouble());
+        }
+        new_matrix.push(new_arr);
+    }
+
+    matrix = new_matrix;
+    println("Matrix after parsing: " + matrix.toString());
+    execution.setVariable("adjMatrix", matrix);
+}
+
+def request = [:];
+request.put("graph", matrix);
+if (execution.getVariable("classicalAlgorithm") != null){
+    request.put("classicalAlgorithm", execution.getVariable("classicalAlgorithm"));
+}
+if (execution.getVariable("repetitions") != null){
+    request.put("repetitions", execution.getVariable("repetitions"));
+}
+if (execution.getVariable("rounded") != null){
+    request.put("rounded", execution.getVariable("rounded"));
+}
+requeststring = new JsonBuilder(request).toPrettyString()
+println(requeststring);
+return requeststring;</camunda:script>
             </camunda:inputParameter>
             <camunda:outputParameter name="wsBitstring">
               <camunda:script scriptFormat="JavaScript">var resp = connector.getVariable("response")
