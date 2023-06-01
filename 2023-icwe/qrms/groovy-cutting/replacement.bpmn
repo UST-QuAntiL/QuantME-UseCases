@@ -21,7 +21,6 @@ println("Combining circuits");
 def counts = execution.getVariable("counts");
 println("Counts: " + counts.toString());
 def cuttingMetaData = execution.getVariable("cuttingMetaData");
-cuttingMetaData = new groovy.json.JsonSlurper().parseText(cuttingMetaData);
 println("CuttingMetaData: " + cuttingMetaData.toString());
 def circuit = execution.getVariable("circuit");
 
@@ -38,7 +37,7 @@ return requeststring;</camunda:script>
               </camunda:inputParameter>
               <camunda:outputParameter name="counts">
                 <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
-resp = new groovy.json.JsonSlurper().parseText(resp)
+resp = new groovy.json.JsonSlurper().parseText(resp);
 println("Response with counts: " + resp.toString());
 def result = [:];
 result.put("counts", resp.get("result"));
@@ -98,13 +97,13 @@ return requeststring;</camunda:script>
             </camunda:inputParameter>
             <camunda:outputParameter name="cuttingMetaData">
               <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
-resp = new groovy.json.JsonSlurper().parseText(resp)
+resp = new groovy.json.JsonSlurperClassic().parseText(resp)
 println("Response with cuttingMetaData: " + resp.toString());
 return resp;</camunda:script>
             </camunda:outputParameter>
             <camunda:outputParameter name="subCircuits">
               <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
-resp = new groovy.json.JsonSlurper().parseText(resp)
+resp = new groovy.json.JsonSlurperClassic().parseText(resp)
 println("Response with subCircuits: " + resp.toString());
 def result = [:];
 result.put("subCircuits", resp.get("individual_subcircuits"));
