@@ -30,40 +30,8 @@ services:
     networks:
       - icwe-tutorial
   ### OpenTOSCA Ecosystem ###
-  ui:
-    image: opentosca/ui:v3.0.0
-    environment:
-     API_ENDPOINT_HOST: ${PUBLIC_HOSTNAME}
-     API_ENDPOINT_PORT: 1337
-     WINERY_HOST: ${PUBLIC_HOSTNAME}
-     WINERY_PORT: 8093
-    ports:
-      - '8088:8080'
-    networks:
-      - icwe-tutorial
-  container:
-    image: opentosca/container:v3.0.0
-    ports:
-      - '1337:1337'
-      - '8081-8087:8081-8087'
-    environment:
-      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
-      ENGINE_IA_HOSTNAME: engine-ia
-      ENGINE_IA_PORT: 8080
-      ENGINE_PLAN_BPEL_HOSTNAME: engine-plan
-      CONTAINER_DEPLOYMENT_TESTS: 'false'
-    networks:
-      - icwe-tutorial
-  engine-plan:
-    image: opentosca/ode:v2.4.0
-    networks:
-      - icwe-tutorial
-  engine-ia:
-    image: opentosca/engine-ia:v2.1.0
-    networks:
-      - icwe-tutorial
   winery:
-    build: initialized-winery
+    image: opentosca/winery:v3.0.0-M1
     logging:
       driver: none
     ports:
@@ -73,17 +41,6 @@ services:
       WORKFLOWMODELER_HOSTNAME: $PUBLIC_HOSTNAME
       TOPOLOGYMODELER_HOSTNAME: $PUBLIC_HOSTNAME
       CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
-    networks:
-      - icwe-tutorial
-  dind:
-    image: docker:20.10-dind
-    privileged: true
-    environment:
-      - DOCKER_TLS_CERTDIR=
-    ports:
-      - '2222:2375'
-      - '9990-9999:9990-9999'
-      - '9990-9999:9990-9999/udp'
     networks:
       - icwe-tutorial
   ### Quokka Ecosystem ###
