@@ -1,8 +1,5 @@
 version: '3'
 
-volumes:
-  exec_data:
-
 services:
   ### Workflow Modeler ###
   workflow-modeler:
