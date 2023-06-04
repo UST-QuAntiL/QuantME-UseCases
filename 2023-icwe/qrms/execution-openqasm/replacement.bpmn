@@ -22,12 +22,6 @@ import groovy.json.JsonBuilder
   def gammas = execution.getVariable("gammas");
   def betas = execution.getVariable("betas");
   def optimizedParameters = execution.getVariable("optimizedParameters");
-  def subCircuits = execution.getVariable("subCircuits");
-  if (subCircuits != null) {
-    println("Subcircuits: " + subCircuits.toString());
-    circuit = subCircuits.get("subCircuits");
-    println("Circuits after adding subcircuits: " + circuit.toString());
-  }
   def credentials = [:];
   credentials.put("token", token);
   credentials.put("hub", "ibm-q");
