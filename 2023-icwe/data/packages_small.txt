@@ -1,0 +1,15 @@
+Stuttgart, 2, 10.05.2023
+Stuttgart, 3, 08.05.2023
+Stuttgart, 1, 09.05.2023
+München, 4, 10.05.2023
+München, 1, 10.05.2023
+München, 1, 10.05.2023
+Nürnberg, 2, 09.05.2023
+Nürnberg, 1, 10.05.2023
+Nürnberg, 3, 09.05.2023
+Berlin, 4, 10.05.2023
+Berlin, 2, 10.05.2023
+Berlin, 1, 09.05.2023
+Hamburg, 3, 10.05.2023
+Hamburg, 2, 08.05.2023
+Hamburg, 2, 09.05.2023
