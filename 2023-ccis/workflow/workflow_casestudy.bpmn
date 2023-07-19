@@ -25,7 +25,7 @@
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="SequenceFlow_114600l" sourceRef="StartEvent_0ej6lwb" targetRef="Task_0y0t5cd" />
     <bpmn:sequenceFlow id="SequenceFlow_0fcm2ak" sourceRef="Task_0y0t5cd" targetRef="Task_009hsrk" />
-    <quantme:warmStartingTask id="Task_0y0t5cd" name="Approximate MaxCut" warmStartingMethod="initialStateWarmStartEgger" quantumAlgorithm="QAOA" classicalAlgorithm="gw" repetitions="10">
+    <quantme:warmStartingTask id="Task_0y0t5cd" name="Approximate MaxCut" warmStartingMethod="initialStateWarmStartEgger" quantumAlgorithm="QAOA" classicalAlgorithm="gw" repetitions="10" rounded="2">
       <bpmn:incoming>SequenceFlow_114600l</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0fcm2ak</bpmn:outgoing>
     </quantme:warmStartingTask>
@@ -79,14 +79,14 @@
       <bpmn:outgoing>Flow_07qlh4b</bpmn:outgoing>
     </quantme:quantumCircuitLoadingTask>
     <bpmn:sequenceFlow id="Flow_07qlh4b" sourceRef="Task_009hsrk" targetRef="Activity_1t2b6q6" />
-    <quantme:circuitCuttingTask id="Activity_1t2b6q6" name="Cut Circuit">
+    <quantme:circuitCuttingTask id="Activity_1t2b6q6" name="Cut Circuit" cuttingMethod="qiskit" maxSubCircuitWidth="22" maxNumberOfCuts="2" maxNumSubCircuits="2">
       <bpmn:incoming>Flow_07qlh4b</bpmn:incoming>
       <bpmn:outgoing>Flow_0glzveq</bpmn:outgoing>
     </quantme:circuitCuttingTask>
     <bpmn:sequenceFlow id="Flow_0glzveq" sourceRef="Activity_1t2b6q6" targetRef="Gateway_0qaj4kt" />
     <bpmn:sequenceFlow id="Flow_0jxgw9i" sourceRef="QuantumCircuitExecutionTask_11q8xh3" targetRef="Activity_1xm4gdv" />
     <bpmn:sequenceFlow id="Flow_12j7vdi" sourceRef="Activity_1xm4gdv" targetRef="ResultEvaluationTask_0933y5e" />
-    <quantme:cuttingResultCombinationTask id="Activity_1xm4gdv" name="Combine&#10;Results">
+    <quantme:cuttingResultCombinationTask id="Activity_1xm4gdv" name="Combine&#10;Results" cuttingMethod="qiskit">
       <bpmn:incoming>Flow_0jxgw9i</bpmn:incoming>
       <bpmn:outgoing>Flow_12j7vdi</bpmn:outgoing>
     </quantme:cuttingResultCombinationTask>
@@ -96,31 +96,20 @@
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_070m5p1">
+      <bpmndi:BPMNShape id="EndEvent_0pjq7fr_di" bpmnElement="EndEvent_0pjq7fr">
+        <dc:Bounds x="1362" y="207" width="36" height="36" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="StartEvent_0ej6lwb_di" bpmnElement="StartEvent_0ej6lwb">
         <dc:Bounds x="152" y="207" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="QuantumCircuitLoadingTask_1pmyy9a_di" bpmnElement="Task_009hsrk">
-        <dc:Bounds x="370" y="185" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="WarmStartingTask_154400b_di" bpmnElement="Task_0y0t5cd">
         <dc:Bounds x="230" y="185" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="CircuitCuttingTask_1m1cxbq_di" bpmnElement="Activity_1t2b6q6">
-        <dc:Bounds x="510" y="185" width="100" height="80" />
-        <bpmndi:BPMNLabel />
+      <bpmndi:BPMNShape id="UserTask_06awxe9_di" bpmnElement="Task_1h88ddf">
+        <dc:Bounds x="1230" y="185" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_1oyne9c" bpmnElement="QuantumCircuitExecutionTask_11q8xh3">
         <dc:Bounds x="720" y="185" width="100" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_0pj22b3" bpmnElement="Gateway_0qaj4kt" isMarkerVisible="true">
-        <dc:Bounds x="645" y="200" width="50" height="50" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_0jagnhq" bpmnElement="ResultEvaluationTask_0933y5e">
-        <dc:Bounds x="990" y="185" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="CuttingResultCombinationTask_1un2rgy_di" bpmnElement="Activity_1xm4gdv">
-        <dc:Bounds x="850" y="185" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_0vr629i" bpmnElement="Gateway_0wq36cd" isMarkerVisible="true">
@@ -129,14 +118,25 @@
           <dc:Bounds x="1130" y="257" width="60" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="EndEvent_0pjq7fr_di" bpmnElement="EndEvent_0pjq7fr">
-        <dc:Bounds x="1362" y="207" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="UserTask_06awxe9_di" bpmnElement="Task_1h88ddf">
-        <dc:Bounds x="1230" y="185" width="100" height="80" />
+      <bpmndi:BPMNShape id="BPMNShape_0jagnhq" bpmnElement="ResultEvaluationTask_0933y5e">
+        <dc:Bounds x="990" y="185" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_1qsyepo" bpmnElement="ParameterOptimizationTask_01m89mt">
         <dc:Bounds x="850" y="45" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0pj22b3" bpmnElement="Gateway_0qaj4kt" isMarkerVisible="true">
+        <dc:Bounds x="645" y="200" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="QuantumCircuitLoadingTask_1pmyy9a_di" bpmnElement="Task_009hsrk">
+        <dc:Bounds x="370" y="185" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="CircuitCuttingTask_1m1cxbq_di" bpmnElement="Activity_1t2b6q6">
+        <dc:Bounds x="510" y="185" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="CuttingResultCombinationTask_1un2rgy_di" bpmnElement="Activity_1xm4gdv">
+        <dc:Bounds x="850" y="185" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_114600l_di" bpmnElement="SequenceFlow_114600l">
         <di:waypoint x="188" y="225" />
@@ -146,17 +146,13 @@
         <di:waypoint x="330" y="225" />
         <di:waypoint x="370" y="225" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_07qlh4b_di" bpmnElement="Flow_07qlh4b">
-        <di:waypoint x="470" y="225" />
-        <di:waypoint x="510" y="225" />
+      <bpmndi:BPMNEdge id="SequenceFlow_134gyga_di" bpmnElement="SequenceFlow_134gyga">
+        <di:waypoint x="1330" y="225" />
+        <di:waypoint x="1362" y="225" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_17fnx68" bpmnElement="Flow_1m60wcg">
         <di:waypoint x="695" y="225" />
         <di:waypoint x="720" y="225" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_0wz0f3w" bpmnElement="Flow_0jxgw9i">
-        <di:waypoint x="820" y="225" />
-        <di:waypoint x="850" y="225" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_150wa33" bpmnElement="Flow_0ib0hii">
         <di:waypoint x="1090" y="225" />
@@ -175,17 +171,21 @@
         <di:waypoint x="670" y="85" />
         <di:waypoint x="670" y="200" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_07qlh4b_di" bpmnElement="Flow_07qlh4b">
+        <di:waypoint x="470" y="225" />
+        <di:waypoint x="510" y="225" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0glzveq_di" bpmnElement="Flow_0glzveq">
         <di:waypoint x="610" y="225" />
         <di:waypoint x="645" y="225" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_0wz0f3w" bpmnElement="Flow_0jxgw9i">
+        <di:waypoint x="820" y="225" />
+        <di:waypoint x="850" y="225" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_12j7vdi_di" bpmnElement="Flow_12j7vdi">
         <di:waypoint x="950" y="225" />
         <di:waypoint x="990" y="225" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_134gyga_di" bpmnElement="SequenceFlow_134gyga">
-        <di:waypoint x="1330" y="225" />
-        <di:waypoint x="1362" y="225" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0czrsh0_di" bpmnElement="Flow_0czrsh0">
         <di:waypoint x="1185" y="225" />
