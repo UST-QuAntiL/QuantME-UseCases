@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_0b7il2s" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20220628">
+  <bpmn:process id="Process_03tgi13" isExecutable="true">
+    <bpmn:serviceTask id="ServiceTask_1d6l6i7" name="Execute Circuit">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Accept">application/json</camunda:entry>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/circuit-execution/execution-service</camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="JavaScript">
+				var qpu = execution.getVariable("qpu");
+                var noiseModel = execution.getVariable("noiseModel");
+				var onlyMeasurementErrors = execution.getVariable("onlyMeasurementErrors");
+				var token = execution.getVariable("token");
+				var hub = execution.getVariable("hub");
+				var group = execution.getVariable("group");
+				var project = execution.getVariable("project");
+				var url = execution.getVariable("ibmqUrl");
+				var circuit = execution.getVariable("circuit");
+                circuit = circuit.prop("circuit").value()
+				var shots = execution.getVariable("shots");
+                shots = parseInt(shots);
+				var p = execution.getVariable("p");
+ 				var optimizedParameters = execution.getVariable("optimizedParameters");
+                var betas = execution.getVariable("betas");
+                var gammas = execution.getVariable("gammas");
+                  var subCircuits = execution.getVariable("subCircuits");
+                  subCircuits = subCircuits.prop("subCircuits").elements();
+                  if(subCircuits != null) {
+                  new_matrix = []
+                for each (var val in subCircuits) {
+                  print(val);
+                   new_matrix.push(val.value());
+                }
+                  circuit = new_matrix
+                  }
+				
+				 if(optimizedParameters != null){
+					optimizedParameters = optimizedParameters.substring(1, optimizedParameters.length-1).replace(". ", "").replace(" ", "");
+					optimizedParameters = optimizedParameters.split(",")
+					print(optimizedParameters);
+					//p = optimizedParameters.length/2
+					//gammas = optimizedParameters.slice(0,p);
+					//betas = optimizedParameters.slice(p, optimizedParameters.length);
+                } else{
+					betas = betas.substring(1, betas.length-1)
+					betas = betas.split(",")
+					b_array = [];
+					for each (var el in betas) b_array.push(parseFloat(el));
+					betas = b_array 
+
+					gammas = gammas.substring(1, gammas.length-1)
+					gammas = gammas.split(",")
+					g_array = [];
+					for each (var el in gammas) g_array.push(parseFloat(el));
+					gammas = g_array 
+					p = parseInt(p);
+					optimizedParameters = betas.concat(gammas);
+				}
+				
+				
+                
+                
+                var myJson = {"provider": "ibm", "qpu": qpu,"circuit": circuit, "shots": shots, "credentials":{
+                    "token": token, "hub": hub, "group": group, "project":project, "url":url
+                    }
+					, "noise_model": noiseModel, "only_measurement_errors": onlyMeasurementErrors, "circuit_format":"qiskit", "parameters":optimizedParameters
+                };
+               
+                
+
+                myJson = JSON.stringify(myJson);
+				print(myJson);
+myJson =myJson;</camunda:script>
+            </camunda:inputParameter>
+                          <camunda:outputParameter name="counts">
+                <camunda:script scriptFormat="JavaScript">var resp = connector.getVariable("response")
+resp = JSON.parse(resp)
+                  if(resp.counts === undefined ){
+                  	var counts_arr = []
+                  	for each (var val in resp) counts_arr.push(val.counts)     
+                  	print(counts_arr)
+                  var counts = S(JSON.stringify({"counts":counts_arr}));
+                  }
+                  else {
+var counts = S(JSON.stringify({"counts":resp.counts}));
+                  }
+counts;</camunda:script>
+              </camunda:outputParameter>
+              <camunda:outputParameter name="measQubits">
+                <camunda:script scriptFormat="JavaScript">var resp = connector.getVariable("response")
+                resp = JSON.parse(resp)
+                  if(resp.meas_qubits === undefined ){
+                  	var meas_arr = []
+                  	for each (var val in resp) meas_arr.push(val.meas_qubits)     
+                  	print(meas_arr)
+                  var meas_qubits = S(JSON.stringify({"meas_qubits":meas_arr}));
+                  }
+                  else {
+    
+                var meas_qubits = "["+resp.meas_qubits.toString()+"]";
+                  }
+								meas_qubits;</camunda:script>
+              </camunda:outputParameter>
+              <camunda:outputParameter name="circuitDepthTranspiled">
+                <camunda:script scriptFormat="JavaScript">var resp = connector.getVariable("response")
+                resp = JSON.parse(resp)
+                  if(resp.transpiled_circuit_depth === undefined ){
+                  	var depth_arr = []
+                  	for each (var val in resp) depth_arr.push(val.transpiled_circuit_depth)     
+                  	print(depth_arr)
+                  var circuitDepthTranspiled = S(JSON.stringify({"transpiled_circuit_depth":depth_arr}));
+                  }
+                  else {
+                var circuitDepthTranspiled = resp.transpiled_circuit_depth;
+                  }
+								circuitDepthTranspiled;</camunda:script>
+              </camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_03tgi13">
+      <bpmndi:BPMNShape id="ServiceTask_1d6l6i7_di" bpmnElement="ServiceTask_1d6l6i7">
+        <dc:Bounds x="160" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
