@@ -28,7 +28,7 @@
         <bpmn:incoming>SequenceFlow_1hst7js</bpmn:incoming>
       </bpmn:endEvent>
       <bpmn:sequenceFlow id="SequenceFlow_1hst7js" sourceRef="Task_0twvhh9" targetRef="EndEvent_191hgmf" />
-      <bpmn:serviceTask id="Task_1pg7e2b" name="Initialize Optimizer">
+      <bpmn:serviceTask id="Task_1pg7e2b" name="Initialize Optimizer" camunda:asyncAfter="true" camunda:exclusive="false">
         <bpmn:extensionElements>
           <camunda:connector>
             <camunda:inputOutput>
@@ -41,46 +41,31 @@
               </camunda:inputParameter>
               <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/optimization/optimization-service</camunda:inputParameter>
               <camunda:inputParameter name="payload">
-                <camunda:script scriptFormat="JavaScript">var optimizer = execution.getVariable("optimizer");
-                  var gammas = execution.getVariable("gammas");
-                  var betas = execution.getVariable("betas");
-                  execution.setVariable("iterations", 0);
+                <camunda:script scriptFormat="groovy">
+			          import groovy.json.JsonBuilder
+                def optimizer = execution.getVariable("optimizer");
+                def gammas = execution.getVariable("gammas");
+                def betas = execution.getVariable("betas");
+                def initialParameters = betas + gammas;
+                execution.setVariable("iterations", 0);
 
-                  gammas = gammas.substring(1, gammas.length-1)
-                  gammas = gammas.split(",")
-                  print(gammas[0]);
-                  array = [];
-                  for each (var el in gammas) array.push(parseFloat(el));
-                  gammas = array
-
-                  betas = betas.substring(1, betas.length-1)
-                  betas = betas.split(",")
-                  print(betas[0]);
-                  array_b = [];
-                  for each (var el in betas) array.push(parseFloat(el));
-                  betas = array_b
-
-                  initialParameters = betas.concat(gammas)
-
-                  var myJson = {"topic": "123",
-  "optimizer": optimizer,"initialParameters": initialParameters};
-
-  myJson = JSON.stringify(myJson);
-  //execution.setVariable("myJson",myJson);
-  myJson =myJson;</camunda:script>
+                def request = [:];
+                request.put("topic", "12345");
+                request.put("optimizer", optimizer);
+                request.put("initialParameters", initialParameters);
+                requeststring = new JsonBuilder(request).toPrettyString();
+                return requeststring;
+                </camunda:script>
               </camunda:inputParameter>
-              <camunda:outputParameter name="optimizerInit">
-                <camunda:script scriptFormat="JavaScript">var resp = connector.getVariable("response")
-                  print(resp)
-  resp;</camunda:script>
-              </camunda:outputParameter>
 <camunda:outputParameter name="iterations">
-                <camunda:script scriptFormat="JavaScript">var iterations = connector.getVariable("iterations");
-iterations = iterations + 1
-iterations</camunda:script>
+                <camunda:script scriptFormat="groovy">
+                def iterations = connector.getVariable("iterations");
+                iterations = iterations + 1;
+                return iterations;
+                </camunda:script>
               </camunda:outputParameter>
               <camunda:outputParameter name="converged">
-                <camunda:script scriptFormat="JavaScript">"false"</camunda:script>
+                <camunda:script scriptFormat="groovy">return "false";</camunda:script>
               </camunda:outputParameter>
             </camunda:inputOutput>
             <camunda:connectorId>http-connector</camunda:connectorId>
@@ -89,13 +74,13 @@ iterations</camunda:script>
         <bpmn:incoming>SequenceFlow_1lffclo</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_100xkhy</bpmn:outgoing>
       </bpmn:serviceTask>
-      <bpmn:serviceTask id="Task_0twvhh9" name="Optimizer Parameters" camunda:type="external" camunda:topic="123">
+      <bpmn:serviceTask id="Task_0twvhh9" name="Optimizer Parameters" camunda:type="external" camunda:topic="12345" camunda:asyncAfter="true" camunda:exclusive="false">
 		  <bpmn:extensionElements>
 			  <camunda:inputOutput>
 				<camunda:outputParameter name="iterations">
-					<camunda:script scriptFormat="JavaScript">var iterations = execution.getVariable("iterations");
-							iterations = iterations + 1
-							iterations
+					<camunda:script scriptFormat="groovy">def iterations = execution.getVariable("iterations");
+							iterations = iterations + 1;
+							return iterations;
 					</camunda:script>
 				</camunda:outputParameter>
 			  </camunda:inputOutput>

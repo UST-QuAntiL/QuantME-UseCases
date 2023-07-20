@@ -22,12 +22,6 @@ import groovy.json.JsonBuilder
   def gammas = execution.getVariable("gammas");
   def betas = execution.getVariable("betas");
   def optimizedParameters = execution.getVariable("optimizedParameters");
-  def subCircuits = execution.getVariable("subCircuits");
-  if (subCircuits != null) {
-    println("Subcircuits: " + subCircuits.toString());
-    circuit = subCircuits.get("subCircuits");
-    println("Circuits after adding subcircuits: " + circuit.toString());
-  }
   def credentials = [:];
   credentials.put("token", token);
   credentials.put("hub", "ibm-q");
@@ -39,35 +33,9 @@ import groovy.json.JsonBuilder
   request.put("credentials", credentials)
   request.put("shots", 2000);
   request.put("circuit", circuit);
-  request.put("circuit_format", "qiskit");
+  request.put("circuit_format", "openqasm");
   request.put("provider", "ibm");
-  if (optimizedParameters == null){
-
-    if (betas instanceof String) {
-      println("Parsing betas...");
-      betas = betas.drop(1).take(betas.length()-2).split(",");
-      execution.setVariable("betas", betas);
-    }
-
-    if (gammas instanceof String) {
-      println("Parsing gammas...");
-      gammas = gammas.drop(1).take(gammas.length()-2).split(",");
-      execution.setVariable("gammas", gammas);
-    }
-
-    optimizedParameters = betas + gammas;
-  } else {
-param_array=[];
-println(optimizedParameters);
-optimizedParameters=optimizedParameters.drop(1).take(optimizedParameters.length()-2);
-println(optimizedParameters);
-optimizedParameters= optimizedParameters.replaceAll("\\s","").split(",");
-println(optimizedParameters);
-optimizedParameters.each{ param->
-param_array.push(param.toDouble());}
-optimizedParameters=param_array;
-}
-  request.put("parameters", optimizedParameters);
+  
   requeststring = new JsonBuilder(request).toPrettyString()
 println(requeststring);
   return requeststring;</camunda:script>
