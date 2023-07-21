@@ -88,7 +88,7 @@ Use ``demo`` as username and password to log in, which displays the following sc
 
 ![Camunda Loginscreen](./docs/camunda-loginscreen.png)
 
-Click on ``Cockpit`` to validate that the workflow was successfully uploaded.
+Click on the home icon in the top-right corner and select ``Cockpit`` to validate that the workflow was successfully uploaded.
 Then, click on ``Processes`` on the top-left and select the workflow from the list.
 This should show a graphical representation of the uploaded workflow:
 
@@ -116,13 +116,12 @@ This might take some time, depending on the circuit size, the execution paramete
 
 ![Camunda Start Process](./docs/camunda-processfinished.png)
 
-Wait until the token reaches the final user task, then, switch to the Tasklist.
+Switch to the Tasklist.
 Select the task item on the left (1), then click on ``Claim`` to activate the item (2), and download the result plot using the given URL (3).
-Afterwards, click on ``Complete`` to terminate the workflow instance (4).
+Finally, click the ``Complete`` button (4) to finish the human task, and as it is the last activity in the workflow, to terminate the workflow instance.
 
 ![Camunda Analyze Results](./docs/camunda-analyzeresults.png)
 
-Finally, click the ``Complete`` button to finish the human task, and as it is the last activity in the workflow, to terminate the workflow instance.
 Open the downloaded image, visualizing the MaxCut solution for the input graph.
 
 ![Max Cut Plot](./docs/maxcut-plot.png)
