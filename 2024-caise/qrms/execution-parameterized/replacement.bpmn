@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_0b7il2s" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20220628">
+  <bpmn:process id="Process_03tgi13" isExecutable="true">
+    <bpmn:serviceTask id="ServiceTask_1d6l6i7" name="Execute Circuit" camunda:asyncAfter="true" camunda:exclusive="false">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Accept">application/json</camunda:entry>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/circuit-execution/execution-service</camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="groovy">
+import groovy.json.JsonBuilder
+  def qpu = execution.getVariable("qpu");
+  def circuit = execution.getVariable("circuit");
+  def token = execution.getVariable("token");
+  def gammas = execution.getVariable("gammas");
+  def betas = execution.getVariable("betas");
+  def optimizedParameters = execution.getVariable("optimizedParameters");
+  def subCircuits = execution.getVariable("subCircuits");
+  if (subCircuits != null) {
+    println("Subcircuits: " + subCircuits.toString());
+    circuit = subCircuits.get("subCircuits");
+    println("Circuits after adding subcircuits: " + circuit.toString());
+  }
+  def credentials = [:];
+  credentials.put("token", token);
+  credentials.put("hub", "ibm-q");
+  credentials.put("group", "open")
+  credentials.put("project", "main");
+  credentials.put("url", "https://auth.quantum-computing.ibm.com/api");
+  def request = [:];
+  request.put("qpu", qpu);
+  request.put("credentials", credentials)
+  request.put("shots", 2000);
+  request.put("circuit", circuit);
+  request.put("circuit_format", "qiskit");
+  request.put("provider", "ibm");
+  if (optimizedParameters == null){
+
+    if (betas instanceof String) {
+      println("Parsing betas...");
+      betas = betas.drop(1).take(betas.length()-2).split(",");
+      execution.setVariable("betas", betas);
+    }
+
+    if (gammas instanceof String) {
+      println("Parsing gammas...");
+      gammas = gammas.drop(1).take(gammas.length()-2).split(",");
+      execution.setVariable("gammas", gammas);
+    }
+
+    optimizedParameters = betas + gammas;
+  } else {
+param_array=[];
+println(optimizedParameters);
+optimizedParameters=optimizedParameters.drop(1).take(optimizedParameters.length()-2);
+println(optimizedParameters);
+optimizedParameters= optimizedParameters.replaceAll("\\s","").split(",");
+println(optimizedParameters);
+optimizedParameters.each{ param->
+param_array.push(param.toDouble());}
+optimizedParameters=param_array;
+}
+  request.put("parameters", optimizedParameters);
+  requeststring = new JsonBuilder(request).toPrettyString()
+println(requeststring);
+  return requeststring;</camunda:script>
+            </camunda:inputParameter>
+                          <camunda:outputParameter name="counts">
+                <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
+resp = new groovy.json.JsonSlurperClassic().parseText(resp);
+println(resp);
+counts_array= [];
+for (el in resp){
+println(el);
+   counts_array.push(el.get('counts'));
+}
+println(counts_array);
+counts_array;</camunda:script>
+              </camunda:outputParameter>
+              <camunda:outputParameter name="measQubits">
+                <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
+resp = new groovy.json.JsonSlurperClassic().parseText(resp);
+println(resp);
+meas_qubits_array = [];
+for (el in resp){
+   meas_qubits_array.push(el.get('meas_qubits'));
+}
+println(meas_qubits_array);
+return meas_qubits_array;</camunda:script>
+              </camunda:outputParameter>
+              <camunda:outputParameter name="circuitDepthTranspiled">
+                <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
+resp = new groovy.json.JsonSlurperClassic().parseText(resp)
+println(resp);
+transpiled_circuit_depth_array = [];
+for (el in resp){
+println(el);
+   transpiled_circuit_depth_array.push(el.get('transpiled_circuit_depth'));
+}
+println(transpiled_circuit_depth_array);
+return transpiled_circuit_depth_array;</camunda:script>
+              </camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_03tgi13">
+      <bpmndi:BPMNShape id="ServiceTask_1d6l6i7_di" bpmnElement="ServiceTask_1d6l6i7">
+        <dc:Bounds x="160" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
