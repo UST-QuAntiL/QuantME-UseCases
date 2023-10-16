@@ -82,6 +82,51 @@ services:
   #######################
 
   #######################
+  ### QProv ###
+  db:
+    build: initialized-db
+    logging:
+      driver: none
+    environment:
+      POSTGRES_USERS: 'qprov:qprov|nisq:nisq'
+      POSTGRES_DATABASES: 'qprov:qprov|nisq:nisq'
+    networks:
+      - workflow-observability
+  qprov:
+    image: planqk/qprov:v1.2.0
+    logging:
+      driver: none
+    environment:
+      POSTGRES_HOSTNAME: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: qprov
+      POSTGRES_PASSWORD: qprov
+      POSTGRES_DB: qprov
+    ports:
+      - "8094:8080"
+    networks:
+      - workflow-observability
+  qprov-collector-ibm:
+    image: planqk/qprov-collector:v1.2.0
+    logging:
+      driver: none
+    environment:
+      POSTGRES_HOSTNAME: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: qprov
+      POSTGRES_PASSWORD: qprov
+      POSTGRES_DB: qprov
+      QPROV_IBMQ_TOKEN: ${IBM_ACCESS_TOKEN}
+      QPROV_IBMQ_EXECUTE_CIRCUITS: 'false'
+      QPROV_IBMQ_AUTO_COLLECT: 'true'
+      QPROV_IBMQ_AUTO_COLLECT_INTERVAL: 60
+      QPROV_IBMQ_AUTO_COLLECT_INTERVAL_CIRCUITS: 180
+    networks:
+      - workflow-observability
+  # end of QProv
+  #######################
+
+  #######################
   ### NISQ Analyzer ###
   nisq-analyzer:
     image: planqk/nisq-analyzer:v1.4.0
