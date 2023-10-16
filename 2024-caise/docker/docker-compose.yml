@@ -31,8 +31,59 @@ services:
     networks:
       - workflow-observability
 
+
   #######################
-  ### qiskit service ####
+  ### OpenTOSCA Ecosystem ###
+  container:
+    image: opentosca/container:v3.0.0
+    ports:
+      - '1337:1337'
+      - '8081-8087:8081-8087'
+    environment:
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+      ENGINE_IA_HOSTNAME: engine-ia
+      ENGINE_IA_PORT: 8080
+      ENGINE_PLAN_BPEL_HOSTNAME: engine-plan
+      CONTAINER_DEPLOYMENT_TESTS: 'false'
+    networks:
+      - workflow-observability
+  engine-plan:
+    image: opentosca/ode:v2.4.0
+    networks:
+      - workflow-observability
+  engine-ia:
+    image: opentosca/engine-ia:v2.1.0
+    networks:
+      - workflow-observability
+  winery:
+    build: initialized-winery
+    logging:
+      driver: none
+    ports:
+      - '8093:8080'
+    environment:
+      WINERY_HOSTNAME: $PUBLIC_HOSTNAME
+      WORKFLOWMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      TOPOLOGYMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+    networks:
+      - workflow-observability
+  dind:
+    image: docker:20.10-dind
+    privileged: true
+    environment:
+      - DOCKER_TLS_CERTDIR=
+    ports:
+      - '2222:2375'
+      - '9990-9999:9990-9999'
+      - '9990-9999:9990-9999/udp'
+    networks:
+      - workflow-observability
+  # end of OpenTOSCA Ecosystem
+  #######################
+
+  #######################
+  ### Qiskit Service ###
   redis:
     image: redis:latest
     command: --port 5040
@@ -77,8 +128,8 @@ services:
       - RQ_DASHBOARD_REDIS_URL=redis://redis:5040
     networks:
       - workflow-observability
-  # end of qiskit service
-  ########
+  # end of Qiskit Service
+  #######################
 
 networks:
   workflow-observability:
