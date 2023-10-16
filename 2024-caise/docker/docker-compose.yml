@@ -115,15 +115,6 @@ services:
       replicas: 2
     networks:
       - workflow-observability
-
-  rq-dashboard:
-    image: eoranged/rq-dashboard
-    ports:
-      - "9181:9181"
-    environment:
-      - RQ_DASHBOARD_REDIS_URL=redis://redis:5040
-    networks:
-      - workflow-observability
   # end of Qiskit Service
   #######################
 
