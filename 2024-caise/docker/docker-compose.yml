@@ -13,13 +13,27 @@ services:
      ENABLE_PLANQK_PLUGIN: 'false'
      ENABLE_QHANA_PLUGIN: 'false'
      ENABLE_QUANTME_PLUGIN: 'true'
+     OPENTOSCA_ENDPOINT: http://$PUBLIC_HOSTNAME:1337/csars
      QRM_USERNAME: ${GITHUB_USER}
      QRM_REPONAME: ${QRM_REPONAME}
      QRM_REPOPATH: ${QRM_REPOPATH}
-     OPENTOSCA_ENDPOINT: http://$PUBLIC_HOSTNAME:1337/csars
      WINERY_ENDPOINT: http://$PUBLIC_HOSTNAME:8093/winery
     ports:
       - 8080:8080
+    networks:
+      - workflow-observability
+  transformation-backend:
+    image: planqk/quantme-backend:v1.5.1
+    environment:
+      CAMUNDA_ENDPOINT: http://$PUBLIC_HOSTNAME:8090/engine-rest
+      OPENTOSCA_ENDPOINT: http://$PUBLIC_HOSTNAME:1337/csars
+      PORT: 8888
+      QRM_USERNAME: ${GITHUB_USER}
+      QRM_REPONAME: ${QRM_REPONAME}
+      QRM_REPOPATH: ${QRM_REPOPATH}
+      WINERY_ENDPOINT: http://$PUBLIC_HOSTNAME:8093/winery
+    ports:
+      - 8888:8888
     networks:
       - workflow-observability
 
