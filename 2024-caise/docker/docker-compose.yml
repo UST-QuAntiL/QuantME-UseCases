@@ -39,7 +39,7 @@ services:
 
   ### Camunda Engine ###
   camunda-engine:
-    image: camunda/camunda-bpm-platform:run-7.19.0
+    build: camunda
     ports:
       - 8090:8080
     networks:
