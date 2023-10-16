@@ -84,7 +84,7 @@ services:
   #######################
   ### QProv ###
   db:
-    build: initialized-db
+    image: lmmdock/postgres-multi:latest
     logging:
       driver: none
     environment:
