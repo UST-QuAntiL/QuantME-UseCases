@@ -141,44 +141,19 @@ services:
       SPRING_PROFILES_ACTIVE: docker
       QPROV_HOSTNAME: qprov
       QPROV_PORT: 8080
-      TRANSLATOR_HOSTNAME: quantum-transpiler
-      TRANSLATOR_PORT: 5000
       QISKIT_HOSTNAME: qiskit-service
       QISKIT_PORT: 5000
     networks:
      - workflow-observability
-  quantum-transpiler:
-    image: planqk/quantum-transpiler-backend:v1.0.2
-    networks:
-     - workflow-observability
-  redis:
-    image: planqk/redis:v1.0.0
-    networks:
-      - workflow-observability
   qiskit-service:
     image: planqk/qiskit-service:v1.4.0
     command: sh /app/startup.sh
     ports:
       - "5013:5013"
     environment:
-      - REDIS_URL=redis://redis:5040
       - DATABASE_URL=sqlite:////data/app.db
     volumes:
       - exec_data:/data
-    networks:
-      - workflow-observability
-  qiskit-rq-worker:
-    image: planqk/qiskit-service:v1.4.0
-    command: rq worker --url redis://redis:5040 qiskit-service_execute
-    environment:
-      - REDIS_URL=redis://redis:5040
-      - DATABASE_URL=sqlite:////data/app.db
-    volumes:
-      - exec_data:/data
-    depends_on:
-      - redis
-    deploy:
-      replicas: 2
     networks:
       - workflow-observability
   # end of NISQ Analyzer
