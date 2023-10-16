@@ -31,7 +31,6 @@ services:
     networks:
       - workflow-observability
 
-
   #######################
   ### OpenTOSCA Ecosystem ###
   container:
@@ -85,10 +84,7 @@ services:
   #######################
   ### Qiskit Service ###
   redis:
-    image: redis:latest
-    command: --port 5040
-    ports:
-      - "5040:5040"
+    image: planqk/redis:v1.0.0
     networks:
       - workflow-observability
 
