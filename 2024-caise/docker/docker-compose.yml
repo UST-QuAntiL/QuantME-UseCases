@@ -14,8 +14,8 @@ services:
      ENABLE_QHANA_PLUGIN: 'false'
      ENABLE_QUANTME_PLUGIN: 'true'
      QRM_USERNAME: ${GITHUB_USER}
-     QRM_REPONAME: 'QuantME-UseCases'
-     QRM_REPOPATH: '2024-caise/qrms'
+     QRM_REPONAME: ${QRM_REPONAME}
+     QRM_REPOPATH: ${QRM_REPOPATH}
      OPENTOSCA_ENDPOINT: http://$PUBLIC_HOSTNAME:1337/csars
      WINERY_ENDPOINT: http://$PUBLIC_HOSTNAME:8093/winery
     ports:
