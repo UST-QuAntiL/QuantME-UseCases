@@ -20,7 +20,7 @@
 
   def request = [:];
   request.put("adj_matrix", adjMatrix);
-  request.put("parameterized", "true");
+  request.put("parameterized", "false");
   request.put("p", 1);
   if (execution.getVariable("wsBitstring") != null) {
     request.put("initial_state", execution.getVariable("wsBitstring"));
