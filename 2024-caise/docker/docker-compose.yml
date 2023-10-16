@@ -63,27 +63,6 @@ services:
     networks:
       - quokka
 
-  circuit-cutting-service:
-    image: planqk/circuit-cutting-service:v0.1.0
-    ports:
-      - '5076:5076'
-    networks:
-      - quokka
-
-  warm-starting-service:
-    image: planqk/warm-starting-service:latest
-    ports:
-      - '5077:5077'
-    networks:
-      - quokka
-
-  quokka-gateway:
-    image: planqk/quokka-gateway:0.2.0
-    ports:
-      - '6474:6474'
-    networks:
-      - quokka
-
   #######################
   ### qiskit service ####
   redis:
