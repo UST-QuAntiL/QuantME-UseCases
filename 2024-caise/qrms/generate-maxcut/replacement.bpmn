@@ -16,16 +16,71 @@
             <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="groovy">
 			    import groovy.json.JsonBuilder
-  def adjMatrix = execution.getVariable("adjMatrix");
-
+  def matrix = execution.getVariable("adjMatrix");
+  def gammas = execution.getVariable("gammas");
+  def betas = execution.getVariable("betas");
   def request = [:];
-  request.put("adj_matrix", adjMatrix);
+
+    if (matrix instanceof String) {
+        println("Received matrix of type string: " + matrix);
+        matrix = matrix.drop(1).take(matrix.length()-2);
+        matrix= matrix.replaceAll("\\s","").split("\\],\\[");
+        println("Separated matrix: " + matrix.toString());
+
+        new_matrix = []
+        for (el in matrix){
+            def current_array = el.replaceAll("\\[","").replaceAll("\\]","")
+            println("Current array: " + current_array.toString());
+            new_arr = [];
+            def numbers = current_array.split(",");
+            println("Numbers: " + numbers.toString());
+
+            for (number in numbers){
+                new_arr.push(number.toDouble());
+            }
+            new_matrix.push(new_arr);
+        }
+
+        matrix = new_matrix;
+        println("Matrix after parsing: " + matrix.toString());
+        execution.setVariable("adjMatrix", matrix);
+    }
+
+  if (gammas instanceof String) {
+             def current_gammas = gammas.replaceAll("\\[","").replaceAll("\\]","")
+              println("Current gammas: " + current_gammas.toString());
+              new_gammas = [];
+              def numbers = current_gammas.split(",");
+              for (number in numbers){
+                  new_gammas.push(number.toDouble());
+              }
+              gammas = new_gammas
+              execution.setVariable("gammas", gammas);
+  }
+
+    if (betas instanceof String) {
+               def current_betas = betas.replaceAll("\\[","").replaceAll("\\]","")
+                println("Current betas: " + current_betas.toString());
+                new_betas = [];
+                def numbers = current_betas.split(",");
+                for (number in numbers){
+                    new_betas.push(number.toDouble());
+                }
+                betas = new_betas
+                execution.setVariable("betas", betas);
+    }
+
+request.push("adj_matrix", matrix);
   request.put("parameterized", "false");
   request.put("p", 1);
+    request.put("gammas", gammas);
+    request.put("betas", betas);
   if (execution.getVariable("wsBitstring") != null) {
     request.put("initial_state", execution.getVariable("wsBitstring"));
   }
   requeststring = new JsonBuilder(request).toPrettyString()
+  print("test")
+  print(requeststring)
   return requeststring;
 </camunda:script>
             </camunda:inputParameter>
