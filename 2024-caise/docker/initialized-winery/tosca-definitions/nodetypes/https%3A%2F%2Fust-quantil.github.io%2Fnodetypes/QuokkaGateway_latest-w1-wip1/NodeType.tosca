@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:ns0="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://ust-quantil.github.io/nodetypes" id="nodeTypesQuantil-QuokkaGateway_latest-w1-wip1">
+    <NodeType name="QuokkaGateway_latest-w1-wip1" abstract="no" final="no" targetNamespace="https://ust-quantil.github.io/nodetypes">
+        <ns0:PropertiesDefinition elementname="QuokkaGateway_latest-w1-wip1" namespace="https://ust-quantil.github.io/nodetypes">
+            <ns0:properties>
+                <ns0:derivedFromStatus>SELF</ns0:derivedFromStatus>
+                <ns0:derivedFromType xmlns:nodeTypesQuantil="https://ust-quantil.github.io/nodetypes">nodeTypesQuantil:QuokkaGateway_latest-w1-wip1</ns0:derivedFromType>
+                <ns0:key>ERROR_MITIGATION_SERVICE_URI</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:derivedFromStatus>SELF</ns0:derivedFromStatus>
+                <ns0:derivedFromType xmlns:nodeTypesQuantil="https://ust-quantil.github.io/nodetypes">nodeTypesQuantil:QuokkaGateway_latest-w1-wip1</ns0:derivedFromType>
+                <ns0:key>OBJECTIVE_EVALUATION_SERVICE_URI</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:derivedFromStatus>SELF</ns0:derivedFromStatus>
+                <ns0:derivedFromType xmlns:nodeTypesQuantil="https://ust-quantil.github.io/nodetypes">nodeTypesQuantil:QuokkaGateway_latest-w1-wip1</ns0:derivedFromType>
+                <ns0:key>QUANTUM_CIRCUIT_GENERATION_URI</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:derivedFromStatus>SELF</ns0:derivedFromStatus>
+                <ns0:derivedFromType xmlns:nodeTypesQuantil="https://ust-quantil.github.io/nodetypes">nodeTypesQuantil:QuokkaGateway_latest-w1-wip1</ns0:derivedFromType>
+                <ns0:key>OPTIMIZATION_SERVICE_URI</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:derivedFromStatus>SELF</ns0:derivedFromStatus>
+                <ns0:derivedFromType xmlns:nodeTypesQuantil="https://ust-quantil.github.io/nodetypes">nodeTypesQuantil:QuokkaGateway_latest-w1-wip1</ns0:derivedFromType>
+                <ns0:key>CIRCUIT_EXECUTION_SERVICE_URI</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:derivedFromStatus>SELF</ns0:derivedFromStatus>
+                <ns0:derivedFromType xmlns:nodeTypesQuantil="https://ust-quantil.github.io/nodetypes">nodeTypesQuantil:QuokkaGateway_latest-w1-wip1</ns0:derivedFromType>
+                <ns0:key>CIRCUIT_CUTTING_SERVICE_URI</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:derivedFromStatus>SELF</ns0:derivedFromStatus>
+                <ns0:derivedFromType xmlns:nodeTypesQuantil="https://ust-quantil.github.io/nodetypes">nodeTypesQuantil:QuokkaGateway_latest-w1-wip1</ns0:derivedFromType>
+                <ns0:key>WARM_STARTING_SERVICE_URI</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+        </ns0:PropertiesDefinition>
+        <Interfaces>
+            <Interface name="http://opentosca.org/interfaces/lifecycle">
+                <Operation name="install"/>
+                <Operation name="start"/>
+            </Interface>
+        </Interfaces>
+    </NodeType>
+</Definitions>

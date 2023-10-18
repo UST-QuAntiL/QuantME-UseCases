@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" targetNamespace="http://opentosca.org/nodetypes" id="nodeTypes-Ubuntu-VM_18.04-w1">
+    <NodeType name="Ubuntu-VM_18.04-w1" abstract="no" final="no" targetNamespace="http://opentosca.org/nodetypes">
+        <winery:PropertiesDefinition elementname="VirtualMachineProperties" namespace="http://opentosca.org/nodetypes">
+            <winery:properties>
+                <winery:key>VMIP</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMInstanceID</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMType</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMUserName</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMUserPassword</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMPrivateKey</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMPublicKey</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMKeyPairName</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+        </winery:PropertiesDefinition>
+        <DerivedFrom xmlns:nodeTypes="http://opentosca.org/nodetypes" typeRef="nodeTypes:OperatingSystem_w1"/>
+        <RequirementDefinitions>
+            <RequirementDefinition xmlns:requirementTypes="http://opentosca.org/requirementtypes" name="ReqCanHostUbuntuVM" requirementType="requirementTypes:ReqCanHostUbuntuVM" lowerBound="1" upperBound="unbounded"/>
+        </RequirementDefinitions>
+        <Interfaces>
+            <Interface name="OperatingSystemInterface">
+                <Operation name="installPackage">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="yes"/>
+                        <InputParameter name="PackageNames" type="xsd:String" required="yes"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="InstallResult" type="xsd:String" required="yes"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="transferFile">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="yes"/>
+                        <InputParameter name="TargetAbsolutePath" type="xsd:String" required="yes"/>
+                        <InputParameter name="SourceURLorLocalPath" type="xsd:String" required="yes"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="TransferResult" type="xsd:String" required="yes"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="runScript">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="yes"/>
+                        <InputParameter name="Script" type="xsd:String" required="yes"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="ScriptResult" type="xsd:String" required="yes"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="waitForAvailability">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="yes"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="WaitResult" type="xsd:String" required="yes"/>
+                    </OutputParameters>
+                </Operation>
+            </Interface>
+            <Interface name="http://opentosca.org/interfaces/tests">
+                <Operation name="testPortBinding">
+                    <InputParameters>
+                        <InputParameter name="Port" type="xsd:string" required="yes"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="Result" type="xsd:string" required="yes"/>
+                    </OutputParameters>
+                </Operation>
+            </Interface>
+        </Interfaces>
+    </NodeType>
+</Definitions>
