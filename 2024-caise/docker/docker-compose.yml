@@ -13,6 +13,7 @@ services:
      ENABLE_PLANQK_PLUGIN: 'false'
      ENABLE_QHANA_PLUGIN: 'false'
      ENABLE_QUANTME_PLUGIN: 'true'
+     NISQ_ANALYZER_ENDPOINT: http://$PUBLIC_HOSTNAME:8098
      OPENTOSCA_ENDPOINT: http://$PUBLIC_HOSTNAME:1337/csars
      QRM_USERNAME: ${GITHUB_USER}
      QRM_REPONAME: ${QRM_REPONAME}
@@ -137,7 +138,7 @@ services:
   nisq-analyzer:
     image: planqk/nisq-analyzer:v1.5.0
     ports:
-      - 8099:8080
+      - 8098:8080
     environment:
       POSTGRES_HOSTNAME: db
       POSTGRES_PORT: 5432
