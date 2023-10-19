@@ -56,9 +56,10 @@ services:
       - '8081-8087:8081-8087'
     environment:
       CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
-      ENGINE_IA_HOSTNAME: engine-ia
-      ENGINE_IA_PORT: 8080
-      ENGINE_PLAN_BPEL_HOSTNAME: engine-plan
+      ENGINE_IA_HOSTNAME: $PUBLIC_HOSTNAME
+      ENGINE_IA_PORT: 8091
+      ENGINE_PLAN_BPEL_HOSTNAME: $PUBLIC_HOSTNAME
+      ENGINE_PLAN_BPEL_PORT: 8092
       CONTAINER_DEPLOYMENT_TESTS: 'false'
     networks:
       - workflow-observability
@@ -66,10 +67,14 @@ services:
     image: opentosca/ode:v2.4.0
     networks:
       - workflow-observability
+    ports:
+      - '8092:8080'
   engine-ia:
     image: opentosca/engine-ia:v2.1.0
     networks:
       - workflow-observability
+    ports:
+      - '8091:8080'
   winery:
     build: initialized-winery
     logging:
