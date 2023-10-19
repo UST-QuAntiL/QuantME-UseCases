@@ -11,7 +11,7 @@
                     </nodetypes:CloudProviderProperties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate name="Ubuntu-VM" minInstances="1" maxInstances="1" type="nodetypes:Ubuntu-VM_20.04-w1" id="Ubuntu-VM_20.04-w1_0" winery:x="783" winery:y="452" xmlns:nodetypes="http://opentosca.org/nodetypes">
+            <NodeTemplate name="Ubuntu-VM" minInstances="1" maxInstances="1" type="nodetypes:Ubuntu-VM_20.04-w1" id="Ubuntu-VM_20.04-w1_0" winery:x="789" winery:y="451" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Properties>
                     <nodetypes:VirtualMachineProperties>
                         <nodetypes:VMIP/>
@@ -25,8 +25,16 @@
                     </nodetypes:VirtualMachineProperties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate name="Python" minInstances="1" maxInstances="1" type="nodetypes:Python_3-w1" id="Python_3-w1_0" winery:x="782" winery:y="299" xmlns:nodetypes="http://opentosca.org/nodetypes"/>
-            <NodeTemplate name="Qiskit" minInstances="1" maxInstances="1" type="ntyIgeneral3:Qiskit_latest-w1" id="Qiskit_latest-w1_0" winery:x="1105" winery:y="298" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes"/>
+            <NodeTemplate name="Python" minInstances="1" maxInstances="1" type="nodetypes:Python_3-w1" id="Python_3-w1_0" winery:x="458" winery:y="297" xmlns:nodetypes="http://opentosca.org/nodetypes"/>
+            <NodeTemplate name="Qiskit" minInstances="1" maxInstances="1" type="ntyIgeneral3:Qiskit_latest-w1" id="Qiskit_latest-w1_0" winery:x="786" winery:y="293" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes"/>
+            <NodeTemplate name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_0" winery:x="787" winery:y="135" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
+                <Properties>
+                    <ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
+                        <ntyIgeneral3:StartupCommand/>
+                        <ntyIgeneral3:Name/>
+                    </ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
+                </Properties>
+            </NodeTemplate>
             <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
                 <SourceElement ref="Ubuntu-VM_20.04-w1_0"/>
                 <TargetElement ref="OpenStack_22-Victoria-w1_0"/>
@@ -38,6 +46,14 @@
             <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_2" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
                 <SourceElement ref="Qiskit_latest-w1_0"/>
                 <TargetElement ref="Ubuntu-VM_20.04-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="DependsOn" type="ToscaBaseTypes:DependsOn" id="con_DependsOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Qiskit_latest-w1_0"/>
+                <TargetElement ref="Python_3-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_3" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="QuokkaPythonApp_latest-w1-wip1_0"/>
+                <TargetElement ref="Qiskit_latest-w1_0"/>
             </RelationshipTemplate>
         </TopologyTemplate>
     </ServiceTemplate>
