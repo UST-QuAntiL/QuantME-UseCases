@@ -35,7 +35,7 @@
                     </ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
                 </Properties>
                 <DeploymentArtifacts>
-                    <DeploymentArtifact xmlns:otatyIgeneral="http://opentosca.org/artifacttypes" xmlns:ateIgeneral1="https://ust-quantil.github.io/quantum/applications/artifacttemplates" name="Service" artifactType="otatyIgeneral:PythonArchiveArtifact" artifactRef="ateIgeneral1:CircuitGenerationServiceArtifact"/>
+                    <DeploymentArtifact xmlns:otatyIgeneral="http://opentosca.org/artifacttypes" xmlns:ateIgeneral1="https://ust-quantil.github.io/quantum/applications/artifacttemplates" name="Service" artifactType="otatyIgeneral:PythonArchiveArtifact" artifactRef="ateIgeneral1:QuokkaCircuitGenerationServiceArtifact"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
             <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
