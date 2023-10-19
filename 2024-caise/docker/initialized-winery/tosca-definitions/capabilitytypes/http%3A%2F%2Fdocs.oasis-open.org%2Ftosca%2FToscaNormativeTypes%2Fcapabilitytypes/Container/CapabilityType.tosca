@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" id="ToscaNormativeCapabilityTypes-Container">
+    <CapabilityType name="Container" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes"/>
+</Definitions>
