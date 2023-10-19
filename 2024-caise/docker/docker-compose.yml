@@ -110,7 +110,7 @@ services:
     networks:
       - workflow-observability
   qprov:
-    image: planqk/qprov:v1.2.0
+    image: planqk/qprov:v1.3.2
     logging:
       driver: none
     environment:
@@ -124,7 +124,7 @@ services:
     networks:
       - workflow-observability
   qprov-collector-ibm:
-    image: planqk/qprov-collector:v1.2.0
+    image: planqk/qprov-collector:v1.3.2
     logging:
       driver: none
     environment:
