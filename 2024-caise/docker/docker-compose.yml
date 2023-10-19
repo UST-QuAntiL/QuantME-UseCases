@@ -49,7 +49,7 @@ services:
   #######################
   ### OpenTOSCA Ecosystem ###
   container:
-    image: opentosca/container:v3.0.0
+    image: opentosca/container:v3.1.0
     ports:
       - '1337:1337'
       - '8081-8087:8081-8087'
@@ -80,17 +80,6 @@ services:
       WORKFLOWMODELER_HOSTNAME: $PUBLIC_HOSTNAME
       TOPOLOGYMODELER_HOSTNAME: $PUBLIC_HOSTNAME
       CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
-    networks:
-      - workflow-observability
-  dind:
-    image: docker:20.10-dind
-    privileged: true
-    environment:
-      - DOCKER_TLS_CERTDIR=
-    ports:
-      - '2222:2375'
-      - '9990-9999:9990-9999'
-      - '9990-9999:9990-9999/udp'
     networks:
       - workflow-observability
   # end of OpenTOSCA Ecosystem
