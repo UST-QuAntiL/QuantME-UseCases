@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" targetNamespace="http://opentosca.org/artifacttypes" id="artifactTypes-WAR-Java17">
+    <ArtifactType name="WAR-Java17" abstract="no" final="no" targetNamespace="http://opentosca.org/artifacttypes">
+        <winery:PropertiesDefinition elementname="properties" namespace="http://opentosca.org/artifacttypes/propertiesdefinition/winery">
+            <winery:properties>
+                <winery:key>ServiceEndpoint</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>PortType</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:defaultValue>SOAP/HTTP</winery:defaultValue>
+                <winery:key>InvocationType</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+        </winery:PropertiesDefinition>
+        <DerivedFrom xmlns:ArtifactTypes="http://opentosca.org/artifacttypes" typeRef="ArtifactTypes:WAR"/>
+    </ArtifactType>
+</Definitions>
