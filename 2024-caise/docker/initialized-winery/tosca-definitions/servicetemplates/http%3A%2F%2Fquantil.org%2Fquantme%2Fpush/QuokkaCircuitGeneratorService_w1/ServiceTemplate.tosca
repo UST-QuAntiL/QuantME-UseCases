@@ -30,10 +30,13 @@
             <NodeTemplate name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_0" winery:x="787" winery:y="135" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
                 <Properties>
                     <ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
-                        <ntyIgeneral3:StartupCommand/>
-                        <ntyIgeneral3:Name/>
+                        <ntyIgeneral3:StartupCommand>python3 app.py</ntyIgeneral3:StartupCommand>
+                        <ntyIgeneral3:Name>Generation</ntyIgeneral3:Name>
                     </ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
                 </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:otatyIgeneral="http://opentosca.org/artifacttypes" xmlns:ateIgeneral1="https://ust-quantil.github.io/quantum/applications/artifacttemplates" name="Service" artifactType="otatyIgeneral:PythonArchiveArtifact" artifactRef="ateIgeneral1:CircuitGenerationServiceArtifact"/>
+                </DeploymentArtifacts>
             </NodeTemplate>
             <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
                 <SourceElement ref="Ubuntu-VM_20.04-w1_0"/>
