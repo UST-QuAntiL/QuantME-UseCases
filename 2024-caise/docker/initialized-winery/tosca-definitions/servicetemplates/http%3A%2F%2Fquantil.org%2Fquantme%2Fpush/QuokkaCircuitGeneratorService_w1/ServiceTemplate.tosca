@@ -5,9 +5,9 @@
             <NodeTemplate name="OpenStack" minInstances="1" maxInstances="1" type="nodetypes:OpenStack_22-Victoria-w1" id="OpenStack_22-Victoria-w1_0" winery:x="782" winery:y="671" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Properties>
                     <nodetypes:CloudProviderProperties>
-                        <nodetypes:HypervisorEndpoint/>
-                        <nodetypes:HypervisorApplicationID/>
-                        <nodetypes:HypervisorApplicationSecret/>
+                        <nodetypes:HypervisorEndpoint>get_input: HypervisorEndpoint</nodetypes:HypervisorEndpoint>
+                        <nodetypes:HypervisorApplicationID>get_input: HypervisorApplicationID</nodetypes:HypervisorApplicationID>
+                        <nodetypes:HypervisorApplicationSecret>get_input: HypervisorApplicationSecret</nodetypes:HypervisorApplicationSecret>
                     </nodetypes:CloudProviderProperties>
                 </Properties>
             </NodeTemplate>
@@ -16,12 +16,12 @@
                     <nodetypes:VirtualMachineProperties>
                         <nodetypes:VMIP/>
                         <nodetypes:VMInstanceID/>
-                        <nodetypes:VMType/>
-                        <nodetypes:VMUserName/>
+                        <nodetypes:VMType>m1.medium</nodetypes:VMType>
+                        <nodetypes:VMUserName>ubuntu</nodetypes:VMUserName>
                         <nodetypes:VMUserPassword/>
-                        <nodetypes:VMPrivateKey/>
+                        <nodetypes:VMPrivateKey>get_input: VMPrivateKey</nodetypes:VMPrivateKey>
                         <nodetypes:VMPublicKey/>
-                        <nodetypes:VMKeyPairName/>
+                        <nodetypes:VMKeyPairName>get_input: VMKeyPairName</nodetypes:VMKeyPairName>
                     </nodetypes:VirtualMachineProperties>
                 </Properties>
             </NodeTemplate>
