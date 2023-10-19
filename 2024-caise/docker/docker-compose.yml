@@ -40,7 +40,7 @@ services:
 
   ### Camunda Engine ###
   camunda-engine:
-    build: camunda
+    image: camunda/camunda-bpm-platform:run-7.19.0
     ports:
       - 8090:8080
     networks:
@@ -106,7 +106,7 @@ services:
       POSTGRES_USERS: 'qprov:qprov|nisq:nisq'
       POSTGRES_DATABASES: 'qprov:qprov|nisq:nisq'
     ports:
-      - 5432:5432
+      - '5432:5432'
     networks:
       - workflow-observability
   qprov:
@@ -120,7 +120,7 @@ services:
       POSTGRES_PASSWORD: qprov
       POSTGRES_DB: qprov
     ports:
-      - "8094:8080"
+      - '8094:8080'
     networks:
       - workflow-observability
   qprov-collector-ibm:

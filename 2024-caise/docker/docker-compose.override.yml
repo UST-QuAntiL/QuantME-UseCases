@@ -1,0 +1,45 @@
+version: '3'
+
+volumes:
+  exec_data:
+
+services:
+
+  execution-service:
+    image: planqk/execution-service:latest
+    #build: ./services/execution-service
+    ports:
+      - '5075:5075'
+    networks:
+      - workflow-observability
+      
+  optimization-service:
+    image: planqk/optimization-service:latest
+    #build: ./services/optimization-service
+    ports:
+      - '5074:5074'
+    networks:
+      - workflow-observability
+    env_file:
+     - .env
+      
+  objective-evaluation-service:
+    image: planqk/objective-evaluation-service:latest
+    ports:
+      - '5072:5072'
+    networks:
+      - workflow-observability
+      
+  circuit-generation-service:
+    image: planqk/quantum-circuit-generator:latest
+    ports:
+      - '5073:5073'
+    networks:
+      - workflow-observability
+   
+  quokka-gateway:
+    image: planqk/quokka-gateway:0.2.0
+    ports:
+      - '6474:6474'
+    networks:
+      - workflow-observability

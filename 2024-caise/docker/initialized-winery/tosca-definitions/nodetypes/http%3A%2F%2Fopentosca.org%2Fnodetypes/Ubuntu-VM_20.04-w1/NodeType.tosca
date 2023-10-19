@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:ns0="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/nodetypes" id="nodeTypes-Ubuntu-VM_20.04-w1">
+    <NodeType name="Ubuntu-VM_20.04-w1" abstract="no" final="no" targetNamespace="http://opentosca.org/nodetypes">
+        <ns0:PropertiesDefinition elementname="VirtualMachineProperties" namespace="http://opentosca.org/nodetypes">
+            <ns0:properties>
+                <ns0:key>VMIP</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:key>VMInstanceID</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:key>VMType</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:key>VMUserName</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:key>VMUserPassword</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:key>VMPrivateKey</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:key>VMPublicKey</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:key>VMKeyPairName</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+        </ns0:PropertiesDefinition>
+        <DerivedFrom xmlns:nodeTypes="http://opentosca.org/nodetypes" typeRef="nodeTypes:OperatingSystem_w1"/>
+        <RequirementDefinitions>
+            <RequirementDefinition xmlns:requirementTypes="http://opentosca.org/requirementtypes" name="ReqCanHostUbuntuVM" requirementType="requirementTypes:ReqCanHostUbuntuVM" lowerBound="1" upperBound="unbounded"/>
+        </RequirementDefinitions>
+        <CapabilityDefinitions>
+            <CapabilityDefinition xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="ProvideOperatingSystem" capabilityType="ctyIgeneral:OperatingSystem" lowerBound="1" upperBound="1"/>
+        </CapabilityDefinitions>
+        <Interfaces>
+            <Interface name="OperatingSystemInterface">
+                <Operation name="installPackage">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="no"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="no"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="no"/>
+                        <InputParameter name="PackageNames" type="xsd:String" required="no"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="InstallResult" type="xsd:String" required="no"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="transferFile">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="no"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="no"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="no"/>
+                        <InputParameter name="TargetAbsolutePath" type="xsd:String" required="no"/>
+                        <InputParameter name="SourceURLorLocalPath" type="xsd:String" required="no"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="TransferResult" type="xsd:String" required="no"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="runScript">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="no"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="no"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="no"/>
+                        <InputParameter name="Script" type="xsd:String" required="no"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="ScriptResult" type="xsd:String" required="no"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="waitForAvailability">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="no"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="no"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="no"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="WaitResult" type="xsd:String" required="no"/>
+                    </OutputParameters>
+                </Operation>
+            </Interface>
+            <Interface name="http://opentosca.org/interfaces/tests">
+                <Operation name="testPortBinding">
+                    <InputParameters>
+                        <InputParameter name="Port" type="xsd:string" required="no"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="Result" type="xsd:string" required="no"/>
+                    </OutputParameters>
+                </Operation>
+            </Interface>
+        </Interfaces>
+    </NodeType>
+</Definitions>

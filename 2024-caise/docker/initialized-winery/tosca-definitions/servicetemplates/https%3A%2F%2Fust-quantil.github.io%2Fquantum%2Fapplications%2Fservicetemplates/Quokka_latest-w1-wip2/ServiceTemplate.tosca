@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://ust-quantil.github.io/quantum/applications/servicetemplates" id="quantumApplicationsServiceTemplates-Quokka_latest-w1-wip2">
+    <ServiceTemplate name="Quokka_latest-w1-wip2" targetNamespace="https://ust-quantil.github.io/quantum/applications/servicetemplates" id="Quokka_latest-w1-wip2">
+        <TopologyTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerEngine_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerEngine_w1" id="DockerEngine_w1_0" winery:x="2173" winery:y="1342">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <DockerEngineURL>tcp://192.168.0.8:2222</DockerEngineURL>
+                        <DockerEngineCertificate/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerContainer" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w1_0" winery:x="657" winery:y="1152">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>5040</Port>
+                        <ContainerPort>5040</ContainerPort>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID>ubuntu:20.04</ImageID>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                        <Commands/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Redis" minInstances="1" maxInstances="1" type="otntyIgeneral:Redis_6-w1" id="Redis_6-w1_0" winery:x="657" winery:y="677">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <RedisPort>5040</RedisPort>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w1_1" winery:x="1267" winery:y="1152">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>3306</Port>
+                        <ContainerPort>3306</ContainerPort>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID>ubuntu:18.04</ImageID>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                        <Commands/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="MySQL-DBMS" minInstances="1" maxInstances="1" type="otntyIgeneral:MySQL-DBMS_5.7-w1" id="MySQL-DBMS_5.7-w1_0" winery:x="1267" winery:y="962">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <DBMSUser>root</DBMSUser>
+                        <DBMSPassword>root</DBMSPassword>
+                        <DBMSPort>3306</DBMSPort>
+                        <root_password/>
+                        <port/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="MySQL-DB_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:MySQL-DB_w1" id="MySQL-DB_w1_0" winery:x="1267" winery:y="677">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <name/>
+                        <port/>
+                        <user/>
+                        <password/>
+                        <DBName>data</DBName>
+                        <DBUser>qiskit-db</DBUser>
+                        <DBPassword>pass</DBPassword>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w1_3" winery:x="962" winery:y="1152">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>5013</Port>
+                        <ContainerPort>5013</ContainerPort>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID>ubuntu:20.04</ImageID>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                        <Commands/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w1_4" winery:x="1572" winery:y="1152">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port/>
+                        <ContainerPort/>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID>ubuntu:20.04</ImageID>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                        <Commands/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral1="https://ust-quantil.github.io/nodetypes" name="QiskitService-App" minInstances="1" maxInstances="1" type="ntyIgeneral1:QiskitService-App_latest-w1-wip1" id="QiskitService-App_latest-w1-wip1_0" winery:x="1173" winery:y="440">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <REDIS_URL>redis://172.17.0.1:5040</REDIS_URL>
+                        <DATABASE_URL>mysql+pymysql://qiskit-db:pass@172.17.0.1:3306/data</DATABASE_URL>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Python" minInstances="1" maxInstances="1" type="otntyIgeneral:Python_3-w1" id="Python_3-w1_0" winery:x="962" winery:y="701"/>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Python" minInstances="1" maxInstances="1" type="otntyIgeneral:Python_3-w1" id="Python_3-w1_1" winery:x="1572" winery:y="701"/>
+            <NodeTemplate xmlns:ntyIgeneral1="https://ust-quantil.github.io/nodetypes" name="QiskitService-Worker" minInstances="1" maxInstances="1" type="ntyIgeneral1:QiskitService-Worker_latest-w1-wip1" id="QiskitService-Worker_latest-w1-wip1_0" winery:x="1516" winery:y="440">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <DATABASE_URL>mysql+pymysql://qiskit-db:pass@172.17.0.1:3306/data</DATABASE_URL>
+                        <REDIS_URL>redis://172.17.0.1:5040</REDIS_URL>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w1_2" winery:x="1877" winery:y="1152">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>5075</Port>
+                        <ContainerPort>5075</ContainerPort>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID>ubuntu:20.04</ImageID>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                        <Commands/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Python" minInstances="1" maxInstances="1" type="otntyIgeneral:Python_3-w1" id="Python_3-w1_2" winery:x="1877" winery:y="962"/>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w1_5" winery:x="2182" winery:y="1152">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>get_input: GatewayPort</Port>
+                        <ContainerPort>get_input: GatewayPort</ContainerPort>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID>ubuntu:20.04</ImageID>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                        <Commands/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Java" minInstances="1" maxInstances="1" type="otntyIgeneral:Java_17-w1-wip1" id="Java_17-w1-wip1_0" winery:x="2182" winery:y="410">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <component_version/>
+                        <admin_credential/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="SpringWebApp_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:SpringWebApp_w1" id="SpringWebApp_w1_0" winery:x="1890" winery:y="-20">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <context_root/>
+                        <AppName>QuokkaGateway</AppName>
+                        <Port>get_input: GatewayPort</Port>
+                    </Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:otatyIgeneral="http://opentosca.org/artifacttypes" xmlns:ateIgeneral1="https://ust-quantil.github.io/quantum/applications/artifacttemplates" name="Jar" artifactType="otatyIgeneral:JAR" artifactRef="ateIgeneral1:QuokkaGateway_latest-w1-wip1"/>
+                    <DeploymentArtifact xmlns:atyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/artifacttypes" xmlns:ateIgeneral1="https://ust-quantil.github.io/quantum/applications/artifacttemplates" name="Properties" artifactType="atyIgeneral:File" artifactRef="ateIgeneral1:QuokkaGatewayProperties"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral1="https://ust-quantil.github.io/nodetypes" name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral1:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_0" winery:x="1877" winery:y="379">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <StartupCommand>python3 execution-service.py</StartupCommand>
+                        <Name>Execution</Name>
+                    </Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:otatyIgeneral="http://opentosca.org/artifacttypes" xmlns:ateIgeneral1="https://ust-quantil.github.io/quantum/applications/artifacttemplates" name="Service" artifactType="otatyIgeneral:PythonArchiveArtifact" artifactRef="ateIgeneral1:ExecutionServiceArtifact"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w1_6" winery:x="2306" winery:y="962">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>5074</Port>
+                        <ContainerPort>5074</ContainerPort>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID>ubuntu:20.04</ImageID>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                        <Commands/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Python" minInstances="1" maxInstances="1" type="otntyIgeneral:Python_3-w1" id="Python_3-w1_3" winery:x="2306" winery:y="701"/>
+            <NodeTemplate xmlns:ntyIgeneral1="https://ust-quantil.github.io/nodetypes" name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral1:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_1" winery:x="2573" winery:y="379">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <StartupCommand>export FLASK_APP=optimization-service.py &amp;&amp; export FLASK_ENV=development &amp;&amp; export FLASK_DEBUG=0 &amp;&amp; export CAMUNDA_ENDPOINT=http://host.docker.internal:9995/engine-rest &amp;&amp; python3 -m flask run --host=0.0.0.0 --port=5074</StartupCommand>
+                        <Name>Optimization</Name>
+                    </Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:otatyIgeneral="http://opentosca.org/artifacttypes" xmlns:ateIgeneral1="https://ust-quantil.github.io/quantum/applications/artifacttemplates" name="Service" artifactType="otatyIgeneral:PythonArchiveArtifact" artifactRef="ateIgeneral1:OptimizazionServiceArtifact"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w1_7" winery:x="2611" winery:y="1152">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>9995</Port>
+                        <ContainerPort>9995</ContainerPort>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID>ubuntu:20.04</ImageID>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                        <Commands/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Camunda" minInstances="1" maxInstances="1" type="otntyIgeneral:Camunda_7.14.0-w1" id="Camunda_7.14.0-w1_0" winery:x="2640" winery:y="714">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>9995</Port>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Java" minInstances="1" maxInstances="1" type="otntyIgeneral:Java_11-w1" id="Java_11-w1_0" winery:x="2611" winery:y="962">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <component_version/>
+                        <admin_credential/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w1_8" winery:x="2916" winery:y="962">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>5077</Port>
+                        <ContainerPort>5077</ContainerPort>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID>ubuntu:20.04</ImageID>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                        <Commands/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w1_9" winery:x="3221" winery:y="962">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>5076</Port>
+                        <ContainerPort>5076</ContainerPort>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID>ubuntu:20.04</ImageID>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                        <Commands/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w1_10" winery:x="3526" winery:y="962">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>5073</Port>
+                        <ContainerPort>5073</ContainerPort>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID>ubuntu:20.04</ImageID>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                        <Commands/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Python" minInstances="1" maxInstances="1" type="otntyIgeneral:Python_3-w1" id="Python_3-w1_4" winery:x="2916" winery:y="701"/>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Python" minInstances="1" maxInstances="1" type="otntyIgeneral:Python_3-w1" id="Python_3-w1_5" winery:x="3221" winery:y="701"/>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Python" minInstances="1" maxInstances="1" type="otntyIgeneral:Python_3-w1" id="Python_3-w1_6" winery:x="3526" winery:y="701"/>
+            <NodeTemplate xmlns:ntyIgeneral1="https://ust-quantil.github.io/nodetypes" name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral1:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_2" winery:x="2916" winery:y="379">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <StartupCommand>python3 ws-app.py</StartupCommand>
+                        <Name>Warmstarting</Name>
+                    </Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:otatyIgeneral="http://opentosca.org/artifacttypes" xmlns:ateIgeneral1="https://ust-quantil.github.io/quantum/applications/artifacttemplates" name="service" artifactType="otatyIgeneral:PythonArchiveArtifact" artifactRef="ateIgeneral1:WarmStartingServiceArtifact"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral1="https://ust-quantil.github.io/nodetypes" name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral1:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_3" winery:x="3221" winery:y="379">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <StartupCommand>python3 circuit-cutting-service.py</StartupCommand>
+                        <Name>CircuitCutting</Name>
+                    </Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:otatyIgeneral="http://opentosca.org/artifacttypes" xmlns:ateIgeneral1="https://ust-quantil.github.io/quantum/applications/artifacttemplates" name="Service" artifactType="otatyIgeneral:PythonArchiveArtifact" artifactRef="ateIgeneral1:CircuitCuttingServiceArtifact"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral1="https://ust-quantil.github.io/nodetypes" name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral1:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_4" winery:x="3526" winery:y="379">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <StartupCommand>python3 app.py</StartupCommand>
+                        <Name>Generation</Name>
+                    </Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:otatyIgeneral="http://opentosca.org/artifacttypes" xmlns:ateIgeneral1="https://ust-quantil.github.io/quantum/applications/artifacttemplates" name="Service" artifactType="otatyIgeneral:PythonArchiveArtifact" artifactRef="ateIgeneral1:CircuitGenerationServiceArtifact"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral:DockerContainer_w1" id="DockerContainer_w1_11" winery:x="352" winery:y="1152">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>5072</Port>
+                        <ContainerPort>5072</ContainerPort>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID>ubuntu:20.04</ImageID>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                        <Commands/>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral="http://opentosca.org/nodetypes" name="Python" minInstances="1" maxInstances="1" type="otntyIgeneral:Python_3-w1" id="Python_3-w1_7" winery:x="352" winery:y="962"/>
+            <NodeTemplate xmlns:ntyIgeneral1="https://ust-quantil.github.io/nodetypes" name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral1:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_5" winery:x="352" winery:y="630">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <StartupCommand>python3 app.py</StartupCommand>
+                        <Name>Objective</Name>
+                    </Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:otatyIgeneral="http://opentosca.org/artifacttypes" xmlns:ateIgeneral1="https://ust-quantil.github.io/quantum/applications/artifacttemplates" name="Service" artifactType="otatyIgeneral:PythonArchiveArtifact" artifactRef="ateIgeneral1:ObjectiveEvaluationServiceArtifact"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0">
+                <SourceElement ref="Redis_6-w1_0"/>
+                <TargetElement ref="DockerContainer_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_1">
+                <SourceElement ref="DockerContainer_w1_0"/>
+                <TargetElement ref="DockerEngine_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_4">
+                <SourceElement ref="DockerContainer_w1_1"/>
+                <TargetElement ref="DockerEngine_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_5">
+                <SourceElement ref="MySQL-DBMS_5.7-w1_0"/>
+                <TargetElement ref="DockerContainer_w1_1"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_6">
+                <SourceElement ref="MySQL-DB_w1_0"/>
+                <TargetElement ref="MySQL-DBMS_5.7-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_7">
+                <SourceElement ref="DockerContainer_w1_4"/>
+                <TargetElement ref="DockerEngine_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_8">
+                <SourceElement ref="DockerContainer_w1_3"/>
+                <TargetElement ref="DockerEngine_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_9">
+                <SourceElement ref="Python_3-w1_0"/>
+                <TargetElement ref="DockerContainer_w1_3"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_10">
+                <SourceElement ref="QiskitService-App_latest-w1-wip1_0"/>
+                <TargetElement ref="Python_3-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_11">
+                <SourceElement ref="Python_3-w1_1"/>
+                <TargetElement ref="DockerContainer_w1_4"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_12">
+                <SourceElement ref="QiskitService-Worker_latest-w1-wip1_0"/>
+                <TargetElement ref="Python_3-w1_1"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_0">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="QiskitService-Worker_latest-w1-wip1_0"/>
+                <TargetElement ref="MySQL-DB_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_1">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="QiskitService-App_latest-w1-wip1_0"/>
+                <TargetElement ref="MySQL-DB_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_2">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="QiskitService-Worker_latest-w1-wip1_0"/>
+                <TargetElement ref="Redis_6-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_3">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="QiskitService-App_latest-w1-wip1_0"/>
+                <TargetElement ref="Redis_6-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_2">
+                <SourceElement ref="DockerContainer_w1_2"/>
+                <TargetElement ref="DockerEngine_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_3">
+                <SourceElement ref="Python_3-w1_2"/>
+                <TargetElement ref="DockerContainer_w1_2"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_14">
+                <SourceElement ref="DockerContainer_w1_5"/>
+                <TargetElement ref="DockerEngine_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_15">
+                <SourceElement ref="Java_17-w1-wip1_0"/>
+                <TargetElement ref="DockerContainer_w1_5"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_16">
+                <SourceElement ref="SpringWebApp_w1_0"/>
+                <TargetElement ref="Java_17-w1-wip1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_13">
+                <SourceElement ref="QuokkaPythonApp_latest-w1-wip1_0"/>
+                <TargetElement ref="Python_3-w1_2"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_4">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="SpringWebApp_w1_0"/>
+                <TargetElement ref="QuokkaPythonApp_latest-w1-wip1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_17">
+                <SourceElement ref="DockerContainer_w1_6"/>
+                <TargetElement ref="DockerEngine_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_18">
+                <SourceElement ref="Python_3-w1_3"/>
+                <TargetElement ref="DockerContainer_w1_6"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_19">
+                <SourceElement ref="QuokkaPythonApp_latest-w1-wip1_1"/>
+                <TargetElement ref="Python_3-w1_3"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_20">
+                <SourceElement ref="DockerContainer_w1_7"/>
+                <TargetElement ref="DockerEngine_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_5">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="QuokkaPythonApp_latest-w1-wip1_1"/>
+                <TargetElement ref="Camunda_7.14.0-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_6">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="SpringWebApp_w1_0"/>
+                <TargetElement ref="QuokkaPythonApp_latest-w1-wip1_1"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_21">
+                <SourceElement ref="Java_11-w1_0"/>
+                <TargetElement ref="DockerContainer_w1_7"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_22">
+                <SourceElement ref="Camunda_7.14.0-w1_0"/>
+                <TargetElement ref="Java_11-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_23">
+                <SourceElement ref="DockerContainer_w1_8"/>
+                <TargetElement ref="DockerEngine_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_24">
+                <SourceElement ref="Python_3-w1_4"/>
+                <TargetElement ref="DockerContainer_w1_8"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_25">
+                <SourceElement ref="QuokkaPythonApp_latest-w1-wip1_2"/>
+                <TargetElement ref="Python_3-w1_4"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_7">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="SpringWebApp_w1_0"/>
+                <TargetElement ref="QuokkaPythonApp_latest-w1-wip1_2"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_26">
+                <SourceElement ref="DockerContainer_w1_9"/>
+                <TargetElement ref="DockerEngine_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_27">
+                <SourceElement ref="Python_3-w1_5"/>
+                <TargetElement ref="DockerContainer_w1_9"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_28">
+                <SourceElement ref="QuokkaPythonApp_latest-w1-wip1_3"/>
+                <TargetElement ref="Python_3-w1_5"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_29">
+                <SourceElement ref="DockerContainer_w1_10"/>
+                <TargetElement ref="DockerEngine_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_30">
+                <SourceElement ref="Python_3-w1_6"/>
+                <TargetElement ref="DockerContainer_w1_10"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_31">
+                <SourceElement ref="QuokkaPythonApp_latest-w1-wip1_4"/>
+                <TargetElement ref="Python_3-w1_6"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_8">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="SpringWebApp_w1_0"/>
+                <TargetElement ref="QuokkaPythonApp_latest-w1-wip1_4"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_9">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="SpringWebApp_w1_0"/>
+                <TargetElement ref="QuokkaPythonApp_latest-w1-wip1_3"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_32">
+                <SourceElement ref="DockerContainer_w1_11"/>
+                <TargetElement ref="DockerEngine_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_33">
+                <SourceElement ref="Python_3-w1_7"/>
+                <TargetElement ref="DockerContainer_w1_11"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_34">
+                <SourceElement ref="QuokkaPythonApp_latest-w1-wip1_5"/>
+                <TargetElement ref="Python_3-w1_7"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_10">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="SpringWebApp_w1_0"/>
+                <TargetElement ref="QuokkaPythonApp_latest-w1-wip1_5"/>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>
