@@ -101,6 +101,10 @@ The corresponding workflow models can be found [here](2020-ucc).
 
 ## Learn More
 
+* Beisel, Martin; Barzen, Johanna; Bechtold, Marvin; Leymann, Frank; Truger, Felix; Weder, Benjamin:
+  **Metamodel and Formalization to Model, Transform, Deploy, and Execute Quantum Workflows**.
+  In: Cloud Computing and Services Science, Springer, 2024
+
 * Beisel, Martin; Gemeinhardt, Felix; Salm, Marie; Weder, Benjamin:
   [**A Practical Introduction for Developing and Operating Hybrid Quantum Applications**](https://link.springer.com/chapter/10.1007/978-3-031-34444-2_36).
   In: Proceedings of the 23rd International Conference on Web Engineering (ICWE 2023), Springer, 2023 
