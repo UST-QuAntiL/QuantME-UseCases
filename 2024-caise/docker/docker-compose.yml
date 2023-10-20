@@ -115,7 +115,7 @@ services:
       POSTGRES_PASSWORD: qprov
       POSTGRES_DB: qprov
     ports:
-      - '8094:8080'
+      - '8094:5020'
     networks:
       - workflow-observability
   qprov-collector-ibm:
@@ -143,7 +143,7 @@ services:
   nisq-analyzer:
     image: planqk/nisq-analyzer:v1.5.0
     ports:
-      - 8098:8080
+      - 8098:5010
     environment:
       POSTGRES_HOSTNAME: db
       POSTGRES_PORT: 5432
@@ -152,11 +152,12 @@ services:
       POSTGRES_DB: nisq
       SPRING_PROFILES_ACTIVE: docker
       QPROV_HOSTNAME: qprov
-      QPROV_PORT: 8080
+      QPROV_PORT: 8094
       QISKIT_HOSTNAME: qiskit-service
-      QISKIT_PORT: 5000
+      QISKIT_PORT: 5013
     networks:
      - workflow-observability
+
   qiskit-service:
     image: planqk/qiskit-service:v1.5.0
     command: sh /app/startup.sh
