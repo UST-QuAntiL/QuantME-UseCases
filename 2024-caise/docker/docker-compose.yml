@@ -10,6 +10,7 @@ services:
     environment:
      CAMUNDA_ENDPOINT: http://$PUBLIC_HOSTNAME:8090/engine-rest
      ENABLE_DATA_FLOW_PLUGIN: 'false'
+     ENABLE_OPENTOSCA_PLUGIN: 'true'
      ENABLE_PLANQK_PLUGIN: 'false'
      ENABLE_QHANA_PLUGIN: 'false'
      ENABLE_QUANTME_PLUGIN: 'true'
