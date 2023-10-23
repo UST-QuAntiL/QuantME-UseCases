@@ -142,7 +142,7 @@ services:
   #######################
   ### NISQ Analyzer ###
   nisq-analyzer:
-    image: planqk/nisq-analyzer:v1.5.0
+    image: planqk/nisq-analyzer:v1.5.1
     ports:
       - 8098:5010
     environment:
@@ -160,7 +160,7 @@ services:
      - workflow-observability
 
   qiskit-service:
-    image: planqk/qiskit-service:v1.5.0
+    image: planqk/qiskit-service:v1.5.1
     command: sh /app/startup.sh
     ports:
       - "5013:5013"
