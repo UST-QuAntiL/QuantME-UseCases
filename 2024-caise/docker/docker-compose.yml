@@ -10,6 +10,7 @@ services:
     environment:
      CAMUNDA_ENDPOINT: http://$PUBLIC_HOSTNAME:8090/engine-rest
      ENABLE_DATA_FLOW_PLUGIN: 'false'
+     ENABLE_OPENTOSCA_PLUGIN: 'true'
      ENABLE_PLANQK_PLUGIN: 'false'
      ENABLE_QHANA_PLUGIN: 'false'
      ENABLE_QUANTME_PLUGIN: 'true'
@@ -94,7 +95,7 @@ services:
   #######################
   ### QProv ###
   db:
-    image: lmmdock/postgres-multi:latest
+    image: planqk/db:v1.0.0
     logging:
       driver: none
     environment:
@@ -141,7 +142,7 @@ services:
   #######################
   ### NISQ Analyzer ###
   nisq-analyzer:
-    image: planqk/nisq-analyzer:v1.5.0
+    image: planqk/nisq-analyzer:v1.5.1
     ports:
       - 8098:5010
     environment:
@@ -175,4 +176,3 @@ services:
 networks:
   workflow-observability:
     driver: bridge
-
