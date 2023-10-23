@@ -18,7 +18,7 @@
 import groovy.json.JsonBuilder
   def qpu = execution.getVariable("qpu");
   def circuit = execution.getVariable("circuit");
-  def token = execution.getVariable("token");
+  def token = execution.getVariable("quantum_token_ibmq");
   def gammas = execution.getVariable("gammas");
   def betas = execution.getVariable("betas");
   def optimizedParameters = execution.getVariable("optimizedParameters");

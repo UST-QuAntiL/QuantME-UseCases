@@ -152,7 +152,7 @@ services:
       POSTGRES_DB: nisq
       SPRING_PROFILES_ACTIVE: docker
       QPROV_HOSTNAME: qprov
-      QPROV_PORT: 8094
+      QPROV_PORT: 5020
       QISKIT_HOSTNAME: qiskit-service
       QISKIT_PORT: 5013
     networks:
