@@ -95,7 +95,7 @@ services:
   #######################
   ### QProv ###
   db:
-    image: lmmdock/postgres-multi:latest
+    image: planqk/db:v1.0.0
     logging:
       driver: none
     environment:
@@ -160,7 +160,7 @@ services:
      - workflow-observability
 
   qiskit-service:
-    image: planqk/qiskit-service:v1.5.1
+    image: planqk/qiskit-service:v1.5.0
     command: sh /app/startup.sh
     ports:
       - "5013:5013"
@@ -176,4 +176,3 @@ services:
 networks:
   workflow-observability:
     driver: bridge
-
