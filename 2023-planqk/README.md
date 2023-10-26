@@ -4,19 +4,17 @@
 * Git
 * Docker and Docker Compose
 
-Clone the repository:
+### Run the repository:
+1. Change ._env to env
+  
+2. Update the [._env](/_.env) file with your settings:
+  * ``PUBLIC_HOSTNAME``: Enter the hostname/IP address of your Docker engine. Do *not* use ``localhost``.
 
-```shell
-git clone https://github.com/PatternAtlas/pattern-atlas-docker.git
+3. Run the Docker-Compose file:
 ```
-
-
-### Run the pattern repository:
-
-```shell
-docker-compose up
+docker-compose pull
+docker-compose up --build
 ```
-
 
 ## Haftungsausschluss
 
