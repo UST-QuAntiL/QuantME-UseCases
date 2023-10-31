@@ -18,7 +18,37 @@
           <camunda:formField id="onlyMeasurementErrors" label="Noise Model contains only measurement errors" type="boolean" />
           <camunda:formField id="gammas" label="gammas" type="string" defaultValue="[1]" />
           <camunda:formField id="betas" label="betas" type="string" defaultValue="[1]" />
-          <camunda:formField id="p" label="p" type="string" defaultValue="1" />
+          <camunda:formField id="HypervisorEndpoint" label="HypervisorEndpoint" type="string" defaultValue="https://idm01.bw-cloud.org:5000/v3" />
+          <camunda:formField id="HypervisorApplicationID" label="HypervisorApplicationID" type="string" defaultValue="c4393a03db254ff3854ac764d551fe13" />
+          <camunda:formField id="HypervisorApplicationSecret" label="HypervisorApplicationSecret" type="string" defaultValue="" />
+          <camunda:formField id="VMPrivateKey" label="VMPrivateKey" type="string" defaultValue="-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAyMv/c4dhoE8nGRuHWxvOBha0hYVF4nri4dcIHodNPUxFtnGy
+IZvOQEbX349syErH5wl+eJVC6CXy7Jw/YGdXG2f0r7uQg74LWboF434iudhQK2R9
+R+k1HMq2vIe6fPBFBKpJhYjk0KDwRh+FLDkxpkB11NqoNEE4KdESPIEkKh0/C3j4
+08vdZZNPeGuGkF0KoRw83H912d1XVY/Wxo7CLbxxjYXoG2wveZimmHY89xp+ZPbg
+5PoWpALblWjuV+lzaNDn9oXgrhLfOk4/8NY66Xp34om3Gwa8ulQzgkrPWT0FsVH9
+acHu49TFjaX39Xj5LSNdjXWT5PqZv7E3zpFMWwIDAQABAoIBAEKOc8b8edykP+Zv
+nIcTiU+1WPLlAQwYBXosR3GvEWgfDwBxYUUImu3tTYK5zKn7N5WaLQSVHQ9L/OB2
+zf8LYfEgnRdeyYERjjuYkHkehy4oyDIJ5gjfAQ7hFn8ZUjQ1g/sO4r3TaVzJ67qi
+mgbVkmJz/Vqne5eOgqpBtZS+jZkzbzYjQ6YmwMw6S/qXup2p69RzxuFSOCp9IHck
+/4jT9/hk9tVTz0wIaFS0fk3jIxhxGv3E6UiIpN1kn2HmoIsN+0Z5IXuuTSHA13MA
+xUNNBeVCM4JYaGH2GjjpoAPlpTK/wfYPXyWRuAewC40GpXMxoXz4L+D7nmyeJaBl
+/N+fQBECgYEA/klQkrgp1jhkLTlLvhHeHI6UG68kPtaWd7UuQ9Z8h0+4WTLu7+TS
+5Fu93AFCrtds6EG0FErDORCoH4XVOdvUyHHUjrnhuE4shYzIxZyxbm7VIhKGLgKH
+X7C4mv4doY6n2EQMld6WHDyA4nroExfl/xQBJdLDUog9gsKheZZ/JlMCgYEAyiZn
+r3mQeyyI61e+9Q80xkhefXxlOedL4fHkCO2+YkVqhoOj49zllWUAUFrSrEkue5+g
+YZp8eStNGjDzhYOzA/s8OO/mynYaQny942aPV6FJcMUFBguETI/xoxTBdxZ6HH6L
+Ku92ADJmCF7/n6raBOXQnzWI3MzdHiu4ysA08NkCgYB+qfxlqTDF0X8s+75b5kCS
+Tv89rwdJ+dAnvutVxVBwgmhcnj9g5cWbFIvFPCeAOjS4mIngFcGa+k4UrbChynv6
+gKEVm0fxa5dHyvHzZXMIhFLMTxfhcUcHhlrecbhG0m2PD46JVL/HPuggaIKTiDL7
+1XYg5hR/Vvf024hdrXaWmwKBgQCK2xCTx0QIZ9HxHofL21Mb9G/7cGwz9v33yOkj
+fPMum5INrfTwuzZ0hTlO+OQHdglY35ASG0TvEmBW4lMUXh+kV3nJfnigj7l//CGP
+R06lGePRc3P88AJDeQi5RbOSsrzUP9QmfPAoOHY/v8mFCp3RiW7hPauyR4KHi+7W
+TmrPGQKBgQDdo7sjrGwiiTYpY2DFuuGcyTx0TyBthjJe2dTfC0s+LGv0tDy57yf7
+Jjq4bnTTL+ETbNxXUFPmTZ6iPp4Itgm8ETFTJnrPCJJFfKm5avHomOrf2WjVp/Os
+6jLS0kgKqmi8ZRTgYu396yniKyza4N+IrYKFpg0m5GJUraSknrDQDA==
+-----END RSA PRIVATE KEY-----" />
+          <camunda:formField id="VMKeyPairName" label="VMKeyPairName" type="string" defaultValue="Orchestration" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:outgoing>Flow_1qkl8n3</bpmn:outgoing>
