@@ -71,7 +71,7 @@ services:
     ports:
       - '8092:9763'
   engine-ia:
-    image: opentosca/engine-ia:v2.1.0
+    image: opentosca/engine-ia:v3.0.0-jdk17
     networks:
       - workflow-observability
     ports:

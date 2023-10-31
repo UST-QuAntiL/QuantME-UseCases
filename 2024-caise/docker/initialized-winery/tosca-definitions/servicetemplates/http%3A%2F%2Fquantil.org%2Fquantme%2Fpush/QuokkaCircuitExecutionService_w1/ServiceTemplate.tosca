@@ -8,7 +8,7 @@
             <NodeTemplate name="OpenStack" minInstances="1" maxInstances="1" type="nodetypes:OpenStack_22-Victoria-w1" id="OpenStack_22-Victoria-w1_0" winery:x="386" winery:y="648" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Properties>
                     <nodetypes:CloudProviderProperties>
-                        <nodetypes:HypervisorEndpoint>get_input: HypervisorEndpoint</nodetypes:HypervisorEndpoint>
+                        <nodetypes:HypervisorEndpoint>https://idm01.bw-cloud.org:5000/v3</nodetypes:HypervisorEndpoint>
                         <nodetypes:HypervisorApplicationID>get_input: HypervisorApplicationID</nodetypes:HypervisorApplicationID>
                         <nodetypes:HypervisorApplicationSecret>get_input: HypervisorApplicationSecret</nodetypes:HypervisorApplicationSecret>
                     </nodetypes:CloudProviderProperties>
@@ -21,9 +21,9 @@
                         <nodetypes:VMInstanceID/>
                         <nodetypes:VMType>m1.medium</nodetypes:VMType>
                         <nodetypes:VMUserName>ubuntu</nodetypes:VMUserName>
-                        <nodetypes:VMUserPassword/>
+                        <nodetypes:VMUserPassword>unused</nodetypes:VMUserPassword>
                         <nodetypes:VMPrivateKey>get_input: VMPrivateKey</nodetypes:VMPrivateKey>
-                        <nodetypes:VMPublicKey/>
+                        <nodetypes:VMPublicKey>unused</nodetypes:VMPublicKey>
                         <nodetypes:VMKeyPairName>get_input: VMKeyPairName</nodetypes:VMKeyPairName>
                     </nodetypes:VirtualMachineProperties>
                 </Properties>
