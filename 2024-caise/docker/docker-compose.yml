@@ -8,33 +8,33 @@ services:
   workflow-modeler:
     image: planqk/workflow-modeler:latest
     environment:
-     CAMUNDA_ENDPOINT: http://$PUBLIC_HOSTNAME:8090/engine-rest
+     CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
      ENABLE_DATA_FLOW_PLUGIN: 'false'
      ENABLE_OPENTOSCA_PLUGIN: 'true'
      ENABLE_PLANQK_PLUGIN: 'false'
      ENABLE_QHANA_PLUGIN: 'false'
      ENABLE_QUANTME_PLUGIN: 'true'
-     NISQ_ANALYZER_ENDPOINT: http://$PUBLIC_HOSTNAME:8098
-     OPENTOSCA_ENDPOINT: http://$PUBLIC_HOSTNAME:1337/csars
+     NISQ_ANALYZER_ENDPOINT: http://${PUBLIC_HOSTNAME}:8098
+     OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
      QRM_USERNAME: ${GITHUB_USER}
      QRM_REPONAME: ${QRM_REPONAME}
      QRM_REPOPATH: ${QRM_REPOPATH}
-     TRANSFORMATION_FRAMEWORK_ENDPOINT: http://$PUBLIC_HOSTNAME:8888
-     WINERY_ENDPOINT: http://$PUBLIC_HOSTNAME:8093/winery
+     TRANSFORMATION_FRAMEWORK_ENDPOINT: http://${PUBLIC_HOSTNAME}:8888
+     WINERY_ENDPOINT: http://${PUBLIC_HOSTNAME}:8093/winery
     ports:
       - 8080:8080
     networks:
       - workflow-observability
   transformation-backend:
-    image: planqk/quantme-backend:v1.5.1
+    image: planqk/quantme-backend:v1.6.0
     environment:
-      CAMUNDA_ENDPOINT: http://$PUBLIC_HOSTNAME:8090/engine-rest
-      OPENTOSCA_ENDPOINT: http://$PUBLIC_HOSTNAME:1337/csars
+      CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
+      OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
       PORT: 8888
       QRM_USERNAME: ${GITHUB_USER}
       QRM_REPONAME: ${QRM_REPONAME}
       QRM_REPOPATH: ${QRM_REPOPATH}
-      WINERY_ENDPOINT: http://$PUBLIC_HOSTNAME:8093/winery
+      WINERY_ENDPOINT: http://${PUBLIC_HOSTNAME}:8093/winery
     ports:
       - 8888:8888
     networks:
@@ -56,10 +56,10 @@ services:
       - '1337:1337'
       - '8081-8087:8081-8087'
     environment:
-      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
-      ENGINE_IA_JAVA17_HOSTNAME: $PUBLIC_HOSTNAME
+      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      ENGINE_IA_JAVA17_HOSTNAME: ${PUBLIC_HOSTNAME}
       ENGINE_IA_JAVA17_PORT: 8091
-      ENGINE_PLAN_BPEL_HOSTNAME: $PUBLIC_HOSTNAME
+      ENGINE_PLAN_BPEL_HOSTNAME: ${PUBLIC_HOSTNAME}
       ENGINE_PLAN_BPEL_PORT: 8092
       CONTAINER_DEPLOYMENT_TESTS: 'false'
     networks:
@@ -83,10 +83,10 @@ services:
     ports:
       - '8093:8080'
     environment:
-      WINERY_HOSTNAME: $PUBLIC_HOSTNAME
-      WORKFLOWMODELER_HOSTNAME: $PUBLIC_HOSTNAME
-      TOPOLOGYMODELER_HOSTNAME: $PUBLIC_HOSTNAME
-      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+      WINERY_HOSTNAME: ${PUBLIC_HOSTNAME}
+      WORKFLOWMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      TOPOLOGYMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
     networks:
       - workflow-observability
   # end of OpenTOSCA Ecosystem
