@@ -21,9 +21,9 @@
                         <nodetypes:VMInstanceID/>
                         <nodetypes:VMType>m1.medium</nodetypes:VMType>
                         <nodetypes:VMUserName>ubuntu</nodetypes:VMUserName>
-                        <nodetypes:VMUserPassword/>
+                        <nodetypes:VMUserPassword>unused</nodetypes:VMUserPassword>
                         <nodetypes:VMPrivateKey>get_input: VMPrivateKey</nodetypes:VMPrivateKey>
-                        <nodetypes:VMPublicKey/>
+                        <nodetypes:VMPublicKey>unused</nodetypes:VMPublicKey>
                         <nodetypes:VMKeyPairName>get_input: VMKeyPairName</nodetypes:VMKeyPairName>
                     </nodetypes:VirtualMachineProperties>
                 </Properties>
