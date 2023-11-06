@@ -1,16 +1,29 @@
 version: '3'
 
 services:
+  #############
+  # Databases #
+  #############
+
   db:
-    image: postgres:15
+    image: ghcr.io/philwun/docker-postgres-multi:master
     environment:
-        POSTGRES_USER: patternatlas
-        POSTGRES_PASSWORD: patternatlas
-        POSTGRES_DB: patternatlas
+        # specifies user:password for each container
+        POSTGRES_USERS: patternatlas:patternatlas|nisq:nisq|qprov:qprov
+        # specifies database:user for each container
+        POSTGRES_DATABASES: patternatlas:patternatlas|nisq:nisq|qprov:qprov
     ports:
         - "5061:5432"
     networks:
-      - default
+      - planqk-demo
+  
+  redis:
+    image: redis:6.2.2
+    ports:
+      - "5040:5040"
+    command: --port 5040
+    networks:
+      - planqk-demo
 
   ###################################
   # Workflow Modeler + dependencies #
@@ -25,6 +38,7 @@ services:
       - 8080:8080
     networks:
       - planqk-demo
+
   camunda-engine:
     image: camunda/camunda-bpm-platform:run-7.19.0
     ports:
@@ -58,11 +72,12 @@ services:
     ports:
       - "1977:1977"
     networks:
-      - default
+      - planqk-demo
     depends_on:
       - db
       - latex-renderer
     restart: on-failure
+
   pattern-atlas-ui:
     image: patternatlas/pattern-atlas-ui:v1.5.6
     platform: linux/x86_64
@@ -81,7 +96,8 @@ services:
     ports:
       - "1978:80"
     networks:
-      - default
+      - planqk-demo
+
   auth:
     image: quay.io/keycloak/keycloak:18.0.0
     command: start-dev --import-realm
@@ -93,7 +109,8 @@ services:
     ports:
       - "7080:8080"
     networks:
-      - default
+      - planqk-demo
+
   config-server:
     image: quay.io/coreos/etcd:v3.5.9
     environment:
@@ -105,13 +122,165 @@ services:
     ports:
       - "2379:2379"
     networks:
-      - default
+      - planqk-demo
+
   # used by the pattern atlas to render latex
   latex-renderer:
     image: planqk/latex-renderer:v1.1.1
     ports:
       - "5030:5030"
+    networks:
+      - planqk-demo
+
+################################
+# Nisq Analyzer + dependencies #
+################################
+
+  nisq-analyzer:
+    image: planqk/nisq-analyzer:latest
+    environment:
+      POSTGRES_HOSTNAME: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: nisq
+      POSTGRES_PASSWORD: nisq
+      POSTGRES_DB: nisq
+
+      # activate correct application properties
+      SPRING_PROFILES_ACTIVE: docker
+
+      # Configure QPROV connection
+      QPROV_HOSTNAME: qprov
+      QPROV_PORT: 5020
+      TRANSLATOR_HOSTNAME: quantum-transpiler
+      TRANSLATOR_PORT: 5012
+      # Configuration of the SDK Connector Services
+      QISKIT_HOSTNAME: qiskit-service
+      QISKIT_PORT: 5013
+      PYTKET_HOSTNAME: pytket-service
+      PYTKET_PORT: 5015
+      # Configure Prioritization Service connection
+      PRIORITIZATION_HOSTNAME: qhana-plugin-runner
+      PRIORITIZATION_PORT: 8080
+    ports:
+      - '5010:5010'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - planqk-demo
+
+  nisq-analyzer-ui:
+    image: planqk/nisq-analyzer-ui:latest
+    environment:
+      NISQ_ANALYZER_HOST_NAME: localhost
+      NISQ_ANALYZER_PORT: 5010
+    ports:
+      - '5009:80'
+    networks:
+      - planqk-demo
+
+  qprov:
+    image: planqk/qprov:latest
+    environment:
+      POSTGRES_HOSTNAME: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: qprov
+      POSTGRES_PASSWORD: qprov
+      POSTGRES_DB: qprov
+    ports:
+      - "5020:5020"
+    networks:
+      - planqk-demo
+
+  qprov-collector-ibm:
+    image: planqk/qprov-collector:latest
+    environment:
+      POSTGRES_HOSTNAME: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: qprov
+      POSTGRES_PASSWORD: qprov
+      POSTGRES_DB: qprov
+      QPROV_IBMQ_TOKEN: ''
+      QPROV_IBMQ_EXECUTE_CIRCUITS: 'false'
+      QPROV_IBMQ_AUTO_COLLECT: 'true'
+      QPROV_IBMQ_AUTO_COLLECT_INTERVAL: 60
+      QPROV_IBMQ_AUTO_COLLECT_INTERVAL_CIRCUITS: 180
+      QISKIT_SERVICE_HOSTNAME: qiskit-service
+      QISKIT_SERVICE_PORT: 5013
+    ports:
+      - "5021:5021"
+    networks:
+      - planqk-demo
+
+  quantum-transpiler:
+    image: planqk/quantum-transpiler-backend:latest
+    ports:
+     - '5012:5012'
+    networks:
+     - planqk-demo
+
+  quantum-transpiler-frontend:
+    image: planqk/quantum-transpiler-frontend:latest
+    ports:
+     - '5011:80'
+    networks:
+     - planqk-demo
+  
+  qiskit-service:
+    image: planqk/qiskit-service:latest
+    command: sh /app/startup.sh
+    ports:
+      - "5013:5013"
+    environment:
+      - REDIS_URL=redis://redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    networks:
+      - planqk-demo
+
+  qiskit-rq-worker:
+    image: planqk/qiskit-service:latest
+    command: rq worker --url redis://redis:5040 qiskit-service_execute
+    environment:
+      - REDIS_URL=redis://redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    depends_on:
+      - redis
+    deploy:
+      replicas: 1
+    networks:
+      - planqk-demo
+  
+  pytket-service:
+    image: planqk/pytket-service:latest
+    command: sh /app/startup.sh
+    ports:
+      - "5015:5015"
+    environment:
+      - REDIS_URL=redis://redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    networks:
+      - planqk-demo
+
+  pytket-rq-worker:
+    image: planqk/pytket-service:latest
+    command: rq worker --url redis://redis:5040 pytket-service_execute
+    environment:
+      - REDIS_URL=redis://redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    depends_on:
+      - redis
+    networks:
+      - planqk-demo
 
 networks:
   planqk-demo:
     driver: bridge
+volumes:
+  exec_data:
