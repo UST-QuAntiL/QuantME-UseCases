@@ -14,6 +14,14 @@
                 <ns0:key>HypervisorApplicationSecret</ns0:key>
                 <ns0:type>xsd:string</ns0:type>
             </ns0:properties>
+			<ns0:properties>
+                <ns0:key>HypervisorNetworks</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+			<ns0:properties>
+                <ns0:key>HypervisorRegion</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
         </ns0:PropertiesDefinition>
         <CapabilityDefinitions>
             <CapabilityDefinition xmlns:capabilityTypes="http://opentosca.org/capabilitytypes" name="CapCanHostUbuntuVM" capabilityType="capabilityTypes:CapCanHostUbuntuVM" lowerBound="0" upperBound="UNBOUNDED"/>
@@ -25,6 +33,8 @@
                         <InputParameter name="HypervisorEndpoint" type="xsd:string" required="yes"/>
                         <InputParameter name="HypervisorApplicationID" type="xsd:string" required="yes"/>
                         <InputParameter name="HypervisorApplicationSecret" type="xsd:string" required="yes"/>
+                        <InputParameter name="HypervisorRegion" type="xsd:string" required="yes"/>
+                        <InputParameter name="HypervisorNetworks" type="xsd:string" required="yes"/>
                         <InputParameter name="VMType" type="xsd:string" required="yes"/>
                         <InputParameter name="VMImageID" type="xsd:string" required="yes"/>
                         <InputParameter name="VMKeyPairName" type="xsd:string" required="yes"/>
@@ -44,6 +54,7 @@
                         <InputParameter name="HypervisorEndpoint" type="xsd:string" required="yes"/>
                         <InputParameter name="HypervisorApplicationID" type="xsd:string" required="yes"/>
                         <InputParameter name="HypervisorApplicationSecret" type="xsd:string" required="yes"/>
+                        <InputParameter name="HypervisorRegion" type="xsd:string" required="yes"/>
                         <InputParameter name="VMInstanceID" type="xsd:string" required="yes"/>
                     </InputParameters>
                     <OutputParameters>

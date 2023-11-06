@@ -9,7 +9,8 @@ pip3 install --upgrade pip
 sudo mkdir -p ~/$Name
 
 #find csar root
-csarRoot=$(find ~/.. -maxdepth 1 -path "*.csar");
+csarRoot=$(find ~ -maxdepth 1 -path "*.csar");
+echo 'CSAR ROOT:' $csarRoot
 
 IFS=';' read -ra NAMES <<< "$DAs";
 for i in "${NAMES[@]}"; do
@@ -23,7 +24,7 @@ for i in "${NAMES[@]}"; do
 	if [[ "${OT_PATH[1]}" == *.tar.gz ]]; then
 		echo "Extracting Python Service..."
 		sudo tar -xf $csarRoot${OT_PATH[1]} -C ~/$Name
-		echo "Installing dependencies..."
+		echo "Installing dependencies from requirements file..."
 		pip install --no-cache-dir -r ~/$Name/requirements.txt
 	fi
 	if [[ "${OT_PATH[1]}" == *requirements.txt ]]; then
