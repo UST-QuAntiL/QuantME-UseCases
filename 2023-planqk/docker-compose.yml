@@ -1,5 +1,6 @@
-version: '3.6'
-services:      
+version: '3'
+
+services:
   db:
     image: postgres:15
     environment:
@@ -7,9 +8,34 @@ services:
         POSTGRES_PASSWORD: patternatlas
         POSTGRES_DB: patternatlas
     ports:
-        - "5060:5432"
+        - "5061:5432"
     networks:
       - default
+
+  ###################################
+  # Workflow Modeler + dependencies #
+  ###################################
+
+  workflow-modeler:
+    image: planqk/workflow-modeler:latest
+    environment:
+     CAMUNDA_ENDPOINT: http://localhost:8090/engine-rest
+     PATTERN_ATLAS_ENDPOINT: http://localhost:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
+    ports:
+      - 8080:8080
+    networks:
+      - planqk-demo
+  camunda-engine:
+    image: camunda/camunda-bpm-platform:run-7.19.0
+    ports:
+      - 8090:8080
+    networks:
+      - planqk-demo
+
+  ################################
+  # Pattern Atlas + dependencies #
+  ################################
+
   pattern-atlas-api:
     image: patternatlas/pattern-atlas-api:latest
     environment:
@@ -37,10 +63,55 @@ services:
       - db
       - latex-renderer
     restart: on-failure
+  pattern-atlas-ui:
+    image: patternatlas/pattern-atlas-ui:v1.5.6
+    platform: linux/x86_64
+    depends_on:
+      - config-server
+    environment:
+      # because the requests are performed from the browser and not
+      # from the container itself we have to specify localhost here
+      # and **not** the container name
+      PATTERN_ATLAS_API_HOST_NAME: localhost
+      PATTERN_ATLAS_API_PORT: 1977
+      LATEX_RENDERER_HOST_NAME: localhost
+      LATEX_RENDERER_PORT: 5030
+      URL_SCHEME: http
+      AUTH_REALM_URL: http://localhost:7080/realms/patternatlas
+    ports:
+      - "1978:80"
+    networks:
+      - default
+  auth:
+    image: quay.io/keycloak/keycloak:18.0.0
+    command: start-dev --import-realm
+    volumes:
+      - ./keycloak_import:/opt/keycloak/data/import
+    environment:
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KEYCLOAK_ADMIN: admin
+    ports:
+      - "7080:8080"
+    networks:
+      - default
+  config-server:
+    image: quay.io/coreos/etcd:v3.5.9
+    environment:
+      ETCD_NAME: config-node1
+      ETCD_CORS: "*"
+      ETCD_ADVERTISE_CLIENT_URLS: "http://config-server:2379"
+      ETCD_LISTEN_CLIENT_URLS: "http://0.0.0.0:2379"
+      ETCDCTL_API: 3
+    ports:
+      - "2379:2379"
+    networks:
+      - default
+  # used by the pattern atlas to render latex
   latex-renderer:
     image: planqk/latex-renderer:v1.1.1
     ports:
       - "5030:5030"
+
 networks:
-  default:
+  planqk-demo:
     driver: bridge
