@@ -4,6 +4,14 @@
         <Tags>
             <Tag name="top-node" value="QuokkaPythonApp_latest-w1-wip1_0"/>
         </Tags>
+        <BoundaryDefinitions>
+            <Properties>
+                <ns0:selfserviceApplicationUrl xmlns:ns0="http://www.eclipse.org/winery/model/selfservice"/>
+                <PropertyMappings>
+                    <PropertyMapping serviceTemplatePropertyRef="/*[local-name()='selfserviceApplicationUrl']" targetObjectRef="Ubuntu-VM_20.04-w1_0" targetPropertyRef="concat('http://', Ubuntu-VM_20.04-w1_0.Properties.VMIP, ':5074')"/>
+                </PropertyMappings>
+            </Properties>
+        </BoundaryDefinitions>
         <TopologyTemplate>
             <NodeTemplate name="OpenStack" minInstances="1" maxInstances="1" type="nodetypes:OpenStack_22-Victoria-w1" id="OpenStack_22-Victoria-w1_0" winery:x="779" winery:y="523" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Properties>
