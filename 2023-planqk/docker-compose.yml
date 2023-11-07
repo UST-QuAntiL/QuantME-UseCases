@@ -9,9 +9,9 @@ services:
     image: ghcr.io/philwun/docker-postgres-multi:master
     environment:
         # specifies user:password for each container
-        POSTGRES_USERS: patternatlas:patternatlas|nisq:nisq|qprov:qprov
+        POSTGRES_USERS: patternatlas:patternatlas|nisq:nisq|qprov:qprov|qhana:qhana|registry:registry
         # specifies database:user for each container
-        POSTGRES_DATABASES: patternatlas:patternatlas|nisq:nisq|qprov:qprov
+        POSTGRES_DATABASES: patternatlas:patternatlas|nisq:nisq|qprov:qprov|qhana:qhana|registry:registry
     ports:
         - "5061:5432"
     networks:
@@ -279,8 +279,144 @@ services:
     networks:
       - planqk-demo
 
+#########
+# QHAna #
+#########
+
+  qhana-plugin-runner:
+    image: ghcr.io/ust-quantil/qhana-plugin-runner:main
+    depends_on:
+      - redis
+      - db
+      - minio
+    ports:
+      - "5005:8080"
+    volumes:
+      - instance:/app/instance
+    environment:
+      CONCURRENCY: 2
+      BROKER_URL: redis://redis:5040
+      RESULT_BACKEND: redis://redis:5040
+      CELERY_QUEUE: "qhana_queue1"
+      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://qhana:qhana@db:5432/qhana"
+      DEFAULT_FILE_STORE: "minio"
+      MINIO_CLIENT: '{"endpoint": "localhost:9000", "access_key": "QHANA", "secret_key": "QHANAQHANA", "secure": false}'
+      LOCALHOST_PROXY_PORTS: &localhost-proxy-ports ":5005 :5006 :5007 :9000 :9001 :9091 ${EXTRA_PROXY_PORTS}"
+      GIT_PLUGINS: &git-plugins "git+https://github.com/UST-QuAntiL/qhana-plugin-runner.git@main#subdirectory=/stable_plugins\ngit+https://github.com/UST-QuAntiL/nisq-analyzer-prio-service.git@master#subdirectory=/plugins"
+      PLUGIN_FOLDERS: &plugin-folders ./git-plugins:./git-plugins/classical_ml/data_preparation:./git-plugins/classical_ml/scikit_ml:./git-plugins/data_synthesis:./git-plugins/demo:./git-plugins/file_utils:./git-plugins/infrastructure:./git-plugins/muse:./git-plugins/nisq_analyzer:./git-plugins/quantum_ml/max_cut:./git-plugins/quantum_ml/pennylane_qiskit_ml:./git-plugins/quantum_ml/qiskit_ml:./git-plugins/visualization/complex:./git-plugins/visualization/file_types:./git-plugins/workflow
+      NISQ_ANALYZER_UI_URL: http://localhost:5009
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - planqk-demo
+  minio:
+    image: quay.io/minio/minio
+    command: server /data --console-address ":9001"
+    volumes:
+      - minio:/data
+    environment:
+      MINIO_ROOT_USER: QHANA
+      MINIO_ROOT_PASSWORD: QHANAQHANA
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    networks:
+      - planqk-demo
+  muse-db:
+    image: ghcr.io/ust-quantil/mini-muse:main
+  worker:
+    image: ghcr.io/ust-quantil/qhana-plugin-runner:main
+    depends_on:
+      - qhana-plugin-runner
+    volumes:
+      - instance:/app/instance
+    environment:
+      CONTAINER_MODE: worker
+      CONCURRENCY: 2
+      BROKER_URL: redis://redis:5040
+      RESULT_BACKEND: redis://redis:5040
+      CELERY_QUEUE: "qhana_queue1"
+      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://qhana:qhana@db:5432/qhana"
+      DEFAULT_FILE_STORE: "minio"
+      MINIO_CLIENT: '{"endpoint": "localhost:9000", "access_key": "QHANA", "secret_key": "QHANAQHANA", "secure": false}'
+      LOCALHOST_PROXY_PORTS: *localhost-proxy-ports
+      GIT_PLUGINS: *git-plugins
+      PLUGIN_FOLDERS: *plugin-folders
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - planqk-demo
+  backend:
+    image: ghcr.io/ust-quantil/qhana-backend:main
+    volumes:
+      - experiments:/app/data
+    environment:
+      LOCALHOST_PROXY_PORTS: *localhost-proxy-ports
+      QHANA_HOST: http://localhost:9091
+    ports:
+      - 9091:9090
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - planqk-demo
+  qhana-ui:
+    image: ghcr.io/ust-quantil/qhana-ui:main
+    ports:
+      - 8081:8080
+    environment:
+      PLUGIN_REGISTRY_PROTOCOL: "http:"
+      PLUGIN_REGISTRY_HOSTNAME: localhost
+      PLUGIN_REGISTRY_PORT: 5006
+      PLUGIN_REGISTRY_PATH: /api/
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - planqk-demo
+  registry:
+    image: ghcr.io/ust-quantil/qhana-plugin-registry:main
+    ports:
+      - "5006:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      WAIT_HOSTS: redis:5040, db:5432, qhana-plugin-runner:8080
+      WAIT_SLEEP_INTERVAL: 5
+      WAIT_TIMEOUT: 600
+      BROKER_URL: redis://redis:5040
+      RESULT_BACKEND: redis://redis:5040
+      CELERY_QUEUE: "registry_queue"
+      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://registry:registry@db:5432/registry"
+      LOCALHOST_PROXY_PORTS: *localhost-proxy-ports
+      INITIAL_PLUGIN_SEEDS: "http://localhost:5005"
+      PRECONFIGURED_SERVICES: '[{"serviceId": "qhana-backend", "name": "Backend", "url": "http://localhost:9091"}]'
+    networks:
+      - planqk-demo
+  registry-worker:
+    image: ghcr.io/ust-quantil/qhana-plugin-registry:main
+    ports:
+      - "5007:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      WAIT_HOSTS: redis:5040, db:5432, qhana-plugin-runner:8080
+      WAIT_SLEEP_INTERVAL: 5
+      WAIT_TIMEOUT: 600
+      CONTAINER_MODE: worker
+      BROKER_URL: redis://redis:5040
+      RESULT_BACKEND: redis://redis:5040
+      CELERY_QUEUE: "registry_queue"
+      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://registry:registry@db:5432/registry"
+      LOCALHOST_PROXY_PORTS: *localhost-proxy-ports
+      PLUGIN_DISCOVERY_INTERVAL: 60
+      PERIODIC_SCHEDULER: true
+    networks:
+      - planqk-demo
+
 networks:
   planqk-demo:
     driver: bridge
 volumes:
   exec_data:
+  instance:
+  minio:
+  experiments:
