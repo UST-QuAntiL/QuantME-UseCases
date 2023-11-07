@@ -31,6 +31,9 @@ services:
 
   workflow-modeler:
     image: planqk/workflow-modeler:latest
+    profiles:
+      - all
+      - workflow
     environment:
      CAMUNDA_ENDPOINT: http://localhost:8090/engine-rest
      PATTERN_ATLAS_ENDPOINT: http://localhost:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
@@ -41,6 +44,9 @@ services:
 
   camunda-engine:
     image: camunda/camunda-bpm-platform:run-7.19.0
+    profiles:
+      - all
+      - workflow
     ports:
       - 8090:8080
     networks:
@@ -52,6 +58,9 @@ services:
 
   pattern-atlas-api:
     image: patternatlas/pattern-atlas-api:latest
+    profiles:
+      - all
+      - pattern
     environment:
       JDBC_DATABASE_URL: db
       JDBC_DATABASE_USERNAME: patternatlas
@@ -80,6 +89,9 @@ services:
 
   pattern-atlas-ui:
     image: patternatlas/pattern-atlas-ui:v1.5.6
+    profiles:
+      - all
+      - pattern
     platform: linux/x86_64
     depends_on:
       - config-server
@@ -100,6 +112,9 @@ services:
 
   auth:
     image: quay.io/keycloak/keycloak:18.0.0
+    profiles:
+      - all
+      - pattern
     command: start-dev --import-realm
     volumes:
       - ./keycloak_import:/opt/keycloak/data/import
@@ -113,6 +128,9 @@ services:
 
   config-server:
     image: quay.io/coreos/etcd:latest
+    profiles:
+      - all
+      - pattern
     environment:
       ETCD_NAME: config-node1
       ETCD_CORS: "*"
@@ -127,6 +145,9 @@ services:
   # used by the pattern atlas to render latex
   latex-renderer:
     image: planqk/latex-renderer:v1.1.1
+    profiles:
+      - all
+      - pattern
     ports:
       - "5030:5030"
     networks:
@@ -138,6 +159,9 @@ services:
 
   nisq-analyzer:
     image: planqk/nisq-analyzer:latest
+    profiles:
+      - all
+      - nisq
     environment:
       POSTGRES_HOSTNAME: db
       POSTGRES_PORT: 5432
@@ -170,6 +194,9 @@ services:
 
   nisq-analyzer-ui:
     image: planqk/nisq-analyzer-ui:latest
+    profiles:
+      - all
+      - nisq
     environment:
       NISQ_ANALYZER_HOST_NAME: localhost
       NISQ_ANALYZER_PORT: 5010
@@ -180,6 +207,9 @@ services:
 
   qprov:
     image: planqk/qprov:latest
+    profiles:
+      - all
+      - nisq
     environment:
       POSTGRES_HOSTNAME: db
       POSTGRES_PORT: 5432
@@ -193,6 +223,9 @@ services:
 
   qprov-collector-ibm:
     image: planqk/qprov-collector:latest
+    profiles:
+      - all
+      - nisq
     environment:
       POSTGRES_HOSTNAME: db
       POSTGRES_PORT: 5432
@@ -213,6 +246,9 @@ services:
 
   quantum-transpiler:
     image: planqk/quantum-transpiler-backend:latest
+    profiles:
+      - all
+      - nisq
     ports:
      - '5012:5012'
     networks:
@@ -220,6 +256,9 @@ services:
 
   quantum-transpiler-frontend:
     image: planqk/quantum-transpiler-frontend:latest
+    profiles:
+      - all
+      - nisq
     ports:
      - '5011:80'
     networks:
@@ -227,6 +266,9 @@ services:
   
   qiskit-service:
     image: planqk/qiskit-service:latest
+    profiles:
+      - all
+      - nisq
     command: sh /app/startup.sh
     ports:
       - "5013:5013"
@@ -240,6 +282,9 @@ services:
 
   qiskit-rq-worker:
     image: planqk/qiskit-service:latest
+    profiles:
+      - all
+      - nisq
     command: rq worker --url redis://redis:5040 qiskit-service_execute
     environment:
       - REDIS_URL=redis://redis:5040
@@ -255,6 +300,9 @@ services:
   
   pytket-service:
     image: planqk/pytket-service:latest
+    profiles:
+      - all
+      - nisq
     command: sh /app/startup.sh
     ports:
       - "5015:5015"
@@ -268,6 +316,9 @@ services:
 
   pytket-rq-worker:
     image: planqk/pytket-service:latest
+    profiles:
+      - all
+      - nisq
     command: rq worker --url redis://redis:5040 pytket-service_execute
     environment:
       - REDIS_URL=redis://redis:5040
@@ -285,6 +336,9 @@ services:
 
   qhana-plugin-runner:
     image: ghcr.io/ust-quantil/qhana-plugin-runner:main
+    profiles:
+      - all
+      - qhana
     depends_on:
       - redis
       - db
@@ -311,6 +365,9 @@ services:
       - planqk-demo
   minio:
     image: quay.io/minio/minio
+    profiles:
+      - all
+      - qhana
     command: server /data --console-address ":9001"
     volumes:
       - minio:/data
@@ -324,8 +381,14 @@ services:
       - planqk-demo
   muse-db:
     image: ghcr.io/ust-quantil/mini-muse:main
+    profiles:
+      - all
+      - qhana
   worker:
     image: ghcr.io/ust-quantil/qhana-plugin-runner:main
+    profiles:
+      - all
+      - qhana
     depends_on:
       - qhana-plugin-runner
     volumes:
@@ -348,6 +411,9 @@ services:
       - planqk-demo
   backend:
     image: ghcr.io/ust-quantil/qhana-backend:main
+    profiles:
+      - all
+      - qhana
     volumes:
       - experiments:/app/data
     environment:
@@ -361,6 +427,9 @@ services:
       - planqk-demo
   qhana-ui:
     image: ghcr.io/ust-quantil/qhana-ui:main
+    profiles:
+      - all
+      - qhana
     ports:
       - 8081:8080
     environment:
@@ -374,6 +443,9 @@ services:
       - planqk-demo
   registry:
     image: ghcr.io/ust-quantil/qhana-plugin-registry:main
+    profiles:
+      - all
+      - qhana
     ports:
       - "5006:8080"
     extra_hosts:
@@ -393,6 +465,9 @@ services:
       - planqk-demo
   registry-worker:
     image: ghcr.io/ust-quantil/qhana-plugin-registry:main
+    profiles:
+      - all
+      - qhana
     ports:
       - "5007:8080"
     extra_hosts:

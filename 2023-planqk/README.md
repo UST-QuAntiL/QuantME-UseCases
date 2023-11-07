@@ -5,16 +5,24 @@
 * Docker and Docker Compose
 
 ### Run the repository:
-1. Change ._env to env
-  
-2. Update the [._env](/_.env) file with your settings:
-  * ``PUBLIC_HOSTNAME``: Enter the hostname/IP address of your Docker engine. Do *not* use ``localhost``.
-
-3. Run the Docker-Compose file:
 ```
 docker-compose pull
-docker-compose up --build
+docker-compose --profile all up
 ```
+
+### Profiles
+
+You can use one or multiple of the following profiles to select which containers to start:
+
+| profile  | content          |
+|----------|------------------|
+| all      | everything       |
+| workflow | Workflow Modeler |
+| pattern  | Pattern Atlas    |
+| nisq     | NISQ Analyzer    |
+| qhana    | QHAna            |
+
+To use multiple profiles at once, use multiple profile flags e.g. `--profile workflow --profile pattern`.
 
 ## Haftungsausschluss
 
