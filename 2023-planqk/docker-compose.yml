@@ -9,9 +9,9 @@ services:
     image: ghcr.io/philwun/docker-postgres-multi:master
     environment:
         # specifies user:password for each container
-        POSTGRES_USERS: patternatlas:patternatlas|nisq:nisq|qprov:qprov|qhana:qhana|registry:registry
+        POSTGRES_USERS: patternatlas:patternatlas|nisq:nisq|qprov:qprov|qhana:qhana|registry:registry|planqk:planqk
         # specifies database:user for each container
-        POSTGRES_DATABASES: patternatlas:patternatlas|nisq:nisq|qprov:qprov|qhana:qhana|registry:registry
+        POSTGRES_DATABASES: patternatlas:patternatlas|nisq:nisq|qprov:qprov|qhana:qhana|registry:registry|planqk:planqk
     ports:
         - "5061:5432"
     networks:
@@ -22,6 +22,55 @@ services:
     ports:
       - "5040:5040"
     command: --port 5040
+    networks:
+      - planqk-demo
+  
+  ############
+  # QC Atlas #
+  ############
+
+  qc-atlas-ui:
+    image: planqk/qc-atlas-ui:latest
+    profiles:
+      - all
+      - qcatlas
+    depends_on:
+      - config-server
+    environment:
+      # because the requests are performed from the browser and not
+      # from the container itself we have to specify localhost here
+      # and **not** the container name
+      QC_ATLAS_HOST_NAME: localhost
+      QC_ATLAS_PORT: 6626
+      PATTERN_ATLAS_HOST_NAME: localhost
+      PATTERN_ATLAS_PORT: 1977
+      PATTERN_ATLAS_UI_HOST_NAME: localhost
+      PATTERN_ATLAS_UI_PORT: 1978
+      NISQ_ANALYZER_HOST_NAME: localhost
+      NISQ_ANALYZER_PORT: 5010
+      QPROV_HOST_NAME: localhost
+      QPROV_PORT: 5020
+      LATEX_RENDERER_HOST_NAME: localhost
+      LATEX_RENDERER_PORT: 5030
+    ports:
+      - '8082:80'
+    volumes:
+      - ./config:/opt/init-config.d
+    networks:
+      - planqk-demo
+  qc-atlas:
+    image: planqk/atlas:latest
+    profiles:
+      - all
+      - qcatlas
+    environment:
+      POSTGRES_HOSTNAME: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: planqk
+      POSTGRES_PASSWORD: planqk
+      POSTGRES_DB: planqk
+    ports:
+      - "6626:6626"
     networks:
       - planqk-demo
 
@@ -153,9 +202,9 @@ services:
     networks:
       - planqk-demo
 
-################################
-# Nisq Analyzer + dependencies #
-################################
+  ################################
+  # Nisq Analyzer + dependencies #
+  ################################
 
   nisq-analyzer:
     image: planqk/nisq-analyzer:latest
@@ -330,9 +379,9 @@ services:
     networks:
       - planqk-demo
 
-#########
-# QHAna #
-#########
+  #########
+  # QHAna #
+  #########
 
   qhana-plugin-runner:
     image: ghcr.io/ust-quantil/qhana-plugin-runner:main

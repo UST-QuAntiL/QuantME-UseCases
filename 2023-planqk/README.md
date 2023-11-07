@@ -10,6 +10,19 @@ docker-compose pull
 docker-compose --profile all up
 ```
 
+### UI URLs
+
+You can access the different UIs under the following URLs:
+
+| UI               | port                  |
+|------------------|-----------------------|
+| QC Atlas         | http://localhost:8082 |
+| Pattern Atlas    | http://localhost:1978 |
+| NISQ Analyzer    | http://localhost:5009 |
+| QHAna            | http://localhost:8081 |
+| Workflow Modeler | http://localhost:8080 |
+| Camunda          | http://localhost:9080 |
+
 ### Profiles
 
 You can use one or multiple of the following profiles to select which containers to start:
@@ -17,6 +30,7 @@ You can use one or multiple of the following profiles to select which containers
 | profile  | content          |
 |----------|------------------|
 | all      | everything       |
+| qcatlas  | QC Atlas         |
 | workflow | Workflow Modeler |
 | pattern  | Pattern Atlas    |
 | nisq     | NISQ Analyzer    |
