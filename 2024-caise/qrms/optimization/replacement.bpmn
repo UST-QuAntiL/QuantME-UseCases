@@ -49,8 +49,11 @@
                 def initialParameters = betas + gammas;
                 execution.setVariable("iterations", 0);
 
+                def topic = UUID.randomUUID()
+                execution.setVariable("optimizationTopic", topic)
+
                 def request = [:];
-                request.put("topic", "12345");
+                request.put("topic", topic);
                 request.put("optimizer", optimizer);
                 request.put("initialParameters", initialParameters);
                 requeststring = new JsonBuilder(request).toPrettyString();
@@ -74,7 +77,7 @@
         <bpmn:incoming>SequenceFlow_1lffclo</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_100xkhy</bpmn:outgoing>
       </bpmn:serviceTask>
-      <bpmn:serviceTask id="Task_0twvhh9" name="Optimizer Parameters" camunda:asyncAfter="true" camunda:exclusive="false" camunda:type="external" camunda:topic="12345">
+      <bpmn:serviceTask id="Task_0twvhh9" name="Optimizer Parameters" camunda:asyncAfter="true" camunda:exclusive="false" camunda:type="external" camunda:topic="execution.getVariable(&#34;iterations&#34;)">
         <bpmn:extensionElements>
           <camunda:inputOutput>
             <camunda:outputParameter name="iterations">

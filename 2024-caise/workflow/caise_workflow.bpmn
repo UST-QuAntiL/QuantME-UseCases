@@ -18,7 +18,7 @@
           <camunda:formField id="onlyMeasurementErrors" label="Noise Model contains only measurement errors" type="boolean" />
           <camunda:formField id="gammas" label="gammas" type="string" defaultValue="[1]" />
           <camunda:formField id="betas" label="betas" type="string" defaultValue="[1]" />
-          <camunda:formField id="HypervisorEndpoint" label="HypervisorEndpoint" type="string" defaultValue="https://idm01.bw-cloud.org:5000/v3" />
+          <camunda:formField id="HypervisorEndpoint" label="HypervisorEndpoint" type="string" defaultValue="https://idm02.bw-cloud.org:5000/v3" />
           <camunda:formField id="HypervisorApplicationID" label="HypervisorApplicationID" type="string" defaultValue="c4393a03db254ff3854ac764d551fe13" />
           <camunda:formField id="HypervisorApplicationSecret" label="HypervisorApplicationSecret" type="string" defaultValue="" />
           <camunda:formField id="VMPrivateKey" label="VMPrivateKey" type="string" defaultValue="-----BEGIN RSA PRIVATE KEY-----
@@ -49,6 +49,8 @@ Jjq4bnTTL+ETbNxXUFPmTZ6iPp4Itgm8ETFTJnrPCJJFfKm5avHomOrf2WjVp/Os
 6jLS0kgKqmi8ZRTgYu396yniKyza4N+IrYKFpg0m5GJUraSknrDQDA==
 -----END RSA PRIVATE KEY-----" />
           <camunda:formField id="VMKeyPairName" label="VMKeyPairName" type="string" defaultValue="Orchestration" />
+          <camunda:formField id="HypervisorRegion" label="HypervisorRegion" type="string" defaultValue="Mannheim" />
+          <camunda:formField id="HypervisorNetworks" label="Hypervisor Network Ids" type="string" defaultValue="c4eafee4-e84d-45ca-92a6-238302b75083" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:outgoing>Flow_1qkl8n3</bpmn:outgoing>

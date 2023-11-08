@@ -16,7 +16,7 @@
             <NodeTemplate name="OpenStack" minInstances="1" maxInstances="1" type="nodetypes:OpenStack_22-Victoria-w1" id="OpenStack_22-Victoria-w1_0" winery:x="386" winery:y="648" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Properties>
                     <nodetypes:CloudProviderProperties>
-                        <nodetypes:HypervisorEndpoint>https://idm01.bw-cloud.org:5000/v3</nodetypes:HypervisorEndpoint>
+                        <nodetypes:HypervisorEndpoint>get_input: HypervisorEndpoint</nodetypes:HypervisorEndpoint>
                         <nodetypes:HypervisorApplicationID>get_input: HypervisorApplicationID</nodetypes:HypervisorApplicationID>
                         <nodetypes:HypervisorApplicationSecret>get_input: HypervisorApplicationSecret</nodetypes:HypervisorApplicationSecret>
                         <nodetypes:HypervisorNetworks>get_input: HypervisorNetworks</nodetypes:HypervisorNetworks>
@@ -32,7 +32,33 @@
                         <nodetypes:VMType>m1.medium</nodetypes:VMType>
                         <nodetypes:VMUserName>ubuntu</nodetypes:VMUserName>
                         <nodetypes:VMUserPassword>unused</nodetypes:VMUserPassword>
-                        <nodetypes:VMPrivateKey>get_input: VMPrivateKey</nodetypes:VMPrivateKey>
+                        <nodetypes:VMPrivateKey>-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA6SQ56xTmXj6wzunkHSmVyJgdOBlYjVw09mzaiQ8lipBodpqj
+Ch1ZCHKHAjcdiEJcy8IgvVqPpN/8dz7qIZ8Awq0C4uRDsMHVxJqT+lSrBPoHTjsd
+zy3nTdJqYxhnSrEcgF8O4X/nYCrWwMvYt00iE8RxR6I+NvsruBAGmtnEWS77wBVe
+wW26+guJU9Yu139NA2jDFtRXT9A5sC6L1D8GG1tly6kOGIivV9ch+j2yeyvVpyEJ
+1m9bBoqyZ1ElwYJGWG6Adm23gdEN0DvcEtUQycU2etWUmUn9ppW6FwMrp/53H69X
+YLaaNh2+JUtp3+LiCjk9U/gr7JnnYrY09C6uWwIDAQABAoIBAH+X5ubEUmuDzcn/
+8WsQZjwZG+ym2nLK4uV2n4dhNb+G1tUKPm57r01TOJY6ybvX7edJwBdBZ9npB8fP
+M93gok7o1uqL2Iv1GWP24UOgcNRRbgwfiGnpimxp2vWO1oDnO1z6KS+6i0tzRoLP
+TTTMTvkYipKUtY3rmnqqsqKuyamwZIc2DtCLI9/TkFiqV9JnHEgS8KJY/t1JhX8b
+wHteGSvrUiUfusrqUyrjQ0wK+9ReAaZLnDBssNtrHuCguZHi89LsbxxZf+ozMm1k
+BpVTLh9LUJRaWuVkEOHEMVF350JEqjoVrRnD+UrxfjFime/N++T6S+M5RfSuQl3A
++Xaj0RkCgYEA9ehUpnlEOIxFLDdg5bT1q/vWlMJA7hUvp75oqkomPUSJJATs21MV
+m/qu0Mo4JuHKyKJ/tNA5an7SIR8L4zskmBUqwrGR6BLCK3mJlnER1bhXS2EuP1wW
+bZGKY1Fv2zU9FAnOiPMLJ3CwGTXcQdqihgOby+wjn/bPGJV8omKMck0CgYEA8rXE
+X8IxJMOOnmc35IqEVAAlflbnwM3KzAZVk2BEXLTJSrO+QvuoaANM+VKxi5NBngVe
+4sgQxc/CfIrm2dtDNbnSzgBLkv7rntl+nkUOOmpJslEZGkVhmP2wnvhFeY8VqbLG
+YdBwCRghvkuuMwuGm9P6+Ta+oiTMUhTMD4U2Z0cCgYEAqch0kdBOgwCOTf4aX982
+dD1YJbONYxSrp5S27URu7IRib8UayD+wPtaxVqUYafghq69On0fZLKdNa+LksUpH
+dN3AfVZe2C4DdELg9UcyOi6hzwDVDpgFQDdppjM3GNHETw6KVFIClIOggneGkM1k
+w0TAj+aFnk+pI18rA28pa00CgYEAypR2pOqkNChZqNNEbqhDDQ3WPZ5x75aVNzfu
+Q4Vtaeenv4dJPgVpKe/fVpb0BCjT8v5OlYEhpsnjbipNxvbhIT3JuxG6AqZtqfel
+XJsM5isC+igAiNHyRU0yF23oJy8LiMnkFY5xhNW0jG4EpyxunTAQ4eQUt6d5NuWO
+8UFiCE8CgYEA1EWbaryLOIHEZkmaw8qIE5E879H174Gl0V1kLXSMOPOnEDbYzBJG
+PFkQZZFXNzGkNQm6Avqhfc1fD9Xg6Tig2TALndEuh5aVPOjB+6pyOExXhvro/Bmh
+8rGT4vDJ5JOgMnnxaEtCpRXZebE1J8YzSzQ3GQMVWug6i+Pddfv3GVw=
+-----END RSA PRIVATE KEY-----</nodetypes:VMPrivateKey>
                         <nodetypes:VMPublicKey>unused</nodetypes:VMPublicKey>
                         <nodetypes:VMKeyPairName>get_input: VMKeyPairName</nodetypes:VMKeyPairName>
                     </nodetypes:VirtualMachineProperties>
