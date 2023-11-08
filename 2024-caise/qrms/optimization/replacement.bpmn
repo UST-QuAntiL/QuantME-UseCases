@@ -42,7 +42,8 @@
               <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/optimization/optimization-service</camunda:inputParameter>
               <camunda:inputParameter name="payload">
                 <camunda:script scriptFormat="groovy">
-			          import groovy.json.JsonBuilder
+			    import groovy.json.JsonBuilder
+			    def pollingEndpoint = execution.getVariable("CAMUNDA_ENDPOINT")
                 def optimizer = execution.getVariable("optimizer");
                 def gammas = execution.getVariable("gammas");
                 def betas = execution.getVariable("betas");
@@ -53,6 +54,7 @@
                 execution.setVariable("optimizationTopic", topic)
 
                 def request = [:];
+                request.put("endpoint", pollingEndpoint);
                 request.put("topic", topic);
                 request.put("optimizer", optimizer);
                 request.put("initialParameters", initialParameters);
