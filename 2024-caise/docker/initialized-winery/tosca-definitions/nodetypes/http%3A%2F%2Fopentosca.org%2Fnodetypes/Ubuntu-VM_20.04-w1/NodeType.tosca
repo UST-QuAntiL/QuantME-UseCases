@@ -34,6 +34,18 @@
                 <ns0:key>VMKeyPairName</ns0:key>
                 <ns0:type>xsd:string</ns0:type>
             </ns0:properties>
+            <ns0:properties>
+                <ns0:key>VMSecurityGroup</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:key>VMOpenPorts</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:key>VMNetworks</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
         </ns0:PropertiesDefinition>
         <DerivedFrom xmlns:nodeTypes="http://opentosca.org/nodetypes" typeRef="nodeTypes:OperatingSystem_w1"/>
         <RequirementDefinitions>
