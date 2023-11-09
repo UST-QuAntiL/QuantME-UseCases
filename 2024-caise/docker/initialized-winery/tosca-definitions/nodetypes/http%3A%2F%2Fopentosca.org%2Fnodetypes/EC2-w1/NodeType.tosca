@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:ns0="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" targetNamespace="http://opentosca.org/nodetypes" id="nodeTypes-EC2-w1">
+    <NodeType name="EC2-w1" abstract="no" final="no" targetNamespace="http://opentosca.org/nodetypes" ns0:bordercolor="#f186c6">
+        <CapabilityDefinitions>
+            <CapabilityDefinition xmlns:capabilityTypes="http://opentosca.org/capabilitytypes" name="CapCanHostUbuntuVM" capabilityType="capabilityTypes:CapCanHostUbuntuVM" lowerBound="0" upperBound="UNBOUNDED"/>
+        </CapabilityDefinitions>
+        <Interfaces>
+            <Interface name="CloudProviderInterface">
+                <Operation name="createVM">
+                    <InputParameters>
+                        <InputParameter name="AWS_ACCESS_KEY_ID" type="xsd:string" required="yes"/>
+                        <InputParameter name="AWS_SECRET_ACCESS_KEY" type="xsd:string" required="yes"/>
+                        <InputParameter name="AWS_REGION" type="xsd:string" required="yes"/>
+                        <InputParameter name="VMType" type="xsd:string" required="yes"/>
+                        <InputParameter name="VMImageID" type="xsd:string" required="yes"/>
+                        <InputParameter name="VMKeyPairName" type="xsd:string" required="yes"/>
+                        <InputParameter name="VMUserName" type="xsd:string" required="no"/>
+                        <InputParameter name="VMUserPassword" type="xsd:string" required="no"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:string" required="no"/>
+                        <InputParameter name="VMPublicKey" type="xsd:string" required="no"/>
+                        <InputParameter name="VMSecurityGroup" type="xsd:string" required="no"/>
+                        <InputParameter name="VMOpenPorts" type="xsd:string" required="no"/>
+                        <InputParameter name="VMNetworks" type="xsd:string" required="no"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="VMInstanceID" type="xsd:string" required="yes"/>
+                        <OutputParameter name="VMIP" type="xsd:string" required="yes"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="terminateVM">
+                    <InputParameters>
+                        <InputParameter name="AWS_ACCESS_KEY_ID" type="xsd:string" required="yes"/>
+                        <InputParameter name="AWS_SECRET_ACCESS_KEY" type="xsd:string" required="yes"/>
+                        <InputParameter name="AWS_REGION" type="xsd:string" required="yes"/>
+                        <InputParameter name="VMInstanceID" type="xsd:string" required="yes"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="Result" type="xs:string" required="yes"/>
+                    </OutputParameters>
+                </Operation>
+            </Interface>
+        </Interfaces>
+    </NodeType>
+</Definitions>
