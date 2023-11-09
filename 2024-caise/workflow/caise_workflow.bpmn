@@ -50,7 +50,7 @@ Jjq4bnTTL+ETbNxXUFPmTZ6iPp4Itgm8ETFTJnrPCJJFfKm5avHomOrf2WjVp/Os
 -----END RSA PRIVATE KEY-----" />
           <camunda:formField id="VMKeyPairName" label="VMKeyPairName" type="string" defaultValue="Orchestration" />
           <camunda:formField id="HypervisorRegion" label="HypervisorRegion" type="string" defaultValue="Mannheim" />
-          <camunda:formField id="HypervisorNetworks" label="Hypervisor Network Ids" type="string" defaultValue="c4eafee4-e84d-45ca-92a6-238302b75083" />
+          <camunda:formField id="VMNetworks" label="VM Network Ids" type="string" defaultValue="c4eafee4-e84d-45ca-92a6-238302b75083" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:outgoing>Flow_1qkl8n3</bpmn:outgoing>
