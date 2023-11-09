@@ -19,7 +19,6 @@
                         <nodetypes:HypervisorEndpoint>get_input: HypervisorEndpoint</nodetypes:HypervisorEndpoint>
                         <nodetypes:HypervisorApplicationID>get_input: HypervisorApplicationID</nodetypes:HypervisorApplicationID>
                         <nodetypes:HypervisorApplicationSecret>get_input: HypervisorApplicationSecret</nodetypes:HypervisorApplicationSecret>
-                        <nodetypes:HypervisorNetworks>get_input: HypervisorNetworks</nodetypes:HypervisorNetworks>
                         <nodetypes:HypervisorRegion>get_input: HypervisorRegion</nodetypes:HypervisorRegion>
                     </nodetypes:CloudProviderProperties>
                 </Properties>
@@ -61,6 +60,7 @@ PFkQZZFXNzGkNQm6Avqhfc1fD9Xg6Tig2TALndEuh5aVPOjB+6pyOExXhvro/Bmh
 -----END RSA PRIVATE KEY-----</nodetypes:VMPrivateKey>
                         <nodetypes:VMPublicKey>unused</nodetypes:VMPublicKey>
                         <nodetypes:VMKeyPairName>get_input: VMKeyPairName</nodetypes:VMKeyPairName>
+                        <nodetypes:VMNetworks>get_input: VMNetworks</nodetypes:VMNetworks>
                     </nodetypes:VirtualMachineProperties>
                 </Properties>
             </NodeTemplate>
