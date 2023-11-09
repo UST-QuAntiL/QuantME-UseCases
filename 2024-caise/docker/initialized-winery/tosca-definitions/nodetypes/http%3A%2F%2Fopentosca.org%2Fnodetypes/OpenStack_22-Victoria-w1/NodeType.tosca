@@ -25,6 +25,7 @@
                         <InputParameter name="HypervisorEndpoint" type="xsd:string" required="yes"/>
                         <InputParameter name="HypervisorApplicationID" type="xsd:string" required="yes"/>
                         <InputParameter name="HypervisorApplicationSecret" type="xsd:string" required="yes"/>
+                        <InputParameter name="HypervisorRegion" type="xsd:string" required="yes"/>
                         <InputParameter name="VMType" type="xsd:string" required="yes"/>
                         <InputParameter name="VMImageID" type="xsd:string" required="yes"/>
                         <InputParameter name="VMKeyPairName" type="xsd:string" required="yes"/>
@@ -46,6 +47,7 @@
                         <InputParameter name="HypervisorEndpoint" type="xsd:string" required="yes"/>
                         <InputParameter name="HypervisorApplicationID" type="xsd:string" required="yes"/>
                         <InputParameter name="HypervisorApplicationSecret" type="xsd:string" required="yes"/>
+                        <InputParameter name="HypervisorRegion" type="xsd:string" required="yes"/>
                         <InputParameter name="VMInstanceID" type="xsd:string" required="yes"/>
                     </InputParameters>
                     <OutputParameters>
