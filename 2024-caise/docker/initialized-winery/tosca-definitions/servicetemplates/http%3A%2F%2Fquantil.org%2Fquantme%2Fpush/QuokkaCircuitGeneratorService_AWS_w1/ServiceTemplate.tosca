@@ -50,8 +50,8 @@ DoFrpvr5Wxe7GoDVhOMmgWxNIx0X7J3mVXDF+bn8iT+9VlHLeJCm/w==
 -----END RSA PRIVATE KEY-----</nodetypes:VMPrivateKey>
                         <nodetypes:VMPublicKey>unused</nodetypes:VMPublicKey>
                         <nodetypes:VMKeyPairName>get_input: VMKeyPairName</nodetypes:VMKeyPairName>
-                        <nodetypes:VMNetworks>unused</nodetypes:VMNetworks>
-                        <nodetypes:VMOpenPorts>5075</nodetypes:VMOpenPorts>
+                        <nodetypes:VMNetworks>get_input: VMNetworks</nodetypes:VMNetworks>
+                        <nodetypes:VMOpenPorts>5073</nodetypes:VMOpenPorts>
                     </nodetypes:VirtualMachineProperties>
                 </Properties>
             </NodeTemplate>
