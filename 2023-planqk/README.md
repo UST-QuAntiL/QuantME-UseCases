@@ -27,6 +27,8 @@ You can access the different UIs under the following URLs:
 | QHAna            | http://localhost:8062 |
 | Workflow Modeler | http://localhost:8061 |
 | Camunda          | http://localhost:9080 |
+| OpenTOSCA UI     | http://localhost:8088 |
+| Winery           | http://localhost:8080 |
 
 ### Profiles
 
