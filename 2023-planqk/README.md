@@ -4,6 +4,11 @@
 * Git
 * Docker and Docker Compose
 
+### University of Stuttgart network
+
+If you are in the network of the University of Stuttgart, the `apt` command might fail.
+To fix that, write the DNS of the network into the resolv.conf file and remove the leading underscore in the file name of `_docker-compose.overwrite.yml`.
+
 ### Run the repository:
 ```
 docker-compose pull
