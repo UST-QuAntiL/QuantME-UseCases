@@ -61,6 +61,7 @@ PFkQZZFXNzGkNQm6Avqhfc1fD9Xg6Tig2TALndEuh5aVPOjB+6pyOExXhvro/Bmh
                         <nodetypes:VMPublicKey>unused</nodetypes:VMPublicKey>
                         <nodetypes:VMKeyPairName>get_input: VMKeyPairName</nodetypes:VMKeyPairName>
                         <nodetypes:VMNetworks>get_input: VMNetworks</nodetypes:VMNetworks>
+                        <nodetypes:VMOpenPorts>5075</nodetypes:VMOpenPorts>
                     </nodetypes:VirtualMachineProperties>
                 </Properties>
             </NodeTemplate>

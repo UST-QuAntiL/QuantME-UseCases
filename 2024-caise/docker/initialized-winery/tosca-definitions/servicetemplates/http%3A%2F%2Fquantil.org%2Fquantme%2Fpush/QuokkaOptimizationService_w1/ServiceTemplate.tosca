@@ -35,6 +35,7 @@
                         <nodetypes:VMPrivateKey>get_input: VMPrivateKey</nodetypes:VMPrivateKey>
                         <nodetypes:VMPublicKey>unused</nodetypes:VMPublicKey>
                         <nodetypes:VMKeyPairName>get_input: VMKeyPairName</nodetypes:VMKeyPairName>
+                        <nodetypes:VMOpenPorts>5074</nodetypes:VMOpenPorts>
                     </nodetypes:VirtualMachineProperties>
                 </Properties>
             </NodeTemplate>
