@@ -16,11 +16,11 @@ You can access the different UIs under the following URLs:
 
 | UI               | port                  |
 |------------------|-----------------------|
-| QC Atlas         | http://localhost:8082 |
+| QC Atlas         | http://localhost:8060 |
 | Pattern Atlas    | http://localhost:1978 |
 | NISQ Analyzer    | http://localhost:5009 |
-| QHAna            | http://localhost:8081 |
-| Workflow Modeler | http://localhost:8080 |
+| QHAna            | http://localhost:8062 |
+| Workflow Modeler | http://localhost:8061 |
 | Camunda          | http://localhost:9080 |
 
 ### Profiles
@@ -35,6 +35,7 @@ You can use one or multiple of the following profiles to select which containers
 | pattern  | Pattern Atlas    |
 | nisq     | NISQ Analyzer    |
 | qhana    | QHAna            |
+| tosca    | OpenTOSCA        |
 
 To use multiple profiles at once, use multiple profile flags e.g. `--profile workflow --profile pattern`.
 

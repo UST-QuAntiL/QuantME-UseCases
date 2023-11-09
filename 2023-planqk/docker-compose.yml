@@ -53,7 +53,7 @@ services:
       LATEX_RENDERER_HOST_NAME: localhost
       LATEX_RENDERER_PORT: 5030
     ports:
-      - '8082:80'
+      - '8060:80'
     volumes:
       - ./config:/opt/init-config.d
     networks:
@@ -74,9 +74,9 @@ services:
     networks:
       - planqk-demo
 
-  ###################################
-  # Workflow Modeler + dependencies #
-  ###################################
+  ####################
+  # Workflow Modeler #
+  ####################
 
   workflow-modeler:
     image: planqk/workflow-modeler:latest
@@ -87,7 +87,7 @@ services:
      CAMUNDA_ENDPOINT: http://localhost:8090/engine-rest
      PATTERN_ATLAS_ENDPOINT: http://localhost:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
     ports:
-      - 8080:8080
+      - 8061:8080
     networks:
       - planqk-demo
 
@@ -101,9 +101,9 @@ services:
     networks:
       - planqk-demo
 
-  ################################
-  # Pattern Atlas + dependencies #
-  ################################
+  #################
+  # Pattern Atlas #
+  #################
 
   pattern-atlas-api:
     image: patternatlas/pattern-atlas-api:latest
@@ -202,9 +202,9 @@ services:
     networks:
       - planqk-demo
 
-  ################################
-  # Nisq Analyzer + dependencies #
-  ################################
+  #################
+  # Nisq Analyzer #
+  #################
 
   nisq-analyzer:
     image: planqk/nisq-analyzer:latest
@@ -480,7 +480,7 @@ services:
       - all
       - qhana
     ports:
-      - 8081:8080
+      - 8062:8080
     environment:
       PLUGIN_REGISTRY_PROTOCOL: "http:"
       PLUGIN_REGISTRY_HOSTNAME: localhost
@@ -535,6 +535,91 @@ services:
       PERIODIC_SCHEDULER: true
     networks:
       - planqk-demo
+  
+  #############
+  # OpenTOSCA #
+  #############
+
+  container:
+    image: opentosca/container:latest
+    profiles:
+      - all
+      - tosca
+    ports:
+      - '1337:1337'
+      - '1883:1883' # MQTT
+      - '8081-8087:8081-8087'
+    environment:
+      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      ENGINE_IA_HOSTNAME: engine-ia-jdk8
+      ENGINE_IA_PORT: 8080
+      ENGINE_IA_JAVA17_HOSTNAME: engine-ia-jdk17
+      ENGINE_IA_JAVA17_PORT: 8080
+      ENGINE_PLAN_BPEL_HOSTNAME: engine-plan-bpel
+      ENGINE_PLAN_BPMN_HOSTNAME: engine-plan-bpmn
+      ENGINE_PLAN_BPMN_PORT: 8080
+      CONTAINER_DEPLOYMENT_TESTS: 'false'
+    networks:
+      - planqk-demo
+  ui:
+    image: opentosca/ui:latest
+    profiles:
+      - all
+      - tosca
+    environment:
+     API_ENDPOINT_HOST: ${PUBLIC_HOSTNAME}
+     API_ENDPOINT_PORT: 1337
+     WINERY_HOST: ${PUBLIC_HOSTNAME}
+     WINERY_PORT: 8080
+    ports:
+      - '8088:8080'
+    networks:
+      - planqk-demo
+  engine-plan-bpel:
+    image: opentosca/ode:latest
+    profiles:
+      - all
+      - tosca
+    ports:
+      - '9763:9763' # http
+    networks:
+      - planqk-demo
+  engine-ia-jdk17:
+    image: opentosca/engine-ia:latest-jdk17
+    ports:
+      - '8093:8080'
+    networks:
+      - planqk-demo
+  winery:
+    image: opentosca/winery:latest
+    profiles:
+      - all
+      - tosca
+    environment:
+      WINERY_HOSTNAME: ${PUBLIC_HOSTNAME}
+      WORKFLOWMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      TOPOLOGYMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      WINERY_REPOSITORY_URL: https://github.com/OpenTOSCA/tosca-definitions-example-applications
+    ports:
+      - '8080:8080'
+    networks:
+      - planqk-demo
+  dind:
+    image: docker:20.10-dind
+    profiles:
+      - all
+      - tosca
+    privileged: true
+    environment:
+      # Disables TLS and starts on port 2375 instead of 2376
+      - DOCKER_TLS_CERTDIR=
+    networks:
+      - planqk-demo
+    ports: 
+      - '2222:2375'
+      - '9990-9999:9990-9999'
+      - '9990-9999:9990-9999/udp'
 
 networks:
   planqk-demo:
