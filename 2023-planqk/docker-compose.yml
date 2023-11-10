@@ -10,10 +10,10 @@ services:
       context: ./db
     image: quantil-db
     environment:
-      # specifies user:pw for each container
-      POSTGRES_USERS: 'planqk:planqk|nisq:nisq|patternatlas:patternatlas|qprov:qprov|qhana:qhana'
-      # specifies db name for each container
-      POSTGRES_DATABASES: 'planqk:planqk|nisq:nisq|patternatlas:patternatlas|qprov:qprov|qhana:qhana'
+      # specifies user:password for each container
+      POSTGRES_USERS: 'planqk:planqk|nisq:nisq|patternatlas:patternatlas|qprov:qprov|qhana:qhana|registry:registry'
+      # specifies database:user for each container
+      POSTGRES_DATABASES: 'planqk:planqk|nisq:nisq|patternatlas:patternatlas|qprov:qprov|qhana:qhana|registry:registry'
       QC_ATLAS_CONTENT_REPOSITORY_BRANCH: 'update-content'
       ATLAS_DB: planqk
       NISQ_DB: nisq
@@ -73,8 +73,10 @@ services:
     profiles:
       - all
       - qcatlas
+    depends_on:
+      - db
     environment:
-      POSTGRES_HOSTNAME: host.docker.internal # somehow db didn't work
+      POSTGRES_HOSTNAME: db
       POSTGRES_PORT: 5060
       POSTGRES_USER: planqk
       POSTGRES_PASSWORD: planqk
@@ -90,6 +92,7 @@ services:
 
   workflow-modeler:
     image: planqk/workflow-modeler:latest
+    platform: linux/amd64
     profiles:
       - all
       - workflow
@@ -124,7 +127,7 @@ services:
       JDBC_DATABASE_URL: db
       JDBC_DATABASE_USERNAME: patternatlas
       JDBC_DATABASE_PASSWORD: patternatlas
-      JDBC_DATABASE_PORT: 5432
+      JDBC_DATABASE_PORT: 5060
       DB_INIT_USER: patternatlas
       DB_INIT_PASSWORD: patternatlas
       LATEX_RENDERER_HOST_NAME: latex-renderer
@@ -187,6 +190,7 @@ services:
 
   config-server:
     image: quay.io/coreos/etcd:latest
+    platform: linux/amd64
     profiles:
       - all
       - qcatlas
@@ -205,6 +209,7 @@ services:
   # used by the pattern atlas to render latex
   latex-renderer:
     image: planqk/latex-renderer:v1.1.1
+    platform: linux/amd64
     profiles:
       - all
       - pattern
@@ -222,9 +227,11 @@ services:
     profiles:
       - all
       - nisq
+    depends_on:
+      - db
     environment:
       POSTGRES_HOSTNAME: db
-      POSTGRES_PORT: 5432
+      POSTGRES_PORT: 5060
       POSTGRES_USER: nisq
       POSTGRES_PASSWORD: nisq
       POSTGRES_DB: nisq
@@ -270,9 +277,11 @@ services:
     profiles:
       - all
       - nisq
+    depends_on:
+      - db
     environment:
       POSTGRES_HOSTNAME: db
-      POSTGRES_PORT: 5432
+      POSTGRES_PORT: 5060
       POSTGRES_USER: qprov
       POSTGRES_PASSWORD: qprov
       POSTGRES_DB: qprov
@@ -286,9 +295,11 @@ services:
     profiles:
       - all
       - nisq
+    depends_on:
+      - db
     environment:
       POSTGRES_HOSTNAME: db
-      POSTGRES_PORT: 5432
+      POSTGRES_PORT: 5060
       POSTGRES_USER: qprov
       POSTGRES_PASSWORD: qprov
       POSTGRES_DB: qprov
@@ -306,6 +317,7 @@ services:
 
   quantum-transpiler:
     image: planqk/quantum-transpiler-backend:latest
+    platform: linux/amd64
     profiles:
       - all
       - nisq
@@ -316,6 +328,7 @@ services:
 
   quantum-transpiler-frontend:
     image: planqk/quantum-transpiler-frontend:latest
+    platform: linux/amd64
     profiles:
       - all
       - nisq
@@ -360,6 +373,7 @@ services:
   
   pytket-service:
     image: planqk/pytket-service:latest
+    platform: linux/amd64
     profiles:
       - all
       - nisq
@@ -376,6 +390,7 @@ services:
 
   pytket-rq-worker:
     image: planqk/pytket-service:latest
+    platform: linux/amd64
     profiles:
       - all
       - nisq
@@ -412,7 +427,7 @@ services:
       BROKER_URL: redis://redis:5040
       RESULT_BACKEND: redis://redis:5040
       CELERY_QUEUE: "qhana_queue1"
-      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://qhana:qhana@db:5432/qhana"
+      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://qhana:qhana@db:5060/qhana"
       DEFAULT_FILE_STORE: "minio"
       MINIO_CLIENT: '{"endpoint": "localhost:9000", "access_key": "QHANA", "secret_key": "QHANAQHANA", "secure": false}'
       LOCALHOST_PROXY_PORTS: &localhost-proxy-ports ":5005 :5006 :5007 :9000 :9001 :9091 ${EXTRA_PROXY_PORTS}"
@@ -451,6 +466,7 @@ services:
       - qhana
     depends_on:
       - qhana-plugin-runner
+      - db
     volumes:
       - instance:/app/instance
     environment:
@@ -459,7 +475,7 @@ services:
       BROKER_URL: redis://redis:5040
       RESULT_BACKEND: redis://redis:5040
       CELERY_QUEUE: "qhana_queue1"
-      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://qhana:qhana@db:5432/qhana"
+      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://qhana:qhana@db:5060/qhana"
       DEFAULT_FILE_STORE: "minio"
       MINIO_CLIENT: '{"endpoint": "localhost:9000", "access_key": "QHANA", "secret_key": "QHANAQHANA", "secure": false}'
       LOCALHOST_PROXY_PORTS: *localhost-proxy-ports
@@ -506,18 +522,20 @@ services:
     profiles:
       - all
       - qhana
+    depends_on:
+      - db
     ports:
       - "5006:8080"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
-      WAIT_HOSTS: redis:5040, db:5432, qhana-plugin-runner:8080
+      WAIT_HOSTS: redis:5040, db:5060, qhana-plugin-runner:8080
       WAIT_SLEEP_INTERVAL: 5
       WAIT_TIMEOUT: 600
       BROKER_URL: redis://redis:5040
       RESULT_BACKEND: redis://redis:5040
       CELERY_QUEUE: "registry_queue"
-      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://registry:registry@db:5432/registry"
+      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://registry:registry@db:5060/registry"
       LOCALHOST_PROXY_PORTS: *localhost-proxy-ports
       INITIAL_PLUGIN_SEEDS: "http://localhost:5005"
       PRECONFIGURED_SERVICES: '[{"serviceId": "qhana-backend", "name": "Backend", "url": "http://localhost:9091"}]'
@@ -533,14 +551,14 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
-      WAIT_HOSTS: redis:5040, db:5432, qhana-plugin-runner:8080
+      WAIT_HOSTS: redis:5040, db:5060, qhana-plugin-runner:8080
       WAIT_SLEEP_INTERVAL: 5
       WAIT_TIMEOUT: 600
       CONTAINER_MODE: worker
       BROKER_URL: redis://redis:5040
       RESULT_BACKEND: redis://redis:5040
       CELERY_QUEUE: "registry_queue"
-      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://registry:registry@db:5432/registry"
+      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://registry:registry@db:5060/registry"
       LOCALHOST_PROXY_PORTS: *localhost-proxy-ports
       PLUGIN_DISCOVERY_INTERVAL: 60
       PERIODIC_SCHEDULER: true
@@ -601,6 +619,9 @@ services:
       - planqk-demo
   engine-ia-jdk17:
     image: opentosca/engine-ia:latest-jdk17
+    profiles:
+      - all
+      - tosca
     ports:
       - '8093:8080'
     networks:
