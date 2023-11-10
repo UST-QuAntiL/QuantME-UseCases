@@ -6,16 +6,26 @@ services:
   #############
 
   db:
-    image: ghcr.io/philwun/docker-postgres-multi:master
+    build:
+      context: ./db
+    image: quantil-db
     environment:
-        # specifies user:password for each container
-        POSTGRES_USERS: patternatlas:patternatlas|nisq:nisq|qprov:qprov|qhana:qhana|registry:registry|planqk:planqk
-        # specifies database:user for each container
-        POSTGRES_DATABASES: patternatlas:patternatlas|nisq:nisq|qprov:qprov|qhana:qhana|registry:registry|planqk:planqk
+      # specifies user:pw for each container
+      POSTGRES_USERS: 'planqk:planqk|nisq:nisq|patternatlas:patternatlas|qprov:qprov|qhana:qhana'
+      # specifies db name for each container
+      POSTGRES_DATABASES: 'planqk:planqk|nisq:nisq|patternatlas:patternatlas|qprov:qprov|qhana:qhana'
+      QC_ATLAS_CONTENT_REPOSITORY_BRANCH: 'update-content'
+      ATLAS_DB: planqk
+      NISQ_DB: nisq
+      PATTERNATLAS_DB: patternatlas
+      QPROV_DB: qprov
     ports:
-        - "5061:5432"
+      - '5060:5060'
     networks:
       - planqk-demo
+    secrets:
+      - source: ssh_secret
+        target: ssh_secret
   
   redis:
     image: redis:6.2.2
@@ -59,13 +69,13 @@ services:
     networks:
       - planqk-demo
   qc-atlas:
-    image: planqk/atlas:latest
+    image: planqk/atlas:v3.1.2
     profiles:
       - all
       - qcatlas
     environment:
-      POSTGRES_HOSTNAME: db
-      POSTGRES_PORT: 5432
+      POSTGRES_HOSTNAME: host.docker.internal # somehow db didn't work
+      POSTGRES_PORT: 5060
       POSTGRES_USER: planqk
       POSTGRES_PASSWORD: planqk
       POSTGRES_DB: planqk
@@ -179,6 +189,7 @@ services:
     image: quay.io/coreos/etcd:latest
     profiles:
       - all
+      - qcatlas
       - pattern
     environment:
       ETCD_NAME: config-node1
@@ -628,6 +639,10 @@ services:
       - "host.docker.internal:host-gateway"
     networks:
       - planqk-demo
+
+secrets:
+  ssh_secret:
+    file: ./ssh_secret
 
 networks:
   planqk-demo:
