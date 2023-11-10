@@ -10,9 +10,25 @@ If you are in the network of the University of Stuttgart, the `apt` command migh
 To fix that, write the DNS of the network into the resolv.conf file and remove the leading underscore in the file name of `_docker-compose.overwrite.yml`.
 
 ### Run the repository:
+
+Download and pull the necessary images:
+
 ```
-docker-compose pull
-docker-compose --profile all up
+docker compose --profile all pull --ignore-buildable
+docker compose build
+```
+
+The database needs to import data and start up before you can start the other containers.
+To accomplish this, first run:
+
+```
+docker compose up db -d
+```
+
+Wait till the database has finished importing data and is ready, then run:
+
+```
+docker compose --profile all up
 ```
 
 ### UI URLs
