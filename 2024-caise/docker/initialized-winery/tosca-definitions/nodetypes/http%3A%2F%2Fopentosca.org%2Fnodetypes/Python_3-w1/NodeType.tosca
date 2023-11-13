@@ -5,7 +5,7 @@
             <RequirementDefinition name="ReqCanHostPython" requirementType="requirementtypes:ReqCanHostPython" lowerBound="1" upperBound="unbounded" xmlns:requirementtypes="http://opentosca.org/requirementtypes"/>
         </RequirementDefinitions>
         <CapabilityDefinitions>
-            <CapabilityDefinition xmlns:capabilityTypes="http://opentosca.org/capabilitytypes" name="ProvidePython3" capabilityType="capabilityTypes:Python3" lowerBound="1" upperBound="1"/>
+            <CapabilityDefinition xmlns:capabilityTypes="http://quantil.org/capabilitytypes" name="CapCanRunQiskit" capabilityType="capabilityTypes:CapCanRunQiskit" lowerBound="1" upperBound="1"/>
         </CapabilityDefinitions>
         <Interfaces>
             <Interface name="http://opentosca.org/interfaces/lifecycle">
