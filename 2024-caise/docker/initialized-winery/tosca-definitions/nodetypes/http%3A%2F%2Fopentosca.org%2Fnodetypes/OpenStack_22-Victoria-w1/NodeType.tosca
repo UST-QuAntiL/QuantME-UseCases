@@ -19,9 +19,9 @@
                 <winery:type>xsd:string</winery:type>
             </winery:properties>
         </winery:PropertiesDefinition>
-        <CapabilityDefinitions>
-            <CapabilityDefinition name="CapCanHostUbuntuVM" capabilityType="capabilitytypes1:CapCanHostUbuntuVM" lowerBound="0" upperBound="UNBOUNDED" xmlns:capabilitytypes1="http://opentosca.org/capabilitytypes"/>
-        </CapabilityDefinitions>
+        <RequirementDefinitions>
+            <RequirementDefinition name="CapCanHostUbuntuVM" requirementType="requirementtypes:CapCanHostUbuntuVM" lowerBound="1" upperBound="1" xmlns:requirementtypes="http://opentosca.org/requirementtypes"/>
+        </RequirementDefinitions>
         <Interfaces>
             <Interface name="CloudProviderInterface">
                 <Operation name="createVM">
