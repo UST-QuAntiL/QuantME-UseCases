@@ -18,5 +18,8 @@
                 </Operation>
             </Interface>
         </Interfaces>
+        <RequirementDefinitions>
+            <RequirementDefinition name="ReqCanRunQiskit" requirementType="requirementtypes:ReqCanRunQiskit" lowerBound="1" upperBound="1" xmlns:requirementtypes="https://ust-quantil.github.io/requirementtypes"/>
+        </RequirementDefinitions>
     </NodeType>
 </Definitions>
