@@ -56,7 +56,7 @@
             <RequirementDefinition name="ReqCanHostUbuntuVM" requirementType="requirementtypes:ReqCanHostUbuntuVM" lowerBound="1" upperBound="unbounded" xmlns:requirementtypes="http://opentosca.org/requirementtypes"/>
         </RequirementDefinitions>
         <CapabilityDefinitions>
-            <CapabilityDefinition name="ProvideOperatingSystem" capabilityType="ctyIgeneral:OperatingSystem" lowerBound="1" upperBound="1" xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes"/>
+            <CapabilityDefinition name="CapCanHostPython" capabilityType="ctyIgeneral:CapCanHostPython" lowerBound="1" upperBound="1" xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes"/>
         </CapabilityDefinitions>
         <Interfaces>
             <Interface name="OperatingSystemInterface">
