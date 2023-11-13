@@ -57,6 +57,7 @@
         </RequirementDefinitions>
         <CapabilityDefinitions>
             <CapabilityDefinition name="CapCanHostPython" capabilityType="ctyIgeneral:CapCanHostPython" lowerBound="1" upperBound="1" xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes"/>
+            <CapabilityDefinition name="CapCanHostQiskit" capabilityType="capabilityTypes:CapCanHostQiskit" lowerBound="1" upperBound="1" xmlns:capabilityTypes="https://ust-quantil.github.io/requirementtypes"/>
         </CapabilityDefinitions>
         <Interfaces>
             <Interface name="OperatingSystemInterface">
