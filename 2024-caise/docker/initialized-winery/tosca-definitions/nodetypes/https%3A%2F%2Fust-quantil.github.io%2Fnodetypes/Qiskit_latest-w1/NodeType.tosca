@@ -19,7 +19,7 @@
             </Interface>
         </Interfaces>
         <CapabilityDefinitions>
-            <CapabilityDefinition name="CapCanRunQuokka" capabilityType="capabilityTypes:CapCanRunQuokka" lowerBound="1" upperBound="1" xmlns:capabilityTypes="https://ust-quantil.github.io/requirementtypes"/>
+            <CapabilityDefinition name="CapCanRunQuokka" capabilityType="capabilityTypes:CapCanRunQuokka" lowerBound="1" upperBound="1" xmlns:capabilityTypes="https://ust-quantil.github.io/capabilitytypes"/>
         </CapabilityDefinitions>
         <RequirementDefinitions>
             <RequirementDefinition name="ReqCanRunQiskit" requirementType="requirementtypes:ReqCanRunQiskit" lowerBound="1" upperBound="1" xmlns:requirementtypes="https://ust-quantil.github.io/requirementtypes"/>
