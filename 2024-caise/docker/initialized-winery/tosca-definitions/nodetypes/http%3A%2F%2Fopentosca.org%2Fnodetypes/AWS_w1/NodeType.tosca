@@ -22,7 +22,7 @@
             </ns0:properties>
         </ns0:PropertiesDefinition>
         <CapabilityDefinitions>
-            <CapabilityDefinition name="CapCanHostUbuntuVM" requirementType="capabilityTypes:CapCanHostUbuntuVM" lowerBound="1" upperBound="1" xmlns:capabilityTypes="http://opentosca.org/capabilitytypes"/>
+            <CapabilityDefinition name="CapCanHostEC2" requirementType="capabilityTypes:CapCanHostEC2" lowerBound="1" upperBound="1" xmlns:capabilityTypes="http://opentosca.org/capabilitytypes"/>
         </CapabilityDefinitions>
     </NodeType>
 </Definitions>
