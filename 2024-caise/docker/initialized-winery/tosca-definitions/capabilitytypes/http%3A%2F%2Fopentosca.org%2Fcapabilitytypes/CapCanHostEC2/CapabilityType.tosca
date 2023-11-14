@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://opentosca.org/capabilitytypes" id="capabilityTypes-CapCanHostEC2" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" >
+    <CapabilityType name="CapCanHostEC2" abstract="no" final="no" targetNamespace="http://opentosca.org/capabilitytypes"/>
+</Definitions>
