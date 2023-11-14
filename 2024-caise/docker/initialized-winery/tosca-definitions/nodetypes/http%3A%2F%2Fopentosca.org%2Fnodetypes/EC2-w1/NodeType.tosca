@@ -6,8 +6,11 @@
             <Tag name="requiredAttributes" value="AWSSecretKey,AWSAccessKey,AWSRegion"/>
         </Tags>
         <CapabilityDefinitions>
-            <CapabilityDefinition name="CapCanHostUbuntuVM" capabilityType="capabilitytypes1:CapCanHostUbuntuVM" lowerBound="0" upperBound="UNBOUNDED" xmlns:capabilitytypes1="http://opentosca.org/capabilitytypes"/>
+            <CapabilityDefinition name="CapCanHostUbuntuVM" capabilityType="capabilitytypes1:CapCanHostUbuntuVM" lowerBound="0" upperBound="unbounded" xmlns:capabilitytypes1="http://opentosca.org/capabilitytypes"/>
         </CapabilityDefinitions>
+        <RequirementDefinitions>
+            <RequirementDefinition name="ReqCanHostEC2" requirementType="requirementtypes:ReqCanHostEC2" lowerBound="1" upperBound="unbounded" xmlns:requirementtypes="http://opentosca.org/requirementtypes"/>
+        </RequirementDefinitions>
         <Interfaces>
             <Interface name="CloudProviderInterface">
                 <Operation name="createVM">
