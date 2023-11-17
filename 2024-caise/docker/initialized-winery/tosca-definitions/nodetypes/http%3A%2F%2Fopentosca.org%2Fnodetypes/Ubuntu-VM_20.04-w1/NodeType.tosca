@@ -60,7 +60,7 @@
             <RequirementDefinition name="ReqCanHostUbuntuVM" requirementType="requirementtypes:ReqCanHostUbuntuVM" lowerBound="1" upperBound="unbounded" xmlns:requirementtypes="http://opentosca.org/requirementtypes"/>
         </RequirementDefinitions>
         <CapabilityDefinitions>
-            <CapabilityDefinition name="CapCanHostPython" capabilityType="ctyIgeneral:CapCanHostPython" lowerBound="1" upperBound="1" xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes"/>
+            <CapabilityDefinition name="CapCanHostPython" capabilityType="capabilityTypes:CapCanHostPython" lowerBound="1" upperBound="1" xmlns:capabilityTypes="http://opentosca.org/capabilitytypes"/>
             <CapabilityDefinition name="CapCanRunQiskit" capabilityType="capabilityTypes:CapCanRunQiskit" lowerBound="1" upperBound="1" xmlns:capabilityTypes="https://ust-quantil.github.io/capabilitytypes"/>
         </CapabilityDefinitions>
         <Interfaces>
