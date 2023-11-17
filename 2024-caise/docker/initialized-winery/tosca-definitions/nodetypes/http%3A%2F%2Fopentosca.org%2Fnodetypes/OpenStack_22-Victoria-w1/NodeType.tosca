@@ -4,6 +4,8 @@
         <Tags>
             <Tag name="type" value="hardware"/>
             <Tag name="requiredAttributes" value="HypervisorApplicationID,HypervisorApplicationSecret,HypervisorEndpoint,HypervisorRegion"/>
+            <Tag name="cloudType" value="privateCloud"/>
+            <Tag name="region" value="Europe"/>
         </Tags>
         <winery:PropertiesDefinition elementname="CloudProviderProperties" namespace="http://opentosca.org/nodetypes">
             <winery:properties>

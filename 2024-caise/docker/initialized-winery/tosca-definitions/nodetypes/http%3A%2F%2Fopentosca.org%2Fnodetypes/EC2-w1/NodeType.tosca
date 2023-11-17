@@ -4,6 +4,8 @@
         <Tags>
             <Tag name="type" value="hardware"/>
             <Tag name="requiredAttributes" value="AWSSecretKey,AWSAccessKey,AWSRegion"/>
+            <Tag name="cloudType" value="publicCloud"/>
+            <Tag name="region" value="US"/>
         </Tags>
         <CapabilityDefinitions>
             <CapabilityDefinition name="CapCanHostUbuntuVM" capabilityType="capabilitytypes1:CapCanHostUbuntuVM" lowerBound="0" upperBound="unbounded" xmlns:capabilitytypes1="http://opentosca.org/capabilitytypes"/>
