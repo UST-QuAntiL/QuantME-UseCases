@@ -51,7 +51,7 @@ services:
   #######################
   ### OpenTOSCA Ecosystem ###
   container:
-    image: opentosca/container:v3.1.1
+    image: opentosca/container:v3.1.2
     ports:
       - '1337:1337'
       - '8081-8087:8081-8087'
