@@ -51,6 +51,10 @@
                 <winery:key>VMNetworks</winery:key>
                 <winery:type>xsd:string</winery:type>
             </winery:properties>
+            <winery:properties>
+                <winery:key>QProvEndpoint</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
         </winery:PropertiesDefinition>
         <RequirementDefinitions>
             <RequirementDefinition name="ReqCanHostUbuntuVM" requirementType="requirementtypes:ReqCanHostUbuntuVM" lowerBound="1" upperBound="unbounded" xmlns:requirementtypes="http://opentosca.org/requirementtypes"/>
@@ -60,6 +64,13 @@
             <CapabilityDefinition name="CapCanRunQiskit" capabilityType="capabilityTypes:CapCanRunQiskit" lowerBound="1" upperBound="1" xmlns:capabilityTypes="https://ust-quantil.github.io/capabilitytypes"/>
         </CapabilityDefinitions>
         <Interfaces>
+            <Interface name="http://opentosca.org/interfaces/lifecycle">
+                <Operation name="configure">
+                    <InputParameters>
+                        <InputParameter name="QProvEndpoint" type="xsd:string" required="yes"/>
+                    </InputParameters>
+                </Operation>
+            </Interface>
             <Interface name="OperatingSystemInterface">
                 <Operation name="installPackage">
                     <InputParameters>
