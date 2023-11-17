@@ -1,10 +1,15 @@
 #!/bin/bash
 
+echo 'Configuring VM to collect provenenance data...'
+echo 'QProv Endpoint:'$QProvEndpoint
+
 sudo apt-get update -y
 
 sudo apt-get install -y curl
 
 sudo apt-get install -y jq
+
+echo 'Successfully installed dependencies for provenance collection...'
 
 name=$(hostname)
 
@@ -21,6 +26,8 @@ payload="{\"name\": \"$name\", \"cpu\": \"$cpu_name\", \"cpuCores\": \"$cpu_core
 response=$(curl -sb -X POST -H "accept: application/hal+json" -H "Content-Type: application/json" -d "$payload" "$QProvEndpoint/virtual-machines")
 
 id=$(echo "$response" | jq -r '.id')
+
+echo 'Creating folder to store provenance collection script...'
 
 mkdir ~/monitoring
 
@@ -48,9 +55,13 @@ sleep 90
 done
 EOF
 
+echo 'Stored provenance collection script...'
+
 chmod +x ~/monitoring/monitoring.sh
 
-nohup bash ~/monitoring/monitoring.sh &
+nohup bash ~/monitoring/monitoring.sh >monitoring.log 2>&1 </dev/null &
+
+echo 'Started provenance collection script...'
 
 sleep 1
 
