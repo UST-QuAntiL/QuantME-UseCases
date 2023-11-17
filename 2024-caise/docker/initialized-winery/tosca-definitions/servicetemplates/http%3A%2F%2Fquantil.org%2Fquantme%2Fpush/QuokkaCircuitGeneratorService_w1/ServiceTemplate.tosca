@@ -36,6 +36,7 @@
                         <nodetypes:VMKeyPairName>get_input: VMKeyPairName</nodetypes:VMKeyPairName>
                         <nodetypes:VMNetworks>get_input: VMNetworks</nodetypes:VMNetworks>
                         <nodetypes:VMOpenPorts>5073</nodetypes:VMOpenPorts>
+                        <nodetypes:QProvEndpoint>get_input: QProvEndpoint</nodetypes:QProvEndpoint>
                     </nodetypes:VirtualMachineProperties>
                 </Properties>
             </NodeTemplate>
