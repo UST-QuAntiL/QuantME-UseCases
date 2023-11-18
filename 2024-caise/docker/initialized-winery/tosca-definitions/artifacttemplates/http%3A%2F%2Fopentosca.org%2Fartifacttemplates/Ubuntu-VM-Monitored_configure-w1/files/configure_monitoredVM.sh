@@ -23,7 +23,11 @@ disk_size=$(df | awk '$NF=="/"{printf "%d", $2}')
 
 payload="{\"name\": \"$name\", \"cpu\": \"$cpu_name\", \"cpuCores\": \"$cpu_cores\", \"ramSize\": \"$ram\", \"diskSize\": \"$disk_size\"}"
 
+echo 'Creating new VM with following payload: '$payload
+
 response=$(curl -sb -X POST -H "accept: application/hal+json" -H "Content-Type: application/json" -d "$payload" "$QProvEndpoint/virtual-machines")
+
+echo 'Creation resulted in response: '$response
 
 id=$(echo "$response" | jq -r '.id')
 
