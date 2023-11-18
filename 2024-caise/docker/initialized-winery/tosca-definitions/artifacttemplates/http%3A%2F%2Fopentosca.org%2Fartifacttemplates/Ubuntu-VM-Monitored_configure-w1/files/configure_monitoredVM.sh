@@ -48,7 +48,6 @@ mem_usage=\$(free | grep Mem | awk '{print (\$3 / \$2) * 100}')
 
 disk_usage=\$(df | awk '\$NF=="/"{printf "%d", \$5}')
 
-
 # Create a JSON payload
 payload="{\"cpuUsage\": \"\$cpu_usage\", \"clockSpeed\": \"\$cpu_speed\", \"ramUsage\": \"\$mem_usage\", \"diskUsage\": \"\$disk_usage\", \"recordingTime\": \"\$(date '+%Y-%m-%dT%H:%M:%S.%3NZ')\"}"
 
@@ -63,7 +62,7 @@ echo 'Stored provenance collection script...'
 
 chmod +x ~/monitoring/monitoring.sh
 
-nohup bash ~/monitoring/monitoring.sh >monitoring.log 2>&1 </dev/null &
+nohup bash ~/monitoring/monitoring.sh >~/monitoring/monitoring.log 2>&1 </dev/null &
 
 echo 'Started provenance collection script...'
 
