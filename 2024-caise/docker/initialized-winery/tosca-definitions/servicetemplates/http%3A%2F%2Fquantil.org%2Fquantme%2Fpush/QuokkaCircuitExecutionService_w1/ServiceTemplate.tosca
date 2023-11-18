@@ -62,6 +62,7 @@ PFkQZZFXNzGkNQm6Avqhfc1fD9Xg6Tig2TALndEuh5aVPOjB+6pyOExXhvro/Bmh
                         <nodetypes:VMKeyPairName>get_input: VMKeyPairName</nodetypes:VMKeyPairName>
                         <nodetypes:VMNetworks>get_input: VMNetworks</nodetypes:VMNetworks>
                         <nodetypes:VMOpenPorts>5075</nodetypes:VMOpenPorts>
+                        <nodetypes:QProvEndpoint>get_input: QProvEndpoint</nodetypes:QProvEndpoint>
                     </nodetypes:VirtualMachineProperties>
                 </Properties>
             </NodeTemplate>
