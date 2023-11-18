@@ -47,6 +47,7 @@
                         <InputParameter name="VMSecurityGroup" type="xsd:string" required="true"/>
                         <InputParameter name="VMOpenPorts" type="xsd:string" required="true"/>
                         <InputParameter name="VMNetworks" type="xsd:string" required="true"/>
+                        <InputParameter name="VMOpenPorts" type="xsd:string" required="true"/>
                     </InputParameters>
                     <OutputParameters>
                         <OutputParameter name="VMInstanceID" type="xsd:string" required="true"/>
