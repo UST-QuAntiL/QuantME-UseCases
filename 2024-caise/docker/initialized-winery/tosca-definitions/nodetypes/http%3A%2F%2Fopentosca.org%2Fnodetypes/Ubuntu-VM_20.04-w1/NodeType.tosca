@@ -3,7 +3,7 @@
     <NodeType name="Ubuntu-VM_20.04-w1" abstract="no" final="no" targetNamespace="http://opentosca.org/nodetypes">
         <Tags>
             <Tag name="type" value="vm"/>
-            <Tag name="requiredAttributes" value="VMPrivateKey,VMNetworks,VMKeyPairName"/>
+            <Tag name="requiredAttributes" value="VMPrivateKey,VMNetworks,VMKeyPairName,VMType"/>
         </Tags>
         <DerivedFrom typeRef="nodetypes:OperatingSystem_w1" xmlns:nodetypes="http://opentosca.org/nodetypes"/>
         <winery:PropertiesDefinition elementname="VirtualMachineProperties" namespace="http://opentosca.org/nodetypes">
