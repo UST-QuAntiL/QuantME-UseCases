@@ -21,36 +21,10 @@
                         <nodetypes:VMType>t2.micro</nodetypes:VMType>
                         <nodetypes:VMUserName>ubuntu</nodetypes:VMUserName>
                         <nodetypes:VMUserPassword>unused</nodetypes:VMUserPassword>
-                        <nodetypes:VMPrivateKey>-----BEGIN RSA PRIVATE KEY-----
-MIIEpAIBAAKCAQEAwcU2cfTxakPg2uowajLbIY9aAOnszhzkmSIxDrszlSprM01A
-MLOti08ykxH6B4i3JL6TTjyPPToTThaHVXeXvqoTrmZIZSlE3T/Y2+hhXOdI+sAa
-NYZqEBy6cVS8bT8K3m+NXfX94vRKbyfn6sZFJSajXpBeXDUl68W/2BJUbj2RDIfm
-HX4ts/qDvIwOPZuYaYJ4RIrWxN/Prg6i637wpBOHossUl1i1aoy1eqYKMOCFCR7m
-AHDBzHXYZbifB5+HY4YKDXOSnQOr197sQXMHBWYC+2/fcOxpQfz6spC8cRXgB6yQ
-sa2ilqybjtOgbyjFEmhTos7gn+Y1CBKjBNiCGwIDAQABAoIBAQCMZNN55bs0/1Ff
-y+agS5Cx1CemGddVz2FiAoAA6GoLXdymIwarQsQu94bxQEkkRE5N9TbNrNsrxXRP
-U8tihXAQ2THBXqJ9iVU36Ra63rgMlBcwdxeGSIl4exgrHPYZQWAiojiPJ7h4Q//a
-YdOLK3TV4hTkYz27GVcMaQ8DAuThqb5GayT8ZsY+TQB67dh1ylqH1Q3lT2y8x0St
-As5l71fUI+3495bKhvt4QBwBvKcI/8ClNmXrNUr2uaWh38DxvkV6PMVAHq+IdJgy
-Hj0ZW72agORemdHRYXh1Vn6AB0fdOPNmeO+SHJTlJd/VCN1+Twu+aq0UIMzo+67f
-z79bJFWBAoGBAPCNhqCwImpjBVPwvh0gLyuDGIMZ4/Dq/97z1Zu9EvbXlGJ7obQo
-0PYGyXpKG8QCyWikeEpjNBf1kQkhYmLxDDBYdmiseu7eHbGx0P43YgkxQ3OOUw7Z
-Ej0wJ+xJ1qlNeHEePp7PhlsH6Tp25VCjgWV6tB1EBWsDx+kg+7nwxXgRAoGBAM42
-n+hgP4UYT2Z8WItfWsiKSi7RsESFYefc1m9x48hENMbuEfrTrtAbWV3QNHvYyPiy
-l6r7Q+tPp8c/TgDRrdkJBZVyzlSmOiR3aBkV5q+vnJqDcTf1lAhHJZ/lRxF/WUiz
-lFdlT9lULWNoJkf+TrU91DI8d3aMkREpc/JxlSNrAoGAJqK0gs6HWIr66hZ6knb+
-3IA7yaK455L28bo8Dr15dEf/vymYOTVtCnbgmVGZ0AuaicIQx/HTBh4c41iHUtjg
-Wkt7CSjavc7S+h1TMeF3T36oFMFBOdtHgKhhYSQi5CJbO9/dsugl7i0BGrDJ9/+q
-4r+oeiLYs+1xiFIR3DV9oeECgYA8e30PVRuMWAMB1jrKNh+Ubisv7ES89DoxHW6v
-pUHf/VFVf4I6hVfipgLiJy0dngnkF82wUp4rKGPXZtPkHZvV6nV+zfuCjHbFN1iK
-8weERAe0shTFCvxuKR/58++STD3Nuw4pTAfNgIkHfQatWwOO2SGh0mZfmP77f6MI
-WxQZHQKBgQDUXm/6Fqqv4Q38I9TuYuEKGwkx3fblSUqy/2Rqq7BwQn17DSHHaoYM
-yD2eV7s6e5S1dz3fP/GMPnDCMX4Ny8hecrfgH6sGylmLQuck2MWVEWyz+5vLIM03
-DoFrpvr5Wxe7GoDVhOMmgWxNIx0X7J3mVXDF+bn8iT+9VlHLeJCm/w==
------END RSA PRIVATE KEY-----</nodetypes:VMPrivateKey>
+                        <nodetypes:VMPrivateKey>get_input: VMPrivateKey</nodetypes:VMPrivateKey>
                         <nodetypes:VMPublicKey>unused</nodetypes:VMPublicKey>
                         <nodetypes:VMKeyPairName>get_input: VMKeyPairName</nodetypes:VMKeyPairName>
-                        <nodetypes:VMNetworks>unused</nodetypes:VMNetworks>
+                        <nodetypes:VMNetworks>get_input: VMNetworks</nodetypes:VMNetworks>
                         <nodetypes:VMOpenPorts>5075</nodetypes:VMOpenPorts>
                         <nodetypes:QProvEndpoint>get_input: QProvEndpoint</nodetypes:QProvEndpoint>
                     </nodetypes:VirtualMachineProperties>
