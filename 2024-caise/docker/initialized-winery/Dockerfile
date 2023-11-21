@@ -1,4 +1,4 @@
-FROM opentosca/winery:v3.0.0-M1
+FROM beiselmn/winery:3.0.3
 LABEL maintainer = "Benjamin Weder <weder@iaas.uni-stuttgart.de>"
 
 ENV WINERY_REPOSITORY_PATH /var/repository/modulo

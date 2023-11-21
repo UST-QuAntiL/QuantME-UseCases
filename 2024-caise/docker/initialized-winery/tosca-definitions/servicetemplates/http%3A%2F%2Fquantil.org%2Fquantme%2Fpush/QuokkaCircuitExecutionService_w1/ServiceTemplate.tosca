@@ -32,32 +32,33 @@
                         <nodetypes:VMUserName>ubuntu</nodetypes:VMUserName>
                         <nodetypes:VMUserPassword>unused</nodetypes:VMUserPassword>
                         <nodetypes:VMPrivateKey>-----BEGIN RSA PRIVATE KEY-----
-MIIEpQIBAAKCAQEA6SQ56xTmXj6wzunkHSmVyJgdOBlYjVw09mzaiQ8lipBodpqj
-Ch1ZCHKHAjcdiEJcy8IgvVqPpN/8dz7qIZ8Awq0C4uRDsMHVxJqT+lSrBPoHTjsd
-zy3nTdJqYxhnSrEcgF8O4X/nYCrWwMvYt00iE8RxR6I+NvsruBAGmtnEWS77wBVe
-wW26+guJU9Yu139NA2jDFtRXT9A5sC6L1D8GG1tly6kOGIivV9ch+j2yeyvVpyEJ
-1m9bBoqyZ1ElwYJGWG6Adm23gdEN0DvcEtUQycU2etWUmUn9ppW6FwMrp/53H69X
-YLaaNh2+JUtp3+LiCjk9U/gr7JnnYrY09C6uWwIDAQABAoIBAH+X5ubEUmuDzcn/
-8WsQZjwZG+ym2nLK4uV2n4dhNb+G1tUKPm57r01TOJY6ybvX7edJwBdBZ9npB8fP
-M93gok7o1uqL2Iv1GWP24UOgcNRRbgwfiGnpimxp2vWO1oDnO1z6KS+6i0tzRoLP
-TTTMTvkYipKUtY3rmnqqsqKuyamwZIc2DtCLI9/TkFiqV9JnHEgS8KJY/t1JhX8b
-wHteGSvrUiUfusrqUyrjQ0wK+9ReAaZLnDBssNtrHuCguZHi89LsbxxZf+ozMm1k
-BpVTLh9LUJRaWuVkEOHEMVF350JEqjoVrRnD+UrxfjFime/N++T6S+M5RfSuQl3A
-+Xaj0RkCgYEA9ehUpnlEOIxFLDdg5bT1q/vWlMJA7hUvp75oqkomPUSJJATs21MV
-m/qu0Mo4JuHKyKJ/tNA5an7SIR8L4zskmBUqwrGR6BLCK3mJlnER1bhXS2EuP1wW
-bZGKY1Fv2zU9FAnOiPMLJ3CwGTXcQdqihgOby+wjn/bPGJV8omKMck0CgYEA8rXE
-X8IxJMOOnmc35IqEVAAlflbnwM3KzAZVk2BEXLTJSrO+QvuoaANM+VKxi5NBngVe
-4sgQxc/CfIrm2dtDNbnSzgBLkv7rntl+nkUOOmpJslEZGkVhmP2wnvhFeY8VqbLG
-YdBwCRghvkuuMwuGm9P6+Ta+oiTMUhTMD4U2Z0cCgYEAqch0kdBOgwCOTf4aX982
-dD1YJbONYxSrp5S27URu7IRib8UayD+wPtaxVqUYafghq69On0fZLKdNa+LksUpH
-dN3AfVZe2C4DdELg9UcyOi6hzwDVDpgFQDdppjM3GNHETw6KVFIClIOggneGkM1k
-w0TAj+aFnk+pI18rA28pa00CgYEAypR2pOqkNChZqNNEbqhDDQ3WPZ5x75aVNzfu
-Q4Vtaeenv4dJPgVpKe/fVpb0BCjT8v5OlYEhpsnjbipNxvbhIT3JuxG6AqZtqfel
-XJsM5isC+igAiNHyRU0yF23oJy8LiMnkFY5xhNW0jG4EpyxunTAQ4eQUt6d5NuWO
-8UFiCE8CgYEA1EWbaryLOIHEZkmaw8qIE5E879H174Gl0V1kLXSMOPOnEDbYzBJG
-PFkQZZFXNzGkNQm6Avqhfc1fD9Xg6Tig2TALndEuh5aVPOjB+6pyOExXhvro/Bmh
-8rGT4vDJ5JOgMnnxaEtCpRXZebE1J8YzSzQ3GQMVWug6i+Pddfv3GVw=
------END RSA PRIVATE KEY-----</nodetypes:VMPrivateKey>
+MIIEpAIBAAKCAQEAvTU25toSTIx52zedIjCYy0J6GcvVmVmJ2ngLj4IOx6NZd6NQ
+idWGB6OeqVCS8Hw35MKWK+TSUTolZdKufQqG0r13Vw++c4DhF/RyROEH640jAeVz
+QWXQvRQIpQqflbmNtMkFwTI7wUgpPhyZkaKqePpOnZAKgblIYQWOduu6bKkemqvE
+JsKESk5yJCUL9EcnSnjoM6SrgKD6a97AGM0v0+SdR6VWXQGbdj5idLYxzkO+HB0O
+wPOzOQ+fH4e52zEyVrsx6YjodP5PuFOz75Yjoy9N/H4RkEfwPBclttjJcWbic8/A
+3BiIf7nDyhjh5idF18LaVf4yZNb3Fh9WzoipzQIDAQABAoIBAFa4iz9n+Dcps7hs
+VxMSnxWalIg6St6MkYiWuQW/oLKUBi+1pPZn7ZSWw+Pq0E51QNES9u2LZXJhaj6v
+P9aD+qOgv5Ah4TLjgUgPfEhhs9WczMzTs+3nkrL2+bdblSV09KRF9uND+Otv/adA
+SIrdubDVWS8SlB49JBWEDHYpOTsPxrXp6ZhmwKluYVRC2gc6wbjPpO6CdGfoGMdm
+j1wrjpm43GRaoGi8dN3VB/TROJeXxwu8fh+lsfSQlVG/04iZg1MUcVSn6wY+d+Zv
+0J+AqPI/qstrCs4MO8oWYGIVz1G/+ll9a3Fg1CaB9mBmZ9R7LUKCIYsl/5U70LRZ
+trH9OMECgYEA5/wETvomTO38+VeWyfR+MqRcruxzJ4W4BWy5NMryASGGwBln8XhF
+OU0ioAjMuIU2rdiYtP6vKIu6TxWikix2i8hUv5XmrCj5IbsAnUqJLEq5TnMYscuG
+AlF7vPNMhLqsn6rsD6M8uMYwI8l9BHLnDiJo8y7hVAnA02+t1uZS9AkCgYEA0MuL
+qU/+Kk1yMSLWGa/WPiJFoOBzcCdTPoiNeoItP3VMeh8Pnx/6KH6f3FB1mztyJwXn
+KYDIN+MOA5sO6+s67rhVQvuwArv+YJ9s+IyHZaurda8VhBlyF3PaRHiQoxQ+K///
+hNjTCYe/etuqXlIJ2JUfx16vAb94ViLiyhKeYKUCgYEArFUmKjlgLHP7Iouzw7Ex
+8pLxGy0h2nFWpAkBiLtejgKG5Lu64MHUwt2PZE1FL6oeVYT65DHyku9B5zAORgJr
+yil285/67Ve+wxT1PuO5BUM5Z5LO/H1RvvUjM9mVtWArjq1dkbxVBnqMFnm+uohV
+JsXfKxBfaZuZODjVbjhJ1WkCgYAfc4nGJ1aR6LiazjSSCfqrwV3brfO1oTbY5Jjr
+K1DFjlXGz4b64UY9c1WBSl1s1LeNSUZY6h0+zeT+hgzpXLWz3/B39pG817SpuVog
+1opOtl1NjOIg0/Rrs/fc+IxRBGuZFSbYTBD+DoS5bP1s187D4TK4RXr3OHBYCUlA
+Ry20QQKBgQCdRgHhQWsnuhj1cdeY3aJEhXrS8c3k2UapWazNkOODzoqTbeRT8QKt
+69l/c1I1D4j3vrf/3Mi5hmba+W5BHwAdv4fnEZC7Afi5k3AZDmFMAMG0rJ43SlGS
+IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
+-----END RSA PRIVATE KEY-----
+</nodetypes:VMPrivateKey>
                         <nodetypes:VMPublicKey>unused</nodetypes:VMPublicKey>
                         <nodetypes:VMKeyPairName>get_input: VMKeyPairName</nodetypes:VMKeyPairName>
                         <nodetypes:VMNetworks>get_input: VMNetworks</nodetypes:VMNetworks>

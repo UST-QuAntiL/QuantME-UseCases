@@ -6,6 +6,7 @@
         </Tags>
         <BoundaryDefinitions>
             <Properties>
+                <SelfServiceApplicationUrl selfServiceApplicationUrl="bla"/>
                 <ns0:selfserviceApplicationUrl xmlns:ns0="http://www.eclipse.org/winery/model/selfservice"/>
                 <PropertyMappings/>
             </Properties>

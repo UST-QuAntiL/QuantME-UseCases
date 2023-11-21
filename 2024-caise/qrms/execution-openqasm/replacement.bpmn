@@ -35,7 +35,7 @@ import groovy.json.JsonBuilder
   request.put("circuit", circuit);
   request.put("circuit_format", "openqasm");
   request.put("provider", "ibm");
-  
+
   requeststring = new JsonBuilder(request).toPrettyString()
 println(requeststring);
   return requeststring;</camunda:script>
@@ -74,6 +74,16 @@ println(el);
 }
 println(transpiled_circuit_depth_array);
 return transpiled_circuit_depth_array;</camunda:script>
+            </camunda:outputParameter>
+            <camunda:outputParameter name="executionProbabilityDistribution">
+              <camunda:script scriptFormat="Groovy">import org.camunda.bpm.engine.variable.value.FileValue
+            	import org.camunda.bpm.engine.variable.Variables
+                import groovy.json.JsonSlurper
+                def slurper = new JsonSlurper().parseText(response)
+            	String filename = "ExecutionProbabilityDistribution.png";
+            	FileValue typedFileValue = Variables.fileValue(filename).file(slurper[0].visualization.decodeBase64()).mimeType("application/png").create()
+                typedFileValue
+              </camunda:script>
             </camunda:outputParameter>
           </camunda:inputOutput>
           <camunda:connectorId>http-connector</camunda:connectorId>
