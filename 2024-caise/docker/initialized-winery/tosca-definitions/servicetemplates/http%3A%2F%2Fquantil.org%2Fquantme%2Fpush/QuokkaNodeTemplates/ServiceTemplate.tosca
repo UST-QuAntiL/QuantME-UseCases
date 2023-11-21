@@ -18,7 +18,7 @@
                     <nodetypes:VirtualMachineProperties>
                         <nodetypes:VMIP/>
                         <nodetypes:VMInstanceID/>
-                        <nodetypes:VMType>t2.micro</nodetypes:VMType>
+                        <nodetypes:VMType>get_input: VMType</nodetypes:VMType>
                         <nodetypes:VMUserName>ubuntu</nodetypes:VMUserName>
                         <nodetypes:VMUserPassword>unused</nodetypes:VMUserPassword>
                         <nodetypes:VMPrivateKey>get_input: VMPrivateKey</nodetypes:VMPrivateKey>
