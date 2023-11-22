@@ -3,7 +3,7 @@
     <NodeType name="Ubuntu-VM_20.04-w1" abstract="no" final="no" targetNamespace="http://opentosca.org/nodetypes">
         <Tags>
             <Tag name="type" value="vm"/>
-            <Tag name="requiredAttributes" value="VMPrivateKey,VMNetworks,VMKeyPairName,VMType"/>
+            <Tag name="requiredAttributes" value="EC2-w1.VMPrivateKey,EC2-w1.VMKeyPairName,EC2-w1.VMType,EC2-w1.VMOpenPorts,OpenStack_22-Victoria-w1.VMPrivateKey,OpenStack_22-Victoria-w1.VMNetworks,OpenStack_22-Victoria-w1.VMKeyPairName,OpenStack_22-Victoria-w1.VMType,OpenStack_22-Victoria-w1.VMOpenPorts"/>
         </Tags>
         <DerivedFrom typeRef="nodetypes:OperatingSystem_w1" xmlns:nodetypes="http://opentosca.org/nodetypes"/>
         <winery:PropertiesDefinition elementname="VirtualMachineProperties" namespace="http://opentosca.org/nodetypes">
