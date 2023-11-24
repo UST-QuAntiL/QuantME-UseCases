@@ -77,11 +77,11 @@ IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
       <bpmn:outgoing>Flow_0czrsh0</bpmn:outgoing>
       <bpmn:outgoing>Flow_0tljgkh</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <quantme:resultEvaluationTask id="ResultEvaluationTask_0933y5e" name="Evaluate Results" objectiveFunction="expectationValue" costFunction="maxcut">
+    <quantme:resultEvaluationTask id="ResultEvaluationTask_0933y5e" name="Evaluate Results" opentosca:onDemand="true" objectiveFunction="expectationValue" costFunction="maxcut">
       <bpmn:incoming>Flow_11f62wp</bpmn:incoming>
       <bpmn:outgoing>Flow_05sf6lt</bpmn:outgoing>
     </quantme:resultEvaluationTask>
-    <quantme:parameterOptimizationTask id="ParameterOptimizationTask_01m89mt" name="Optimize QAOA Parameters" optimizer="cobyla">
+    <quantme:parameterOptimizationTask id="ParameterOptimizationTask_01m89mt" name="Optimize QAOA Parameters" opentosca:onDemand="true" optimizer="cobyla">
       <bpmn:incoming>Flow_05sf6lt</bpmn:incoming>
       <bpmn:outgoing>Flow_0wlfysg</bpmn:outgoing>
     </quantme:parameterOptimizationTask>
@@ -91,7 +91,7 @@ IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
       <bpmn:outgoing>Flow_1m60wcg</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_1m60wcg" sourceRef="Gateway_0qaj4kt" targetRef="Task_009hsrk" />
-    <quantme:quantumCircuitLoadingTask id="Task_009hsrk" name="Generate QAOA Circuit" url="quokka/maxcut">
+    <quantme:quantumCircuitLoadingTask id="Task_009hsrk" name="Generate QAOA Circuit" opentosca:onDemand="false" url="quokka/maxcut">
       <bpmn:incoming>Flow_1m60wcg</bpmn:incoming>
       <bpmn:outgoing>Flow_18kx5os</bpmn:outgoing>
     </quantme:quantumCircuitLoadingTask>
@@ -135,20 +135,16 @@ IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
     <opentosca:cloudDeploymentModelPolicy id="Event_1r38ubu" attachedToRef="ResultEvaluationTask_0933y5e" cloudType="private" />
     <opentosca:dedicatedHostingPolicy id="Event_0nqk55w" attachedToRef="ResultEvaluationTask_0933y5e" dedicatedHosting="true" />
     <opentosca:locationPolicy id="Event_1uo1dng" attachedToRef="ParameterOptimizationTask_01m89mt" location="EU" />
+    <opentosca:onDemandPolicy id="Event_01ozim4" attachedToRef="ResultEvaluationTask_0933y5e" />
+    <opentosca:onDemandPolicy id="Event_0smwcuk" attachedToRef="ParameterOptimizationTask_01m89mt" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_070m5p1">
-      <bpmndi:BPMNShape id="StartEvent_0ej6lwb_di" bpmnElement="StartEvent_0ej6lwb">
-        <dc:Bounds x="402" y="237" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_0pj22b3" bpmnElement="Gateway_0qaj4kt" isMarkerVisible="true">
-        <dc:Bounds x="465" y="230" width="50" height="50" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="QuantumCircuitLoadingTask_1pmyy9a_di" bpmnElement="Task_009hsrk">
-        <dc:Bounds x="540" y="215" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_0pjq7fr_di" bpmnElement="EndEvent_0pjq7fr">
         <dc:Bounds x="1562" y="237" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_0ej6lwb_di" bpmnElement="StartEvent_0ej6lwb">
+        <dc:Bounds x="402" y="237" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="UserTask_06awxe9_di" bpmnElement="Task_1h88ddf">
         <dc:Bounds x="1430" y="215" width="100" height="80" />
@@ -165,6 +161,12 @@ IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
       <bpmndi:BPMNShape id="BPMNShape_1qsyepo" bpmnElement="ParameterOptimizationTask_01m89mt">
         <dc:Bounds x="1190" y="215" width="100" height="80" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0pj22b3" bpmnElement="Gateway_0qaj4kt" isMarkerVisible="true">
+        <dc:Bounds x="465" y="230" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="QuantumCircuitLoadingTask_1pmyy9a_di" bpmnElement="Task_009hsrk">
+        <dc:Bounds x="540" y="215" width="100" height="80" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="QuantumHardwareSelectionSubprocess_16oir9b_di" bpmnElement="Activity_1p2awjj" isExpanded="true">
         <dc:Bounds x="680" y="185" width="300" height="140" />
         <bpmndi:BPMNLabel />
@@ -179,32 +181,49 @@ IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
       <bpmndi:BPMNShape id="Event_106p8tt_di" bpmnElement="Event_106p8tt">
         <dc:Bounds x="922" y="242" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Flow_1d2heqf_di" bpmnElement="Flow_1d2heqf">
-        <di:waypoint x="738" y="260" />
-        <di:waypoint x="780" y="260" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1o5eks8_di" bpmnElement="Flow_1o5eks8">
         <di:waypoint x="880" y="260" />
         <di:waypoint x="922" y="260" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1d2heqf_di" bpmnElement="Flow_1d2heqf">
+        <di:waypoint x="738" y="260" />
+        <di:waypoint x="780" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_152zc9y_di" bpmnElement="Event_1uo1dng">
+        <dc:Bounds x="1166" y="269" width="42" height="44" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0cgmhn3_di" bpmnElement="Event_0nqk55w">
+        <dc:Bounds x="1059" y="269" width="42" height="44" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0r88rjk_di" bpmnElement="Event_1r38ubu">
+        <dc:Bounds x="1006" y="269" width="42" height="44" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_09e02sj_di" bpmnElement="Event_145qdop">
         <dc:Bounds x="569" y="269" width="42" height="44" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1l69koh_di" bpmnElement="Event_1f1idt5">
         <dc:Bounds x="516" y="269" width="42" height="44" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0r88rjk_di" bpmnElement="Event_1r38ubu">
-        <dc:Bounds x="1006" y="269" width="42" height="44" />
+      <bpmndi:BPMNShape id="Event_01ozim4_di" bpmnElement="Event_01ozim4">
+        <dc:Bounds x="1097" y="197" width="42" height="44" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0cgmhn3_di" bpmnElement="Event_0nqk55w">
-        <dc:Bounds x="1059" y="269" width="42" height="44" />
+      <bpmndi:BPMNShape id="Event_0smwcuk_di" bpmnElement="Event_0smwcuk">
+        <dc:Bounds x="1257" y="197" width="42" height="44" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_152zc9y_di" bpmnElement="Event_1uo1dng">
-        <dc:Bounds x="1166" y="269" width="42" height="44" />
-      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_134gyga_di" bpmnElement="SequenceFlow_134gyga">
+        <di:waypoint x="1530" y="255" />
+        <di:waypoint x="1562" y="255" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_17fnx68" bpmnElement="Flow_1m60wcg">
         <di:waypoint x="515" y="255" />
         <di:waypoint x="540" y="255" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0czrsh0_di" bpmnElement="Flow_0czrsh0">
+        <di:waypoint x="1395" y="255" />
+        <di:waypoint x="1430" y="255" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1398" y="233" width="18" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_18kx5os_di" bpmnElement="Flow_18kx5os">
         <di:waypoint x="640" y="255" />
@@ -220,21 +239,6 @@ IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
         <di:waypoint x="490" y="150" />
         <di:waypoint x="490" y="230" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_11f62wp_di" bpmnElement="Flow_11f62wp">
-        <di:waypoint x="980" y="255" />
-        <di:waypoint x="1030" y="255" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_134gyga_di" bpmnElement="SequenceFlow_134gyga">
-        <di:waypoint x="1530" y="255" />
-        <di:waypoint x="1562" y="255" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0czrsh0_di" bpmnElement="Flow_0czrsh0">
-        <di:waypoint x="1395" y="255" />
-        <di:waypoint x="1430" y="255" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1398" y="233" width="18" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0wlfysg_di" bpmnElement="Flow_0wlfysg">
         <di:waypoint x="1290" y="255" />
         <di:waypoint x="1345" y="255" />
@@ -242,6 +246,10 @@ IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
       <bpmndi:BPMNEdge id="Flow_05sf6lt_di" bpmnElement="Flow_05sf6lt">
         <di:waypoint x="1130" y="255" />
         <di:waypoint x="1190" y="255" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11f62wp_di" bpmnElement="Flow_11f62wp">
+        <di:waypoint x="980" y="255" />
+        <di:waypoint x="1030" y="255" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
