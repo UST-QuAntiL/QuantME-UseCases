@@ -26,8 +26,8 @@ Afterwards, the following screen should be displayed:
 
 ![Modeler Initial](./docs/modeler-initial.png)
 
-Open the example workflow model available [here](./workflow/workflow_casestudy.bpmn) using the Quantum Workflow Modeler.
-For this, click on ``Open`` in the top-left corner, and afterwards, select the workflow model in the dialogue ``Open File...``.
+Open the example workflow model available [here](./workflow/caise_workflow.bpmn) using the Quantum Workflow Modeler.
+For this, click on ``Open`` in the top-left corner, and afterwards, select the workflow model.
 Then, the following screen is displayed:
 
 ![Quantum Workflow in Modeler](./docs/modeler-workflow-loaded.png)
@@ -38,14 +38,18 @@ To check these settings, click on ``Configuration`` in the toolbar, opening the 
 ![Quantum Workflow in Modeler](./docs/modeler-configuration.png)
 
 Please verify that the different configuration properties are set to the following values.
-Thereby, $IP has to be replaced with the IP-address of the Docker engine used for the setup described above:
+Thereby, $IP has to be replaced with the IP address of the Docker engine used for the setup described above:
 
-* Under ``Editor``:
+* Under ``General``:
     * ``Camunda Engine Endpoint``: http://$IP:8080/engine-rest
-* Under ``QRM Data``:
+* Under ``GitHub``:
     * ``QRM Repository User``: UST-QuAntiL
     * ``QRM Repository Name``: QuantME-UseCases
-    * ``QRM Repository Path``: 2023-ccis/qrms
+    * ``QRM Repository Path``: 2024-caise/qrms
+* Under ``QuantME Plugin``:
+    * ``TODO``: TODO
+* Under ``OpenTOSCA Plugin``:
+    * ``TODO``: TODO
 
 ### TODO
 
