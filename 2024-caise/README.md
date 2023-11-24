@@ -10,6 +10,7 @@ Therefore, these components can be started using the Docker-Compose file availab
 
 1. Update the [.env](./docker/.env) file with your settings:
   * ``PUBLIC_HOSTNAME``: Enter the publicly accessible IP address of your Docker engine. Do *not* use ``localhost``.
+  * ``IBM_ACCESS_TOKEN``: Enter your IBMQ token, which can be retrieved [here](https://quantum-computing.ibm.com/).
 
 2. Run the Docker-Compose file:
 ```
