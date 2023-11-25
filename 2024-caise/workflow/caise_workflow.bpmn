@@ -48,7 +48,7 @@ Ry20QQKBgQCdRgHhQWsnuhj1cdeY3aJEhXrS8c3k2UapWazNkOODzoqTbeRT8QKt
 69l/c1I1D4j3vrf/3Mi5hmba+W5BHwAdv4fnEZC7Afi5k3AZDmFMAMG0rJ43SlGS
 IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
 -----END RSA PRIVATE KEY-----" />
-          <camunda:formField id="VMKeyPairName" label="VMKeyPairName" type="string" defaultValue="Orchestration" />
+          <camunda:formField id="VMKeyPairName" label="VMKeyPairName" type="string" defaultValue="Orchestration2" />
           <camunda:formField id="HypervisorRegion" label="HypervisorRegion" type="string" defaultValue="Mannheim" />
           <camunda:formField id="VMNetworks" label="VM Network Ids" type="string" defaultValue="c4eafee4-e84d-45ca-92a6-238302b75083" />
         </camunda:formData>
