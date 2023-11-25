@@ -26,7 +26,7 @@ services:
     networks:
       - workflow-observability
   transformation-backend:
-    image: planqk/quantme-backend:v1.7.0
+    image: planqk/quantme-backend:v1.8.0
     environment:
       CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
       OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
