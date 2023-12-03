@@ -92,7 +92,7 @@ services:
       - workflow-observability
 
   tosca-ui:
-    image: opentosca/uigit st
+    image: opentosca/ui
     networks:
       - workflow-observability
     ports:
