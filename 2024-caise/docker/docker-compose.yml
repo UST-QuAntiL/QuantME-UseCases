@@ -90,6 +90,13 @@ services:
       CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
     networks:
       - workflow-observability
+
+  tosca-ui:
+    image: opentosca/uigit st
+    networks:
+      - workflow-observability
+    ports:
+      - '8088:8080'
   # end of OpenTOSCA Ecosystem
   #######################
 
@@ -154,7 +161,7 @@ services:
       POSTGRES_DB: nisq
       SPRING_PROFILES_ACTIVE: docker
       QPROV_HOSTNAME: qprov
-      QPROV_PORT: 5020
+      QPROV_PORT: 8094
       QISKIT_HOSTNAME: qiskit-service
       QISKIT_PORT: 5013
     networks:
