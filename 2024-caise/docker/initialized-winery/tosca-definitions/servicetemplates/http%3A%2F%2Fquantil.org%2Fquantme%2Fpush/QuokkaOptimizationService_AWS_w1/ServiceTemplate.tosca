@@ -61,7 +61,7 @@ DoFrpvr5Wxe7GoDVhOMmgWxNIx0X7J3mVXDF+bn8iT+9VlHLeJCm/w==
             <NodeTemplate name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_0" winery:x="968" winery:y="155" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
                 <Properties>
                     <ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
-                        <ntyIgeneral3:StartupCommand>export FLASK_APP=optimization-service.py &amp;&amp; export FLASK_ENV=development &amp;&amp; export FLASK_DEBUG=0 &amp;&amp; python3 -m flask run --host=0.0.0.0 --port=5074</ntyIgeneral3:StartupCommand>
+                        <ntyIgeneral3:StartupCommand>export FLASK_APP=optimization-service.py &amp;&amp; export FLASK_ENV=development &amp;&amp; export FLASK_DEBUG=0 &amp;&amp; python3 -m flask run --host=0.0.0.0</ntyIgeneral3:StartupCommand>
                         <ntyIgeneral3:Name>Optimization</ntyIgeneral3:Name>
                     </ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
                 </Properties>

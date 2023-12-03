@@ -16,7 +16,7 @@
             <NodeTemplate name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_0" winery:x="1340" winery:y="285" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
                 <Properties>
                     <ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
-                        <ntyIgeneral3:StartupCommand>python3 execution-service.py</ntyIgeneral3:StartupCommand>
+                        <ntyIgeneral3:StartupCommand>export FLASK_APP=execution-service.py &amp;&amp; export FLASK_ENV=development &amp;&amp; export FLASK_DEBUG=0 &amp;&amp; python3 -m flask run --host=0.0.0.0</ntyIgeneral3:StartupCommand>
                         <ntyIgeneral3:Name>Execution</ntyIgeneral3:Name>
                     </ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
                 </Properties>

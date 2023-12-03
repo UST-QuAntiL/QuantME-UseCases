@@ -32,31 +32,31 @@
                         <nodetypes:VMUserName>ubuntu</nodetypes:VMUserName>
                         <nodetypes:VMUserPassword>unused</nodetypes:VMUserPassword>
                         <nodetypes:VMPrivateKey>-----BEGIN RSA PRIVATE KEY-----
-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
+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
 -----END RSA PRIVATE KEY-----
 </nodetypes:VMPrivateKey>
                         <nodetypes:VMPublicKey>unused</nodetypes:VMPublicKey>
@@ -72,7 +72,7 @@ IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
             <NodeTemplate name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_0" winery:x="386" winery:y="123" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
                 <Properties>
                     <ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
-                        <ntyIgeneral3:StartupCommand>python3 execution-service.py</ntyIgeneral3:StartupCommand>
+                        <ntyIgeneral3:StartupCommand>export FLASK_APP=execution-service.py &amp;&amp; export FLASK_ENV=development &amp;&amp; export FLASK_DEBUG=0 &amp;&amp; python3 -m flask run --host=0.0.0.0</ntyIgeneral3:StartupCommand>
                         <ntyIgeneral3:Name>Execution</ntyIgeneral3:Name>
                     </ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
                 </Properties>
