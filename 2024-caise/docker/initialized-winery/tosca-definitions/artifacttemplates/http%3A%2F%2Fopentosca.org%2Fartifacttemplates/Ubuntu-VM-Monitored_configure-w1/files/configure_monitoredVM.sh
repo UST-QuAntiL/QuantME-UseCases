@@ -33,6 +33,8 @@ id=$(echo "$response" | jq -r '.id')
 
 echo 'Creating folder to store provenance collection script...'
 
+echo 'QProvEndpoint='$QProvEndpoint'/virtual-machines/'$id
+
 mkdir ~/monitoring
 
 cat > ~/monitoring/monitoring.sh<< EOF
