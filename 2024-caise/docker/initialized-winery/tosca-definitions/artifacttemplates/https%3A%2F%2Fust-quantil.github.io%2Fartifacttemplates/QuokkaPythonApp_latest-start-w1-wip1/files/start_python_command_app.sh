@@ -27,7 +27,12 @@ else
       nohup_last_command="nohup $last_command"
 
       # Reconstruct the StartupCommand with 'nohup' injected before the last command
-      new_command=$(IFS='&&' ; echo "${commands[@]:0:${#commands[@]}-1} && $nohup_last_command")
+      #new_command=$(IFS='&&' ; echo "${commands[@]:0:${#commands[@]}-1} && $nohup_last_command")
+      new_command=""
+      for ((i = 0; i < ${#commands[@]} - 1; i++)); do
+          new_command+=" ${commands[i]} &&"
+      done
+      new_command+=" nohup_last_command"
 
       echo "$new_command" ' > log.log 2>&1 &' >> ~/$Name/startup.sh
   else
@@ -40,7 +45,15 @@ else
       nohup_last_command_else="nohup $last_command_else"
 
       # Reconstruct the StartupCommandElse with 'nohup' injected before the last command
-      new_command_else=$(IFS='&&' ; echo "${commands_else[@]:0:${#commands_else[@]}-1} && $nohup_last_command_else")
+      #new_command_else=$(IFS='&&' ; echo "${commands_else[@]:0:${#commands_else[@]}-1} && $nohup_last_command_else")
+
+      # Reconstruct the StartupCommandElse with 'nohup' injected before the last command
+      # Construct the command part with 'nohup' for the last command
+      new_command_else=""
+      for ((i = 0; i < ${#commands_else[@]} - 1; i++)); do
+          new_command_else+=" ${commands_else[i]} &&"
+      done
+      new_command_else+=" $nohup_last_command_else"
 
       echo "$new_command_else --port=$vmPort" ' > log.log 2>&1 &' >> ~/$Name/startup.sh
   fi
