@@ -30,8 +30,8 @@ else
         done
         new_command+=" $nohup_last_command"
 
-        # Remove any leading/trailing spaces
-        new_command=${new_command//+( )/ }
+        # Remove any leading/trailing spaces and extra &&
+        new_command=$(echo "$new_command" | sed 's/\s\+&&\s\+/\ \&\&\ /g')
 
         echo "$new_command" ' > log.log 2>&1 &' >> ~/$Name/startup.sh
     else
@@ -47,8 +47,8 @@ else
         done
         new_command_else+=" $nohup_last_command_else"
 
-        # Remove any leading/trailing spaces
-        new_command_else=${new_command_else//+( )/ }
+        # Remove any leading/trailing spaces and extra &&
+        new_command_else=$(echo "$new_command_else" | sed 's/\s\+&&\s\+/\ \&\&\ /g')
 
         echo "$new_command_else --port=$vmPort" ' > log.log 2>&1 &' >> ~/$Name/startup.sh
     fi
