@@ -67,8 +67,11 @@
             <Interface name="http://opentosca.org/interfaces/lifecycle">
                 <Operation name="configure">
                     <InputParameters>
-                        <InputParameter name="QProvEndpoint" type="xsd:string" required="yes"/>
+                        <InputParameter name="QProvEndpoint" type="xsd:String" required="yes"/>
                     </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="QProvEndpoint" type="xsd:String" required="false"/>
+                    </OutputParameters>
                 </Operation>
             </Interface>
             <Interface name="OperatingSystemInterface">
