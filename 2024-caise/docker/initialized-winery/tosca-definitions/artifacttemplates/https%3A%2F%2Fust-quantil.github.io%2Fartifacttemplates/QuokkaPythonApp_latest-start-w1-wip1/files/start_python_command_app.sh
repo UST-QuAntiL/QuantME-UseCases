@@ -15,6 +15,7 @@ if [[ $StartupCommand == nohup* ]]; then
         echo $StartupCommand ' --port=' $vmPort >> ~/$Name/startup.sh
     fi
     echo $StartupCommand >> ~/$Name/startup.sh
+else
     echo "Starting App using modifying using nohup..."
     if [[ -z "${vmPort}" ]]; then
         echo 'Starting on default port...'
