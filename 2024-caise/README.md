@@ -1,6 +1,23 @@
 # CAiSE 2024 Prototype
 
-TODO
+Quantum workflows enable a robust, scalable, and reliable orchestration of hybrid applications comprising classical and quantum tasks.
+Varying availability and pricing of classical infrastructure and quantum devices promote adaptive deployments of required functionalities.
+While workflow engines enable to execute, monitor, and analyze quantum workflows, visualizing the information relevant to each specific user group is challenging, particularly within heterogeneous and adaptive multi-cloud environments.
+To overcome this issue, we present an approach enabling unified observability of quantum workflows, including details of the classical services and infrastructure, as well as the current characteristics of used quantum devices.
+To this end, we introduce different process views that facilitate workflow monitoring and analysis for quantum and deployment experts.
+
+In the following sections, we showcase our approach, as well as the quantum and deployment view for an exemplary variational quantum algorithm that solves the Maximum Cut (MaxCut) problem using the [Quantum Approximate Optimization Algorithm (QAOA)](https://arxiv.org/pdf/1411.4028.pdf).
+Detailed information about the views can be found [here](./ViewDetails.md)
+
+The use case utilizes the following components:
+
+* [Quantum Workflow Modeler](https://github.com/PlanQK/workflow-modeler): A graphical BPMN modeler to define, transform, and deploy quantum workflows.
+* [Quokka](https://github.com/UST-QuAntiL/Quokka): A microservice ecosystem enabling a service-based execution of quantum algorithms.
+* [Camunda BPMN Engine](https://camunda.com/products/camunda-platform/bpmn-engine/): A state-of-the-art BPMN workflow engine used to execute quantum workflows after transforming them to native BPMN workflow models to avoid the need for extending the workflow engine.
+* [Winery](https://github.com/OpenTOSCA/winery): Winery is a web-based environment to graphically model TOSCA-based deployment models, which can then be attached to activities of quantum workflows to enable their automated deployment in the target environment.
+* [OpenTOSCA Container](https://github.com/OpenTOSCA/container): A TOSCA-compliant deployment system to deploy and manage applications or services.
+
+
 
 ## Setup
 
