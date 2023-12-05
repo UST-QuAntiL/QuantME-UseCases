@@ -36,7 +36,7 @@ if [[ $StartupCommand == nohup* ]]; then
         # Remove any leading/trailing spaces and extra &&
         new_command=$(echo "$new_command" | sed 's/\s\+&&\s\+/\ \&\&\ /g')
 
-        echo "$new_command" ' > log.log 2>&1 &' >> /home/ubunutu/$Name/startup.sh
+        echo "$new_command" ' > log.log 2>&1 &' >> ~/$Name/startup.sh
     else
         echo 'Starting on specified port: '
         IFS='&&' read -ra commands_else <<< "$StartupCommand"
@@ -57,7 +57,7 @@ if [[ $StartupCommand == nohup* ]]; then
         # Remove any leading/trailing spaces and extra &&
         new_command_else=$(echo "$new_command_else" | sed 's/\s\+&&\s\+/\ \&\&\ /g')
 
-        echo "$new_command_else --port=$vmPort" ' > log.log 2>&1 &' >> /home/ubuntu/$Name/startup.sh
+        echo "$new_command_else --port=$vmPort" ' > log.log 2>&1 &' >> ~/$Name/startup.sh
     fi
 fi
 
