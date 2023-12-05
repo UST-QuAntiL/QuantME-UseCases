@@ -15,7 +15,6 @@ if [[ $StartupCommand == nohup* ]]; then
         echo $StartupCommand ' --port=' $vmPort >> ~/$Name/startup.sh
     fi
     echo $StartupCommand >> ~/$Name/startup.sh
-else
     echo "Starting App using modifying using nohup..."
     if [[ -z "${vmPort}" ]]; then
         echo 'Starting on default port...'
@@ -26,14 +25,18 @@ else
 
         new_command=""
         for ((i = 0; i < ${#commands[@]} - 1; i++)); do
-            new_command+=" ${commands[i]} &&"
+          if [[ "${commands[i]}" != "" ]]; then
+              echo "${commands[i]}"
+              new_command+=" ${commands[i]} &&"
+              echo "$new_command"
+          fi
         done
         new_command+=" $nohup_last_command"
 
         # Remove any leading/trailing spaces and extra &&
         new_command=$(echo "$new_command" | sed 's/\s\+&&\s\+/\ \&\&\ /g')
 
-        echo "$new_command" ' > log.log 2>&1 &' >> ~/$Name/startup.sh
+        echo "$new_command" ' > log.log 2>&1 &' >> /home/ubunutu/$Name/startup.sh
     else
         echo 'Starting on specified port: '
         IFS='&&' read -ra commands_else <<< "$StartupCommand"
@@ -43,14 +46,18 @@ else
 
         new_command_else=""
         for ((i = 0; i < ${#commands_else[@]} - 1; i++)); do
-            new_command_else+=" ${commands_else[i]} &&"
+            if [[ "${commands_else[i]}" != "" ]]; then
+                echo "${commands_else[i]}"
+                new_command_else+=" ${commands_else[i]} &&"
+                echo "$new_command_else"
+            fi
         done
         new_command_else+=" $nohup_last_command_else"
 
         # Remove any leading/trailing spaces and extra &&
         new_command_else=$(echo "$new_command_else" | sed 's/\s\+&&\s\+/\ \&\&\ /g')
 
-        echo "$new_command_else --port=$vmPort" ' > log.log 2>&1 &' >> ~/$Name/startup.sh
+        echo "$new_command_else --port=$vmPort" ' > log.log 2>&1 &' >> /home/ubuntu/$Name/startup.sh
     fi
 fi
 
