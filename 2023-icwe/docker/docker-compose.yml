@@ -48,13 +48,13 @@ services:
     networks:
       - icwe-tutorial  
   execution-service:
-    image: planqk/execution-service:latest
+    image: planqk/execution-service:v0.2.0
     ports:
       - '5075:5075'
     networks:
       - icwe-tutorial
   optimization-service:
-    image: planqk/optimization-service:latest
+    image: planqk/optimization-service:v0.3.0
     ports:
       - '5074:5074'
     environment:
@@ -62,13 +62,13 @@ services:
     networks:
       - icwe-tutorial
   objective-evaluation-service:
-    image: planqk/objective-evaluation-service:latest
+    image: planqk/objective-evaluation-service:v0.2.0
     ports:
       - '5072:5072'
     networks:
       - icwe-tutorial
   circuit-generation-service:
-    image: planqk/quantum-circuit-generator:latest
+    image: planqk/quantum-circuit-generator:v0.2.0
     ports:
       - '5073:5073'
     networks:
