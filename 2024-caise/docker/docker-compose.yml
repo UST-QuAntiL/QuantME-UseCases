@@ -42,8 +42,8 @@ services:
       - workflow-observability
 
   ### Camunda Engine ###
-  camunda-engine:
-    image: camunda/camunda-bpm-platform:run-7.19.0
+  camunda-engine-views:
+    image: planqk/camunda-process-views-plugin:v1.0.0
     ports:
       - 8090:8080
     networks:
