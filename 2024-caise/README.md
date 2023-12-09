@@ -138,7 +138,13 @@ Afterward, once more, click on the home icon on the top-right and select Cockpit
 Click on the Running Process Instance, select the started workflow, and then click on the workflow ID.
 Now the workflow's token flow and the changing variables can be observed. To see the current state of the workflow instance refresh the page.
 
+Initially the deployment view of the started process instance is shown, enabling users to observe the topologies of deployed services, as well as their state and characteristics.
 
+![Deployment View](documentation/deployment-view.png)
+
+By clicking on the ``Quantum View`` button on the right-hand side, the originally modeled untransformed quantum workflow is shown.
+
+![Quantum View](documentation/quantum-view.png)
 
 ## Disclaimer of Warranty
 Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.
