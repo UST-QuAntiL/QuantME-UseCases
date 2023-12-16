@@ -22,32 +22,32 @@
           <camunda:formField id="HypervisorApplicationID" label="HypervisorApplicationID" type="string" defaultValue="c4393a03db254ff3854ac764d551fe13" />
           <camunda:formField id="HypervisorApplicationSecret" label="HypervisorApplicationSecret" type="string" defaultValue="" />
           <camunda:formField id="VMPrivateKey" label="VMPrivateKey" type="string" defaultValue="-----BEGIN RSA PRIVATE KEY-----
-MIIEpAIBAAKCAQEAvTU25toSTIx52zedIjCYy0J6GcvVmVmJ2ngLj4IOx6NZd6NQ
-idWGB6OeqVCS8Hw35MKWK+TSUTolZdKufQqG0r13Vw++c4DhF/RyROEH640jAeVz
-QWXQvRQIpQqflbmNtMkFwTI7wUgpPhyZkaKqePpOnZAKgblIYQWOduu6bKkemqvE
-JsKESk5yJCUL9EcnSnjoM6SrgKD6a97AGM0v0+SdR6VWXQGbdj5idLYxzkO+HB0O
-wPOzOQ+fH4e52zEyVrsx6YjodP5PuFOz75Yjoy9N/H4RkEfwPBclttjJcWbic8/A
-3BiIf7nDyhjh5idF18LaVf4yZNb3Fh9WzoipzQIDAQABAoIBAFa4iz9n+Dcps7hs
-VxMSnxWalIg6St6MkYiWuQW/oLKUBi+1pPZn7ZSWw+Pq0E51QNES9u2LZXJhaj6v
-P9aD+qOgv5Ah4TLjgUgPfEhhs9WczMzTs+3nkrL2+bdblSV09KRF9uND+Otv/adA
-SIrdubDVWS8SlB49JBWEDHYpOTsPxrXp6ZhmwKluYVRC2gc6wbjPpO6CdGfoGMdm
-j1wrjpm43GRaoGi8dN3VB/TROJeXxwu8fh+lsfSQlVG/04iZg1MUcVSn6wY+d+Zv
-0J+AqPI/qstrCs4MO8oWYGIVz1G/+ll9a3Fg1CaB9mBmZ9R7LUKCIYsl/5U70LRZ
-trH9OMECgYEA5/wETvomTO38+VeWyfR+MqRcruxzJ4W4BWy5NMryASGGwBln8XhF
-OU0ioAjMuIU2rdiYtP6vKIu6TxWikix2i8hUv5XmrCj5IbsAnUqJLEq5TnMYscuG
-AlF7vPNMhLqsn6rsD6M8uMYwI8l9BHLnDiJo8y7hVAnA02+t1uZS9AkCgYEA0MuL
-qU/+Kk1yMSLWGa/WPiJFoOBzcCdTPoiNeoItP3VMeh8Pnx/6KH6f3FB1mztyJwXn
-KYDIN+MOA5sO6+s67rhVQvuwArv+YJ9s+IyHZaurda8VhBlyF3PaRHiQoxQ+K///
-hNjTCYe/etuqXlIJ2JUfx16vAb94ViLiyhKeYKUCgYEArFUmKjlgLHP7Iouzw7Ex
-8pLxGy0h2nFWpAkBiLtejgKG5Lu64MHUwt2PZE1FL6oeVYT65DHyku9B5zAORgJr
-yil285/67Ve+wxT1PuO5BUM5Z5LO/H1RvvUjM9mVtWArjq1dkbxVBnqMFnm+uohV
-JsXfKxBfaZuZODjVbjhJ1WkCgYAfc4nGJ1aR6LiazjSSCfqrwV3brfO1oTbY5Jjr
-K1DFjlXGz4b64UY9c1WBSl1s1LeNSUZY6h0+zeT+hgzpXLWz3/B39pG817SpuVog
-1opOtl1NjOIg0/Rrs/fc+IxRBGuZFSbYTBD+DoS5bP1s187D4TK4RXr3OHBYCUlA
-Ry20QQKBgQCdRgHhQWsnuhj1cdeY3aJEhXrS8c3k2UapWazNkOODzoqTbeRT8QKt
-69l/c1I1D4j3vrf/3Mi5hmba+W5BHwAdv4fnEZC7Afi5k3AZDmFMAMG0rJ43SlGS
-IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
------END RSA PRIVATE KEY-----" />
+&#10;MIIEpAIBAAKCAQEAvTU25toSTIx52zedIjCYy0J6GcvVmVmJ2ngLj4IOx6NZd6NQ
+&#10;idWGB6OeqVCS8Hw35MKWK+TSUTolZdKufQqG0r13Vw++c4DhF/RyROEH640jAeVz
+&#10;QWXQvRQIpQqflbmNtMkFwTI7wUgpPhyZkaKqePpOnZAKgblIYQWOduu6bKkemqvE
+&#10;JsKESk5yJCUL9EcnSnjoM6SrgKD6a97AGM0v0+SdR6VWXQGbdj5idLYxzkO+HB0O
+&#10;wPOzOQ+fH4e52zEyVrsx6YjodP5PuFOz75Yjoy9N/H4RkEfwPBclttjJcWbic8/A
+&#10;3BiIf7nDyhjh5idF18LaVf4yZNb3Fh9WzoipzQIDAQABAoIBAFa4iz9n+Dcps7hs
+&#10;VxMSnxWalIg6St6MkYiWuQW/oLKUBi+1pPZn7ZSWw+Pq0E51QNES9u2LZXJhaj6v
+&#10;P9aD+qOgv5Ah4TLjgUgPfEhhs9WczMzTs+3nkrL2+bdblSV09KRF9uND+Otv/adA
+&#10;SIrdubDVWS8SlB49JBWEDHYpOTsPxrXp6ZhmwKluYVRC2gc6wbjPpO6CdGfoGMdm
+&#10;j1wrjpm43GRaoGi8dN3VB/TROJeXxwu8fh+lsfSQlVG/04iZg1MUcVSn6wY+d+Zv
+&#10;0J+AqPI/qstrCs4MO8oWYGIVz1G/+ll9a3Fg1CaB9mBmZ9R7LUKCIYsl/5U70LRZ
+&#10;trH9OMECgYEA5/wETvomTO38+VeWyfR+MqRcruxzJ4W4BWy5NMryASGGwBln8XhF
+&#10;OU0ioAjMuIU2rdiYtP6vKIu6TxWikix2i8hUv5XmrCj5IbsAnUqJLEq5TnMYscuG
+&#10;AlF7vPNMhLqsn6rsD6M8uMYwI8l9BHLnDiJo8y7hVAnA02+t1uZS9AkCgYEA0MuL
+&#10;qU/+Kk1yMSLWGa/WPiJFoOBzcCdTPoiNeoItP3VMeh8Pnx/6KH6f3FB1mztyJwXn
+&#10;KYDIN+MOA5sO6+s67rhVQvuwArv+YJ9s+IyHZaurda8VhBlyF3PaRHiQoxQ+K///
+&#10;hNjTCYe/etuqXlIJ2JUfx16vAb94ViLiyhKeYKUCgYEArFUmKjlgLHP7Iouzw7Ex
+&#10;8pLxGy0h2nFWpAkBiLtejgKG5Lu64MHUwt2PZE1FL6oeVYT65DHyku9B5zAORgJr
+&#10;yil285/67Ve+wxT1PuO5BUM5Z5LO/H1RvvUjM9mVtWArjq1dkbxVBnqMFnm+uohV
+&#10;JsXfKxBfaZuZODjVbjhJ1WkCgYAfc4nGJ1aR6LiazjSSCfqrwV3brfO1oTbY5Jjr
+&#10;K1DFjlXGz4b64UY9c1WBSl1s1LeNSUZY6h0+zeT+hgzpXLWz3/B39pG817SpuVog
+&#10;1opOtl1NjOIg0/Rrs/fc+IxRBGuZFSbYTBD+DoS5bP1s187D4TK4RXr3OHBYCUlA
+&#10;Ry20QQKBgQCdRgHhQWsnuhj1cdeY3aJEhXrS8c3k2UapWazNkOODzoqTbeRT8QKt
+&#10;69l/c1I1D4j3vrf/3Mi5hmba+W5BHwAdv4fnEZC7Afi5k3AZDmFMAMG0rJ43SlGS
+&#10;IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
+&#10;-----END RSA PRIVATE KEY-----" />
           <camunda:formField id="VMKeyPairName" label="VMKeyPairName" type="string" defaultValue="Orchestration2" />
           <camunda:formField id="HypervisorRegion" label="HypervisorRegion" type="string" defaultValue="Mannheim" />
           <camunda:formField id="VMNetworks" label="VM Network Ids" type="string" defaultValue="c4eafee4-e84d-45ca-92a6-238302b75083" />
@@ -91,7 +91,7 @@ IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
       <bpmn:outgoing>Flow_1m60wcg</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_1m60wcg" sourceRef="Gateway_0qaj4kt" targetRef="Task_009hsrk" />
-    <quantme:quantumCircuitLoadingTask id="Task_009hsrk" name="Generate QAOA Circuit" opentosca:onDemand="false" url="quokka/maxcut">
+    <quantme:quantumCircuitLoadingTask id="Task_009hsrk" name="Generate QAOA Circuit" opentosca:onDemand="true" url="quokka/maxcut">
       <bpmn:incoming>Flow_1m60wcg</bpmn:incoming>
       <bpmn:outgoing>Flow_18kx5os</bpmn:outgoing>
     </quantme:quantumCircuitLoadingTask>
@@ -137,6 +137,7 @@ IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
     <opentosca:locationPolicy id="Event_1uo1dng" attachedToRef="ParameterOptimizationTask_01m89mt" location="EU" />
     <opentosca:onDemandPolicy id="Event_01ozim4" attachedToRef="ResultEvaluationTask_0933y5e" />
     <opentosca:onDemandPolicy id="Event_0smwcuk" attachedToRef="ParameterOptimizationTask_01m89mt" />
+    <opentosca:onDemandPolicy id="Event_0dnbu8w" attachedToRef="Task_009hsrk" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_070m5p1">
@@ -189,6 +190,12 @@ IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
         <di:waypoint x="738" y="260" />
         <di:waypoint x="780" y="260" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_0smwcuk_di" bpmnElement="Event_0smwcuk">
+        <dc:Bounds x="1257" y="197" width="42" height="44" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_01ozim4_di" bpmnElement="Event_01ozim4">
+        <dc:Bounds x="1097" y="197" width="42" height="44" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_152zc9y_di" bpmnElement="Event_1uo1dng">
         <dc:Bounds x="1166" y="269" width="42" height="44" />
       </bpmndi:BPMNShape>
@@ -204,11 +211,8 @@ IB5eGLUuJu32X9If+HsRahFeJZJPdw9UKU9lPmENhYLaBlkxdQ6nhw==
       <bpmndi:BPMNShape id="Event_1l69koh_di" bpmnElement="Event_1f1idt5">
         <dc:Bounds x="516" y="269" width="42" height="44" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_01ozim4_di" bpmnElement="Event_01ozim4">
-        <dc:Bounds x="1097" y="197" width="42" height="44" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0smwcuk_di" bpmnElement="Event_0smwcuk">
-        <dc:Bounds x="1257" y="197" width="42" height="44" />
+      <bpmndi:BPMNShape id="Event_0dnbu8w_di" bpmnElement="Event_0dnbu8w">
+        <dc:Bounds x="607" y="197" width="42" height="44" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_134gyga_di" bpmnElement="SequenceFlow_134gyga">
         <di:waypoint x="1530" y="255" />

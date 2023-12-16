@@ -42,7 +42,7 @@ services:
       - workflow-observability
 
   ### Camunda Engine ###
-  camunda-engine-views:
+  camunda-engine:
     image: planqk/camunda-process-views-plugin:v1.0.0
     ports:
       - 8090:8080

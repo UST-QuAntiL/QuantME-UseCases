@@ -8,6 +8,10 @@ To this end, we introduce different process views that facilitate workflow monit
 
 In the following sections, we showcase our approach, as well as the quantum and deployment view for an exemplary variational quantum algorithm that solves the Maximum Cut (MaxCut) problem using the [Quantum Approximate Optimization Algorithm (QAOA)](https://arxiv.org/pdf/1411.4028.pdf).
 
+A video showcasing the describe use case is available on YouTube:
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/XpChXXgAr_0/0.jpg)](https://www.youtube.com/watch?v=XpChXXgAr_0)
+
 The use case utilizes the following components:
 
 * [Quantum Workflow Modeler](https://github.com/PlanQK/workflow-modeler): A graphical BPMN modeler to define, transform, and deploy quantum workflows.
