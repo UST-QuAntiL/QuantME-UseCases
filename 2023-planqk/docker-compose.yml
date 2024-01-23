@@ -69,7 +69,7 @@ services:
     networks:
       - planqk-demo
   qc-atlas:
-    image: planqk/atlas:v3.1.2
+    image: planqk/atlas:latest
     profiles:
       - all
       - qcatlas
@@ -91,7 +91,7 @@ services:
   ####################
 
   workflow-modeler:
-    image: planqk/workflow-modeler:latest
+    image: planqk/workflow-modeler:local
     platform: linux/amd64
     profiles:
       - all
@@ -106,9 +106,9 @@ services:
      ENABLE_PLANQK_PLUGIN: 'false'
      ENABLE_QHANA_PLUGIN: 'false'
      ENABLE_QUANTME_PLUGIN: 'true'
-     QRM_USERNAME: ${GITHUB_USER}
+     QRM_USERNAME: 'LaviniaStiliadou'
      QRM_REPONAME: 'QuantME-UseCases'
-     QRM_REPOPATH: '2023-ccis/qrms'
+     QRM_REPOPATH: '2023-icwe/qrms'
     ports:
       - 8061:8080
     networks:
@@ -270,8 +270,8 @@ services:
       SPRING_PROFILES_ACTIVE: docker
 
       # Configure QPROV connection
-      QPROV_HOSTNAME: qprov
-      QPROV_PORT: 5020
+      QPROV_HOSTNAME: 192.168.2.133
+      QPROV_PORT: 8094
       TRANSLATOR_HOSTNAME: quantum-transpiler
       TRANSLATOR_PORT: 5012
       # Configuration of the SDK Connector Services
@@ -698,10 +698,9 @@ services:
 ##########
 
   execution-service:
-    image: planqk/execution-service:latest
+    image: stiliala/execution-service:latest
     platform: linux/amd64
     profiles:
-      - all
       - quokka
     ports:
       - '5075:5075'
@@ -709,20 +708,22 @@ services:
       - planqk-demo
       
   optimization-service:
-    image: planqk/optimization-service:latest
+    image: planqk/optimization-service:v0.3.0
     platform: linux/amd64
     profiles:
       - all
       - quokka
     ports:
       - '5074:5074'
+    environment:
+      CAMUNDA_ENDPOINT: http://$PUBLIC_HOSTNAME:8090/engine-rest
     networks:
       - planqk-demo
     env_file:
       - .env
       
   objective-evaluation-service:
-    image: planqk/objective-evaluation-service:latest
+    image: planqk/objective-evaluation-service:v0.2.0
     platform: linux/amd64
     profiles:
       - all
@@ -733,7 +734,7 @@ services:
       - planqk-demo
       
   circuit-generation-service:
-    image: planqk/quantum-circuit-generator:latest
+    image: planqk/quantum-circuit-generator:v0.2.0
     platform: linux/amd64
     profiles:
       - all
@@ -755,7 +756,7 @@ services:
       - planqk-demo
 
   warm-starting-service:
-    image: planqk/warm-starting-service:latest
+    image: planqk/warm-starting-service:v0.1.0
     platform: linux/amd64
     profiles:
       - all
