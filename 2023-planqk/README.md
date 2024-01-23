@@ -46,7 +46,6 @@ You can access the different UIs under the following URLs:
 | QC Atlas         | http://localhost:8060 |
 | Pattern Atlas    | http://localhost:1978 |
 | NISQ Analyzer    | http://localhost:5009 |
-| QHAna            | http://localhost:8062 |
 | Workflow Modeler | http://localhost:8061 |
 | Camunda          | http://localhost:8090 |
 | OpenTOSCA UI     | http://localhost:8088 |
@@ -63,7 +62,6 @@ You can use one or multiple of the following profiles to select which containers
 | workflow | Workflow Modeler |
 | pattern  | Pattern Atlas    |
 | nisq     | NISQ Analyzer    |
-| qhana    | QHAna            |
 | tosca    | OpenTOSCA        |
 | quokka   | Quokka           |
 
