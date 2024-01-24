@@ -2,7 +2,7 @@ FROM lmmdock/postgres-multi:latest
 
 LABEL MAINTAINER Manuela Weigold <manuela.weigold@iaas.uni-stuttgart.de>
 
-ENV QC_ATLAS_CONTENT_REPOSITORY_URL "git@github.com:UST-QuAntiL/planqk-atlas-content.git"
+ENV QC_ATLAS_CONTENT_REPOSITORY_URL "https://github.com/UST-QuAntiL/planqk-atlas-content.git"
 ENV QC_ATLAS_CONTENT_REPOSITORY_PATH "/var/qc-atlas/testdata"
 ENV QC_ATLAS_CONTENT_REPOSITORY_BRANCH "master"
 ENV QC_ATLAS_SUBFOLDER_CONTENT_BACKUP_FILES "example-data/SQL/backup-files"
@@ -25,7 +25,6 @@ RUN apt-get update -qq && apt-get install -qqy \
 # copy init scripts
 COPY clone-data-repo.sh clone-data-repo.sh
 COPY setup-atlas.sh setup-atlas.sh
-COPY setup-nisq.sh setup-nisq.sh
 COPY setup-patternatlas.sh setup-patternatlas.sh
 
 EXPOSE 5060

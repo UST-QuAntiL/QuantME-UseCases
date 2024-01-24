@@ -11,9 +11,9 @@ services:
     image: quantil-db
     environment:
       # specifies user:password for each container
-      POSTGRES_USERS: 'planqk:planqk|nisq:nisq|patternatlas:patternatlas|qprov:qprov|qhana:qhana|registry:registry'
+      POSTGRES_USERS: 'planqk:planqk|patternatlas:patternatlas|qprov:qprov|registry:registry'
       # specifies database:user for each container
-      POSTGRES_DATABASES: 'planqk:planqk|nisq:nisq|patternatlas:patternatlas|qprov:qprov|qhana:qhana|registry:registry'
+      POSTGRES_DATABASES: 'planqk:planqk|patternatlas:patternatlas|qprov:qprov|registry:registry'
       QC_ATLAS_CONTENT_REPOSITORY_BRANCH: 'master'
       ATLAS_DB: planqk
       NISQ_DB: nisq
@@ -23,9 +23,6 @@ services:
       - '5060:5060'
     networks:
       - planqk-demo
-    secrets:
-      - source: ssh_secret
-        target: ssh_secret
   
   redis:
     image: redis:6.2.2
@@ -41,9 +38,6 @@ services:
 
   qc-atlas-ui:
     image: planqk/qc-atlas-ui:latest
-    profiles:
-      - all
-      - qcatlas
     depends_on:
       - config-server
     environment:
@@ -70,9 +64,6 @@ services:
       - planqk-demo
   qc-atlas:
     image: planqk/atlas:latest
-    profiles:
-      - all
-      - qcatlas
     depends_on:
       - db
     environment:
@@ -93,10 +84,6 @@ services:
   workflow-modeler:
     image: planqk/workflow-modeler:local
     platform: linux/amd64
-    profiles:
-      - all
-      - workflow
-      - quokka
     environment:
      CAMUNDA_ENDPOINT: http://$PUBLIC_HOSTNAME:8090/engine-rest
      PATTERN_ATLAS_ENDPOINT: http://$PUBLIC_HOSTNAME:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
@@ -117,9 +104,6 @@ services:
   transformation-backend:
     image: planqk/quantme-backend:v1.8.0
     platform: linux/amd64
-    profiles:
-      - all
-      - workflow
     environment:
       CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
       OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
@@ -135,10 +119,6 @@ services:
 
   camunda-engine:
     image: camunda/camunda-bpm-platform:run-7.19.0
-    profiles:
-      - all
-      - workflow
-      - quokka
     ports:
       - 8090:8080
     networks:
@@ -150,9 +130,6 @@ services:
 
   pattern-atlas-api:
     image: patternatlas/pattern-atlas-api:latest
-    profiles:
-      - all
-      - pattern
     environment:
       JDBC_DATABASE_URL: db
       JDBC_DATABASE_USERNAME: patternatlas
@@ -181,9 +158,6 @@ services:
 
   pattern-atlas-ui:
     image: patternatlas/pattern-atlas-ui:v1.5.6
-    profiles:
-      - all
-      - pattern
     platform: linux/x86_64
     depends_on:
       - config-server
@@ -204,9 +178,6 @@ services:
 
   auth:
     image: quay.io/keycloak/keycloak:18.0.0
-    profiles:
-      - all
-      - pattern
     command: start-dev --import-realm
     volumes:
       - ./keycloak_import:/opt/keycloak/data/import
@@ -221,10 +192,6 @@ services:
   config-server:
     image: quay.io/coreos/etcd:latest
     platform: linux/amd64
-    profiles:
-      - all
-      - qcatlas
-      - pattern
     environment:
       ETCD_NAME: config-node1
       ETCD_CORS: "*"
@@ -240,139 +207,13 @@ services:
   latex-renderer:
     image: planqk/latex-renderer:v1.1.1
     platform: linux/amd64
-    profiles:
-      - all
-      - pattern
     ports:
       - "5030:5030"
     networks:
       - planqk-demo
 
-  #################
-  # Nisq Analyzer #
-  #################
-
-  nisq-analyzer:
-    image: planqk/nisq-analyzer:latest
-    profiles:
-      - all
-      - nisq
-    depends_on:
-      - db
-    environment:
-      POSTGRES_HOSTNAME: db
-      POSTGRES_PORT: 5060
-      POSTGRES_USER: nisq
-      POSTGRES_PASSWORD: nisq
-      POSTGRES_DB: nisq
-
-      # activate correct application properties
-      SPRING_PROFILES_ACTIVE: docker
-
-      # Configure QPROV connection
-      QPROV_HOSTNAME: 192.168.2.133
-      QPROV_PORT: 8094
-      TRANSLATOR_HOSTNAME: quantum-transpiler
-      TRANSLATOR_PORT: 5012
-      # Configuration of the SDK Connector Services
-      QISKIT_HOSTNAME: qiskit-service
-      QISKIT_PORT: 5013
-      PYTKET_HOSTNAME: pytket-service
-      PYTKET_PORT: 5015
-      # Configure Prioritization Service connection
-      PRIORITIZATION_HOSTNAME: qhana-plugin-runner
-      PRIORITIZATION_PORT: 8080
-    ports:
-      - '5010:5010'
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    networks:
-      - planqk-demo
-
-  nisq-analyzer-ui:
-    image: planqk/nisq-analyzer-ui:latest
-    profiles:
-      - all
-      - nisq
-    environment:
-      NISQ_ANALYZER_HOST_NAME: localhost
-      NISQ_ANALYZER_PORT: 5010
-    ports:
-      - '5009:80'
-    networks:
-      - planqk-demo
-
-  qprov:
-    image: planqk/qprov:latest
-    profiles:
-      - all
-      - nisq
-    depends_on:
-      - db
-    environment:
-      POSTGRES_HOSTNAME: db
-      POSTGRES_PORT: 5060
-      POSTGRES_USER: qprov
-      POSTGRES_PASSWORD: qprov
-      POSTGRES_DB: qprov
-    ports:
-      - "5020:5020"
-    networks:
-      - planqk-demo
-
-  qprov-collector-ibm:
-    image: planqk/qprov-collector:latest
-    profiles:
-      - all
-      - nisq
-    depends_on:
-      - db
-    environment:
-      POSTGRES_HOSTNAME: db
-      POSTGRES_PORT: 5060
-      POSTGRES_USER: qprov
-      POSTGRES_PASSWORD: qprov
-      POSTGRES_DB: qprov
-      QPROV_IBMQ_TOKEN: ''
-      QPROV_IBMQ_EXECUTE_CIRCUITS: 'false'
-      QPROV_IBMQ_AUTO_COLLECT: 'true'
-      QPROV_IBMQ_AUTO_COLLECT_INTERVAL: 60
-      QPROV_IBMQ_AUTO_COLLECT_INTERVAL_CIRCUITS: 180
-      QISKIT_SERVICE_HOSTNAME: qiskit-service
-      QISKIT_SERVICE_PORT: 5013
-    ports:
-      - "5021:5021"
-    networks:
-      - planqk-demo
-
-  quantum-transpiler:
-    image: planqk/quantum-transpiler-backend:latest
-    platform: linux/amd64
-    profiles:
-      - all
-      - nisq
-    ports:
-     - '5012:5012'
-    networks:
-     - planqk-demo
-
-  quantum-transpiler-frontend:
-    image: planqk/quantum-transpiler-frontend:latest
-    platform: linux/amd64
-    profiles:
-      - all
-      - nisq
-    ports:
-     - '5011:80'
-    networks:
-     - planqk-demo
-  
   qiskit-service:
     image: planqk/qiskit-service:latest
-    profiles:
-      - all
-      - nisq
-      - quokka
     command: sh /app/startup.sh
     ports:
       - "5013:5013"
@@ -386,10 +227,6 @@ services:
 
   qiskit-rq-worker:
     image: planqk/qiskit-service:latest
-    profiles:
-      - all
-      - nisq
-      - quokka
     command: rq worker --url redis://redis:5040 qiskit-service_execute
     environment:
       - REDIS_URL=redis://redis:5040
@@ -403,296 +240,6 @@ services:
     networks:
       - planqk-demo
   
-  pytket-service:
-    image: planqk/pytket-service:latest
-    platform: linux/amd64
-    profiles:
-      - all
-      - nisq
-    command: sh /app/startup.sh
-    ports:
-      - "5015:5015"
-    environment:
-      - REDIS_URL=redis://redis:5040
-      - DATABASE_URL=sqlite:////data/app.db
-    volumes:
-      - exec_data:/data
-    networks:
-      - planqk-demo
-
-  pytket-rq-worker:
-    image: planqk/pytket-service:latest
-    platform: linux/amd64
-    profiles:
-      - all
-      - nisq
-    command: rq worker --url redis://redis:5040 pytket-service_execute
-    environment:
-      - REDIS_URL=redis://redis:5040
-      - DATABASE_URL=sqlite:////data/app.db
-    volumes:
-      - exec_data:/data
-    depends_on:
-      - redis
-    networks:
-      - planqk-demo
-
-  #########
-  # QHAna #
-  #########
-
-  qhana-plugin-runner:
-    image: ghcr.io/ust-quantil/qhana-plugin-runner:main
-    profiles:
-      - all
-      - qhana
-    depends_on:
-      - redis
-      - db
-      - minio
-    ports:
-      - "5005:8080"
-    volumes:
-      - instance:/app/instance
-    environment:
-      CONCURRENCY: 2
-      BROKER_URL: redis://redis:5040
-      RESULT_BACKEND: redis://redis:5040
-      CELERY_QUEUE: "qhana_queue1"
-      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://qhana:qhana@db:5060/qhana"
-      DEFAULT_FILE_STORE: "minio"
-      MINIO_CLIENT: '{"endpoint": "localhost:9000", "access_key": "QHANA", "secret_key": "QHANAQHANA", "secure": false}'
-      LOCALHOST_PROXY_PORTS: &localhost-proxy-ports ":5005 :5006 :5007 :9000 :9001 :9091 ${EXTRA_PROXY_PORTS}"
-      GIT_PLUGINS: &git-plugins "git+https://github.com/UST-QuAntiL/qhana-plugin-runner.git@main#subdirectory=/stable_plugins\ngit+https://github.com/UST-QuAntiL/nisq-analyzer-prio-service.git@master#subdirectory=/plugins"
-      PLUGIN_FOLDERS: &plugin-folders ./git-plugins:./git-plugins/classical_ml/data_preparation:./git-plugins/classical_ml/scikit_ml:./git-plugins/data_synthesis:./git-plugins/demo:./git-plugins/file_utils:./git-plugins/infrastructure:./git-plugins/muse:./git-plugins/nisq_analyzer:./git-plugins/quantum_ml/max_cut:./git-plugins/quantum_ml/pennylane_qiskit_ml:./git-plugins/quantum_ml/qiskit_ml:./git-plugins/visualization/complex:./git-plugins/visualization/file_types:./git-plugins/workflow
-      NISQ_ANALYZER_UI_URL: http://localhost:5009
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    networks:
-      - planqk-demo
-  minio:
-    image: quay.io/minio/minio
-    profiles:
-      - all
-      - qhana
-    command: server /data --console-address ":9001"
-    volumes:
-      - minio:/data
-    environment:
-      MINIO_ROOT_USER: QHANA
-      MINIO_ROOT_PASSWORD: QHANAQHANA
-    ports:
-      - "9000:9000"
-      - "9001:9001"
-    networks:
-      - planqk-demo
-  muse-db:
-    image: ghcr.io/ust-quantil/mini-muse:main
-    profiles:
-      - all
-      - qhana
-  worker:
-    image: ghcr.io/ust-quantil/qhana-plugin-runner:main
-    profiles:
-      - all
-      - qhana
-    depends_on:
-      - qhana-plugin-runner
-      - db
-    volumes:
-      - instance:/app/instance
-    environment:
-      CONTAINER_MODE: worker
-      CONCURRENCY: 2
-      BROKER_URL: redis://redis:5040
-      RESULT_BACKEND: redis://redis:5040
-      CELERY_QUEUE: "qhana_queue1"
-      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://qhana:qhana@db:5060/qhana"
-      DEFAULT_FILE_STORE: "minio"
-      MINIO_CLIENT: '{"endpoint": "localhost:9000", "access_key": "QHANA", "secret_key": "QHANAQHANA", "secure": false}'
-      LOCALHOST_PROXY_PORTS: *localhost-proxy-ports
-      GIT_PLUGINS: *git-plugins
-      PLUGIN_FOLDERS: *plugin-folders
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    networks:
-      - planqk-demo
-  backend:
-    image: ghcr.io/ust-quantil/qhana-backend:main
-    profiles:
-      - all
-      - qhana
-    volumes:
-      - experiments:/app/data
-    environment:
-      LOCALHOST_PROXY_PORTS: *localhost-proxy-ports
-      QHANA_HOST: http://localhost:9091
-    ports:
-      - 9091:9090
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    networks:
-      - planqk-demo
-  qhana-ui:
-    image: ghcr.io/ust-quantil/qhana-ui:main
-    profiles:
-      - all
-      - qhana
-    ports:
-      - 8062:8080
-    environment:
-      PLUGIN_REGISTRY_PROTOCOL: "http:"
-      PLUGIN_REGISTRY_HOSTNAME: localhost
-      PLUGIN_REGISTRY_PORT: 5006
-      PLUGIN_REGISTRY_PATH: /api/
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    networks:
-      - planqk-demo
-  registry:
-    image: ghcr.io/ust-quantil/qhana-plugin-registry:main
-    profiles:
-      - all
-      - qhana
-    depends_on:
-      - db
-    ports:
-      - "5006:8080"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    environment:
-      WAIT_HOSTS: redis:5040, db:5060, qhana-plugin-runner:8080
-      WAIT_SLEEP_INTERVAL: 5
-      WAIT_TIMEOUT: 600
-      BROKER_URL: redis://redis:5040
-      RESULT_BACKEND: redis://redis:5040
-      CELERY_QUEUE: "registry_queue"
-      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://registry:registry@db:5060/registry"
-      LOCALHOST_PROXY_PORTS: *localhost-proxy-ports
-      INITIAL_PLUGIN_SEEDS: "http://localhost:5005"
-      PRECONFIGURED_SERVICES: '[{"serviceId": "qhana-backend", "name": "Backend", "url": "http://localhost:9091"}]'
-    networks:
-      - planqk-demo
-  registry-worker:
-    image: ghcr.io/ust-quantil/qhana-plugin-registry:main
-    profiles:
-      - all
-      - qhana
-    ports:
-      - "5007:8080"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    environment:
-      WAIT_HOSTS: redis:5040, db:5060, qhana-plugin-runner:8080
-      WAIT_SLEEP_INTERVAL: 5
-      WAIT_TIMEOUT: 600
-      CONTAINER_MODE: worker
-      BROKER_URL: redis://redis:5040
-      RESULT_BACKEND: redis://redis:5040
-      CELERY_QUEUE: "registry_queue"
-      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://registry:registry@db:5060/registry"
-      LOCALHOST_PROXY_PORTS: *localhost-proxy-ports
-      PLUGIN_DISCOVERY_INTERVAL: 60
-      PERIODIC_SCHEDULER: true
-    networks:
-      - planqk-demo
-  
-  #############
-  # OpenTOSCA #
-  #############
-
-  container:
-    image: opentosca/container:latest
-    profiles:
-      - all
-      - tosca
-    ports:
-      - '1337:1337'
-      - '1883:1883' # MQTT
-      - '8081-8087:8081-8087'
-    environment:
-      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
-      ENGINE_IA_HOSTNAME: engine-ia-jdk8
-      ENGINE_IA_PORT: 8080
-      ENGINE_IA_JAVA17_HOSTNAME: engine-ia-jdk17
-      ENGINE_IA_JAVA17_PORT: 8080
-      ENGINE_PLAN_BPEL_HOSTNAME: engine-plan-bpel
-      ENGINE_PLAN_BPMN_HOSTNAME: engine-plan-bpmn
-      ENGINE_PLAN_BPMN_PORT: 8080
-      CONTAINER_DEPLOYMENT_TESTS: 'false'
-    networks:
-      - planqk-demo
-  ui:
-    image: opentosca/ui:latest
-    profiles:
-      - all
-      - tosca
-    environment:
-      API_ENDPOINT_HOST: ${PUBLIC_HOSTNAME}
-      API_ENDPOINT_PORT: 1337
-      WINERY_HOST: ${PUBLIC_HOSTNAME}
-      WINERY_PORT: 8080
-    ports:
-      - '8088:8080'
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    networks:
-      - planqk-demo
-  engine-plan-bpel:
-    image: ghcr.io/opentosca/ode:opentoscaimprovements
-    profiles:
-      - all
-      - tosca
-    ports:
-      - '9763:9763' # http
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    networks:
-      - planqk-demo
-  engine-ia-jdk17:
-    image: opentosca/engine-ia:latest-jdk17
-    profiles:
-      - all
-      - tosca
-    ports:
-      - '8093:8080'
-    networks:
-      - planqk-demo
-  winery:
-    image: opentosca/winery:latest
-    profiles:
-      - all
-      - tosca
-    environment:
-      WINERY_HOSTNAME: ${PUBLIC_HOSTNAME}
-      WORKFLOWMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
-      TOPOLOGYMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
-      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
-      WINERY_REPOSITORY_URL: https://github.com/OpenTOSCA/tosca-definitions-example-applications
-    ports:
-      - '8080:8080'
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    networks:
-      - planqk-demo
-  dind:
-    image: docker:20.10-dind
-    profiles:
-      - all
-      - tosca
-    privileged: true
-    environment:
-      # Disables TLS and starts on port 2375 instead of 2376
-      - DOCKER_TLS_CERTDIR=
-    ports: 
-      - '2222:2375'
-      - '9990-9999:9990-9999'
-      - '9990-9999:9990-9999/udp'
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    networks:
-      - planqk-demo
-
 ##########
 # Quokka #
 ##########
@@ -700,8 +247,6 @@ services:
   execution-service:
     image: stiliala/execution-service:latest
     platform: linux/amd64
-    profiles:
-      - quokka
     ports:
       - '5075:5075'
     networks:
@@ -710,9 +255,6 @@ services:
   optimization-service:
     image: planqk/optimization-service:v0.3.0
     platform: linux/amd64
-    profiles:
-      - all
-      - quokka
     ports:
       - '5074:5074'
     environment:
@@ -725,9 +267,6 @@ services:
   objective-evaluation-service:
     image: planqk/objective-evaluation-service:v0.2.0
     platform: linux/amd64
-    profiles:
-      - all
-      - quokka
     ports:
       - '5072:5072'
     networks:
@@ -736,9 +275,6 @@ services:
   circuit-generation-service:
     image: planqk/quantum-circuit-generator:v0.2.0
     platform: linux/amd64
-    profiles:
-      - all
-      - quokka
     ports:
       - '5073:5073'
     networks:
@@ -747,9 +283,6 @@ services:
   circuit-cutting-service:
     image: planqk/circuit-cutting-service:v0.1.0
     platform: linux/amd64
-    profiles:
-      - all
-      - quokka
     ports:
       - '5076:5076'
     networks:
@@ -758,9 +291,6 @@ services:
   warm-starting-service:
     image: planqk/warm-starting-service:v0.1.0
     platform: linux/amd64
-    profiles:
-      - all
-      - quokka
     ports:
       - '5077:5077'
     networks:
@@ -768,17 +298,10 @@ services:
 
   quokka-gateway:
     image: planqk/quokka-gateway:0.2.0
-    profiles:
-      - all
-      - quokka
     ports:
       - '6474:6474'
     networks:
       - planqk-demo
-
-secrets:
-  ssh_secret:
-    file: ./ssh_secret
 
 networks:
   planqk-demo:
