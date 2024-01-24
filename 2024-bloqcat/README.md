@@ -90,6 +90,88 @@ Once the Docker containers are running, you can begin adding concrete solutions 
    - The API responds with an aggregated "Complete Solution". This response can be viewed using your browser's inspection tool.
      ![Deployment Response](docs/graphics/winery-deploy-resp.png)
 
+## 4. Running the Deutsch Algorithm
+
+1. **Copy the Complete Solution**:
+   - Retrieve the "Complete Solution" from the API response. For the Deutsch Algorithm, the response is as follows:
+      ```shell 
+      // -- Start HEADER --
+      // -- HEADER created from Pattern "Uniform Superposition" --
+      OPENQASM 2.0;
+      include "qelib1.inc";
+      // -- End HEADER --
+
+      // -- Detected QREG size == 2 --
+      // -- Detected CREG size == 2 --
+      qreg q[2];
+      creg meas[2];
+
+      // -- Start CS from Pattern "Uniform Superposition" --
+      h q[0];
+      h q[1];
+      barrier q[0],q[1];
+      // -- End CS from Pattern "Uniform Superposition" --
+
+      // -- Start CS from Pattern "Oracle" --
+      cx q[0],q[1];
+      h q[0];
+      barrier q[0],q[1];
+      // -- End CS from Pattern "Oracle" --
+
+      measure q[0] -> meas[0];
+      measure q[1] -> meas[1];
+      ```
+
+2. **Deploy the Algorithm Using Qunicorn API**:
+   - Visit [Qunicorn API](http://localhost:5005/swagger-ui/).
+   - Navigate to the Deployment API section for control plane operations.
+   - Create a POST request to `/deployment`, inputting the "Complete Solution" as "quantumCircuit". 
+   - Ensure all whitespaces and comments are removed from the "Complete Solution," and double quotes are replaced with `\"`. The final "Complete Solution" for the Deutsch Algorithm should look like this:
+      ```shell 
+      OPENQASM 2.0;
+      include \"qelib1.inc\";
+      qreg q[2];
+      creg meas[2];
+      h q[0];
+      h q[1];
+      barrier q[0],q[1];
+      cx q[0],q[1];
+      h q[0];
+      barrier q[0],q[1];
+      measure q[0] -> meas[0];
+      measure q[1] -> meas[1];
+      ```
+   - The response will provide a deployment ID to track the deployment status.
+      ```shell 
+      {
+         "id": 14,
+         "name": "DeploymentName",
+         "programs": "[QASM2-Program]"
+      }
+      ```
+
+3. **Execute the Algorithm**:
+   - After successful deployment, execute the Deutsch Algorithm by sending a POST request to the `/jobs` endpoint using the deployment ID obtained earlier.
+       ```shell 
+       {
+           "name": "JobName",
+           "providerName": "IBM",
+           "deviceName": "aer_simulator",
+           "shots": 4000,
+           "token": "",
+           "type": "RUNNER",
+           "deploymentId": 14
+       }
+       ```
+   - The response will provide a job ID to track the job status.
+      ```shell 
+      {
+         "id": 6,
+         "name": "JobName",
+         "state": "READY"
+      }
+      ```
+ 4. (optinal) Check the status of the job by sending a GET request to the `/jobs/{id}` endpoint using the job ID obtained earlier.
 
 ## Disclaimer of Warranty
 Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.
