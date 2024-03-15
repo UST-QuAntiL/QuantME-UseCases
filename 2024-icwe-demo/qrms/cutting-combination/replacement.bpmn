@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_00v8ddm" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20221215">
+  <bpmn:process id="Process_0frghgx" isExecutable="true">
+    <bpmn:serviceTask id="Task_1ffvrj7" name="Combine Results" camunda:asyncAfter="true" camunda:exclusive="false">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Accept">application/json</camunda:entry>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/circuit-cutting/combineResultsQuokka</camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="groovy">import groovy.json.JsonBuilder
+println("Combining circuits");
+def counts = execution.getVariable("counts");
+println("Counts: " + counts.toString());
+def cuttingMetaData = execution.getVariable("cuttingMetaData");
+println("CuttingMetaData: " + cuttingMetaData.toString());
+def circuit = execution.getVariable("circuit")[0];
+
+def request = [:];
+request.put("circuit", circuit);
+request.put("subcircuit_results", counts);
+request.put("cuts", cuttingMetaData);
+request.put("unnormalized_results", "True");
+request.put("shot_scaling_factor", 1000);
+request.put("circuit_format", "qiskit");
+requeststring = new JsonBuilder(request).toPrettyString()
+println(requeststring);
+return requeststring;</camunda:script>
+            </camunda:inputParameter>
+            <camunda:outputParameter name="counts">
+              <camunda:script scriptFormat="groovy">def resp = connector.getVariable("response");
+resp = new groovy.json.JsonSlurperClassic().parseText(resp);
+println("Response with counts: " + resp.toString());
+def result = [resp.get("result")];
+println("Final result: " + result.toString());
+return result;</camunda:script>
+            </camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0frghgx">
+      <bpmndi:BPMNShape id="ServiceTask_05zk3jf_di" bpmnElement="Task_1ffvrj7">
+        <dc:Bounds x="320" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
