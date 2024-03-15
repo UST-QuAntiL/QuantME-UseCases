@@ -1,0 +1,139 @@
+version: '3'
+
+volumes:
+  exec_data:
+
+services:
+  ### Workflow Modeler ###
+  workflow-modeler:
+    image: planqk/workflow-modeler:latest
+    environment:
+     CAMUNDA_ENDPOINT: http://$PUBLIC_HOSTNAME:8090/engine-rest
+     ENABLE_DATA_FLOW_PLUGIN: 'false'
+     ENABLE_PLANQK_PLUGIN: 'false'
+     ENABLE_QHANA_PLUGIN: 'false'
+     ENABLE_QUANTME_PLUGIN: 'true'
+     QRM_USERNAME: ${GITHUB_USER}
+     QRM_REPONAME: 'QuantME-UseCases'
+     QRM_REPOPATH: '2023-ccis/qrms'
+     OPENTOSCA_ENDPOINT: http://$PUBLIC_HOSTNAME:1337/csars
+     WINERY_ENDPOINT: http://$PUBLIC_HOSTNAME:8093/winery
+    ports:
+      - 8080:8080
+    networks:
+      - quokka
+
+  ### Camunda Engine ###
+  camunda-engine:
+    image: camunda/camunda-bpm-platform:run-7.19.0
+    ports:
+      - 8090:8080
+    networks:
+      - quokka
+      
+  execution-service:
+    image: planqk/execution-service:latest
+    #build: ./services/execution-service
+    ports:
+      - '5075:5075'
+    networks:
+      - quokka
+      
+  optimization-service:
+    image: planqk/optimization-service:latest
+    #build: ./services/optimization-service
+    ports:
+      - '5074:5074'
+    networks:
+      - quokka
+    env_file:
+     - .env
+      
+  objective-evaluation-service:
+    image: planqk/objective-evaluation-service:latest
+    ports:
+      - '5072:5072'
+    networks:
+      - quokka
+      
+  circuit-generation-service:
+    image: planqk/quantum-circuit-generator:latest
+    ports:
+      - '5073:5073'
+    networks:
+      - quokka
+
+  circuit-cutting-service:
+    image: planqk/circuit-cutting-service:v0.1.0
+    ports:
+      - '5076:5076'
+    networks:
+      - quokka
+
+  warm-starting-service:
+    image: planqk/warm-starting-service:latest
+    ports:
+      - '5077:5077'
+    networks:
+      - quokka
+
+  quokka-gateway:
+    image: planqk/quokka-gateway:0.2.0
+    ports:
+      - '6474:6474'
+    networks:
+      - quokka
+
+  #######################
+  ### qiskit service ####
+  redis:
+    image: redis:latest
+    command: --port 5040
+    ports:
+      - "5040:5040"
+    networks:
+      - quokka
+
+  qiskit-service:
+    image: planqk/qiskit-service:latest
+    command: sh /app/startup.sh
+    ports:
+      - "5013:5013"
+    environment:
+      - REDIS_URL=redis://redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    networks:
+      - quokka
+
+  qiskit-rq-worker:
+    image: planqk/qiskit-service:latest
+    command: rq worker --url redis://redis:5040 qiskit-service_execute
+    environment:
+      - REDIS_URL=redis://redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    depends_on:
+      - redis
+    deploy:
+      replicas: 2
+    networks:
+      - quokka
+
+  rq-dashboard:
+    image: eoranged/rq-dashboard
+    ports:
+      - "9181:9181"
+    environment:
+      - RQ_DASHBOARD_REDIS_URL=redis://redis:5040
+    networks:
+      - quokka
+  # end of qiskit service
+  ########
+
+networks:
+  quokka:
+    driver: bridge
+
