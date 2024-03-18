@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" id="winery-defs-for_ns4-ConnectsTo">
+    <RelationshipType name="ConnectsTo" targetNamespace="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" winery:color="#967d44">
+        <winery:PropertiesDefinition elementname="properties" namespace="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+            <winery:properties>
+                <winery:key>ChannelType</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+        </winery:PropertiesDefinition>
+    </RelationshipType>
+</Definitions>

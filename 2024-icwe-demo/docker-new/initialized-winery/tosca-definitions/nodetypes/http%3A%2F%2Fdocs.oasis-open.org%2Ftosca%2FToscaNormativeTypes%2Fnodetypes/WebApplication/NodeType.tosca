@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" id="ToscaNormativeNodeTypes-WebApplication">
+    <NodeType name="WebApplication" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes">
+        <winery:PropertiesDefinition elementname="properties" namespace="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+            <winery:properties>
+                <winery:constraints/>
+                <winery:defaultValue/>
+                <winery:description/>
+                <winery:key>context_root</winery:key>
+                <winery:required>false</winery:required>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+        </winery:PropertiesDefinition>
+    </NodeType>
+</Definitions>

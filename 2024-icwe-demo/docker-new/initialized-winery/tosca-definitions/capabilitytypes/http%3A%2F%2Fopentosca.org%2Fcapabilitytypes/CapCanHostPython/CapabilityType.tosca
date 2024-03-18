@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://opentosca.org/capabilitytypes" id="capabilityTypes-CapCanHostPython" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" >
+    <CapabilityType name="CapCanHostPython" abstract="no" final="no" targetNamespace="http://opentosca.org/capabilitytypes"/>
+</Definitions>

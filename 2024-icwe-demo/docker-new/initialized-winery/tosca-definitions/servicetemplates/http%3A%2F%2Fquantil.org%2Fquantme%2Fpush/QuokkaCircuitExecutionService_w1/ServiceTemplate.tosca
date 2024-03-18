@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://quantil.org/quantme/push" id="winery-defs-for_push-QuokkaCircuitExecutionService_w1-wip1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfService="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <ServiceTemplate name="QuokkaCircuitExecutionService_w1-wip1" targetNamespace="http://quantil.org/quantme/push" id="QuokkaCircuitExecutionService_w1-wip1">
+        <Tags>
+            <Tag name="top-node" value="QuokkaPythonApp_latest-w1-wip1_0"/>
+        </Tags>
+        <BoundaryDefinitions>
+            <Properties>
+                <ns0:selfServiceApplicationUrl xmlns:ns0="http://www.eclipse.org/winery/model/selfservice"/>
+                <PropertyMappings>
+                    <PropertyMapping serviceTemplatePropertyRef="/*[local-name()='selfServiceApplicationUrl']" targetObjectRef="Ubuntu-VM_20.04-w1_0" targetPropertyRef="concat('http://', Ubuntu-VM_20.04-w1_0.Properties.VMIP, ':5075')"/>
+                </PropertyMappings>
+            </Properties>
+        </BoundaryDefinitions>
+        <TopologyTemplate>
+            <NodeTemplate name="OpenStack" minInstances="1" maxInstances="1" type="nodetypes:OpenStack_22-Victoria-w1" id="OpenStack_22-Victoria-w1_0" winery:x="386" winery:y="648" xmlns:nodetypes="http://opentosca.org/nodetypes">
+                <Properties>
+                    <nodetypes:CloudProviderProperties>
+                        <nodetypes:HypervisorEndpoint>get_input: HypervisorEndpoint</nodetypes:HypervisorEndpoint>
+                        <nodetypes:HypervisorApplicationID>get_input: HypervisorApplicationID</nodetypes:HypervisorApplicationID>
+                        <nodetypes:HypervisorApplicationSecret>get_input: HypervisorApplicationSecret</nodetypes:HypervisorApplicationSecret>
+                        <nodetypes:HypervisorRegion>get_input: HypervisorRegion</nodetypes:HypervisorRegion>
+                    </nodetypes:CloudProviderProperties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate name="Ubuntu-VM" minInstances="1" maxInstances="1" type="nodetypes:Ubuntu-VM_20.04-w1" id="Ubuntu-VM_20.04-w1_0" winery:x="386" winery:y="479" xmlns:nodetypes="http://opentosca.org/nodetypes">
+                <Properties>
+                    <nodetypes:VirtualMachineProperties>
+                        <nodetypes:VMIP/>
+                        <nodetypes:VMInstanceID/>
+                        <nodetypes:VMType>m1.medium</nodetypes:VMType>
+                        <nodetypes:VMUserName>ubuntu</nodetypes:VMUserName>
+                        <nodetypes:VMUserPassword>unused</nodetypes:VMUserPassword>
+                        <nodetypes:VMPrivateKey>-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAxVhgdpcf1PtPtDQVJ+yopsbvfdwbBRWf/zQvK6r13pjFaxEs
+pB0JavA17Ked0T+IV8osQKb6j9UQs4Fe1+0VAdCeKgnEOXUSdi+goxwI+zBM9Q7E
+D3h2TucknYkYd0anVqeANJO9TMCKtpldvR3ETgGi785+zSPPc4Iwjj06qvJyxYrJ
+ASBUVm0jsDXwUxOggojRbFvvPbXBigTLwz2DIbbc9m2814jYpZIPysRRwtbyw1Li
++5s5+3UKnDVhB7mt6wOm1Ks9kUzLrdyJjJPa6YZry4ujdVbD3ZZ1smv2+77+vtDK
+nnTMXKf7COkbAmEEBUPOhNILRif4ULpWxf1vhQIDAQABAoIBADUWZyy/zsJesLxL
+Xn2U/nGPBpIXCfW+MYJXqXDX1riA5Gq+/gFQBl6MLBVzqdLGgokLTAhAYxsaOBnx
+7W+syX/pfQLWCcFjKwo8GbyHKCtafPlXdYqr3zeumnz+imRbz1xSRvzd2YiyKx6f
+90WOomZRrmFQbXAF+CKcnS9GbWfaw89SKL4UOk6tV2bGXyUSZL9+l77OcfI8Aa2A
+eZrI0A11ENmxY3kx3Se1rd+q8VYQ9r0foApIK/Blyy7BXP5DZxZK+YvIZKEOSFF9
+2qAlQjcWWICzCMzu6YaCsJ00d4OZLHA29DPYxtAOr+375PwRk9RDO9yP9I4C8FAy
+qUmpaQECgYEA69O+H4ke7wmNPhV9rPq+i1y4vsu27oX6y/X+ippdzvhMKP3I131o
++tASVU8G9knQSEFf8kOhLbMlAgN3D2Uc2GcH7XzvXsBWAnDTbr3Y5yCNihXRIVl4
+IFuwyQuRtGkyCRw/bULt1GaHOJG4zNCqJ7Jp+sl9IK9AomscXo+4FeECgYEA1jnw
+UuwDBDOkiP1ZAie5RzALgKUkqGwFId+d82XEgkPFKZtjgbtHET5TiJIW9uqwk1w/
+ef+tSdAdN5tR+BOxsfkqGv96WNPEjbTx7Y+f/yKdaD5Yln8UTPGACs43j0UWUyhB
+FpJuKFyBlXh/hC7F4GRKEf/fQN85X29gFv2/BiUCgYAH5Cj7gyoe05H/Xta6wBU6
+MpsX/1caui7/PjcLSkkTUOmzgXKEC3VE10uVwTQ5b5ThphZg0/SDw/fcDmOgh0Ck
+2SXBw6l64TK/mCjrDr1AVq2Fzl8WH5lOc+MBhzqT7+U1utVAgbnVnqytruqhJ+ZZ
+t7WmJ7HhMxwVk0H6xBJj4QKBgAQsmtcyzBg/3Vvh++MD3SNa905paV5yxGLVlaFR
+gVO8eFIIOhckDA109nG5zwK+rfQhHweEiN7gVEFqIF3CHHtITJ68Dak/bxwHw5MK
+cmapSQHn/Rfpn/6j0gfj3sdG5Fl4dlQ3RDg7HTdJYsqzkp19tsfFAZelAdwvMmMg
+TKGVAoGALCJAxZkMRdCd/qwwpKOh8lM6RZmP7Kilps4PnQYD7RaZgef0WI6o+/2O
+6/H+6LldHensY2ZeV6mICRh41TK/EAB50KRTLErzHAx1YkNP8LdCEv9sFlao+dvJ
+94g99zf2loGLd3j4MrEpj3X/D8LFB3hlbo4JVy8fGMTxe+RFoPc=
+-----END RSA PRIVATE KEY-----
+</nodetypes:VMPrivateKey>
+                        <nodetypes:VMPublicKey>unused</nodetypes:VMPublicKey>
+                        <nodetypes:VMKeyPairName>get_input: VMKeyPairName</nodetypes:VMKeyPairName>
+                        <nodetypes:VMNetworks>get_input: VMNetworks</nodetypes:VMNetworks>
+                        <nodetypes:VMOpenPorts>5075</nodetypes:VMOpenPorts>
+                        <nodetypes:QProvEndpoint>get_input: QProvEndpoint</nodetypes:QProvEndpoint>
+                    </nodetypes:VirtualMachineProperties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate name="Python" minInstances="1" maxInstances="1" type="nodetypes:Python_3-w1" id="Python_3-w1_0" winery:x="106" winery:y="380" xmlns:nodetypes="http://opentosca.org/nodetypes"/>
+            <NodeTemplate name="Qiskit" minInstances="1" maxInstances="1" type="ntyIgeneral3:Qiskit_latest-w1" id="Qiskit_latest-w1_0" winery:x="386" winery:y="292" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes"/>
+            <NodeTemplate name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_0" winery:x="386" winery:y="123" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
+                <Properties>
+                    <ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
+                        <ntyIgeneral3:StartupCommand>export FLASK_APP=execution-service.py &amp;&amp; export FLASK_ENV=development &amp;&amp; export FLASK_DEBUG=0 &amp;&amp; python3 -m flask run --host=0.0.0.0</ntyIgeneral3:StartupCommand>
+                        <ntyIgeneral3:Name>Execution</ntyIgeneral3:Name>
+                    </ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact name="Service" artifactType="artifacttypes:PythonArchiveArtifact" artifactRef="ateIgeneral2:QuokkaExecutionServiceArtifact" xmlns:ateIgeneral2="https://ust-quantil.github.io/quantum/applications/artifacttemplates" xmlns:artifacttypes="http://opentosca.org/artifacttypes"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Ubuntu-VM_20.04-w1_0"/>
+                <TargetElement ref="OpenStack_22-Victoria-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_1" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Python_3-w1_0"/>
+                <TargetElement ref="Ubuntu-VM_20.04-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_2" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Qiskit_latest-w1_0"/>
+                <TargetElement ref="Ubuntu-VM_20.04-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="DependsOn" type="ToscaBaseTypes:DependsOn" id="con_DependsOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Qiskit_latest-w1_0"/>
+                <TargetElement ref="Python_3-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_3" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="QuokkaPythonApp_latest-w1-wip1_0"/>
+                <TargetElement ref="Qiskit_latest-w1_0"/>
+            </RelationshipTemplate>
+            <Participants/>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>

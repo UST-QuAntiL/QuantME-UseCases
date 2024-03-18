@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://quantil.org/quantme/push" id="winery-defs-for_push-QuokkaCircuitGeneratorService_w1-incomplete" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:researchobject="http://www.eclipse.org/winery/model/researchobject" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <ServiceTemplate name="QuokkaCircuitGeneratorService_w1-incomplete" targetNamespace="http://quantil.org/quantme/push" id="QuokkaCircuitGeneratorService_w1-incomplete">
+        <Tags>
+            <Tag name="top-node" value="QuokkaPythonApp_latest-w1-wip1_0"/>
+        </Tags>
+        <BoundaryDefinitions>
+            <Properties>
+                <ns0:selfserviceApplicationUrl xmlns:ns0="http://www.eclipse.org/winery/model/selfservice"/>
+                <PropertyMappings/>
+            </Properties>
+        </BoundaryDefinitions>
+        <TopologyTemplate>
+            <NodeTemplate name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_0" winery:x="784" winery:y="73" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
+                <Properties>
+                    <ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
+                        <ntyIgeneral3:StartupCommand>apt-get update &amp;&amp; apt-get install texlive texlive-latex-extra texlive-luatex texlive-xetex texlive-lang-european -y &amp;&amp; apt-get install -y poppler-utils &amp;&amp; export FLASK_APP=app.py &amp;&amp; export FLASK_ENV=development &amp;&amp; export FLASK_DEBUG=0 &amp;&amp; python3 -m flask run --host=0.0.0.0</ntyIgeneral3:StartupCommand>
+                        <ntyIgeneral3:Name>Generation</ntyIgeneral3:Name>
+                    </ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
+                </Properties>
+                <Requirements>
+                    <Requirement name="ReqCanRunQuokka" type="rtyIgeneral:ReqCanRunQuokka" id="ReqCanRunQuokka" xmlns:rtyIgeneral="https://ust-quantil.github.io/requirementtypes"/>
+                </Requirements>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact name="Service" artifactType="artifacttypes:PythonArchiveArtifact" artifactRef="ateIgeneral2:QuokkaCircuitGenerationServiceArtifact" xmlns:ateIgeneral2="https://ust-quantil.github.io/quantum/applications/artifacttemplates" xmlns:artifacttypes="http://opentosca.org/artifacttypes"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <Participants/>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>

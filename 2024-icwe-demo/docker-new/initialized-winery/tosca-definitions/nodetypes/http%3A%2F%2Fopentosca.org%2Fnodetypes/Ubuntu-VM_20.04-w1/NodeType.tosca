@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://opentosca.org/nodetypes" id="nodeTypes-Ubuntu-VM_20.04-w1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <NodeType name="Ubuntu-VM_20.04-w1" abstract="no" final="no" targetNamespace="http://opentosca.org/nodetypes">
+        <Tags>
+            <Tag name="type" value="vm"/>
+            <Tag name="requiredAttributes" value="EC2-w1.VMPrivateKey,EC2-w1.VMKeyPairName,EC2-w1.VMType,EC2-w1.VMOpenPorts,OpenStack_22-Victoria-w1.VMPrivateKey,OpenStack_22-Victoria-w1.VMNetworks,OpenStack_22-Victoria-w1.VMKeyPairName,OpenStack_22-Victoria-w1.VMType,OpenStack_22-Victoria-w1.VMOpenPorts"/>
+        </Tags>
+        <DerivedFrom typeRef="nodetypes:OperatingSystem_w1" xmlns:nodetypes="http://opentosca.org/nodetypes"/>
+        <winery:PropertiesDefinition elementname="VirtualMachineProperties" namespace="http://opentosca.org/nodetypes">
+            <winery:properties>
+                <winery:key>VMIP</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMInstanceID</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMType</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMUserName</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMUserPassword</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMPrivateKey</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMPublicKey</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMKeyPairName</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMSecurityGroup</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMOpenPorts</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMNetworks</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>QProvEndpoint</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+        </winery:PropertiesDefinition>
+        <RequirementDefinitions>
+            <RequirementDefinition name="ReqCanHostUbuntuVM" requirementType="requirementtypes:ReqCanHostUbuntuVM" lowerBound="1" upperBound="unbounded" xmlns:requirementtypes="http://opentosca.org/requirementtypes"/>
+        </RequirementDefinitions>
+        <CapabilityDefinitions>
+            <CapabilityDefinition name="CapCanHostPython" capabilityType="capabilityTypes:CapCanHostPython" lowerBound="1" upperBound="1" xmlns:capabilityTypes="http://opentosca.org/capabilitytypes"/>
+            <CapabilityDefinition name="CapCanRunQiskit" capabilityType="capabilityTypes:CapCanRunQiskit" lowerBound="1" upperBound="1" xmlns:capabilityTypes="https://ust-quantil.github.io/capabilitytypes"/>
+        </CapabilityDefinitions>
+        <Interfaces>
+            <Interface name="http://opentosca.org/interfaces/lifecycle">
+                <Operation name="configure">
+                    <InputParameters>
+                        <InputParameter name="QProvEndpoint" type="xsd:String" required="yes"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="QProvEndpoint" type="xsd:String" required="false"/>
+                    </OutputParameters>
+                </Operation>
+            </Interface>
+            <Interface name="OperatingSystemInterface">
+                <Operation name="installPackage">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="false"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="false"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="false"/>
+                        <InputParameter name="PackageNames" type="xsd:String" required="false"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="InstallResult" type="xsd:String" required="false"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="transferFile">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="false"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="false"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="false"/>
+                        <InputParameter name="TargetAbsolutePath" type="xsd:String" required="false"/>
+                        <InputParameter name="SourceURLorLocalPath" type="xsd:String" required="false"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="TransferResult" type="xsd:String" required="false"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="runScript">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="false"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="false"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="false"/>
+                        <InputParameter name="Script" type="xsd:String" required="false"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="ScriptResult" type="xsd:String" required="false"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="waitForAvailability">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="false"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="false"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="false"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="WaitResult" type="xsd:String" required="false"/>
+                    </OutputParameters>
+                </Operation>
+            </Interface>
+            <Interface name="http://opentosca.org/interfaces/tests">
+                <Operation name="testPortBinding">
+                    <InputParameters>
+                        <InputParameter name="Port" type="xsd:string" required="false"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="Result" type="xsd:string" required="false"/>
+                    </OutputParameters>
+                </Operation>
+            </Interface>
+        </Interfaces>
+    </NodeType>
+</Definitions>
