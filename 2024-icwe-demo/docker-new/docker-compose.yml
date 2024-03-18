@@ -1,0 +1,180 @@
+version: '3'
+
+volumes:
+  exec_data:
+
+services:
+  ### Workflow Modeler ###
+  workflow-modeler:
+    image: planqk/workflow-modeler:v1.2.0
+    environment:
+     CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
+     ENABLE_DATA_FLOW_PLUGIN: 'false'
+     ENABLE_OPENTOSCA_PLUGIN: 'true'
+     ENABLE_PLANQK_PLUGIN: 'false'
+     ENABLE_QHANA_PLUGIN: 'false'
+     ENABLE_QUANTME_PLUGIN: 'true'
+     NISQ_ANALYZER_ENDPOINT: http://${PUBLIC_HOSTNAME}:8098
+     OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
+     QPROV_ENDPOINT: http://${PUBLIC_HOSTNAME}:8094/qprov
+     QRM_USERNAME: ${QRM_USERNAME}
+     QRM_REPONAME: ${QRM_REPONAME}
+     QRM_REPOPATH: ${QRM_REPOPATH}
+     TRANSFORMATION_FRAMEWORK_ENDPOINT: http://${PUBLIC_HOSTNAME}:8888
+     WINERY_ENDPOINT: http://${PUBLIC_HOSTNAME}:8093/winery
+    ports:
+      - 8080:8080
+    networks:
+      - icwe-demo
+  transformation-backend:
+    image: planqk/quantme-backend:v1.9.0
+    environment:
+      CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
+      OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
+      PORT: 8888
+      QRM_USERNAME: ${QRM_USERNAME}
+      QRM_REPONAME: ${QRM_REPONAME}
+      QRM_REPOPATH: ${QRM_REPOPATH}
+      WINERY_ENDPOINT: http://${PUBLIC_HOSTNAME}:8093/winery
+    ports:
+      - 8888:8888
+    networks:
+      - icwe-demo
+
+  ### Camunda Engine ###
+  camunda-engine:
+    image: planqk/camunda-process-views-plugin:v1.0.0
+    ports:
+      - 8090:8080
+    networks:
+      - icwe-demo
+
+  #######################
+  ### OpenTOSCA Ecosystem ###
+  container:
+    image: opentosca/container:v3.1.4
+    ports:
+      - '1337:1337'
+      - '8081-8087:8081-8087'
+    environment:
+      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      ENGINE_IA_JAVA17_HOSTNAME: ${PUBLIC_HOSTNAME}
+      ENGINE_IA_JAVA17_PORT: 8091
+      ENGINE_PLAN_BPEL_HOSTNAME: ${PUBLIC_HOSTNAME}
+      ENGINE_PLAN_BPEL_PORT: 8092
+      CONTAINER_DEPLOYMENT_TESTS: 'false'
+    networks:
+      - icwe-demo
+  engine-plan:
+    image: opentosca/ode:v2.4.0
+    networks:
+      - icwe-demo
+    ports:
+      - '8092:9763'
+  engine-ia:
+    image: opentosca/engine-ia:v3.0.0-jdk17
+    networks:
+      - icwe-demo
+    ports:
+      - '8091:8080'
+  winery:
+    build: initialized-winery
+    logging:
+      driver: none
+    ports:
+      - '8093:8080'
+    environment:
+      WINERY_HOSTNAME: ${PUBLIC_HOSTNAME}
+      WINERY_PORT: 8093
+      WORKFLOWMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      TOPOLOGYMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
+    networks:
+      - icwe-demo
+  # end of OpenTOSCA Ecosystem
+  #######################
+
+  #######################
+  ### QProv ###
+  db:
+    image: planqk/db:v1.0.0
+    logging:
+      driver: none
+    environment:
+      POSTGRES_USERS: 'qprov:qprov|nisq:nisq'
+      POSTGRES_DATABASES: 'qprov:qprov|nisq:nisq'
+    ports:
+      - '5432:5432'
+    networks:
+      - icwe-demo
+  qprov:
+    image: planqk/qprov:v1.3.2
+    logging:
+      driver: none
+    environment:
+      POSTGRES_HOSTNAME: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: qprov
+      POSTGRES_PASSWORD: qprov
+      POSTGRES_DB: qprov
+    ports:
+      - '8094:5020'
+    networks:
+      - icwe-demo
+  qprov-collector-ibm:
+    image: planqk/qprov-collector:v1.3.2
+    logging:
+      driver: none
+    environment:
+      POSTGRES_HOSTNAME: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: qprov
+      POSTGRES_PASSWORD: qprov
+      POSTGRES_DB: qprov
+      QPROV_IBMQ_TOKEN: ${IBM_ACCESS_TOKEN}
+      QPROV_IBMQ_EXECUTE_CIRCUITS: 'false'
+      QPROV_IBMQ_AUTO_COLLECT: 'true'
+      QPROV_IBMQ_AUTO_COLLECT_INTERVAL: 60
+      QPROV_IBMQ_AUTO_COLLECT_INTERVAL_CIRCUITS: 180
+    networks:
+      - icwe-demo
+  # end of QProv
+  #######################
+
+  #######################
+  ### NISQ Analyzer ###
+  nisq-analyzer:
+    image: planqk/nisq-analyzer:v1.5.2
+    ports:
+      - 8098:5010
+    environment:
+      POSTGRES_HOSTNAME: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: nisq
+      POSTGRES_PASSWORD: nisq
+      POSTGRES_DB: nisq
+      SPRING_PROFILES_ACTIVE: docker
+      QPROV_HOSTNAME: qprov
+      QPROV_PORT: 5020
+      QISKIT_HOSTNAME: qiskit-service
+      QISKIT_PORT: 5013
+    networks:
+     - icwe-demo
+
+  qiskit-service:
+    image: planqk/qiskit-service:v1.5.0
+    command: sh /app/startup.sh
+    ports:
+      - "5013:5013"
+    environment:
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    networks:
+      - icwe-demo
+  # end of NISQ Analyzer
+  #######################
+
+networks:
+  icwe-demo:
+    driver: bridge
