@@ -26,20 +26,6 @@ services:
       - 8080:8080
     networks:
       - icwe-demo
-  transformation-backend:
-    image: planqk/quantme-backend:v1.9.0
-    environment:
-      CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
-      OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
-      PORT: 8888
-      QRM_USERNAME: ${QRM_USERNAME}
-      QRM_REPONAME: ${QRM_REPONAME}
-      QRM_REPOPATH: ${QRM_REPOPATH}
-      WINERY_ENDPOINT: http://${PUBLIC_HOSTNAME}:8093/winery
-    ports:
-      - 8888:8888
-    networks:
-      - icwe-demo
 
   ### Camunda Engine ###
   camunda-engine:
@@ -139,40 +125,6 @@ services:
     networks:
       - icwe-demo
   # end of QProv
-  #######################
-
-  #######################
-  ### NISQ Analyzer ###
-  nisq-analyzer:
-    image: planqk/nisq-analyzer:v1.5.2
-    ports:
-      - 8098:5010
-    environment:
-      POSTGRES_HOSTNAME: db
-      POSTGRES_PORT: 5432
-      POSTGRES_USER: nisq
-      POSTGRES_PASSWORD: nisq
-      POSTGRES_DB: nisq
-      SPRING_PROFILES_ACTIVE: docker
-      QPROV_HOSTNAME: qprov
-      QPROV_PORT: 5020
-      QISKIT_HOSTNAME: qiskit-service
-      QISKIT_PORT: 5013
-    networks:
-     - icwe-demo
-
-  qiskit-service:
-    image: planqk/qiskit-service:v1.5.0
-    command: sh /app/startup.sh
-    ports:
-      - "5013:5013"
-    environment:
-      - DATABASE_URL=sqlite:////data/app.db
-    volumes:
-      - exec_data:/data
-    networks:
-      - icwe-demo
-  # end of NISQ Analyzer
   #######################
 
 networks:
