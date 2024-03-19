@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+  <bpmn2:process id="Process_1" isExecutable="true">
+    <bpmn2:startEvent id="StartEvent_1">
+      <bpmn2:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="g" label="Generator" type="string" defaultValue="5" />
+          <camunda:formField id="b" label="Residue" type="string" defaultValue="2" />
+          <camunda:formField id="p" label="Prime number" type="string" defaultValue="7" />
+          <camunda:formField id="n" label="Size of the top register" type="string" defaultValue="-1" />
+          <camunda:formField id="token" label="IBMQ Token" type="string" />
+        </camunda:formData>
+      </bpmn2:extensionElements>
+      <bpmn2:outgoing>Flow_0btvftm</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:sequenceFlow id="Flow_0btvftm" sourceRef="StartEvent_1" targetRef="Activity_11bzsga" />
+    <bpmn2:sequenceFlow id="Flow_1bjewhz" sourceRef="Activity_11bzsga" targetRef="Activity_0roh3lo" />
+    <bpmn2:endEvent id="Event_103j1jx">
+      <bpmn2:incoming>Flow_13dtv1t</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="Flow_0rb6q6q" sourceRef="Activity_0roh3lo" targetRef="Activity_04egb7z" />
+    <quantme:quantumCircuitLoadingTask id="Activity_11bzsga" name="Generate Circuit" url="quokka/shor">
+      <bpmn2:incoming>Flow_0btvftm</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_1bjewhz</bpmn2:outgoing>
+    </quantme:quantumCircuitLoadingTask>
+    <quantme:quantumCircuitExecutionTask id="Activity_0roh3lo" name="Execute Circuit" provider="ibm" qpu="aer_qasm_simulator" shots="1000" programmingLanguage="openqasm3Shor">
+      <bpmn2:incoming>Flow_1bjewhz</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_0rb6q6q</bpmn2:outgoing>
+    </quantme:quantumCircuitExecutionTask>
+    <bpmn2:sequenceFlow id="Flow_1tvypuc" sourceRef="Activity_04egb7z" targetRef="Activity_1t8f01s" />
+    <quantme:resultEvaluationTask id="Activity_04egb7z" name="Evaluate m" objectiveFunction="expectationValue" costFunction="shor">
+      <bpmn2:incoming>Flow_0rb6q6q</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_1tvypuc</bpmn2:outgoing>
+    </quantme:resultEvaluationTask>
+    <bpmn2:sequenceFlow id="Flow_13dtv1t" sourceRef="Activity_1t8f01s" targetRef="Event_103j1jx" />
+    <bpmn2:userTask id="Activity_1t8f01s" name="Analyze Results">
+      <bpmn2:incoming>Flow_1tvypuc</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_13dtv1t</bpmn2:outgoing>
+    </bpmn2:userTask>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="BPMNShape_StartEvent_1" bpmnElement="StartEvent_1">
+        <dc:Bounds x="382" y="412" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="QuantumCircuitLoadingTask_026g0m0_di" bpmnElement="Activity_11bzsga">
+        <dc:Bounds x="540" y="390" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="QuantumCircuitExecutionTask_1som8zd_di" bpmnElement="Activity_0roh3lo">
+        <dc:Bounds x="780" y="390" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ResultEvaluationTask_1vtl14n_di" bpmnElement="Activity_04egb7z">
+        <dc:Bounds x="1040" y="390" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_103j1jx_di" bpmnElement="Event_103j1jx">
+        <dc:Bounds x="1482" y="412" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1cuuqcl_di" bpmnElement="Activity_1t8f01s">
+        <dc:Bounds x="1260" y="390" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0btvftm_di" bpmnElement="Flow_0btvftm">
+        <di:waypoint x="418" y="430" />
+        <di:waypoint x="540" y="430" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1bjewhz_di" bpmnElement="Flow_1bjewhz">
+        <di:waypoint x="640" y="430" />
+        <di:waypoint x="780" y="430" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0rb6q6q_di" bpmnElement="Flow_0rb6q6q">
+        <di:waypoint x="880" y="430" />
+        <di:waypoint x="1040" y="430" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1tvypuc_di" bpmnElement="Flow_1tvypuc">
+        <di:waypoint x="1140" y="430" />
+        <di:waypoint x="1260" y="430" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13dtv1t_di" bpmnElement="Flow_13dtv1t">
+        <di:waypoint x="1360" y="430" />
+        <di:waypoint x="1482" y="430" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

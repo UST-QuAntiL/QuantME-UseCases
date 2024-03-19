@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+  <bpmn2:process id="Process_1" isExecutable="true">
+    <bpmn2:serviceTask id="Activity_04egb7z" name="Evaluate m" camunda:asyncAfter="true" camunda:exclusive="false">
+      <bpmn2:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Accept">application/json</camunda:entry>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/objective-evaluation/objective/shor/discreteLog</camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="groovy">  import groovy.json.JsonBuilder
+  def p = execution.getVariable("p");
+  def n = execution.getVariable("n");
+  def counts = execution.getVariable("counts")[0];
+  def objFun = execution.getVariable("objectiveFunction");
+def g = execution.getVariable("g");
+def b = execution.getVariable("b");
+
+  def request = [:];
+  request.put("visualization", "False"  )
+  request.put("g", g);
+  request.put("counts", counts);
+request.put("p", p);
+request.put("b", b);
+request.put("n", n);
+  request.put("objFun", objFun);
+
+  requeststring = new JsonBuilder(request).toPrettyString()
+  return requeststring;</camunda:script>
+            </camunda:inputParameter>
+            <camunda:outputParameter name="objValue">
+              <camunda:script scriptFormat="Groovy">def resp = connector.getVariable("response");
+resp = new groovy.json.JsonSlurper().parseText(resp)
+objValue= resp.get('objective_value')
+println("obj values:" + objValue.toString());
+return objValue.toDouble();</camunda:script>
+            </camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="objectiveFunction">expectationValue</camunda:inputParameter>
+          <camunda:inputParameter name="costFunction">shor</camunda:inputParameter>
+          <camunda:inputParameter name="objectiveFunction">expectationValue</camunda:inputParameter>
+          <camunda:inputParameter name="costFunction">shor</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn2:extensionElements>
+    </bpmn2:serviceTask>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="Activity_0qjyo1f_di" bpmnElement="Activity_04egb7z">
+        <dc:Bounds x="386" y="0" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>
