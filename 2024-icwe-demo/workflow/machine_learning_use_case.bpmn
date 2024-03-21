@@ -41,7 +41,7 @@
       <bpmn:incoming>Flow_0czrsh0</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_134gyga</bpmn:outgoing>
     </bpmn:userTask>
-    <quantme:quantumCircuitExecutionTask id="QuantumCircuitExecutionTask_11q8xh3" name="Execute QAOA Circuits" provider="ibm" qpu="aer_qasm_simulator" shots="2000" programmingLanguage="qiskit">
+    <quantme:quantumCircuitExecutionTask id="QuantumCircuitExecutionTask_11q8xh3" name="Execute QAOA Circuits" provider="ibm" qpu="aer_qasm_simulator" shots="2000" programmingLanguage="openqasm3QAOA">
       <bpmn:incoming>Flow_1m60wcg</bpmn:incoming>
       <bpmn:outgoing>Flow_0jxgw9i</bpmn:outgoing>
     </quantme:quantumCircuitExecutionTask>
