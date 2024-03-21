@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_0wzkc0b" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20230126">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:opentosca="https://github.com/UST-QuAntiL/OpenTOSCA" id="Definitions_0wzkc0b" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20230126">
   <bpmn:process id="Process_070m5p1" isExecutable="true">
     <bpmn:subProcess id="ParameterOptimizationTask_01m89mt" name="Optimize QAOA Parameters">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="optimizer">cobyla</camunda:inputParameter>
+          <camunda:inputParameter name="optimizer">cobyla</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
-      <bpmn:serviceTask id="Activity_0ypkvp9" name="Optimizer Parameters" camunda:asyncAfter="true" camunda:exclusive="false" camunda:type="external" camunda:topic="123456">
+      <bpmn:serviceTask id="Activity_0ghrc94" name="Optimizer Parameters" camunda:asyncAfter="true" camunda:exclusive="false" camunda:type="external" camunda:topic="123456">
         <bpmn:extensionElements>
           <camunda:inputOutput>
             <camunda:outputParameter name="iterations">
@@ -18,10 +19,10 @@
             </camunda:outputParameter>
           </camunda:inputOutput>
         </bpmn:extensionElements>
-        <bpmn:incoming>Flow_1bwdhlu</bpmn:incoming>
-        <bpmn:outgoing>Flow_01692fy</bpmn:outgoing>
+        <bpmn:incoming>Flow_1vgvxau</bpmn:incoming>
+        <bpmn:outgoing>Flow_0ta4ob6</bpmn:outgoing>
       </bpmn:serviceTask>
-      <bpmn:serviceTask id="Activity_1x94u5e" name="Initialize Optimizer" camunda:asyncAfter="true" camunda:exclusive="false">
+      <bpmn:serviceTask id="Activity_1yzh5jx" name="Initialize Optimizer" camunda:asyncAfter="true" camunda:exclusive="false" opentosca:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpush/QuokkaOptimizationService_w1/?csar">
         <bpmn:extensionElements>
           <camunda:connector>
             <camunda:inputOutput>
@@ -32,7 +33,7 @@
                   <camunda:entry key="Content-Type">application/json</camunda:entry>
                 </camunda:map>
               </camunda:inputParameter>
-              <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/optimization/optimization-service</camunda:inputParameter>
+              <camunda:inputParameter name="url">optimization-service</camunda:inputParameter>
               <camunda:inputParameter name="payload">
                 <camunda:script scriptFormat="groovy">
 			          import groovy.json.JsonBuilder
@@ -65,99 +66,97 @@ println(requeststring)
             <camunda:connectorId>http-connector</camunda:connectorId>
           </camunda:connector>
         </bpmn:extensionElements>
-        <bpmn:incoming>Flow_0fwmgoy</bpmn:incoming>
-        <bpmn:outgoing>Flow_0wkmu6w</bpmn:outgoing>
+        <bpmn:incoming>Flow_03te296</bpmn:incoming>
+        <bpmn:outgoing>Flow_17lzqtb</bpmn:outgoing>
       </bpmn:serviceTask>
-      <bpmn:sequenceFlow id="Flow_0wkmu6w" sourceRef="Activity_1x94u5e" targetRef="Gateway_1g991da" />
-      <bpmn:endEvent id="Event_18j4qtb">
-        <bpmn:incoming>Flow_01692fy</bpmn:incoming>
+      <bpmn:endEvent id="Event_0vdor6k">
+        <bpmn:incoming>Flow_0ta4ob6</bpmn:incoming>
       </bpmn:endEvent>
-      <bpmn:sequenceFlow id="Flow_01692fy" sourceRef="Activity_0ypkvp9" targetRef="Event_18j4qtb" />
-      <bpmn:exclusiveGateway id="Gateway_1g991da">
-        <bpmn:incoming>Flow_0wkmu6w</bpmn:incoming>
-        <bpmn:incoming>Flow_0lelzt6</bpmn:incoming>
-        <bpmn:outgoing>Flow_1bwdhlu</bpmn:outgoing>
+      <bpmn:exclusiveGateway id="Gateway_15vb8d1">
+        <bpmn:incoming>Flow_17lzqtb</bpmn:incoming>
+        <bpmn:incoming>Flow_08i9vue</bpmn:incoming>
+        <bpmn:outgoing>Flow_1vgvxau</bpmn:outgoing>
       </bpmn:exclusiveGateway>
-      <bpmn:sequenceFlow id="Flow_1bwdhlu" sourceRef="Gateway_1g991da" targetRef="Activity_0ypkvp9" />
-      <bpmn:exclusiveGateway id="Gateway_0imvuco" name="Is first Iteration?">
-        <bpmn:incoming>Flow_0xsy8mh</bpmn:incoming>
-        <bpmn:outgoing>Flow_0fwmgoy</bpmn:outgoing>
-        <bpmn:outgoing>Flow_0lelzt6</bpmn:outgoing>
+      <bpmn:exclusiveGateway id="Gateway_0ij41la" name="Is first Iteration?">
+        <bpmn:incoming>Flow_1u94gs9</bpmn:incoming>
+        <bpmn:outgoing>Flow_03te296</bpmn:outgoing>
+        <bpmn:outgoing>Flow_08i9vue</bpmn:outgoing>
       </bpmn:exclusiveGateway>
-      <bpmn:sequenceFlow id="Flow_0fwmgoy" name="Yes" sourceRef="Gateway_0imvuco" targetRef="Activity_1x94u5e">
+      <bpmn:startEvent id="Event_07odl23">
+        <bpmn:outgoing>Flow_1u94gs9</bpmn:outgoing>
+      </bpmn:startEvent>
+      <bpmn:sequenceFlow id="Flow_17lzqtb" sourceRef="Activity_1yzh5jx" targetRef="Gateway_15vb8d1" />
+      <bpmn:sequenceFlow id="Flow_0ta4ob6" sourceRef="Activity_0ghrc94" targetRef="Event_0vdor6k" />
+      <bpmn:sequenceFlow id="Flow_1vgvxau" sourceRef="Gateway_15vb8d1" targetRef="Activity_0ghrc94" />
+      <bpmn:sequenceFlow id="Flow_03te296" name="Yes" sourceRef="Gateway_0ij41la" targetRef="Activity_1yzh5jx">
         <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ execution.getVariable('iterations')== null || execution.getVariable('iterations') &lt; 1}</bpmn:conditionExpression>
       </bpmn:sequenceFlow>
-      <bpmn:sequenceFlow id="Flow_0lelzt6" name="No" sourceRef="Gateway_0imvuco" targetRef="Gateway_1g991da">
+      <bpmn:sequenceFlow id="Flow_08i9vue" name="No" sourceRef="Gateway_0ij41la" targetRef="Gateway_15vb8d1">
         <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ execution.getVariable('iterations')!= null &amp;&amp; execution.getVariable('iterations') &gt;= 1}</bpmn:conditionExpression>
       </bpmn:sequenceFlow>
-      <bpmn:startEvent id="Event_0l29lyh">
-        <bpmn:outgoing>Flow_0xsy8mh</bpmn:outgoing>
-      </bpmn:startEvent>
-      <bpmn:sequenceFlow id="Flow_0xsy8mh" sourceRef="Event_0l29lyh" targetRef="Gateway_0imvuco" />
+      <bpmn:sequenceFlow id="Flow_1u94gs9" sourceRef="Event_07odl23" targetRef="Gateway_0ij41la" />
     </bpmn:subProcess>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_070m5p1">
-      <bpmndi:BPMNShape id="Activity_02nq604_di" bpmnElement="ParameterOptimizationTask_01m89mt" isExpanded="true">
-        <dc:Bounds x="886" y="0" width="800" height="250" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0l29lyh_di" bpmnElement="Event_0l29lyh">
-        <dc:Bounds x="956" y="52" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Gateway_0imvuco_di" bpmnElement="Gateway_0imvuco" isMarkerVisible="true">
-        <dc:Bounds x="1042" y="45" width="50" height="50" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1027" y="21" width="79" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Gateway_1g991da_di" bpmnElement="Gateway_1g991da" isMarkerVisible="true">
-        <dc:Bounds x="1292" y="45" width="50" height="50" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_18j4qtb_di" bpmnElement="Event_18j4qtb">
-        <dc:Bounds x="1542" y="52" width="36" height="36" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1x94u5e_di" bpmnElement="Activity_1x94u5e">
-        <dc:Bounds x="1142" y="105" width="100" height="80" />
+      <bpmndi:BPMNShape id="Activity_06gh8zl_di" bpmnElement="ParameterOptimizationTask_01m89mt" isExpanded="true">
+        <dc:Bounds x="1526" y="35" width="740" height="200" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0ypkvp9_di" bpmnElement="Activity_0ypkvp9">
-        <dc:Bounds x="1392" y="30" width="100" height="80" />
+      <bpmndi:BPMNShape id="Activity_0ghrc94_di" bpmnElement="Activity_0ghrc94">
+        <dc:Bounds x="2062" y="85" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Flow_0xsy8mh_di" bpmnElement="Flow_0xsy8mh">
-        <di:waypoint x="992" y="70" />
-        <di:waypoint x="1042" y="70" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0lelzt6_di" bpmnElement="Flow_0lelzt6">
-        <di:waypoint x="1092" y="70" />
-        <di:waypoint x="1117" y="70" />
-        <di:waypoint x="1192" y="70" />
-        <di:waypoint x="1267" y="70" />
-        <di:waypoint x="1292" y="70" />
+      <bpmndi:BPMNShape id="Activity_1yzh5jx_di" bpmnElement="Activity_1yzh5jx">
+        <dc:Bounds x="1812" y="85" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0vdor6k_di" bpmnElement="Event_0vdor6k">
+        <dc:Bounds x="2212" y="107" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_15vb8d1_di" bpmnElement="Gateway_15vb8d1" isMarkerVisible="true">
+        <dc:Bounds x="1962" y="100" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0ij41la_di" bpmnElement="Gateway_0ij41la" isMarkerVisible="true">
+        <dc:Bounds x="1712" y="100" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1230" y="46" width="15" height="14" />
+          <dc:Bounds x="1697" y="76" width="79" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_07odl23_di" bpmnElement="Event_07odl23">
+        <dc:Bounds x="1626" y="107" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_17lzqtb_di" bpmnElement="Flow_17lzqtb">
+        <di:waypoint x="1912" y="125" />
+        <di:waypoint x="1962" y="125" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ta4ob6_di" bpmnElement="Flow_0ta4ob6">
+        <di:waypoint x="2162" y="125" />
+        <di:waypoint x="2212" y="125" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1vgvxau_di" bpmnElement="Flow_1vgvxau">
+        <di:waypoint x="2012" y="125" />
+        <di:waypoint x="2062" y="125" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_03te296_di" bpmnElement="Flow_03te296">
+        <di:waypoint x="1762" y="125" />
+        <di:waypoint x="1812" y="125" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1787" y="101" width="18" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0fwmgoy_di" bpmnElement="Flow_0fwmgoy">
-        <di:waypoint x="1067" y="95" />
-        <di:waypoint x="1067" y="145" />
-        <di:waypoint x="1142" y="145" />
+      <bpmndi:BPMNEdge id="Flow_08i9vue_di" bpmnElement="Flow_08i9vue">
+        <di:waypoint x="1737" y="150" />
+        <di:waypoint x="1737" y="210" />
+        <di:waypoint x="1987" y="210" />
+        <di:waypoint x="1987" y="150" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1105" y="121" width="18" height="14" />
+          <dc:Bounds x="1752" y="155" width="15" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0wkmu6w_di" bpmnElement="Flow_0wkmu6w">
-        <di:waypoint x="1242" y="145" />
-        <di:waypoint x="1317" y="145" />
-        <di:waypoint x="1317" y="95" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1bwdhlu_di" bpmnElement="Flow_1bwdhlu">
-        <di:waypoint x="1342" y="70" />
-        <di:waypoint x="1392" y="70" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_01692fy_di" bpmnElement="Flow_01692fy">
-        <di:waypoint x="1492" y="70" />
-        <di:waypoint x="1542" y="70" />
+      <bpmndi:BPMNEdge id="Flow_1u94gs9_di" bpmnElement="Flow_1u94gs9">
+        <di:waypoint x="1662" y="125" />
+        <di:waypoint x="1712" y="125" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

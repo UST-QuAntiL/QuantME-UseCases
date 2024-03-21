@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_0wzkc0b" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20230126">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:opentosca="https://github.com/UST-QuAntiL/OpenTOSCA" id="Definitions_0wzkc0b" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20230126">
   <bpmn:process id="Process_070m5p1" isExecutable="true">
-    <bpmn:serviceTask id="ResultEvaluationTask_0933y5e" name="Evaluate Results" camunda:asyncAfter="true" camunda:exclusive="false">
+    <bpmn:serviceTask id="ResultEvaluationTask_0933y5e" name="Evaluate Results" camunda:asyncAfter="true" camunda:exclusive="false" opentosca:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpush/QuokkaResultEvaluationService_w1/?csar">
       <bpmn:extensionElements>
         <camunda:connector>
           <camunda:inputOutput>
@@ -12,7 +12,7 @@
                 <camunda:entry key="Content-Type">application/json</camunda:entry>
               </camunda:map>
             </camunda:inputParameter>
-            <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/objective-evaluation/objective/max-cut</camunda:inputParameter>
+            <camunda:inputParameter name="url">objective/max-cut</camunda:inputParameter>
             <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="groovy">  import groovy.json.JsonBuilder
   def adjMatrix = execution.getVariable("adjMatrix");
@@ -74,14 +74,16 @@ typedFileValue</camunda:script>
         <camunda:inputOutput>
           <camunda:inputParameter name="objectiveFunction">expectationValue</camunda:inputParameter>
           <camunda:inputParameter name="costFunction">maxcut</camunda:inputParameter>
+          <camunda:inputParameter name="objectiveFunction">expectationValue</camunda:inputParameter>
+          <camunda:inputParameter name="costFunction">maxcut</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_070m5p1">
-      <bpmndi:BPMNShape id="Activity_1frqmfo_di" bpmnElement="ResultEvaluationTask_0933y5e">
-        <dc:Bounds x="600" y="85" width="100" height="80" />
+      <bpmndi:BPMNShape id="Activity_094ahq8_di" bpmnElement="ResultEvaluationTask_0933y5e">
+        <dc:Bounds x="1126" y="95" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
