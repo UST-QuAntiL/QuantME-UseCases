@@ -9,15 +9,9 @@
         <camunda:formData>
           <camunda:formField id="adjMatrix" label="Array containing adj_matrix" type="string" defaultValue="[[0,3,3,6,9,1],[3,0,4,4,-8,4],[3,4,0,3,-7,1],[6,4,3,0,-7,6],[9,-8,-7,-7,0,-5],[1,4,1,6,-5,0]]" />
           <camunda:formField id="token" label="IBMQ Token" type="string" />
-          <camunda:formField id="hub" label="IBMQ Hub" type="string" defaultValue="ibm-q" />
-          <camunda:formField id="group" label="IBMQ Group" type="string" defaultValue="open" />
-          <camunda:formField id="project" label="IBMQ Project" type="string" defaultValue="main" />
-          <camunda:formField id="ibmqUrl" label="IBMQ URL" type="string" defaultValue="https://auth.quantum-computing.ibm.com/api" />
           <camunda:formField id="qpu" label="IBMQ Backend name" type="string" defaultValue="simulator" />
-          <camunda:formField id="noiseModel" label="Noise Model" type="string" />
-          <camunda:formField id="onlyMeasurementErrors" label="Noise Model contains only measurement errors" type="boolean" />
-          <camunda:formField id="gammas" label="gammas" type="string" defaultValue="[1]" />
-          <camunda:formField id="betas" label="betas" type="string" defaultValue="[1]" />
+          <camunda:formField id="gamma" label="gamma" type="string" defaultValue="1" />
+          <camunda:formField id="beta" label="beta" type="string" defaultValue="1" />
           <camunda:formField id="p" label="p" type="string" defaultValue="1" />
         </camunda:formData>
       </bpmn:extensionElements>

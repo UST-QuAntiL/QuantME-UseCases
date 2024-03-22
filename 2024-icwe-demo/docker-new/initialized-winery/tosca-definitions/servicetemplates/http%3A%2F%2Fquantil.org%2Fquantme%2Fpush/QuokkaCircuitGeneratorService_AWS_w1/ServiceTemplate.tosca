@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Definitions targetNamespace="http://quantil.org/quantme/push" id="push-QuokkaOptimizationService_INCOMPLETE_w1-completed-w1-wip1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:researchobject="http://www.eclipse.org/winery/model/researchobject" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
-    <ServiceTemplate name="QuokkaOptimizationService_INCOMPLETE_w1-completed-w1-wip1" targetNamespace="http://quantil.org/quantme/push" id="QuokkaOptimizationService_INCOMPLETE_w1-completed-w1-wip1">
+<Definitions targetNamespace="http://quantil.org/quantme/push" id="push-QuokkaCircuitGeneratorService_INCOMPLETE_w1-completed-w1-wip1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:researchobject="http://www.eclipse.org/winery/model/researchobject" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <ServiceTemplate name="QuokkaCircuitGeneratorService_INCOMPLETE_w1-completed-w1-wip1" targetNamespace="http://quantil.org/quantme/push" id="QuokkaCircuitGeneratorService_INCOMPLETE_w1-completed-w1-wip1">
         <Tags>
             <Tag name="top-node" value="QuokkaPythonApp_latest-w1-wip1_0"/>
         </Tags>
@@ -17,21 +17,21 @@
             </Properties>
         </BoundaryDefinitions>
         <TopologyTemplate>
-            <NodeTemplate name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_0" winery:location="*" winery:x="965" winery:y="383" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
+            <NodeTemplate name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_0" winery:location="*" winery:x="694" winery:y="429" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
                 <Properties>
                     <ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
-                        <ntyIgeneral3:StartupCommand>export FLASK_APP=optimization-service.py &amp;&amp; export FLASK_ENV=development &amp;&amp; export FLASK_DEBUG=0 &amp;&amp; python3 -m flask run --host=0.0.0.0</ntyIgeneral3:StartupCommand>
-                        <ntyIgeneral3:Name>Optimization</ntyIgeneral3:Name>
+                        <ntyIgeneral3:StartupCommand>apt-get update &amp;&amp; apt-get install texlive texlive-latex-extra texlive-luatex texlive-xetex texlive-lang-european -y &amp;&amp; apt-get install -y poppler-utils &amp;&amp; export FLASK_APP=app.py &amp;&amp; export FLASK_ENV=development &amp;&amp; export FLASK_DEBUG=0 &amp;&amp; python3 -m flask run --host=0.0.0.0</ntyIgeneral3:StartupCommand>
+                        <ntyIgeneral3:Name>Generation</ntyIgeneral3:Name>
                     </ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
                 </Properties>
                 <Requirements>
-                    <Requirement name="ReqCanRunQuokka" type="rtyIgeneral:ReqCanRunQuokka" id="ReqRunQuokka" xmlns:rtyIgeneral="https://ust-quantil.github.io/requirementtypes"/>
+                    <Requirement name="ReqCanRunQuokka" type="rtyIgeneral:ReqCanRunQuokka" id="ReqCanRunQuokka" xmlns:rtyIgeneral="https://ust-quantil.github.io/requirementtypes"/>
                 </Requirements>
                 <DeploymentArtifacts>
-                    <DeploymentArtifact name="Service" artifactType="artifacttypes:PythonArchiveArtifact" artifactRef="ateIgeneral2:QuokkaOptimizationServiceArtifact" xmlns:ateIgeneral2="https://ust-quantil.github.io/quantum/applications/artifacttemplates" xmlns:artifacttypes="http://opentosca.org/artifacttypes"/>
+                    <DeploymentArtifact name="Service" artifactType="artifacttypes:PythonArchiveArtifact" artifactRef="ateIgeneral2:QuokkaCircuitGenerationServiceArtifact" xmlns:ateIgeneral2="https://ust-quantil.github.io/quantum/applications/artifacttemplates" xmlns:artifacttypes="http://opentosca.org/artifacttypes"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
-            <NodeTemplate name="Qiskit" minInstances="1" maxInstances="1" type="ntyIgeneral3:Qiskit_latest-w1" id="Qiskit_latest-w1_0" winery:location="*" winery:x="967" winery:y="518" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
+            <NodeTemplate name="Qiskit" minInstances="1" maxInstances="1" type="ntyIgeneral3:Qiskit_latest-w1" id="Qiskit_latest-w1_0" winery:location="*" winery:x="694" winery:y="556" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
                 <Requirements>
                     <Requirement name="ReqCanRunQiskit" type="rtyIgeneral:ReqCanRunQiskit" id="reqcanrunqiskit" xmlns:rtyIgeneral="https://ust-quantil.github.io/requirementtypes"/>
                     <Requirement name="ReqCanInstallQiskit" type="rtyIgeneral:ReqCanInstallQiskit" id="reqcaninstallqiskit" xmlns:rtyIgeneral="https://ust-quantil.github.io/requirementtypes"/>
@@ -40,7 +40,7 @@
                     <Capability name="CapCanRunQuokka" type="ctyIgeneral:CapCanRunQuokka" id="capcanrunquokka" xmlns:ctyIgeneral="https://ust-quantil.github.io/capabilitytypes"/>
                 </Capabilities>
             </NodeTemplate>
-            <NodeTemplate name="Ubuntu-VM" minInstances="1" maxInstances="1" type="nodetypes:Ubuntu-VM_20.04-w1" id="Ubuntu-VM_20.04-w1_0" winery:location="*" winery:x="973" winery:y="647" xmlns:nodetypes="http://opentosca.org/nodetypes">
+            <NodeTemplate name="Ubuntu-VM" minInstances="1" maxInstances="1" type="nodetypes:Ubuntu-VM_20.04-w1" id="Ubuntu-VM_20.04-w1_0" winery:location="*" winery:x="701" winery:y="678" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Properties>
                     <nodetypes:VirtualMachineProperties>
                         <nodetypes:VMIP/>
@@ -64,7 +64,7 @@
                     <Capability name="CapCanRunQiskit" type="ctyIgeneral:CapCanRunQiskit" id="capcanrunqiskit" xmlns:ctyIgeneral="https://ust-quantil.github.io/capabilitytypes"/>
                 </Capabilities>
             </NodeTemplate>
-            <NodeTemplate name="Python" minInstances="1" maxInstances="1" type="nodetypes:Python_3-w1" id="Python_3-w1_0" winery:location="*" winery:x="676" winery:y="577" xmlns:nodetypes="http://opentosca.org/nodetypes">
+            <NodeTemplate name="Python" minInstances="1" maxInstances="1" type="nodetypes:Python_3-w1" id="Python_3-w1_0" winery:location="*" winery:x="355" winery:y="616" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Requirements>
                     <Requirement name="ReqCanHostPython" type="requirementtypes:ReqCanHostPython" id="reqcanhostpython" xmlns:requirementtypes="http://opentosca.org/requirementtypes"/>
                 </Requirements>
@@ -72,7 +72,7 @@
                     <Capability name="CapCanInstallQiskit" type="ctyIgeneral:CapCanInstallQiskit" id="capcaninstallqiskit" xmlns:ctyIgeneral="https://ust-quantil.github.io/capabilitytypes"/>
                 </Capabilities>
             </NodeTemplate>
-            <NodeTemplate name="EC2-w1" minInstances="1" maxInstances="1" type="nodetypes:EC2-w1" id="EC2-w1_0" winery:location="*" winery:x="982" winery:y="776" xmlns:nodetypes="http://opentosca.org/nodetypes">
+            <NodeTemplate name="EC2-w1" minInstances="1" maxInstances="1" type="nodetypes:EC2-w1" id="EC2-w1_0" winery:location="*" winery:x="709" winery:y="795" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Requirements>
                     <Requirement name="ReqCanHostEC2" type="requirementtypes:ReqCanHostEC2" id="reqcanhostec2" xmlns:requirementtypes="http://opentosca.org/requirementtypes"/>
                 </Requirements>
@@ -80,7 +80,7 @@
                     <Capability name="CapCanHostUbuntuVM" type="capabilitytypes1:CapCanHostUbuntuVM" id="capcanhostubuntuaws" xmlns:capabilitytypes1="http://opentosca.org/capabilitytypes"/>
                 </Capabilities>
             </NodeTemplate>
-            <NodeTemplate name="AWS_w1" minInstances="1" maxInstances="1" type="nodetypes:AWS_w1" id="AWS_w1_0" winery:location="*" winery:x="988" winery:y="899" xmlns:nodetypes="http://opentosca.org/nodetypes">
+            <NodeTemplate name="AWS_w1" minInstances="1" maxInstances="1" type="nodetypes:AWS_w1" id="AWS_w1_0" winery:location="*" winery:x="711" winery:y="916" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Properties>
                     <nodetypes:AWS_w1>
                         <nodetypes:AWS_ACCESS_KEY_ID>get_input: AWSAccessKey</nodetypes:AWS_ACCESS_KEY_ID>
@@ -92,27 +92,27 @@
                     <Capability name="CapCanHostEC2" type="capabilitytypes1:CapCanHostEC2" id="capcanhostec2" xmlns:capabilitytypes1="http://opentosca.org/capabilitytypes"/>
                 </Capabilities>
             </NodeTemplate>
-            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_31857330" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_189326495" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
                 <SourceElement ref="QuokkaPythonApp_latest-w1-wip1_0"/>
                 <TargetElement ref="Qiskit_latest-w1_0"/>
             </RelationshipTemplate>
-            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_48622243" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_183065085" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
                 <SourceElement ref="Qiskit_latest-w1_0"/>
                 <TargetElement ref="Ubuntu-VM_20.04-w1_0"/>
             </RelationshipTemplate>
-            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_55500708" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_198729885" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
                 <SourceElement ref="Qiskit_latest-w1_0"/>
                 <TargetElement ref="Python_3-w1_0"/>
             </RelationshipTemplate>
-            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_195114541" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_22105767" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
                 <SourceElement ref="Ubuntu-VM_20.04-w1_0"/>
                 <TargetElement ref="EC2-w1_0"/>
             </RelationshipTemplate>
-            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_79275294" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_162366589" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
                 <SourceElement ref="Python_3-w1_0"/>
                 <TargetElement ref="Ubuntu-VM_20.04-w1_0"/>
             </RelationshipTemplate>
-            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_187169601" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_64724869" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
                 <SourceElement ref="EC2-w1_0"/>
                 <TargetElement ref="AWS_w1_0"/>
             </RelationshipTemplate>
