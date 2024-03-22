@@ -3,47 +3,6 @@
   <bpmn:process id="Process_070m5p1" isExecutable="true">
     <bpmn:subProcess id="Activity_028xt2m" camunda:asyncBefore="true" camunda:asyncAfter="true">
       <bpmn:scriptTask id="Activity_0wac9lj" name="Generate&#10;Service" camunda:asyncBefore="true" camunda:asyncAfter="true" scriptFormat="groovy">
-        <bpmn:extensionElements>
-          <camunda:connector>
-            <camunda:inputOutput>
-              <camunda:inputParameter name="method">POST</camunda:inputParameter>
-              <camunda:inputParameter name="headers">
-                <camunda:map>
-                  <camunda:entry key="Accept">*</camunda:entry>
-                  <camunda:entry key="Content-Type">application/json</camunda:entry>
-                </camunda:map>
-              </camunda:inputParameter>
-              <camunda:inputParameter name="url">http://quantumservicesdeployment.spilab.es:8080/update_circuit</camunda:inputParameter>
-              <camunda:inputParameter name="payload">
-                <camunda:script scriptFormat="groovy">
-				import groovy.json.JsonBuilder
-println("123")
-				  def circuit = execution.getVariable("circuit")[0];
-				  def request = [:];
-
-				  request.put("new_circuit_string", circuit);
-println(request)
-				  request.put("circuit_name","maxcut3qubitsQASM");
-				  request.put("yaml_data","https://raw.githubusercontent.com/javierrome236/quantumDeployment/main/openapi_tutorial.yaml");
-				  request.put("name","python6789648572");
-				  request.put("docker_hub_repo","jaimeav/quantumservices_prueba");
-println(request)
-				  
-				  requeststring = new JsonBuilder(request).toPrettyString()
-				  println(requeststring)</camunda:script>
-              </camunda:inputParameter>
-              <camunda:outputParameter name="serviceGeneratorUrl">
-                <camunda:script scriptFormat="groovy">println("responding")
-					def resp = connector.getVariable("response");
-println("past resp load")
-					println(resp)
-					return resp;
-				</camunda:script>
-              </camunda:outputParameter>
-            </camunda:inputOutput>
-            <camunda:connectorId>http-connector</camunda:connectorId>
-          </camunda:connector>
-        </bpmn:extensionElements>
         <bpmn:incoming>Flow_1gnn19f</bpmn:incoming>
         <bpmn:outgoing>Flow_09sos2m</bpmn:outgoing>
         <bpmn:script>import groovy.json.*
@@ -57,8 +16,9 @@ def gamma = Float.valueOf(execution.getVariable("gamma"));
 def beta = Float.valueOf(execution.getVariable("beta"));
 def optimizedParameters = execution.getVariable("optimizedParameters");
 if (optimizedParameters != null){
-beta = optimizedParameters[0]
-gamma = optimizedParameters[1]
+def paramList = new JsonSlurper().parseText(optimizedParameters)
+beta = paramList[0]
+gamma = paramList[1]
 }
 
 				  def request = [:];
@@ -117,47 +77,6 @@ println(resultText)
         <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${ execution.getVariable('serviceGeneratorUrl')== null}</bpmn:conditionExpression>
       </bpmn:sequenceFlow>
       <bpmn:scriptTask id="Activity_0sxiu3a" name="Generate&#10;Service" camunda:asyncBefore="true" camunda:asyncAfter="true" scriptFormat="groovy">
-        <bpmn:extensionElements>
-          <camunda:connector>
-            <camunda:inputOutput>
-              <camunda:inputParameter name="method">POST</camunda:inputParameter>
-              <camunda:inputParameter name="headers">
-                <camunda:map>
-                  <camunda:entry key="Accept">*</camunda:entry>
-                  <camunda:entry key="Content-Type">application/json</camunda:entry>
-                </camunda:map>
-              </camunda:inputParameter>
-              <camunda:inputParameter name="url">http://quantumservicesdeployment.spilab.es:8080/update_circuit</camunda:inputParameter>
-              <camunda:inputParameter name="payload">
-                <camunda:script scriptFormat="groovy">
-				import groovy.json.JsonBuilder
-println("123")
-				  def circuit = execution.getVariable("circuit")[0];
-				  def request = [:];
-
-				  request.put("new_circuit_string", circuit);
-println(request)
-				  request.put("circuit_name","maxcut3qubitsQASM");
-				  request.put("yaml_data","https://raw.githubusercontent.com/javierrome236/quantumDeployment/main/openapi_tutorial.yaml");
-				  request.put("name","python6789648572");
-				  request.put("docker_hub_repo","jaimeav/quantumservices_prueba");
-println(request)
-				  
-				  requeststring = new JsonBuilder(request).toPrettyString()
-				  println(requeststring)</camunda:script>
-              </camunda:inputParameter>
-              <camunda:outputParameter name="serviceGeneratorUrl">
-                <camunda:script scriptFormat="groovy">println("responding")
-					def resp = connector.getVariable("response");
-println("past resp load")
-					println(resp)
-					return resp;
-				</camunda:script>
-              </camunda:outputParameter>
-            </camunda:inputOutput>
-            <camunda:connectorId>http-connector</camunda:connectorId>
-          </camunda:connector>
-        </bpmn:extensionElements>
         <bpmn:incoming>Flow_0mru7m1</bpmn:incoming>
         <bpmn:outgoing>Flow_0i9chg4</bpmn:outgoing>
         <bpmn:script>import groovy.json.*
@@ -178,7 +97,7 @@ println(request)
 				  request.put("name",randomNum);
 				  request.put("docker_hub_repo","jaimeav/quantumservices_prueba");
 println(request)
-				  
+
 				  message= new JsonBuilder(request).toPrettyString()
 				  println(message)
 
