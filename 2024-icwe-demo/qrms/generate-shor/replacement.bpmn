@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:opentosca="https://github.com/UST-QuAntiL/OpenTOSCA" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
   <bpmn2:process id="Process_1" isExecutable="true">
-    <bpmn2:serviceTask id="Activity_0nhrtqc" name="Generate Circuits" camunda:asyncAfter="true" camunda:exclusive="false">
+    <bpmn2:serviceTask id="Activity_11bzsga" name="Generate Circuits" camunda:asyncAfter="true" camunda:exclusive="false" opentosca:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpush/QuokkaCircuitGeneratorService_w1/?csar">
       <bpmn2:extensionElements>
         <camunda:connector>
           <camunda:inputOutput>
@@ -12,7 +12,7 @@
                 <camunda:entry key="Content-Type">application/json</camunda:entry>
               </camunda:map>
             </camunda:inputParameter>
-            <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/circuit-generation/algorithms/shor/discreteLog</camunda:inputParameter>
+            <camunda:inputParameter name="url">algorithms/shor/discreteLog</camunda:inputParameter>
             <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="groovy">
 			    import groovy.json.JsonBuilder
@@ -60,14 +60,15 @@ return n_qubits;</camunda:script>
         </camunda:connector>
         <camunda:inputOutput>
           <camunda:inputParameter name="url">quokka/maxcut</camunda:inputParameter>
+          <camunda:inputParameter name="url">quokka/shor</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn2:extensionElements>
     </bpmn2:serviceTask>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
-      <bpmndi:BPMNShape id="Activity_1jetah4_di" bpmnElement="Activity_0nhrtqc">
-        <dc:Bounds x="0" y="0" width="100" height="80" />
+      <bpmndi:BPMNShape id="Activity_17yysqs_di" bpmnElement="Activity_11bzsga">
+        <dc:Bounds x="86" y="0" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
