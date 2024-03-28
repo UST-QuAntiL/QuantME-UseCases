@@ -14,6 +14,15 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
 * [AWS Braket Hybrid Jobs Handler](https://github.com/UST-QuAntiL/amazon-braket-hybrid-jobs-handler): A service generating AWS Braket Hybrid Jobs programs for hybrid loops based on corresponding workflow fragments detected by the QuantME Modeling and Transformation Framework.
 * [Script Splitter](https://github.com/UST-QuAntiL/qscript-splitter): A service analyzing Python scripts to detect quantum and classical parts, which are then orchestrated by a generated workflow model.
 
+
+### ICWE 2024  - Demonstration
+
+In this demonstration, we introduce an approach for enabling the development of portable and interoperable quantum applications utilizing a standards-based toolchain. 
+Our approach facilitates the utilization of heterogeneous tools supporting the development of classical and quantum components.
+Thereby, we employ well-established standards for defining workflows, deployment topologies, application interfaces, and provenance data.
+To demonstrate the practical feasibility of our toolchain, we showcase it for two use cases from the cryptography and machine learning domains.
+The corresponding workflow, as well as instructions on how to set up the environment and execute the application can be found [here](2024-icwe-demo).
+
 ### CAiSE 2024 - Prototype
 
 In this paper, we introduce an approach for enabling unified observability of hybrid quantum applications in heterogeneous multi-cloud environments.
