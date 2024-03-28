@@ -15,7 +15,7 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
 * [Script Splitter](https://github.com/UST-QuAntiL/qscript-splitter): A service analyzing Python scripts to detect quantum and classical parts, which are then orchestrated by a generated workflow model.
 
 
-### ICWE 2024  - Demonstration
+### ICWE 2024 - Demonstration
 
 In this demonstration, we introduce an approach for enabling the development of portable and interoperable quantum applications utilizing a standards-based toolchain. 
 Our approach facilitates the utilization of heterogeneous tools supporting the development of classical and quantum components.

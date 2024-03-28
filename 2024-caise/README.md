@@ -65,10 +65,10 @@ Thereby, $IP has to be replaced with the IP address of the Docker engine used fo
     * ``QRM Repository User``: UST-QuAntiL
     * ``QRM Repository Name``: QuantME-UseCases
     * ``QRM Repository Path``: 2024-caise/qrms
-* Under ``QuantME Plugin``:
+* Under ``OpenTOSCA Plugin``:
     * ``OpenTOSCA Endpoint:``: http://$IP:1337/csars
     * ``Winery Endpoint:``: http://$IP:8093/winery
-* Under ``OpenTOSCA Plugin``:
+* Under ``QuantME Plugin``:
     * ``QuantME Framework Endpoint``: http://$IP:8888
     * ``QProv Endpoint``: http://$IP:8094/qprov
 

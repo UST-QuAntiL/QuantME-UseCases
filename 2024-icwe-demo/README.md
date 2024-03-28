@@ -1,14 +1,10 @@
-# CCIS 2023 Prototype
+# ICWE 2024 Demonstration Prototype
 
-Variational Quantum Algorithms (VQAs) comprise various complex reoccurring tasks that are not part of the original set of [QuantME modeling constructs](https://www.iaas.uni-stuttgart.de/publications/Weder2020_QuantumWorkflows.pdf), e.g., parameter optimization or objective function evaluation.
-As the lack of modeling support for these tasks complicates the process of modeling VQAs in workflows, we developed an extension for QuantME that introduces a new set of modeling constructs specifically tailored for VQAs.
-
-In the following sections, we showcase how these new QuantME4VQA modeling constructs can be used to model and execute an exemplary VQA that solves the Maximum Cut (MaxCut) problem using the [Quantum Approximate Optimization Algorithm (QAOA)](https://arxiv.org/pdf/1411.4028.pdf).
-
-The use case utilizes the Quantum Workflow Modeler and Quokka:
-
-* [Quantum Workflow Modeler](https://github.com/PlanQK/workflow-modeler): A graphical BPMN modeler to define, transform, and deploy quantum workflows.
-* [Quokka](https://github.com/UST-QuAntiL/Quokka): A microservice ecosystem enabling a service-based execution of quantum algorithms.
+The increasing availability of quantum devices via the cloud led to a multitude of commercial and scientific tools for developing quantum applications.
+However, since quantum applications are typically hybrid, comprising both quantum and classical parts, these tools are very heterogeneous.
+Therefore, combining them within a single application is complicated by incompatible programming languages, data formats, and interfaces.
+Hence, to enable the development of portable and interoperable quantum applications a standards-based toolchain is required.
+In this demonstration, we present a holistic toolchain for developing quantum applications utilizing well-established standards for defining workflows, deployment topologies, application interfaces, and provenance data.
 
 ## Setup
 
@@ -33,7 +29,7 @@ Afterwards, the following screen should be displayed:
 
 ![Modeler Initial](./docs/modeler-initial.png)
 
-Open the example workflow model available [here](./workflow/workflow_casestudy.bpmn) using the Quantum Workflow Modeler.
+Open the example workflow model available [here](./workflow/machine_learning_use_case.bpmn) using the Quantum Workflow Modeler.
 For this, click on ``Open`` in the top-left corner, and afterwards, select the workflow model in the dialogue ``Open File...``.
 Then, the following screen is displayed:
 
@@ -47,29 +43,29 @@ To check these settings, click on ``Configuration`` in the toolbar, opening the 
 Please verify that the different configuration properties are set to the following values.
 Thereby, $IP has to be replaced with the IP-address of the Docker engine used for the setup described above:
 
-* Under ``Editor``:
-    * ``Camunda Engine Endpoint``: http://$IP:8080/engine-rest
-* Under ``QRM Data``:
-    * ``QRM Repository User``: UST-QuAntiL
-    * ``QRM Repository Name``: QuantME-UseCases
-    * ``QRM Repository Path``: 2023-ccis/qrms
-
+* Under ``General``:
+  * ``Camunda Engine Endpoint``: http://$IP:8080/engine-rest
+* Under ``GitHub``:
+  * ``QRM Repository User``: UST-QuAntiL
+  * ``QRM Repository Name``: QuantME-UseCases
+  * ``QRM Repository Path``: 2024-icwe-demo/qrms
+* Under ``OpenTOSCA Plugin``:
+  * ``OpenTOSCA Endpoint:``: http://$IP:1337/csars
+  * ``Winery Endpoint:``: http://$IP:8093/winery
+* Under ``QuantME Plugin``:
+  * ``QProv Endpoint``: http://$IP:8094/qprov
 
 ### Configuring, Transforming, and Executing the Quantum Workflow
 
-The imported workflows starts of with a warm-starting task, which is used to approximate a solution that is incorporated into the quantum circuit to facilitate the search for the optimal solution.
-Next, it generates a parameterized QAOA circuit for MaxCut.
-This circuit, is then cut into smaller sub-circuits by the circuit cutting sub-process, which are subsequently executed.
-Afterwards, the results of the sub-circuits are combined to construct the original circuit's result.
-This result is evaluated and used to optimize the QAOA parameters, starting another iteration of the loop.
+The imported workflows starts of with a quantum circuit loading task that generates a parameterized QAOA circuit for MaxCut.
+Afterwards, the circuit is executed and subsequently evaluated by a result evaluation task.
+Subsequently, the circuit parameters are optimized by a parameter optimization task for the next iteration of the quantum algorithm.
 Once the optimization is converged, the result is returned to the user for analysis.
-
-QuantME4VQA enables the configuration of the warm-starting, optimization and circuit-cutting via the properties panel (see on the right).
 
 ![QuantME4VQA Properties](./docs/modeler-properties.png)
 
-To execute the workflow, the QuantME and QuantME4VAR modeling constructs must be replaced by standard-compliant BPMN modeling constructs.
-Therefore, click on the ``Transform Workflow`` button.
+To execute the workflow, the QuantME modeling constructs must be replaced by standard-compliant BPMN modeling constructs.
+Therefore, click on the ``Transformation`` button.
 
 ![Quantum Workflow Modeler](./docs/modeler-transformation.png)
 
@@ -83,7 +79,7 @@ Next, deploy the workflow by clicking the ``Deploy Workflow`` button.
 
 ![Quantum Workflow Modeler](./docs/modeler-deploy-workflow.png)
 
-Open the Camunda Engine using the following URL: [localhost:8090](http://localhost:8090)
+Open the Camunda Engine using the following URL: [$IP:8090](http://$IP:8090)
 Use ``demo`` as username and password to log in, which displays the following screen:
 
 ![Camunda Loginscreen](./docs/camunda-loginscreen.png)
@@ -98,33 +94,22 @@ To instantiate the workflow, click the home button on the top-right, then select
 Next, click on ``Start process`` on the top-right, select the name of the uploaded workflow, and provide the input parameters as shown below:
 
 * ``adjMatrix``: ``[[0,2,1],[3,0,1],[1,2,0]]``
-* ``betas``: ``[1]``
-* ``gammas``: ``[1]``
+* ``betas``: ``1``
+* ``gammas``: ``1``
 * ``token``: ``YOUR_IBMQ_TOKEN`` (can be left empty when using the aer simulator (default))
 
 ![Camunda Start Process](./docs/camunda-startprocess.png)
 
 The UI displays a notification at the bottom-right that the workflow instance was successfully started.
 Afterwards, once more, click on the home icon on the top-right and select Cockpit. 
-Click on the Running Process Instance, select the started workflow, and then click on the workflow ID. 
-Now the workflow's token flow and the changing variables can be observed. To see the current state of the workflow instance refresh the page.
+Click on the running process instance, select the started workflow, and then click on the workflow ID. 
+Now the workflow's token flow and the changing variables can be observed. 
+To see the current state of the workflow instance refresh the page.
 
 ![Camunda Start Process](./docs/camunda-running-workflow.png)
 
 Wait until the token reaches the final user task in the workflow, as depicted below.
 This might take some time, depending on the circuit size, the execution parameters, and the utilization of the selected quantum device or simulator.
-
-![Camunda Start Process](./docs/camunda-processfinished.png)
-
-Switch to the Tasklist.
-Select the task item on the left (1), then click on ``Claim`` to activate the item (2), and download the result plot using the given URL (3).
-Finally, click the ``Complete`` button (4) to finish the human task, and as it is the last activity in the workflow, to terminate the workflow instance.
-
-![Camunda Analyze Results](./docs/camunda-analyzeresults.png)
-
-Open the downloaded image, visualizing the MaxCut solution for the input graph.
-
-![Max Cut Plot](./docs/maxcut-plot.png)
 
 ## Disclaimer of Warranty
 Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.
