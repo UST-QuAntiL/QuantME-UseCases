@@ -1,4 +1,4 @@
-version: '3'
+version: '4'
 
 services:
   #############
@@ -16,7 +16,6 @@ services:
       POSTGRES_DATABASES: 'planqk:planqk|patternatlas:patternatlas|qprov:qprov|registry:registry'
       QC_ATLAS_CONTENT_REPOSITORY_BRANCH: 'master'
       ATLAS_DB: planqk
-      NISQ_DB: nisq
       PATTERNATLAS_DB: patternatlas
       QPROV_DB: qprov
     ports:
@@ -24,44 +23,12 @@ services:
     networks:
       - planqk-demo
   
-  redis:
-    image: redis:6.2.2
-    ports:
-      - "5040:5040"
-    command: --port 5040
-    networks:
-      - planqk-demo
   
   ############
   # QC Atlas #
   ############
 
-  qc-atlas-ui:
-    image: planqk/qc-atlas-ui:latest
-    depends_on:
-      - config-server
-    environment:
-      # because the requests are performed from the browser and not
-      # from the container itself we have to specify localhost here
-      # and **not** the container name
-      QC_ATLAS_HOST_NAME: localhost
-      QC_ATLAS_PORT: 6626
-      PATTERN_ATLAS_HOST_NAME: localhost
-      PATTERN_ATLAS_PORT: 1977
-      PATTERN_ATLAS_UI_HOST_NAME: localhost
-      PATTERN_ATLAS_UI_PORT: 1978
-      NISQ_ANALYZER_HOST_NAME: localhost
-      NISQ_ANALYZER_PORT: 5010
-      QPROV_HOST_NAME: localhost
-      QPROV_PORT: 5020
-      LATEX_RENDERER_HOST_NAME: localhost
-      LATEX_RENDERER_PORT: 5030
-    ports:
-      - '8060:80'
-    volumes:
-      - ./config:/opt/init-config.d
-    networks:
-      - planqk-demo
+  # connection between the pattern and solutions
   qc-atlas:
     image: planqk/atlas:latest
     depends_on:
@@ -77,19 +44,19 @@ services:
     networks:
       - planqk-demo
 
-  ####################
-  # Workflow Modeler #
-  ####################
+  #############################
+  # Workflow Modeler + Engine #
+  #############################
 
   workflow-modeler:
-    image: planqk/workflow-modeler:local
-    platform: linux/amd64
+    image: planqk/workflow-modeler:v1.2.0
     environment:
      CAMUNDA_ENDPOINT: http://$PUBLIC_HOSTNAME:8090/engine-rest
      PATTERN_ATLAS_ENDPOINT: http://$PUBLIC_HOSTNAME:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
      OPENTOSCA_ENDPOINT: http://$PUBLIC_HOSTNAME:1337/csars
      WINERY_ENDPOINT: http://$PUBLIC_HOSTNAME:8093/winery
      ENABLE_DATA_FLOW_PLUGIN: 'false'
+     ENABLE_PATTERN_PLUGIN: 'true'
      ENABLE_PLANQK_PLUGIN: 'false'
      ENABLE_QHANA_PLUGIN: 'false'
      ENABLE_QUANTME_PLUGIN: 'true'
@@ -97,28 +64,12 @@ services:
      QRM_REPONAME: 'QuantME-UseCases'
      QRM_REPOPATH: '2023-icwe/qrms'
     ports:
-      - 8061:8080
-    networks:
-      - planqk-demo
-  
-  transformation-backend:
-    image: planqk/quantme-backend:v1.8.0
-    platform: linux/amd64
-    environment:
-      CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
-      OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
-      PORT: 8888
-      QRM_USERNAME: ${QRM_USERNAME}
-      QRM_REPONAME: ${QRM_REPONAME}
-      QRM_REPOPATH: ${QRM_REPOPATH}
-      WINERY_ENDPOINT: http://${PUBLIC_HOSTNAME}:8093/winery
-    ports:
-      - 8888:8888
+      - 8080:8080
     networks:
       - planqk-demo
 
   camunda-engine:
-    image: camunda/camunda-bpm-platform:run-7.19.0
+    image: planqk/camunda-process-views-plugin:v1.0.0
     ports:
       - 8090:8080
     networks:
@@ -128,6 +79,7 @@ services:
   # Pattern Atlas #
   #################
 
+  # allows to retrieve information of each pattern
   pattern-atlas-api:
     image: patternatlas/pattern-atlas-api:latest
     environment:
@@ -142,10 +94,8 @@ services:
       JDBC_DATABASE_NAME: patternatlas
       PATTERN_ATLAS_FETCH_INITIAL_DATA: 'true'
       HAL_EXPLORER: 'false'
-      #PATTERN_ATLAS_CONTENT_REPOSITORY_BRANCH: feature/known_uses
       # activate correct application properties
       SPRING_PROFILES_ACTIVE: docker
-      JWK_URI: http://auth:8080/realms/patternatlas/protocol/openid-connect/certs
       SECURITY_LOGLEVEL: info
     ports:
       - "1977:1977"
@@ -154,13 +104,11 @@ services:
     depends_on:
       - db
       - latex-renderer
-    restart: on-failure
 
+  # contains more information regarding the patterns
   pattern-atlas-ui:
     image: patternatlas/pattern-atlas-ui:v1.5.6
     platform: linux/x86_64
-    depends_on:
-      - config-server
     environment:
       # because the requests are performed from the browser and not
       # from the container itself we have to specify localhost here
@@ -170,73 +118,17 @@ services:
       LATEX_RENDERER_HOST_NAME: localhost
       LATEX_RENDERER_PORT: 5030
       URL_SCHEME: http
-      AUTH_REALM_URL: http://localhost:7080/realms/patternatlas
     ports:
       - "1978:80"
     networks:
       - planqk-demo
 
-  auth:
-    image: quay.io/keycloak/keycloak:18.0.0
-    command: start-dev --import-realm
-    volumes:
-      - ./keycloak_import:/opt/keycloak/data/import
-    environment:
-      KEYCLOAK_ADMIN_PASSWORD: admin
-      KEYCLOAK_ADMIN: admin
-    ports:
-      - "7080:8080"
-    networks:
-      - planqk-demo
-
-  config-server:
-    image: quay.io/coreos/etcd:latest
-    platform: linux/amd64
-    environment:
-      ETCD_NAME: config-node1
-      ETCD_CORS: "*"
-      ETCD_ADVERTISE_CLIENT_URLS: "http://config-server:2379"
-      ETCD_LISTEN_CLIENT_URLS: "http://0.0.0.0:2379"
-      ETCDCTL_API: 3
-    ports:
-      - "2379:2379"
-    networks:
-      - planqk-demo
-
-  # used by the pattern atlas to render latex
+  # required by the pattern atlas to render latex
   latex-renderer:
     image: planqk/latex-renderer:v1.1.1
     platform: linux/amd64
     ports:
       - "5030:5030"
-    networks:
-      - planqk-demo
-
-  qiskit-service:
-    image: planqk/qiskit-service:latest
-    command: sh /app/startup.sh
-    ports:
-      - "5013:5013"
-    environment:
-      - REDIS_URL=redis://redis:5040
-      - DATABASE_URL=sqlite:////data/app.db
-    volumes:
-      - exec_data:/data
-    networks:
-      - planqk-demo
-
-  qiskit-rq-worker:
-    image: planqk/qiskit-service:latest
-    command: rq worker --url redis://redis:5040 qiskit-service_execute
-    environment:
-      - REDIS_URL=redis://redis:5040
-      - DATABASE_URL=sqlite:////data/app.db
-    volumes:
-      - exec_data:/data
-    depends_on:
-      - redis
-    deploy:
-      replicas: 1
     networks:
       - planqk-demo
   
@@ -277,14 +169,6 @@ services:
     platform: linux/amd64
     ports:
       - '5073:5073'
-    networks:
-      - planqk-demo
-
-  circuit-cutting-service:
-    image: planqk/circuit-cutting-service:v0.1.0
-    platform: linux/amd64
-    ports:
-      - '5076:5076'
     networks:
       - planqk-demo
 
