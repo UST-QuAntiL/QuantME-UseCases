@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://opentosca.org/nodetypeimplementations" id="winery-defs-for_otntyiIgeneral-DockerContainer_Impl" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:ns0="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:ns3="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <NodeTypeImplementation targetNamespace="http://opentosca.org/nodetypeimplementations" name="DockerContainer_Impl" abstract="no" final="no" nodeType="otntyIgeneral:DockerContainer" xmlns:otntyIgeneral="http://opentosca.org/nodetypes">
+        <ImplementationArtifacts>
+            <ImplementationArtifact name="DockerContainer_ContainerManagementInterface_IA" interfaceName="ContainerManagementInterface" artifactType="otatyIgeneral:WAR" artifactRef="otateIgeneral:DockerContainer_ContainerManagementInterface_ImplArtifact" xmlns:otateIgeneral="http://opentosca.org/artifacttemplates" xmlns:otatyIgeneral="http://opentosca.org/artifacttypes"/>
+        </ImplementationArtifacts>
+    </NodeTypeImplementation>
+</Definitions>

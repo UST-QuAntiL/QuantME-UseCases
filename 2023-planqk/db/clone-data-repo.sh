@@ -8,6 +8,7 @@ echo "ssh key present"
 echo ${QC_ATLAS_CONTENT_REPOSITORY_BRANCH}
 echo ${QC_ATLAS_CONTENT_REPOSITORY_URL}
 echo ${QC_ATLAS_CONTENT_REPOSITORY_PATH}
+echo ${QC_ATLAS_SUBFOLDER_CONTENT_BACKUP_FILES}
 
 # clone repo, if successful copy setup script to /docker-entrypoint-initdb.d/
 git clone --single-branch --branch ${QC_ATLAS_CONTENT_REPOSITORY_BRANCH} ${QC_ATLAS_CONTENT_REPOSITORY_URL} ${QC_ATLAS_CONTENT_REPOSITORY_PATH}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://ust-quantil.github.io/nodetypes" id="nodeTypesQuantil-IBMQ">
+    <NodeType name="IBMQ" abstract="no" final="no" targetNamespace="https://ust-quantil.github.io/nodetypes">
+        <winery:PropertiesDefinition elementname="properties" namespace="http://www.example.org/tosca/nodetypes/propertiesdefinition/winery">
+            <winery:properties>
+                <winery:constraints/>
+                <winery:defaultValue>AER</winery:defaultValue>
+                <winery:description></winery:description>
+                <winery:key>PROVIDER</winery:key>
+                <winery:required>true</winery:required>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:constraints/>
+                <winery:defaultValue/>
+                <winery:description></winery:description>
+                <winery:key>IBMQ_HUB</winery:key>
+                <winery:required>false</winery:required>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:constraints/>
+                <winery:defaultValue></winery:defaultValue>
+                <winery:description></winery:description>
+                <winery:key>IBMQ_BACKEND_NAME</winery:key>
+                <winery:required>false</winery:required>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:constraints/>
+                <winery:defaultValue></winery:defaultValue>
+                <winery:description></winery:description>
+                <winery:key>IBMQ_TOKEN</winery:key>
+                <winery:required>false</winery:required>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:constraints/>
+                <winery:defaultValue></winery:defaultValue>
+                <winery:description></winery:description>
+                <winery:key>IBMQ_PROJECT</winery:key>
+                <winery:required>false</winery:required>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:constraints/>
+                <winery:defaultValue></winery:defaultValue>
+                <winery:description></winery:description>
+                <winery:key>IBMQ_GROUP</winery:key>
+                <winery:required>false</winery:required>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+        </winery:PropertiesDefinition>
+    </NodeType>
+</Definitions>

@@ -1,4 +1,4 @@
-version: '4'
+version: '5'
 
 services:
   #############
@@ -51,18 +51,20 @@ services:
   workflow-modeler:
     image: planqk/workflow-modeler:v1.2.0
     environment:
-     CAMUNDA_ENDPOINT: http://$PUBLIC_HOSTNAME:8090/engine-rest
-     PATTERN_ATLAS_ENDPOINT: http://$PUBLIC_HOSTNAME:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
-     OPENTOSCA_ENDPOINT: http://$PUBLIC_HOSTNAME:1337/csars
-     WINERY_ENDPOINT: http://$PUBLIC_HOSTNAME:8093/winery
-     ENABLE_DATA_FLOW_PLUGIN: 'false'
-     ENABLE_PATTERN_PLUGIN: 'true'
-     ENABLE_PLANQK_PLUGIN: 'false'
-     ENABLE_QHANA_PLUGIN: 'false'
-     ENABLE_QUANTME_PLUGIN: 'true'
-     QRM_USERNAME: 'LaviniaStiliadou'
-     QRM_REPONAME: 'QuantME-UseCases'
-     QRM_REPOPATH: '2023-icwe/qrms'
+      CAMUNDA_ENDPOINT: http://$PUBLIC_HOSTNAME:8090/engine-rest
+      ENABLE_DATA_FLOW_PLUGIN: 'false'
+      ENABLE_PATTERN_PLUGIN: 'true'
+      ENABLE_PLANQK_PLUGIN: 'false'
+      ENABLE_QHANA_PLUGIN: 'false'
+      ENABLE_QUANTME_PLUGIN: 'true'
+      OPENTOSCA_ENDPOINT: http://$PUBLIC_HOSTNAME:1337/csars
+      PATTERN_ATLAS_ENDPOINT: http://$PUBLIC_HOSTNAME:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
+      PROVENANCE_COLLECTION: 'true'
+      QISKIT_RUNTIME_HANDLER: http://$PUBLIC_HOSTNAME:8889
+      QRM_USERNAME: ${QRM_USERNAME}
+      QRM_REPONAME: ${QRM_REPONAME}
+      QRM_REPOPATH: ${QRM_REPOPATH}
+      WINERY_ENDPOINT: http://$PUBLIC_HOSTNAME:8093/winery
     ports:
       - 8080:8080
     networks:
@@ -132,12 +134,12 @@ services:
     networks:
       - planqk-demo
   
-##########
-# Quokka #
-##########
+  ##########
+  # Quokka #
+  ##########
 
   execution-service:
-    image: stiliala/execution-service:latest
+    image: planqk/execution-service:latest
     platform: linux/amd64
     ports:
       - '5075:5075'
@@ -184,6 +186,96 @@ services:
     image: planqk/quokka-gateway:0.2.0
     ports:
       - '6474:6474'
+    networks:
+      - planqk-demo
+
+  #######################
+  # OpenTOSCA Ecosystem #
+  #######################
+
+  container:
+    image: opentosca/container:v3.1.4
+    ports:
+      - '1337:1337'
+      - '8081-8087:8081-8087'
+    environment:
+      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      ENGINE_IA_JAVA17_HOSTNAME: ${PUBLIC_HOSTNAME}
+      ENGINE_IA_JAVA17_PORT: 8091
+      ENGINE_PLAN_BPEL_HOSTNAME: ${PUBLIC_HOSTNAME}
+      ENGINE_PLAN_BPEL_PORT: 8092
+      CONTAINER_DEPLOYMENT_TESTS: 'false'
+    networks:
+      - planqk-demo
+
+  engine-plan:
+    image: opentosca/ode:v2.4.0
+    networks:
+      - planqk-demo
+    ports:
+      - '8092:9763'
+
+  engine-ia:
+    image: opentosca/engine-ia:v3.0.0-jdk17
+    networks:
+      - planqk-demo
+    ports:
+      - '8091:8080'
+
+  winery:
+    build: initialized-winery
+    logging:
+      driver: none
+    ports:
+      - '8093:8080'
+    environment:
+      WINERY_HOSTNAME: ${PUBLIC_HOSTNAME}
+      WINERY_PORT: 8093
+      WORKFLOWMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      TOPOLOGYMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
+    networks:
+      - planqk-demo
+
+  ##########################
+  # Qiskit Runtime Handler #
+  ##########################
+
+  redis:
+    image: redis:6.2.6
+    command: --port 5040
+    ports:
+      - "5040:5040"
+    networks:
+      - planqk-demo
+
+  qiskit-runtime-handler:
+    image: planqk/qiskit-runtime-handler:latest
+    command: sh /startup.sh
+    ports:
+      - "8889:8889"
+    environment:
+      - REDIS_URL=redis://redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    networks:
+      - planqk-demo
+
+  rq-worker:
+    image: planqk/qiskit-runtime-handler:latest
+    command: rq worker --url redis://redis:5040 qiskit-runtime-handler
+    environment:
+      - FLASK_RUN_HOST=qiskit-runtime-handler
+      - FLASK_RUN_PORT=8889
+      - REDIS_URL=redis://redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    depends_on:
+      - redis
+    deploy:
+      replicas: 1
     networks:
       - planqk-demo
 
