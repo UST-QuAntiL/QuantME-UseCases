@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="https://ust-quantil.github.io/nodetypes" id="nodeTypesQuantil-QuokkaPythonApp_latest-w1-wip1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <NodeType name="QuokkaPythonApp_latest-w1-wip1" abstract="no" final="no" targetNamespace="https://ust-quantil.github.io/nodetypes">
+        <documentation>Test</documentation>
+        <winery:PropertiesDefinition elementname="QuokkaPythonApp_latest-w1-wip1" namespace="https://ust-quantil.github.io/nodetypes">
+            <winery:properties>
+                <winery:key>StartupCommand</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>Name</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+        </winery:PropertiesDefinition>
+        <RequirementDefinitions>
+            <RequirementDefinition name="ReqCanRunQuokka" requirementType="rtyIgeneral:ReqCanRunQuokka" lowerBound="1" upperBound="1" xmlns:rtyIgeneral="https://ust-quantil.github.io/requirementtypes"/>
+        </RequirementDefinitions>
+        <Interfaces>
+            <Interface name="http://opentosca.org/interfaces/lifecycle">
+                <Operation name="install">
+                    <InputParameters>
+                        <InputParameter name="Name" type="xsd:string" required="true"/>
+                    </InputParameters>
+                </Operation>
+                <Operation name="start">
+                    <InputParameters>
+                        <InputParameter name="StartupCommand" type="xsd:string" required="true"/>
+                        <InputParameter name="Name" type="xsd:string" required="true"/>
+                        <InputParameter name="VMOpenPorts" type="xsd:string" required="true"/>
+                    </InputParameters>
+                </Operation>
+            </Interface>
+        </Interfaces>
+    </NodeType>
+</Definitions>

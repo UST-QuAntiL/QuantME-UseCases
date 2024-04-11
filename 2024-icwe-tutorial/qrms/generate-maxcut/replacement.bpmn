@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:opentosca="https://github.com/UST-QuAntiL/OpenTOSCA" id="Definitions_0b7il2s" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20220628">
+  <bpmn:process id="Process_03tgi13" isExecutable="true">
+    <bpmn:serviceTask id="ServiceTask_1d6l6i9" name="Generate Circuits" camunda:asyncAfter="true" camunda:exclusive="false" opentosca:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpush/QuokkaCircuitGeneratorService_INCOMPLETE_w1/?csar">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Accept">application/json</camunda:entry>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="url">/algorithms/maxcutqaoa</camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="groovy">
+			    			    import groovy.json.JsonBuilder
+                  def matrix = execution.getVariable("adjMatrix");
+                  def gammas = execution.getVariable("gammas");
+                  def betas = execution.getVariable("betas");
+                  def request = [:];
+
+                    if (matrix instanceof String) {
+                        println("Received matrix of type string: " + matrix);
+                        matrix = matrix.drop(1).take(matrix.length()-2);
+                        matrix= matrix.replaceAll("\\s","").split("\\],\\[");
+                        println("Separated matrix: " + matrix.toString());
+
+                        new_matrix = []
+                        for (el in matrix){
+                            def current_array = el.replaceAll("\\[","").replaceAll("\\]","")
+                            println("Current array: " + current_array.toString());
+                            new_arr = [];
+                            def numbers = current_array.split(",");
+                            println("Numbers: " + numbers.toString());
+
+                            for (number in numbers){
+                                new_arr.push(number.toDouble());
+                            }
+                            new_matrix.push(new_arr);
+                        }
+
+                        matrix = new_matrix;
+                        println("Matrix after parsing: " + matrix.toString());
+                        execution.setVariable("adjMatrix", matrix);
+                    }
+
+                  if (gammas instanceof String) {
+                             def current_gammas = gammas.replaceAll("\\[","").replaceAll("\\]","")
+                              println("Current gammas: " + current_gammas.toString());
+                              new_gammas = [];
+                              def numbers = current_gammas.split(",");
+                              for (number in numbers){
+                                  new_gammas.push(number.toDouble());
+                              }
+                              gammas = new_gammas
+                              execution.setVariable("gammas", gammas);
+                  }
+
+                    if (betas instanceof String) {
+                               def current_betas = betas.replaceAll("\\[","").replaceAll("\\]","")
+                                println("Current betas: " + current_betas.toString());
+                                new_betas = [];
+                                def numbers = current_betas.split(",");
+                                for (number in numbers){
+                                    new_betas.push(number.toDouble());
+                                }
+                                betas = new_betas
+                                execution.setVariable("betas", betas);
+                    }
+
+                request.put("adj_matrix", matrix);
+                  request.put("parameterized", "false");
+                  request.put("p", 1);
+                    request.put("gammas", gammas);
+                    request.put("betas", betas);
+                  if (execution.getVariable("wsBitstring") != null) {
+                    request.put("initial_state", execution.getVariable("wsBitstring"));
+                  }
+                  requeststring = new JsonBuilder(request).toPrettyString()
+                  print("test")
+                  print(requeststring)
+                  return requeststring;
+</camunda:script>
+            </camunda:inputParameter>
+            <camunda:outputParameter name="circuit">
+              <camunda:script scriptFormat="groovy">
+def resp = connector.getVariable("response");
+resp = new groovy.json.JsonSlurper().parseText(resp)
+circuit= resp.get('circuit')
+println(circuit);
+return [circuit];</camunda:script>
+            </camunda:outputParameter>
+            <camunda:outputParameter name="circuitDepthUntranspiled">
+              <camunda:script scriptFormat="groovy">
+def resp = connector.getVariable("response");
+resp = new groovy.json.JsonSlurper().parseText(resp)
+depth= resp.get('depth')
+println(depth);
+return depth;</camunda:script>
+            </camunda:outputParameter>
+            <camunda:outputParameter name="circuitNumQubits">
+              <camunda:script scriptFormat="groovy">
+def resp = connector.getVariable("response");
+resp = new groovy.json.JsonSlurper().parseText(resp)
+n_qubits= resp.get('n_qubits')
+println(n_qubits);
+return n_qubits;</camunda:script>
+            </camunda:outputParameter>
+            <camunda:outputParameter name="circuitVisualization">
+                          <camunda:script scriptFormat="Groovy">import org.camunda.bpm.engine.variable.value.FileValue
+            								import org.camunda.bpm.engine.variable.Variables
+                            import groovy.json.JsonSlurper
+                            def slurper = new JsonSlurper().parseText(response)
+            								String filename = "circuit.png";
+            								FileValue typedFileValue = Variables.fileValue(filename).file(slurper.visualization.decodeBase64()).mimeType("application/png").create()
+            typedFileValue</camunda:script>
+             </camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_03tgi13">
+      <bpmndi:BPMNShape id="ServiceTask_1d6l6i7_di" bpmnElement="ServiceTask_1d6l6i9">
+        <dc:Bounds x="160" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
