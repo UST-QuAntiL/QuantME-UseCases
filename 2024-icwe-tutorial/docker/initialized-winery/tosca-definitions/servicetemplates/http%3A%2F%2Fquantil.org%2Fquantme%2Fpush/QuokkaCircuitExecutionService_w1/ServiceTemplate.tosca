@@ -31,34 +31,7 @@
                         <nodetypes:VMType>m1.medium</nodetypes:VMType>
                         <nodetypes:VMUserName>ubuntu</nodetypes:VMUserName>
                         <nodetypes:VMUserPassword>unused</nodetypes:VMUserPassword>
-                        <nodetypes:VMPrivateKey>-----BEGIN RSA PRIVATE KEY-----
-MIIEogIBAAKCAQEAxVhgdpcf1PtPtDQVJ+yopsbvfdwbBRWf/zQvK6r13pjFaxEs
-pB0JavA17Ked0T+IV8osQKb6j9UQs4Fe1+0VAdCeKgnEOXUSdi+goxwI+zBM9Q7E
-D3h2TucknYkYd0anVqeANJO9TMCKtpldvR3ETgGi785+zSPPc4Iwjj06qvJyxYrJ
-ASBUVm0jsDXwUxOggojRbFvvPbXBigTLwz2DIbbc9m2814jYpZIPysRRwtbyw1Li
-+5s5+3UKnDVhB7mt6wOm1Ks9kUzLrdyJjJPa6YZry4ujdVbD3ZZ1smv2+77+vtDK
-nnTMXKf7COkbAmEEBUPOhNILRif4ULpWxf1vhQIDAQABAoIBADUWZyy/zsJesLxL
-Xn2U/nGPBpIXCfW+MYJXqXDX1riA5Gq+/gFQBl6MLBVzqdLGgokLTAhAYxsaOBnx
-7W+syX/pfQLWCcFjKwo8GbyHKCtafPlXdYqr3zeumnz+imRbz1xSRvzd2YiyKx6f
-90WOomZRrmFQbXAF+CKcnS9GbWfaw89SKL4UOk6tV2bGXyUSZL9+l77OcfI8Aa2A
-eZrI0A11ENmxY3kx3Se1rd+q8VYQ9r0foApIK/Blyy7BXP5DZxZK+YvIZKEOSFF9
-2qAlQjcWWICzCMzu6YaCsJ00d4OZLHA29DPYxtAOr+375PwRk9RDO9yP9I4C8FAy
-qUmpaQECgYEA69O+H4ke7wmNPhV9rPq+i1y4vsu27oX6y/X+ippdzvhMKP3I131o
-+tASVU8G9knQSEFf8kOhLbMlAgN3D2Uc2GcH7XzvXsBWAnDTbr3Y5yCNihXRIVl4
-IFuwyQuRtGkyCRw/bULt1GaHOJG4zNCqJ7Jp+sl9IK9AomscXo+4FeECgYEA1jnw
-UuwDBDOkiP1ZAie5RzALgKUkqGwFId+d82XEgkPFKZtjgbtHET5TiJIW9uqwk1w/
-ef+tSdAdN5tR+BOxsfkqGv96WNPEjbTx7Y+f/yKdaD5Yln8UTPGACs43j0UWUyhB
-FpJuKFyBlXh/hC7F4GRKEf/fQN85X29gFv2/BiUCgYAH5Cj7gyoe05H/Xta6wBU6
-MpsX/1caui7/PjcLSkkTUOmzgXKEC3VE10uVwTQ5b5ThphZg0/SDw/fcDmOgh0Ck
-2SXBw6l64TK/mCjrDr1AVq2Fzl8WH5lOc+MBhzqT7+U1utVAgbnVnqytruqhJ+ZZ
-t7WmJ7HhMxwVk0H6xBJj4QKBgAQsmtcyzBg/3Vvh++MD3SNa905paV5yxGLVlaFR
-gVO8eFIIOhckDA109nG5zwK+rfQhHweEiN7gVEFqIF3CHHtITJ68Dak/bxwHw5MK
-cmapSQHn/Rfpn/6j0gfj3sdG5Fl4dlQ3RDg7HTdJYsqzkp19tsfFAZelAdwvMmMg
-TKGVAoGALCJAxZkMRdCd/qwwpKOh8lM6RZmP7Kilps4PnQYD7RaZgef0WI6o+/2O
-6/H+6LldHensY2ZeV6mICRh41TK/EAB50KRTLErzHAx1YkNP8LdCEv9sFlao+dvJ
-94g99zf2loGLd3j4MrEpj3X/D8LFB3hlbo4JVy8fGMTxe+RFoPc=
------END RSA PRIVATE KEY-----
-</nodetypes:VMPrivateKey>
+                        <nodetypes:VMPrivateKey>get_input: VMPrivateKey</nodetypes:VMPrivateKey>
                         <nodetypes:VMPublicKey>unused</nodetypes:VMPublicKey>
                         <nodetypes:VMKeyPairName>get_input: VMKeyPairName</nodetypes:VMKeyPairName>
                         <nodetypes:VMNetworks>get_input: VMNetworks</nodetypes:VMNetworks>
