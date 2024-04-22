@@ -1,4 +1,4 @@
-version: '5'
+version: '6'
 
 services:
   #############
@@ -6,18 +6,15 @@ services:
   #############
 
   db:
-    build:
-      context: ./db
-    image: quantil-db
+    image: stiliala/quantil-db:latest
     environment:
       # specifies user:password for each container
-      POSTGRES_USERS: 'planqk:planqk|patternatlas:patternatlas|qprov:qprov|registry:registry'
+      POSTGRES_USERS: 'planqk:planqk|patternatlas:patternatlas|registry:registry'
       # specifies database:user for each container
-      POSTGRES_DATABASES: 'planqk:planqk|patternatlas:patternatlas|qprov:qprov|registry:registry'
+      POSTGRES_DATABASES: 'planqk:planqk|patternatlas:patternatlas|registry:registry'
       QC_ATLAS_CONTENT_REPOSITORY_BRANCH: 'master'
       ATLAS_DB: planqk
       PATTERNATLAS_DB: patternatlas
-      QPROV_DB: qprov
     ports:
       - '5060:5060'
     networks:
