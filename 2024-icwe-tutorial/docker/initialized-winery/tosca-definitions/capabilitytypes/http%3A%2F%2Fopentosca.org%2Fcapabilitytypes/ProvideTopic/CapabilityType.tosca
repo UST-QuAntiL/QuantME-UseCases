@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:ns0="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/capabilitytypes" id="capabilityTypes-ProvideTopic">
+    <CapabilityType name="ProvideTopic" abstract="no" final="no" targetNamespace="http://opentosca.org/capabilitytypes">
+        <DerivedFrom xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" typeRef="ctyIgeneral:Container"/>
+    </CapabilityType>
+</Definitions>

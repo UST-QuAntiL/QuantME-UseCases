@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:ns0="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/nodetypes" id="otntyIgeneral-AWS_w1">
+    <NodeType name="AWS_w1" abstract="no" final="no" targetNamespace="http://opentosca.org/nodetypes">
+        <Tags>
+            <Tag name="opentosca:CloudDeploymentModelPolicy" value="public"/>
+            <Tag name="opentosca:LocationPolicy" value="US"/>
+        </Tags>
+        <ns0:PropertiesDefinition elementname="AWS_w1" namespace="http://opentosca.org/nodetypes">
+            <ns0:properties>
+                <ns0:derivedFromStatus>SELF</ns0:derivedFromStatus>
+                <ns0:derivedFromType xmlns:nodeTypes="http://opentosca.org/nodetypes">nodeTypes:AWS_w1</ns0:derivedFromType>
+                <ns0:key>AWS_ACCESS_KEY_ID</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:derivedFromStatus>SELF</ns0:derivedFromStatus>
+                <ns0:derivedFromType xmlns:nodeTypes="http://opentosca.org/nodetypes">nodeTypes:AWS_w1</ns0:derivedFromType>
+                <ns0:key>AWS_SECRET_ACCESS_KEY</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:derivedFromStatus>SELF</ns0:derivedFromStatus>
+                <ns0:derivedFromType xmlns:nodeTypes="http://opentosca.org/nodetypes">nodeTypes:AWS_w1</ns0:derivedFromType>
+                <ns0:key>AWS_REGION</ns0:key>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+        </ns0:PropertiesDefinition>
+        <CapabilityDefinitions>
+            <CapabilityDefinition name="CapCanHostEC2" capabilityType="capabilityTypes:CapCanHostEC2" lowerBound="1" upperBound="1" xmlns:capabilityTypes="http://opentosca.org/capabilitytypes"/>
+        </CapabilityDefinitions>
+    </NodeType>
+</Definitions>

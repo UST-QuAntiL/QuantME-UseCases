@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" id="ToscaNormativeCapabilityTypes-Scalable">
+    <CapabilityType name="Scalable" abstract="no" final="no" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes">
+        <winery:PropertiesDefinition elementname="properties" namespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/propertiesdefinition/winery">
+            <winery:properties>
+                <winery:constraints/>
+                <winery:defaultValue>1</winery:defaultValue>
+                <winery:description></winery:description>
+                <winery:key>min_instances</winery:key>
+                <winery:required>false</winery:required>
+                <winery:type>xsd:decimal</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:constraints/>
+                <winery:defaultValue>1</winery:defaultValue>
+                <winery:description></winery:description>
+                <winery:key>max_instances</winery:key>
+                <winery:required>false</winery:required>
+                <winery:type>xsd:decimal</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:constraints/>
+                <winery:defaultValue></winery:defaultValue>
+                <winery:description></winery:description>
+                <winery:key>default_instances</winery:key>
+                <winery:required>false</winery:required>
+                <winery:type>xsd:decimal</winery:type>
+            </winery:properties>
+        </winery:PropertiesDefinition>
+    </CapabilityType>
+</Definitions>

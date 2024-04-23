@@ -1,0 +1,20 @@
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12"
+             targetNamespace="http://opentosca.org/artifacttemplates"
+             id="artifactTemplates-Ubuntu-VM_OperatingSystemInterface-w1">
+    <ArtifactTemplate xmlns:otatyIgeneral="http://opentosca.org/artifacttypes" type="otatyIgeneral:WAR-Java17" id="Ubuntu-VM_OperatingSystemInterface-w1">
+        <Properties>
+            <WSProperties xmlns="http://www.uni-stuttgart.de/opentosca">
+                <ServiceEndpoint>/org_opentosca_artifactTemplates_Ubuntu-VM_OperatingSystemInterfacePort
+                </ServiceEndpoint>
+                <PortType>
+                    {http://artifacttemplates.opentosca.org}org_opentosca_artifactTemplates_Ubuntu-VM_OperatingSystemInterface
+                </PortType>
+                <InvocationType>SOAP/HTTP</InvocationType>
+            </WSProperties>
+        </Properties>
+        <ArtifactReferences>
+            <ArtifactReference
+                    reference="artifacttemplates/http%253A%252F%252Fopentosca.org%252Fartifacttemplates/Ubuntu-VM_OperatingSystemInterface-w1/files/Ubuntu-VM_OperatingSystemInterface.war"/>
+        </ArtifactReferences>
+    </ArtifactTemplate>
+</Definitions>

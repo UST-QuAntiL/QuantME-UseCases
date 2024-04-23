@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:ns0="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" id="ToscaNormativeNodeTypes-Database">
+    <NodeType name="Database" abstract="no" final="no" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes">
+        <ns0:PropertiesDefinition elementname="properties" namespace="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+            <ns0:properties>
+                <ns0:defaultValue></ns0:defaultValue>
+                <ns0:description>the logical name of the database</ns0:description>
+                <ns0:key>name</ns0:key>
+                <ns0:required>false</ns0:required>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:defaultValue></ns0:defaultValue>
+                <ns0:description>the port the underlying database service will listen to for data</ns0:description>
+                <ns0:key>port</ns0:key>
+                <ns0:required>false</ns0:required>
+                <ns0:type>xsd:decimal</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:defaultValue></ns0:defaultValue>
+                <ns0:description>the optional user account name for DB administration</ns0:description>
+                <ns0:key>user</ns0:key>
+                <ns0:required>false</ns0:required>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+            <ns0:properties>
+                <ns0:defaultValue></ns0:defaultValue>
+                <ns0:description>he optional password for the DB user account</ns0:description>
+                <ns0:key>password</ns0:key>
+                <ns0:required>false</ns0:required>
+                <ns0:type>xsd:string</ns0:type>
+            </ns0:properties>
+        </ns0:PropertiesDefinition>
+        <Tags>
+            <Tag name="isStateful" value="true"/>
+        </Tags>
+        <CapabilityDefinitions>
+            <CapabilityDefinition xmlns:ToscaNormativeCapabilityTypes="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="database_endpoing" capabilityType="ToscaNormativeCapabilityTypes:Database" lowerBound="0" upperBound="UNBOUNDED"/>
+        </CapabilityDefinitions>
+    </NodeType>
+</Definitions>

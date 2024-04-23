@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" id="ToscaNormativeNodeTypes-LoadBalancer">
+    <NodeType name="LoadBalancer" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes">
+        <RequirementDefinitions>
+            <RequirementDefinition xmlns:ToscaNormativeRequirementTypes="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="application" requirementType="ToscaNormativeRequirementTypes:Endpoint" lowerBound="0" upperBound="UNBOUNDED"/>
+        </RequirementDefinitions>
+        <CapabilityDefinitions>
+            <CapabilityDefinition xmlns:ToscaNormativeCapabilityTypes="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="client" capabilityType="ToscaNormativeCapabilityTypes:Public" lowerBound="0" upperBound="UNBOUNDED"/>
+        </CapabilityDefinitions>
+    </NodeType>
+</Definitions>
