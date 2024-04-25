@@ -17,8 +17,9 @@ x-minio-common: &minio-common
 
 services:
   ### Database ###
-  db:
-    image: planqk/db:v1.0.0
+  db:    
+    build:
+      context: ./db
     logging:
       driver: none
     environment:
@@ -28,7 +29,7 @@ services:
       ATLAS_DB: planqk
       PATTERNATLAS_DB: patternatlas
     ports:
-      - '5432:5432'
+      - '5060:5060'
     networks:
       - workflow-observability
 
@@ -40,7 +41,7 @@ services:
       - db
     environment:
       POSTGRES_HOSTNAME: db
-      POSTGRES_PORT: 5432
+      POSTGRES_PORT: 5060
       POSTGRES_USER: planqk
       POSTGRES_PASSWORD: planqk
       POSTGRES_DB: planqk
@@ -93,7 +94,7 @@ services:
       JDBC_DATABASE_URL: db
       JDBC_DATABASE_USERNAME: patternatlas
       JDBC_DATABASE_PASSWORD: patternatlas
-      JDBC_DATABASE_PORT: 5432
+      JDBC_DATABASE_PORT: 5060
       DB_INIT_USER: patternatlas
       DB_INIT_PASSWORD: patternatlas
       LATEX_RENDERER_HOST_NAME: latex-renderer
@@ -204,7 +205,7 @@ services:
       driver: none
     environment:
       POSTGRES_HOSTNAME: db
-      POSTGRES_PORT: 5432
+      POSTGRES_PORT: 5060
       POSTGRES_USER: qprov
       POSTGRES_PASSWORD: qprov
       POSTGRES_DB: qprov
@@ -218,7 +219,7 @@ services:
       driver: none
     environment:
       POSTGRES_HOSTNAME: db
-      POSTGRES_PORT: 5432
+      POSTGRES_PORT: 5060
       POSTGRES_USER: qprov
       POSTGRES_PASSWORD: qprov
       POSTGRES_DB: qprov
