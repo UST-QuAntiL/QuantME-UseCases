@@ -12,7 +12,7 @@
                 <camunda:entry key="Content-Type">application/json</camunda:entry>
               </camunda:map>
             </camunda:inputParameter>
-            <camunda:inputParameter name="url">http://error-mitigation-service:5000/rem/</camunda:inputParameter>
+            <camunda:inputParameter name="url">http://error-mitigation-service:5071/rem/</camunda:inputParameter>
             <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="JavaScript">
 var qpu = execution.getVariable("qpu");
@@ -52,10 +52,10 @@ function generateArray(length){
 	}
 	print(array)
 	return array
-}	
+}
 
 for each (var el in counts) print(Object.keys(JSON.parse(el))[0].length);
-for each (var el in counts) qubits.push(generateArray(Object.keys(JSON.parse(el))[0].length)); 
+for each (var el in counts) qubits.push(generateArray(Object.keys(JSON.parse(el))[0].length));
 
 print(qubits);
 
@@ -70,10 +70,10 @@ print(counts_parsed)
 
 
 var myJson = {"counts": counts_parsed,
-"mitigation_method":"inversion","cm_gen_method": "standard", "qpu": qpu, "qubits": qubits, "max_age":maxAge, 
+"mitigation_method":"inversion","cm_gen_method": "standard", "qpu": qpu, "qubits": qubits, "max_age":maxAge,
 "credentials":{
     "token": token
-    
+
     },
 "provider": "IBM"};
 

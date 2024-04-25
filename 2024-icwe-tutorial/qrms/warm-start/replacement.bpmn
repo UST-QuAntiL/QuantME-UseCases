@@ -12,7 +12,7 @@
                 <camunda:entry key="Content-Type">application/json</camunda:entry>
               </camunda:map>
             </camunda:inputParameter>
-            <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/warm-starting/initialStateMaxCut</camunda:inputParameter>
+            <camunda:inputParameter name="url">http://warm-starting-service:5077/initialStateMaxCut</camunda:inputParameter>
             <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="groovy">import groovy.json.JsonBuilder
 println("Start Warmstarting");

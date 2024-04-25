@@ -12,7 +12,7 @@
                 <camunda:entry key="Content-Type">application/json</camunda:entry>
               </camunda:map>
             </camunda:inputParameter>
-            <camunda:inputParameter name="url">http://quokka-gateway:6474/quokka/circuit-cutting/combineResultsQuokka</camunda:inputParameter>
+            <camunda:inputParameter name="url">http://circuit-cutting-service:5076/combineResultsQuokka</camunda:inputParameter>
             <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="groovy">import groovy.json.JsonBuilder
 println("Combining circuits");
