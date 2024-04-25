@@ -52,7 +52,7 @@ services:
 
   ### Workflow Modeler ###
   workflow-modeler:
-    image: planqk/workflow-modeler:v1.2.0
+    image: planqk/workflow-modeler:latest
     environment:
      CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
      ENABLE_DATA_FLOW_PLUGIN: 'false'
@@ -63,6 +63,8 @@ services:
      ENABLE_QUANTME_PLUGIN: 'true'
      OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
      PATTERN_ATLAS_ENDPOINT: http://${PUBLIC_HOSTNAME}:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
+     PATTERN_ATLAS_UI_ENDPOINT: "http://${PUBLIC_HOSTNAME}:1978"
+     QC_ATLAS_ENDPOINT: "http://${PUBLIC_HOSTNAME}:6626"
      QPROV_ENDPOINT: http://${PUBLIC_HOSTNAME}:8094/qprov
      QRM_USERNAME: ${QRM_USERNAME}
      QRM_REPONAME: ${QRM_REPONAME}
@@ -158,7 +160,18 @@ services:
     networks:
       - workflow-observability
     ports:
-      - '8092:9763'
+      - '8092:9763'  
+  ui:
+    image: opentosca/ui:latest
+    environment:
+     API_ENDPOINT_HOST: ${PUBLIC_HOSTNAME}
+     API_ENDPOINT_PORT: 1337
+     WINERY_HOST: ${PUBLIC_HOSTNAME}
+     WINERY_PORT: 8093
+    ports:
+      - '8088:8080'
+    networks:
+      - opentosca
   engine-ia:
     image: opentosca/engine-ia:v3.0.0-jdk17
     networks:
