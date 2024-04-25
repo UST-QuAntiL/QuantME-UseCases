@@ -16,6 +16,23 @@ x-minio-common: &minio-common
     retries: 3
 
 services:
+  ### Database ###
+  db:
+    image: planqk/db:v1.0.0
+    logging:
+      driver: none
+    environment:
+      POSTGRES_USERS: 'planqk:planqk|patternatlas:patternatlas|qprov:qprov'
+      POSTGRES_DATABASES: 'planqk:planqk|patternatlas:patternatlas|qprov:qprov'
+      QC_ATLAS_CONTENT_REPOSITORY_BRANCH: 'master'
+      ATLAS_DB: planqk
+      PATTERNATLAS_DB: patternatlas
+    ports:
+      - '5432:5432'
+    networks:
+      - workflow-observability
+
+
   ### Workflow Modeler ###
   workflow-modeler:
     image: planqk/workflow-modeler:v1.2.0
@@ -97,17 +114,6 @@ services:
 
   #######################
   ### QProv ###
-  db:
-    image: planqk/db:v1.0.0
-    logging:
-      driver: none
-    environment:
-      POSTGRES_USERS: 'qprov:qprov|nisq:nisq'
-      POSTGRES_DATABASES: 'qprov:qprov|nisq:nisq'
-    ports:
-      - '5432:5432'
-    networks:
-      - workflow-observability
   qprov:
     image: planqk/qprov:v1.3.2
     logging:
@@ -154,7 +160,7 @@ services:
       - workflow-observability
 
   warm-starting-service:
-    image: planqk/warm-starting-service:latest
+    image: planqk/warm-starting-service:v1.0.0
     ports:
       - '5077:5077'
     networks:
