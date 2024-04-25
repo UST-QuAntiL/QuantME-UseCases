@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_0b7il2s" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20220627">
+  <bpmn:process id="Process_03tgi13" isExecutable="true">
+    <bpmn:serviceTask id="ServiceTask_1d6l6i7" name="Mitigate Readout Errors">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Accept">application/json</camunda:entry>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="url">http://error-mitigation-service:5000/rem/</camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="JavaScript">
+var qpu = execution.getVariable("qpu");
+var token = execution.getVariable("ibmq_token");
+var counts = execution.getVariable("counts");
+var maxAge = execution.getVariable("maxAge");
+counts = S(counts);
+counts = counts.elements();
+print(counts);
+
+
+var qubits = [];
+//counts.forEach(dict =&gt; qubits.push(Array.from(Array(Object.keys(dict).length).keys())));
+//print(counts[0]['10010']);
+//counts.forEach(dict =&gt; qubits.push(Array.from(Array(Object.keys(JSON.parse(dict)).length).keys())));
+//counts.forEach(dict =&gt; print(dict));
+//for (let i = 0; i &lt; counts.length; i++) {
+//	print(counts[i])
+//}
+
+function generateArray(length){
+	var array = []
+	var iterator = new java.util.Iterator({
+	  i: 0,
+	  hasNext: function() {
+		return this.i &lt; length;
+	  },
+	  next: function() {
+		return this.i++;
+	  }
+	});
+
+	print(iterator instanceof Java.type("java.util.Iterator"));
+	while (iterator.hasNext()) {
+	  value = iterator.next();
+	  array.push(value);
+	}
+	print(array)
+	return array
+}	
+
+for each (var el in counts) print(Object.keys(JSON.parse(el))[0].length);
+for each (var el in counts) qubits.push(generateArray(Object.keys(JSON.parse(el))[0].length)); 
+
+print(qubits);
+
+
+
+counts_parsed =[]
+for each (var el in counts) counts_parsed.push(JSON.parse(el));
+//counts = counts[0];
+//counts = JSON.parse(counts);
+//print(counts['10010']);
+print(counts_parsed)
+
+
+var myJson = {"counts": counts_parsed,
+"mitigation_method":"inversion","cm_gen_method": "standard", "qpu": qpu, "qubits": qubits, "max_age":maxAge, 
+"credentials":{
+    "token": token
+    
+    },
+"provider": "IBM"};
+
+myJson = JSON.stringify(myJson);
+//execution.setVariable("myJson",myJson);
+myJson =myJson;</camunda:script>
+            </camunda:inputParameter>
+            <camunda:outputParameter name="mitigated_counts">
+              <camunda:script scriptFormat="JavaScript">//${S(response)}
+
+var resp = connector.getVariable("response")
+print('resp'+ resp);
+var result = S(resp);
+print('result ' + result );
+result;</camunda:script>
+            </camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_03tgi13">
+      <bpmndi:BPMNShape id="ServiceTask_1d6l6i7_di" bpmnElement="ServiceTask_1d6l6i7">
+        <dc:Bounds x="160" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
