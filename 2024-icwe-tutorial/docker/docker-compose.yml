@@ -91,7 +91,7 @@ services:
       JDBC_DATABASE_URL: db
       JDBC_DATABASE_USERNAME: patternatlas
       JDBC_DATABASE_PASSWORD: patternatlas
-      JDBC_DATABASE_PORT: 5060
+      JDBC_DATABASE_PORT: 5432
       DB_INIT_USER: patternatlas
       DB_INIT_PASSWORD: patternatlas
       LATEX_RENDERER_HOST_NAME: latex-renderer
