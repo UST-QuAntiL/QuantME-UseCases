@@ -33,6 +33,23 @@ services:
       - workflow-observability
 
 
+  ### QC Atlas ###
+  qc-atlas:
+    image: planqk/atlas:v3.1.3
+    depends_on:
+      - db
+    environment:
+      POSTGRES_HOSTNAME: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: planqk
+      POSTGRES_PASSWORD: planqk
+      POSTGRES_DB: planqk
+    ports:
+      - "6626:6626"
+    networks:
+      - workflow-observability
+
+
   ### Workflow Modeler ###
   workflow-modeler:
     image: planqk/workflow-modeler:v1.2.0
