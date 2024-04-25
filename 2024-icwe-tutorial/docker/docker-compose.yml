@@ -16,6 +16,40 @@ x-minio-common: &minio-common
     retries: 3
 
 services:
+  ### Database ###
+  db:
+    image: planqk/db:v1.0.0
+    logging:
+      driver: none
+    environment:
+      POSTGRES_USERS: 'planqk:planqk|patternatlas:patternatlas|qprov:qprov'
+      POSTGRES_DATABASES: 'planqk:planqk|patternatlas:patternatlas|qprov:qprov'
+      QC_ATLAS_CONTENT_REPOSITORY_BRANCH: 'master'
+      ATLAS_DB: planqk
+      PATTERNATLAS_DB: patternatlas
+    ports:
+      - '5432:5432'
+    networks:
+      - workflow-observability
+
+
+  ### QC Atlas ###
+  qc-atlas:
+    image: planqk/atlas:v3.1.3
+    depends_on:
+      - db
+    environment:
+      POSTGRES_HOSTNAME: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: planqk
+      POSTGRES_PASSWORD: planqk
+      POSTGRES_DB: planqk
+    ports:
+      - "6626:6626"
+    networks:
+      - workflow-observability
+
+
   ### Workflow Modeler ###
   workflow-modeler:
     image: planqk/workflow-modeler:v1.2.0
@@ -23,21 +57,22 @@ services:
      CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
      ENABLE_DATA_FLOW_PLUGIN: 'false'
      ENABLE_OPENTOSCA_PLUGIN: 'true'
+     ENABLE_PATTERN_PLUGIN: 'true'
      ENABLE_PLANQK_PLUGIN: 'false'
      ENABLE_QHANA_PLUGIN: 'false'
      ENABLE_QUANTME_PLUGIN: 'true'
-     NISQ_ANALYZER_ENDPOINT: http://${PUBLIC_HOSTNAME}:8098
      OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
+     PATTERN_ATLAS_ENDPOINT: http://${PUBLIC_HOSTNAME}:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
      QPROV_ENDPOINT: http://${PUBLIC_HOSTNAME}:8094/qprov
      QRM_USERNAME: ${QRM_USERNAME}
      QRM_REPONAME: ${QRM_REPONAME}
      QRM_REPOPATH: ${QRM_REPOPATH}
-     TRANSFORMATION_FRAMEWORK_ENDPOINT: http://${PUBLIC_HOSTNAME}:8888
      WINERY_ENDPOINT: http://${PUBLIC_HOSTNAME}:8093/winery
     ports:
       - 8080:8080
     networks:
       - workflow-observability
+
 
   ### Camunda Engine ###
   camunda-engine:
@@ -46,6 +81,61 @@ services:
       - 8090:8080
     networks:
       - workflow-observability
+
+
+  #######################
+  ### Pattern Atlas ###
+  pattern-atlas-api:
+    image: patternatlas/pattern-atlas-api:latest
+    environment:
+      JDBC_DATABASE_URL: db
+      JDBC_DATABASE_USERNAME: patternatlas
+      JDBC_DATABASE_PASSWORD: patternatlas
+      JDBC_DATABASE_PORT: 5432
+      DB_INIT_USER: patternatlas
+      DB_INIT_PASSWORD: patternatlas
+      LATEX_RENDERER_HOST_NAME: latex-renderer
+      LATEX_RENDERER_PORT: 5030
+      JDBC_DATABASE_NAME: patternatlas
+      PATTERN_ATLAS_FETCH_INITIAL_DATA: 'true'
+      HAL_EXPLORER: 'false'
+      # activate correct application properties
+      SPRING_PROFILES_ACTIVE: docker
+      SECURITY_LOGLEVEL: info
+    ports:
+      - "1977:1977"
+    networks:
+      - workflow-observability
+    depends_on:
+      - db
+      - latex-renderer
+
+  # contains more information regarding the patterns
+  pattern-atlas-ui:
+    image: patternatlas/pattern-atlas-ui:v1.5.6
+    platform: linux/x86_64
+    environment:
+      PATTERN_ATLAS_API_HOST_NAME: localhost
+      PATTERN_ATLAS_API_PORT: 1977
+      LATEX_RENDERER_HOST_NAME: localhost
+      LATEX_RENDERER_PORT: 5030
+      URL_SCHEME: http
+    ports:
+      - "1978:80"
+    networks:
+      - workflow-observability
+
+  # required by the pattern atlas to render latex
+  latex-renderer:
+    image: planqk/latex-renderer:v1.1.1
+    platform: linux/amd64
+    ports:
+      - "5030:5030"
+    networks:
+      - workflow-observability
+  # end of Pattern Atlas
+  #######################
+
 
   #######################
   ### OpenTOSCA Ecosystem ###
@@ -92,19 +182,9 @@ services:
   # end of OpenTOSCA Ecosystem
   #######################
 
+
   #######################
   ### QProv ###
-  db:
-    image: planqk/db:v1.0.0
-    logging:
-      driver: none
-    environment:
-      POSTGRES_USERS: 'qprov:qprov|nisq:nisq'
-      POSTGRES_DATABASES: 'qprov:qprov|nisq:nisq'
-    ports:
-      - '5432:5432'
-    networks:
-      - workflow-observability
   qprov:
     image: planqk/qprov:v1.3.2
     logging:
@@ -151,7 +231,7 @@ services:
       - workflow-observability
 
   warm-starting-service:
-    image: planqk/warm-starting-service:latest
+    image: planqk/warm-starting-service:v1.0.0
     ports:
       - '5077:5077'
     networks:
@@ -163,6 +243,8 @@ services:
     volumes:
       - data1-1:/data1
       - data1-2:/data2
+    networks:
+      - workflow-observability
 
   minio2:
     <<: *minio-common
@@ -170,6 +252,8 @@ services:
     volumes:
       - data2-1:/data1
       - data2-2:/data2
+    networks:
+      - workflow-observability
 
   nginx:
     image: nginx:1.25.4-alpine
@@ -183,7 +267,7 @@ services:
       - minio1
       - minio2
     networks:
-      - default
+      - workflow-observability
 
   error-mitigation-service:
     image: planqk/error-mitigation-service:v1.0.1
@@ -195,7 +279,7 @@ services:
     depends_on:
       - nginx
     networks:
-      - default
+      - workflow-observability
   # end of Quokka Services
   #######################
 
