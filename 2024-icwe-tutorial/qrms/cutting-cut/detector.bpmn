@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" id="Definitions_1liu029" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.4.0">
   <bpmn:process id="Process_0xzm0yb" isExecutable="true">
-    <quantme:CircuitCuttingTask id="Task_0bpgwfl" cuttingMethod="qiskit" maxSubCircuitWidth="*" maxNumberOfCuts="*" maxNumSubCircuits="*" />
+    <quantme:CircuitCuttingTask id="Task_0bpgwfl" cuttingMethod="knitting toolbox,qiskit" maxSubCircuitWidth="*" maxNumberOfCuts="*" maxNumSubCircuits="*" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0rzm0yb">
