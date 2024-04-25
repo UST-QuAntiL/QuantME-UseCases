@@ -39,6 +39,7 @@ services:
     networks:
       - workflow-observability
 
+
   ### Camunda Engine ###
   camunda-engine:
     image: planqk/camunda-process-views-plugin:v1.0.0
@@ -46,6 +47,7 @@ services:
       - 8090:8080
     networks:
       - workflow-observability
+
 
   #######################
   ### OpenTOSCA Ecosystem ###
@@ -91,6 +93,7 @@ services:
       - workflow-observability
   # end of OpenTOSCA Ecosystem
   #######################
+
 
   #######################
   ### QProv ###
@@ -183,7 +186,7 @@ services:
       - minio1
       - minio2
     networks:
-      - default
+      - workflow-observability
 
   error-mitigation-service:
     image: planqk/error-mitigation-service:v1.0.1
@@ -195,7 +198,7 @@ services:
     depends_on:
       - nginx
     networks:
-      - default
+      - workflow-observability
   # end of Quokka Services
   #######################
 
