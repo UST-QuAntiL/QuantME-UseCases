@@ -57,16 +57,16 @@ services:
      CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
      ENABLE_DATA_FLOW_PLUGIN: 'false'
      ENABLE_OPENTOSCA_PLUGIN: 'true'
+     ENABLE_PATTERN_PLUGIN: 'true'
      ENABLE_PLANQK_PLUGIN: 'false'
      ENABLE_QHANA_PLUGIN: 'false'
      ENABLE_QUANTME_PLUGIN: 'true'
-     NISQ_ANALYZER_ENDPOINT: http://${PUBLIC_HOSTNAME}:8098
      OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
+     PATTERN_ATLAS_ENDPOINT: http://pattern-atlas-api:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
      QPROV_ENDPOINT: http://${PUBLIC_HOSTNAME}:8094/qprov
      QRM_USERNAME: ${QRM_USERNAME}
      QRM_REPONAME: ${QRM_REPONAME}
      QRM_REPOPATH: ${QRM_REPOPATH}
-     TRANSFORMATION_FRAMEWORK_ENDPOINT: http://${PUBLIC_HOSTNAME}:8888
      WINERY_ENDPOINT: http://${PUBLIC_HOSTNAME}:8093/winery
     ports:
       - 8080:8080
@@ -81,6 +81,60 @@ services:
       - 8090:8080
     networks:
       - workflow-observability
+
+
+  #######################
+  ### Pattern Atlas ###
+  pattern-atlas-api:
+    image: patternatlas/pattern-atlas-api:latest
+    environment:
+      JDBC_DATABASE_URL: db
+      JDBC_DATABASE_USERNAME: patternatlas
+      JDBC_DATABASE_PASSWORD: patternatlas
+      JDBC_DATABASE_PORT: 5060
+      DB_INIT_USER: patternatlas
+      DB_INIT_PASSWORD: patternatlas
+      LATEX_RENDERER_HOST_NAME: latex-renderer
+      LATEX_RENDERER_PORT: 5030
+      JDBC_DATABASE_NAME: patternatlas
+      PATTERN_ATLAS_FETCH_INITIAL_DATA: 'true'
+      HAL_EXPLORER: 'false'
+      # activate correct application properties
+      SPRING_PROFILES_ACTIVE: docker
+      SECURITY_LOGLEVEL: info
+    ports:
+      - "1977:1977"
+    networks:
+      - workflow-observability
+    depends_on:
+      - db
+      - latex-renderer
+
+  # contains more information regarding the patterns
+  pattern-atlas-ui:
+    image: patternatlas/pattern-atlas-ui:v1.5.6
+    platform: linux/x86_64
+    environment:
+      PATTERN_ATLAS_API_HOST_NAME: localhost
+      PATTERN_ATLAS_API_PORT: 1977
+      LATEX_RENDERER_HOST_NAME: localhost
+      LATEX_RENDERER_PORT: 5030
+      URL_SCHEME: http
+    ports:
+      - "1978:80"
+    networks:
+      - workflow-observability
+
+  # required by the pattern atlas to render latex
+  latex-renderer:
+    image: planqk/latex-renderer:v1.1.1
+    platform: linux/amd64
+    ports:
+      - "5030:5030"
+    networks:
+      - workflow-observability
+  # end of Pattern Atlas
+  #######################
 
 
   #######################
