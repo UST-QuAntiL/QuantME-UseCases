@@ -28,7 +28,7 @@
         <bpmn:incoming>SequenceFlow_1hst7js</bpmn:incoming>
       </bpmn:endEvent>
       <bpmn:sequenceFlow id="SequenceFlow_1hst7js" sourceRef="Task_0twvhh9" targetRef="EndEvent_191hgmf" />
-      <bpmn:serviceTask id="Task_1pg7e2b" name="Initialize Optimizer" camunda:asyncAfter="true" camunda:exclusive="false" opentosca:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpush/QuokkaOptimizationService_INCOMPLETE_w1/?csar">
+      <bpmn:serviceTask id="Task_1pg7e2b" name="Initialize Optimizer" camunda:asyncAfter="true" camunda:exclusive="false" opentosca:deploymentModelUrl="{{ wineryEndpoint }}/servicetemplates/http%253A%252F%252Fquantil.org%252Fquantme%252Fpush/QuokkaOptimizationService_w1/?csar">
         <bpmn:extensionElements>
           <camunda:connector>
             <camunda:inputOutput>
