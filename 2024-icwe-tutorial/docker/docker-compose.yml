@@ -171,7 +171,7 @@ services:
     ports:
       - '8088:8080'
     networks:
-      - opentosca
+      - workflow-observability
   engine-ia:
     image: opentosca/engine-ia:v3.0.0-jdk17
     networks:
