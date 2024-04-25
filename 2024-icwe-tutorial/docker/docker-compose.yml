@@ -62,7 +62,7 @@ services:
      ENABLE_QHANA_PLUGIN: 'false'
      ENABLE_QUANTME_PLUGIN: 'true'
      OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
-     PATTERN_ATLAS_ENDPOINT: http://pattern-atlas-api:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
+     PATTERN_ATLAS_ENDPOINT: http://${PUBLIC_HOSTNAME}:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
      QPROV_ENDPOINT: http://${PUBLIC_HOSTNAME}:8094/qprov
      QRM_USERNAME: ${QRM_USERNAME}
      QRM_REPONAME: ${QRM_REPONAME}
