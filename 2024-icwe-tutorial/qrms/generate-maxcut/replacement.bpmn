@@ -15,71 +15,85 @@
              <camunda:inputParameter name="url">algorithms/qaoa/maxcut</camunda:inputParameter>
              <camunda:inputParameter name="payload">
                <camunda:script scriptFormat="groovy">
-   import groovy.json.JsonBuilder
-   def adjMatrix = execution.getVariable("adjMatrix");
+                   import groovy.json.JsonBuilder
+                   def adjMatrix = execution.getVariable("adjMatrix");
 
-   if (adjMatrix instanceof String) {
- 	println("Received adjMatrix of type string: " + adjMatrix);
- 	adjMatrix = adjMatrix.drop(1).take(adjMatrix.length()-2);
- 	adjMatrix= adjMatrix.replaceAll("\\s","").split("\\],\\[");
- 	println("Separated adjMatrix: " + adjMatrix.toString());
+                   if (adjMatrix instanceof String) {
+                    println("Received adjMatrix of type string: " + adjMatrix);
+                    adjMatrix = adjMatrix.drop(1).take(adjMatrix.length()-2);
+                    adjMatrix= adjMatrix.replaceAll("\\s","").split("\\],\\[");
+                    println("Separated adjMatrix: " + adjMatrix.toString());
 
- 	new_adjMatrix = []
- 	for (el in adjMatrix){
- 		def current_array = el.replaceAll("\\[","").replaceAll("\\]","")
- 		println("Current array: " + current_array.toString());
- 		new_arr = [];
- 		def numbers = current_array.split(",");
- 		println("Numbers: " + numbers.toString());
+                    new_adjMatrix = []
+                    for (el in adjMatrix){
+                        def current_array = el.replaceAll("\\[","").replaceAll("\\]","")
+                        println("Current array: " + current_array.toString());
+                        new_arr = [];
+                        def numbers = current_array.split(",");
+                        println("Numbers: " + numbers.toString());
 
- 		for (number in numbers){
- 			new_arr.push(number.toDouble());
- 		}
- 		new_adjMatrix.push(new_arr);
- 	}
+                        for (number in numbers){
+                            new_arr.push(number.toDouble());
+                        }
+                        new_adjMatrix.push(new_arr);
+                    }
 
- 	adjMatrix = new_adjMatrix;
- 	println("adjMatrix after parsing: " + adjMatrix.toString());
- 	execution.setVariable("adjMatrix", adjMatrix);
-   }
+                    adjMatrix = new_adjMatrix;
+                    println("adjMatrix after parsing: " + adjMatrix.toString());
+                    execution.setVariable("adjMatrix", adjMatrix);
+                   }
 
-   def request = [:];
-   request.put("adj_matrix", adjMatrix);
-   request.put("parameterized", "true");
-   request.put("circuit_format", "openqasm3");
-   request.put("p", 1);
-   if (execution.getVariable("wsBitstring") != null) {
-     request.put("initial_state", execution.getVariable("wsBitstring"));
-   }
-   requeststring = new JsonBuilder(request).toPrettyString()
- print(requeststring)
-   return requeststring;
- </camunda:script>
+                   def request = [:];
+                   request.put("adj_matrix", adjMatrix);
+                   request.put("parameterized", "true");
+                   request.put("circuit_format", "openqasm3");
+                   request.put("p", 1);
+                   if (execution.getVariable("wsBitstring") != null) {
+                     request.put("initial_state", execution.getVariable("wsBitstring"));
+                   }
+                   requeststring = new JsonBuilder(request).toPrettyString()
+                   print(requeststring)
+                   return requeststring;
+                 </camunda:script>
              </camunda:inputParameter>
              <camunda:outputParameter name="circuit">
                <camunda:script scriptFormat="groovy">
- def resp = connector.getVariable("response");
- resp = new groovy.json.JsonSlurper().parseText(resp)
- circuit= resp.get('circuit')
- println(circuit);
- return [circuit];</camunda:script>
+                 def resp = connector.getVariable("response");
+                 resp = new groovy.json.JsonSlurper().parseText(resp)
+                 circuit= resp.get('circuit')
+                 println(circuit);
+                 return [circuit];
+                </camunda:script>
              </camunda:outputParameter>
              <camunda:outputParameter name="circuitDepthUntranspiled">
                <camunda:script scriptFormat="groovy">
- def resp = connector.getVariable("response");
- resp = new groovy.json.JsonSlurper().parseText(resp)
- depth= resp.get('depth')
- println(depth);
- return depth;</camunda:script>
+                 def resp = connector.getVariable("response");
+                 resp = new groovy.json.JsonSlurper().parseText(resp)
+                 depth= resp.get('depth')
+                 println(depth);
+                 return depth;
+                </camunda:script>
              </camunda:outputParameter>
              <camunda:outputParameter name="circuitNumQubits">
                <camunda:script scriptFormat="groovy">
- def resp = connector.getVariable("response");
- resp = new groovy.json.JsonSlurper().parseText(resp)
- n_qubits= resp.get('n_qubits')
- println(n_qubits);
- return n_qubits;</camunda:script>
+                 def resp = connector.getVariable("response");
+                 resp = new groovy.json.JsonSlurper().parseText(resp)
+                 n_qubits= resp.get('n_qubits')
+                 println(n_qubits);
+                 return n_qubits;
+                </camunda:script>
              </camunda:outputParameter>
+             </camunda:outputParameter>
+                <camunda:outputParameter name="circuitVisualization">
+                   <camunda:script scriptFormat="Groovy">import org.camunda.bpm.engine.variable.value.FileValue
+                    import org.camunda.bpm.engine.variable.Variables
+                    import groovy.json.JsonSlurper
+                    def slurper = new JsonSlurper().parseText(response)
+                    String filename = "circuit.png";
+                    FileValue typedFileValue = Variables.fileValue(filename).file(slurper.visualization.decodeBase64()).mimeType("application/png").create()
+                    typedFileValue
+                 </camunda:script>
+               </camunda:outputParameter>
            </camunda:inputOutput>
            <camunda:connectorId>http-connector</camunda:connectorId>
          </camunda:connector>
