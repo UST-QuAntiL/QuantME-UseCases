@@ -41,7 +41,7 @@ request.put("method", "automatic");
 request.put("max_subcircuit_width", maxSubCircuitWidth);
 request.put("max_cuts", maxNumberOfCuts);
 request.put("max_num_subcircuits", maxNumSubCircuits);
-request.put("circuit_format", "qiskit");
+request.put("circuit_format", "openqasm3");
 requeststring = new JsonBuilder(request).toPrettyString()
 println(requeststring);
 return requeststring;</camunda:script>
