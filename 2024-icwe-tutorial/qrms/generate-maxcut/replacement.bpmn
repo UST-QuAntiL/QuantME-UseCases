@@ -83,17 +83,16 @@
                  return n_qubits;
                 </camunda:script>
              </camunda:outputParameter>
+             <camunda:outputParameter name="circuitVisualization">
+               <camunda:script scriptFormat="Groovy">import org.camunda.bpm.engine.variable.value.FileValue
+                 import org.camunda.bpm.engine.variable.Variables
+                 import groovy.json.JsonSlurper
+                 def slurper = new JsonSlurper().parseText(response)
+                 String filename = "circuit.png";
+                 FileValue typedFileValue = Variables.fileValue(filename).file(slurper.visualization.decodeBase64()).mimeType("application/png").create()
+                 typedFileValue
+               </camunda:script>
              </camunda:outputParameter>
-                <camunda:outputParameter name="circuitVisualization">
-                   <camunda:script scriptFormat="Groovy">import org.camunda.bpm.engine.variable.value.FileValue
-                    import org.camunda.bpm.engine.variable.Variables
-                    import groovy.json.JsonSlurper
-                    def slurper = new JsonSlurper().parseText(response)
-                    String filename = "circuit.png";
-                    FileValue typedFileValue = Variables.fileValue(filename).file(slurper.visualization.decodeBase64()).mimeType("application/png").create()
-                    typedFileValue
-                 </camunda:script>
-               </camunda:outputParameter>
            </camunda:inputOutput>
            <camunda:connectorId>http-connector</camunda:connectorId>
          </camunda:connector>
