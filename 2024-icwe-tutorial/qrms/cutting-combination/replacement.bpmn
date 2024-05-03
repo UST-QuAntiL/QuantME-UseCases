@@ -17,6 +17,10 @@
               <camunda:script scriptFormat="groovy">import groovy.json.JsonBuilder
 println("Combining circuits");
 def counts = execution.getVariable("counts");
+def mitigatedCounts = execution.getVariable("mitigatedCounts");
+if (mitigatedCounts){
+    counts = mitigatedCounts;
+}
 println("Counts: " + counts.toString());
 def cuttingMetaData = execution.getVariable("cuttingMetaData");
 println("CuttingMetaData: " + cuttingMetaData.toString());

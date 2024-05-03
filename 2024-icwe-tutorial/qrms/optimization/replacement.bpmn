@@ -45,9 +45,9 @@
 			    import groovy.json.JsonBuilder
 			    def pollingEndpoint = execution.getVariable("CAMUNDA_ENDPOINT")
                 def optimizer = execution.getVariable("optimizer");
-                def gammas = execution.getVariable("gammas");
-                def betas = execution.getVariable("betas");
-                def initialParameters = betas + gammas;
+                def gamma = execution.getVariable("gamma");
+                def beta = execution.getVariable("beta");
+                def initialParameters = [beta, gamma];
                 execution.setVariable("iterations", 0);
 
                 def topic = "123456"

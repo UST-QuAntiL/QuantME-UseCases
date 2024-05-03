@@ -14,81 +14,60 @@
             </camunda:inputParameter>
             <camunda:inputParameter name="url">http://error-mitigation-service:5071/rem/</camunda:inputParameter>
             <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript">
-var qpu = execution.getVariable("qpu");
-var token = execution.getVariable("ibmq_token");
-var counts = execution.getVariable("counts");
-var maxAge = execution.getVariable("maxAge");
-counts = S(counts);
-counts = counts.elements();
-print(counts);
+              <camunda:script scriptFormat="groovy">
+import groovy.json.*
+import org.camunda.bpm.engine.defiable.value.FileValue
+def qpu = execution.getVariable("qpu");
+def token = execution.getVariable("quantum_token_ibmq");
+def counts = execution.getVariable("counts");
+def maxAge = execution.getVariable("maxAge");
+def noise_model = execution.getVariable("noiseModel")
 
+def qubits = [] ;
 
-var qubits = [];
-//counts.forEach(dict =&gt; qubits.push(Array.from(Array(Object.keys(dict).length).keys())));
-//print(counts[0]['10010']);
-//counts.forEach(dict =&gt; qubits.push(Array.from(Array(Object.keys(JSON.parse(dict)).length).keys())));
-//counts.forEach(dict =&gt; print(dict));
-//for (let i = 0; i &lt; counts.length; i++) {
-//	print(counts[i])
-//}
-
-function generateArray(length){
-	var array = []
-	var iterator = new java.util.Iterator({
-	  i: 0,
-	  hasNext: function() {
-		return this.i &lt; length;
-	  },
-	  next: function() {
-		return this.i++;
-	  }
-	});
-
-	print(iterator instanceof Java.type("java.util.Iterator"));
-	while (iterator.hasNext()) {
-	  value = iterator.next();
-	  array.push(value);
-	}
-	print(array)
-	return array
+for (measurement in counts) {
+    def num_qubits = 0;
+    def list_qubits = []
+    for ( e in measurement ) {
+        num_qubits = e.key.length()
+        break;
+    }
+    for (int i = 0; i < num_qubits; i++){
+        list_qubits.add(i*1);
+    }
+    qubits.add(list_qubits);
 }
 
-for each (var el in counts) print(Object.keys(JSON.parse(el))[0].length);
-for each (var el in counts) qubits.push(generateArray(Object.keys(JSON.parse(el))[0].length));
+println(qubits)
 
-print(qubits);
+def credentials = [:];
+credentials.put("token", token);
+credentials.put("hub", "ibm-q");
+credentials.put("group", "open")
+credentials.put("project", "main");
+credentials.put("url", "https://auth.quantum-computing.ibm.com/api");
 
+def request = [:];
+request.put("counts", counts)
+request.put("mitigation_method", "inversion")
+request.put("cm_gen_method", "standard")
+request.put("qpu", qpu)
+request.put("credentials", credentials)
+request.put("qubits", qubits)
+request.put("provider", "IBM")
+request.put("noise_model", noise_model)
 
-
-counts_parsed =[]
-for each (var el in counts) counts_parsed.push(JSON.parse(el));
-//counts = counts[0];
-//counts = JSON.parse(counts);
-//print(counts['10010']);
-print(counts_parsed)
-
-
-var myJson = {"counts": counts_parsed,
-"mitigation_method":"inversion","cm_gen_method": "standard", "qpu": qpu, "qubits": qubits, "max_age":maxAge,
-"credentials":{
-    "token": token
-
-    },
-"provider": "IBM"};
-
-myJson = JSON.stringify(myJson);
-//execution.setVariable("myJson",myJson);
-myJson =myJson;</camunda:script>
+requeststring = new JsonBuilder(request).toPrettyString()
+println(requeststring);
+return requeststring;
+</camunda:script>
             </camunda:inputParameter>
-            <camunda:outputParameter name="mitigated_counts">
-              <camunda:script scriptFormat="JavaScript">//${S(response)}
-
-var resp = connector.getVariable("response")
-print('resp'+ resp);
-var result = S(resp);
-print('result ' + result );
-result;</camunda:script>
+            <camunda:outputParameter name="mitigatedCounts">
+              <camunda:script scriptFormat="groovy">/
+              def resp = connector.getVariable("response");
+              resp = new groovy.json.JsonSlurperClassic().parseText(resp)
+              println("Response with mitigated_counts: " + resp.toString());
+              return resp;</camunda:script>
             </camunda:outputParameter>
           </camunda:inputOutput>
           <camunda:connectorId>http-connector</camunda:connectorId>
