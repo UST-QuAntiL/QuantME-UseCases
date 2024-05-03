@@ -31,7 +31,7 @@ for (measurement in counts) {
         num_qubits = e.key.length()
         break;
     }
-    for (int i = 0; i &lt num_qubits; i++){
+    for (int i = 0; i &lt; num_qubits; i++){
         list_qubits.add(i*1);
     }
     qubits.add(list_qubits);

@@ -44,7 +44,7 @@
       <bpmn2:outgoing>Flow_16e348l</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
     <bpmn2:sequenceFlow id="Flow_1qd690p" sourceRef="Activity_127v00a" targetRef="Activity_0y48fko" />
-    <quantme:circuitCuttingTask id="Activity_0y48fko" cuttingMethod="knitting toolbox" maxSubCircuitWidth="5" maxNumberOfCuts="2" maxNumSubCircuits="2">
+    <quantme:circuitCuttingTask id="Activity_0y48fko" cuttingMethod="knitting toolbox" maxSubCircuitWidth="4" maxNumberOfCuts="2" maxNumSubCircuits="2">
       <bpmn2:incoming>Flow_1qd690p</bpmn2:incoming>
       <bpmn2:outgoing>Flow_1ujt4vm</bpmn2:outgoing>
     </quantme:circuitCuttingTask>
