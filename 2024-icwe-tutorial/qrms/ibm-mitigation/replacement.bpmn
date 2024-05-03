@@ -16,7 +16,6 @@
             <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="groovy">
 import groovy.json.*
-import org.camunda.bpm.engine.defiable.value.FileValue
 def qpu = execution.getVariable("qpu");
 def token = execution.getVariable("quantum_token_ibmq");
 def counts = execution.getVariable("counts");
@@ -32,7 +31,7 @@ for (measurement in counts) {
         num_qubits = e.key.length()
         break;
     }
-    for (int i = 0; i < num_qubits; i++){
+    for (int i = 0; i &lt num_qubits; i++){
         list_qubits.add(i*1);
     }
     qubits.add(list_qubits);
@@ -60,14 +59,16 @@ request.put("noise_model", noise_model)
 requeststring = new JsonBuilder(request).toPrettyString()
 println(requeststring);
 return requeststring;
+
 </camunda:script>
             </camunda:inputParameter>
             <camunda:outputParameter name="mitigatedCounts">
-              <camunda:script scriptFormat="groovy">/
+              <camunda:script scriptFormat="groovy">
               def resp = connector.getVariable("response");
               resp = new groovy.json.JsonSlurperClassic().parseText(resp)
               println("Response with mitigated_counts: " + resp.toString());
-              return resp;</camunda:script>
+              return resp;
+              </camunda:script>
             </camunda:outputParameter>
           </camunda:inputOutput>
           <camunda:connectorId>http-connector</camunda:connectorId>
