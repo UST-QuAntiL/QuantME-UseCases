@@ -32,7 +32,7 @@ request.put("subcircuit_results", counts);
 request.put("cuts", cuttingMetaData);
 request.put("unnormalized_results", "True");
 request.put("shot_scaling_factor", 1000);
-request.put("circuit_format", "qiskit");
+request.put("circuit_format", "openqasm3");
 requeststring = new JsonBuilder(request).toPrettyString()
 println(requeststring);
 return requeststring;</camunda:script>
