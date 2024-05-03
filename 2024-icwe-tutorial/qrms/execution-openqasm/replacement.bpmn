@@ -15,13 +15,28 @@
             <camunda:inputParameter name="url">/execution-service</camunda:inputParameter>
             <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="groovy">
-import groovy.json.JsonBuilder
+import groovy.json.*
+import org.camunda.bpm.engine.variable.value.FileValue
   def qpu = execution.getVariable("qpu");
   def circuit = execution.getVariable("circuit");
+  def subCircuits = execution.getVariable("subCircuits");
+  if (subCircuits){
+     circuit = subCircuits["subCircuits"];
+  }
   def token = execution.getVariable("quantum_token_ibmq");
-  def gammas = execution.getVariable("gammas");
-  def betas = execution.getVariable("betas");
-  def optimizedParameters = execution.getVariable("optimizedParameters");
+def gamma = Float.valueOf(execution.getVariable("gamma"));
+def beta = Float.valueOf(execution.getVariable("beta"));
+def optimizedParameters = execution.getVariable("optimizedParameters");
+if (optimizedParameters != null){
+    def paramList = new JsonSlurper().parseText(optimizedParameters)
+    beta = paramList[0]
+    gamma = paramList[1]
+}
+def parameters =[:];
+parameters.put("gamma0", gamma);
+parameters.put("beta0", beta);
+
+
   def credentials = [:];
   credentials.put("token", token);
   credentials.put("hub", "ibm-q");
@@ -29,11 +44,12 @@ import groovy.json.JsonBuilder
   credentials.put("project", "main");
   credentials.put("url", "https://auth.quantum-computing.ibm.com/api");
   def request = [:];
+  request.put("parameters", parameters);
   request.put("qpu", qpu);
   request.put("credentials", credentials)
   request.put("shots", 2000);
   request.put("circuit", circuit);
-  request.put("circuit_format", "openqasm");
+  request.put("circuit_format", "openqasm3");
   request.put("provider", "ibm");
 
   requeststring = new JsonBuilder(request).toPrettyString()
