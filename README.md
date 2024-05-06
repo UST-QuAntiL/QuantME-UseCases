@@ -119,6 +119,14 @@ The corresponding workflow models can be found [here](2020-ucc).
 
 ## Learn More
 
+* Beisel, Martin; Alvarado-Valiente, Jaime; Barzen, Johanna; Leymann, Frank; Romero-Álvarez, Javier; Schlaviniadou, Laaavi; Weder, Benjamin:
+  **Utilizing a Standards-based Toolchain to Model and Execute Quantum Workflows**.
+  In: Proceedings of the 24rd International Conference on Web Engineering (ICWE 2024), Springer, 2024
+
+* Beisel, Martin; Garcia-Alonso, Jose; Murillo, Juan M.; Weder, Benjamin:
+  **Quantum Service-oriented Computing: A Practical Introduction to Quantum Web Services and Quantum Workflows**.
+  In: Proceedings of the 24rd International Conference on Web Engineering (ICWE 2024), Springer, 2024
+
 * Beisel, Martin; Barzen, Johanna; Bechtold, Marvin; Leymann, Frank; Truger, Felix; Weder, Benjamin:
   **Metamodel and Formalization to Model, Transform, Deploy, and Execute Quantum Workflows**.
   In: Cloud Computing and Services Science, Springer, 2024
