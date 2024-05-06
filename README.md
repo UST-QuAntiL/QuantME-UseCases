@@ -7,13 +7,19 @@ Thereby, the MODULO framework incorporates the Quantum Modeling Extension (Quant
 Furthermore, it provides an integrated toolchain to model, transform, deploy, and execute quantum workflows comprising the following components:
 
 * [Quantum Workflow Modeler](https://github.com/PlanQK/workflow-modeler) (previously [QuantME Modeling and Transformation Framework](https://github.com/UST-QuAntiL/QuantME-TransformationFramework)): A graphical BPMN modeler supporting Quantum4BPMN to ease the modeling of quantum workflows by providing explicit modeling constructs for the execution of quantum circuits, as well as frequently occurring pre- and post-processing tasks. Furthermore, it enables transforming quantum workflows using Quantum4BPMN modeling constructs to native BPMN workflows to retain their portability between different workflow engines. Finally, it integrates the other components of the MODULO framework to automatically deploy required services, bind them to a workflow, and upload the executable workflow to a workflow engine.
-* [Camunda BPMN Engine](https://camunda.com/products/camunda-platform/bpmn-engine/): A state-of-the-art BPMN workflow engine used to execute quantum workflows after transforming them to native BPMN workflow models to avoid the need for extending the workflow engine.
+* [Camunda BPMN Engine](https://camunda.com/products/camunda-platform/bpmn-engine/): A state-of-the-art BPMN workflow engine used to execute quantum workflows after transforming them to native BPMN workflow models to avoid the need for extending the workflow engine. It has been extended using a [plugin](https://github.com/UST-QuAntiL/camunda-process-view-plugins) to visualize quantum and deployment-specific information within so-called process views.
 * [Winery](https://github.com/OpenTOSCA/winery): Winery is a web-based environment to graphically model TOSCA-based deployment models, which can then be attached to activities of quantum workflows to enable their automated deployment in the target environment.
 * [OpenTOSCA Container](https://github.com/OpenTOSCA/container): A TOSCA-compliant deployment system to deploy and manage applications or services.
 * [Qiskit Runtime Handler](https://github.com/UST-QuAntiL/qiskit-runtime-handler): A service generating Qiskit Runtime programs for hybrid loops based on corresponding workflow fragments detected by the QuantME Modeling and Transformation Framework.
 * [AWS Braket Hybrid Jobs Handler](https://github.com/UST-QuAntiL/amazon-braket-hybrid-jobs-handler): A service generating AWS Braket Hybrid Jobs programs for hybrid loops based on corresponding workflow fragments detected by the QuantME Modeling and Transformation Framework.
 * [Script Splitter](https://github.com/UST-QuAntiL/qscript-splitter): A service analyzing Python scripts to detect quantum and classical parts, which are then orchestrated by a generated workflow model.
+* [Pattern Atlas](https://github.com/PatternAtlas): A graphical tool for authoring and visualizing patterns and pattern languages.
+  
+### ICWE 2024 - Tutorial
 
+In this tutorial, we show how to model, transform, and execute a quantum workflow manually using the MODULO framework. 
+Furthermore, we discuss how to simplify this process by automatically generating the same quantum workflow based on a set of selected patterns.
+Detailed instructions for the use case are available [here]([https://ust-quantil.github.io/icwe-tutorial/handson.html](https://ust-quantil.github.io/icwe-tutorial-2024/handson.html)), and the required code can be accessed [here](2024-icwe-tutorial).
 
 ### ICWE 2024 - Demonstration
 
@@ -118,6 +124,18 @@ For this, we present three workflow models implementing Simon's algorithm, the B
 The corresponding workflow models can be found [here](2020-ucc).
 
 ## Learn More
+
+* Beisel, Martin; Alvarado-Valiente, Jaime; Barzen, Johanna; Leymann, Frank; Romero-Álvarez, Javier; Stiliadou, Lavinia; Weder, Benjamin:
+  **Utilizing a Standards-based Toolchain to Model and Execute Quantum Workflows**.
+  In: Proceedings of the 24th International Conference on Web Engineering (ICWE 2024), Springer, 2024
+
+* Beisel, Martin; Garcia-Alonso, Jose; Murillo, Juan M.; Weder, Benjamin:
+  **Quantum Service-oriented Computing: A Practical Introduction to Quantum Web Services and Quantum Workflows**.
+  In: Proceedings of the 24th International Conference on Web Engineering (ICWE 2024), Springer, 2024
+
+* Beisel, Martin; Barzen, Johanna; Leymann, Frank; Stiliadou, Lavinia; Weder, Benjamin:
+  **Observability for Quantum Workflows in Heterogeneous Multi-Cloud Environments**.
+  In: Proceedings of the 36th International Conference on Advanced Information Systems Engineering (CAiSE 2024), Springer, 2024
 
 * Beisel, Martin; Barzen, Johanna; Bechtold, Marvin; Leymann, Frank; Truger, Felix; Weder, Benjamin:
   **Metamodel and Formalization to Model, Transform, Deploy, and Execute Quantum Workflows**.
