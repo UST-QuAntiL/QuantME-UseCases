@@ -13,7 +13,12 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
 * [Qiskit Runtime Handler](https://github.com/UST-QuAntiL/qiskit-runtime-handler): A service generating Qiskit Runtime programs for hybrid loops based on corresponding workflow fragments detected by the QuantME Modeling and Transformation Framework.
 * [AWS Braket Hybrid Jobs Handler](https://github.com/UST-QuAntiL/amazon-braket-hybrid-jobs-handler): A service generating AWS Braket Hybrid Jobs programs for hybrid loops based on corresponding workflow fragments detected by the QuantME Modeling and Transformation Framework.
 * [Script Splitter](https://github.com/UST-QuAntiL/qscript-splitter): A service analyzing Python scripts to detect quantum and classical parts, which are then orchestrated by a generated workflow model.
+* 
+### ICWE 2024 - Tutorial
 
+In this tutorial, we show how to model, transform, and execute a quantum workflow manually using the MODULO framework. 
+Furthermore, we discuss how to simplify this process by automatically generating the same quantum workflow based on a set of selected patterns.
+Detailed instructions for the use case are available [here]([https://ust-quantil.github.io/icwe-tutorial/handson.html](https://ust-quantil.github.io/icwe-tutorial-2024/handson.html)), and the required code can be accessed [here](2024-icwe-tutorial).
 
 ### ICWE 2024 - Demonstration
 
