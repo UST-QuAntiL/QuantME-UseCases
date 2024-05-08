@@ -72,7 +72,7 @@ services:
      QRM_REPOPATH: ${QRM_REPOPATH}
      WINERY_ENDPOINT: http://${PUBLIC_HOSTNAME}:8093/winery
     ports:
-      - 8080:8080
+      - 1893:8080
     networks:
       - workflow-observability
 
