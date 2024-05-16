@@ -238,7 +238,7 @@ services:
   ### Quokka Services ###
 
   circuit-cutting-service:
-    image: planqk/circuit-cutting-service:v0.1.0
+    image: planqk/circuit-cutting-service:v0.2.0
     ports:
       - '5076:5076'
     networks:
