@@ -89,7 +89,7 @@ services:
   #######################
   ### Pattern Atlas ###
   pattern-atlas-api:
-    image: patternatlas/pattern-atlas-api:latest
+    image: patternatlas/pattern-atlas-api:v1.9.0
     environment:
       JDBC_DATABASE_URL: db
       JDBC_DATABASE_USERNAME: patternatlas
