@@ -17,7 +17,7 @@ x-minio-common: &minio-common
 
 services:
   ### Database ###
-  db:    
+  db:
     build:
       context: ./db
     logging:
@@ -79,7 +79,7 @@ services:
 
   ### Camunda Engine ###
   camunda-engine:
-    image: planqk/camunda-process-views-plugin:v1.0.0
+    image: planqk/camunda-process-view-plugins:v1.0.2
     ports:
       - 8090:8080
     networks:
@@ -161,7 +161,7 @@ services:
     networks:
       - workflow-observability
     ports:
-      - '8092:9763'  
+      - '8092:9763'
   ui:
     image: opentosca/ui:latest
     environment:
