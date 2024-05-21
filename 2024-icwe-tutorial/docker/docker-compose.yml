@@ -53,7 +53,7 @@ services:
 
   ### Workflow Modeler ###
   workflow-modeler:
-    image: planqk/workflow-modeler:latest
+    image: planqk/workflow-modeler:v1.4.1
     environment:
      CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
      ENABLE_DATA_FLOW_PLUGIN: 'false'
