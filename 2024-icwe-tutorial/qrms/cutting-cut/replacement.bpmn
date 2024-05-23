@@ -22,7 +22,7 @@ def maxSubCircuitWidth = execution.getVariable("maxSubCircuitWidth");
 if (maxSubCircuitWidth == null) {
   maxSubCircuitWidth = execution.getVariable("circuitNumQubits");
   if (maxSubCircuitWidth == null) {
-    println("maxSubCircuitWidth or circuitNumQubits must be available during runtime to cut circuits with the currently selected method"
+    println("maxSubCircuitWidth or circuitNumQubits must be available during runtime to cut circuits with the currently selected method");
   }
 }
 maxSubCircuitWidth = maxSubCircuitWidth.toInteger();
