@@ -55,22 +55,22 @@ services:
   workflow-modeler:
     image: planqk/workflow-modeler:v1.4.1
     environment:
-     CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
-     ENABLE_DATA_FLOW_PLUGIN: 'false'
-     ENABLE_OPENTOSCA_PLUGIN: 'true'
-     ENABLE_PATTERN_PLUGIN: 'true'
-     ENABLE_PLANQK_PLUGIN: 'false'
-     ENABLE_QHANA_PLUGIN: 'false'
-     ENABLE_QUANTME_PLUGIN: 'true'
-     OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
-     PATTERN_ATLAS_ENDPOINT: http://${PUBLIC_HOSTNAME}:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
-     PATTERN_ATLAS_UI_ENDPOINT: "http://${PUBLIC_HOSTNAME}:1978"
-     QC_ATLAS_ENDPOINT: "http://${PUBLIC_HOSTNAME}:6626"
-     QPROV_ENDPOINT: http://${PUBLIC_HOSTNAME}:8094/qprov
-     QRM_USERNAME: ${QRM_USERNAME}
-     QRM_REPONAME: ${QRM_REPONAME}
-     QRM_REPOPATH: ${QRM_REPOPATH}
-     WINERY_ENDPOINT: http://${PUBLIC_HOSTNAME}:8093/winery
+      CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
+      ENABLE_DATA_FLOW_PLUGIN: 'false'
+      ENABLE_OPENTOSCA_PLUGIN: 'true'
+      ENABLE_PATTERN_PLUGIN: 'true'
+      ENABLE_PLANQK_PLUGIN: 'false'
+      ENABLE_QHANA_PLUGIN: 'false'
+      ENABLE_QUANTME_PLUGIN: 'true'
+      OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
+      PATTERN_ATLAS_ENDPOINT: http://${PUBLIC_HOSTNAME}:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
+      PATTERN_ATLAS_UI_ENDPOINT: "http://${PUBLIC_HOSTNAME}:1978"
+      QC_ATLAS_ENDPOINT: "http://${PUBLIC_HOSTNAME}:6626"
+      QPROV_ENDPOINT: http://${PUBLIC_HOSTNAME}:8094/qprov
+      QRM_USERNAME: ${QRM_USERNAME}
+      QRM_REPONAME: ${QRM_REPONAME}
+      QRM_REPOPATH: ${QRM_REPOPATH}
+      WINERY_ENDPOINT: http://${PUBLIC_HOSTNAME}:8093/winery
     ports:
       - 1893:8080
     networks:
@@ -165,10 +165,10 @@ services:
   ui:
     image: opentosca/ui:latest
     environment:
-     API_ENDPOINT_HOST: ${PUBLIC_HOSTNAME}
-     API_ENDPOINT_PORT: 1337
-     WINERY_HOST: ${PUBLIC_HOSTNAME}
-     WINERY_PORT: 8093
+      API_ENDPOINT_HOST: ${PUBLIC_HOSTNAME}
+      API_ENDPOINT_PORT: 1337
+      WINERY_HOST: ${PUBLIC_HOSTNAME}
+      WINERY_PORT: 8093
     ports:
       - '8088:8080'
     networks:
