@@ -200,7 +200,7 @@ services:
   #######################
   ### QProv ###
   qprov:
-    image: planqk/qprov:v1.3.2
+    image: planqk/qprov:v1.5.0
     logging:
       driver: none
     environment:
