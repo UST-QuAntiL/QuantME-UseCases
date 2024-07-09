@@ -20,8 +20,6 @@ services:
   db:
     build:
       context: ./db
-    logging:
-      driver: none
     environment:
       POSTGRES_USERS: 'planqk:planqk|patternatlas:patternatlas|qprov:qprov'
       POSTGRES_DATABASES: 'planqk:planqk|patternatlas:patternatlas|qprov:qprov'
@@ -70,6 +68,7 @@ services:
       QRM_USERNAME: ${QRM_USERNAME}
       QRM_REPONAME: ${QRM_REPONAME}
       QRM_REPOPATH: ${QRM_REPOPATH}
+      SCRIPT_SPLITTER_ENDPOINT: http://${PUBLIC_HOSTNAME}:8891
       WINERY_ENDPOINT: http://${PUBLIC_HOSTNAME}:8093/winery
     ports:
       - 1893:8080
@@ -297,6 +296,91 @@ services:
   # end of Quokka Services
   #######################
 
+  #######################
+  ### QC Script Splitter #
+  qc-script-redis:
+    image: redis:latest
+    command: --port 5010
+    ports:
+      - "5010:5010"
+    networks:
+      - workflow-observability
+
+  qc-script-splitter:
+    image: stiliala/qc-script-splitter:latest
+    command: sh /app/startup.sh
+    ports:
+      - "8891:8891"
+    environment:
+      - REDIS_URL=redis://qc-script-redis:5010
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - script_data:/data
+    networks:
+      - workflow-observability
+
+  qc-script-rq-worker:
+    image: stiliala/qc-script-splitter:latest
+    command: rq worker --url redis://qc-script-redis:5010 qc-script-splitter
+    environment:
+      - REDIS_URL=redis://qc-script-redis:5010
+      - DATABASE_URL=sqlite:////data/app.db
+      - FLASK_RUN_HOST=qc-script-splitter
+      - FLASK_RUN_PORT=8891
+    volumes:
+      - script_data:/data
+    depends_on:
+      - qc-script-redis
+    deploy:
+      replicas: 1
+    networks:
+      - workflow-observability
+
+  # end of QC Script Splitter
+  #######################
+
+  ### Qiskit Runtime Handler ###
+  qiskit-redis:
+    image: redis:6.2.6
+    command: --port 5040
+    ports:
+      - "5040:5040"
+    networks:
+      - workflow-observability
+
+  qiskit-runtime-handler:
+    image: planqk/qiskit-runtime-handler:latest
+    command: sh /startup.sh
+    ports:
+      - "8889:8889"
+    environment:
+      - REDIS_URL=redis://qiskit-redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    networks:
+      - workflow-observability
+
+  rq-worker:
+    image: planqk/qiskit-runtime-handler:latest
+    command: rq worker --url redis://qiskit-redis:5040 qiskit-runtime-handler
+    environment:
+      - FLASK_RUN_HOST=qiskit-runtime-handler
+      - FLASK_RUN_PORT=8889
+      - REDIS_URL=redis://qiskit-redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    depends_on:
+      - qiskit-redis
+    deploy:
+      replicas: 1
+    networks:
+      - workflow-observability
+
+  # end of Qiskit Runtime Handler
+  #######################
+
 
 ## By default this config uses default local driver,
 ## For custom volumes replace with volume driver configuration.
@@ -305,6 +389,7 @@ volumes:
   data1-2:
   data2-1:
   data2-2:
+  script_data:
   exec_data:
 
 networks:
