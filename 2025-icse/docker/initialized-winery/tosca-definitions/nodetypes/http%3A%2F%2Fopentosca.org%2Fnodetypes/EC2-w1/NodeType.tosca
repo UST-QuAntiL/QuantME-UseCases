@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://opentosca.org/nodetypes" id="nodeTypes-EC2-w1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <NodeType name="EC2-w1" abstract="no" final="no" targetNamespace="http://opentosca.org/nodetypes" winery:bordercolor="#f186c6">
+        <Tags>
+            <Tag name="type" value="hardware"/>
+            <Tag name="requiredAttributes" value="AWSSecretKey,AWSAccessKey,AWSRegion"/>
+            <Tag name="opentosca:CloudDeploymentModelPolicy" value="public"/>
+            <Tag name="opentosca:LocationPolicy" value="US"/>
+        </Tags>
+        <CapabilityDefinitions>
+            <CapabilityDefinition name="CapCanHostUbuntuVM" capabilityType="capabilitytypes1:CapCanHostUbuntuVM" lowerBound="0" upperBound="unbounded" xmlns:capabilitytypes1="http://opentosca.org/capabilitytypes"/>
+        </CapabilityDefinitions>
+        <RequirementDefinitions>
+            <RequirementDefinition name="ReqCanHostEC2" requirementType="requirementtypes:ReqCanHostEC2" lowerBound="1" upperBound="unbounded" xmlns:requirementtypes="http://opentosca.org/requirementtypes"/>
+        </RequirementDefinitions>
+        <Interfaces>
+            <Interface name="CloudProviderInterface">
+                <Operation name="createVM">
+                    <InputParameters>
+                        <InputParameter name="AWS_ACCESS_KEY_ID" type="xsd:string" required="true"/>
+                        <InputParameter name="AWS_SECRET_ACCESS_KEY" type="xsd:string" required="true"/>
+                        <InputParameter name="AWS_REGION" type="xsd:string" required="true"/>
+                        <InputParameter name="VMType" type="xsd:string" required="true"/>
+                        <InputParameter name="VMImageID" type="xsd:string" required="true"/>
+                        <InputParameter name="VMKeyPairName" type="xsd:string" required="true"/>
+                        <InputParameter name="VMUserName" type="xsd:string" required="false"/>
+                        <InputParameter name="VMUserPassword" type="xsd:string" required="false"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:string" required="false"/>
+                        <InputParameter name="VMPublicKey" type="xsd:string" required="false"/>
+                        <InputParameter name="VMSecurityGroup" type="xsd:string" required="false"/>
+                        <InputParameter name="VMOpenPorts" type="xsd:string" required="false"/>
+                        <InputParameter name="VMNetworks" type="xsd:string" required="false"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="VMInstanceID" type="xsd:string" required="true"/>
+                        <OutputParameter name="VMIP" type="xsd:string" required="true"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="terminateVM">
+                    <InputParameters>
+                        <InputParameter name="AWS_ACCESS_KEY_ID" type="xsd:string" required="true"/>
+                        <InputParameter name="AWS_SECRET_ACCESS_KEY" type="xsd:string" required="true"/>
+                        <InputParameter name="AWS_REGION" type="xsd:string" required="true"/>
+                        <InputParameter name="VMInstanceID" type="xsd:string" required="true"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="Result" type="xs:string" required="true"/>
+                    </OutputParameters>
+                </Operation>
+            </Interface>
+        </Interfaces>
+    </NodeType>
+</Definitions>

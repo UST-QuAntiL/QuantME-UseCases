@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_0b7il2s" targetNamespace="http://bpmn.io/schema/bpmn" exporter="QuantME Modeler" exporterVersion="4.5.0-nightly.20220627">
+  <bpmn:process id="Process_03tgi13" isExecutable="true">
+    <bpmn:serviceTask id="ServiceTask_1d6l6i7" name="Mitigate Readout Errors">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Accept">application/json</camunda:entry>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="url">http://error-mitigation-service:5071/rem/</camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="groovy">
+import groovy.json.*
+def qpu = execution.getVariable("qpu");
+def token = execution.getVariable("quantum_token_ibmq");
+def counts = execution.getVariable("counts");
+def maxAge = execution.getVariable("maxAge");
+def noise_model = execution.getVariable("noiseModel")
+
+def qubits = [] ;
+
+for (measurement in counts) {
+    def num_qubits = 0;
+    def list_qubits = []
+    for ( e in measurement ) {
+        num_qubits = e.key.length()
+        break;
+    }
+    for (int i = 0; i &lt; num_qubits; i++){
+        list_qubits.add(i*1);
+    }
+    qubits.add(list_qubits);
+}
+
+println(qubits)
+
+def credentials = [:];
+credentials.put("token", token);
+credentials.put("hub", "ibm-q");
+credentials.put("group", "open")
+credentials.put("project", "main");
+credentials.put("url", "https://auth.quantum-computing.ibm.com/api");
+
+def request = [:];
+request.put("counts", counts)
+request.put("mitigation_method", "inversion")
+request.put("cm_gen_method", "standard")
+request.put("qpu", qpu)
+request.put("credentials", credentials)
+request.put("qubits", qubits)
+request.put("provider", "IBM")
+request.put("noise_model", noise_model)
+
+requeststring = new JsonBuilder(request).toPrettyString()
+println(requeststring);
+return requeststring;
+
+</camunda:script>
+            </camunda:inputParameter>
+            <camunda:outputParameter name="mitigatedCounts">
+              <camunda:script scriptFormat="groovy">
+              def resp = connector.getVariable("response");
+              resp = new groovy.json.JsonSlurperClassic().parseText(resp)
+              println("Response with mitigated_counts: " + resp.toString());
+              return resp;
+              </camunda:script>
+            </camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_03tgi13">
+      <bpmndi:BPMNShape id="ServiceTask_1d6l6i7_di" bpmnElement="ServiceTask_1d6l6i7">
+        <dc:Bounds x="160" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
