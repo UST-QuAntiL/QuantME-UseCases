@@ -142,25 +142,42 @@ services:
   #######################
   ### OpenTOSCA Ecosystem ###
   container:
-    image: opentosca/container:v3.1.4
+    image: opentosca/container:v3.0.0
     ports:
       - '1337:1337'
       - '8081-8087:8081-8087'
     environment:
-      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
-      ENGINE_IA_JAVA17_HOSTNAME: ${PUBLIC_HOSTNAME}
-      ENGINE_IA_JAVA17_PORT: 8091
-      ENGINE_PLAN_BPEL_HOSTNAME: ${PUBLIC_HOSTNAME}
-      ENGINE_PLAN_BPEL_PORT: 8092
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+      ENGINE_IA_HOSTNAME: engine-ia
+      ENGINE_IA_PORT: 8080
+      ENGINE_PLAN_BPEL_HOSTNAME: engine-plan
       CONTAINER_DEPLOYMENT_TESTS: 'false'
     networks:
       - workflow-observability
+
   engine-plan:
     image: opentosca/ode:v2.4.0
     networks:
       - workflow-observability
+
+  engine-ia:
+    image: opentosca/engine-ia:v2.1.0
+    networks:
+      - workflow-observability
+
+  winery:
+    build: initialized-winery
+    logging:
+      driver: none
     ports:
-      - '8092:9763'
+      - '8093:8080'
+    environment:
+      WINERY_HOSTNAME: $PUBLIC_HOSTNAME
+      WORKFLOWMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      TOPOLOGYMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+    networks:
+      - workflow-observability
   ui:
     image: opentosca/ui:latest
     environment:
@@ -172,24 +189,16 @@ services:
       - '8088:8080'
     networks:
       - workflow-observability
-  engine-ia:
-    image: opentosca/engine-ia:v3.0.0-jdk17
-    networks:
-      - workflow-observability
-    ports:
-      - '8091:8080'
-  winery:
-    build: initialized-winery
-    logging:
-      driver: none
-    ports:
-      - '8093:8080'
+
+  dind:
+    image: docker:20.10-dind
+    privileged: true
     environment:
-      WINERY_HOSTNAME: ${PUBLIC_HOSTNAME}
-      WINERY_PORT: 8093
-      WORKFLOWMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
-      TOPOLOGYMODELER_HOSTNAME: ${PUBLIC_HOSTNAME}
-      CONTAINER_HOSTNAME: ${PUBLIC_HOSTNAME}
+      - DOCKER_TLS_CERTDIR=
+    ports:
+      - '2222:2375'
+      - '9990-9999:9990-9999'
+      - '9990-9999:9990-9999/udp'
     networks:
       - workflow-observability
   # end of OpenTOSCA Ecosystem
@@ -307,7 +316,7 @@ services:
       - workflow-observability
 
   qc-script-splitter:
-    image: stiliala/qc-script-splitter:latest
+    image: stiliala/qc-script-splitter:0.0.4
     command: sh /app/startup.sh
     ports:
       - "8891:8891"
@@ -320,7 +329,7 @@ services:
       - workflow-observability
 
   qc-script-rq-worker:
-    image: stiliala/qc-script-splitter:latest
+    image: stiliala/qc-script-splitter:0.0.4
     command: rq worker --url redis://qc-script-redis:5010 qc-script-splitter
     environment:
       - REDIS_URL=redis://qc-script-redis:5010
