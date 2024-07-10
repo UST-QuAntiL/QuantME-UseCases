@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes" id="ToscaNormativeNodeTypes-ContainerApplication">
+    <NodeType name="ContainerApplication" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes">
+        <RequirementDefinitions>
+            <RequirementDefinition xmlns:ToscaNormativeRequirementTypes="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="host" requirementType="ToscaNormativeRequirementTypes:Compute" lowerBound="1" upperBound="1"/>
+            <RequirementDefinition xmlns:ToscaNormativeRequirementTypes="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="storage" requirementType="ToscaNormativeRequirementTypes:Storage" lowerBound="0" upperBound="UNBOUNDED"/>
+            <RequirementDefinition xmlns:ToscaNormativeRequirementTypes="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="network" requirementType="ToscaNormativeRequirementTypes:Endpoint" lowerBound="0" upperBound="UNBOUNDED"/>
+        </RequirementDefinitions>
+    </NodeType>
+</Definitions>

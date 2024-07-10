@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://opentosca.org/nodetypes" id="nodeTypes-OperatingSystem_w1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" >
+    <NodeType name="OperatingSystem_w1" abstract="yes" final="no" targetNamespace="http://opentosca.org/nodetypes" winery:bordercolor="#0000ff">
+        <winery:PropertiesDefinition elementname="properties" namespace="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+            <winery:properties>
+                <winery:key>instanceRef</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMIP</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+        </winery:PropertiesDefinition>
+        <DerivedFrom typeRef="ToscaNormativeNodeTypes:Compute" xmlns:ToscaNormativeNodeTypes="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/nodetypes"/>
+        <Interfaces>
+            <Interface name="OperatingSystemInterface">
+                <Operation name="transferFile">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="yes"/>
+                        <InputParameter name="TargetAbsolutePath" type="xsd:String" required="yes"/>
+                        <InputParameter name="SourceURLorLocalPath" type="xsd:String" required="yes"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="TransferResult" type="xsd:String" required="yes"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="runScript">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="yes"/>
+                        <InputParameter name="Script" type="xsd:String" required="yes"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="ScriptResult" type="xsd:String" required="yes"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="installPackage">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="yes"/>
+                        <InputParameter name="PackageNames" type="xsd:String" required="yes"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="InstallResult" type="xsd:String" required="yes"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="waitForAvailability">
+                    <InputParameters>
+                        <InputParameter name="VMIP" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMUserName" type="xsd:String" required="yes"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:String" required="yes"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="WaitResult" type="xsd:String" required="yes"/>
+                    </OutputParameters>
+                </Operation>
+            </Interface>
+        </Interfaces>
+    </NodeType>
+</Definitions>

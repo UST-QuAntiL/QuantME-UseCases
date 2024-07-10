@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" id="ToscaNormativeRequirementTypes-OperatingSystem">
+    <RequirementType xmlns:ToscaNormativeCapabilityTypes="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" requiredCapabilityType="ToscaNormativeCapabilityTypes:OperatingSystem" name="OperatingSystem" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes"/>
+</Definitions>

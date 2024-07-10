@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" id="ToscaNormativeRequirementTypes-Compute">
+    <RequirementType xmlns:ToscaNormativeCapabilityTypes="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" xmlns:ToscaNormativeRequirementTypes="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" requiredCapabilityType="ToscaNormativeCapabilityTypes:Compute" name="Compute" abstract="no" final="no" targetNamespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes">
+        <winery:PropertiesDefinition elementname="properties" namespace="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/propertiesdefinition/winery">
+            <winery:properties>
+                <winery:constraints/>
+                <winery:defaultValue></winery:defaultValue>
+                <winery:description></winery:description>
+                <winery:key>name</winery:key>
+                <winery:required>false</winery:required>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:constraints/>
+                <winery:defaultValue></winery:defaultValue>
+                <winery:description></winery:description>
+                <winery:key>num_cpus</winery:key>
+                <winery:required>false</winery:required>
+                <winery:type>xsd:decimal</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:constraints/>
+                <winery:defaultValue></winery:defaultValue>
+                <winery:description></winery:description>
+                <winery:key>cpu_frequency</winery:key>
+                <winery:required>false</winery:required>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:constraints/>
+                <winery:defaultValue></winery:defaultValue>
+                <winery:description></winery:description>
+                <winery:key>disk_size</winery:key>
+                <winery:required>false</winery:required>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:constraints/>
+                <winery:defaultValue></winery:defaultValue>
+                <winery:description></winery:description>
+                <winery:key>mem_size</winery:key>
+                <winery:required>false</winery:required>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+        </winery:PropertiesDefinition>
+        <DerivedFrom typeRef="ToscaNormativeRequirementTypes:Container"/>
+    </RequirementType>
+</Definitions>

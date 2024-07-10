@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://opentosca.org/nodetypeimplementations" id="nodeTypeImplementations-Ubuntu-VM-Implementation_20.04-w1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" >
+    <NodeTypeImplementation targetNamespace="http://opentosca.org/nodetypeimplementations" name="Ubuntu-VM-Implementation_20.04-w1" abstract="no" final="no" nodeType="nodeTypes:Ubuntu-VM_20.04-w1" xmlns:nodeTypes="http://opentosca.org/nodetypes">
+        <ImplementationArtifacts>
+            <ImplementationArtifact xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" xmlns:artifactTemplates="http://opentosca.org/artifacttemplates" name="configure" interfaceName="http://opentosca.org/interfaces/lifecycle" operationName="configure" artifactType="ToscaBaseTypes:ScriptArtifact" artifactRef="artifactTemplates:Ubuntu-VM-Monitored_configure-w1"/>
+            <ImplementationArtifact name="OperatingSystemInterface_IA" interfaceName="OperatingSystemInterface" artifactType="artifactTypes:WAR-Java17" artifactRef="artifactTemplates:Ubuntu-VM_OperatingSystemInterface-w1" xmlns:artifactTemplates="http://opentosca.org/artifacttemplates" xmlns:artifactTypes="http://opentosca.org/artifacttypes"/>
+        </ImplementationArtifacts>
+    </NodeTypeImplementation>
+</Definitions>

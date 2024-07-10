@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions targetNamespace="http://opentosca.org/nodetypes" id="nodeTypes-OpenStack_22-Victoria-w1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <NodeType name="OpenStack_22-Victoria-w1" abstract="no" final="no" targetNamespace="http://opentosca.org/nodetypes" winery:bordercolor="#f186c6">
+        <Tags>
+            <Tag name="type" value="hardware"/>
+            <Tag name="requiredAttributes" value="HypervisorApplicationID,HypervisorApplicationSecret,HypervisorEndpoint,HypervisorRegion"/>
+            <Tag name="opentosca:CloudDeploymentModelPolicy" value="private"/>
+            <Tag name="opentosca:LocationPolicy" value="EU"/>
+        </Tags>
+        <winery:PropertiesDefinition elementname="CloudProviderProperties" namespace="http://opentosca.org/nodetypes">
+            <winery:properties>
+                <winery:key>HypervisorEndpoint</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>HypervisorApplicationID</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>HypervisorApplicationSecret</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>HypervisorRegion</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
+        </winery:PropertiesDefinition>
+        <RequirementDefinitions/>
+        <CapabilityDefinitions>
+            <CapabilityDefinition name="CapCanHostUbuntuVM" capabilityType="capabilitytypes1:CapCanHostUbuntuVM" lowerBound="1" upperBound="1" xmlns:capabilitytypes1="http://opentosca.org/capabilitytypes"/>
+        </CapabilityDefinitions>
+        <Interfaces>
+            <Interface name="CloudProviderInterface">
+                <Operation name="createVM">
+                    <InputParameters>
+                        <InputParameter name="HypervisorEndpoint" type="xsd:string" required="true"/>
+                        <InputParameter name="HypervisorApplicationID" type="xsd:string" required="true"/>
+                        <InputParameter name="HypervisorApplicationSecret" type="xsd:string" required="true"/>
+                        <InputParameter name="HypervisorRegion" type="xsd:string" required="true"/>
+                        <InputParameter name="VMType" type="xsd:string" required="true"/>
+                        <InputParameter name="VMImageID" type="xsd:string" required="true"/>
+                        <InputParameter name="VMKeyPairName" type="xsd:string" required="true"/>
+                        <InputParameter name="VMUserName" type="xsd:string" required="true"/>
+                        <InputParameter name="VMUserPassword" type="xsd:string" required="true"/>
+                        <InputParameter name="VMPrivateKey" type="xsd:string" required="true"/>
+                        <InputParameter name="VMPublicKey" type="xsd:string" required="true"/>
+                        <InputParameter name="VMSecurityGroup" type="xsd:string" required="true"/>
+                        <InputParameter name="VMOpenPorts" type="xsd:string" required="true"/>
+                        <InputParameter name="VMNetworks" type="xsd:string" required="true"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="VMInstanceID" type="xsd:string" required="true"/>
+                        <OutputParameter name="VMIP" type="xsd:string" required="true"/>
+                    </OutputParameters>
+                </Operation>
+                <Operation name="terminateVM">
+                    <InputParameters>
+                        <InputParameter name="HypervisorEndpoint" type="xsd:string" required="true"/>
+                        <InputParameter name="HypervisorApplicationID" type="xsd:string" required="true"/>
+                        <InputParameter name="HypervisorApplicationSecret" type="xsd:string" required="true"/>
+                        <InputParameter name="HypervisorRegion" type="xsd:string" required="true"/>
+                        <InputParameter name="VMInstanceID" type="xsd:string" required="true"/>
+                    </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="Result" type="xs:string" required="true"/>
+                    </OutputParameters>
+                </Operation>
+            </Interface>
+        </Interfaces>
+    </NodeType>
+</Definitions>
