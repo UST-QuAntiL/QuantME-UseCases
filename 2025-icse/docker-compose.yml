@@ -1,0 +1,406 @@
+# Settings and configurations that are common for all containers
+x-minio-common: &minio-common
+  # breaking changes in later versions
+  image: quay.io/minio/minio:RELEASE.2022-01-27T03-53-02Z
+  command: server --console-address ":9001"  http://minio{1...2}/data{1...2}
+  expose:
+    - "9000"
+    - "9001"
+  environment:
+    MINIO_ROOT_USER: minio
+    MINIO_ROOT_PASSWORD: minio123
+  healthcheck:
+    test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+    interval: 30s
+    timeout: 20s
+    retries: 3
+
+services:
+  ### Database ###
+  db:
+    build:
+      context: ./db
+    environment:
+      POSTGRES_USERS: 'planqk:planqk|patternatlas:patternatlas|qprov:qprov'
+      POSTGRES_DATABASES: 'planqk:planqk|patternatlas:patternatlas|qprov:qprov'
+      QC_ATLAS_CONTENT_REPOSITORY_BRANCH: 'master'
+      ATLAS_DB: planqk
+      PATTERNATLAS_DB: patternatlas
+    ports:
+      - '5060:5060'
+    networks:
+      - workflow-observability
+
+
+  ### QC Atlas ###
+  qc-atlas:
+    image: planqk/atlas:v3.1.4
+    depends_on:
+      - db
+    environment:
+      POSTGRES_HOSTNAME: db
+      POSTGRES_PORT: 5060
+      POSTGRES_USER: planqk
+      POSTGRES_PASSWORD: planqk
+      POSTGRES_DB: planqk
+    ports:
+      - "6626:6626"
+    networks:
+      - workflow-observability
+
+
+  ### Workflow Modeler ###
+  workflow-modeler:
+    image: planqk/workflow-modeler:v1.4.2
+    environment:
+      CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
+      ENABLE_DATA_FLOW_PLUGIN: 'false'
+      ENABLE_OPENTOSCA_PLUGIN: 'true'
+      ENABLE_PATTERN_PLUGIN: 'true'
+      ENABLE_PLANQK_PLUGIN: 'false'
+      ENABLE_QHANA_PLUGIN: 'false'
+      ENABLE_QUANTME_PLUGIN: 'true'
+      OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
+      PATTERN_ATLAS_ENDPOINT: http://${PUBLIC_HOSTNAME}:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
+      PATTERN_ATLAS_UI_ENDPOINT: "http://${PUBLIC_HOSTNAME}:1978"
+      QC_ATLAS_ENDPOINT: "http://${PUBLIC_HOSTNAME}:6626"
+      QPROV_ENDPOINT: http://${PUBLIC_HOSTNAME}:8094/qprov
+      QRM_USERNAME: ${QRM_USERNAME}
+      QRM_REPONAME: ${QRM_REPONAME}
+      QRM_REPOPATH: ${QRM_REPOPATH}
+      SCRIPT_SPLITTER_ENDPOINT: http://${PUBLIC_HOSTNAME}:8891
+      WINERY_ENDPOINT: http://${PUBLIC_HOSTNAME}:8093/winery
+    ports:
+      - 1893:8080
+    networks:
+      - workflow-observability
+
+
+  ### Camunda Engine ###
+  camunda-engine:
+    image: planqk/camunda-process-view-plugins:v1.0.2
+    ports:
+      - 8090:8080
+    networks:
+      - workflow-observability
+
+
+  #######################
+  ### Pattern Atlas ###
+  pattern-atlas-api:
+    image: patternatlas/pattern-atlas-api:v1.9.0
+    environment:
+      JDBC_DATABASE_URL: db
+      JDBC_DATABASE_USERNAME: patternatlas
+      JDBC_DATABASE_PASSWORD: patternatlas
+      JDBC_DATABASE_PORT: 5060
+      DB_INIT_USER: patternatlas
+      DB_INIT_PASSWORD: patternatlas
+      LATEX_RENDERER_HOST_NAME: latex-renderer
+      LATEX_RENDERER_PORT: 5030
+      JDBC_DATABASE_NAME: patternatlas
+      PATTERN_ATLAS_FETCH_INITIAL_DATA: 'true'
+      HAL_EXPLORER: 'false'
+      # activate correct application properties
+      SPRING_PROFILES_ACTIVE: docker
+      SECURITY_LOGLEVEL: info
+    ports:
+      - "1977:1977"
+    networks:
+      - workflow-observability
+    depends_on:
+      - db
+      - latex-renderer
+
+  # contains more information regarding the patterns
+  pattern-atlas-ui:
+    image: patternatlas/pattern-atlas-ui:v1.5.6
+    platform: linux/x86_64
+    environment:
+      PATTERN_ATLAS_API_HOST_NAME: localhost
+      PATTERN_ATLAS_API_PORT: 1977
+      LATEX_RENDERER_HOST_NAME: localhost
+      LATEX_RENDERER_PORT: 5030
+      URL_SCHEME: http
+    ports:
+      - "1978:80"
+    networks:
+      - workflow-observability
+
+  # required by the pattern atlas to render latex
+  latex-renderer:
+    image: planqk/latex-renderer:v1.1.1
+    platform: linux/amd64
+    ports:
+      - "5030:5030"
+    networks:
+      - workflow-observability
+  # end of Pattern Atlas
+  #######################
+
+
+  #######################
+  ### OpenTOSCA Ecosystem ###
+  container:
+    image: opentosca/container:v3.0.0
+    ports:
+      - '1337:1337'
+      - '8081-8087:8081-8087'
+    environment:
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+      ENGINE_IA_HOSTNAME: engine-ia
+      ENGINE_IA_PORT: 8080
+      ENGINE_PLAN_BPEL_HOSTNAME: engine-plan
+      CONTAINER_DEPLOYMENT_TESTS: 'false'
+    networks:
+      - workflow-observability
+
+  engine-plan:
+    image: opentosca/ode:v2.4.0
+    networks:
+      - workflow-observability
+
+  engine-ia:
+    image: opentosca/engine-ia:v2.1.0
+    networks:
+      - workflow-observability
+
+  winery:
+    build: initialized-winery
+    logging:
+      driver: none
+    ports:
+      - '8093:8080'
+    environment:
+      WINERY_HOSTNAME: $PUBLIC_HOSTNAME
+      WORKFLOWMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      TOPOLOGYMODELER_HOSTNAME: $PUBLIC_HOSTNAME
+      CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
+    networks:
+      - workflow-observability
+  ui:
+    image: opentosca/ui:latest
+    environment:
+      API_ENDPOINT_HOST: ${PUBLIC_HOSTNAME}
+      API_ENDPOINT_PORT: 1337
+      WINERY_HOST: ${PUBLIC_HOSTNAME}
+      WINERY_PORT: 8093
+    ports:
+      - '8088:8080'
+    networks:
+      - workflow-observability
+
+  dind:
+    image: docker:20.10-dind
+    privileged: true
+    environment:
+      - DOCKER_TLS_CERTDIR=
+    ports:
+      - '2222:2375'
+      - '9990-9999:9990-9999'
+      - '9990-9999:9990-9999/udp'
+    networks:
+      - workflow-observability
+  # end of OpenTOSCA Ecosystem
+  #######################
+
+
+  #######################
+  ### QProv ###
+  qprov:
+    image: planqk/qprov:v1.5.0
+    logging:
+      driver: none
+    environment:
+      POSTGRES_HOSTNAME: db
+      POSTGRES_PORT: 5060
+      POSTGRES_USER: qprov
+      POSTGRES_PASSWORD: qprov
+      POSTGRES_DB: qprov
+    ports:
+      - '8094:5020'
+    networks:
+      - workflow-observability
+  qprov-collector-ibm:
+    image: planqk/qprov-collector:v1.3.2
+    logging:
+      driver: none
+    environment:
+      POSTGRES_HOSTNAME: db
+      POSTGRES_PORT: 5060
+      POSTGRES_USER: qprov
+      POSTGRES_PASSWORD: qprov
+      POSTGRES_DB: qprov
+      QPROV_IBMQ_TOKEN: ${IBM_ACCESS_TOKEN}
+      QPROV_IBMQ_EXECUTE_CIRCUITS: 'false'
+      QPROV_IBMQ_AUTO_COLLECT: 'true'
+      QPROV_IBMQ_AUTO_COLLECT_INTERVAL: 60
+      QPROV_IBMQ_AUTO_COLLECT_INTERVAL_CIRCUITS: 180
+    networks:
+      - workflow-observability
+  # end of QProv
+  #######################
+
+
+  #######################
+  ### Quokka Services ###
+
+  circuit-cutting-service:
+    image: planqk/circuit-cutting-service:v0.2.0
+    ports:
+      - '5076:5076'
+    networks:
+      - workflow-observability
+
+  warm-starting-service:
+    image: planqk/warm-starting-service:v1.0.0
+    ports:
+      - '5077:5077'
+    networks:
+      - workflow-observability
+
+  minio1:
+    <<: *minio-common
+    hostname: minio1
+    volumes:
+      - data1-1:/data1
+      - data1-2:/data2
+    networks:
+      - workflow-observability
+
+  minio2:
+    <<: *minio-common
+    hostname: minio2
+    volumes:
+      - data2-1:/data1
+      - data2-2:/data2
+    networks:
+      - workflow-observability
+
+  nginx:
+    image: nginx:1.25.4-alpine
+    hostname: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    depends_on:
+      - minio1
+      - minio2
+    networks:
+      - workflow-observability
+
+  error-mitigation-service:
+    image: planqk/error-mitigation-service:v1.0.1
+    command: app.py
+    ports:
+      - "5071:5071"
+    environment:
+      - MINIO_URL=nginx:9000
+    depends_on:
+      - nginx
+    networks:
+      - workflow-observability
+  # end of Quokka Services
+  #######################
+
+  #######################
+  ### QC Script Splitter #
+  qc-script-redis:
+    image: redis:latest
+    command: --port 5010
+    ports:
+      - "5010:5010"
+    networks:
+      - workflow-observability
+
+  qc-script-splitter:
+    image: stiliala/qc-script-splitter:0.0.6
+    command: sh /app/startup.sh
+    ports:
+      - "8891:8891"
+    environment:
+      - REDIS_URL=redis://qc-script-redis:5010
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - script_data:/data
+    networks:
+      - workflow-observability
+
+  qc-script-rq-worker:
+    image: stiliala/qc-script-splitter:0.0.6
+    command: rq worker --url redis://qc-script-redis:5010 qc-script-splitter
+    environment:
+      - REDIS_URL=redis://qc-script-redis:5010
+      - DATABASE_URL=sqlite:////data/app.db
+      - FLASK_RUN_HOST=qc-script-splitter
+      - FLASK_RUN_PORT=8891
+    volumes:
+      - script_data:/data
+    depends_on:
+      - qc-script-redis
+    deploy:
+      replicas: 1
+    networks:
+      - workflow-observability
+
+  # end of QC Script Splitter
+  #######################
+
+  ### Qiskit Runtime Handler ###
+  qiskit-redis:
+    image: redis:6.2.6
+    command: --port 5040
+    ports:
+      - "5040:5040"
+    networks:
+      - workflow-observability
+
+  qiskit-runtime-handler:
+    image: planqk/qiskit-runtime-handler:latest
+    command: sh /startup.sh
+    ports:
+      - "8889:8889"
+    environment:
+      - REDIS_URL=redis://qiskit-redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    networks:
+      - workflow-observability
+
+  rq-worker:
+    image: planqk/qiskit-runtime-handler:latest
+    command: rq worker --url redis://qiskit-redis:5040 qiskit-runtime-handler
+    environment:
+      - FLASK_RUN_HOST=qiskit-runtime-handler
+      - FLASK_RUN_PORT=8889
+      - REDIS_URL=redis://qiskit-redis:5040
+      - DATABASE_URL=sqlite:////data/app.db
+    volumes:
+      - exec_data:/data
+    depends_on:
+      - qiskit-redis
+    deploy:
+      replicas: 1
+    networks:
+      - workflow-observability
+
+  # end of Qiskit Runtime Handler
+  #######################
+
+
+## By default this config uses default local driver,
+## For custom volumes replace with volume driver configuration.
+volumes:
+  data1-1:
+  data1-2:
+  data2-1:
+  data2-2:
+  script_data:
+  exec_data:
+
+networks:
+  workflow-observability:
+    driver: bridge
