@@ -157,11 +157,15 @@ services:
 
   engine-plan:
     image: opentosca/ode:v2.4.0
+    ports:
+      - '9763:9763'
     networks:
       - workflow-observability
 
   engine-ia:
     image: opentosca/engine-ia:v2.1.0
+    ports:
+      - '8091:8080'
     networks:
       - workflow-observability
 
@@ -316,7 +320,7 @@ services:
       - workflow-observability
 
   qc-script-splitter:
-    image: stiliala/qc-script-splitter:0.0.4
+    image: stiliala/qc-script-splitter:0.0.6
     command: sh /app/startup.sh
     ports:
       - "8891:8891"
@@ -329,7 +333,7 @@ services:
       - workflow-observability
 
   qc-script-rq-worker:
-    image: stiliala/qc-script-splitter:0.0.4
+    image: stiliala/qc-script-splitter:0.0.6
     command: rq worker --url redis://qc-script-redis:5010 qc-script-splitter
     environment:
       - REDIS_URL=redis://qc-script-redis:5010
