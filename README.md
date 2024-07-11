@@ -17,13 +17,13 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
   
 ### ICWE 2024 - Tutorial
 
-In this tutorial, we show how to model, transform, and execute a quantum workflow manually using the MODULO framework. 
+In this [tutorial](https://link.springer.com/chapter/10.1007/978-3-031-62362-2_45), we show how to model, transform, and execute a quantum workflow manually using the MODULO framework. 
 Furthermore, we discuss how to simplify this process by automatically generating the same quantum workflow based on a set of selected patterns.
 Detailed instructions for the use case are available [here](https://ust-quantil.github.io/icwe-tutorial-2024/handson.html), and the required code can be accessed [here](2024-icwe-tutorial).
 
 ### ICWE 2024 - Demonstration
 
-In this demonstration, we introduce an approach for enabling the development of portable and interoperable quantum applications utilizing a standards-based toolchain. 
+In this [demonstration](https://link.springer.com/chapter/10.1007/978-3-031-62362-2_33), we introduce an approach for enabling the development of portable and interoperable quantum applications utilizing a standards-based toolchain. 
 Our approach facilitates the utilization of heterogeneous tools supporting the development of classical and quantum components.
 Thereby, we employ well-established standards for defining workflows, deployment topologies, application interfaces, and provenance data.
 To demonstrate the practical feasibility of our toolchain, we showcase it for two use cases from the cryptography and machine learning domains.
@@ -31,7 +31,7 @@ The corresponding workflow, as well as instructions on how to set up the environ
 
 ### CAiSE 2024 - Prototype
 
-In this paper, we introduce an approach for enabling unified observability of hybrid quantum applications in heterogeneous multi-cloud environments.
+In this [paper](https://link.springer.com/chapter/10.1007/978-3-031-61057-8_36), we introduce an approach for enabling unified observability of hybrid quantum applications in heterogeneous multi-cloud environments.
 Thereby, we improve monitoring and analysis by providing user group-specific views of the executed workflow, e.g., for quantum or deployment experts.
 These views filter and enrich instance, provenance data, and real-time hardware data to provide a clear, informative view of the workflow for the user.
 To demonstrate the functionality of our approach, we implemented a case study solving the Maximum Cut (MaxCut) problem using the Quantum Approximate Optimization Algorithm (QAOA).
@@ -126,15 +126,15 @@ The corresponding workflow models can be found [here](2020-ucc).
 ## Learn More
 
 * Beisel, Martin; Alvarado-Valiente, Jaime; Barzen, Johanna; Leymann, Frank; Romero-Álvarez, Javier; Stiliadou, Lavinia; Weder, Benjamin:
-  **Utilizing a Standards-based Toolchain to Model and Execute Quantum Workflows**.
+  [**Utilizing a Standards-based Toolchain to Model and Execute Quantum Workflows**](https://link.springer.com/chapter/10.1007/978-3-031-62362-2_33).
   In: Proceedings of the 24th International Conference on Web Engineering (ICWE 2024), Springer, 2024
 
 * Beisel, Martin; Garcia-Alonso, Jose; Murillo, Juan M.; Weder, Benjamin:
-  **Quantum Service-oriented Computing: A Practical Introduction to Quantum Web Services and Quantum Workflows**.
+  [**Quantum Service-oriented Computing: A Practical Introduction to Quantum Web Services and Quantum Workflows**](https://link.springer.com/chapter/10.1007/978-3-031-62362-2_45).
   In: Proceedings of the 24th International Conference on Web Engineering (ICWE 2024), Springer, 2024
 
 * Beisel, Martin; Barzen, Johanna; Leymann, Frank; Stiliadou, Lavinia; Weder, Benjamin:
-  **Observability for Quantum Workflows in Heterogeneous Multi-Cloud Environments**.
+  [**Observability for Quantum Workflows in Heterogeneous Multi-Cloud Environments**](https://link.springer.com/chapter/10.1007/978-3-031-61057-8_36).
   In: Proceedings of the 36th International Conference on Advanced Information Systems Engineering (CAiSE 2024), Springer, 2024
 
 * Beisel, Martin; Barzen, Johanna; Bechtold, Marvin; Leymann, Frank; Truger, Felix; Weder, Benjamin:
