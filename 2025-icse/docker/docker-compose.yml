@@ -29,7 +29,7 @@ services:
     ports:
       - '5060:5060'
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
 
   ### QC Atlas ###
@@ -46,7 +46,7 @@ services:
     ports:
       - "6626:6626"
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
 
   ### Workflow Modeler ###
@@ -73,7 +73,7 @@ services:
     ports:
       - 1893:8080
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
 
   ### Camunda Engine ###
@@ -82,7 +82,7 @@ services:
     ports:
       - 8090:8080
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
 
   #######################
@@ -107,7 +107,7 @@ services:
     ports:
       - "1977:1977"
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
     depends_on:
       - db
       - latex-renderer
@@ -125,7 +125,7 @@ services:
     ports:
       - "1978:80"
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   # required by the pattern atlas to render latex
   latex-renderer:
@@ -134,7 +134,7 @@ services:
     ports:
       - "5030:5030"
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
   # end of Pattern Atlas
   #######################
 
@@ -153,21 +153,21 @@ services:
       ENGINE_PLAN_BPEL_HOSTNAME: engine-plan
       CONTAINER_DEPLOYMENT_TESTS: 'false'
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   engine-plan:
     image: opentosca/ode:v2.4.0
     ports:
       - '9763:9763'
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   engine-ia:
     image: opentosca/engine-ia:v2.1.0
     ports:
       - '8091:8080'
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   winery:
     build: initialized-winery
@@ -181,7 +181,7 @@ services:
       TOPOLOGYMODELER_HOSTNAME: $PUBLIC_HOSTNAME
       CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
   ui:
     image: opentosca/ui:latest
     environment:
@@ -192,7 +192,7 @@ services:
     ports:
       - '8088:8080'
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   dind:
     image: docker:20.10-dind
@@ -204,7 +204,7 @@ services:
       - '9990-9999:9990-9999'
       - '9990-9999:9990-9999/udp'
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
   # end of OpenTOSCA Ecosystem
   #######################
 
@@ -224,7 +224,7 @@ services:
     ports:
       - '8094:5020'
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
   qprov-collector-ibm:
     image: planqk/qprov-collector:v1.3.2
     logging:
@@ -241,7 +241,7 @@ services:
       QPROV_IBMQ_AUTO_COLLECT_INTERVAL: 60
       QPROV_IBMQ_AUTO_COLLECT_INTERVAL_CIRCUITS: 180
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
   # end of QProv
   #######################
 
@@ -254,14 +254,14 @@ services:
     ports:
       - '5076:5076'
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   warm-starting-service:
     image: planqk/warm-starting-service:v1.0.0
     ports:
       - '5077:5077'
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   minio1:
     <<: *minio-common
@@ -270,7 +270,7 @@ services:
       - data1-1:/data1
       - data1-2:/data2
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   minio2:
     <<: *minio-common
@@ -279,7 +279,7 @@ services:
       - data2-1:/data1
       - data2-2:/data2
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   nginx:
     image: nginx:1.25.4-alpine
@@ -293,7 +293,7 @@ services:
       - minio1
       - minio2
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   error-mitigation-service:
     image: planqk/error-mitigation-service:v1.0.1
@@ -305,7 +305,7 @@ services:
     depends_on:
       - nginx
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
   # end of Quokka Services
   #######################
 
@@ -317,7 +317,7 @@ services:
     ports:
       - "5010:5010"
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   qc-script-splitter:
     image: stiliala/qc-script-splitter:0.0.6
@@ -330,7 +330,7 @@ services:
     volumes:
       - script_data:/data
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   qc-script-rq-worker:
     image: stiliala/qc-script-splitter:0.0.6
@@ -347,7 +347,7 @@ services:
     deploy:
       replicas: 1
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   # end of QC Script Splitter
   #######################
@@ -359,7 +359,7 @@ services:
     ports:
       - "5040:5040"
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   qiskit-runtime-handler:
     image: planqk/qiskit-runtime-handler:latest
@@ -372,7 +372,7 @@ services:
     volumes:
       - exec_data:/data
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   rq-worker:
     image: planqk/qiskit-runtime-handler:latest
@@ -389,7 +389,7 @@ services:
     deploy:
       replicas: 1
     networks:
-      - workflow-observability
+      - pattern-based-adaptation
 
   # end of Qiskit Runtime Handler
   #######################
@@ -406,5 +406,5 @@ volumes:
   exec_data:
 
 networks:
-  workflow-observability:
+  pattern-based-adaptation:
     driver: bridge
