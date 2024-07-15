@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:quantme="https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+  <bpmn2:process id="Process_1" isExecutable="true">
+    <bpmn2:startEvent id="StartEvent_1">
+      <bpmn2:outgoing>Flow_1v8ak90</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:sequenceFlow id="Flow_1v8ak90" sourceRef="StartEvent_1" targetRef="Activity_0lpheyh" />
+    <bpmn2:endEvent id="Event_169tft9">
+      <bpmn2:incoming>Flow_17rkir4</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="Flow_0f2mzta" sourceRef="Activity_0lpheyh" targetRef="Activity_1kej772" />
+    <bpmn2:scriptTask id="Activity_0lpheyh" name="Execute VQE" scriptFormat="python" quantme:requirements="qiskit==0.46.1&#10;qiskit_qasm3_import~=0.5.0&#10;qiskit-aer==0.14.1&#10;qiskit-terra==0.46.1">
+      <bpmn2:incoming>Flow_1v8ak90</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_0f2mzta</bpmn2:outgoing>
+      <bpmn2:script>import numpy as np
+import io
+from qiskit import Aer, execute
+from qiskit.circuit.library import EfficientSU2
+from qiskit.quantum_info import Statevector
+from qiskit.quantum_info import SparsePauliOp
+from qiskit.quantum_info import random_clifford
+from qiskit import QuantumCircuit
+from qiskit.algorithms import VQE
+from qiskit.opflow.primitive_ops import PauliSumOp
+from qiskit.qasm3 import dumps
+
+seed = 1
+np.random.seed(seed)
+operator_matrix = np.matrix([[3. + 0.j, 2. + 0.j, 0. + 0.j, 0. - 2.5j], [2. + 0.j, -3. + 0.j, 0. + 2.5j, 0. + 0.j],
+                                [0. + 0.j, 0. - 2.5j, -3. + 0.j, 0. + 0.j], [0. + 2.5j, 0. + 0.j, 0. + 0.j, 3. + 0.j]])
+pauli_operator = SparsePauliOp.from_operator(operator_matrix)
+problem_size = int(np.log2(len(operator_matrix)))
+ansatz = EfficientSU2(num_qubits=problem_size, reps=2)
+
+def reassign_parameters(circuits, new_params):
+    return [circuit.assign_parameters(new_params) for circuit in circuits]
+
+def estimate_fidelity_from_shadow(unitaries, measured_bitstrings, target_state):
+    reconstructed_unitaries = []
+
+    # Iterate through each unitary matrix string
+    for unitary_str in unitaries:
+        # Remove unnecessary whitespace and newline characters
+        unitary_str = unitary_str.replace('\n', '').replace(' ', '')
+
+        # Convert the string representation back to a numpy array
+        unitary_matrix = np.array(eval(unitary_str))  # Use eval to evaluate the string as a Python expression
+        reconstructed_unitaries.append(unitary_matrix)
+
+        # Now reconstructed_unitaries contains numpy arrays representing unitary matrices
+        #print(reconstructed_unitaries)
+    measured_bitstrings = [np.matrix(b) for b in measured_bitstrings]
+    unitaries = [np.matrix(u) for u in reconstructed_unitaries]
+    target_state = np.matrix(target_state)
+
+    n_shots = len(measured_bitstrings)
+    n_qubits = np.log2(target_state.shape[1])
+    observable = target_state.T @ np.conj(target_state)
+
+    fidelity = 0
+    factor = 2 ** n_qubits + 1
+    for i in range(n_shots):
+        product = np.conj(measured_bitstrings[i]) @ (unitaries[i] @ observable @ unitaries[i].H) @ measured_bitstrings[i].T
+        cur_fid = factor * product - 1
+        fidelity += cur_fid
+
+    fidelity = fidelity / n_shots
+    fidelity = np.abs(np.sum(fidelity))
+    return fidelity
+
+def generate_hermitian(n=2, a_range=(-5, 5), complex=True, sparsity=None):
+    shape = (2 ** n, 2 ** n)
+    matrix = generate_matrix(shape, a_range, complex, sparsity)
+    for i in range(shape[0]):
+        for j in range(shape[1]):
+            if i == j:
+                matrix[i, j] = np.real(matrix[i, j])
+            if i &gt; j:
+                matrix[i, j] = np.conjugate(matrix[j, i])
+    return matrix
+
+def generate_matrix(shape=(2, 2), a_range=(-5, 5), complex=True, sparsity=None):
+    matrix = np.random.uniform(*a_range, shape)
+    if complex:
+        matrix = matrix + 1.j * np.random.uniform(*a_range, shape)
+    if sparsity:
+        for i in range(shape[0]):
+            for j in range(shape[1]):
+                matrix[i, j] = np.random.choice([0, matrix[i, j]], p=[sparsity, 1 - sparsity])
+    return np.matrix(matrix)
+
+def power_method(matrix, num_iterations=10):
+    bk = np.random.rand(matrix.shape[1]) + 1.j * np.random.rand(matrix.shape[1])
+    bk = np.matrix(bk).T
+    for i in range(num_iterations):
+        bk1 = np.dot(matrix, bk)
+        bk = bk1 / np.linalg.norm(bk1)
+    return bk
+
+def inverse_power_method(matrix, shift=0, num_iterations=10):
+    inv_matrix = np.linalg.inv(matrix - shift * np.identity(matrix.shape[0]))
+    return power_method(inv_matrix, num_iterations)
+
+def get_gershgorins(matrix, draw=False):
+    centers, radii = [], []
+    for i in range(matrix.shape[0]):
+        centers.append(matrix[i, i])
+        radii.append(np.sum([np.abs(matrix[i, j]) if j is not i else 0 for j in range(matrix.shape[0])]))
+    return centers, radii
+
+def get_gershgorin_extrema(matrix):
+    centers, radii = get_gershgorins(matrix, draw=False)
+    min_bound = min(np.subtract(np.real(centers), radii))
+    max_bound = max(np.add(np.real(centers), radii))
+    return min_bound, max_bound
+
+def execute_circuits(params, meas_circuits, backend1, param_names, param_values):
+
+    backend = Aer.get_backend(backend1)
+    #final_meas_circuits = reassign_parameters_by_names(meas_circuits, param_names, param_values)
+    final_meas_circuits = [circuit.assign_parameters(params) for circuit in meas_circuits]
+    job = execute(final_meas_circuits, backend=backend, shots=1, seed_transpiler=seed, seed_simulator=seed)
+    result = job.result()
+    counts = [result.get_counts(i) for i, c in enumerate(final_meas_circuits)]
+    return counts
+
+def execute_exp_circuits(params, vqe_circuits, backend):
+    assigned_circuits = []
+    print("execute_exp_circuits")
+    print("circuits")
+    #assigned_circuits = reassign_parameters_by_names(vqe_circuits, param_names, params)
+    print(assigned_circuits)
+    print(backend)
+    final_meas_circuits = [c.assign_parameters(params) for c in vqe_circuits]
+    backend1 = Aer.get_backend(backend)
+    job = execute(final_meas_circuits, backend=backend1, seed_transpiler=seed, seed_simulator=seed)
+    res = job.result()
+    return res
+
+def calculate_fidelity(unitaries, counts, approx_eigenstate):
+    reconstructed_unitaries = []
+
+    # Iterate through each unitary matrix string
+    for unitary_str in unitaries:
+        # Remove unnecessary whitespace and newline characters
+        unitary_str = unitary_str.replace('\n', '').replace(' ', '')
+
+        # Convert the string representation back to a numpy array
+        unitary_matrix = np.array(eval(unitary_str))  # Use eval to evaluate the string as a Python expression
+        reconstructed_unitaries.append(unitary_matrix)
+
+    bs = [Statevector.from_label(list(cnt.keys())[0]) for cnt in counts]
+    fidelity = -estimate_fidelity_from_shadow(unitaries, bs, approx_eigenstate)
+    print("ACAE fidelity:", fidelity)
+    return fidelity
+
+def update_parameters(params, param_plus, param_minus, fidelity, plus_fidelity, minus_fidelity, rhobeg):
+    grad = np.zeros_like(params)
+
+    if plus_fidelity &lt; fidelity:
+        print("plus parameters")
+        return param_plus
+    #elif minus_fidelity &lt; fidelity:
+     #   print("minus parameters")
+      #  return param_minus
+    else:
+      print("old params")
+      #return params
+      return param_minus
+
+def calculate_expectation_value(final_meas_circuits, pauli_lists, res):
+    exp = 0.0
+    for i in range(len(final_meas_circuits)):
+        paulis = pauli_lists[i]
+        counts = res.get_counts(i)
+
+        # compute contribution of each pauli operator (p_exp)
+        for pauli in paulis:
+            p_exp = 0.0
+            sum_shots = sum([v for _, v in counts.items()])  # find out how many shots were executed in total
+            for k, v in counts.items():
+                k_pruned = [b for j, b in enumerate(k) if str(pauli)[j] != 'I']  # remove bits where operator is I
+                p_exp += (-1) ** (k_pruned.count('1')) * v / sum_shots
+
+                # add to overall expectation weighted by coefficient for respective pauli operator
+            idx = pauli_operator.paulis.settings["data"].index(str(pauli))
+            exp += pauli_operator.coeffs[idx] * p_exp
+
+    print("VQE expectation", exp.real)
+    return exp.real
+
+def reset_fidelities(params):
+    plus_fidelity = np.zeros_like(params)
+    minus_fidelity = np.zeros_like(params)
+
+    return plus_fidelity, minus_fidelity
+
+def create_backend(backend):
+    if backend == "":
+        return "statevector_simulator"
+    return backend
+
+def initialize_positive_parameters(parameters, j, rhobeg):
+    new_parameters = np.copy(parameters)
+    new_parameters[j] += rhobeg
+    return new_parameters
+
+def initialize_negative_parameters(parameters, j, rhobeg):
+    new_parameters = np.copy(parameters)
+    new_parameters[j] -= rhobeg
+    return new_parameters
+
+# Function to prepare measurement circuits
+def prepare_meas_circuits(circuit: QuantumCircuit, n_shadows, seed, param_values):
+    circuits = []
+    unitaries = []
+    unitaries_str = []
+
+    # Capture the parameter names and bind the provided values
+    param_names = [param.name for param in circuit.parameters]
+    param_dict = {param: value for param, value in zip(circuit.parameters, param_values)}
+    #bound_circuit = circuit.assign_parameters(param_dict)
+
+    for _ in range(n_shadows):
+        clifford = random_clifford(num_qubits=circuit.num_qubits, seed=seed)
+        cir = circuit.compose(clifford.to_circuit())
+        cir.measure_all()
+        circuits.append(cir)
+        unitaries.append(clifford.to_matrix())
+
+    circuits_string = '##########\n'.join([qiskit.qasm3.dumps(circuit) for circuit in circuits])
+
+    # Generate QASM strings with parameters assigned
+    #circuits_string = '##########\n'.join([circuit.qasm() for circuit in circuits])
+
+    # Iterate through each unitary matrix numpy array
+    for unitary_matrix in unitaries:
+        # Convert numpy array to string representation
+        unitary_str = np.array2string(unitary_matrix, separator=',', precision=8, suppress_small=True)
+        unitaries_str.append(unitary_str)
+
+    return circuits_string, unitaries_str, param_names, param_values
+
+# Function to parse QASM strings back to circuits
+def parse_qasm_to_circuits(circuits_string):
+    qasm_circuits = circuits_string.split('##########\n')
+    print(qasm_circuits)
+    
+    parsed_circuits = []
+    i = 0
+    for qasm in qasm_circuits:
+      qasm = qasm.strip()
+      parsed_circuit = qiskit.qasm3.loads(qasm)
+      parsed_circuits.append(parsed_circuit)
+    #parsed_circuits = [qiskit.qasm3.load(qasm) for qasm in qasm_circuits]
+
+    return parsed_circuits
+
+# Function to parse QASM strings back to circuits
+def parse_circuits_to_qasm(circuits):
+    #circuits = []
+    param_info_list = []
+    
+    #param_names = [param.name for param in ansatz.parameters]
+    # Iterate through each circuit in vqe_circuits
+    # Generate QASM strings with parameters assigned
+    circuits_string = '##########\n'.join([qiskit.qasm3.dumps(circuit) for circuit in circuits])
+    print("parse_circuits_to_qasm")
+    print(circuits_string)
+    return circuits_string
+
+# Function to reassign parameters to circuits based on parameter names and values
+def reassign_parameters_by_names(circuits, param_names, param_values):
+    print(circuits)
+    for circuit in circuits:
+        print(circuit.parameters)
+        params = {param.name: param for param in circuit.parameters}
+        param_dict = {params[name]: value for name, value in zip(param_names, param_values) if name in params}
+        circuit.assign_parameters(param_dict, inplace=True)
+    return circuits
+
+def main(backend):
+
+    # SPLIT: Classical
+    max_iter = 20
+    tol = np.pi / (2 ** 6)
+    rhobeg = np.pi / 4
+    initial_param_values = np.random.uniform(-np.pi, np.pi, size=len(ansatz.parameters))
+    params = initial_param_values
+    params_length = len(params)
+    current_iteration = 0
+    j = 0
+    approx_iterations = 3
+    shift = get_gershgorin_extrema(operator_matrix)[0]
+    approx_eigenstate = inverse_power_method(operator_matrix, shift=shift, num_iterations=approx_iterations).T.tolist()[0]
+
+    # SPLIT: Circuit Generation
+    n_shadows = 100
+    meas_circuits2, unitaries, param_names, _ = prepare_meas_circuits(ansatz, n_shadows, seed, params)
+
+
+
+    while current_iteration &lt; max_iter and rhobeg &gt;= tol:
+
+        # SPLIT: Classical
+        plus_fidelity, minus_fidelity = reset_fidelities(params)
+
+        while j &lt; params_length:
+
+            # SPLIT: Circuit Execution
+            #meas_circuits = parse_qasm_to_circuits(meas_circuits)
+            meas_circuits = parse_qasm_to_circuits(meas_circuits2)
+            backend1 = create_backend(backend)
+            counts = execute_circuits(params, meas_circuits, backend1, param_names, params)
+
+            param_plus = initialize_positive_parameters(params, j,  rhobeg)
+            plus_counts = execute_circuits(param_plus, meas_circuits, backend1, param_names, param_plus)
+
+            param_minus = initialize_negative_parameters(params, j,  rhobeg)
+            minus_counts = execute_circuits(param_minus, meas_circuits, backend1, param_names, param_minus)
+
+            # SPLIT: Result Evaluation
+            fidelity = calculate_fidelity(unitaries, counts, approx_eigenstate)
+            print("fidelity", fidelity)
+            plus_fidelity = calculate_fidelity(unitaries, plus_counts, approx_eigenstate)
+            print("plus_fildelity", plus_fidelity)
+            print(plus_fidelity)
+            minus_fidelity = calculate_fidelity(unitaries, minus_counts, approx_eigenstate)
+            print("minus_fidelity", minus_fidelity)
+
+            # SPLIT: Parameter Optimization
+            new_params = update_parameters(params, param_plus, param_minus, fidelity, plus_fidelity, minus_fidelity, rhobeg)
+            params = new_params
+            j = j + 1
+
+        # SPLIT: Classical
+        rhobeg *= 0.5
+        current_iteration = current_iteration + 1
+
+    # SPLIT: Classical
+    rhobeg = 3 * np.pi / 16
+    vqe_max_iter = 50
+    current_iteration = 0
+    initial_param_values = params # use parameterization obtained from pre-training
+    j = 0
+
+    # SPLIT: circuit generation
+    vqe = VQE(ansatz=ansatz)
+    vqe_circuits = vqe.construct_circuit(ansatz.parameters, PauliSumOp(pauli_operator))
+    #parsed_vqe_circuits, param_info = parse_circuits_to_qasm(vqe_circuits, params)
+    parsed_vqe_circuits = parse_circuits_to_qasm(vqe_circuits)
+
+
+    while current_iteration &lt; vqe_max_iter and rhobeg &gt;= tol:
+        # SPLIT: Classical
+        # Initialize plus and minus fidelities
+        plus_fidelity, minus_fidelity = reset_fidelities(params)
+
+        while j &lt; params_length:
+            # SPLIT: Circuit Execution
+            backend1 = create_backend(backend)
+            #print(parsed_vqe_circuits)
+            vqe_circuits = parse_qasm_to_circuits(parsed_vqe_circuits)
+            res = execute_exp_circuits(params, vqe_circuits, backend1)
+
+            param_plus = initialize_positive_parameters(params, j, rhobeg)
+            plus_counts = execute_exp_circuits(param_plus, vqe_circuits, backend1)
+
+            param_minus = initialize_negative_parameters(params, j, rhobeg)
+            minus_counts = execute_exp_circuits(param_minus, vqe_circuits, backend1)
+
+            # SPLIT: Result Evalution
+            pauli_lists = pauli_operator.paulis.group_commuting(qubit_wise=True)
+            vqe_circuits = parse_qasm_to_circuits(parsed_vqe_circuits)
+            final_meas_circuits = [c.assign_parameters(params) for c in vqe_circuits]
+            expectation_value = calculate_expectation_value(final_meas_circuits, pauli_lists, res)
+            final_meas_circuits_plus = final_meas_circuits = [c.assign_parameters(param_plus) for c in vqe_circuits]
+            plus_fidelity = calculate_expectation_value(final_meas_circuits_plus, pauli_lists, plus_counts)
+            print("plus_fildelity")
+            print(plus_fidelity)
+            final_meas_circuits_minus = [c.assign_parameters(param_minus) for c in vqe_circuits]
+            minus_fidelity = calculate_expectation_value(final_meas_circuits_minus, pauli_lists, minus_counts)
+            print("minus_fidelity")
+            print(minus_fidelity)
+
+            # SPLIT: Parameter optimization Update parameters
+            new_params = update_parameters(params, param_plus, param_minus, expectation_value, plus_fidelity, minus_fidelity, rhobeg)
+            params = new_params
+            j = j + 1
+
+
+
+        # SPLIT: Classical
+        rhobeg *= 0.5
+        current_iteration = current_iteration + 1
+
+if __name__ == "__main__":
+    main("")</bpmn2:script>
+    </bpmn2:scriptTask>
+    <bpmn2:sequenceFlow id="Flow_17rkir4" sourceRef="Activity_1kej772" targetRef="Event_169tft9" />
+    <bpmn2:userTask id="Activity_1kej772" name="Analyze Results">
+      <bpmn2:incoming>Flow_0f2mzta</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_17rkir4</bpmn2:outgoing>
+    </bpmn2:userTask>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="BPMNShape_StartEvent_1" bpmnElement="StartEvent_1">
+        <dc:Bounds x="252" y="240" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_169tft9_di" bpmnElement="Event_169tft9">
+        <dc:Bounds x="842" y="240" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0j8w71x_di" bpmnElement="Activity_0lpheyh">
+        <dc:Bounds x="510" y="218" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0yf6acc_di" bpmnElement="Activity_1kej772">
+        <dc:Bounds x="680" y="218" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1v8ak90_di" bpmnElement="Flow_1v8ak90">
+        <di:waypoint x="288" y="258" />
+        <di:waypoint x="510" y="258" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0f2mzta_di" bpmnElement="Flow_0f2mzta">
+        <di:waypoint x="610" y="258" />
+        <di:waypoint x="680" y="258" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17rkir4_di" bpmnElement="Flow_17rkir4">
+        <di:waypoint x="780" y="258" />
+        <di:waypoint x="842" y="258" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>
