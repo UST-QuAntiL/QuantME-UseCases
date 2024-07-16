@@ -320,7 +320,7 @@ services:
       - pattern-based-adaptation
 
   qc-script-splitter:
-    image: stiliala/qc-script-splitter:0.0.7
+    image: stiliala/qc-script-splitter:0.0.8
     command: sh /app/startup.sh
     ports:
       - "8891:8891"
@@ -333,7 +333,7 @@ services:
       - pattern-based-adaptation
 
   qc-script-rq-worker:
-    image: stiliala/qc-script-splitter:0.0.7
+    image: stiliala/qc-script-splitter:0.0.8
     command: rq worker --url redis://qc-script-redis:5010 qc-script-splitter
     environment:
       - REDIS_URL=redis://qc-script-redis:5010
@@ -362,7 +362,7 @@ services:
       - pattern-based-adaptation
 
   qiskit-runtime-handler:
-    image: planqk/qiskit-runtime-handler:latest
+    image: stiliala/qiskit-runtime-handler:latest
     command: sh /startup.sh
     ports:
       - "8889:8889"
@@ -375,7 +375,7 @@ services:
       - pattern-based-adaptation
 
   rq-worker:
-    image: planqk/qiskit-runtime-handler:latest
+    image: stiliala/qiskit-runtime-handler:latest
     command: rq worker --url redis://qiskit-redis:5040 qiskit-runtime-handler
     environment:
       - FLASK_RUN_HOST=qiskit-runtime-handler
