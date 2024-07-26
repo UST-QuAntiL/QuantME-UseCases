@@ -16,6 +16,11 @@ A video showcasing the described use case is available on YouTube:
 
 [![IMAGE ALT TEXT HERE](TODO)](TODO)
 
+A table with the runtime evaluation can be found [here](https://github.com/UST-QuAntiL/QuantME-UseCases/blob/master/2025-icse/evaluation-data/runtime-evaluation.xlsx).
+
+An overview of the patterns, their categorization, as well as the corresponding paper they were published in can be found [here](https://github.com/UST-QuAntiL/QuantME-UseCases/blob/master/2025-icse/PatternCategories.md)
+
+
 The use case utilizes the following components:
 
 * [Quantum Workflow Modeler](https://github.com/PlanQK/workflow-modeler): A graphical BPMN modeler to define, transform, and deploy quantum workflows.
