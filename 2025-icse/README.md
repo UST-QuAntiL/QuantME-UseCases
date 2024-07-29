@@ -1,5 +1,12 @@
 # ICSE 2025 Prototype
 
+This use case folder comprises the following data:
+* [Raw data of the runtime analysis](https://github.com/UST-QuAntiL/QuantME-UseCases/blob/master/2025-icse/evaluation-data/runtime-evaluation.xlsx)
+* [Quantum computing patterns with their corresponding categories](https://github.com/UST-QuAntiL/QuantME-UseCases/blob/master/2025-icse/PatternCategories.md)
+* The description of the case study (see below)
+
+# Case Study
+
 Building quantum applications requires deep knowledge of quantum computing and software engineering.
 Hence, an abstraction layer reducing the complexity for non-experts is required.
 Patterns are an established concept for abstractly describing proven solution strategies to recurring problems.
@@ -15,11 +22,6 @@ In the following sections, we showcase our pattern-based generation and adaptati
 A video showcasing the described use case is available on YouTube:
 
 [![IMAGE ALT TEXT HERE](TODO)](TODO)
-
-A table with the runtime evaluation can be found [here](https://github.com/UST-QuAntiL/QuantME-UseCases/blob/master/2025-icse/evaluation-data/runtime-evaluation.xlsx).
-
-An overview of the patterns, their categorization, as well as the corresponding paper they were published in can be found [here](https://github.com/UST-QuAntiL/QuantME-UseCases/blob/master/2025-icse/PatternCategories.md)
-
 
 The use case utilizes the following components:
 
