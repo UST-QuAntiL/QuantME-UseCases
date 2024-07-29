@@ -78,7 +78,7 @@ services:
 
   ### Camunda Engine ###
   camunda-engine:
-    image: planqk/camunda-process-view-plugins:v1.0.2
+    image: planqk/camunda-process-view-plugins:v1.0.3
     ports:
       - 8090:8080
     networks:
@@ -142,14 +142,16 @@ services:
   #######################
   ### OpenTOSCA Ecosystem ###
   container:
-    image: opentosca/container:v3.0.0
+    image: opentosca/container:v3.1.4
     ports:
       - '1337:1337'
       - '8081-8087:8081-8087'
     environment:
       CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
-      ENGINE_IA_HOSTNAME: engine-ia
+      ENGINE_IA_HOSTNAME: engine-ia-jdk8
       ENGINE_IA_PORT: 8080
+      ENGINE_IA_JAVA17_HOSTNAME: engine-ia-jdk17
+      ENGINE_IA_JAVA17_PORT: 8080
       ENGINE_PLAN_BPEL_HOSTNAME: engine-plan
       CONTAINER_DEPLOYMENT_TESTS: 'false'
     networks:
@@ -162,13 +164,18 @@ services:
     networks:
       - pattern-based-adaptation
 
-  engine-ia:
+  engine-ia-jdk8:
     image: opentosca/engine-ia:v2.1.0
     ports:
       - '8091:8080'
     networks:
       - pattern-based-adaptation
-
+  engine-ia-jdk17:
+    image: opentosca/engine-ia:latest-jdk17
+    ports:
+      - '7424:8080'
+    networks:
+      - pattern-based-adaptation
   winery:
     build: initialized-winery
     logging:
