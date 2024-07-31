@@ -98,7 +98,7 @@ After confirming the pattern selection, an overview of the workflow generation i
 
 Next, click on ``Done`` and then on ``Combine Solutions``. Now an overview of the generated workflows with the attached patterns should be shown.
 
-![Pattern Final](./docs/modeler-generatedWF.png)
+![Pattern Final](./docs/modeler-generatedWf.png)
 
 The imported workflow starts of with a quantum circuit loading task that generates a parameterized QAOA circuit.
 Afterward, the circuit is executed and subsequently evaluated by a result evaluation task.
