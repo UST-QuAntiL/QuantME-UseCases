@@ -1,7 +1,5 @@
 FROM lmmdock/postgres-multi:latest
 
-LABEL MAINTAINER Manuela Weigold <manuela.weigold@iaas.uni-stuttgart.de>
-
 ENV QC_ATLAS_CONTENT_REPOSITORY_URL "https://github.com/UST-QuAntiL/planqk-atlas-content.git"
 ENV QC_ATLAS_CONTENT_REPOSITORY_PATH "/var/qc-atlas/testdata"
 ENV QC_ATLAS_CONTENT_REPOSITORY_BRANCH "master"

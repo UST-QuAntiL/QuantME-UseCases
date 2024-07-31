@@ -1,7 +1,7 @@
 # ICSE 2025 Prototype
 
 This use case folder comprises the following data:
-* [Raw data of the runtime analysis](https://github.com/UST-QuAntiL/QuantME-UseCases/blob/master/2025-icse/evaluation-data/runtime-evaluation.xlsx)
+* [Raw data of the runtime analysis](https://github.com/UST-QuAntiL/QuantME-UseCases/tree/master/2025-icse/evaluation-data)
 * [Quantum computing patterns with their corresponding categories](https://github.com/UST-QuAntiL/QuantME-UseCases/blob/master/2025-icse/PatternCategories.md)
 * The description of the case study (see below)
 
@@ -21,7 +21,7 @@ In the following sections, we showcase our pattern-based generation and adaptati
 
 A video showcasing the described use case is available on YouTube:
 
-[![IMAGE ALT TEXT HERE](TODO)](TODO)
+[![IMAGE ALT TEXT HERE](https://drive.google.com/file/d/1fCADQjUJbD8tyFiX_Giknkx7Tf8zTAiq/view?usp=sharing)](https://drive.google.com/file/d/1fCADQjUJbD8tyFiX_Giknkx7Tf8zTAiq/view?usp=sharing)
 
 The use case utilizes the following components:
 
