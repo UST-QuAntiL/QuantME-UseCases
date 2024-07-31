@@ -34,7 +34,115 @@ The use case utilizes the following components:
 
 
 ## Setup
-TODO
+
+
+First, we will discuss the steps required to set up the different components.
+All components are available via Docker.
+Therefore, these components can be started using the Docker-Compose file available [here](./docker):
+
+1. Update the [.env](./docker/.env) file with your settings:
+* ``PUBLIC_HOSTNAME``: Enter the hostname/IP address of your Docker engine. Do *not* use ``localhost``.
+
+2. Run the Docker-Compose file:
+```
+docker-compose pull
+docker-compose up --build
+```
+
+3. Wait until all containers are up and running. This may take some minutes.
+
+Open the Quantum Workflow Modeler using the following URL: [localhost:8080](http://localhost:8080)
+
+Afterward, the following screen should be displayed:
+
+![Modeler Initial](./docs/modeler-initial.png)
+
+The Quantum Workflow Modeler is pre-configured with the endpoints of the workflow engine and the QRM repository.
+To check these settings, click on ``Configuration`` in the toolbar, opening the config pop-up:
+
+![Quantum Workflow in Modeler](./docs/modeler-configuration.png)
+
+Please verify that the different configuration properties are set to the following values.
+Thereby, $IP has to be replaced with the IP-address of the Docker engine used for the setup described above:
+
+* Under ``General``:
+    * ``Camunda Engine Endpoint``: http://$IP:8090/engine-rest
+* Under ``GitHub``:
+    * ``QRM Repository User``: UST-QuAntiL
+    * ``QRM Repository Name``: QuantME-UseCases
+    * ``QRM Repository Path``: 2025-icse/qrms
+
+    * ``GitHub Token``: $YOUR_GITHUB_API_TOKEN
+    * ``GitHub Repository Owner``: $YOUR_GITHUB_USER_NAME
+    * ``GitHub Repository Name``: $REPOSITORY_NAME_THAT_SHALL_BE_USED
+    * ``GitHub Repository Path``: $FOLDERNAME_THAT_SHALL_BE_USED
+* Under ``OpenTOSCA Plugin``:
+    * ``OpenTOSCA Endpoint:``: http://$IP:1337/csars
+    * ``Winery Endpoint:``: http://$IP:8093/winery
+
+
+### Generating the Quantum Workflow utilizing Patterns
+
+To generate a quantum workflow utilizing the quantum computing patterns click on ``Pattern`` and ``Open Pattern Selection``. 
+Afterward, click on ``Select Patterns``.
+
+![Pattern Initial Popup](./docs/modeler-patterns-startup.png)
+
+Next, click on the blue ``+`` icon and then select the ``Quantum Approximate Optimization Algorithm``, ``Circuit Cutting``, ``Biased Initial State``, and ``Readout Error Mitigation``.
+
+![Pattern Selection](./docs/modeler-patterns-selection.png)
+
+After confirming the pattern selection, an overview of the workflow generation is shown. 
+
+![Pattern Selection Final](./docs/modeler-patterns-selection-final.png)
+
+Next, click on ``Done`` and then on ``Combine Solutions``. Now an overview of the generated workflows with the attached patterns should be shown.
+
+![Pattern Final](./docs/modeler-generatedWF.png)
+
+The imported workflow starts of with a quantum circuit loading task that generates a parameterized QAOA circuit.
+Afterward, the circuit is executed and subsequently evaluated by a result evaluation task.
+Subsequently, the circuit parameters are optimized by a parameter optimization task for the next iteration of the quantum algorithm.
+Once the optimization is converged, the result is returned to the user for analysis.
+
+The selected enhancement patterns (Circuit Cutting, Biased Initial State, and Readout Error Mitigation) are attached to the subprocess containing the quantum algorithm.
+To integrate the patterns into the workflow and transform all QuantME modeling constructs by standard-compliant BPMN modeling constructs, click on ``Transformation``.
+
+![Quantum Workflow Modeler](./docs/modeler-workflow-transformation.png)
+
+To deploy the required services click on ``OpenTOSCA`` and then on ``Service Deployment``.
+
+![Service Deployment Overview](./docs/modeler-service-deployment-overview.png)
+
+In the pop-up all services that must be deployed before execution are shown. Click on ``Upload CSARs`` to upload all deployment models to OpenTOSCA and subsequently provide your deployment details and credentials.
+
+![Service Deployment Overview](./docs/modeler-service-deployment-input.png)
+
+Finally, bind the services to the corresponding workflow.
+Next, deploy the workflow by clicking the ``Deploy Workflow`` button.
+
+![Deploy Quantum Workflow](./docs/modeler-deploy-workflow.png)
+
+Open the Camunda Engine using the following URL: [$IP:8090](http://$IP:8090)
+Use ``demo`` as username and password to log in, which displays the following screen:
+
+![Camunda Loginscreen](docs/workflow-engine-login.png)
+
+Click on the home icon in the top-right corner and select ``Cockpit`` to validate that the workflow was successfully uploaded.
+Then, click on ``Processes`` on the top-left and select the workflow from the list.
+This should show a graphical representation of the uploaded workflow:
+
+![Camunda Workflow Overview](./docs/camunda-wfoverview.png)
+
+To instantiate the workflow, click the home button on the top-right, then select ``Tasklist``.
+Next, click on ``Start process`` on the top-right, select the name of the uploaded workflow, and provide the input parameters:
+
+![Start Workflow Inputs](docs/start-workflow-inputs.png)
+
+The UI displays a notification at the bottom-right that the workflow instance was successfully started.
+Afterward, once more, click on the home icon on the top-right and select Cockpit.
+Click on the Running Process Instance, select the started workflow, and then click on the workflow ID.
+Now the workflow's token flow and the changing variables can be observed. To see the current state of the workflow instance refresh the page.
 
 ## Disclaimer of Warranty
 Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.
