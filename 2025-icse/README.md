@@ -30,11 +30,10 @@ The use case utilizes the following components:
 * [Camunda BPMN Engine](https://camunda.com/products/camunda-platform/bpmn-engine/): A state-of-the-art BPMN workflow engine used to execute quantum workflows after transforming them to native BPMN workflow models to avoid the need for extending the workflow engine.
 * [Winery](https://github.com/OpenTOSCA/winery): Winery is a web-based environment to graphically model TOSCA-based deployment models, which can then be attached to activities of quantum workflows to enable their automated deployment in the target environment.
 * [OpenTOSCA Container](https://github.com/OpenTOSCA/container): A TOSCA-compliant deployment system to deploy and manage applications or services.
-* [Script Splitter](TODO): A service for splitting monolithic quantum computing scripts into a loosely coupled quantum workflow.
+* [Script Splitter](https://github.com/UST-QuAntiL/qc-script-splitter): A service for splitting monolithic quantum computing scripts into a loosely coupled quantum workflow.
 
 
 ## Setup
-
 TODO
 
 ## Disclaimer of Warranty
