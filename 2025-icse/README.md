@@ -21,7 +21,7 @@ In the following sections, we showcase our pattern-based generation and adaptati
 
 A video showcasing the described use case is available on YouTube:
 
-[![IMAGE ALT TEXT HERE](https://drive.google.com/file/d/1fCADQjUJbD8tyFiX_Giknkx7Tf8zTAiq/view?usp=sharing)](https://drive.google.com/file/d/1fCADQjUJbD8tyFiX_Giknkx7Tf8zTAiq/view?usp=sharing)
+[![HERE](https://drive.google.com/file/d/1fCADQjUJbD8tyFiX_Giknkx7Tf8zTAiq/view?usp=sharing)](https://drive.google.com/file/d/1fCADQjUJbD8tyFiX_Giknkx7Tf8zTAiq/view?usp=sharing)
 
 The use case utilizes the following components:
 
