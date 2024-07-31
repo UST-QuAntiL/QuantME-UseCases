@@ -51,7 +51,7 @@ services:
 
   ### Workflow Modeler ###
   workflow-modeler:
-    image: planqk/workflow-modeler:v1.4.2
+    image: planqk/workflow-modeler:v1.5.0
     environment:
       CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
       ENABLE_DATA_FLOW_PLUGIN: 'false'
@@ -327,7 +327,7 @@ services:
       - pattern-based-adaptation
 
   qc-script-splitter:
-    image: stiliala/qc-script-splitter:0.0.8
+    image: planqk/qc-script-splitter:v1.0.0
     command: sh /app/startup.sh
     ports:
       - "8891:8891"
@@ -340,7 +340,7 @@ services:
       - pattern-based-adaptation
 
   qc-script-rq-worker:
-    image: stiliala/qc-script-splitter:0.0.8
+    image: planqk/qc-script-splitter:v1.0.0
     command: rq worker --url redis://qc-script-redis:5010 qc-script-splitter
     environment:
       - REDIS_URL=redis://qc-script-redis:5010
@@ -369,7 +369,7 @@ services:
       - pattern-based-adaptation
 
   qiskit-runtime-handler:
-    image: stiliala/qiskit-runtime-handler:latest
+    image: planqk/qiskit-runtime-handler:v1.3.0
     command: sh /startup.sh
     ports:
       - "8889:8889"
@@ -382,7 +382,7 @@ services:
       - pattern-based-adaptation
 
   rq-worker:
-    image: stiliala/qiskit-runtime-handler:latest
+    image: planqk/qiskit-runtime-handler:v1.3.0
     command: rq worker --url redis://qiskit-redis:5040 qiskit-runtime-handler
     environment:
       - FLASK_RUN_HOST=qiskit-runtime-handler
