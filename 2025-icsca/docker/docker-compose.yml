@@ -29,7 +29,7 @@ services:
     ports:
       - '5060:5060'
     networks:
-      - pattern-based-adaptation
+      - pattern-based-solutions
 
 
   ### QC Atlas ###
@@ -46,44 +46,7 @@ services:
     ports:
       - "6626:6626"
     networks:
-      - pattern-based-adaptation
-
-
-  ### Workflow Modeler ###
-  workflow-modeler:
-    image: planqk/workflow-modeler:v1.5.0
-    environment:
-      CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
-      ENABLE_DATA_FLOW_PLUGIN: 'false'
-      ENABLE_OPENTOSCA_PLUGIN: 'true'
-      ENABLE_PATTERN_PLUGIN: 'true'
-      ENABLE_PLANQK_PLUGIN: 'false'
-      ENABLE_QHANA_PLUGIN: 'false'
-      ENABLE_QUANTME_PLUGIN: 'true'
-      OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
-      PATTERN_ATLAS_ENDPOINT: http://${PUBLIC_HOSTNAME}:1977/patternatlas/patternLanguages/af7780d5-1f97-4536-8da7-4194b093ab1d
-      PATTERN_ATLAS_UI_ENDPOINT: "http://${PUBLIC_HOSTNAME}:1978"
-      QC_ATLAS_ENDPOINT: "http://${PUBLIC_HOSTNAME}:6626"
-      QPROV_ENDPOINT: http://${PUBLIC_HOSTNAME}:8094/qprov
-      QRM_USERNAME: ${QRM_USERNAME}
-      QRM_REPONAME: ${QRM_REPONAME}
-      QRM_REPOPATH: ${QRM_REPOPATH}
-      SCRIPT_SPLITTER_ENDPOINT: http://${PUBLIC_HOSTNAME}:8891
-      WINERY_ENDPOINT: http://${PUBLIC_HOSTNAME}:8093/winery
-    ports:
-      - 1893:8080
-    networks:
-      - pattern-based-adaptation
-
-
-  ### Camunda Engine ###
-  camunda-engine:
-    image: planqk/camunda-process-view-plugins:v1.0.3
-    ports:
-      - 8090:8080
-    networks:
-      - pattern-based-adaptation
-
+      - pattern-based-solutions
 
   #######################
   ### Pattern Atlas ###
@@ -95,7 +58,6 @@ services:
       JDBC_DATABASE_PASSWORD: patternatlas
       JDBC_DATABASE_PORT: 5060
       DB_INIT_USER: patternatlas
-      DB_INIT_PASSWORD: patternatlas
       LATEX_RENDERER_HOST_NAME: latex-renderer
       LATEX_RENDERER_PORT: 5030
       JDBC_DATABASE_NAME: patternatlas
@@ -104,10 +66,11 @@ services:
       # activate correct application properties
       SPRING_PROFILES_ACTIVE: docker
       SECURITY_LOGLEVEL: info
+      DB_INIT_PASSWORD: patternatlas
     ports:
       - "1977:1977"
     networks:
-      - pattern-based-adaptation
+      - pattern-based-solutions
     depends_on:
       - db
       - latex-renderer
@@ -117,15 +80,23 @@ services:
     image: patternatlas/pattern-atlas-ui:v1.5.6
     platform: linux/x86_64
     environment:
-      PATTERN_ATLAS_API_HOST_NAME: localhost
+      ATLAS_HOST_NAME: $PUBLIC_HOSTNAME
+      ATLAS_PORT: 6626
+      TEXT_MATCHING_HOST_NAME: $PUBLIC_HOSTNAME
+      TEXT_MATCHING_PORT: 1985
+      PATTERN_ATLAS_API_HOST_NAME: $PUBLIC_HOSTNAME
       PATTERN_ATLAS_API_PORT: 1977
-      LATEX_RENDERER_HOST_NAME: localhost
+      LATEX_RENDERER_HOST_NAME: $PUBLIC_HOSTNAME
+      OPENTOSCA_CONTAINER_HOST_NAME: $PUBLIC_HOSTNAME
+      OPENTOSCA_CONTAINER_PORT: 1337
+      WINERY:HOST_NAME: $PUBLIC_HOSTNAME
+      WINERY_PORT: 8093
       LATEX_RENDERER_PORT: 5030
       URL_SCHEME: http
     ports:
       - "1978:80"
     networks:
-      - pattern-based-adaptation
+      - pattern-based-solutions
 
   # required by the pattern atlas to render latex
   latex-renderer:
@@ -134,7 +105,7 @@ services:
     ports:
       - "5030:5030"
     networks:
-      - pattern-based-adaptation
+      - pattern-based-solutions
   # end of Pattern Atlas
   #######################
 
@@ -155,27 +126,27 @@ services:
       ENGINE_PLAN_BPEL_HOSTNAME: engine-plan
       CONTAINER_DEPLOYMENT_TESTS: 'false'
     networks:
-      - pattern-based-adaptation
+      - pattern-based-solutions
 
   engine-plan:
     image: opentosca/ode:v2.4.0
     ports:
       - '9763:9763'
     networks:
-      - pattern-based-adaptation
+      - pattern-based-solutions
 
   engine-ia-jdk8:
     image: opentosca/engine-ia:v2.1.0
     ports:
       - '8091:8080'
     networks:
-      - pattern-based-adaptation
+      - pattern-based-solutions
   engine-ia-jdk17:
     image: opentosca/engine-ia:latest-jdk17
     ports:
       - '7424:8080'
     networks:
-      - pattern-based-adaptation
+      - pattern-based-solutions
   winery:
     build: initialized-winery
     logging:
@@ -188,7 +159,7 @@ services:
       TOPOLOGYMODELER_HOSTNAME: $PUBLIC_HOSTNAME
       CONTAINER_HOSTNAME: $PUBLIC_HOSTNAME
     networks:
-      - pattern-based-adaptation
+      - pattern-based-solutions
   ui:
     image: opentosca/ui:latest
     environment:
@@ -199,7 +170,7 @@ services:
     ports:
       - '8088:8080'
     networks:
-      - pattern-based-adaptation
+      - pattern-based-solutions
 
   dind:
     image: docker:20.10-dind
@@ -211,195 +182,21 @@ services:
       - '9990-9999:9990-9999'
       - '9990-9999:9990-9999/udp'
     networks:
-      - pattern-based-adaptation
+      - pattern-based-solutions
   # end of OpenTOSCA Ecosystem
   #######################
 
-
-  #######################
-  ### QProv ###
-  qprov:
-    image: planqk/qprov:v1.5.0
-    logging:
-      driver: none
+  ### Text Matching Backend ###
+  text-matching-backend:
+    image: stiliala/text-matching-server:local
     environment:
-      POSTGRES_HOSTNAME: db
-      POSTGRES_PORT: 5060
-      POSTGRES_USER: qprov
-      POSTGRES_PASSWORD: qprov
-      POSTGRES_DB: qprov
+      - OPENAI_API_KEY=""
     ports:
-      - '8094:5020'
+      - '1985:1985'
     networks:
-      - pattern-based-adaptation
-  qprov-collector-ibm:
-    image: planqk/qprov-collector:v1.3.2
-    logging:
-      driver: none
-    environment:
-      POSTGRES_HOSTNAME: db
-      POSTGRES_PORT: 5060
-      POSTGRES_USER: qprov
-      POSTGRES_PASSWORD: qprov
-      POSTGRES_DB: qprov
-      QPROV_IBMQ_TOKEN: ${IBM_ACCESS_TOKEN}
-      QPROV_IBMQ_EXECUTE_CIRCUITS: 'false'
-      QPROV_IBMQ_AUTO_COLLECT: 'true'
-      QPROV_IBMQ_AUTO_COLLECT_INTERVAL: 60
-      QPROV_IBMQ_AUTO_COLLECT_INTERVAL_CIRCUITS: 180
-    networks:
-      - pattern-based-adaptation
-  # end of QProv
-  #######################
+      - pattern-based-solutions
 
-
-  #######################
-  ### Quokka Services ###
-
-  circuit-cutting-service:
-    image: planqk/circuit-cutting-service:v0.2.0
-    ports:
-      - '5076:5076'
-    networks:
-      - pattern-based-adaptation
-
-  warm-starting-service:
-    image: planqk/warm-starting-service:v1.0.0
-    ports:
-      - '5077:5077'
-    networks:
-      - pattern-based-adaptation
-
-  minio1:
-    <<: *minio-common
-    hostname: minio1
-    volumes:
-      - data1-1:/data1
-      - data1-2:/data2
-    networks:
-      - pattern-based-adaptation
-
-  minio2:
-    <<: *minio-common
-    hostname: minio2
-    volumes:
-      - data2-1:/data1
-      - data2-2:/data2
-    networks:
-      - pattern-based-adaptation
-
-  nginx:
-    image: nginx:1.25.4-alpine
-    hostname: nginx
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-    ports:
-      - "9000:9000"
-      - "9001:9001"
-    depends_on:
-      - minio1
-      - minio2
-    networks:
-      - pattern-based-adaptation
-
-  error-mitigation-service:
-    image: planqk/error-mitigation-service:v1.0.1
-    command: app.py
-    ports:
-      - "5071:5071"
-    environment:
-      - MINIO_URL=nginx:9000
-    depends_on:
-      - nginx
-    networks:
-      - pattern-based-adaptation
-  # end of Quokka Services
-  #######################
-
-  #######################
-  ### QC Script Splitter #
-  qc-script-redis:
-    image: redis:latest
-    command: --port 5010
-    ports:
-      - "5010:5010"
-    networks:
-      - pattern-based-adaptation
-
-  qc-script-splitter:
-    image: planqk/qc-script-splitter:v1.0.0
-    command: sh /app/startup.sh
-    ports:
-      - "8891:8891"
-    environment:
-      - REDIS_URL=redis://qc-script-redis:5010
-      - DATABASE_URL=sqlite:////data/app.db
-    volumes:
-      - script_data:/data
-    networks:
-      - pattern-based-adaptation
-
-  qc-script-rq-worker:
-    image: planqk/qc-script-splitter:v1.0.0
-    command: rq worker --url redis://qc-script-redis:5010 qc-script-splitter
-    environment:
-      - REDIS_URL=redis://qc-script-redis:5010
-      - DATABASE_URL=sqlite:////data/app.db
-      - FLASK_RUN_HOST=qc-script-splitter
-      - FLASK_RUN_PORT=8891
-    volumes:
-      - script_data:/data
-    depends_on:
-      - qc-script-redis
-    deploy:
-      replicas: 1
-    networks:
-      - pattern-based-adaptation
-
-  # end of QC Script Splitter
-  #######################
-
-  ### Qiskit Runtime Handler ###
-  qiskit-redis:
-    image: redis:6.2.6
-    command: --port 5040
-    ports:
-      - "5040:5040"
-    networks:
-      - pattern-based-adaptation
-
-  qiskit-runtime-handler:
-    image: planqk/qiskit-runtime-handler:v1.3.0
-    command: sh /startup.sh
-    ports:
-      - "8889:8889"
-    environment:
-      - REDIS_URL=redis://qiskit-redis:5040
-      - DATABASE_URL=sqlite:////data/app.db
-    volumes:
-      - exec_data:/data
-    networks:
-      - pattern-based-adaptation
-
-  rq-worker:
-    image: planqk/qiskit-runtime-handler:v1.3.0
-    command: rq worker --url redis://qiskit-redis:5040 qiskit-runtime-handler
-    environment:
-      - FLASK_RUN_HOST=qiskit-runtime-handler
-      - FLASK_RUN_PORT=8889
-      - REDIS_URL=redis://qiskit-redis:5040
-      - DATABASE_URL=sqlite:////data/app.db
-    volumes:
-      - exec_data:/data
-    depends_on:
-      - qiskit-redis
-    deploy:
-      replicas: 1
-    networks:
-      - pattern-based-adaptation
-
-  # end of Qiskit Runtime Handler
-  #######################
+  
 
 
 ## By default this config uses default local driver,
@@ -413,5 +210,5 @@ volumes:
   exec_data:
 
 networks:
-  pattern-based-adaptation:
+  pattern-based-solutions:
     driver: bridge
