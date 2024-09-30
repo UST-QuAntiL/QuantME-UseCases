@@ -1,8 +1,4 @@
-# ICSCA 2025 Prototype
-
-This use case folder comprises the following data:
-
-# Case Study
+# ICSCA 2025 Case Study
 
 Building quantum applications requires deep knowledge of quantum computing and software engineering.
 Hence, an abstraction layer reducing the complexity for non-experts is required.
@@ -44,34 +40,47 @@ Open the Pattern Atlas UI using the following URL: [localhost:1978](http://local
 
 Afterward, the following screen should be displayed:
 
-![Modeler Initial](./docs/ui-initial.png)
+![Pattern Atlas UI Initial](./docs/PatternLanguages.png)
 
 
 ### Harnessing Patterns to Support the Development of Hybrid Quantum Applications
 
-To generate a hybrid quantum application, click on ``Pattern Matcher`` and enter the following context:
+To generate a hybrid quantum application, click on ``View`` of the Quantum Computing Patterns.
+
+![Pattern Atlas UI Initial Selected](./docs/PatternLanguagesQuantum.png)
+
+Then select ``Graph``.
+
+![Graph View](./docs/GraphView.png)
+
+Click on ``Pattern Matcher``:
+
+![Pattern Matching Button](./docs/PatternMatchingButton.png)
+
+Enter the following context:
 
 ``Given a set of variables and a boolean logic formula, I need to determine a variable assignment that satisfies the formula, if one exists.
 The resulting application should be executed using quantum computers from IBMQ.``
 
-Afterward, click on ``Identify Patterns``.
+Afterwards, click on ``Identify Patterns``.
 
+![Graph View](./docs/Context.png)
 
-![Pattern Initial Popup](./docs/modeler-patterns-startup.png)
+Next, the result from the text matching backend is displayed. A cosine similarity score close to 1 indicates a good match.
+![Pattern Result](./docs/PatternResult.png)
 
 Next, click on the ``Open Pattern Graph`` button where you can see the actual pattern graph.
 
-![Pattern Selection](./docs/modeler-patterns-selection.png)
+![Pattern Graph](./docs/PatternGraph.png)
 
-Close the dialog and then click on "Aggregate solutions". This action aggregates all available solutions. Each solution is then filtered based on the non-functional requirements, where only the Qiskit implementations are selected.
 
-![Pattern Selection Final](./docs/modeler-patterns-selection-final.png)
+Then close the dialog and then click on ``Aggregate Solutions``. This action aggregates all available solutions. Each solution is then filtered based on the non-functional requirements, where only the Qiskit implementations are selected.
 
-Next, click on ``Done`` and then on ``Combine Solutions``.
+![Pattern Selection Final](./docs/Aggregation.png)
 
-To deploy the hybrid quantum application, click on ``Deploy Solution``.
+Once the aggregation is complete, deploy the hybrid quantum application by clicking on ``Deploy Solution``.
 
-![Service Deployment Overview](./docs/modeler-service-deployment-overview.png)
+![Deployment](./docs/Deployment.png)
 
 
 ## Disclaimer of Warranty
