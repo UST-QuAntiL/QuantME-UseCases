@@ -77,7 +77,7 @@ services:
 
   # contains more information regarding the patterns
   pattern-atlas-ui:
-    image: patternatlas/pattern-atlas-ui:v1.5.6
+    image: patternatlas/pattern-atlas-ui:v1.5.8
     platform: linux/x86_64
     environment:
       ATLAS_HOST_NAME: $PUBLIC_HOSTNAME
