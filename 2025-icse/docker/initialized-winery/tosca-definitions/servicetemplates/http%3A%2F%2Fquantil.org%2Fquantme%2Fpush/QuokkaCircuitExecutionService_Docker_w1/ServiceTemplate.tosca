@@ -11,7 +11,7 @@
                     <selfServiceApplicationUrl/>
                 </selfservice:ServiceTemplateProperties>
                 <PropertyMappings>
-                    <PropertyMapping serviceTemplatePropertyRef="/*/*[local-name()='selfServiceApplicationUrl']" targetObjectRef="DockerContainer_0" targetPropertyRef="concat('http://', DockerContainer_0.Properties.ContainerIP, ':', DockerContainer_0.Properties.Port)"/>
+                    <PropertyMapping serviceTemplatePropertyRef="/*/*[local-name()='selfServiceApplicationUrl']" targetObjectRef="DockerContainer_0" targetPropertyRef="concat('http://', DockerContainer_0.Properties.ContainerIP, ':', DockerContainer_0.Properties.ContainerPort)"/>
                 </PropertyMappings>
             </Properties>
         </BoundaryDefinitions>
@@ -33,7 +33,7 @@
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org">
                         <ex:Port>5075</ex:Port>
-                        <ex:ContainerPort/>
+                        <ex:ContainerPort>get_input: ContainerPort</ex:ContainerPort>
                         <ex:ContainerID/>
                         <ex:ContainerIP/>
                         <ex:ImageID>ubuntu:20.04</ex:ImageID>
@@ -45,7 +45,7 @@
             <NodeTemplate name="DockerEngine" minInstances="1" maxInstances="1" type="nodetypes:DockerEngine" id="DockerEngine_0" winery:x="969" winery:y="638" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org">
-                        <ex:DockerEngineURL/>
+                        <ex:DockerEngineURL>get_input: DockerEngineURL</ex:DockerEngineURL>
                         <ex:DockerEngineCertificate/>
                         <ex:State>Running</ex:State>
                     </ex:Properties>
