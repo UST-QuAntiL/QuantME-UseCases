@@ -11,99 +11,65 @@
                     <selfServiceApplicationUrl/>
                 </selfservice:ServiceTemplateProperties>
                 <PropertyMappings>
-                    <PropertyMapping serviceTemplatePropertyRef="/*/*[local-name()='selfServiceApplicationUrl']" targetObjectRef="Ubuntu-VM_20.04-w1_0" targetPropertyRef="concat('http://', Ubuntu-VM_20.04-w1_0.Properties.VMIP, ':', Ubuntu-VM_20.04-w1_0.Properties.VMOpenPorts)"/>
-                    <PropertyMapping serviceTemplatePropertyRef="/*/*[local-name()='qProvUrl']" targetObjectRef="Ubuntu-VM_20.04-w1_0" targetPropertyRef="Ubuntu-VM_20.04-w1_0.Properties.QProvEndpoint"/>
+                    <PropertyMapping serviceTemplatePropertyRef="/*/*[local-name()='selfServiceApplicationUrl']" targetObjectRef="DockerContainer_0" targetPropertyRef="concat('http://', DockerContainer_0.Properties.ContainerIP, ':', DockerContainer_0.Properties.Port)"/>
                 </PropertyMappings>
             </Properties>
         </BoundaryDefinitions>
         <TopologyTemplate>
-            <NodeTemplate name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_0" winery:location="*" winery:x="1340" winery:y="285" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
+            <NodeTemplate name="Python" minInstances="1" maxInstances="1" type="nodetypes:Python_3-w1" id="Python_3-w1_0" winery:x="688" winery:y="412" xmlns:nodetypes="http://opentosca.org/nodetypes"/>
+            <NodeTemplate name="Qiskit" minInstances="1" maxInstances="1" type="ntyIgeneral3:Qiskit_latest-w1" id="Qiskit_latest-w1_0" winery:x="968" winery:y="324" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes"/>
+            <NodeTemplate name="QuokkaPythonApp" minInstances="1" maxInstances="1" type="ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1" id="QuokkaPythonApp_latest-w1-wip1_0" winery:x="968" winery:y="155" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
                 <Properties>
-                    <ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
-                        <ntyIgeneral3:StartupCommand>export FLASK_APP=execution-service.py &amp;&amp; export FLASK_ENV=development &amp;&amp; export FLASK_DEBUG=0 &amp;&amp; python3 -m flask run --host=0.0.0.0</ntyIgeneral3:StartupCommand>
-                        <ntyIgeneral3:Name>Execution</ntyIgeneral3:Name>
-                    </ntyIgeneral3:QuokkaPythonApp_latest-w1-wip1>
+                    <ex:Properties xmlns:ex="http://www.example.org">
+                        <ex:StartupCommand>export FLASK_APP=execution-service.py &amp;&amp; export FLASK_ENV=development &amp;&amp; export FLASK_DEBUG=0 &amp;&amp; python3 -m flask run --host=0.0.0.0</ex:StartupCommand>
+                        <ex:Name>Execution</ex:Name>
+                    </ex:Properties>
                 </Properties>
-                <Requirements>
-                    <Requirement name="ReqCanRunQuokka" type="rtyIgeneral:ReqCanRunQuokka" id="req1" xmlns:rtyIgeneral="https://ust-quantil.github.io/requirementtypes"/>
-                </Requirements>
                 <DeploymentArtifacts>
                     <DeploymentArtifact name="Service" artifactType="artifacttypes:PythonArchiveArtifact" artifactRef="ateIgeneral2:QuokkaExecutionServiceArtifact" xmlns:ateIgeneral2="https://ust-quantil.github.io/quantum/applications/artifacttemplates" xmlns:artifacttypes="http://opentosca.org/artifacttypes"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
-            <NodeTemplate name="Qiskit" minInstances="1" maxInstances="1" type="ntyIgeneral3:Qiskit_latest-w1" id="Qiskit_latest-w1_0" winery:location="*" winery:x="1340" winery:y="465" xmlns:ntyIgeneral3="https://ust-quantil.github.io/nodetypes">
-                <Requirements>
-                    <Requirement name="ReqCanRunQiskit" type="rtyIgeneral:ReqCanRunQiskit" id="reqcanrunqiskit" xmlns:rtyIgeneral="https://ust-quantil.github.io/requirementtypes"/>
-                    <Requirement name="ReqCanInstallQiskit" type="rtyIgeneral:ReqCanInstallQiskit" id="reqcaninstallqiskit" xmlns:rtyIgeneral="https://ust-quantil.github.io/requirementtypes"/>
-                </Requirements>
-                <Capabilities>
-                    <Capability name="CapCanRunQuokka" type="ctyIgeneral:CapCanRunQuokka" id="capcanrunquokka" xmlns:ctyIgeneral="https://ust-quantil.github.io/capabilitytypes"/>
-                </Capabilities>
-            </NodeTemplate>
-            <NodeTemplate name="Ubuntu-VM" minInstances="1" maxInstances="1" type="nodetypes:Ubuntu-VM_20.04-w1" id="Ubuntu-VM_20.04-w1_0" winery:location="*" winery:x="1340" winery:y="645" xmlns:nodetypes="http://opentosca.org/nodetypes">
-                <Properties>
-                    <nodetypes:VirtualMachineProperties>
-                        <nodetypes:VMIP/>
-                        <nodetypes:VMInstanceID/>
-                        <nodetypes:VMType>get_input: VMType</nodetypes:VMType>
-                        <nodetypes:VMUserName>ubuntu</nodetypes:VMUserName>
-                        <nodetypes:VMUserPassword>unused</nodetypes:VMUserPassword>
-                        <nodetypes:VMPrivateKey>get_input: VMPrivateKey</nodetypes:VMPrivateKey>
-                        <nodetypes:VMPublicKey>unused</nodetypes:VMPublicKey>
-                        <nodetypes:VMKeyPairName>get_input: VMKeyPairName</nodetypes:VMKeyPairName>
-                        <nodetypes:VMNetworks>get_input: VMNetworks</nodetypes:VMNetworks>
-                        <nodetypes:VMOpenPorts>5075</nodetypes:VMOpenPorts>
-                        <nodetypes:QProvEndpoint>get_input: QProvEndpoint</nodetypes:QProvEndpoint>
-                    </nodetypes:VirtualMachineProperties>
-                </Properties>
-                <Requirements>
-                    <Requirement name="ReqCanHostUbuntuVM" type="requirementtypes:ReqCanHostUbuntuVM" id="reqcanhostubuntuvm" xmlns:requirementtypes="http://opentosca.org/requirementtypes"/>
-                </Requirements>
-                <Capabilities>
-                    <Capability name="CapCanHostPython" type="capabilitytypes1:CapCanHostPython" id="capcanhostpython" xmlns:capabilitytypes1="http://opentosca.org/capabilitytypes"/>
-                    <Capability name="CapCanRunQiskit" type="ctyIgeneral:CapCanRunQiskit" id="capcanrunqiskit" xmlns:ctyIgeneral="https://ust-quantil.github.io/capabilitytypes"/>
-                </Capabilities>
-            </NodeTemplate>
-            <NodeTemplate name="Python" minInstances="1" maxInstances="1" type="nodetypes:Python_3-w1" id="Python_3-w1_0" winery:location="*" winery:x="990" winery:y="645" xmlns:nodetypes="http://opentosca.org/nodetypes">
-                <Requirements>
-                    <Requirement name="ReqCanHostPython" type="requirementtypes:ReqCanHostPython" id="reqcanhostpython" xmlns:requirementtypes="http://opentosca.org/requirementtypes"/>
-                </Requirements>
-                <Capabilities>
-                    <Capability name="CapCanInstallQiskit" type="ctyIgeneral:CapCanInstallQiskit" id="capcaninstallqiskit" xmlns:ctyIgeneral="https://ust-quantil.github.io/capabilitytypes"/>
-                </Capabilities>
-            </NodeTemplate>
-            <NodeTemplate name="OpenStack" minInstances="1" maxInstances="1" type="nodetypes:OpenStack_22-Victoria-w1" id="OpenStack_22-Victoria-w1_0" winery:location="*" winery:x="1340" winery:y="825" xmlns:nodetypes="http://opentosca.org/nodetypes">
+            <NodeTemplate name="DockerContainer" minInstances="1" maxInstances="1" type="nodetypes:DockerContainer" id="DockerContainer_0" winery:x="967" winery:y="496" xmlns:nodetypes="http://opentosca.org/nodetypes">
                 <Properties>
                     <ex:Properties xmlns:ex="http://www.example.org">
-                        <ex:HypervisorEndpoint>get_input: HypervisorEndpoint</ex:HypervisorEndpoint>
-                        <ex:HypervisorApplicationID>get_input: HypervisorApplicationID</ex:HypervisorApplicationID>
-                        <ex:HypervisorApplicationSecret>get_input: HypervisorApplicationSecret</ex:HypervisorApplicationSecret>
-                        <ex:HypervisorRegion>get_input: HypervisorRegion</ex:HypervisorRegion>
+                        <ex:Port>5075</ex:Port>
+                        <ex:ContainerPort/>
+                        <ex:ContainerID/>
+                        <ex:ContainerIP/>
+                        <ex:ImageID>ubuntu:20.04</ex:ImageID>
+                        <ex:ContainerMountPath/>
+                        <ex:HostMountFiles/>
                     </ex:Properties>
                 </Properties>
-                <Capabilities>
-                    <Capability name="CapCanHostUbuntuVM" type="capabilitytypes1:CapCanHostUbuntuVM" id="capcanhostubuntu" xmlns:capabilitytypes1="http://opentosca.org/capabilitytypes"/>
-                </Capabilities>
             </NodeTemplate>
-            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_113907748" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
-                <SourceElement ref="QuokkaPythonApp_latest-w1-wip1_0"/>
-                <TargetElement ref="Qiskit_latest-w1_0"/>
-            </RelationshipTemplate>
-            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_74538093" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
-                <SourceElement ref="Qiskit_latest-w1_0"/>
-                <TargetElement ref="Ubuntu-VM_20.04-w1_0"/>
-            </RelationshipTemplate>
-            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_175955770" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+            <NodeTemplate name="DockerEngine" minInstances="1" maxInstances="1" type="nodetypes:DockerEngine" id="DockerEngine_0" winery:x="969" winery:y="638" xmlns:nodetypes="http://opentosca.org/nodetypes">
+                <Properties>
+                    <ex:Properties xmlns:ex="http://www.example.org">
+                        <ex:DockerEngineURL/>
+                        <ex:DockerEngineCertificate/>
+                        <ex:State>Running</ex:State>
+                    </ex:Properties>
+                </Properties>
+            </NodeTemplate>
+            <RelationshipTemplate name="DependsOn" type="ToscaBaseTypes:DependsOn" id="con_DependsOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
                 <SourceElement ref="Qiskit_latest-w1_0"/>
                 <TargetElement ref="Python_3-w1_0"/>
             </RelationshipTemplate>
-            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_175229850" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
-                <SourceElement ref="Ubuntu-VM_20.04-w1_0"/>
-                <TargetElement ref="OpenStack_22-Victoria-w1_0"/>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_3" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="QuokkaPythonApp_latest-w1-wip1_0"/>
+                <TargetElement ref="Qiskit_latest-w1_0"/>
             </RelationshipTemplate>
-            <RelationshipTemplate name="hostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_115474122" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="Qiskit_latest-w1_0"/>
+                <TargetElement ref="DockerContainer_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_1" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
+                <SourceElement ref="DockerContainer_0"/>
+                <TargetElement ref="DockerEngine_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_2" xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes">
                 <SourceElement ref="Python_3-w1_0"/>
-                <TargetElement ref="Ubuntu-VM_20.04-w1_0"/>
+                <TargetElement ref="DockerContainer_0"/>
             </RelationshipTemplate>
             <Participants/>
         </TopologyTemplate>
