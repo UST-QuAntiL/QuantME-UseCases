@@ -2,8 +2,11 @@
 
 echo 'Name: '$Name
 echo 'StartupCommand: '$StartupCommand
-echo 'Port: '$VMOpenPorts
+echo 'VMOpenPorts: '$VMOpenPorts
+echo 'Port: '$Port
 vmPort="${VMOpenPorts%%,*}"
+vmPort="${vmPort:-${Port%%,*}}"
+echo 'Selected port: '$vmPort
 
 if [[ $StartupCommand == nohup* ]]; then
     echo "Starting App using existing startup command..."
