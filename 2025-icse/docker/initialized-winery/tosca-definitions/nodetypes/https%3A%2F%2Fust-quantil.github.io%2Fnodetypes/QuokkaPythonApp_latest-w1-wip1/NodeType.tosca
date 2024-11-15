@@ -27,6 +27,7 @@
                         <InputParameter name="StartupCommand" type="xsd:string" required="true"/>
                         <InputParameter name="Name" type="xsd:string" required="true"/>
                         <InputParameter name="VMOpenPorts" type="xsd:string" required="no"/>
+                        <InputParameter name="Port" type="xsd:string" required="no"/>
                     </InputParameters>
                 </Operation>
             </Interface>
