@@ -3,9 +3,9 @@
 echo 'Name: '$Name
 echo 'StartupCommand: '$StartupCommand
 echo 'VMOpenPorts: '$VMOpenPorts
-echo 'Port: '$Port
+echo 'ContainerPort: '$ContainerPort
 vmPort="${VMOpenPorts%%,*}"
-vmPort="${vmPort:-${Port%%,*}}"
+vmPort="${vmPort:-${ContainerPort%%,*}}"
 echo 'Selected port: '$vmPort
 
 if [[ $StartupCommand == nohup* ]]; then
