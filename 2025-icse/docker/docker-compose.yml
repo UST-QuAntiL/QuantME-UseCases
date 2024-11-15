@@ -142,7 +142,7 @@ services:
   #######################
   ### OpenTOSCA Ecosystem ###
   container:
-    image: opentosca/container:v3.1.4
+    image: opentosca/container:v3.1.5
     ports:
       - '1337:1337'
       - '8081-8087:8081-8087'
@@ -303,7 +303,7 @@ services:
       - pattern-based-adaptation
 
   error-mitigation-service:
-    image: planqk/error-mitigation-service:v1.0.1
+    image: planqk/error-mitigation-service:v1.0.2
     command: app.py
     ports:
       - "5071:5071"
