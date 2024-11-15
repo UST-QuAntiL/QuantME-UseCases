@@ -3,7 +3,7 @@
     <selfservice:displayName>QuokkaCircuitGeneratorService_w1</selfservice:displayName>
     <selfservice:version>1.0</selfservice:version>
     <selfservice:authors>Winery</selfservice:authors>
-    <selfservice:description>TOSCA Deployment of the Quokka Circuit Generator Service on AWS</selfservice:description>
+    <selfservice:description>TOSCA Deployment of the Quokka Circuit Generator Service</selfservice:description>
     <selfservice:iconUrl>icon.jpg</selfservice:iconUrl>
     <selfservice:imageUrl>image.jpg</selfservice:imageUrl>
 </selfservice:Application>
