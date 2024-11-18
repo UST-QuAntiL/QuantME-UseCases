@@ -12,6 +12,7 @@
                 </selfservice:ServiceTemplateProperties>
                 <PropertyMappings>
                     <PropertyMapping serviceTemplatePropertyRef="/*/*[local-name()='selfServiceApplicationUrl']" targetObjectRef="DockerContainer_0" targetPropertyRef="concat('http://', DockerContainer_0.Properties.ContainerIP, ':', DockerContainer_0.Properties.Port)"/>
+                    <PropertyMapping serviceTemplatePropertyRef="/*/*[local-name()='qProvUrl']" targetObjectRef="DockerContainer_0" targetPropertyRef="DockerContainer_0.Properties.QProvEndpoint"/>
                 </PropertyMappings>
             </Properties>
         </BoundaryDefinitions>

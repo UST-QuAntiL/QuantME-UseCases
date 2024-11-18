@@ -22,6 +22,12 @@
                         <InputParameter name="Name" type="xsd:string" required="true"/>
                     </InputParameters>
                 </Operation>
+                <Operation name="configure">
+                    <InputParameters>
+                        <InputParameter name="ContainerIP" type="xsd:string" required="no"/>
+                        <InputParameter name="QProvEndpoint" type="xsd:string" required="true"/>
+                    </InputParameters>
+                </Operation>
                 <Operation name="start">
                     <InputParameters>
                         <InputParameter name="StartupCommand" type="xsd:string" required="true"/>

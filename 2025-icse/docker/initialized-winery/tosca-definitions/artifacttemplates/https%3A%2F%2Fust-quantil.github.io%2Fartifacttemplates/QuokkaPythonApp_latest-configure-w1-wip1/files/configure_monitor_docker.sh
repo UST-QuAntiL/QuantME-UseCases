@@ -1,13 +1,10 @@
 #!/bin/bash
 
-
-
 echo 'Configuring Machine to collect provenenance data...'
 echo 'QProv Endpoint:'$QProvEndpoint
 echo 'Checking if Container:' $ContainerIP
 
-
-if [[ -z "${$ContainerIP}" ]]; then
+if [ ! -z "$ContainerIP" ]; then
   echo 'Is Container'
 
   sudo apt-get update -y
@@ -65,7 +62,7 @@ if [[ -z "${$ContainerIP}" ]]; then
   curl -X PUT -H "accept: application/hal+json" -H "Content-Type: application/json" -d "\$payload" "$QProvEndpoint/virtual-machines/$id/characteristics"
   sleep 90
   done
-  EOF
+EOF
 
   echo 'Stored provenance collection script...'
 
