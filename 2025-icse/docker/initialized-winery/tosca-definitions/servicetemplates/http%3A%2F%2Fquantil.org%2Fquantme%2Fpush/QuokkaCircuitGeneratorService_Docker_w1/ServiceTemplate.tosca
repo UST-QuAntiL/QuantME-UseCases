@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Definitions targetNamespace="http://quantil.org/quantme/push" id="push-QuokkaCircuitExecutionService_Docker_w1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:researchobject="http://www.eclipse.org/winery/model/researchobject" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
-    <ServiceTemplate name="QuokkaCircuitExecutionService_Docker_w1" targetNamespace="http://quantil.org/quantme/push" id="QuokkaCircuitExecutionService_Docker_w1">
+<Definitions targetNamespace="http://quantil.org/quantme/push" id="push-QuokkaCircuitGeneratorService_Docker_w1" xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:yml="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:researchobject="http://www.eclipse.org/winery/model/researchobject" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <ServiceTemplate name="QuokkaCircuitGeneratorService_Docker_w1" targetNamespace="http://quantil.org/quantme/push" id="QuokkaCircuitGeneratorService_Docker_w1">
         <Tags>
             <Tag name="top-node" value="QuokkaPythonApp_latest-w1-wip1_0"/>
         </Tags>
@@ -12,6 +12,7 @@
                 </selfservice:ServiceTemplateProperties>
                 <PropertyMappings>
                     <PropertyMapping serviceTemplatePropertyRef="/*/*[local-name()='selfServiceApplicationUrl']" targetObjectRef="DockerContainer_0" targetPropertyRef="concat('http://', DockerContainer_0.Properties.ContainerIP, ':', DockerContainer_0.Properties.Port)"/>
+                    <PropertyMapping serviceTemplatePropertyRef="/*/*[local-name()='qProvUrl']" targetObjectRef="DockerContainer_0" targetPropertyRef="DockerContainer_0.Properties.QProvEndpoint"/>
                 </PropertyMappings>
             </Properties>
         </BoundaryDefinitions>
@@ -39,6 +40,7 @@
                         <ex:ImageID>ubuntu:20.04</ex:ImageID>
                         <ex:ContainerMountPath/>
                         <ex:HostMountFiles/>
+                        <ex:QProvEndpoint>get_input: QProvEndpoint</ex:QProvEndpoint>
                     </ex:Properties>
                 </Properties>
             </NodeTemplate>
