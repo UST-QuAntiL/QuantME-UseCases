@@ -27,6 +27,9 @@
                         <InputParameter name="ContainerIP" type="xsd:string" required="no"/>
                         <InputParameter name="QProvEndpoint" type="xsd:string" required="true"/>
                     </InputParameters>
+                    <OutputParameters>
+                        <OutputParameter name="QProvEndpoint" type="xsd:String" required="true"/>
+                    </OutputParameters>
                 </Operation>
                 <Operation name="start">
                     <InputParameters>
