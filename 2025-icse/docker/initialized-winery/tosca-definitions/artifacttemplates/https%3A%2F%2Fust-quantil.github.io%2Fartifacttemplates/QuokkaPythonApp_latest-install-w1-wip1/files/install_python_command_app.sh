@@ -9,7 +9,7 @@ pip3 install --upgrade pip
 sudo mkdir -p ~/$Name
 
 #find csar root
-csarRoot=$(find ~ -maxdepth 1 -path "*.csar");
+csarRoot=$(find / ~ -maxdepth 1 -path "*.csar")
 echo 'CSAR ROOT:' $csarRoot
 
 IFS=';' read -ra NAMES <<< "$DAs";
