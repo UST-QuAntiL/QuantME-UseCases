@@ -78,7 +78,7 @@ services:
 
   ### Camunda Engine ###
   camunda-engine:
-    image: planqk/camunda-process-view-plugins:v1.0.3
+    image: planqk/camunda-process-view-plugins:v1.0.4
     ports:
       - 8090:8080
     networks:
