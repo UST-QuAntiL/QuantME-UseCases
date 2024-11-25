@@ -11,6 +11,7 @@ ENV PATTERNATLAS_SUBFOLDER_CONTENT_BACKUP_FILES "db-backup-files"
 ENV JDBC_DATABASE_PORT 5060
 
 # install git
+RUN rm -rf /etc/apt/sources.list.d/pgdg.list
 RUN apt-get update -qq && apt-get install -qqy \
   git \
   && apt-get clean \
