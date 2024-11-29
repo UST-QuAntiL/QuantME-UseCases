@@ -2,6 +2,7 @@
 
 This use case folder comprises the following data:
 * [Raw data of the runtime analysis](https://github.com/UST-QuAntiL/QuantME-UseCases/tree/master/2025-icse/evaluation-data)
+* [Raw data of the user study](https://github.com/UST-QuAntiL/QuantME-UseCases/tree/master/2025-icse/user-study)
 * [Quantum computing patterns with their corresponding categories](https://github.com/UST-QuAntiL/QuantME-UseCases/blob/master/2025-icse/PatternCategories.md)
 * The description of the case study (see below)
 

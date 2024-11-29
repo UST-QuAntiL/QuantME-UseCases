@@ -51,7 +51,7 @@ services:
 
   ### Workflow Modeler ###
   workflow-modeler:
-    image: planqk/workflow-modeler:v1.5.0
+    image: planqk/workflow-modeler:v1.5.4
     environment:
       CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
       ENABLE_DATA_FLOW_PLUGIN: 'false'
@@ -78,7 +78,7 @@ services:
 
   ### Camunda Engine ###
   camunda-engine:
-    image: planqk/camunda-process-view-plugins:v1.0.3
+    image: planqk/camunda-process-view-plugins:v1.0.4
     ports:
       - 8090:8080
     networks:
@@ -142,7 +142,7 @@ services:
   #######################
   ### OpenTOSCA Ecosystem ###
   container:
-    image: opentosca/container:v3.1.4
+    image: opentosca/container:v3.1.6
     ports:
       - '1337:1337'
       - '8081-8087:8081-8087'
@@ -303,7 +303,7 @@ services:
       - pattern-based-adaptation
 
   error-mitigation-service:
-    image: planqk/error-mitigation-service:v1.0.1
+    image: planqk/error-mitigation-service:v1.0.2
     command: app.py
     ports:
       - "5071:5071"
