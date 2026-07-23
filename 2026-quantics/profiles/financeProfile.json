@@ -1,0 +1,270 @@
+{
+  "name": "Finance",
+  "nodes": [
+    {
+      "label": "Budget",
+      "description": "Represents the total amount of capital available for investment.",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKYAAACuCAMAAACLBYYoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABvUExURQAAAAAkJAYlMgMlMwMjMgMlMgMlNAUkNAUjMwMlNAQkMwQkNAQkMwQkNAQkMwQkMwQkMwQkMwAAAAQkMw4tOxEvPUdHR1htd1lueF5yfICQmImJiYmYn6KutMPDw8vR1czS1eTo6e3w8f39/f///wiPN1MAAAASdFJOUwAHKUtRUlNibZmvsrjLzOXt+jDbqwgAAAAJcEhZcwAAMsAAADLAAShkWtsAAAOeSURBVHhe7ZzbkqIwEEDH2zreL6Oog+Kq/P83bkESSFqUBmInqe3zMmpJ96kkHYJD+PpiGIZhGIZhGIZhGKaS3mgyW65+LLFaziajHszRmfF0AzN1ZzMdwzydGC5gBlsshjBXa/pzGNwm8z7M147BGka2y3oAM7bhG4a1zzfM2RwCSwuegzLW7ni53h6pFR636+WwK2N37Pd+MS73Z0uGJY/zXkVfd6ujosZPd5jEBveTij+HmZswVFF+YQJb/KoMXeZPNat/zLL0XMDceMYyxAnGtonq9/bnzakIsP/IuFTcZR1NYXYsPbnaOMPIdjmLLJu266U/4vid9ZnI5CHnzxHMj2QiDj/AuLY5ijwTmB/JTBx+gWFtcxF5ZjA/kqU4/C8Ma5uryLOE+ZHIK4obDGubm8izgvmRiKN/PlxBafqQiWB+JPJoGNU+bjS32xh+9B7WfANrVtFCM0niaJsRRTHelVgzEYoFEdKUVFNJZn8KX5QppWaca8WJHJuq9zGihJq5VJRkL1UJCfHtFn71CTrNXCkSr8tKFw2qf68SMs0k98nb0piQck/te9WQaYpxWbwph6NXmkZjGprZYCjevIJK0xyDxlnIJ02zog3NyB9N0efVmnEYmql3mlWV7qGmnN2BZuSNpiwhZee7phQyNRFQaap1m+h2bzXVWkh4eqtZNGe+lPNXU9Z6RuyxZtmc+QWGt5q6p8+ahqea6JFQaprtqdaeKEg1y2kpo0mD0mrq9a6uMlEQa7bteHLNdh1Pr9mq4l1omg2K6ngnmsWyDu3pSlPveISnK81YH6H1nu409RFa6+lQU5vra+vdpab2E3fdgsmpJrxEeo1jTXDF+RLXmmp81vS6a03V7b5rymnJD83Y9NC1WFPRQNOYcvzVNKacZ82a0yWdpt5e2jvwO/IL6DT1Xn+q9Jo+J9TU+1XzQjUmpabWnKWm+W+tlxBqap6FprCsW3jQapY6ShNrSatZNKJ8gbak1pS3ImSaifwMY0mlmabqjoncTLuyrK2eHDJNYCpA/9hFqZmNxjiOpGyU3ZuChVhTUn/aAbDmG1izirA0G99b3KDGczreWxzIndqB3PceyC4CuSfjCMPa5iDytN2TEcgOl0D2CwWy+yqUvWyB7AwMZZ9lILtWQ9kDbOyoPtjdUX20t6M6lP3pJJ4WLEN5dkIoT6II5bkeGUE8JSUjiGfOMAzDMAzDMAzDMAzDMAzDMAzDMMz/zj8vp5fzTpOiPQAAAABJRU5ErkJggg==",
+      "visible": true,
+      "outputType": "budget",
+      "category": "Data Types",
+      "properties": [
+        {
+          "name": "value",
+          "type": "int"
+        }
+      ],
+      "constraints": [
+        {
+          "propertyName": "value",
+          "constraint": ">",
+          "value": "0"
+        },
+        {
+          "propertyName": "value",
+          "constraint": "is required",
+          "value": ""
+        }
+      ],
+      "mapping": [
+        [
+          "Number"
+        ]
+      ],
+      "originalLabel": "Budget",
+      "originalDescription": "test",
+      "originalIcon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKYAAACuCAMAAACLBYYoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABvUExURQAAAAAkJAYlMgMlMwMjMgMlMgMlNAUkNAUjMwMlNAQkMwQkNAQkMwQkNAQkMwQkMwQkMwQkMwAAAAQkMw4tOxEvPUdHR1htd1lueF5yfICQmImJiYmYn6KutMPDw8vR1czS1eTo6e3w8f39/f///wiPN1MAAAASdFJOUwAHKUtRUlNibZmvsrjLzOXt+jDbqwgAAAAJcEhZcwAAMsAAADLAAShkWtsAAAOeSURBVHhe7ZzbkqIwEEDH2zreL6Oog+Kq/P83bkESSFqUBmInqe3zMmpJ96kkHYJD+PpiGIZhGIZhGIZhGKaS3mgyW65+LLFaziajHszRmfF0AzN1ZzMdwzydGC5gBlsshjBXa/pzGNwm8z7M147BGka2y3oAM7bhG4a1zzfM2RwCSwuegzLW7ni53h6pFR636+WwK2N37Pd+MS73Z0uGJY/zXkVfd6ujosZPd5jEBveTij+HmZswVFF+YQJb/KoMXeZPNat/zLL0XMDceMYyxAnGtonq9/bnzakIsP/IuFTcZR1NYXYsPbnaOMPIdjmLLJu266U/4vid9ZnI5CHnzxHMj2QiDj/AuLY5ijwTmB/JTBx+gWFtcxF5ZjA/kqU4/C8Ma5uryLOE+ZHIK4obDGubm8izgvmRiKN/PlxBafqQiWB+JPJoGNU+bjS32xh+9B7WfANrVtFCM0niaJsRRTHelVgzEYoFEdKUVFNJZn8KX5QppWaca8WJHJuq9zGihJq5VJRkL1UJCfHtFn71CTrNXCkSr8tKFw2qf68SMs0k98nb0piQck/te9WQaYpxWbwph6NXmkZjGprZYCjevIJK0xyDxlnIJ02zog3NyB9N0efVmnEYmql3mlWV7qGmnN2BZuSNpiwhZee7phQyNRFQaap1m+h2bzXVWkh4eqtZNGe+lPNXU9Z6RuyxZtmc+QWGt5q6p8+ahqea6JFQaprtqdaeKEg1y2kpo0mD0mrq9a6uMlEQa7bteHLNdh1Pr9mq4l1omg2K6ngnmsWyDu3pSlPveISnK81YH6H1nu409RFa6+lQU5vra+vdpab2E3fdgsmpJrxEeo1jTXDF+RLXmmp81vS6a03V7b5rymnJD83Y9NC1WFPRQNOYcvzVNKacZ82a0yWdpt5e2jvwO/IL6DT1Xn+q9Jo+J9TU+1XzQjUmpabWnKWm+W+tlxBqap6FprCsW3jQapY6ShNrSatZNKJ8gbak1pS3ImSaifwMY0mlmabqjoncTLuyrK2eHDJNYCpA/9hFqZmNxjiOpGyU3ZuChVhTUn/aAbDmG1izirA0G99b3KDGczreWxzIndqB3PceyC4CuSfjCMPa5iDytN2TEcgOl0D2CwWy+yqUvWyB7AwMZZ9lILtWQ9kDbOyoPtjdUX20t6M6lP3pJJ4WLEN5dkIoT6II5bkeGUE8JSUjiGfOMAzDMAzDMAzDMAzDMAzDMAzDMMz/zj8vp5fzTpOiPQAAAABJRU5ErkJggg=="
+    },
+    {
+      "label": "Risk Factor",
+      "description": "Represents the investor’s risk tolerance or acceptable risk level.",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACGCAMAAAAM/FN2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAERUExURQAAAAAkJAYlMgMlMwMjMgMlMgMlNAUkNAUjMwMlNAQkMwQkNAQkMwQkNAQkMwQkMwQkMwQkMwAAAAQEBAQkMwgICAwMDA0NDQ4tOxAQEBEvPRsbGx4eHiAgICQkJCgoKCsrKy0tLTQ0NDw8PEBAQEhISEpKSkxMTFFRUVRUVFZWVlhYWFhtd1lueFxcXF5eXl5yfGBgYGRkZGZmZmpqanR0dICQmIeHh4mYn4uLi4yMjI+Pj5qamp2dnZ+fn6KutKmpqaurq6+vr7e3t8PDw8nJycrKysvR1czS1c/Pz9TU1Nvb29zc3N/f3+Li4uPj4+Tk5OTo6eXl5efn5+np6e3w8fPz8/f39/v7+/39/f///yjvg1gAAAASdFJOUwAHKUtRUlNibZmvsrjLzOXt+jDbqwgAAAAJcEhZcwAAMsAAADLAAShkWtsAAANMSURBVHhe7ZtrU9NAFIa5Cr3DFiuieMMb2iqIYrVqCVTxhliVSvf//xAn2d2EHho4256NO53zfMoku+d9ZpOmnc6eqSmGYRiGYZiJZno+VyhXVmiolAu5+WkYYctCfhkWHpvl/AKMsWGuBAsSUZqDUVhmirAWIcUZGIdidgkWImVpFgYiWIRVyFmEkZfi3sneajaZutpoH3b7koJ+97BdX01K293Bmfh5WmvS+CT0m2um+JLV0x5/7rZOYE0CTrZM+SIMvoA5M2kX1iNi1wRYvK/MO9OVU2JVgtGpLOgZW7AUIeYOor9x8mr8movnyXCin/Y8DE9hWn8HN2EhUpoqZBn5m+GKGr5K/S4YpK/fV/Mwfjg5NboOyxDTUDE5GD+cghrdhlWIaauYAowfTlmN/gyrEHOoYsowfjj6t28XViGmq2IqMH44avCK2+dcyr7OgfHD0YNhEXJYCgtLYWEpLJMsdXx0dHQMT44MkdS6EGIdnhwZlsLCUlhYCgtLYWEpLCyFJWupzv2Ep/CiIWsp+fqqMFyH1wyZS52x8kgqsfJJSr7RUqkT/oPUzx1vVmq/ow9ON7VT+oSspIJqTVn9jZ3SJ2QkFVSFiKx6G5HPxofqBRNcSvUCcxQ6RVbGqReeOjfB4FCqtyFa6kg5CVE7iJ3Ck3BCjDupaFEiK+NkiJykDG4NTkhwJqVvVMs4JWLaSUrzeTyHKyntJERLOwUt6JSOI6nYSS9RNZBSWSGcHEl9fRI7Rdx4F559e02IZ9/OzErDiZT54B/UlFO4TiEt1Dq5kUpeRp3IyjhJGaCcXEh9eRw5Pf8eWtwV4uZ7MPhS6KV+346cHqhF6dSSdUJDLqWdNk/1lc7+wEAU1FKfHkVOL37AETYQS318GDnt/IIDrCCWujd470aEWGrvjhDi5R942RJiqfDNNO460UvJzvbYTvRSFLAUFpbCwlJYJl2qtm3JK1jFQChlTRZ/BVnDUlhcS9HCUlhYCssoUn7tyfNy96KX+zy93BGr9w43YBVi6ioGuXfYy13WXu5H93Lnvp89Dl52g/jZN+Nlh5GfvVgDXWt10q61xshda37292VhZe/kZ8+on921fvYhh3jYsR3iYW87wzAM4yf/AJI/Xiv9cfIeAAAAAElFTkSuQmCC",
+      "visible": true,
+      "outputType": "riskFactor",
+      "category": "Data Types",
+      "properties": [
+        {
+          "name": "value",
+          "type": "int"
+        }
+      ],
+      "constraints": [
+        {
+          "propertyName": "value",
+          "constraint": "is required",
+          "value": ""
+        }
+      ],
+      "mapping": [
+        [
+          "Number"
+        ]
+      ],
+      "originalLabel": "Risk Factor",
+      "originalDescription": "",
+      "originalIcon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACGCAMAAAAM/FN2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAERUExURQAAAAAkJAYlMgMlMwMjMgMlMgMlNAUkNAUjMwMlNAQkMwQkNAQkMwQkNAQkMwQkMwQkMwQkMwAAAAQEBAQkMwgICAwMDA0NDQ4tOxAQEBEvPRsbGx4eHiAgICQkJCgoKCsrKy0tLTQ0NDw8PEBAQEhISEpKSkxMTFFRUVRUVFZWVlhYWFhtd1lueFxcXF5eXl5yfGBgYGRkZGZmZmpqanR0dICQmIeHh4mYn4uLi4yMjI+Pj5qamp2dnZ+fn6KutKmpqaurq6+vr7e3t8PDw8nJycrKysvR1czS1c/Pz9TU1Nvb29zc3N/f3+Li4uPj4+Tk5OTo6eXl5efn5+np6e3w8fPz8/f39/v7+/39/f///yjvg1gAAAASdFJOUwAHKUtRUlNibZmvsrjLzOXt+jDbqwgAAAAJcEhZcwAAMsAAADLAAShkWtsAAANMSURBVHhe7ZtrU9NAFIa5Cr3DFiuieMMb2iqIYrVqCVTxhliVSvf//xAn2d2EHho4256NO53zfMoku+d9ZpOmnc6eqSmGYRiGYZiJZno+VyhXVmiolAu5+WkYYctCfhkWHpvl/AKMsWGuBAsSUZqDUVhmirAWIcUZGIdidgkWImVpFgYiWIRVyFmEkZfi3sneajaZutpoH3b7koJ+97BdX01K293Bmfh5WmvS+CT0m2um+JLV0x5/7rZOYE0CTrZM+SIMvoA5M2kX1iNi1wRYvK/MO9OVU2JVgtGpLOgZW7AUIeYOor9x8mr8movnyXCin/Y8DE9hWn8HN2EhUpoqZBn5m+GKGr5K/S4YpK/fV/Mwfjg5NboOyxDTUDE5GD+cghrdhlWIaauYAowfTlmN/gyrEHOoYsowfjj6t28XViGmq2IqMH44avCK2+dcyr7OgfHD0YNhEXJYCgtLYWEpLJMsdXx0dHQMT44MkdS6EGIdnhwZlsLCUlhYCgtLYWEpLCyFJWupzv2Ep/CiIWsp+fqqMFyH1wyZS52x8kgqsfJJSr7RUqkT/oPUzx1vVmq/ow9ON7VT+oSspIJqTVn9jZ3SJ2QkFVSFiKx6G5HPxofqBRNcSvUCcxQ6RVbGqReeOjfB4FCqtyFa6kg5CVE7iJ3Ck3BCjDupaFEiK+NkiJykDG4NTkhwJqVvVMs4JWLaSUrzeTyHKyntJERLOwUt6JSOI6nYSS9RNZBSWSGcHEl9fRI7Rdx4F559e02IZ9/OzErDiZT54B/UlFO4TiEt1Dq5kUpeRp3IyjhJGaCcXEh9eRw5Pf8eWtwV4uZ7MPhS6KV+346cHqhF6dSSdUJDLqWdNk/1lc7+wEAU1FKfHkVOL37AETYQS318GDnt/IIDrCCWujd470aEWGrvjhDi5R942RJiqfDNNO460UvJzvbYTvRSFLAUFpbCwlJYJl2qtm3JK1jFQChlTRZ/BVnDUlhcS9HCUlhYCssoUn7tyfNy96KX+zy93BGr9w43YBVi6ioGuXfYy13WXu5H93Lnvp89Dl52g/jZN+Nlh5GfvVgDXWt10q61xshda37292VhZe/kZ8+on921fvYhh3jYsR3iYW87wzAM4yf/AJI/Xiv9cfIeAAAAAElFTkSuQmCC"
+    },
+    {
+      "label": "Cash Flow",
+      "description": "Represents a sequence of projected cash flows over multiple time periods.",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGMAAADBCAMAAADsMf5CAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABjUExURQAAAAAmMwUiNQQjMgMjNAMjMwUjMgQkMwUkMwQkMwQjMgQlMwMkMwQkMwQkMwAAAAQkMwgnNkBAQEdHR2R4gW2AiX9/f4mJiZunra+5vr+/v8PDw9zg4t3h4+To6fX29////y2yJYYAAAAPdFJOUwAUNUhJX2WIqa+7w93299pIhVYAAAAJcEhZcwAAMsAAADLAAShkWtsAAARoSURBVHhe7ZrrVuMgEIDrpVptNZrUxCar9v2fcs8wMDADBJrWHn/Md/asTQJ8GW5JoauVoiiKoiiKoiiKoiiKoiiKoiiKoiiKoiiKovwpbtab7e7l7Qxed9vN+kaW67l7ljmW8nwvy0Zun2TKc3i6leWvVqsHmepcHqRh9SiTnM/j7yuk5OIVhYTVdUtn3/eHr5/jGfx8HfbvVFzQ8NSjPr5lniV8f7jynkhx7059ytRL+XQl3jmHG3o1itEgz0Y4ybNV3NjjD5mQM4592zaOtp8Xueqy08oaj95n22L0xXv64LpwftuGX6Njg0d7loaRFBicpW+ahufZY6kbdGzx6MDTBEABWfD+4SZ4IAcsdYuOHR79Y0k8oyutbXtq7bH3YogldnxhqTt0vOJReuhRNbVRG5OmTzl+sNRXdODBG0vhcEFkehFZYsfRFlt02DJaed4TtNUyBxYgaqnp2KHvc4scqAgGgUE4fChLHAnFNHRwrusGeyIcOEsckWIy5Zt/TWM0bOQsccA9hgooesK6wnAGP3aAIClQ5Rh5a0MA8Bf/h5gGFohstyoHBwqd4INt88k4ZljgoNpw/aq7uMPWTeAYLu4YoCuZTzQ+znWMsgUTDhokBHsIFxzQJcUcBQ7W5glHz3LNOuwMxCMxjqDvpuCT74wjN8eZU1D8vMMHkncEg4rXlhnZUH7eAXkrHOzlgAViJqum6aa8w8wsdJRz2AeGdfBArMR1rxTsxmYd/nWANztJTPdKwWbRnOPYt+2I9WqCCQuoiIQ1SNZBSXtTufJNARseWkVcQNi4mndgyPLxYTDDJFtfJzuOvRzrBgpFXpAdq+yQteRxkSQkF3TYUGLJiY6oJYimo/EoL53eHhmg6AlDSUy8tQ7Td/2hAG8f33/EpRMdqS6F2JJNIOISu7l5B5/bJNbhH1qeurkEgeyiYw1UL66GEg6Wr+BINHqNw8yldFRwJBpkoMyhI0ggm6PkSMyH/m3KOvwLFwG5qh0mNQ9koI5qP9g37ABeVUWHSc4CGWg04N9iGEVHHIh4hwOFGIHyvooOmcE+OODOYb7yRo8Io+yIA7FTlJt05dCI76rsMFnEGJmGzr5lDdKQSF924JtW6ikSVRKAX9rYqQoH5kpIUg5MzMOucGD0CQk5gm8CJmhRszWOnMQ1hf8mgK/h8olT5bASmddBN4AVFT1w6hyzEpo5MFG89FTpsPlTFtdX7deVKIp6B0kiC74Ouy9ECUW9w0mallvMaVqKje4AqHd4C1vSdefM+agpDKc4vMTfceJUxEkOViTeMx2KKgxhDruPll4XtYRroN6RqSWDXRd9QUdhfdcxwuKn7UDcmISv7xbXqRNQ7WUtfJ26vN6ewlly1cXX26v2DRLMzTRy36By/yNmBEsmDrH/cdI+DkfuehByH2d1Z08skGSg/Si/b3uFfbWr7A9eY5/zKvu1vyKRil+ornj//Cq/A4B928v9noH2aWPO/13GS+F3GYqiKIryh/gPhzAGqrOTVFMAAAAASUVORK5CYII=",
+      "visible": true,
+      "outputType": "cashFlow",
+      "category": "Data Types",
+      "properties": [
+        {
+          "name": "numberPeriods",
+          "type": "int"
+        },
+        {
+          "name": "values",
+          "type": "array"
+        },
+        {
+          "name": "yields",
+          "type": "array"
+        },
+        {
+          "name": "bounds",
+          "type": "array"
+        }
+      ],
+      "constraints": [
+        {
+          "propertyName": "numberPeriods",
+          "constraint": ">",
+          "value": "0"
+        },
+        {
+          "propertyName": "values",
+          "constraint": "is required",
+          "value": ""
+        },
+        {
+          "propertyName": "numberPeriods",
+          "constraint": "is required",
+          "value": ""
+        },
+        {
+          "propertyName": "yields",
+          "constraint": "is required",
+          "value": ""
+        },
+        {
+          "propertyName": "bounds",
+          "constraint": "is required",
+          "value": ""
+        }
+      ],
+      "mapping": [
+        [
+          "Array"
+        ]
+      ],
+      "originalLabel": "Cash Flow",
+      "originalDescription": "",
+      "originalIcon": "QAOA.png"
+    },
+    {
+      "label": "Market Data",
+      "description": "Represents historical financial market data for selected stocks or assets over a specified date range.",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF8AAABXCAMAAABVwWmqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABUUExURQAAAAAmMwUiNQQjMgMjNAMjMwUjMgQkMwUkMwQkMwQjMgQlMwMkMwQkMwQkMwAAAAQkMwgnNhAQEGR4gW2AiZunra+5vtzg4t3h4+To6fX29////+Sz6eQAAAAPdFJOUwAUNUhJX2WIqa+7w93299pIhVYAAAAJcEhZcwAAMsAAADLAAShkWtsAAAF3SURBVGhD7ZrbcoJADECDiHIVKUgB//8/Oxg2hGXbzrCb1oecFxOSOTuz6EsiwEqUpEV5u/tQlUWaRMy5Eud282Hysy2HU2Y3eZGdtvqL3eDNheuvdjUAV1k9OyD85SDLFZ3oQdP2w/T0YRr6tiEfvmT65nSj3X6IsTPCbNafTfawGw/zMMoYAMzPKpx+PSAHiJaws3u8MFcUQYJBE+buDePykhNIMWjtDk9a1KZQYNDbDZ70qC2gxGBgtY+6rmuWI/PDF3bBySdqS6gw4D+rEP4JtRXg553XQvifi1f93/De/t8PU7/6N6jf8Hd+rtkoN4kT9VPiRP2UOFE/JU7UT4kT9TsLhPqdBUL9zgKhfmeBUL+zQLyF3wP1/8x/+w/AHerfwx3kX/ZFu/nhAZjCzA9vrvlnCGj+KT2/lZ4/S8/Ppef/0vsLiJc44AG0f3ntIYX3R+L7L+n9nfj+UeYAppe4os3+V3x/Pe8hA+7f573jHon/D3wBXrugcHOhsxoAAAAASUVORK5CYII=",
+      "visible": true,
+      "outputType": "marketData",
+      "category": "Data Types",
+      "properties": [
+        {
+          "name": "token",
+          "type": "string"
+        },
+        {
+          "name": "stocks",
+          "type": "string"
+        },
+        {
+          "name": "start_date",
+          "type": "date"
+        },
+        {
+          "name": "end_date",
+          "type": "date"
+        }
+      ],
+      "constraints": [
+        {
+          "propertyName": "stocks",
+          "constraint": "is required",
+          "value": ""
+        },
+        {
+          "propertyName": "start_date",
+          "constraint": "is required",
+          "value": ""
+        },
+        {
+          "propertyName": "end_date",
+          "constraint": "is required",
+          "value": ""
+        },
+        {
+          "propertyName": "start_date",
+          "constraint": "<",
+          "value": "end_date"
+        }
+      ],
+      "mapping": [
+        [
+          "Array"
+        ]
+      ],
+      "originalLabel": "Market Data",
+      "originalDescription": "",
+      "originalIcon": "QAOA.png"
+    },
+    {
+      "label": "Optimize Portfolio",
+      "description": "An optimization operator that selects a subset of assets to maximize expected return while respecting budget and risk constraints.",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAACRCAMAAAAB+CGhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACWUExURQAAAAAaMwAeLQAgMAQmNQMkMwMkNAQkMwQkMgQkNAQlNAMlNAUkMwUkMgQkNAQkMwQkMwMkMwQkMwQkMwQkMwQkMwAAAAQkMw0sOw8PDxMxPzNNWUVcZ0deaXJycn9/f4yaoI6boY6bopeXl52prqSvtKWwtKmzuKu1ubW1tcHHy8vQ0tjc3ePj4+Pl5uTm5/Dw8PLy8mJ19TgAAAAWdFJOUwAKESBEVV13f4CKmaGissTM3uXt8f5DrSOYAAAACXBIWXMAADLAAAAywAEoZFrbAAADF0lEQVR4Xu2c627aQBCFFwKEACFck5RLcykNFCiF93+5Cu14vExPRorV7G6r+f7E8e4cPoGwzY8Z5wCNdrc/GD1EYjTod9sN6QCpNXtjWR6Dca9Zky6Cemcqq+Ix7dSlT8j1RBbEZXItjZjWUG6Oz7AlrTw3cmMa2tLrzK3clYpbaeau7sL15et6uz+eonDcb9evy/DV766EXOC2WB1kwOdzWC0Cu0u38jOdv8m6WHyfs8TFJ1t+F55lSUyeWeOmdGsV52YbuT8um1lhUl5Riuvb407ujs3ukVSGhds1nZgldzuddsV7R/eKenHPSvyZejYkM/H32Q79m/S7UFJ8Kzpntxo9h8zlrlTQFWV6foJqkmmy65vkjYSazrmeP1zIPemge0XPOUfPvSu5JR0rbzR2rkFv4i+5JR0HUmq4tj9Yyh0poWeUtuv6gxe5ISWv3qnr+v5gHax9uS/4Fpx9D95cIrd8lLV36ruBP9gGa8nltt5p4Oi38z5YSy63904j5/8+hM/kyeWOJFXIhWvJ5U4mVxWTq4rJVcXkqmJyVfl8OXnWI8shJgeQ5RCTA8hyiMkBZDnE5ACyHGJyAFkOMTmALIeYHECWQ0wOIMshH5R7gpxXLl7a40vkWQ8napgcgBM1TA7AiRomB+BEDZMDcKKGyQE4UcPkAJyoYXIATtQwOQAnapgcgBM1TA7AiRomB+BEDZMDcKKGyQH0MMLkAHoYYXIAPYwwOYAeRpgcQA8jTA6ghxEmB9DDCJMD6GGEyQH0MMLkAHoYYXIAPYwwOYAeRpgcQA8jTA6ghxEmB9DDiL8m9y4XTsx5RcZ4gtL/SS4uJlcVk6vKvyQX9hqy2/3XH9EIXr/sNVS7NCPyMxDgLk21vzUioRz3t6qdwREJ5bgzGPRUJ5fjnmrQjZ5cjrvRQR9/armyjx9MQEgtV05AALMjUssFsyP+nLqRWC6cupH1vJKsJ73kPSMn6+lCec9lynuiVX6zwC4m5OU8RS3v+XOJJ/e96JP7sp55mM+0yGAuXkjOczbznlCa+WzXvKfienKZJ/wbY9c4fZEkY+QAAAAASUVORK5CYII=",
+      "visible": true,
+      "outputType": "selectedAssets",
+      "category": "Operators",
+      "properties": [
+        {
+          "name": "marketData",
+          "type": "marketData"
+        },
+        {
+          "name": "budget",
+          "type": "budget"
+        },
+        {
+          "name": "riskFactor",
+          "type": "riskFactor"
+        }
+      ],
+      "constraints": [
+        {
+          "propertyName": "marketData",
+          "constraint": "is required",
+          "value": ""
+        },
+        {
+          "propertyName": "budget",
+          "constraint": "is required",
+          "value": ""
+        },
+        {
+          "propertyName": "riskFactor",
+          "constraint": "is required",
+          "value": ""
+        }
+      ],
+      "mapping": [
+        [
+          "QAOA",
+          "QUBO"
+        ],
+        [
+          "QUBO",
+          "VQE"
+        ]
+      ],
+      "originalLabel": "Optimize Portfolio",
+      "originalDescription": "",
+      "originalIcon": "QAOA.png"
+    },
+    {
+      "label": "Fixed Income Expected Value Estimator",
+      "description": "",
+      "icon": "data:image/png;base64,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",
+      "visible": true,
+      "outputType": [
+        "estimatedValue",
+        "probability"
+      ],
+      "category": "Operators",
+      "properties": [
+        {
+          "name": "cashFlow",
+          "type": "cashFlow"
+        }
+      ],
+      "constraints": [
+        {
+          "propertyName": "cashFlow",
+          "constraint": "is required",
+          "value": ""
+        }
+      ],
+      "mapping": [
+        [
+          "QAE",
+          "QUBO"
+        ]
+      ],
+      "originalLabel": "Fixed Income Expected Value Estimator",
+      "originalDescription": "",
+      "originalIcon": "QAOA.png"
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "name": "Logistics",
+  "nodes": [
+    {
+      "label": "Order",
+      "description": "Represents a customer delivery request that must be fulfilled.",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF4AAABYCAMAAABLVbBBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB1UExURQAAAAAcOQciNgQkMQQjNQMkNAQlNAUlMwQkMgQkMwQkMwQkMwQkMwQkMwAAAAQkM0BAQFpveV5yfGBgYH9/f4mYn5+fn6Swta+vr7e3t7+/v8PDw9bb3dfX19jd39ne4N/f3+fn5+/v7/Hz9PPz8/f39////9mfXYMAAAAOdFJOUwAJJjk6VHagsb/Z8vb8rF3QeAAAAAlwSFlzAAAywAAAMsABKGRa2wAAAdZJREFUaEPtmtt2gjAQRYMWuaj1Ui2ttWBLy/9/YlcuBBgDWibnwbXYL6Zm2A/JEHCmQjQEYZSkyw2DZZpEYdBSNszjNY0exzqeU7eYRTSKQzTr2sMVjeCxCtv2BZ3ms4DaW/6QzvjBrM+sWfddlpcVg7LIdla20vtrc2Z/puFjOO9rXyTtT/VfRxo4lmNtlPkf+7Y3/liIwNyrexrDwazPOrBpQ9f99B/ItdXZSMN6Y3c0Yvt8P1t6cWXyJxKJHmQ0gKfPtDURqR4UNICnz7U1FeZ8v7qbePpSW5dCf27ovNIf6JcODk59ZbST3rv+80XyJodc/c+lg5o8qYRR01z9azcJ1eTj6N+3HdSkR70LsP5X7fK3HCL0LSb9AAg9eGs9JuaHOr4satKjHnwogPVfjjcmj3oXHh8nN5j0Azyg3mPmgPMefNeC9eAT0wVYD35atZj0AyD04K31mJjg93vwoQDWg38ZuvD4OLnBpB+Aob+XST/ACH335ekG9OJG31do5GELjaZMmtMAHoW2pr1FXh62yNtXouZhS9R9BXYWTYEd3B4ANzfE3Iz9+TutGXBjqdsWK1j3V5lft8XATT10SxLib9nR7WB0M1u2JpGteAngHwn+AArmb8a5jOwWAAAAAElFTkSuQmCC",
+      "visible": true,
+      "outputType": "order",
+      "category": "Data Types",
+      "properties": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "location",
+          "type": "string"
+        },
+        {
+          "name": "demand",
+          "type": "int"
+        }
+      ],
+      "constraints": [
+        {
+          "propertyName": "id",
+          "constraint": "is required",
+          "value": ""
+        },
+        {
+          "propertyName": "location",
+          "constraint": "is required",
+          "value": ""
+        },
+        {
+          "propertyName": "demand",
+          "constraint": "is required",
+          "value": ""
+        },
+        {
+          "propertyName": "demand",
+          "constraint": ">",
+          "value": "0"
+        }
+      ],
+      "mapping": [
+        [
+          "Number"
+        ]
+      ],
+      "originalLabel": "Order",
+      "originalDescription": "",
+      "originalIcon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF4AAABYCAMAAABLVbBBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB1UExURQAAAAAcOQciNgQkMQQjNQMkNAQlNAUlMwQkMgQkMwQkMwQkMwQkMwQkMwAAAAQkM0BAQFpveV5yfGBgYH9/f4mYn5+fn6Swta+vr7e3t7+/v8PDw9bb3dfX19jd39ne4N/f3+fn5+/v7/Hz9PPz8/f39////9mfXYMAAAAOdFJOUwAJJjk6VHagsb/Z8vb8rF3QeAAAAAlwSFlzAAAywAAAMsABKGRa2wAAAdZJREFUaEPtmtt2gjAQRYMWuaj1Ui2ttWBLy/9/YlcuBBgDWibnwbXYL6Zm2A/JEHCmQjQEYZSkyw2DZZpEYdBSNszjNY0exzqeU7eYRTSKQzTr2sMVjeCxCtv2BZ3ms4DaW/6QzvjBrM+sWfddlpcVg7LIdla20vtrc2Z/puFjOO9rXyTtT/VfRxo4lmNtlPkf+7Y3/liIwNyrexrDwazPOrBpQ9f99B/ItdXZSMN6Y3c0Yvt8P1t6cWXyJxKJHmQ0gKfPtDURqR4UNICnz7U1FeZ8v7qbePpSW5dCf27ovNIf6JcODk59ZbST3rv+80XyJodc/c+lg5o8qYRR01z9azcJ1eTj6N+3HdSkR70LsP5X7fK3HCL0LSb9AAg9eGs9JuaHOr4satKjHnwogPVfjjcmj3oXHh8nN5j0Azyg3mPmgPMefNeC9eAT0wVYD35atZj0AyD04K31mJjg93vwoQDWg38ZuvD4OLnBpB+Aob+XST/ACH335ekG9OJG31do5GELjaZMmtMAHoW2pr1FXh62yNtXouZhS9R9BXYWTYEd3B4ANzfE3Iz9+TutGXBjqdsWK1j3V5lft8XATT10SxLib9nR7WB0M1u2JpGteAngHwn+AArmb8a5jOwWAAAAAElFTkSuQmCC"
+    },
+    {
+      "label": "Vehicle",
+      "description": "Represents a delivery vehicle available for fulfilling orders.",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHIAAACRCAMAAAAo0xxjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEmUExURQAAAAAmMwUiNQQjMgMjNAMjMwUjMgQkMwUkMwQkMwQjMgQlMwMkMwQkMwQkMwAAAAMDAwQEBAQkMwUFBQgICAgnNgwMDBAQEBMTExwcHCQkJCkpKSwsLC4uLjExMTIyMjk5OTs7Ozw8PEBAQEJCQkREREhISE5OTlBQUFRUVFdXV1hYWGNjY2RkZGR4gWhoaGlpaW2AiXBwcHFxcXR0dHh4eHx8fH19fX5+fn9/f4eHh4yMjI+Pj5OTk5mZmZqampunrZycnKKioqenp6+5vrOzs7u7u7+/v8nJycvLy83Nzc/Pz9PT09XV1dfX19vb29zc3Nzg4t3h4+Pj4+Tk5OTo6efn5+np6evr6+3t7e/v7/Pz8/X19fX29/f39/r6+vv7+////989/qsAAAAPdFJOUwAUNUhJX2WIqa+7w93299pIhVYAAAAJcEhZcwAAMsAAADLAAShkWtsAAAMgSURBVHhe7Zppd9JAFIYLlJbV2Cqt4m7capWKCzqKWhXBXYuCK+r9/3/Ck8xkktxMYjMTki/3+URy77xPMqQp58ysrBAEQRDEEilVa83WkU0T2q1mrVrCwXFUGni8No1VHK6iXMfjjKiXsSDCGh5jzBpWINbxgAxYx5IQyzAmO7OfVU783JZlT6c3mi7AhMV01OvIvNhnSD6r/RlO0GLW9wLrWCVY9Rr28Vht9r3ICpZxvDdAdkbf2cAyl5Ko9vEwI7y5Vb77qrzWyeZ79JiJZ6iKdQ41XuvhQYb0eGwN6xyavDbCYwwZ8dgm1jm0eG2Kxxgy5bEtrHNo85rZGyDKgse2sc6BlzbxEGNELtY5kNIEUiYqJ7YaxnAnRlM5sRL4j1RPybAlTLJTS+kY7YkkdDBxiolOHSUOtSw7cBQpYzSUkUikjDaESa+MBmKloiVIaqUiLqJUNfmkVarCokplm0dKpTJKoVQ3ctIp1UEqJf9DwiddUinVRrUy3plKid8yhyf46s1JGZye/JSWNclfKb7ZPJXiNnNV8ts0UNrhQxV2uMdMydxJcv85xmFHWwyUPM0h3un/Ifo97qGWkgH8ZvZ299rL+F9BDGC80926OPgJIKc3vdIbCvDhNP+09zfmPhnAYMP91H3tX1Z6pRjK4P0lL+R+4B6CADzyPp5/Iy8rvVKkA9z04qyNd0olg4/H5cGu/Eo0lPxyAc7KOGuo/DYZPPMPun/EZfEnKqUSGLMZ/PDjrD3l7/YJ3A70zIE5J8UznFbp8vWEH3cHFwUP/JZjn0IVLSVc8POe4Jrghd9yJlzRUz6UcdtzXBN8Oyl7BuGKnvL7dS/uMS5Jnm+JlqtfwgU9Jby9ddRJOzX8hSs+T8+5xhuv0HlNJcD43pWd4Wd8NsR8uHv57hif1VfqQ0pSGkBKUhpAyvyVBawgFLBOUsBqUAFrXgWs7BWwflnAKu1KRZQzdMq16Li9IvmvuIf3FRyYvRMWB4faV1DA7oki9ogsx5lsXMbcJs0qJ/9dTc5ekQz3bsXsDYmS+w41giAIgiAIgiAIgiAIgiAK5x8bRs0grSPrtgAAAABJRU5ErkJggg==",
+      "visible": true,
+      "outputType": "vehicle",
+      "category": "Data Types",
+      "properties": [
+        {
+          "name": "capacity",
+          "type": "int"
+        }
+      ],
+      "constraints": [
+        {
+          "propertyName": "capacity",
+          "constraint": "is required",
+          "value": ""
+        },
+        {
+          "propertyName": "capacity",
+          "constraint": ">",
+          "value": "0"
+        }
+      ],
+      "mapping": [
+        [
+          "Number"
+        ]
+      ],
+      "originalLabel": "Vehicle",
+      "originalDescription": "",
+      "originalIcon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHIAAACRCAMAAAAo0xxjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEmUExURQAAAAAmMwUiNQQjMgMjNAMjMwUjMgQkMwUkMwQkMwQjMgQlMwMkMwQkMwQkMwAAAAMDAwQEBAQkMwUFBQgICAgnNgwMDBAQEBMTExwcHCQkJCkpKSwsLC4uLjExMTIyMjk5OTs7Ozw8PEBAQEJCQkREREhISE5OTlBQUFRUVFdXV1hYWGNjY2RkZGR4gWhoaGlpaW2AiXBwcHFxcXR0dHh4eHx8fH19fX5+fn9/f4eHh4yMjI+Pj5OTk5mZmZqampunrZycnKKioqenp6+5vrOzs7u7u7+/v8nJycvLy83Nzc/Pz9PT09XV1dfX19vb29zc3Nzg4t3h4+Pj4+Tk5OTo6efn5+np6evr6+3t7e/v7/Pz8/X19fX29/f39/r6+vv7+////989/qsAAAAPdFJOUwAUNUhJX2WIqa+7w93299pIhVYAAAAJcEhZcwAAMsAAADLAAShkWtsAAAMgSURBVHhe7Zppd9JAFIYLlJbV2Cqt4m7capWKCzqKWhXBXYuCK+r9/3/Ck8xkktxMYjMTki/3+URy77xPMqQp58ysrBAEQRDEEilVa83WkU0T2q1mrVrCwXFUGni8No1VHK6iXMfjjKiXsSDCGh5jzBpWINbxgAxYx5IQyzAmO7OfVU783JZlT6c3mi7AhMV01OvIvNhnSD6r/RlO0GLW9wLrWCVY9Rr28Vht9r3ICpZxvDdAdkbf2cAyl5Ko9vEwI7y5Vb77qrzWyeZ79JiJZ6iKdQ41XuvhQYb0eGwN6xyavDbCYwwZ8dgm1jm0eG2Kxxgy5bEtrHNo85rZGyDKgse2sc6BlzbxEGNELtY5kNIEUiYqJ7YaxnAnRlM5sRL4j1RPybAlTLJTS+kY7YkkdDBxiolOHSUOtSw7cBQpYzSUkUikjDaESa+MBmKloiVIaqUiLqJUNfmkVarCokplm0dKpTJKoVQ3ctIp1UEqJf9DwiddUinVRrUy3plKid8yhyf46s1JGZye/JSWNclfKb7ZPJXiNnNV8ts0UNrhQxV2uMdMydxJcv85xmFHWwyUPM0h3un/Ifo97qGWkgH8ZvZ299rL+F9BDGC80926OPgJIKc3vdIbCvDhNP+09zfmPhnAYMP91H3tX1Z6pRjK4P0lL+R+4B6CADzyPp5/Iy8rvVKkA9z04qyNd0olg4/H5cGu/Eo0lPxyAc7KOGuo/DYZPPMPun/EZfEnKqUSGLMZ/PDjrD3l7/YJ3A70zIE5J8UznFbp8vWEH3cHFwUP/JZjn0IVLSVc8POe4Jrghd9yJlzRUz6UcdtzXBN8Oyl7BuGKnvL7dS/uMS5Jnm+JlqtfwgU9Jby9ddRJOzX8hSs+T8+5xhuv0HlNJcD43pWd4Wd8NsR8uHv57hif1VfqQ0pSGkBKUhpAyvyVBawgFLBOUsBqUAFrXgWs7BWwflnAKu1KRZQzdMq16Li9IvmvuIf3FRyYvRMWB4faV1DA7oki9ogsx5lsXMbcJs0qJ/9dTc5ekQz3bsXsDYmS+w41giAIgiAIgiAIgiAIgiAK5x8bRs0grSPrtgAAAABJRU5ErkJggg=="
+    },
+    {
+      "label": "Depot Location",
+      "description": "Represents the central starting and ending location for vehicles.",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHIAAACQCAMAAADjj8/GAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABUUExURQAAAAAcOQciNgQkMQQjNQMkNAQlNAUlMwQkMgQkMwQkMwQkMwQkMwQkMwAAAAQkM0BAQFpveV5yfH9/f4mYn6Swtb+/v9bb3djd39ne4PHz9P///4bV4poAAAAOdFJOUwAJJjk6VHagsb/Z8vb8rF3QeAAAAAlwSFlzAAAywAAAMsABKGRa2wAAAhpJREFUeF7tmuuSgjAMRlEXAS+Ioqj4/u+5U9uCTQtjTbU6fOcfKclxtAZ30yQBAAAwHWZpVqzWOw7rVZGlM1p4iEW+pQVeZJsvaHEX84wmssjmVGCRbmgSk01KFYQlzQjAkkoM3mEcd6b05kAMv7fz/nPcny7tjUN7Pe27apvBPdTt1cOZVniJ80EXzKhKsdA3HGnuyxx1yYHvZx7c2DtzKrszUz3nQNNYqPd26+x9eruG+Rw1Z1XVuWnV5tnTJCZq3zo3UCHXTjSHyUmWLahOsJJrVzOjrgSNGfThIsuuqE6gno+kA1SlgKFsZdk11Qnk0o5ksJU3VZfqBGPKmkR98FbejTGUFYn68APKZkrK0ox64ausJ6VktJ8fUMp+NxUlo8n6KpVxIkpGxwuobByx2hHzVOoWayubym5JTWXfF0wphFR5jwVUGuWl0BnjK3W/eyyvhc7YO5S90BkLqVQdrw90yscXEV5pCKXSEIZQ9vUaSyiURBhYaQnL0hKGVT4JlDZQPg2UNsNKfSUfZd3PILnY/dyEEspvUTYK+fyq9KVcrPVlUKUHUNp8iVL+A9gDxx+FnsoQQAklgxGle2jBZmxooUYzF5rD5CrLOkczEQZQEcZsEYaJEUamEQbDMcbfEYb85lGGK68ntJenjjJEOLAR41jKe5zjxhhHjGIcpEqS5O/Tx8UEHz8UBwAAAAAAAAAAAAAAMPkH7omvCagJCi0AAAAASUVORK5CYII=",
+      "visible": true,
+      "outputType": "depotLocation",
+      "category": "Data Types",
+      "properties": [
+        {
+          "name": "value",
+          "type": "string"
+        }
+      ],
+      "constraints": [
+        {
+          "propertyName": "value",
+          "constraint": "is required",
+          "value": ""
+        }
+      ],
+      "mapping": [
+        [
+          "Array"
+        ]
+      ],
+      "originalLabel": "Depot Location",
+      "originalDescription": "",
+      "originalIcon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHIAAACQCAMAAADjj8/GAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABUUExURQAAAAAcOQciNgQkMQQjNQMkNAQlNAUlMwQkMgQkMwQkMwQkMwQkMwQkMwAAAAQkM0BAQFpveV5yfH9/f4mYn6Swtb+/v9bb3djd39ne4PHz9P///4bV4poAAAAOdFJOUwAJJjk6VHagsb/Z8vb8rF3QeAAAAAlwSFlzAAAywAAAMsABKGRa2wAAAhpJREFUeF7tmuuSgjAMRlEXAS+Ioqj4/u+5U9uCTQtjTbU6fOcfKclxtAZ30yQBAAAwHWZpVqzWOw7rVZGlM1p4iEW+pQVeZJsvaHEX84wmssjmVGCRbmgSk01KFYQlzQjAkkoM3mEcd6b05kAMv7fz/nPcny7tjUN7Pe27apvBPdTt1cOZVniJ80EXzKhKsdA3HGnuyxx1yYHvZx7c2DtzKrszUz3nQNNYqPd26+x9eruG+Rw1Z1XVuWnV5tnTJCZq3zo3UCHXTjSHyUmWLahOsJJrVzOjrgSNGfThIsuuqE6gno+kA1SlgKFsZdk11Qnk0o5ksJU3VZfqBGPKmkR98FbejTGUFYn68APKZkrK0ox64ausJ6VktJ8fUMp+NxUlo8n6KpVxIkpGxwuobByx2hHzVOoWayubym5JTWXfF0wphFR5jwVUGuWl0BnjK3W/eyyvhc7YO5S90BkLqVQdrw90yscXEV5pCKXSEIZQ9vUaSyiURBhYaQnL0hKGVT4JlDZQPg2UNsNKfSUfZd3PILnY/dyEEspvUTYK+fyq9KVcrPVlUKUHUNp8iVL+A9gDxx+FnsoQQAklgxGle2jBZmxooUYzF5rD5CrLOkczEQZQEcZsEYaJEUamEQbDMcbfEYb85lGGK68ntJenjjJEOLAR41jKe5zjxhhHjGIcpEqS5O/Tx8UEHz8UBwAAAAAAAAAAAAAAMPkH7omvCagJCi0AAAAASUVORK5CYII="
+    },
+    {
+      "label": "Optimize Vehicle Routing",
+      "description": "An optimization operator that assigns orders to vehicles and determines feasible routing configurations.",
+      "icon": "data:image/png;base64,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",
+      "visible": true,
+      "outputType": "vehicleAssignment",
+      "category": "Operators",
+      "properties": [
+        {
+          "name": "order",
+          "type": "Order"
+        },
+        {
+          "name": "vehicle",
+          "type": "Vehicle"
+        },
+        {
+          "name": "depotLocation",
+          "type": "depotLocation"
+        }
+      ],
+      "constraints": [
+        {
+          "propertyName": "order",
+          "constraint": "is required",
+          "value": ""
+        },
+        {
+          "propertyName": "vehicle",
+          "constraint": "is required",
+          "value": ""
+        },
+        {
+          "propertyName": "depotLocation",
+          "constraint": "is required",
+          "value": ""
+        }
+      ],
+      "mapping": [
+        [
+          "QAOA",
+          "QUBO"
+        ]
+      ],
+      "originalLabel": "Optimize Vehicle Routing",
+      "originalDescription": "",
+      "originalIcon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAAB/CAMAAAD4iE1bAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAC9UExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOvSc8wAAAA+dFJOUwAECQwQERQVGxweJCgwMzxASEtMUFNUVmBhZGdwc3x+gISJjI+Tl5ufo6+ztru/yczP0dLT3uPn6+3v8/X7YlszWAAAAAlwSFlzAAAywAAAMsABKGRa2wAAA5BJREFUaEPtmmlzFCEQhtGN8YgxeK9XgpoYNQavGOOx+f8/y6KhoWmYrWUYRqvk+WDtQM/7DHMyE4XodDqdTucfRyqlFG+cBXVpmV8vtVMbO+9siwzm2eVk1HPL3bHWCg86L2gIGa21S17RDrqjYfdrXlHJ8MVjzzQ3Vhj4tG6IHLC3deM5lLe3dHvzkB06rM9uR65oDJE5H2wvbyX9TWaa8zwxG7g9vq2l/aPImg0+XWozxsx9rXIDiFlLs0BbINo8QsxxZgN36463R2a7GLcq9/BKBm6ctm6s3UfBXkV35jgkAydFPHRD3NrWTNypnQ3cDBa3hQYWAOuiOXLHdltCBk4r/BplsHUjd7D7jfNqPMbt3LYh7JawK7ChpdvsZXr/cmp/as/p5kd4Tnc0g0jXL6LYDQMPi7O6zRrkRjavW0VzhnndMd1dTrlbKTNtQuZ1/83zvLvdUncX0t1Adzvmcxt1/M2Qu+0b0vRzJjAze+wOHxaxYhq3N0M0ZlM3/aSJdvjp+kvBdSOzwdmDOzZDySTuxGwAO7pTs0HVuwNa0u1QyrmpWUv/URPhoRsSZbgXL2o3UvgnKmF2HrohJCH3yscgL8u0xK9XRiYWyNnjEmKnzQVkYwFuT0tqP2YPxALUni9xdt68IYOxANqHS8DOGzdkTSxgoteXKDXWvTYWoG8Ceeizp9P5z8g/dg269ZUxaDa0ldu/3iH0d/ge3wh47ofF+A9acKtuJmdq5obZUCs5V3N3Q3miTtzN5Kk6dTeSZ9QZdxN5Tp1zN5Bn1Vn35HKY55j/fhOTbbTzflyo3wh3zxxFrZ7nlZEerBJ4WiFVch5WSs1u51mlZC6HjeFZpUzk1lpKdx0NopWpoS08sIAQgqfN8NQpvPAQO8kqxWdIIXaWh/sPFukbLaKEWNzfP3p6293iAB5YAA5SiesH380P/Xho6qaFuPfB/Pjx8kaQ88ACnEYJ8c6FrSQZFUWK3V/u50nYPh5YAuYuUXF5vpUduBKLM7/w3G8fzyvBZkT7+Un2iCvxMCx8wo2uurHBqaXFNTjYllfZnS7Fflj4fctNqnlYOVJsE8uxEDJFiCNSc9OW8KBxfAm5L3if41ko+XaVd9bwNgTv8j7HzsqXvOd9Vdz5iLmveZfnAEu+7vGuOvbObe7Jgvd4rhzbkou7vKeWrcPPq5+nS94c8ej0YnX2Zps3dzqdTqfT6XRa8Adq1Hh/MVzaCAAAAABJRU5ErkJggg=="
+    }
+  ]
+}
