@@ -1,12 +1,13 @@
-# Quantum Workflows, MODULO, and QuantME Use Cases
+# Low-Code Modeling, Quantum Workflows, MODULO, and QuantME Use Cases
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 This project contains different use cases for quantum workflows and the MODULO framework.
-Thereby, the MODULO framework incorporates the Quantum Modeling Extension (QuantME) and the corresponding BPMN extension [Quantum4BPMN](https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN).
+
+The showcased toolchain supports the complete lifecycle of modern distributed applications, from visual modeling and low-code composition to transformation, deployment, execution, monitoring, and optimization. It enables the development of portable and interoperable applications that combine classical computing and quantum computing.
 Furthermore, it provides an integrated toolchain to model, transform, deploy, and execute quantum workflows comprising the following components:
 
-* [Quantum Workflow Modeler](https://github.com/PlanQK/workflow-modeler) (previously [QuantME Modeling and Transformation Framework](https://github.com/UST-QuAntiL/QuantME-TransformationFramework)): A graphical BPMN modeler supporting Quantum4BPMN to ease the modeling of quantum workflows by providing explicit modeling constructs for the execution of quantum circuits, as well as frequently occurring pre- and post-processing tasks. Furthermore, it enables transforming quantum workflows using Quantum4BPMN modeling constructs to native BPMN workflows to retain their portability between different workflow engines. Finally, it integrates the other components of the MODULO framework to automatically deploy required services, bind them to a workflow, and upload the executable workflow to a workflow engine.
+* [Quantum Workflow Modeler](https://github.com/PlanQK/workflow-modeler) (previously [QuantME Modeling and Transformation Framework](https://github.com/UST-QuAntiL/QuantME-TransformationFramework)): A graphical BPMN modeler supporting [Quantum4BPMN](https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN) to ease the modeling of quantum workflows by providing explicit modeling constructs for the execution of quantum circuits, as well as frequently occurring pre- and post-processing tasks. Furthermore, it enables transforming quantum workflows using Quantum4BPMN modeling constructs to native BPMN workflows to retain their portability between different workflow engines. Finally, it integrates the other components of the MODULO framework to automatically deploy required services, bind them to a workflow, and upload the executable workflow to a workflow engine.
 * [Camunda BPMN Engine](https://camunda.com/products/camunda-platform/bpmn-engine/): A state-of-the-art BPMN workflow engine used to execute quantum workflows after transforming them to native BPMN workflow models to avoid the need for extending the workflow engine. It has been extended using a [plugin](https://github.com/UST-QuAntiL/camunda-process-view-plugins) to visualize quantum and deployment-specific information within so-called process views.
 * [Winery](https://github.com/OpenTOSCA/winery): Winery is a web-based environment to graphically model TOSCA-based deployment models, which can then be attached to activities of quantum workflows to enable their automated deployment in the target environment.
 * [OpenTOSCA Container](https://github.com/OpenTOSCA/container): A TOSCA-compliant deployment system to deploy and manage applications or services.
@@ -14,7 +15,12 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
 * [AWS Braket Hybrid Jobs Handler](https://github.com/UST-QuAntiL/amazon-braket-hybrid-jobs-handler): A service generating AWS Braket Hybrid Jobs programs for hybrid loops based on corresponding workflow fragments detected by the QuantME Modeling and Transformation Framework.
 * [Script Splitter](https://github.com/UST-QuAntiL/qscript-splitter): A service analyzing Python scripts to detect quantum and classical parts, which are then orchestrated by a generated workflow model.
 * [Pattern Atlas](https://github.com/PatternAtlas): A graphical tool for authoring and visualizing patterns and pattern languages.
-  
+
+
+### QUANTICS 2026 - Prototype
+
+Developing quantum applications remains challenging for domain experts due to the complexity of quantum algorithms, hardware constraints, and implementation-specific requirements. To address this challenge, the paper introduces the concepts of domain blocks and domain profiles, enabling domain experts to describe their problems using domain-specific concepts rather than low-level quantum constructs. Based on these abstractions, the platform supports AI-assisted selection and composition of suitable quantum algorithms and services, simplifying the development of quantum applications across different domains.
+
 ### ICWE 2024 - Tutorial
 
 In this [tutorial](https://link.springer.com/chapter/10.1007/978-3-031-62362-2_45), we show how to model, transform, and execute a quantum workflow manually using the MODULO framework. 

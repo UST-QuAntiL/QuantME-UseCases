@@ -1,0 +1,170 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "name": "My Model",
+    "description": "This is a model.",
+    "author": "",
+    "containsPlaceholder": false,
+    "id": "flow-1763722880250",
+    "timestamp": "2025-11-21T11:01:20.250Z"
+  },
+  "nodes": [
+    {
+      "id": "cfaa26be-625d-4637-9370-8fdbb599cbe4",
+      "type": "statePreparationNode",
+      "position": {
+        "x": 585,
+        "y": 210
+      },
+      "data": {
+        "label": "Basis Encoding",
+        "inputs": [
+          {
+            "id": "99af98e6-93b6-432f-8e35-434b77678185",
+            "outputIdentifier": "",
+            "identifiers": [
+              "q891957"
+            ]
+          },
+          {
+            "id": "99af98e6-93b6-432f-8e35-434b77678185",
+            "identifiers": [
+              "q891957"
+            ]
+          }
+        ],
+        "children": [],
+        "implementation": "",
+        "implementationType": "",
+        "uncomputeImplementationType": "",
+        "uncomputeImplementation": "",
+        "completionGuaranteed": true,
+        "compactOptions": [
+          false
+        ],
+        "identifiers": [
+          "q207760"
+        ],
+        "encodingType": "Basis Encoding"
+      },
+      "width": 320,
+      "height": 373,
+      "positionAbsolute": {
+        "x": 585,
+        "y": 210
+      }
+    },
+    {
+      "id": "99af98e6-93b6-432f-8e35-434b77678185",
+      "type": "dataTypeNode",
+      "position": {
+        "x": 75,
+        "y": 255
+      },
+      "data": {
+        "label": "int",
+        "inputs": [],
+        "children": [],
+        "implementation": "",
+        "implementationType": "",
+        "uncomputeImplementationType": "",
+        "uncomputeImplementation": "",
+        "completionGuaranteed": true,
+        "compactOptions": [
+          true,
+          false
+        ],
+        "identifiers": [
+          "q891957"
+        ],
+        "dataType": "int",
+        "value": "5",
+        "outputIdentifier": ""
+      },
+      "width": 450,
+      "height": 270,
+      "positionAbsolute": {
+        "x": 75,
+        "y": 255
+      },
+      "dragging": true
+    },
+    {
+      "id": "2d30325a-f822-43c5-aa3d-ea6e798b854d",
+      "type": "measurementNode",
+      "position": {
+        "x": 1020,
+        "y": 270
+      },
+      "data": {
+        "label": "Measurement",
+        "inputs": [
+          {
+            "id": "cfaa26be-625d-4637-9370-8fdbb599cbe4",
+            "identifiers": [
+              "q207760"
+            ]
+          }
+        ],
+        "children": [],
+        "implementation": "",
+        "implementationType": "",
+        "uncomputeImplementationType": "",
+        "uncomputeImplementation": "",
+        "completionGuaranteed": true,
+        "compactOptions": [
+          true,
+          false
+        ],
+        "identifiers": [
+          "q843286"
+        ],
+        "indices": "",
+        "outputIdentifier": ""
+      },
+      "width": 320,
+      "height": 440,
+      "positionAbsolute": {
+        "x": 1020,
+        "y": 270
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "cfaa26be-625d-4637-9370-8fdbb599cbe4",
+      "sourceHandle": "quantumHandlestatePreparationNodeOutput0cfaa26be-625d-4637-9370-8fdbb599cbe4",
+      "target": "2d30325a-f822-43c5-aa3d-ea6e798b854d",
+      "targetHandle": "quantumHandleMeasurementInput02d30325a-f822-43c5-aa3d-ea6e798b854d",
+      "type": "quantumEdge",
+      "id": "e8363a36-fbe7-431c-abaf-59b29fe2c212",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 20,
+        "height": 20,
+        "color": "#93C5FD",
+        "hidden": false
+      }
+    },
+    {
+      "source": "99af98e6-93b6-432f-8e35-434b77678185",
+      "sourceHandle": "classicalHandleDataTypeOutput099af98e6-93b6-432f-8e35-434b77678185",
+      "target": "cfaa26be-625d-4637-9370-8fdbb599cbe4",
+      "targetHandle": "classicalHandleStatePreparationInput0cfaa26be-625d-4637-9370-8fdbb599cbe4",
+      "type": "classicalEdge",
+      "id": "7274edad-a173-4a04-8bf2-6d0de6b54292",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 20,
+        "height": 20,
+        "color": "#F5A843",
+        "hidden": false
+      }
+    }
+  ],
+  "viewport": {
+    "x": -142,
+    "y": 95,
+    "zoom": 1
+  }
+}

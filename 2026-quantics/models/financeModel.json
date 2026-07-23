@@ -1,0 +1,396 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "name": "My Model",
+    "description": "This is a model.",
+    "author": "",
+    "containsPlaceholder": false,
+    "id": "flow-1772461387420",
+    "timestamp": "2026-03-02T14:23:07.420Z"
+  },
+  "nodes": [
+    {
+      "id": "ce1a7c37-1c73-426e-83aa-5e1efd1a6a91",
+      "type": "editableNode",
+      "position": {
+        "x": -45,
+        "y": 450
+      },
+      "data": {
+        "label": "Budget",
+        "inputs": [],
+        "children": [],
+        "implementation": "",
+        "implementationType": "",
+        "uncomputeImplementationType": "",
+        "uncomputeImplementation": "",
+        "completionGuaranteed": true,
+        "compactOptions": [
+          true,
+          false
+        ],
+        "properties": [
+          {
+            "name": "value",
+            "type": "int"
+          }
+        ],
+        "constraints": [
+          {
+            "propertyName": "value",
+            "constraint": ">",
+            "value": "0"
+          },
+          {
+            "propertyName": "value",
+            "constraint": "is required",
+            "value": ""
+          }
+        ],
+        "mapping": [
+          [
+            "Number"
+          ]
+        ],
+        "outputType": "budget",
+        "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKYAAACuCAMAAACLBYYoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABvUExURQAAAAAkJAYlMgMlMwMjMgMlMgMlNAUkNAUjMwMlNAQkMwQkNAQkMwQkNAQkMwQkMwQkMwQkMwAAAAQkMw4tOxEvPUdHR1htd1lueF5yfICQmImJiYmYn6KutMPDw8vR1czS1eTo6e3w8f39/f///wiPN1MAAAASdFJOUwAHKUtRUlNibZmvsrjLzOXt+jDbqwgAAAAJcEhZcwAAMsAAADLAAShkWtsAAAOeSURBVHhe7ZzbkqIwEEDH2zreL6Oog+Kq/P83bkESSFqUBmInqe3zMmpJ96kkHYJD+PpiGIZhGIZhGIZhGKaS3mgyW65+LLFaziajHszRmfF0AzN1ZzMdwzydGC5gBlsshjBXa/pzGNwm8z7M147BGka2y3oAM7bhG4a1zzfM2RwCSwuegzLW7ni53h6pFR636+WwK2N37Pd+MS73Z0uGJY/zXkVfd6ujosZPd5jEBveTij+HmZswVFF+YQJb/KoMXeZPNat/zLL0XMDceMYyxAnGtonq9/bnzakIsP/IuFTcZR1NYXYsPbnaOMPIdjmLLJu266U/4vid9ZnI5CHnzxHMj2QiDj/AuLY5ijwTmB/JTBx+gWFtcxF5ZjA/kqU4/C8Ma5uryLOE+ZHIK4obDGubm8izgvmRiKN/PlxBafqQiWB+JPJoGNU+bjS32xh+9B7WfANrVtFCM0niaJsRRTHelVgzEYoFEdKUVFNJZn8KX5QppWaca8WJHJuq9zGihJq5VJRkL1UJCfHtFn71CTrNXCkSr8tKFw2qf68SMs0k98nb0piQck/te9WQaYpxWbwph6NXmkZjGprZYCjevIJK0xyDxlnIJ02zog3NyB9N0efVmnEYmql3mlWV7qGmnN2BZuSNpiwhZee7phQyNRFQaap1m+h2bzXVWkh4eqtZNGe+lPNXU9Z6RuyxZtmc+QWGt5q6p8+ahqea6JFQaprtqdaeKEg1y2kpo0mD0mrq9a6uMlEQa7bteHLNdh1Pr9mq4l1omg2K6ngnmsWyDu3pSlPveISnK81YH6H1nu409RFa6+lQU5vra+vdpab2E3fdgsmpJrxEeo1jTXDF+RLXmmp81vS6a03V7b5rymnJD83Y9NC1WFPRQNOYcvzVNKacZ82a0yWdpt5e2jvwO/IL6DT1Xn+q9Jo+J9TU+1XzQjUmpabWnKWm+W+tlxBqap6FprCsW3jQapY6ShNrSatZNKJ8gbak1pS3ImSaifwMY0mlmabqjoncTLuyrK2eHDJNYCpA/9hFqZmNxjiOpGyU3ZuChVhTUn/aAbDmG1izirA0G99b3KDGczreWxzIndqB3PceyC4CuSfjCMPa5iDytN2TEcgOl0D2CwWy+yqUvWyB7AwMZZ9lILtWQ9kDbOyoPtjdUX20t6M6lP3pJJ4WLEN5dkIoT6II5bkeGUE8JSUjiGfOMAzDMAzDMAzDMAzDMAzDMAzDMMz/zj8vp5fzTpOiPQAAAABJRU5ErkJggg==",
+        "isDataType": true,
+        "identifiers": [
+          "q277468"
+        ],
+        "inputTypes": [
+          "int"
+        ],
+        "outputTypes": [
+          "budget"
+        ],
+        "propertyValues": {
+          "value": "2"
+        }
+      },
+      "width": 450,
+      "height": 360,
+      "positionAbsolute": {
+        "x": -45,
+        "y": 450
+      },
+      "dragging": true
+    },
+    {
+      "id": "a0c8423d-39f5-4e94-9719-03651f7c4f49",
+      "type": "editableNode",
+      "position": {
+        "x": -45,
+        "y": 855
+      },
+      "data": {
+        "label": "Risk Factor",
+        "inputs": [],
+        "children": [],
+        "implementation": "",
+        "implementationType": "",
+        "uncomputeImplementationType": "",
+        "uncomputeImplementation": "",
+        "completionGuaranteed": true,
+        "compactOptions": [
+          true,
+          false
+        ],
+        "properties": [
+          {
+            "name": "value",
+            "type": "int"
+          }
+        ],
+        "constraints": [
+          {
+            "propertyName": "value",
+            "constraint": "is required",
+            "value": ""
+          }
+        ],
+        "mapping": [
+          [
+            "Number"
+          ]
+        ],
+        "outputType": "riskFactor",
+        "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACGCAMAAAAM/FN2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAERUExURQAAAAAkJAYlMgMlMwMjMgMlMgMlNAUkNAUjMwMlNAQkMwQkNAQkMwQkNAQkMwQkMwQkMwQkMwAAAAQEBAQkMwgICAwMDA0NDQ4tOxAQEBEvPRsbGx4eHiAgICQkJCgoKCsrKy0tLTQ0NDw8PEBAQEhISEpKSkxMTFFRUVRUVFZWVlhYWFhtd1lueFxcXF5eXl5yfGBgYGRkZGZmZmpqanR0dICQmIeHh4mYn4uLi4yMjI+Pj5qamp2dnZ+fn6KutKmpqaurq6+vr7e3t8PDw8nJycrKysvR1czS1c/Pz9TU1Nvb29zc3N/f3+Li4uPj4+Tk5OTo6eXl5efn5+np6e3w8fPz8/f39/v7+/39/f///yjvg1gAAAASdFJOUwAHKUtRUlNibZmvsrjLzOXt+jDbqwgAAAAJcEhZcwAAMsAAADLAAShkWtsAAANMSURBVHhe7ZtrU9NAFIa5Cr3DFiuieMMb2iqIYrVqCVTxhliVSvf//xAn2d2EHho4256NO53zfMoku+d9ZpOmnc6eqSmGYRiGYZiJZno+VyhXVmiolAu5+WkYYctCfhkWHpvl/AKMsWGuBAsSUZqDUVhmirAWIcUZGIdidgkWImVpFgYiWIRVyFmEkZfi3sneajaZutpoH3b7koJ+97BdX01K293Bmfh5WmvS+CT0m2um+JLV0x5/7rZOYE0CTrZM+SIMvoA5M2kX1iNi1wRYvK/MO9OVU2JVgtGpLOgZW7AUIeYOor9x8mr8movnyXCin/Y8DE9hWn8HN2EhUpoqZBn5m+GKGr5K/S4YpK/fV/Mwfjg5NboOyxDTUDE5GD+cghrdhlWIaauYAowfTlmN/gyrEHOoYsowfjj6t28XViGmq2IqMH44avCK2+dcyr7OgfHD0YNhEXJYCgtLYWEpLJMsdXx0dHQMT44MkdS6EGIdnhwZlsLCUlhYCgtLYWEpLCyFJWupzv2Ep/CiIWsp+fqqMFyH1wyZS52x8kgqsfJJSr7RUqkT/oPUzx1vVmq/ow9ON7VT+oSspIJqTVn9jZ3SJ2QkFVSFiKx6G5HPxofqBRNcSvUCcxQ6RVbGqReeOjfB4FCqtyFa6kg5CVE7iJ3Ck3BCjDupaFEiK+NkiJykDG4NTkhwJqVvVMs4JWLaSUrzeTyHKyntJERLOwUt6JSOI6nYSS9RNZBSWSGcHEl9fRI7Rdx4F559e02IZ9/OzErDiZT54B/UlFO4TiEt1Dq5kUpeRp3IyjhJGaCcXEh9eRw5Pf8eWtwV4uZ7MPhS6KV+346cHqhF6dSSdUJDLqWdNk/1lc7+wEAU1FKfHkVOL37AETYQS318GDnt/IIDrCCWujd470aEWGrvjhDi5R942RJiqfDNNO460UvJzvbYTvRSFLAUFpbCwlJYJl2qtm3JK1jFQChlTRZ/BVnDUlhcS9HCUlhYCssoUn7tyfNy96KX+zy93BGr9w43YBVi6ioGuXfYy13WXu5H93Lnvp89Dl52g/jZN+Nlh5GfvVgDXWt10q61xshda37292VhZe/kZ8+on921fvYhh3jYsR3iYW87wzAM4yf/AJI/Xiv9cfIeAAAAAElFTkSuQmCC",
+        "isDataType": true,
+        "identifiers": [
+          "q129045"
+        ],
+        "inputTypes": [
+          "int"
+        ],
+        "outputTypes": [
+          "riskFactor"
+        ],
+        "propertyValues": {
+          "value": "2"
+        }
+      },
+      "width": 450,
+      "height": 360,
+      "positionAbsolute": {
+        "x": -45,
+        "y": 855
+      },
+      "dragging": true
+    },
+    {
+      "id": "a6332cd2-d4fe-4f23-bc10-2dff25bcc5e9",
+      "type": "editableNode",
+      "position": {
+        "x": -45,
+        "y": -135
+      },
+      "data": {
+        "label": "Market Data",
+        "inputs": [],
+        "children": [],
+        "implementation": "",
+        "implementationType": "",
+        "uncomputeImplementationType": "",
+        "uncomputeImplementation": "",
+        "completionGuaranteed": true,
+        "compactOptions": [
+          true,
+          false
+        ],
+        "properties": [
+          {
+            "name": "token",
+            "type": "string"
+          },
+          {
+            "name": "stocks",
+            "type": "string"
+          },
+          {
+            "name": "start_date",
+            "type": "date"
+          },
+          {
+            "name": "end_date",
+            "type": "date"
+          }
+        ],
+        "constraints": [
+          {
+            "propertyName": "stocks",
+            "constraint": "is required",
+            "value": ""
+          },
+          {
+            "propertyName": "start_date",
+            "constraint": "is required",
+            "value": ""
+          },
+          {
+            "propertyName": "end_date",
+            "constraint": "is required",
+            "value": ""
+          },
+          {
+            "propertyName": "start_date",
+            "constraint": "<",
+            "value": "end_date"
+          }
+        ],
+        "mapping": [
+          [
+            "Array"
+          ]
+        ],
+        "outputType": "marketData",
+        "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF8AAABXCAMAAABVwWmqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABUUExURQAAAAAmMwUiNQQjMgMjNAMjMwUjMgQkMwUkMwQkMwQjMgQlMwMkMwQkMwQkMwAAAAQkMwgnNhAQEGR4gW2AiZunra+5vtzg4t3h4+To6fX29////+Sz6eQAAAAPdFJOUwAUNUhJX2WIqa+7w93299pIhVYAAAAJcEhZcwAAMsAAADLAAShkWtsAAAF3SURBVGhD7ZrbcoJADECDiHIVKUgB//8/Oxg2hGXbzrCb1oecFxOSOTuz6EsiwEqUpEV5u/tQlUWaRMy5Eud282Hysy2HU2Y3eZGdtvqL3eDNheuvdjUAV1k9OyD85SDLFZ3oQdP2w/T0YRr6tiEfvmT65nSj3X6IsTPCbNafTfawGw/zMMoYAMzPKpx+PSAHiJaws3u8MFcUQYJBE+buDePykhNIMWjtDk9a1KZQYNDbDZ70qC2gxGBgtY+6rmuWI/PDF3bBySdqS6gw4D+rEP4JtRXg553XQvifi1f93/De/t8PU7/6N6jf8Hd+rtkoN4kT9VPiRP2UOFE/JU7UT4kT9TsLhPqdBUL9zgKhfmeBUL+zQLyF3wP1/8x/+w/AHerfwx3kX/ZFu/nhAZjCzA9vrvlnCGj+KT2/lZ4/S8/Ppef/0vsLiJc44AG0f3ntIYX3R+L7L+n9nfj+UeYAppe4os3+V3x/Pe8hA+7f573jHon/D3wBXrugcHOhsxoAAAAASUVORK5CYII=",
+        "isDataType": true,
+        "identifiers": [
+          "q105070"
+        ],
+        "inputTypes": [
+          "string",
+          "string",
+          "date",
+          "date"
+        ],
+        "outputTypes": [
+          "marketData"
+        ],
+        "propertyValues": {
+          "start_date": "2026-01-01",
+          "end_date": "2026-01-31",
+          "stocks": "Stock1,Stock2,Stock3,Stock4"
+        }
+      },
+      "width": 450,
+      "height": 540,
+      "positionAbsolute": {
+        "x": -45,
+        "y": -135
+      },
+      "dragging": true
+    },
+    {
+      "id": "cf93db07-8b3f-4dd8-962c-fbe12103aeba",
+      "type": "editableNode",
+      "position": {
+        "x": 690,
+        "y": 255
+      },
+      "data": {
+        "label": "Optimize Portfolio",
+        "inputs": [
+          {
+            "id": "a6332cd2-d4fe-4f23-bc10-2dff25bcc5e9",
+            "edgeId": "adf6c081-d117-466e-8d14-d3e90d18b0d8",
+            "identifiers": [
+              "q105070"
+            ],
+            "targetHandle": "classicalHandleInput0cf93db07-8b3f-4dd8-962c-fbe12103aeba"
+          },
+          {
+            "id": "ce1a7c37-1c73-426e-83aa-5e1efd1a6a91",
+            "edgeId": "a8ff6ba7-8d17-4830-b2b9-1a03f56d5e56",
+            "identifiers": [
+              "q277468"
+            ],
+            "targetHandle": "classicalHandleInput1cf93db07-8b3f-4dd8-962c-fbe12103aeba"
+          },
+          {
+            "id": "a0c8423d-39f5-4e94-9719-03651f7c4f49",
+            "edgeId": "a8362af9-9d8a-4de5-bfa5-14b08f354f5b",
+            "identifiers": [
+              "q129045"
+            ],
+            "targetHandle": "classicalHandleInput2cf93db07-8b3f-4dd8-962c-fbe12103aeba"
+          }
+        ],
+        "children": [],
+        "implementation": "",
+        "implementationType": "",
+        "uncomputeImplementationType": "",
+        "uncomputeImplementation": "",
+        "completionGuaranteed": true,
+        "compactOptions": [
+          true,
+          false
+        ],
+        "properties": [
+          {
+            "name": "marketData",
+            "type": "marketData"
+          },
+          {
+            "name": "budget",
+            "type": "budget"
+          },
+          {
+            "name": "riskFactor",
+            "type": "riskFactor"
+          }
+        ],
+        "constraints": [
+          {
+            "propertyName": "marketData",
+            "constraint": "is required",
+            "value": ""
+          },
+          {
+            "propertyName": "budget",
+            "constraint": "is required",
+            "value": ""
+          },
+          {
+            "propertyName": "riskFactor",
+            "constraint": "is required",
+            "value": ""
+          }
+        ],
+        "mapping": [
+          [
+            "QAOA",
+            "QUBO"
+          ],
+          [
+            "QUBO",
+            "VQE"
+          ]
+        ],
+        "outputType": "selectedAssets",
+        "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAACRCAMAAAAB+CGhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACWUExURQAAAAAaMwAeLQAgMAQmNQMkMwMkNAQkMwQkMgQkNAQlNAMlNAUkMwUkMgQkNAQkMwQkMwMkMwQkMwQkMwQkMwQkMwAAAAQkMw0sOw8PDxMxPzNNWUVcZ0deaXJycn9/f4yaoI6boY6bopeXl52prqSvtKWwtKmzuKu1ubW1tcHHy8vQ0tjc3ePj4+Pl5uTm5/Dw8PLy8mJ19TgAAAAWdFJOUwAKESBEVV13f4CKmaGissTM3uXt8f5DrSOYAAAACXBIWXMAADLAAAAywAEoZFrbAAADF0lEQVR4Xu2c627aQBCFFwKEACFck5RLcykNFCiF93+5Cu14vExPRorV7G6r+f7E8e4cPoGwzY8Z5wCNdrc/GD1EYjTod9sN6QCpNXtjWR6Dca9Zky6Cemcqq+Ix7dSlT8j1RBbEZXItjZjWUG6Oz7AlrTw3cmMa2tLrzK3clYpbaeau7sL15et6uz+eonDcb9evy/DV766EXOC2WB1kwOdzWC0Cu0u38jOdv8m6WHyfs8TFJ1t+F55lSUyeWeOmdGsV52YbuT8um1lhUl5Riuvb407ujs3ukVSGhds1nZgldzuddsV7R/eKenHPSvyZejYkM/H32Q79m/S7UFJ8Kzpntxo9h8zlrlTQFWV6foJqkmmy65vkjYSazrmeP1zIPemge0XPOUfPvSu5JR0rbzR2rkFv4i+5JR0HUmq4tj9Yyh0poWeUtuv6gxe5ISWv3qnr+v5gHax9uS/4Fpx9D95cIrd8lLV36ruBP9gGa8nltt5p4Oi38z5YSy63904j5/8+hM/kyeWOJFXIhWvJ5U4mVxWTq4rJVcXkqmJyVfl8OXnWI8shJgeQ5RCTA8hyiMkBZDnE5ACyHGJyAFkOMTmALIeYHECWQ0wOIMshH5R7gpxXLl7a40vkWQ8napgcgBM1TA7AiRomB+BEDZMDcKKGyQE4UcPkAJyoYXIATtQwOQAnapgcgBM1TA7AiRomB+BEDZMDcKKGyQH0MMLkAHoYYXIAPYwwOYAeRpgcQA8jTA6ghxEmB9DDCJMD6GGEyQH0MMLkAHoYYXIAPYwwOYAeRpgcQA8jTA6ghxEmB9DDiL8m9y4XTsx5RcZ4gtL/SS4uJlcVk6vKvyQX9hqy2/3XH9EIXr/sNVS7NCPyMxDgLk21vzUioRz3t6qdwREJ5bgzGPRUJ5fjnmrQjZ5cjrvRQR9/armyjx9MQEgtV05AALMjUssFsyP+nLqRWC6cupH1vJKsJ73kPSMn6+lCec9lynuiVX6zwC4m5OU8RS3v+XOJJ/e96JP7sp55mM+0yGAuXkjOczbznlCa+WzXvKfienKZJ/wbY9c4fZEkY+QAAAAASUVORK5CYII=",
+        "identifiers": [
+          "q129045"
+        ],
+        "inputTypes": [
+          "marketData",
+          "budget",
+          "riskFactor"
+        ],
+        "outputTypes": [
+          "selectedAssets"
+        ]
+      },
+      "width": 320,
+      "height": 580,
+      "positionAbsolute": {
+        "x": 690,
+        "y": 255
+      },
+      "dragging": true
+    }
+  ],
+  "edges": [
+    {
+      "source": "a0c8423d-39f5-4e94-9719-03651f7c4f49",
+      "sourceHandle": "classicalHandleeditableNodeOutput0a0c8423d-39f5-4e94-9719-03651f7c4f49",
+      "target": "cf93db07-8b3f-4dd8-962c-fbe12103aeba",
+      "targetHandle": "classicalHandleInput2cf93db07-8b3f-4dd8-962c-fbe12103aeba",
+      "type": "classicalEdge",
+      "id": "a8362af9-9d8a-4de5-bfa5-14b08f354f5b",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 20,
+        "height": 20,
+        "color": "#F5A843",
+        "hidden": false
+      }
+    },
+    {
+      "source": "ce1a7c37-1c73-426e-83aa-5e1efd1a6a91",
+      "sourceHandle": "classicalHandleeditableNodeOutput0ce1a7c37-1c73-426e-83aa-5e1efd1a6a91",
+      "target": "cf93db07-8b3f-4dd8-962c-fbe12103aeba",
+      "targetHandle": "classicalHandleInput1cf93db07-8b3f-4dd8-962c-fbe12103aeba",
+      "type": "classicalEdge",
+      "id": "a8ff6ba7-8d17-4830-b2b9-1a03f56d5e56",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 20,
+        "height": 20,
+        "color": "#F5A843",
+        "hidden": false
+      }
+    },
+    {
+      "source": "a6332cd2-d4fe-4f23-bc10-2dff25bcc5e9",
+      "sourceHandle": "classicalHandleeditableNodeOutput0a6332cd2-d4fe-4f23-bc10-2dff25bcc5e9",
+      "target": "cf93db07-8b3f-4dd8-962c-fbe12103aeba",
+      "targetHandle": "classicalHandleInput0cf93db07-8b3f-4dd8-962c-fbe12103aeba",
+      "type": "classicalEdge",
+      "id": "adf6c081-d117-466e-8d14-d3e90d18b0d8",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 20,
+        "height": 20,
+        "color": "#F5A843",
+        "hidden": false
+      }
+    }
+  ],
+  "viewport": {
+    "x": 44.70806472971687,
+    "y": 141.7415802503236,
+    "zoom": 0.5291701323559437
+  }
+}
