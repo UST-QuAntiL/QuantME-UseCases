@@ -1,0 +1,142 @@
+services:
+  camunda-engine:
+    image: planqk/camunda-process-view-plugins:v1.0.2
+    ports:
+      - 8090:8080
+  backend:
+    image: stiliala/collaboration-backend:latest
+    ports:
+      - "1234:1234"
+
+  frontend:
+    image: stiliala/frontend:latest
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "4242:4242"
+
+  server:
+    image: ghcr.io/qunicorn/qunicorn-core:main
+    environment:
+      CONTAINER_MODE: server
+      SERVER_PORT: 8080
+      BROKER_URL: "redis://broker:6379"
+      DB_URL: "postgresql+psycopg://postgres:passwd@postgres/qunicorn"
+      JWKS_URL: "http://keycloak:8080/auth/realms/qunicorn/protocol/openid-connect/certs"
+      NUMBA_CACHE_DIR: "/app/cache"
+    depends_on:
+      - postgres
+      - broker
+    ports:
+      - "8080:8080"
+    labels:
+      kompose.service.expose: "true"
+      kompose.service.type: "loadbalancer"
+
+  worker:
+    image: ghcr.io/qunicorn/qunicorn-core:main
+    environment:
+      CONTAINER_MODE: worker
+      BROKER_URL: "redis://broker:6379"
+      DB_URL: "postgresql+psycopg://postgres:passwd@postgres/qunicorn"
+      NUMBA_CACHE_DIR: "/app/cache"
+      # QMWARE_API_KEY: ""
+      # QMWARE_API_KEY_ID: ""
+    depends_on:
+      - postgres
+      - broker
+    ports:
+      - "6379"
+
+  
+  keycloak_postgres:
+    image: postgres:15
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: passwd
+    hostname: local
+    restart: always
+    volumes:
+      - /keycloak_pgdata:/var/lib/postgresql/data
+    ports: 
+      - "5439:5432"
+
+  keycloak:
+    image: quay.io/keycloak/keycloak
+    command: ["start-dev", "--import-realm"]
+    environment:
+      DB_VENDOR: postgres
+      DB_ADDR: keycloak_postgres
+      DB_PORT: 5432
+      DB_SCHEMA: public
+      DB_DATABASE: keycloak
+      DB_USER: keycloak
+      DB_PASSWORD: passwd
+      KEYCLOAK_USER: kc_user
+      KEYCLOAK_PASSWORD: kc_pass
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_PROXY_MODE: edge
+      KC_METRICS_ENABLED: true
+      KC_HTTP_ENABLED: true
+      #KEYCLOAK_IMPORT: /opt/keycloak/data/import/keycloak-realm-export.json
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./resources/keycloak-realm-export.json:/opt/keycloak/data/import/keycloak-realm-export.json
+    depends_on:
+      - keycloak_postgres
+    restart: always
+
+  broker:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  postgres:
+    image: postgres:16
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_PASSWORD: passwd
+      POSTGRES_DB: qunicorn
+    volumes:
+      - pgdata:/var/lib/postgresql/data \
+    ports:
+      - "5432:5432"
+
+
+  ## Low-Code 
+  leqo-backend:
+    image: ghcr.io/leqo-framework/leqo-backend:main
+    environment:
+      POSTGRES_USER: leqo
+      POSTGRES_PASSWORD: unsave_passwd
+      POSTGRES_DB: qasm
+      POSTGRES_PORT: 5432
+      POSTGRES_HOST: postgres-backend
+      SQLALCHEMY_DRIVER: postgresql+psycopg
+      QISKIT_COMPAT_MODE: TRUE
+    depends_on:
+      - postgres-backend
+    ports:
+      - "8000:80"
+
+  postgres-backend:
+    image: postgres:latest
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: leqo
+      POSTGRES_PASSWORD: unsave_passwd
+      POSTGRES_DB: qasm
+    ports:
+      - "5435:5432"
+
+volumes:
+  pgdata:
+  keycloak_pgdata:
+  db-data:
