@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "name": "My Model",
+    "description": "This is a model.",
+    "author": "",
+    "containsPlaceholder": false,
+    "id": "flow-1780702102670",
+    "timestamp": "2026-06-05T23:28:22.670Z"
+  },
+  "nodes": [
+    {
+      "id": "bac12011-7553-4c8b-8d52-77e64f8d6e7d",
+      "type": "statePreparationNode",
+      "position": {
+        "x": 105,
+        "y": 375
+      },
+      "data": {
+        "label": "Prepare State",
+        "inputs": [],
+        "children": [],
+        "implementation": "",
+        "implementationType": "",
+        "uncomputeImplementationType": "",
+        "uncomputeImplementation": "",
+        "completionGuaranteed": true,
+        "compactOptions": [
+          true,
+          false
+        ],
+        "identifiers": [
+          "q135082"
+        ],
+        "quantumStateName": "Uniform Superposition",
+        "size": 3,
+        "outputIdentifier": "",
+        "inputTypes": [],
+        "outputTypes": [
+          "quantum register"
+        ],
+        "outputs": [
+          {
+            "identifier": "",
+            "size": "3"
+          }
+        ]
+      },
+      "width": 320,
+      "height": 373,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 105,
+        "y": 375
+      }
+    },
+    {
+      "id": "8e7160cb-182e-4e03-8aeb-8b18c4cf4fc0",
+      "type": "universal-oracle",
+      "position": {
+        "x": 510,
+        "y": 360
+      },
+      "data": {
+        "label": "Grover Oracle",
+        "inputs": [
+          {
+            "id": "bac12011-7553-4c8b-8d52-77e64f8d6e7d",
+            "edgeId": "c56d8d5f-e9c0-4e2f-bb3b-c674292b26b4",
+            "outputIdentifier": "",
+            "identifiers": [
+              "q135082"
+            ],
+            "targetHandle": "quantumHandleInput08e7160cb-182e-4e03-8aeb-8b18c4cf4fc0"
+          }
+        ],
+        "children": [],
+        "implementation": "",
+        "implementationType": "",
+        "uncomputeImplementationType": "",
+        "uncomputeImplementation": "",
+        "completionGuaranteed": true,
+        "compactOptions": [
+          false,
+          true
+        ],
+        "identifiers": [
+          "q891988"
+        ],
+        "inputTypes": [
+          "quantum register"
+        ],
+        "outputTypes": [],
+        "targetStates": "1"
+      },
+      "width": 320,
+      "height": 420,
+      "positionAbsolute": {
+        "x": 510,
+        "y": 360
+      },
+      "dragging": false
+    },
+    {
+      "id": "b55b453b-e865-4caf-b6c9-36f05514c8dd",
+      "type": "grover-diffuser",
+      "position": {
+        "x": 915,
+        "y": 405
+      },
+      "data": {
+        "label": "Grover Diffuser",
+        "inputs": [
+          {
+            "id": "8e7160cb-182e-4e03-8aeb-8b18c4cf4fc0",
+            "edgeId": "8e333378-bced-4964-a5a5-0e8d60ba0aa9",
+            "identifiers": [
+              "q891988"
+            ],
+            "targetHandle": "quantumHandleInput0b55b453b-e865-4caf-b6c9-36f05514c8dd"
+          }
+        ],
+        "children": [],
+        "implementation": "",
+        "implementationType": "",
+        "uncomputeImplementationType": "",
+        "uncomputeImplementation": "",
+        "completionGuaranteed": true,
+        "compactOptions": [
+          false,
+          true
+        ],
+        "identifiers": [
+          "q450292"
+        ],
+        "inputTypes": [
+          "any"
+        ],
+        "outputTypes": []
+      },
+      "width": 320,
+      "height": 250,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 915,
+        "y": 405
+      },
+      "dragging": false
+    },
+    {
+      "id": "d4759b38-f8db-43d1-9c75-c04659893378",
+      "type": "measurementNode",
+      "position": {
+        "x": 1335,
+        "y": 405
+      },
+      "data": {
+        "label": "Measurement",
+        "inputs": [
+          {
+            "id": "b55b453b-e865-4caf-b6c9-36f05514c8dd",
+            "edgeId": "13b67b98-69e3-4405-91aa-7c6c9ba928dd",
+            "identifiers": [
+              "q450292"
+            ],
+            "targetHandle": "quantumHandleMeasurementInput0d4759b38-f8db-43d1-9c75-c04659893378"
+          }
+        ],
+        "children": [],
+        "implementation": "",
+        "implementationType": "",
+        "uncomputeImplementationType": "",
+        "uncomputeImplementation": "",
+        "completionGuaranteed": true,
+        "compactOptions": [
+          true,
+          false
+        ],
+        "identifiers": [
+          "q364976"
+        ],
+        "indices": "",
+        "outputIdentifier": "",
+        "inputTypes": [
+          "quantum register"
+        ],
+        "outputTypes": [
+          "array",
+          "quantum register"
+        ]
+      },
+      "width": 320,
+      "height": 440,
+      "selected": true,
+      "positionAbsolute": {
+        "x": 1335,
+        "y": 405
+      },
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "bac12011-7553-4c8b-8d52-77e64f8d6e7d",
+      "sourceHandle": "quantumHandlestatePreparationNodeOutput0bac12011-7553-4c8b-8d52-77e64f8d6e7d",
+      "target": "8e7160cb-182e-4e03-8aeb-8b18c4cf4fc0",
+      "targetHandle": "quantumHandleInput08e7160cb-182e-4e03-8aeb-8b18c4cf4fc0",
+      "id": "ad7242c1-53c7-4a24-b118-1c817dee115e",
+      "type": "quantumEdge",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 20,
+        "height": 20,
+        "color": "#93C5FD"
+      },
+      "style": {
+        "stroke": "#93C5FD"
+      }
+    },
+    {
+      "source": "8e7160cb-182e-4e03-8aeb-8b18c4cf4fc0",
+      "sourceHandle": "quantumHandleuniversal-oracleOutput08e7160cb-182e-4e03-8aeb-8b18c4cf4fc0",
+      "target": "b55b453b-e865-4caf-b6c9-36f05514c8dd",
+      "targetHandle": "quantumHandleInput0b55b453b-e865-4caf-b6c9-36f05514c8dd",
+      "id": "43a4ce61-72d4-4b20-8eaf-46881e33d7ed",
+      "type": "quantumEdge",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 20,
+        "height": 20,
+        "color": "#93C5FD"
+      },
+      "style": {
+        "stroke": "#93C5FD"
+      }
+    },
+    {
+      "source": "b55b453b-e865-4caf-b6c9-36f05514c8dd",
+      "sourceHandle": "quantumHandlegrover-diffuserOutput0b55b453b-e865-4caf-b6c9-36f05514c8dd",
+      "target": "d4759b38-f8db-43d1-9c75-c04659893378",
+      "targetHandle": "quantumHandleMeasurementInput0d4759b38-f8db-43d1-9c75-c04659893378",
+      "id": "d7c168b2-2b6d-4b90-ba03-6dc4fa5c8f74",
+      "type": "quantumEdge",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 20,
+        "height": 20,
+        "color": "#93C5FD"
+      },
+      "style": {
+        "stroke": "#93C5FD"
+      }
+    }
+  ],
+  "viewport": {
+    "x": 45.77432649481102,
+    "y": 70.01824009974541,
+    "zoom": 0.7234602762678677
+  }
+}

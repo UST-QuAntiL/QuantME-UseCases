@@ -16,6 +16,10 @@ Furthermore, it provides an integrated toolchain to model, transform, deploy, an
 * [Script Splitter](https://github.com/UST-QuAntiL/qscript-splitter): A service analyzing Python scripts to detect quantum and classical parts, which are then orchestrated by a generated workflow model.
 * [Pattern Atlas](https://github.com/PatternAtlas): A graphical tool for authoring and visualizing patterns and pattern languages.
 
+### QUANCOM 2026 - Prototype
+
+In this paper, we present a collaborative low-code platform for quantum computing that enables users with different levels of expertise to work together in a shared environment. The platform aims to reduce the steep learning curve of quantum computing while supporting collaboration between experts and non-experts. By providing accessible abstractions and a shared workspace, it facilitates knowledge exchange and enables growing teams to develop quantum applications collaboratively.
+
 
 ### QUANTICS 2026 - Prototype
 
