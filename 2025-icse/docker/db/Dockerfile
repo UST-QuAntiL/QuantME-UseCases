@@ -12,6 +12,7 @@ ENV JDBC_DATABASE_PORT 5060
 
 # install git
 RUN rm -rf /etc/apt/sources.list.d/pgdg.list
+RUN sed -i 's/[^/]*.debian.org/archive.debian.org/g' /etc/apt/sources.list
 RUN apt-get update -qq && apt-get install -qqy \
   git \
   && apt-get clean \
