@@ -22,7 +22,7 @@ The repository also contains the raw data used for the runtime analysis and user
 The repository contains the following artifacts:
 
 * **Raw data of the user study**
-  [user-study](https://github.com/UST-QuAntiL/QuantME-UseCases/blob/feature/2026-closer-extension/user-study)
+  [user-study](https://github.com/UST-QuAntiL/QuantME-UseCases/tree/253ef37049c136d07c02165b30455f37d1059415/2026-closer-extension/user-study)
 
 * **Use-case documentation**
 
